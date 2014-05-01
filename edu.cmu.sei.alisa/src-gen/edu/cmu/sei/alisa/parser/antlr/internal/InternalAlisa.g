@@ -440,13 +440,13 @@ ruleRequirement returns [EObject current=null]
 	    }
 
 )
-))?(	otherlv_11='referenced' 
+))?(	otherlv_11='assigned' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getRequirementAccess().getReferencedKeyword_5_0());
+    	newLeafNode(otherlv_11, grammarAccess.getRequirementAccess().getAssignedKeyword_5_0());
     }
-	otherlv_12='by' 
+	otherlv_12='to' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getRequirementAccess().getByKeyword_5_1());
+    	newLeafNode(otherlv_12, grammarAccess.getRequirementAccess().getToKeyword_5_1());
     }
 	otherlv_13=':' 
     {
@@ -461,13 +461,13 @@ ruleRequirement returns [EObject current=null]
         }
 	otherlv_14=RULE_ID
 	{
-		newLeafNode(otherlv_14, grammarAccess.getRequirementAccess().getReferencedByElementTypeCrossReference_5_3_0()); 
+		newLeafNode(otherlv_14, grammarAccess.getRequirementAccess().getAssignedToStakeholderCrossReference_5_3_0()); 
 	}
 
 )
-)*)?(	otherlv_15='decomposed' 
+)*)?(	otherlv_15='referenced' 
     {
-    	newLeafNode(otherlv_15, grammarAccess.getRequirementAccess().getDecomposedKeyword_6_0());
+    	newLeafNode(otherlv_15, grammarAccess.getRequirementAccess().getReferencedKeyword_6_0());
     }
 	otherlv_16='by' 
     {
@@ -479,33 +479,88 @@ ruleRequirement returns [EObject current=null]
     }
 (
 (
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRequirementRule());
+	        }
+        }
+	otherlv_18=RULE_ID
+	{
+		newLeafNode(otherlv_18, grammarAccess.getRequirementAccess().getReferencedByElementTypeCrossReference_6_3_0()); 
+	}
+
+)
+)*)?(	otherlv_19='verified' 
+    {
+    	newLeafNode(otherlv_19, grammarAccess.getRequirementAccess().getVerifiedKeyword_7_0());
+    }
+	otherlv_20='by' 
+    {
+    	newLeafNode(otherlv_20, grammarAccess.getRequirementAccess().getByKeyword_7_1());
+    }
+	otherlv_21=':' 
+    {
+    	newLeafNode(otherlv_21, grammarAccess.getRequirementAccess().getColonKeyword_7_2());
+    }
+(
+(
 		{ 
-	        newCompositeNode(grammarAccess.getRequirementAccess().getDecomposedByRequirementDecompositionParserRuleCall_6_3_0()); 
+	        newCompositeNode(grammarAccess.getRequirementAccess().getVerifiedByVerificationDecompositionParserRuleCall_7_3_0()); 
 	    }
-		lv_decomposedBy_18_0=ruleRequirementDecomposition		{
+		lv_verifiedBy_22_0=ruleVerificationDecomposition		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRequirementRule());
+	        }
+       		add(
+       			$current, 
+       			"verifiedBy",
+        		lv_verifiedBy_22_0, 
+        		"VerificationDecomposition");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*)?(	otherlv_23='decomposed' 
+    {
+    	newLeafNode(otherlv_23, grammarAccess.getRequirementAccess().getDecomposedKeyword_8_0());
+    }
+	otherlv_24='by' 
+    {
+    	newLeafNode(otherlv_24, grammarAccess.getRequirementAccess().getByKeyword_8_1());
+    }
+	otherlv_25=':' 
+    {
+    	newLeafNode(otherlv_25, grammarAccess.getRequirementAccess().getColonKeyword_8_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRequirementAccess().getDecomposedByRequirementDecompositionParserRuleCall_8_3_0()); 
+	    }
+		lv_decomposedBy_26_0=ruleRequirementDecomposition		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRequirementRule());
 	        }
        		add(
        			$current, 
        			"decomposedBy",
-        		lv_decomposedBy_18_0, 
+        		lv_decomposedBy_26_0, 
         		"RequirementDecomposition");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*)?	otherlv_19='end' 
+)*)?	otherlv_27='end' 
     {
-    	newLeafNode(otherlv_19, grammarAccess.getRequirementAccess().getEndKeyword_7());
+    	newLeafNode(otherlv_27, grammarAccess.getRequirementAccess().getEndKeyword_9());
     }
-this_ID_20=RULE_ID
+this_ID_28=RULE_ID
     { 
-    newLeafNode(this_ID_20, grammarAccess.getRequirementAccess().getIDTerminalRuleCall_8()); 
+    newLeafNode(this_ID_28, grammarAccess.getRequirementAccess().getIDTerminalRuleCall_10()); 
     }
-	otherlv_21=';' 
+	otherlv_29=';' 
     {
-    	newLeafNode(otherlv_21, grammarAccess.getRequirementAccess().getSemicolonKeyword_9());
+    	newLeafNode(otherlv_29, grammarAccess.getRequirementAccess().getSemicolonKeyword_11());
     }
 )
 ;
@@ -544,20 +599,15 @@ ruleRequirementDecomposition returns [EObject current=null]
 )
     |((
 (
-		lv_left_1_0=RULE_ID
 		{
-			newLeafNode(lv_left_1_0, grammarAccess.getRequirementDecompositionAccess().getLeftIDTerminalRuleCall_1_0_0()); 
-		}
-		{
-	        if ($current==null) {
+			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getRequirementDecompositionRule());
 	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"left",
-        		lv_left_1_0, 
-        		"ID");
-	    }
+        }
+	otherlv_1=RULE_ID
+	{
+		newLeafNode(otherlv_1, grammarAccess.getRequirementDecompositionAccess().getLeftRequirementCrossReference_1_0_0()); 
+	}
 
 )
 )(
@@ -604,6 +654,102 @@ ruleRequirementDecomposition returns [EObject current=null]
        			"right",
         		lv_right_3_0, 
         		"RequirementDecomposition");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)))
+;
+
+
+
+
+
+// Entry rule entryRuleVerificationDecomposition
+entryRuleVerificationDecomposition returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getVerificationDecompositionRule()); }
+	 iv_ruleVerificationDecomposition=ruleVerificationDecomposition 
+	 { $current=$iv_ruleVerificationDecomposition.current; } 
+	 EOF 
+;
+
+// Rule VerificationDecomposition
+ruleVerificationDecomposition returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getVerificationDecompositionRule());
+	        }
+        }
+	otherlv_0=RULE_ID
+	{
+		newLeafNode(otherlv_0, grammarAccess.getVerificationDecompositionAccess().getElementsVerificationActivityCrossReference_0_0()); 
+	}
+
+)
+)
+    |((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getVerificationDecompositionRule());
+	        }
+        }
+	otherlv_1=RULE_ID
+	{
+		newLeafNode(otherlv_1, grammarAccess.getVerificationDecompositionAccess().getLeftVerificationActivityCrossReference_1_0_0()); 
+	}
+
+)
+)(
+(
+(
+		lv_type_2_1=	'and' 
+    {
+        newLeafNode(lv_type_2_1, grammarAccess.getVerificationDecompositionAccess().getTypeAndKeyword_1_1_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getVerificationDecompositionRule());
+	        }
+       		setWithLastConsumed($current, "type", lv_type_2_1, null);
+	    }
+
+    |		lv_type_2_2=	'or' 
+    {
+        newLeafNode(lv_type_2_2, grammarAccess.getVerificationDecompositionAccess().getTypeOrKeyword_1_1_0_1());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getVerificationDecompositionRule());
+	        }
+       		setWithLastConsumed($current, "type", lv_type_2_2, null);
+	    }
+
+)
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getVerificationDecompositionAccess().getRightVerificationDecompositionParserRuleCall_1_2_0()); 
+	    }
+		lv_right_3_0=ruleVerificationDecomposition		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getVerificationDecompositionRule());
+	        }
+       		set(
+       			$current, 
+       			"right",
+        		lv_right_3_0, 
+        		"VerificationDecomposition");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -922,17 +1068,42 @@ ruleVerificationActivity returns [EObject current=null]
 	    }
 
 )
-))?	otherlv_12='end' 
+))?(	otherlv_12='assigned' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getVerificationActivityAccess().getEndKeyword_6());
+    	newLeafNode(otherlv_12, grammarAccess.getVerificationActivityAccess().getAssignedKeyword_6_0());
     }
-this_ID_13=RULE_ID
+	otherlv_13='to' 
+    {
+    	newLeafNode(otherlv_13, grammarAccess.getVerificationActivityAccess().getToKeyword_6_1());
+    }
+	otherlv_14=':' 
+    {
+    	newLeafNode(otherlv_14, grammarAccess.getVerificationActivityAccess().getColonKeyword_6_2());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getVerificationActivityRule());
+	        }
+        }
+	otherlv_15=RULE_ID
+	{
+		newLeafNode(otherlv_15, grammarAccess.getVerificationActivityAccess().getAssignedToStakeholderCrossReference_6_3_0()); 
+	}
+
+)
+)*)?	otherlv_16='end' 
+    {
+    	newLeafNode(otherlv_16, grammarAccess.getVerificationActivityAccess().getEndKeyword_7());
+    }
+this_ID_17=RULE_ID
     { 
-    newLeafNode(this_ID_13, grammarAccess.getVerificationActivityAccess().getIDTerminalRuleCall_7()); 
+    newLeafNode(this_ID_17, grammarAccess.getVerificationActivityAccess().getIDTerminalRuleCall_8()); 
     }
-	otherlv_14=';' 
+	otherlv_18=';' 
     {
-    	newLeafNode(otherlv_14, grammarAccess.getVerificationActivityAccess().getSemicolonKeyword_8());
+    	newLeafNode(otherlv_18, grammarAccess.getVerificationActivityAccess().getSemicolonKeyword_9());
     }
 )
 ;
@@ -1032,7 +1203,7 @@ ruleVerificationResult returns [EObject current=null]
 	}
 
 )
-)(	otherlv_5='output' 
+)*(	otherlv_5='output' 
     {
     	newLeafNode(otherlv_5, grammarAccess.getVerificationResultAccess().getOutputKeyword_5_0());
     }
@@ -1095,9 +1266,9 @@ ruleVerificationResult returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getVerificationResultAccess().getMethodVerificationMethodParserRuleCall_7_2_0()); 
+	        newCompositeNode(grammarAccess.getVerificationResultAccess().getMethodValueStringParserRuleCall_7_2_0()); 
 	    }
-		lv_method_13_0=ruleVerificationMethod		{
+		lv_method_13_0=ruleValueString		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getVerificationResultRule());
 	        }
@@ -1105,7 +1276,7 @@ ruleVerificationResult returns [EObject current=null]
        			$current, 
        			"method",
         		lv_method_13_0, 
-        		"VerificationMethod");
+        		"ValueString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1196,31 +1367,26 @@ ruleVerificationResultState returns [AntlrDatatypeRuleToken current=new AntlrDat
     }
     @after { leaveRule(); }:
 (
-	kw='state' 
+	kw='scheduled' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getVerificationResultStateAccess().getStateKeyword_0()); 
-    }
-
-	kw=':' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getVerificationResultStateAccess().getColonKeyword_1()); 
-    }
-(
-	kw='manual' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getVerificationResultStateAccess().getManualKeyword_2_0()); 
+        newLeafNode(kw, grammarAccess.getVerificationResultStateAccess().getScheduledKeyword_0()); 
     }
 
     |
-	kw='automatic' 
+	kw='passed' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getVerificationResultStateAccess().getAutomaticKeyword_2_1()); 
+        newLeafNode(kw, grammarAccess.getVerificationResultStateAccess().getPassedKeyword_1()); 
     }
-))
+
+    |
+	kw='inprogress' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getVerificationResultStateAccess().getInprogressKeyword_2()); 
+    }
+)
     ;
 
 
@@ -1242,38 +1408,26 @@ ruleVerificationResultStatus returns [AntlrDatatypeRuleToken current=new AntlrDa
     }
     @after { leaveRule(); }:
 (
-	kw='status' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getStatusKeyword_0()); 
-    }
-
-	kw=':' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getColonKeyword_1()); 
-    }
-(
 	kw='ok' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getOkKeyword_2_0()); 
+        newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getOkKeyword_0()); 
     }
 
     |
 	kw='unknown' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getUnknownKeyword_2_1()); 
+        newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getUnknownKeyword_1()); 
     }
 
     |
 	kw='tbd' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getTbdKeyword_2_2()); 
+        newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getTbdKeyword_2()); 
     }
-))
+)
     ;
 
 

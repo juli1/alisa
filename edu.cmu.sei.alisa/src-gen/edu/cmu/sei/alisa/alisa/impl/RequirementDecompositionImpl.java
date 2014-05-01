@@ -44,24 +44,14 @@ public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container i
   protected Requirement elements;
 
   /**
-   * The default value of the '{@link #getLeft() <em>Left</em>}' attribute.
+   * The cached value of the '{@link #getLeft() <em>Left</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getLeft()
    * @generated
    * @ordered
    */
-  protected static final String LEFT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getLeft() <em>Left</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLeft()
-   * @generated
-   * @ordered
-   */
-  protected String left = LEFT_EDEFAULT;
+  protected Requirement left;
 
   /**
    * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -162,7 +152,27 @@ public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getLeft()
+  public Requirement getLeft()
+  {
+    if (left != null && left.eIsProxy())
+    {
+      InternalEObject oldLeft = (InternalEObject)left;
+      left = (Requirement)eResolveProxy(oldLeft);
+      if (left != oldLeft)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.REQUIREMENT_DECOMPOSITION__LEFT, oldLeft, left));
+      }
+    }
+    return left;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Requirement basicGetLeft()
   {
     return left;
   }
@@ -172,9 +182,9 @@ public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeft(String newLeft)
+  public void setLeft(Requirement newLeft)
   {
-    String oldLeft = left;
+    Requirement oldLeft = left;
     left = newLeft;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT_DECOMPOSITION__LEFT, oldLeft, left));
@@ -281,7 +291,8 @@ public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container i
         if (resolve) return getElements();
         return basicGetElements();
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__LEFT:
-        return getLeft();
+        if (resolve) return getLeft();
+        return basicGetLeft();
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__TYPE:
         return getType();
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__RIGHT:
@@ -304,7 +315,7 @@ public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container i
         setElements((Requirement)newValue);
         return;
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__LEFT:
-        setLeft((String)newValue);
+        setLeft((Requirement)newValue);
         return;
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__TYPE:
         setType((String)newValue);
@@ -330,7 +341,7 @@ public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container i
         setElements((Requirement)null);
         return;
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__LEFT:
-        setLeft(LEFT_EDEFAULT);
+        setLeft((Requirement)null);
         return;
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__TYPE:
         setType(TYPE_EDEFAULT);
@@ -355,7 +366,7 @@ public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container i
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__ELEMENTS:
         return elements != null;
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__LEFT:
-        return LEFT_EDEFAULT == null ? left != null : !LEFT_EDEFAULT.equals(left);
+        return left != null;
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__RIGHT:
@@ -375,9 +386,7 @@ public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container i
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (left: ");
-    result.append(left);
-    result.append(", type: ");
+    result.append(" (type: ");
     result.append(type);
     result.append(')');
     return result.toString();

@@ -2,6 +2,8 @@
  */
 package edu.cmu.sei.alisa.alisa;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -55,30 +57,20 @@ public interface VerificationResult extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Referenced Verification Method</b></em>' reference.
+   * Returns the value of the '<em><b>Referenced Verification Method</b></em>' reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.VerificationActivity}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Referenced Verification Method</em>' reference isn't clear,
+   * If the meaning of the '<em>Referenced Verification Method</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Referenced Verification Method</em>' reference.
-   * @see #setReferencedVerificationMethod(VerificationActivity)
+   * @return the value of the '<em>Referenced Verification Method</em>' reference list.
    * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationResult_ReferencedVerificationMethod()
    * @model
    * @generated
    */
-  VerificationActivity getReferencedVerificationMethod();
-
-  /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.VerificationResult#getReferencedVerificationMethod <em>Referenced Verification Method</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Referenced Verification Method</em>' reference.
-   * @see #getReferencedVerificationMethod()
-   * @generated
-   */
-  void setReferencedVerificationMethod(VerificationActivity value);
+  EList<VerificationActivity> getReferencedVerificationMethod();
 
   /**
    * Returns the value of the '<em><b>Title</b></em>' attribute.

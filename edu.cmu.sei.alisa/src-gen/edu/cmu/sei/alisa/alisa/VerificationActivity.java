@@ -2,6 +2,8 @@
  */
 package edu.cmu.sei.alisa.alisa;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getMethod <em>Method</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getAssignedTo <em>Assigned To</em>}</li>
  * </ul>
  * </p>
  *
@@ -128,5 +131,21 @@ public interface VerificationActivity extends EObject
    * @generated
    */
   void setMethod(String value);
+
+  /**
+   * Returns the value of the '<em><b>Assigned To</b></em>' reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Stakeholder}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Assigned To</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Assigned To</em>' reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationActivity_AssignedTo()
+   * @model
+   * @generated
+   */
+  EList<Stakeholder> getAssignedTo();
 
 } // VerificationActivity

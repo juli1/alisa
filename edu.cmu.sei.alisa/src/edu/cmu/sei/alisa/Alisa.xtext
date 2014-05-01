@@ -31,14 +31,21 @@ Requirement:
 	('title' ':' title=ValueString)?
 	('description' ':' description=ValueString)?
 	('comment' ':' comment=ValueString)?
+	('assigned' 'to' ':' assignedTo+=([Stakeholder])*)?
 	('referenced' 'by' ':' referencedBy+=([ElementType])*)?
+	('verified' 'by' ':' verifiedBy+=(VerificationDecomposition)*)?
 	('decomposed' 'by' ':' decomposedBy+=(RequirementDecomposition)*)?
 	'end' ID ';'
 ;
 
 RequirementDecomposition:
 	elements=([Requirement])|
-	left=(ID) type=('and'|'or') right=(RequirementDecomposition)
+	left=([Requirement]) type=('and'|'or') right=(RequirementDecomposition)
+;
+
+VerificationDecomposition:
+	elements=([VerificationActivity])|
+	left=([VerificationActivity]) type=('and'|'or') right=(VerificationDecomposition)
 ;
 
 
@@ -65,6 +72,7 @@ VerificationActivity:
 	('title' ':' title=ValueString)?
 	('description' ':' description=ValueString)?
 	('method' ':' method=VerificationMethod)?
+	('assigned' 'to' ':' assignedTo+=([Stakeholder])*)?
 	'end' ID ';'
 ;
 
@@ -79,20 +87,20 @@ VerificationMethod:
  */
 
 VerificationResult:
-	'verification' 'result' name=ID 'of' referencedVerificationMethod=[VerificationActivity]
+	'verification' 'result' name=ID 'of' referencedVerificationMethod+=([VerificationActivity])*
 	('output' ':' title=ValueString)?
 	('logfile' ':' description=ValueString)?
-	('date' ':' method=VerificationMethod)?
+	('date' ':' method=ValueString)?
 	('state' ':' state=VerificationResultState)?
 	('status' ':' status=VerificationResultStatus)?
 	'end' ID ';'
 ;
 
 VerificationResultState:
-	'state' ':' ('manual' | 'automatic')
+	'scheduled' | 'passed' | 'inprogress'
 ;
 
 VerificationResultStatus:
-	'status' ':' ('ok' | 'unknown' | 'tbd')
+	'ok' | 'unknown' | 'tbd'
 ;
 

@@ -6,13 +6,18 @@ import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.VerificationResult;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,14 +61,14 @@ public class VerificationResultImpl extends MinimalEObjectImpl.Container impleme
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getReferencedVerificationMethod() <em>Referenced Verification Method</em>}' reference.
+   * The cached value of the '{@link #getReferencedVerificationMethod() <em>Referenced Verification Method</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getReferencedVerificationMethod()
    * @generated
    * @ordered
    */
-  protected VerificationActivity referencedVerificationMethod;
+  protected EList<VerificationActivity> referencedVerificationMethod;
 
   /**
    * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -214,42 +219,13 @@ public class VerificationResultImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public VerificationActivity getReferencedVerificationMethod()
+  public EList<VerificationActivity> getReferencedVerificationMethod()
   {
-    if (referencedVerificationMethod != null && referencedVerificationMethod.eIsProxy())
+    if (referencedVerificationMethod == null)
     {
-      InternalEObject oldReferencedVerificationMethod = (InternalEObject)referencedVerificationMethod;
-      referencedVerificationMethod = (VerificationActivity)eResolveProxy(oldReferencedVerificationMethod);
-      if (referencedVerificationMethod != oldReferencedVerificationMethod)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD, oldReferencedVerificationMethod, referencedVerificationMethod));
-      }
+      referencedVerificationMethod = new EObjectResolvingEList<VerificationActivity>(VerificationActivity.class, this, AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD);
     }
     return referencedVerificationMethod;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VerificationActivity basicGetReferencedVerificationMethod()
-  {
-    return referencedVerificationMethod;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setReferencedVerificationMethod(VerificationActivity newReferencedVerificationMethod)
-  {
-    VerificationActivity oldReferencedVerificationMethod = referencedVerificationMethod;
-    referencedVerificationMethod = newReferencedVerificationMethod;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD, oldReferencedVerificationMethod, referencedVerificationMethod));
   }
 
   /**
@@ -380,8 +356,7 @@ public class VerificationResultImpl extends MinimalEObjectImpl.Container impleme
       case AlisaPackage.VERIFICATION_RESULT__NAME:
         return getName();
       case AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD:
-        if (resolve) return getReferencedVerificationMethod();
-        return basicGetReferencedVerificationMethod();
+        return getReferencedVerificationMethod();
       case AlisaPackage.VERIFICATION_RESULT__TITLE:
         return getTitle();
       case AlisaPackage.VERIFICATION_RESULT__DESCRIPTION:
@@ -401,6 +376,7 @@ public class VerificationResultImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -410,7 +386,8 @@ public class VerificationResultImpl extends MinimalEObjectImpl.Container impleme
         setName((String)newValue);
         return;
       case AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD:
-        setReferencedVerificationMethod((VerificationActivity)newValue);
+        getReferencedVerificationMethod().clear();
+        getReferencedVerificationMethod().addAll((Collection<? extends VerificationActivity>)newValue);
         return;
       case AlisaPackage.VERIFICATION_RESULT__TITLE:
         setTitle((String)newValue);
@@ -445,7 +422,7 @@ public class VerificationResultImpl extends MinimalEObjectImpl.Container impleme
         setName(NAME_EDEFAULT);
         return;
       case AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD:
-        setReferencedVerificationMethod((VerificationActivity)null);
+        getReferencedVerificationMethod().clear();
         return;
       case AlisaPackage.VERIFICATION_RESULT__TITLE:
         setTitle(TITLE_EDEFAULT);
@@ -479,7 +456,7 @@ public class VerificationResultImpl extends MinimalEObjectImpl.Container impleme
       case AlisaPackage.VERIFICATION_RESULT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD:
-        return referencedVerificationMethod != null;
+        return referencedVerificationMethod != null && !referencedVerificationMethod.isEmpty();
       case AlisaPackage.VERIFICATION_RESULT__TITLE:
         return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
       case AlisaPackage.VERIFICATION_RESULT__DESCRIPTION:

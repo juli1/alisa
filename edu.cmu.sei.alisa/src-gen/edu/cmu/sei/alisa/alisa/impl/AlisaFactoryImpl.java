@@ -68,6 +68,7 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
       case AlisaPackage.STAKEHOLDER: return createStakeholder();
       case AlisaPackage.REQUIREMENT: return createRequirement();
       case AlisaPackage.REQUIREMENT_DECOMPOSITION: return createRequirementDecomposition();
+      case AlisaPackage.VERIFICATION_DECOMPOSITION: return createVerificationDecomposition();
       case AlisaPackage.ELEMENT_TYPE: return createElementType();
       case AlisaPackage.VERIFICATION_ACTIVITY: return createVerificationActivity();
       case AlisaPackage.VERIFICATION_RESULT: return createVerificationResult();
@@ -118,6 +119,17 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
   {
     RequirementDecompositionImpl requirementDecomposition = new RequirementDecompositionImpl();
     return requirementDecomposition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VerificationDecomposition createVerificationDecomposition()
+  {
+    VerificationDecompositionImpl verificationDecomposition = new VerificationDecompositionImpl();
+    return verificationDecomposition;
   }
 
   /**

@@ -186,13 +186,31 @@ public interface AlisaPackage extends EPackage
   int REQUIREMENT__COMMENT = 3;
 
   /**
+   * The feature id for the '<em><b>Assigned To</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQUIREMENT__ASSIGNED_TO = 4;
+
+  /**
    * The feature id for the '<em><b>Referenced By</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQUIREMENT__REFERENCED_BY = 4;
+  int REQUIREMENT__REFERENCED_BY = 5;
+
+  /**
+   * The feature id for the '<em><b>Verified By</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQUIREMENT__VERIFIED_BY = 6;
 
   /**
    * The feature id for the '<em><b>Decomposed By</b></em>' containment reference list.
@@ -201,7 +219,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__DECOMPOSED_BY = 5;
+  int REQUIREMENT__DECOMPOSED_BY = 7;
 
   /**
    * The number of structural features of the '<em>Requirement</em>' class.
@@ -210,7 +228,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_FEATURE_COUNT = 6;
+  int REQUIREMENT_FEATURE_COUNT = 8;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RequirementDecompositionImpl <em>Requirement Decomposition</em>}' class.
@@ -232,7 +250,7 @@ public interface AlisaPackage extends EPackage
   int REQUIREMENT_DECOMPOSITION__ELEMENTS = 0;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' attribute.
+   * The feature id for the '<em><b>Left</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -268,6 +286,61 @@ public interface AlisaPackage extends EPackage
   int REQUIREMENT_DECOMPOSITION_FEATURE_COUNT = 4;
 
   /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationDecompositionImpl <em>Verification Decomposition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.VerificationDecompositionImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationDecomposition()
+   * @generated
+   */
+  int VERIFICATION_DECOMPOSITION = 4;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFICATION_DECOMPOSITION__ELEMENTS = 0;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFICATION_DECOMPOSITION__LEFT = 1;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFICATION_DECOMPOSITION__TYPE = 2;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFICATION_DECOMPOSITION__RIGHT = 3;
+
+  /**
+   * The number of structural features of the '<em>Verification Decomposition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFICATION_DECOMPOSITION_FEATURE_COUNT = 4;
+
+  /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ElementTypeImpl <em>Element Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -275,7 +348,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getElementType()
    * @generated
    */
-  int ELEMENT_TYPE = 4;
+  int ELEMENT_TYPE = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -348,7 +421,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationActivity()
    * @generated
    */
-  int VERIFICATION_ACTIVITY = 5;
+  int VERIFICATION_ACTIVITY = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -387,13 +460,22 @@ public interface AlisaPackage extends EPackage
   int VERIFICATION_ACTIVITY__METHOD = 3;
 
   /**
+   * The feature id for the '<em><b>Assigned To</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFICATION_ACTIVITY__ASSIGNED_TO = 4;
+
+  /**
    * The number of structural features of the '<em>Verification Activity</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFICATION_ACTIVITY_FEATURE_COUNT = 4;
+  int VERIFICATION_ACTIVITY_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl <em>Verification Result</em>}' class.
@@ -403,7 +485,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationResult()
    * @generated
    */
-  int VERIFICATION_RESULT = 6;
+  int VERIFICATION_RESULT = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -415,7 +497,7 @@ public interface AlisaPackage extends EPackage
   int VERIFICATION_RESULT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Referenced Verification Method</b></em>' reference.
+   * The feature id for the '<em><b>Referenced Verification Method</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -608,6 +690,17 @@ public interface AlisaPackage extends EPackage
   EAttribute getRequirement_Comment();
 
   /**
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getAssignedTo <em>Assigned To</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Assigned To</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getAssignedTo()
+   * @see #getRequirement()
+   * @generated
+   */
+  EReference getRequirement_AssignedTo();
+
+  /**
    * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getReferencedBy <em>Referenced By</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -617,6 +710,17 @@ public interface AlisaPackage extends EPackage
    * @generated
    */
   EReference getRequirement_ReferencedBy();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getVerifiedBy <em>Verified By</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Verified By</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getVerifiedBy()
+   * @see #getRequirement()
+   * @generated
+   */
+  EReference getRequirement_VerifiedBy();
 
   /**
    * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getDecomposedBy <em>Decomposed By</em>}'.
@@ -651,15 +755,15 @@ public interface AlisaPackage extends EPackage
   EReference getRequirementDecomposition_Elements();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.RequirementDecomposition#getLeft <em>Left</em>}'.
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.RequirementDecomposition#getLeft <em>Left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Left</em>'.
+   * @return the meta object for the reference '<em>Left</em>'.
    * @see edu.cmu.sei.alisa.alisa.RequirementDecomposition#getLeft()
    * @see #getRequirementDecomposition()
    * @generated
    */
-  EAttribute getRequirementDecomposition_Left();
+  EReference getRequirementDecomposition_Left();
 
   /**
    * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.RequirementDecomposition#getType <em>Type</em>}'.
@@ -682,6 +786,60 @@ public interface AlisaPackage extends EPackage
    * @generated
    */
   EReference getRequirementDecomposition_Right();
+
+  /**
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition <em>Verification Decomposition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Verification Decomposition</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationDecomposition
+   * @generated
+   */
+  EClass getVerificationDecomposition();
+
+  /**
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Elements</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationDecomposition#getElements()
+   * @see #getVerificationDecomposition()
+   * @generated
+   */
+  EReference getVerificationDecomposition_Elements();
+
+  /**
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Left</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationDecomposition#getLeft()
+   * @see #getVerificationDecomposition()
+   * @generated
+   */
+  EReference getVerificationDecomposition_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationDecomposition#getType()
+   * @see #getVerificationDecomposition()
+   * @generated
+   */
+  EAttribute getVerificationDecomposition_Type();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationDecomposition#getRight()
+   * @see #getVerificationDecomposition()
+   * @generated
+   */
+  EReference getVerificationDecomposition_Right();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.ElementType <em>Element Type</em>}'.
@@ -814,6 +972,17 @@ public interface AlisaPackage extends EPackage
   EAttribute getVerificationActivity_Method();
 
   /**
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getAssignedTo <em>Assigned To</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Assigned To</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationActivity#getAssignedTo()
+   * @see #getVerificationActivity()
+   * @generated
+   */
+  EReference getVerificationActivity_AssignedTo();
+
+  /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.VerificationResult <em>Verification Result</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -835,10 +1004,10 @@ public interface AlisaPackage extends EPackage
   EAttribute getVerificationResult_Name();
 
   /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.VerificationResult#getReferencedVerificationMethod <em>Referenced Verification Method</em>}'.
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.VerificationResult#getReferencedVerificationMethod <em>Referenced Verification Method</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Referenced Verification Method</em>'.
+   * @return the meta object for the reference list '<em>Referenced Verification Method</em>'.
    * @see edu.cmu.sei.alisa.alisa.VerificationResult#getReferencedVerificationMethod()
    * @see #getVerificationResult()
    * @generated
@@ -1026,12 +1195,28 @@ public interface AlisaPackage extends EPackage
     EAttribute REQUIREMENT__COMMENT = eINSTANCE.getRequirement_Comment();
 
     /**
+     * The meta object literal for the '<em><b>Assigned To</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REQUIREMENT__ASSIGNED_TO = eINSTANCE.getRequirement_AssignedTo();
+
+    /**
      * The meta object literal for the '<em><b>Referenced By</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference REQUIREMENT__REFERENCED_BY = eINSTANCE.getRequirement_ReferencedBy();
+
+    /**
+     * The meta object literal for the '<em><b>Verified By</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REQUIREMENT__VERIFIED_BY = eINSTANCE.getRequirement_VerifiedBy();
 
     /**
      * The meta object literal for the '<em><b>Decomposed By</b></em>' containment reference list feature.
@@ -1060,12 +1245,12 @@ public interface AlisaPackage extends EPackage
     EReference REQUIREMENT_DECOMPOSITION__ELEMENTS = eINSTANCE.getRequirementDecomposition_Elements();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Left</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQUIREMENT_DECOMPOSITION__LEFT = eINSTANCE.getRequirementDecomposition_Left();
+    EReference REQUIREMENT_DECOMPOSITION__LEFT = eINSTANCE.getRequirementDecomposition_Left();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -1082,6 +1267,48 @@ public interface AlisaPackage extends EPackage
      * @generated
      */
     EReference REQUIREMENT_DECOMPOSITION__RIGHT = eINSTANCE.getRequirementDecomposition_Right();
+
+    /**
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationDecompositionImpl <em>Verification Decomposition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.VerificationDecompositionImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationDecomposition()
+     * @generated
+     */
+    EClass VERIFICATION_DECOMPOSITION = eINSTANCE.getVerificationDecomposition();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VERIFICATION_DECOMPOSITION__ELEMENTS = eINSTANCE.getVerificationDecomposition_Elements();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VERIFICATION_DECOMPOSITION__LEFT = eINSTANCE.getVerificationDecomposition_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VERIFICATION_DECOMPOSITION__TYPE = eINSTANCE.getVerificationDecomposition_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VERIFICATION_DECOMPOSITION__RIGHT = eINSTANCE.getVerificationDecomposition_Right();
 
     /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ElementTypeImpl <em>Element Type</em>}' class.
@@ -1184,6 +1411,14 @@ public interface AlisaPackage extends EPackage
     EAttribute VERIFICATION_ACTIVITY__METHOD = eINSTANCE.getVerificationActivity_Method();
 
     /**
+     * The meta object literal for the '<em><b>Assigned To</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VERIFICATION_ACTIVITY__ASSIGNED_TO = eINSTANCE.getVerificationActivity_AssignedTo();
+
+    /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl <em>Verification Result</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1202,7 +1437,7 @@ public interface AlisaPackage extends EPackage
     EAttribute VERIFICATION_RESULT__NAME = eINSTANCE.getVerificationResult_Name();
 
     /**
-     * The meta object literal for the '<em><b>Referenced Verification Method</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Referenced Verification Method</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

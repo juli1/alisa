@@ -9,6 +9,7 @@ import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.RequirementDecomposition;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
+import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
 import edu.cmu.sei.alisa.alisa.VerificationResult;
 import edu.cmu.sei.alisa.services.AlisaGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
@@ -64,6 +65,12 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case AlisaPackage.VERIFICATION_DECOMPOSITION:
+				if(context == grammarAccess.getVerificationDecompositionRule()) {
+					sequence_VerificationDecomposition(context, (VerificationDecomposition) semanticObject); 
+					return; 
+				}
+				else break;
 			case AlisaPackage.VERIFICATION_RESULT:
 				if(context == grammarAccess.getVerificationResultRule()) {
 					sequence_VerificationResult(context, (VerificationResult) semanticObject); 
@@ -101,7 +108,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (elements=[Requirement|ID] | (left=ID (type='and' | type='or') right=RequirementDecomposition))
+	 *     (elements=[Requirement|ID] | (left=[Requirement|ID] (type='and' | type='or') right=RequirementDecomposition))
 	 */
 	protected void sequence_RequirementDecomposition(EObject context, RequirementDecomposition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -115,7 +122,9 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
 	 *         comment=ValueString? 
+	 *         assignedTo+=[Stakeholder|ID]* 
 	 *         referencedBy+=[ElementType|ID]* 
+	 *         verifiedBy+=VerificationDecomposition* 
 	 *         decomposedBy+=RequirementDecomposition*
 	 *     )
 	 */
@@ -135,7 +144,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID title=ValueString? description=ValueString? method=VerificationMethod?)
+	 *     (name=ID title=ValueString? description=ValueString? method=VerificationMethod? assignedTo+=[Stakeholder|ID]*)
 	 */
 	protected void sequence_VerificationActivity(EObject context, VerificationActivity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -144,12 +153,21 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     (elements=[VerificationActivity|ID] | (left=[VerificationActivity|ID] (type='and' | type='or') right=VerificationDecomposition))
+	 */
+	protected void sequence_VerificationDecomposition(EObject context, VerificationDecomposition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         referencedVerificationMethod=[VerificationActivity|ID] 
+	 *         referencedVerificationMethod+=[VerificationActivity|ID]* 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
-	 *         method=VerificationMethod? 
+	 *         method=ValueString? 
 	 *         state=VerificationResultState? 
 	 *         status=VerificationResultStatus?
 	 *     )

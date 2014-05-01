@@ -6,6 +6,8 @@ import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.ElementType;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.RequirementDecomposition;
+import edu.cmu.sei.alisa.alisa.Stakeholder;
+import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
 
 import java.util.Collection;
 
@@ -35,7 +37,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getAssignedTo <em>Assigned To</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getReferencedBy <em>Referenced By</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getVerifiedBy <em>Verified By</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getDecomposedBy <em>Decomposed By</em>}</li>
  * </ul>
  * </p>
@@ -125,6 +129,16 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
   protected String comment = COMMENT_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getAssignedTo() <em>Assigned To</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAssignedTo()
+   * @generated
+   * @ordered
+   */
+  protected EList<Stakeholder> assignedTo;
+
+  /**
    * The cached value of the '{@link #getReferencedBy() <em>Referenced By</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -133,6 +147,16 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
    * @ordered
    */
   protected EList<ElementType> referencedBy;
+
+  /**
+   * The cached value of the '{@link #getVerifiedBy() <em>Verified By</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVerifiedBy()
+   * @generated
+   * @ordered
+   */
+  protected EList<VerificationDecomposition> verifiedBy;
 
   /**
    * The cached value of the '{@link #getDecomposedBy() <em>Decomposed By</em>}' containment reference list.
@@ -262,6 +286,20 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Stakeholder> getAssignedTo()
+  {
+    if (assignedTo == null)
+    {
+      assignedTo = new EObjectResolvingEList<Stakeholder>(Stakeholder.class, this, AlisaPackage.REQUIREMENT__ASSIGNED_TO);
+    }
+    return assignedTo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<ElementType> getReferencedBy()
   {
     if (referencedBy == null)
@@ -269,6 +307,20 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
       referencedBy = new EObjectResolvingEList<ElementType>(ElementType.class, this, AlisaPackage.REQUIREMENT__REFERENCED_BY);
     }
     return referencedBy;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<VerificationDecomposition> getVerifiedBy()
+  {
+    if (verifiedBy == null)
+    {
+      verifiedBy = new EObjectContainmentEList<VerificationDecomposition>(VerificationDecomposition.class, this, AlisaPackage.REQUIREMENT__VERIFIED_BY);
+    }
+    return verifiedBy;
   }
 
   /**
@@ -295,6 +347,8 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
   {
     switch (featureID)
     {
+      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
+        return ((InternalEList<?>)getVerifiedBy()).basicRemove(otherEnd, msgs);
       case AlisaPackage.REQUIREMENT__DECOMPOSED_BY:
         return ((InternalEList<?>)getDecomposedBy()).basicRemove(otherEnd, msgs);
     }
@@ -319,8 +373,12 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
         return getDescription();
       case AlisaPackage.REQUIREMENT__COMMENT:
         return getComment();
+      case AlisaPackage.REQUIREMENT__ASSIGNED_TO:
+        return getAssignedTo();
       case AlisaPackage.REQUIREMENT__REFERENCED_BY:
         return getReferencedBy();
+      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
+        return getVerifiedBy();
       case AlisaPackage.REQUIREMENT__DECOMPOSED_BY:
         return getDecomposedBy();
     }
@@ -350,9 +408,17 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
       case AlisaPackage.REQUIREMENT__COMMENT:
         setComment((String)newValue);
         return;
+      case AlisaPackage.REQUIREMENT__ASSIGNED_TO:
+        getAssignedTo().clear();
+        getAssignedTo().addAll((Collection<? extends Stakeholder>)newValue);
+        return;
       case AlisaPackage.REQUIREMENT__REFERENCED_BY:
         getReferencedBy().clear();
         getReferencedBy().addAll((Collection<? extends ElementType>)newValue);
+        return;
+      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
+        getVerifiedBy().clear();
+        getVerifiedBy().addAll((Collection<? extends VerificationDecomposition>)newValue);
         return;
       case AlisaPackage.REQUIREMENT__DECOMPOSED_BY:
         getDecomposedBy().clear();
@@ -384,8 +450,14 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
       case AlisaPackage.REQUIREMENT__COMMENT:
         setComment(COMMENT_EDEFAULT);
         return;
+      case AlisaPackage.REQUIREMENT__ASSIGNED_TO:
+        getAssignedTo().clear();
+        return;
       case AlisaPackage.REQUIREMENT__REFERENCED_BY:
         getReferencedBy().clear();
+        return;
+      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
+        getVerifiedBy().clear();
         return;
       case AlisaPackage.REQUIREMENT__DECOMPOSED_BY:
         getDecomposedBy().clear();
@@ -412,8 +484,12 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case AlisaPackage.REQUIREMENT__COMMENT:
         return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+      case AlisaPackage.REQUIREMENT__ASSIGNED_TO:
+        return assignedTo != null && !assignedTo.isEmpty();
       case AlisaPackage.REQUIREMENT__REFERENCED_BY:
         return referencedBy != null && !referencedBy.isEmpty();
+      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
+        return verifiedBy != null && !verifiedBy.isEmpty();
       case AlisaPackage.REQUIREMENT__DECOMPOSED_BY:
         return decomposedBy != null && !decomposedBy.isEmpty();
     }

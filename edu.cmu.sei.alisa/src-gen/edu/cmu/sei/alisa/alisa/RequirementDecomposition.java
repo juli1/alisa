@@ -52,30 +52,30 @@ public interface RequirementDecomposition extends EObject
   void setElements(Requirement value);
 
   /**
-   * Returns the value of the '<em><b>Left</b></em>' attribute.
+   * Returns the value of the '<em><b>Left</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Left</em>' attribute isn't clear,
+   * If the meaning of the '<em>Left</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Left</em>' attribute.
-   * @see #setLeft(String)
+   * @return the value of the '<em>Left</em>' reference.
+   * @see #setLeft(Requirement)
    * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirementDecomposition_Left()
    * @model
    * @generated
    */
-  String getLeft();
+  Requirement getLeft();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.RequirementDecomposition#getLeft <em>Left</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.RequirementDecomposition#getLeft <em>Left</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Left</em>' attribute.
+   * @param value the new value of the '<em>Left</em>' reference.
    * @see #getLeft()
    * @generated
    */
-  void setLeft(String value);
+  void setLeft(Requirement value);
 
   /**
    * Returns the value of the '<em><b>Type</b></em>' attribute.

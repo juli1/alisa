@@ -3,14 +3,21 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
+import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +30,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getMethod <em>Method</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getAssignedTo <em>Assigned To</em>}</li>
  * </ul>
  * </p>
  *
@@ -109,6 +117,16 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
    * @ordered
    */
   protected String method = METHOD_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAssignedTo() <em>Assigned To</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAssignedTo()
+   * @generated
+   * @ordered
+   */
+  protected EList<Stakeholder> assignedTo;
 
   /**
    * <!-- begin-user-doc -->
@@ -228,6 +246,20 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Stakeholder> getAssignedTo()
+  {
+    if (assignedTo == null)
+    {
+      assignedTo = new EObjectResolvingEList<Stakeholder>(Stakeholder.class, this, AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO);
+    }
+    return assignedTo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -241,6 +273,8 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
         return getDescription();
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
         return getMethod();
+      case AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO:
+        return getAssignedTo();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -250,6 +284,7 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -266,6 +301,10 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
         return;
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
         setMethod((String)newValue);
+        return;
+      case AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO:
+        getAssignedTo().clear();
+        getAssignedTo().addAll((Collection<? extends Stakeholder>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -293,6 +332,9 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
         setMethod(METHOD_EDEFAULT);
         return;
+      case AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO:
+        getAssignedTo().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -315,6 +357,8 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
         return METHOD_EDEFAULT == null ? method != null : !METHOD_EDEFAULT.equals(method);
+      case AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO:
+        return assignedTo != null && !assignedTo.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -100,6 +100,13 @@ public class AlisaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AlisaPackage.VERIFICATION_DECOMPOSITION:
+      {
+        VerificationDecomposition verificationDecomposition = (VerificationDecomposition)theEObject;
+        T result = caseVerificationDecomposition(verificationDecomposition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AlisaPackage.ELEMENT_TYPE:
       {
         ElementType elementType = (ElementType)theEObject;
@@ -185,6 +192,22 @@ public class AlisaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRequirementDecomposition(RequirementDecomposition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Verification Decomposition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Verification Decomposition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVerificationDecomposition(VerificationDecomposition object)
   {
     return null;
   }

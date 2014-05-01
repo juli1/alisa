@@ -95,6 +95,11 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
         return createRequirementDecompositionAdapter();
       }
       @Override
+      public Adapter caseVerificationDecomposition(VerificationDecomposition object)
+      {
+        return createVerificationDecompositionAdapter();
+      }
+      @Override
       public Adapter caseElementType(ElementType object)
       {
         return createElementTypeAdapter();
@@ -187,6 +192,21 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRequirementDecompositionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition <em>Verification Decomposition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.VerificationDecomposition
+   * @generated
+   */
+  public Adapter createVerificationDecompositionAdapter()
   {
     return null;
   }

@@ -59,6 +59,15 @@ public interface AlisaFactory extends EFactory
   RequirementDecomposition createRequirementDecomposition();
 
   /**
+   * Returns a new object of class '<em>Verification Decomposition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Verification Decomposition</em>'.
+   * @generated
+   */
+  VerificationDecomposition createVerificationDecomposition();
+
+  /**
    * Returns a new object of class '<em>Element Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

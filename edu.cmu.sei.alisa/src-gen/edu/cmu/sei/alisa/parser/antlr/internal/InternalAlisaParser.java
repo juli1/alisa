@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAlisaParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'stakeholder'", "'title'", "':'", "'description'", "'role'", "'end'", "';'", "'requirement'", "'comment'", "'referenced'", "'by'", "'decomposed'", "'and'", "'or'", "'system'", "'element'", "'reference'", "'element-type'", "'model-type'", "'documentDetails'", "'version'", "'verification'", "'activity'", "'method'", "'manual'", "'automatic'", "'result'", "'of'", "'output'", "'logfile'", "'date'", "'state'", "'status'", "'ok'", "'unknown'", "'tbd'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'stakeholder'", "'title'", "':'", "'description'", "'role'", "'end'", "';'", "'requirement'", "'comment'", "'assigned'", "'to'", "'referenced'", "'by'", "'verified'", "'decomposed'", "'and'", "'or'", "'system'", "'element'", "'reference'", "'element-type'", "'model-type'", "'documentDetails'", "'version'", "'verification'", "'activity'", "'method'", "'manual'", "'automatic'", "'result'", "'of'", "'output'", "'logfile'", "'date'", "'state'", "'status'", "'scheduled'", "'passed'", "'inprogress'", "'ok'", "'unknown'", "'tbd'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -37,7 +37,9 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
     public static final int T__20=20;
     public static final int EOF=-1;
     public static final int T__19=19;
+    public static final int T__51=51;
     public static final int T__16=16;
+    public static final int T__52=52;
     public static final int T__15=15;
     public static final int T__18=18;
     public static final int T__17=17;
@@ -46,19 +48,23 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
     public static final int T__14=14;
     public static final int T__13=13;
     public static final int RULE_INT=6;
+    public static final int T__50=50;
     public static final int T__42=42;
     public static final int T__43=43;
     public static final int T__40=40;
     public static final int T__41=41;
     public static final int T__46=46;
+    public static final int T__47=47;
     public static final int T__44=44;
     public static final int T__45=45;
+    public static final int T__48=48;
+    public static final int T__49=49;
     public static final int RULE_SL_COMMENT=8;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__30=30;
     public static final int T__31=31;
-    public static final int T__32=32;
     public static final int RULE_STRING=4;
+    public static final int T__32=32;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
@@ -170,7 +176,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==11||LA2_0==18||LA2_0==25||LA2_0==32) ) {
+                if ( (LA2_0==11||LA2_0==18||LA2_0==28||LA2_0==35) ) {
                     alt2=1;
                 }
 
@@ -195,14 +201,14 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
             	        alt1=2;
             	        }
             	        break;
-            	    case 32:
+            	    case 35:
             	        {
             	        int LA1_3 = input.LA(2);
 
-            	        if ( (LA1_3==37) ) {
+            	        if ( (LA1_3==40) ) {
             	            alt1=4;
             	        }
-            	        else if ( (LA1_3==33) ) {
+            	        else if ( (LA1_3==36) ) {
             	            alt1=3;
             	        }
             	        else {
@@ -213,7 +219,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
             	        }
             	        }
             	        break;
-            	    case 25:
+            	    case 28:
             	        {
             	        alt1=5;
             	        }
@@ -791,7 +797,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRequirement"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:339:1: ruleRequirement returns [EObject current=null] : (otherlv_0= 'requirement' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'title' otherlv_3= ':' ( (lv_title_4_0= ruleValueString ) ) )? (otherlv_5= 'description' otherlv_6= ':' ( (lv_description_7_0= ruleValueString ) ) )? (otherlv_8= 'comment' otherlv_9= ':' ( (lv_comment_10_0= ruleValueString ) ) )? (otherlv_11= 'referenced' otherlv_12= 'by' otherlv_13= ':' ( (otherlv_14= RULE_ID ) )* )? (otherlv_15= 'decomposed' otherlv_16= 'by' otherlv_17= ':' ( (lv_decomposedBy_18_0= ruleRequirementDecomposition ) )* )? otherlv_19= 'end' this_ID_20= RULE_ID otherlv_21= ';' ) ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:339:1: ruleRequirement returns [EObject current=null] : (otherlv_0= 'requirement' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'title' otherlv_3= ':' ( (lv_title_4_0= ruleValueString ) ) )? (otherlv_5= 'description' otherlv_6= ':' ( (lv_description_7_0= ruleValueString ) ) )? (otherlv_8= 'comment' otherlv_9= ':' ( (lv_comment_10_0= ruleValueString ) ) )? (otherlv_11= 'assigned' otherlv_12= 'to' otherlv_13= ':' ( (otherlv_14= RULE_ID ) )* )? (otherlv_15= 'referenced' otherlv_16= 'by' otherlv_17= ':' ( (otherlv_18= RULE_ID ) )* )? (otherlv_19= 'verified' otherlv_20= 'by' otherlv_21= ':' ( (lv_verifiedBy_22_0= ruleVerificationDecomposition ) )* )? (otherlv_23= 'decomposed' otherlv_24= 'by' otherlv_25= ':' ( (lv_decomposedBy_26_0= ruleRequirementDecomposition ) )* )? otherlv_27= 'end' this_ID_28= RULE_ID otherlv_29= ';' ) ;
     public final EObject ruleRequirement() throws RecognitionException {
         EObject current = null;
 
@@ -810,26 +816,35 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
         Token otherlv_15=null;
         Token otherlv_16=null;
         Token otherlv_17=null;
+        Token otherlv_18=null;
         Token otherlv_19=null;
-        Token this_ID_20=null;
+        Token otherlv_20=null;
         Token otherlv_21=null;
+        Token otherlv_23=null;
+        Token otherlv_24=null;
+        Token otherlv_25=null;
+        Token otherlv_27=null;
+        Token this_ID_28=null;
+        Token otherlv_29=null;
         AntlrDatatypeRuleToken lv_title_4_0 = null;
 
         AntlrDatatypeRuleToken lv_description_7_0 = null;
 
         AntlrDatatypeRuleToken lv_comment_10_0 = null;
 
-        EObject lv_decomposedBy_18_0 = null;
+        EObject lv_verifiedBy_22_0 = null;
+
+        EObject lv_decomposedBy_26_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:342:28: ( (otherlv_0= 'requirement' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'title' otherlv_3= ':' ( (lv_title_4_0= ruleValueString ) ) )? (otherlv_5= 'description' otherlv_6= ':' ( (lv_description_7_0= ruleValueString ) ) )? (otherlv_8= 'comment' otherlv_9= ':' ( (lv_comment_10_0= ruleValueString ) ) )? (otherlv_11= 'referenced' otherlv_12= 'by' otherlv_13= ':' ( (otherlv_14= RULE_ID ) )* )? (otherlv_15= 'decomposed' otherlv_16= 'by' otherlv_17= ':' ( (lv_decomposedBy_18_0= ruleRequirementDecomposition ) )* )? otherlv_19= 'end' this_ID_20= RULE_ID otherlv_21= ';' ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:343:1: (otherlv_0= 'requirement' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'title' otherlv_3= ':' ( (lv_title_4_0= ruleValueString ) ) )? (otherlv_5= 'description' otherlv_6= ':' ( (lv_description_7_0= ruleValueString ) ) )? (otherlv_8= 'comment' otherlv_9= ':' ( (lv_comment_10_0= ruleValueString ) ) )? (otherlv_11= 'referenced' otherlv_12= 'by' otherlv_13= ':' ( (otherlv_14= RULE_ID ) )* )? (otherlv_15= 'decomposed' otherlv_16= 'by' otherlv_17= ':' ( (lv_decomposedBy_18_0= ruleRequirementDecomposition ) )* )? otherlv_19= 'end' this_ID_20= RULE_ID otherlv_21= ';' )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:342:28: ( (otherlv_0= 'requirement' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'title' otherlv_3= ':' ( (lv_title_4_0= ruleValueString ) ) )? (otherlv_5= 'description' otherlv_6= ':' ( (lv_description_7_0= ruleValueString ) ) )? (otherlv_8= 'comment' otherlv_9= ':' ( (lv_comment_10_0= ruleValueString ) ) )? (otherlv_11= 'assigned' otherlv_12= 'to' otherlv_13= ':' ( (otherlv_14= RULE_ID ) )* )? (otherlv_15= 'referenced' otherlv_16= 'by' otherlv_17= ':' ( (otherlv_18= RULE_ID ) )* )? (otherlv_19= 'verified' otherlv_20= 'by' otherlv_21= ':' ( (lv_verifiedBy_22_0= ruleVerificationDecomposition ) )* )? (otherlv_23= 'decomposed' otherlv_24= 'by' otherlv_25= ':' ( (lv_decomposedBy_26_0= ruleRequirementDecomposition ) )* )? otherlv_27= 'end' this_ID_28= RULE_ID otherlv_29= ';' ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:343:1: (otherlv_0= 'requirement' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'title' otherlv_3= ':' ( (lv_title_4_0= ruleValueString ) ) )? (otherlv_5= 'description' otherlv_6= ':' ( (lv_description_7_0= ruleValueString ) ) )? (otherlv_8= 'comment' otherlv_9= ':' ( (lv_comment_10_0= ruleValueString ) ) )? (otherlv_11= 'assigned' otherlv_12= 'to' otherlv_13= ':' ( (otherlv_14= RULE_ID ) )* )? (otherlv_15= 'referenced' otherlv_16= 'by' otherlv_17= ':' ( (otherlv_18= RULE_ID ) )* )? (otherlv_19= 'verified' otherlv_20= 'by' otherlv_21= ':' ( (lv_verifiedBy_22_0= ruleVerificationDecomposition ) )* )? (otherlv_23= 'decomposed' otherlv_24= 'by' otherlv_25= ':' ( (lv_decomposedBy_26_0= ruleRequirementDecomposition ) )* )? otherlv_27= 'end' this_ID_28= RULE_ID otherlv_29= ';' )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:343:1: (otherlv_0= 'requirement' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'title' otherlv_3= ':' ( (lv_title_4_0= ruleValueString ) ) )? (otherlv_5= 'description' otherlv_6= ':' ( (lv_description_7_0= ruleValueString ) ) )? (otherlv_8= 'comment' otherlv_9= ':' ( (lv_comment_10_0= ruleValueString ) ) )? (otherlv_11= 'referenced' otherlv_12= 'by' otherlv_13= ':' ( (otherlv_14= RULE_ID ) )* )? (otherlv_15= 'decomposed' otherlv_16= 'by' otherlv_17= ':' ( (lv_decomposedBy_18_0= ruleRequirementDecomposition ) )* )? otherlv_19= 'end' this_ID_20= RULE_ID otherlv_21= ';' )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:343:3: otherlv_0= 'requirement' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'title' otherlv_3= ':' ( (lv_title_4_0= ruleValueString ) ) )? (otherlv_5= 'description' otherlv_6= ':' ( (lv_description_7_0= ruleValueString ) ) )? (otherlv_8= 'comment' otherlv_9= ':' ( (lv_comment_10_0= ruleValueString ) ) )? (otherlv_11= 'referenced' otherlv_12= 'by' otherlv_13= ':' ( (otherlv_14= RULE_ID ) )* )? (otherlv_15= 'decomposed' otherlv_16= 'by' otherlv_17= ':' ( (lv_decomposedBy_18_0= ruleRequirementDecomposition ) )* )? otherlv_19= 'end' this_ID_20= RULE_ID otherlv_21= ';'
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:343:1: (otherlv_0= 'requirement' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'title' otherlv_3= ':' ( (lv_title_4_0= ruleValueString ) ) )? (otherlv_5= 'description' otherlv_6= ':' ( (lv_description_7_0= ruleValueString ) ) )? (otherlv_8= 'comment' otherlv_9= ':' ( (lv_comment_10_0= ruleValueString ) ) )? (otherlv_11= 'assigned' otherlv_12= 'to' otherlv_13= ':' ( (otherlv_14= RULE_ID ) )* )? (otherlv_15= 'referenced' otherlv_16= 'by' otherlv_17= ':' ( (otherlv_18= RULE_ID ) )* )? (otherlv_19= 'verified' otherlv_20= 'by' otherlv_21= ':' ( (lv_verifiedBy_22_0= ruleVerificationDecomposition ) )* )? (otherlv_23= 'decomposed' otherlv_24= 'by' otherlv_25= ':' ( (lv_decomposedBy_26_0= ruleRequirementDecomposition ) )* )? otherlv_27= 'end' this_ID_28= RULE_ID otherlv_29= ';' )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:343:3: otherlv_0= 'requirement' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'title' otherlv_3= ':' ( (lv_title_4_0= ruleValueString ) ) )? (otherlv_5= 'description' otherlv_6= ':' ( (lv_description_7_0= ruleValueString ) ) )? (otherlv_8= 'comment' otherlv_9= ':' ( (lv_comment_10_0= ruleValueString ) ) )? (otherlv_11= 'assigned' otherlv_12= 'to' otherlv_13= ':' ( (otherlv_14= RULE_ID ) )* )? (otherlv_15= 'referenced' otherlv_16= 'by' otherlv_17= ':' ( (otherlv_18= RULE_ID ) )* )? (otherlv_19= 'verified' otherlv_20= 'by' otherlv_21= ':' ( (lv_verifiedBy_22_0= ruleVerificationDecomposition ) )* )? (otherlv_23= 'decomposed' otherlv_24= 'by' otherlv_25= ':' ( (lv_decomposedBy_26_0= ruleRequirementDecomposition ) )* )? otherlv_27= 'end' this_ID_28= RULE_ID otherlv_29= ';'
             {
             otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleRequirement672); 
 
@@ -1029,7 +1044,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:443:4: (otherlv_11= 'referenced' otherlv_12= 'by' otherlv_13= ':' ( (otherlv_14= RULE_ID ) )* )?
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:443:4: (otherlv_11= 'assigned' otherlv_12= 'to' otherlv_13= ':' ( (otherlv_14= RULE_ID ) )* )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1038,15 +1053,15 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
             }
             switch (alt10) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:443:6: otherlv_11= 'referenced' otherlv_12= 'by' otherlv_13= ':' ( (otherlv_14= RULE_ID ) )*
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:443:6: otherlv_11= 'assigned' otherlv_12= 'to' otherlv_13= ':' ( (otherlv_14= RULE_ID ) )*
                     {
                     otherlv_11=(Token)match(input,20,FOLLOW_20_in_ruleRequirement851); 
 
-                        	newLeafNode(otherlv_11, grammarAccess.getRequirementAccess().getReferencedKeyword_5_0());
+                        	newLeafNode(otherlv_11, grammarAccess.getRequirementAccess().getAssignedKeyword_5_0());
                         
                     otherlv_12=(Token)match(input,21,FOLLOW_21_in_ruleRequirement863); 
 
-                        	newLeafNode(otherlv_12, grammarAccess.getRequirementAccess().getByKeyword_5_1());
+                        	newLeafNode(otherlv_12, grammarAccess.getRequirementAccess().getToKeyword_5_1());
                         
                     otherlv_13=(Token)match(input,13,FOLLOW_13_in_ruleRequirement875); 
 
@@ -1077,7 +1092,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
                     	            
                     	    otherlv_14=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRequirement895); 
 
-                    	    		newLeafNode(otherlv_14, grammarAccess.getRequirementAccess().getReferencedByElementTypeCrossReference_5_3_0()); 
+                    	    		newLeafNode(otherlv_14, grammarAccess.getRequirementAccess().getAssignedToStakeholderCrossReference_5_3_0()); 
                     	    	
 
                     	    }
@@ -1097,7 +1112,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:468:5: (otherlv_15= 'decomposed' otherlv_16= 'by' otherlv_17= ':' ( (lv_decomposedBy_18_0= ruleRequirementDecomposition ) )* )?
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:468:5: (otherlv_15= 'referenced' otherlv_16= 'by' otherlv_17= ':' ( (otherlv_18= RULE_ID ) )* )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1106,13 +1121,13 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
             }
             switch (alt12) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:468:7: otherlv_15= 'decomposed' otherlv_16= 'by' otherlv_17= ':' ( (lv_decomposedBy_18_0= ruleRequirementDecomposition ) )*
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:468:7: otherlv_15= 'referenced' otherlv_16= 'by' otherlv_17= ':' ( (otherlv_18= RULE_ID ) )*
                     {
                     otherlv_15=(Token)match(input,22,FOLLOW_22_in_ruleRequirement911); 
 
-                        	newLeafNode(otherlv_15, grammarAccess.getRequirementAccess().getDecomposedKeyword_6_0());
+                        	newLeafNode(otherlv_15, grammarAccess.getRequirementAccess().getReferencedKeyword_6_0());
                         
-                    otherlv_16=(Token)match(input,21,FOLLOW_21_in_ruleRequirement923); 
+                    otherlv_16=(Token)match(input,23,FOLLOW_23_in_ruleRequirement923); 
 
                         	newLeafNode(otherlv_16, grammarAccess.getRequirementAccess().getByKeyword_6_1());
                         
@@ -1120,7 +1135,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
                         	newLeafNode(otherlv_17, grammarAccess.getRequirementAccess().getColonKeyword_6_2());
                         
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:480:1: ( (lv_decomposedBy_18_0= ruleRequirementDecomposition ) )*
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:480:1: ( (otherlv_18= RULE_ID ) )*
                     loop11:
                     do {
                         int alt11=2;
@@ -1133,30 +1148,20 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:481:1: (lv_decomposedBy_18_0= ruleRequirementDecomposition )
+                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:481:1: (otherlv_18= RULE_ID )
                     	    {
-                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:481:1: (lv_decomposedBy_18_0= ruleRequirementDecomposition )
-                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:482:3: lv_decomposedBy_18_0= ruleRequirementDecomposition
+                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:481:1: (otherlv_18= RULE_ID )
+                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:482:3: otherlv_18= RULE_ID
                     	    {
-                    	     
-                    	    	        newCompositeNode(grammarAccess.getRequirementAccess().getDecomposedByRequirementDecompositionParserRuleCall_6_3_0()); 
-                    	    	    
-                    	    pushFollow(FOLLOW_ruleRequirementDecomposition_in_ruleRequirement956);
-                    	    lv_decomposedBy_18_0=ruleRequirementDecomposition();
 
-                    	    state._fsp--;
-
-
-                    	    	        if (current==null) {
-                    	    	            current = createModelElementForParent(grammarAccess.getRequirementRule());
+                    	    			if (current==null) {
+                    	    	            current = createModelElement(grammarAccess.getRequirementRule());
                     	    	        }
-                    	           		add(
-                    	           			current, 
-                    	           			"decomposedBy",
-                    	            		lv_decomposedBy_18_0, 
-                    	            		"RequirementDecomposition");
-                    	    	        afterParserOrEnumRuleCall();
-                    	    	    
+                    	            
+                    	    otherlv_18=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRequirement955); 
+
+                    	    		newLeafNode(otherlv_18, grammarAccess.getRequirementAccess().getReferencedByElementTypeCrossReference_6_3_0()); 
+                    	    	
 
                     	    }
 
@@ -1175,17 +1180,173 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_19=(Token)match(input,16,FOLLOW_16_in_ruleRequirement971); 
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:493:5: (otherlv_19= 'verified' otherlv_20= 'by' otherlv_21= ':' ( (lv_verifiedBy_22_0= ruleVerificationDecomposition ) )* )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-                	newLeafNode(otherlv_19, grammarAccess.getRequirementAccess().getEndKeyword_7());
+            if ( (LA14_0==24) ) {
+                alt14=1;
+            }
+            switch (alt14) {
+                case 1 :
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:493:7: otherlv_19= 'verified' otherlv_20= 'by' otherlv_21= ':' ( (lv_verifiedBy_22_0= ruleVerificationDecomposition ) )*
+                    {
+                    otherlv_19=(Token)match(input,24,FOLLOW_24_in_ruleRequirement971); 
+
+                        	newLeafNode(otherlv_19, grammarAccess.getRequirementAccess().getVerifiedKeyword_7_0());
+                        
+                    otherlv_20=(Token)match(input,23,FOLLOW_23_in_ruleRequirement983); 
+
+                        	newLeafNode(otherlv_20, grammarAccess.getRequirementAccess().getByKeyword_7_1());
+                        
+                    otherlv_21=(Token)match(input,13,FOLLOW_13_in_ruleRequirement995); 
+
+                        	newLeafNode(otherlv_21, grammarAccess.getRequirementAccess().getColonKeyword_7_2());
+                        
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:505:1: ( (lv_verifiedBy_22_0= ruleVerificationDecomposition ) )*
+                    loop13:
+                    do {
+                        int alt13=2;
+                        int LA13_0 = input.LA(1);
+
+                        if ( (LA13_0==RULE_ID) ) {
+                            alt13=1;
+                        }
+
+
+                        switch (alt13) {
+                    	case 1 :
+                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:506:1: (lv_verifiedBy_22_0= ruleVerificationDecomposition )
+                    	    {
+                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:506:1: (lv_verifiedBy_22_0= ruleVerificationDecomposition )
+                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:507:3: lv_verifiedBy_22_0= ruleVerificationDecomposition
+                    	    {
+                    	     
+                    	    	        newCompositeNode(grammarAccess.getRequirementAccess().getVerifiedByVerificationDecompositionParserRuleCall_7_3_0()); 
+                    	    	    
+                    	    pushFollow(FOLLOW_ruleVerificationDecomposition_in_ruleRequirement1016);
+                    	    lv_verifiedBy_22_0=ruleVerificationDecomposition();
+
+                    	    state._fsp--;
+
+
+                    	    	        if (current==null) {
+                    	    	            current = createModelElementForParent(grammarAccess.getRequirementRule());
+                    	    	        }
+                    	           		add(
+                    	           			current, 
+                    	           			"verifiedBy",
+                    	            		lv_verifiedBy_22_0, 
+                    	            		"VerificationDecomposition");
+                    	    	        afterParserOrEnumRuleCall();
+                    	    	    
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop13;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+
+            }
+
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:523:5: (otherlv_23= 'decomposed' otherlv_24= 'by' otherlv_25= ':' ( (lv_decomposedBy_26_0= ruleRequirementDecomposition ) )* )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
+
+            if ( (LA16_0==25) ) {
+                alt16=1;
+            }
+            switch (alt16) {
+                case 1 :
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:523:7: otherlv_23= 'decomposed' otherlv_24= 'by' otherlv_25= ':' ( (lv_decomposedBy_26_0= ruleRequirementDecomposition ) )*
+                    {
+                    otherlv_23=(Token)match(input,25,FOLLOW_25_in_ruleRequirement1032); 
+
+                        	newLeafNode(otherlv_23, grammarAccess.getRequirementAccess().getDecomposedKeyword_8_0());
+                        
+                    otherlv_24=(Token)match(input,23,FOLLOW_23_in_ruleRequirement1044); 
+
+                        	newLeafNode(otherlv_24, grammarAccess.getRequirementAccess().getByKeyword_8_1());
+                        
+                    otherlv_25=(Token)match(input,13,FOLLOW_13_in_ruleRequirement1056); 
+
+                        	newLeafNode(otherlv_25, grammarAccess.getRequirementAccess().getColonKeyword_8_2());
+                        
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:535:1: ( (lv_decomposedBy_26_0= ruleRequirementDecomposition ) )*
+                    loop15:
+                    do {
+                        int alt15=2;
+                        int LA15_0 = input.LA(1);
+
+                        if ( (LA15_0==RULE_ID) ) {
+                            alt15=1;
+                        }
+
+
+                        switch (alt15) {
+                    	case 1 :
+                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:536:1: (lv_decomposedBy_26_0= ruleRequirementDecomposition )
+                    	    {
+                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:536:1: (lv_decomposedBy_26_0= ruleRequirementDecomposition )
+                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:537:3: lv_decomposedBy_26_0= ruleRequirementDecomposition
+                    	    {
+                    	     
+                    	    	        newCompositeNode(grammarAccess.getRequirementAccess().getDecomposedByRequirementDecompositionParserRuleCall_8_3_0()); 
+                    	    	    
+                    	    pushFollow(FOLLOW_ruleRequirementDecomposition_in_ruleRequirement1077);
+                    	    lv_decomposedBy_26_0=ruleRequirementDecomposition();
+
+                    	    state._fsp--;
+
+
+                    	    	        if (current==null) {
+                    	    	            current = createModelElementForParent(grammarAccess.getRequirementRule());
+                    	    	        }
+                    	           		add(
+                    	           			current, 
+                    	           			"decomposedBy",
+                    	            		lv_decomposedBy_26_0, 
+                    	            		"RequirementDecomposition");
+                    	    	        afterParserOrEnumRuleCall();
+                    	    	    
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop15;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_27=(Token)match(input,16,FOLLOW_16_in_ruleRequirement1092); 
+
+                	newLeafNode(otherlv_27, grammarAccess.getRequirementAccess().getEndKeyword_9());
                 
-            this_ID_20=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRequirement982); 
+            this_ID_28=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRequirement1103); 
              
-                newLeafNode(this_ID_20, grammarAccess.getRequirementAccess().getIDTerminalRuleCall_8()); 
+                newLeafNode(this_ID_28, grammarAccess.getRequirementAccess().getIDTerminalRuleCall_10()); 
                 
-            otherlv_21=(Token)match(input,17,FOLLOW_17_in_ruleRequirement993); 
+            otherlv_29=(Token)match(input,17,FOLLOW_17_in_ruleRequirement1114); 
 
-                	newLeafNode(otherlv_21, grammarAccess.getRequirementAccess().getSemicolonKeyword_9());
+                	newLeafNode(otherlv_29, grammarAccess.getRequirementAccess().getSemicolonKeyword_11());
                 
 
             }
@@ -1208,7 +1369,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRequirementDecomposition"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:518:1: entryRuleRequirementDecomposition returns [EObject current=null] : iv_ruleRequirementDecomposition= ruleRequirementDecomposition EOF ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:573:1: entryRuleRequirementDecomposition returns [EObject current=null] : iv_ruleRequirementDecomposition= ruleRequirementDecomposition EOF ;
     public final EObject entryRuleRequirementDecomposition() throws RecognitionException {
         EObject current = null;
 
@@ -1216,17 +1377,17 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:519:2: (iv_ruleRequirementDecomposition= ruleRequirementDecomposition EOF )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:520:2: iv_ruleRequirementDecomposition= ruleRequirementDecomposition EOF
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:574:2: (iv_ruleRequirementDecomposition= ruleRequirementDecomposition EOF )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:575:2: iv_ruleRequirementDecomposition= ruleRequirementDecomposition EOF
             {
              newCompositeNode(grammarAccess.getRequirementDecompositionRule()); 
-            pushFollow(FOLLOW_ruleRequirementDecomposition_in_entryRuleRequirementDecomposition1029);
+            pushFollow(FOLLOW_ruleRequirementDecomposition_in_entryRuleRequirementDecomposition1150);
             iv_ruleRequirementDecomposition=ruleRequirementDecomposition();
 
             state._fsp--;
 
              current =iv_ruleRequirementDecomposition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRequirementDecomposition1039); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRequirementDecomposition1160); 
 
             }
 
@@ -1244,12 +1405,12 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRequirementDecomposition"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:527:1: ruleRequirementDecomposition returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) | ( ( (lv_left_1_0= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleRequirementDecomposition ) ) ) ) ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:582:1: ruleRequirementDecomposition returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) | ( ( (otherlv_1= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleRequirementDecomposition ) ) ) ) ;
     public final EObject ruleRequirementDecomposition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_left_1_0=null;
+        Token otherlv_1=null;
         Token lv_type_2_1=null;
         Token lv_type_2_2=null;
         EObject lv_right_3_0 = null;
@@ -1258,51 +1419,51 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:530:28: ( ( ( (otherlv_0= RULE_ID ) ) | ( ( (lv_left_1_0= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleRequirementDecomposition ) ) ) ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:531:1: ( ( (otherlv_0= RULE_ID ) ) | ( ( (lv_left_1_0= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleRequirementDecomposition ) ) ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:585:28: ( ( ( (otherlv_0= RULE_ID ) ) | ( ( (otherlv_1= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleRequirementDecomposition ) ) ) ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:586:1: ( ( (otherlv_0= RULE_ID ) ) | ( ( (otherlv_1= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleRequirementDecomposition ) ) ) )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:531:1: ( ( (otherlv_0= RULE_ID ) ) | ( ( (lv_left_1_0= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleRequirementDecomposition ) ) ) )
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:586:1: ( ( (otherlv_0= RULE_ID ) ) | ( ( (otherlv_1= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleRequirementDecomposition ) ) ) )
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA14_0==RULE_ID) ) {
-                int LA14_1 = input.LA(2);
+            if ( (LA18_0==RULE_ID) ) {
+                int LA18_1 = input.LA(2);
 
-                if ( (LA14_1==EOF||LA14_1==RULE_ID||LA14_1==16) ) {
-                    alt14=1;
+                if ( (LA18_1==EOF||LA18_1==RULE_ID||LA18_1==16) ) {
+                    alt18=1;
                 }
-                else if ( ((LA14_1>=23 && LA14_1<=24)) ) {
-                    alt14=2;
+                else if ( ((LA18_1>=26 && LA18_1<=27)) ) {
+                    alt18=2;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 14, 1, input);
+                        new NoViableAltException("", 18, 1, input);
 
                     throw nvae;
                 }
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
+                    new NoViableAltException("", 18, 0, input);
 
                 throw nvae;
             }
-            switch (alt14) {
+            switch (alt18) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:531:2: ( (otherlv_0= RULE_ID ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:586:2: ( (otherlv_0= RULE_ID ) )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:531:2: ( (otherlv_0= RULE_ID ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:532:1: (otherlv_0= RULE_ID )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:586:2: ( (otherlv_0= RULE_ID ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:587:1: (otherlv_0= RULE_ID )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:532:1: (otherlv_0= RULE_ID )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:533:3: otherlv_0= RULE_ID
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:587:1: (otherlv_0= RULE_ID )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:588:3: otherlv_0= RULE_ID
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getRequirementDecompositionRule());
                     	        }
                             
-                    otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRequirementDecomposition1084); 
+                    otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRequirementDecomposition1205); 
 
                     		newLeafNode(otherlv_0, grammarAccess.getRequirementDecompositionAccess().getElementsRequirementCrossReference_0_0()); 
                     	
@@ -1316,64 +1477,59 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:545:6: ( ( (lv_left_1_0= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleRequirementDecomposition ) ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:600:6: ( ( (otherlv_1= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleRequirementDecomposition ) ) )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:545:6: ( ( (lv_left_1_0= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleRequirementDecomposition ) ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:545:7: ( (lv_left_1_0= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleRequirementDecomposition ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:600:6: ( ( (otherlv_1= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleRequirementDecomposition ) ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:600:7: ( (otherlv_1= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleRequirementDecomposition ) )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:545:7: ( (lv_left_1_0= RULE_ID ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:546:1: (lv_left_1_0= RULE_ID )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:600:7: ( (otherlv_1= RULE_ID ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:601:1: (otherlv_1= RULE_ID )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:546:1: (lv_left_1_0= RULE_ID )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:547:3: lv_left_1_0= RULE_ID
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:601:1: (otherlv_1= RULE_ID )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:602:3: otherlv_1= RULE_ID
                     {
-                    lv_left_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRequirementDecomposition1108); 
 
-                    			newLeafNode(lv_left_1_0, grammarAccess.getRequirementDecompositionAccess().getLeftIDTerminalRuleCall_1_0_0()); 
-                    		
-
-                    	        if (current==null) {
+                    			if (current==null) {
                     	            current = createModelElement(grammarAccess.getRequirementDecompositionRule());
                     	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"left",
-                            		lv_left_1_0, 
-                            		"ID");
-                    	    
+                            
+                    otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRequirementDecomposition1232); 
+
+                    		newLeafNode(otherlv_1, grammarAccess.getRequirementDecompositionAccess().getLeftRequirementCrossReference_1_0_0()); 
+                    	
 
                     }
 
 
                     }
 
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:563:2: ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:564:1: ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:613:2: ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:614:1: ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:564:1: ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:565:1: (lv_type_2_1= 'and' | lv_type_2_2= 'or' )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:614:1: ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:615:1: (lv_type_2_1= 'and' | lv_type_2_2= 'or' )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:565:1: (lv_type_2_1= 'and' | lv_type_2_2= 'or' )
-                    int alt13=2;
-                    int LA13_0 = input.LA(1);
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:615:1: (lv_type_2_1= 'and' | lv_type_2_2= 'or' )
+                    int alt17=2;
+                    int LA17_0 = input.LA(1);
 
-                    if ( (LA13_0==23) ) {
-                        alt13=1;
+                    if ( (LA17_0==26) ) {
+                        alt17=1;
                     }
-                    else if ( (LA13_0==24) ) {
-                        alt13=2;
+                    else if ( (LA17_0==27) ) {
+                        alt17=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 13, 0, input);
+                            new NoViableAltException("", 17, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt13) {
+                    switch (alt17) {
                         case 1 :
-                            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:566:3: lv_type_2_1= 'and'
+                            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:616:3: lv_type_2_1= 'and'
                             {
-                            lv_type_2_1=(Token)match(input,23,FOLLOW_23_in_ruleRequirementDecomposition1133); 
+                            lv_type_2_1=(Token)match(input,26,FOLLOW_26_in_ruleRequirementDecomposition1252); 
 
                                     newLeafNode(lv_type_2_1, grammarAccess.getRequirementDecompositionAccess().getTypeAndKeyword_1_1_0_0());
                                 
@@ -1387,9 +1543,9 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:578:8: lv_type_2_2= 'or'
+                            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:628:8: lv_type_2_2= 'or'
                             {
-                            lv_type_2_2=(Token)match(input,24,FOLLOW_24_in_ruleRequirementDecomposition1162); 
+                            lv_type_2_2=(Token)match(input,27,FOLLOW_27_in_ruleRequirementDecomposition1281); 
 
                                     newLeafNode(lv_type_2_2, grammarAccess.getRequirementDecompositionAccess().getTypeOrKeyword_1_1_0_1());
                                 
@@ -1411,16 +1567,16 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:593:2: ( (lv_right_3_0= ruleRequirementDecomposition ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:594:1: (lv_right_3_0= ruleRequirementDecomposition )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:643:2: ( (lv_right_3_0= ruleRequirementDecomposition ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:644:1: (lv_right_3_0= ruleRequirementDecomposition )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:594:1: (lv_right_3_0= ruleRequirementDecomposition )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:595:3: lv_right_3_0= ruleRequirementDecomposition
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:644:1: (lv_right_3_0= ruleRequirementDecomposition )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:645:3: lv_right_3_0= ruleRequirementDecomposition
                     {
                      
                     	        newCompositeNode(grammarAccess.getRequirementDecompositionAccess().getRightRequirementDecompositionParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleRequirementDecomposition_in_ruleRequirementDecomposition1199);
+                    pushFollow(FOLLOW_ruleRequirementDecomposition_in_ruleRequirementDecomposition1318);
                     lv_right_3_0=ruleRequirementDecomposition();
 
                     state._fsp--;
@@ -1468,8 +1624,264 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleRequirementDecomposition"
 
 
+    // $ANTLR start "entryRuleVerificationDecomposition"
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:669:1: entryRuleVerificationDecomposition returns [EObject current=null] : iv_ruleVerificationDecomposition= ruleVerificationDecomposition EOF ;
+    public final EObject entryRuleVerificationDecomposition() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleVerificationDecomposition = null;
+
+
+        try {
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:670:2: (iv_ruleVerificationDecomposition= ruleVerificationDecomposition EOF )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:671:2: iv_ruleVerificationDecomposition= ruleVerificationDecomposition EOF
+            {
+             newCompositeNode(grammarAccess.getVerificationDecompositionRule()); 
+            pushFollow(FOLLOW_ruleVerificationDecomposition_in_entryRuleVerificationDecomposition1355);
+            iv_ruleVerificationDecomposition=ruleVerificationDecomposition();
+
+            state._fsp--;
+
+             current =iv_ruleVerificationDecomposition; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVerificationDecomposition1365); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleVerificationDecomposition"
+
+
+    // $ANTLR start "ruleVerificationDecomposition"
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:678:1: ruleVerificationDecomposition returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) | ( ( (otherlv_1= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleVerificationDecomposition ) ) ) ) ;
+    public final EObject ruleVerificationDecomposition() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token lv_type_2_1=null;
+        Token lv_type_2_2=null;
+        EObject lv_right_3_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:681:28: ( ( ( (otherlv_0= RULE_ID ) ) | ( ( (otherlv_1= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleVerificationDecomposition ) ) ) ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:682:1: ( ( (otherlv_0= RULE_ID ) ) | ( ( (otherlv_1= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleVerificationDecomposition ) ) ) )
+            {
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:682:1: ( ( (otherlv_0= RULE_ID ) ) | ( ( (otherlv_1= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleVerificationDecomposition ) ) ) )
+            int alt20=2;
+            int LA20_0 = input.LA(1);
+
+            if ( (LA20_0==RULE_ID) ) {
+                int LA20_1 = input.LA(2);
+
+                if ( ((LA20_1>=26 && LA20_1<=27)) ) {
+                    alt20=2;
+                }
+                else if ( (LA20_1==EOF||LA20_1==RULE_ID||LA20_1==16||LA20_1==25) ) {
+                    alt20=1;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 20, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 20, 0, input);
+
+                throw nvae;
+            }
+            switch (alt20) {
+                case 1 :
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:682:2: ( (otherlv_0= RULE_ID ) )
+                    {
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:682:2: ( (otherlv_0= RULE_ID ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:683:1: (otherlv_0= RULE_ID )
+                    {
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:683:1: (otherlv_0= RULE_ID )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:684:3: otherlv_0= RULE_ID
+                    {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getVerificationDecompositionRule());
+                    	        }
+                            
+                    otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVerificationDecomposition1410); 
+
+                    		newLeafNode(otherlv_0, grammarAccess.getVerificationDecompositionAccess().getElementsVerificationActivityCrossReference_0_0()); 
+                    	
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:696:6: ( ( (otherlv_1= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleVerificationDecomposition ) ) )
+                    {
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:696:6: ( ( (otherlv_1= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleVerificationDecomposition ) ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:696:7: ( (otherlv_1= RULE_ID ) ) ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) ) ( (lv_right_3_0= ruleVerificationDecomposition ) )
+                    {
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:696:7: ( (otherlv_1= RULE_ID ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:697:1: (otherlv_1= RULE_ID )
+                    {
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:697:1: (otherlv_1= RULE_ID )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:698:3: otherlv_1= RULE_ID
+                    {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getVerificationDecompositionRule());
+                    	        }
+                            
+                    otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVerificationDecomposition1437); 
+
+                    		newLeafNode(otherlv_1, grammarAccess.getVerificationDecompositionAccess().getLeftVerificationActivityCrossReference_1_0_0()); 
+                    	
+
+                    }
+
+
+                    }
+
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:709:2: ( ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:710:1: ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) )
+                    {
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:710:1: ( (lv_type_2_1= 'and' | lv_type_2_2= 'or' ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:711:1: (lv_type_2_1= 'and' | lv_type_2_2= 'or' )
+                    {
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:711:1: (lv_type_2_1= 'and' | lv_type_2_2= 'or' )
+                    int alt19=2;
+                    int LA19_0 = input.LA(1);
+
+                    if ( (LA19_0==26) ) {
+                        alt19=1;
+                    }
+                    else if ( (LA19_0==27) ) {
+                        alt19=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 19, 0, input);
+
+                        throw nvae;
+                    }
+                    switch (alt19) {
+                        case 1 :
+                            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:712:3: lv_type_2_1= 'and'
+                            {
+                            lv_type_2_1=(Token)match(input,26,FOLLOW_26_in_ruleVerificationDecomposition1457); 
+
+                                    newLeafNode(lv_type_2_1, grammarAccess.getVerificationDecompositionAccess().getTypeAndKeyword_1_1_0_0());
+                                
+
+                            	        if (current==null) {
+                            	            current = createModelElement(grammarAccess.getVerificationDecompositionRule());
+                            	        }
+                                   		setWithLastConsumed(current, "type", lv_type_2_1, null);
+                            	    
+
+                            }
+                            break;
+                        case 2 :
+                            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:724:8: lv_type_2_2= 'or'
+                            {
+                            lv_type_2_2=(Token)match(input,27,FOLLOW_27_in_ruleVerificationDecomposition1486); 
+
+                                    newLeafNode(lv_type_2_2, grammarAccess.getVerificationDecompositionAccess().getTypeOrKeyword_1_1_0_1());
+                                
+
+                            	        if (current==null) {
+                            	            current = createModelElement(grammarAccess.getVerificationDecompositionRule());
+                            	        }
+                                   		setWithLastConsumed(current, "type", lv_type_2_2, null);
+                            	    
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+
+
+                    }
+
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:739:2: ( (lv_right_3_0= ruleVerificationDecomposition ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:740:1: (lv_right_3_0= ruleVerificationDecomposition )
+                    {
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:740:1: (lv_right_3_0= ruleVerificationDecomposition )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:741:3: lv_right_3_0= ruleVerificationDecomposition
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getVerificationDecompositionAccess().getRightVerificationDecompositionParserRuleCall_1_2_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleVerificationDecomposition_in_ruleVerificationDecomposition1523);
+                    lv_right_3_0=ruleVerificationDecomposition();
+
+                    state._fsp--;
+
+
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getVerificationDecompositionRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"right",
+                            		lv_right_3_0, 
+                            		"VerificationDecomposition");
+                    	        afterParserOrEnumRuleCall();
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleVerificationDecomposition"
+
+
     // $ANTLR start "entryRuleElementType"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:619:1: entryRuleElementType returns [EObject current=null] : iv_ruleElementType= ruleElementType EOF ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:765:1: entryRuleElementType returns [EObject current=null] : iv_ruleElementType= ruleElementType EOF ;
     public final EObject entryRuleElementType() throws RecognitionException {
         EObject current = null;
 
@@ -1477,17 +1889,17 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:620:2: (iv_ruleElementType= ruleElementType EOF )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:621:2: iv_ruleElementType= ruleElementType EOF
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:766:2: (iv_ruleElementType= ruleElementType EOF )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:767:2: iv_ruleElementType= ruleElementType EOF
             {
              newCompositeNode(grammarAccess.getElementTypeRule()); 
-            pushFollow(FOLLOW_ruleElementType_in_entryRuleElementType1236);
+            pushFollow(FOLLOW_ruleElementType_in_entryRuleElementType1560);
             iv_ruleElementType=ruleElementType();
 
             state._fsp--;
 
              current =iv_ruleElementType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleElementType1246); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleElementType1570); 
 
             }
 
@@ -1505,7 +1917,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleElementType"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:628:1: ruleElementType returns [EObject current=null] : (otherlv_0= 'system' otherlv_1= 'element' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'reference' otherlv_4= ':' ( (lv_reference_5_0= ruleValueString ) ) )? (otherlv_6= 'element-type' otherlv_7= ':' ( (lv_elementType_8_0= ruleValueString ) ) )? (otherlv_9= 'model-type' otherlv_10= ':' ( (lv_modelType_11_0= ruleValueString ) ) )? (otherlv_12= 'documentDetails' otherlv_13= ':' ( (lv_details_14_0= ruleValueString ) ) )? (otherlv_15= 'version' otherlv_16= ':' ( (lv_version_17_0= ruleValueString ) )* )? otherlv_18= 'end' this_ID_19= RULE_ID otherlv_20= ';' ) ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:774:1: ruleElementType returns [EObject current=null] : (otherlv_0= 'system' otherlv_1= 'element' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'reference' otherlv_4= ':' ( (lv_reference_5_0= ruleValueString ) ) )? (otherlv_6= 'element-type' otherlv_7= ':' ( (lv_elementType_8_0= ruleValueString ) ) )? (otherlv_9= 'model-type' otherlv_10= ':' ( (lv_modelType_11_0= ruleValueString ) ) )? (otherlv_12= 'documentDetails' otherlv_13= ':' ( (lv_details_14_0= ruleValueString ) ) )? (otherlv_15= 'version' otherlv_16= ':' ( (lv_version_17_0= ruleValueString ) )* )? otherlv_18= 'end' this_ID_19= RULE_ID otherlv_20= ';' ) ;
     public final EObject ruleElementType() throws RecognitionException {
         EObject current = null;
 
@@ -1539,27 +1951,27 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:631:28: ( (otherlv_0= 'system' otherlv_1= 'element' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'reference' otherlv_4= ':' ( (lv_reference_5_0= ruleValueString ) ) )? (otherlv_6= 'element-type' otherlv_7= ':' ( (lv_elementType_8_0= ruleValueString ) ) )? (otherlv_9= 'model-type' otherlv_10= ':' ( (lv_modelType_11_0= ruleValueString ) ) )? (otherlv_12= 'documentDetails' otherlv_13= ':' ( (lv_details_14_0= ruleValueString ) ) )? (otherlv_15= 'version' otherlv_16= ':' ( (lv_version_17_0= ruleValueString ) )* )? otherlv_18= 'end' this_ID_19= RULE_ID otherlv_20= ';' ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:632:1: (otherlv_0= 'system' otherlv_1= 'element' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'reference' otherlv_4= ':' ( (lv_reference_5_0= ruleValueString ) ) )? (otherlv_6= 'element-type' otherlv_7= ':' ( (lv_elementType_8_0= ruleValueString ) ) )? (otherlv_9= 'model-type' otherlv_10= ':' ( (lv_modelType_11_0= ruleValueString ) ) )? (otherlv_12= 'documentDetails' otherlv_13= ':' ( (lv_details_14_0= ruleValueString ) ) )? (otherlv_15= 'version' otherlv_16= ':' ( (lv_version_17_0= ruleValueString ) )* )? otherlv_18= 'end' this_ID_19= RULE_ID otherlv_20= ';' )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:777:28: ( (otherlv_0= 'system' otherlv_1= 'element' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'reference' otherlv_4= ':' ( (lv_reference_5_0= ruleValueString ) ) )? (otherlv_6= 'element-type' otherlv_7= ':' ( (lv_elementType_8_0= ruleValueString ) ) )? (otherlv_9= 'model-type' otherlv_10= ':' ( (lv_modelType_11_0= ruleValueString ) ) )? (otherlv_12= 'documentDetails' otherlv_13= ':' ( (lv_details_14_0= ruleValueString ) ) )? (otherlv_15= 'version' otherlv_16= ':' ( (lv_version_17_0= ruleValueString ) )* )? otherlv_18= 'end' this_ID_19= RULE_ID otherlv_20= ';' ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:778:1: (otherlv_0= 'system' otherlv_1= 'element' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'reference' otherlv_4= ':' ( (lv_reference_5_0= ruleValueString ) ) )? (otherlv_6= 'element-type' otherlv_7= ':' ( (lv_elementType_8_0= ruleValueString ) ) )? (otherlv_9= 'model-type' otherlv_10= ':' ( (lv_modelType_11_0= ruleValueString ) ) )? (otherlv_12= 'documentDetails' otherlv_13= ':' ( (lv_details_14_0= ruleValueString ) ) )? (otherlv_15= 'version' otherlv_16= ':' ( (lv_version_17_0= ruleValueString ) )* )? otherlv_18= 'end' this_ID_19= RULE_ID otherlv_20= ';' )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:632:1: (otherlv_0= 'system' otherlv_1= 'element' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'reference' otherlv_4= ':' ( (lv_reference_5_0= ruleValueString ) ) )? (otherlv_6= 'element-type' otherlv_7= ':' ( (lv_elementType_8_0= ruleValueString ) ) )? (otherlv_9= 'model-type' otherlv_10= ':' ( (lv_modelType_11_0= ruleValueString ) ) )? (otherlv_12= 'documentDetails' otherlv_13= ':' ( (lv_details_14_0= ruleValueString ) ) )? (otherlv_15= 'version' otherlv_16= ':' ( (lv_version_17_0= ruleValueString ) )* )? otherlv_18= 'end' this_ID_19= RULE_ID otherlv_20= ';' )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:632:3: otherlv_0= 'system' otherlv_1= 'element' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'reference' otherlv_4= ':' ( (lv_reference_5_0= ruleValueString ) ) )? (otherlv_6= 'element-type' otherlv_7= ':' ( (lv_elementType_8_0= ruleValueString ) ) )? (otherlv_9= 'model-type' otherlv_10= ':' ( (lv_modelType_11_0= ruleValueString ) ) )? (otherlv_12= 'documentDetails' otherlv_13= ':' ( (lv_details_14_0= ruleValueString ) ) )? (otherlv_15= 'version' otherlv_16= ':' ( (lv_version_17_0= ruleValueString ) )* )? otherlv_18= 'end' this_ID_19= RULE_ID otherlv_20= ';'
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:778:1: (otherlv_0= 'system' otherlv_1= 'element' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'reference' otherlv_4= ':' ( (lv_reference_5_0= ruleValueString ) ) )? (otherlv_6= 'element-type' otherlv_7= ':' ( (lv_elementType_8_0= ruleValueString ) ) )? (otherlv_9= 'model-type' otherlv_10= ':' ( (lv_modelType_11_0= ruleValueString ) ) )? (otherlv_12= 'documentDetails' otherlv_13= ':' ( (lv_details_14_0= ruleValueString ) ) )? (otherlv_15= 'version' otherlv_16= ':' ( (lv_version_17_0= ruleValueString ) )* )? otherlv_18= 'end' this_ID_19= RULE_ID otherlv_20= ';' )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:778:3: otherlv_0= 'system' otherlv_1= 'element' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'reference' otherlv_4= ':' ( (lv_reference_5_0= ruleValueString ) ) )? (otherlv_6= 'element-type' otherlv_7= ':' ( (lv_elementType_8_0= ruleValueString ) ) )? (otherlv_9= 'model-type' otherlv_10= ':' ( (lv_modelType_11_0= ruleValueString ) ) )? (otherlv_12= 'documentDetails' otherlv_13= ':' ( (lv_details_14_0= ruleValueString ) ) )? (otherlv_15= 'version' otherlv_16= ':' ( (lv_version_17_0= ruleValueString ) )* )? otherlv_18= 'end' this_ID_19= RULE_ID otherlv_20= ';'
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleElementType1283); 
+            otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleElementType1607); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getElementTypeAccess().getSystemKeyword_0());
                 
-            otherlv_1=(Token)match(input,26,FOLLOW_26_in_ruleElementType1295); 
+            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleElementType1619); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getElementTypeAccess().getElementKeyword_1());
                 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:640:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:641:1: (lv_name_2_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:786:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:787:1: (lv_name_2_0= RULE_ID )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:641:1: (lv_name_2_0= RULE_ID )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:642:3: lv_name_2_0= RULE_ID
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:787:1: (lv_name_2_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:788:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleElementType1312); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleElementType1636); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getElementTypeAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -1579,35 +1991,35 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:658:2: (otherlv_3= 'reference' otherlv_4= ':' ( (lv_reference_5_0= ruleValueString ) ) )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:804:2: (otherlv_3= 'reference' otherlv_4= ':' ( (lv_reference_5_0= ruleValueString ) ) )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( (LA15_0==27) ) {
-                alt15=1;
+            if ( (LA21_0==30) ) {
+                alt21=1;
             }
-            switch (alt15) {
+            switch (alt21) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:658:4: otherlv_3= 'reference' otherlv_4= ':' ( (lv_reference_5_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:804:4: otherlv_3= 'reference' otherlv_4= ':' ( (lv_reference_5_0= ruleValueString ) )
                     {
-                    otherlv_3=(Token)match(input,27,FOLLOW_27_in_ruleElementType1330); 
+                    otherlv_3=(Token)match(input,30,FOLLOW_30_in_ruleElementType1654); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getElementTypeAccess().getReferenceKeyword_3_0());
                         
-                    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleElementType1342); 
+                    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleElementType1666); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getElementTypeAccess().getColonKeyword_3_1());
                         
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:666:1: ( (lv_reference_5_0= ruleValueString ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:667:1: (lv_reference_5_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:812:1: ( (lv_reference_5_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:813:1: (lv_reference_5_0= ruleValueString )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:667:1: (lv_reference_5_0= ruleValueString )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:668:3: lv_reference_5_0= ruleValueString
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:813:1: (lv_reference_5_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:814:3: lv_reference_5_0= ruleValueString
                     {
                      
                     	        newCompositeNode(grammarAccess.getElementTypeAccess().getReferenceValueStringParserRuleCall_3_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleValueString_in_ruleElementType1363);
+                    pushFollow(FOLLOW_ruleValueString_in_ruleElementType1687);
                     lv_reference_5_0=ruleValueString();
 
                     state._fsp--;
@@ -1635,35 +2047,35 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:684:4: (otherlv_6= 'element-type' otherlv_7= ':' ( (lv_elementType_8_0= ruleValueString ) ) )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:830:4: (otherlv_6= 'element-type' otherlv_7= ':' ( (lv_elementType_8_0= ruleValueString ) ) )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA16_0==28) ) {
-                alt16=1;
+            if ( (LA22_0==31) ) {
+                alt22=1;
             }
-            switch (alt16) {
+            switch (alt22) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:684:6: otherlv_6= 'element-type' otherlv_7= ':' ( (lv_elementType_8_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:830:6: otherlv_6= 'element-type' otherlv_7= ':' ( (lv_elementType_8_0= ruleValueString ) )
                     {
-                    otherlv_6=(Token)match(input,28,FOLLOW_28_in_ruleElementType1378); 
+                    otherlv_6=(Token)match(input,31,FOLLOW_31_in_ruleElementType1702); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getElementTypeAccess().getElementTypeKeyword_4_0());
                         
-                    otherlv_7=(Token)match(input,13,FOLLOW_13_in_ruleElementType1390); 
+                    otherlv_7=(Token)match(input,13,FOLLOW_13_in_ruleElementType1714); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getElementTypeAccess().getColonKeyword_4_1());
                         
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:692:1: ( (lv_elementType_8_0= ruleValueString ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:693:1: (lv_elementType_8_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:838:1: ( (lv_elementType_8_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:839:1: (lv_elementType_8_0= ruleValueString )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:693:1: (lv_elementType_8_0= ruleValueString )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:694:3: lv_elementType_8_0= ruleValueString
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:839:1: (lv_elementType_8_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:840:3: lv_elementType_8_0= ruleValueString
                     {
                      
                     	        newCompositeNode(grammarAccess.getElementTypeAccess().getElementTypeValueStringParserRuleCall_4_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleValueString_in_ruleElementType1411);
+                    pushFollow(FOLLOW_ruleValueString_in_ruleElementType1735);
                     lv_elementType_8_0=ruleValueString();
 
                     state._fsp--;
@@ -1691,35 +2103,35 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:710:4: (otherlv_9= 'model-type' otherlv_10= ':' ( (lv_modelType_11_0= ruleValueString ) ) )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:856:4: (otherlv_9= 'model-type' otherlv_10= ':' ( (lv_modelType_11_0= ruleValueString ) ) )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA17_0==29) ) {
-                alt17=1;
+            if ( (LA23_0==32) ) {
+                alt23=1;
             }
-            switch (alt17) {
+            switch (alt23) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:710:6: otherlv_9= 'model-type' otherlv_10= ':' ( (lv_modelType_11_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:856:6: otherlv_9= 'model-type' otherlv_10= ':' ( (lv_modelType_11_0= ruleValueString ) )
                     {
-                    otherlv_9=(Token)match(input,29,FOLLOW_29_in_ruleElementType1426); 
+                    otherlv_9=(Token)match(input,32,FOLLOW_32_in_ruleElementType1750); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getElementTypeAccess().getModelTypeKeyword_5_0());
                         
-                    otherlv_10=(Token)match(input,13,FOLLOW_13_in_ruleElementType1438); 
+                    otherlv_10=(Token)match(input,13,FOLLOW_13_in_ruleElementType1762); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getElementTypeAccess().getColonKeyword_5_1());
                         
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:718:1: ( (lv_modelType_11_0= ruleValueString ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:719:1: (lv_modelType_11_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:864:1: ( (lv_modelType_11_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:865:1: (lv_modelType_11_0= ruleValueString )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:719:1: (lv_modelType_11_0= ruleValueString )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:720:3: lv_modelType_11_0= ruleValueString
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:865:1: (lv_modelType_11_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:866:3: lv_modelType_11_0= ruleValueString
                     {
                      
                     	        newCompositeNode(grammarAccess.getElementTypeAccess().getModelTypeValueStringParserRuleCall_5_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleValueString_in_ruleElementType1459);
+                    pushFollow(FOLLOW_ruleValueString_in_ruleElementType1783);
                     lv_modelType_11_0=ruleValueString();
 
                     state._fsp--;
@@ -1747,35 +2159,35 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:736:4: (otherlv_12= 'documentDetails' otherlv_13= ':' ( (lv_details_14_0= ruleValueString ) ) )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:882:4: (otherlv_12= 'documentDetails' otherlv_13= ':' ( (lv_details_14_0= ruleValueString ) ) )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA18_0==30) ) {
-                alt18=1;
+            if ( (LA24_0==33) ) {
+                alt24=1;
             }
-            switch (alt18) {
+            switch (alt24) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:736:6: otherlv_12= 'documentDetails' otherlv_13= ':' ( (lv_details_14_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:882:6: otherlv_12= 'documentDetails' otherlv_13= ':' ( (lv_details_14_0= ruleValueString ) )
                     {
-                    otherlv_12=(Token)match(input,30,FOLLOW_30_in_ruleElementType1474); 
+                    otherlv_12=(Token)match(input,33,FOLLOW_33_in_ruleElementType1798); 
 
                         	newLeafNode(otherlv_12, grammarAccess.getElementTypeAccess().getDocumentDetailsKeyword_6_0());
                         
-                    otherlv_13=(Token)match(input,13,FOLLOW_13_in_ruleElementType1486); 
+                    otherlv_13=(Token)match(input,13,FOLLOW_13_in_ruleElementType1810); 
 
                         	newLeafNode(otherlv_13, grammarAccess.getElementTypeAccess().getColonKeyword_6_1());
                         
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:744:1: ( (lv_details_14_0= ruleValueString ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:745:1: (lv_details_14_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:890:1: ( (lv_details_14_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:891:1: (lv_details_14_0= ruleValueString )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:745:1: (lv_details_14_0= ruleValueString )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:746:3: lv_details_14_0= ruleValueString
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:891:1: (lv_details_14_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:892:3: lv_details_14_0= ruleValueString
                     {
                      
                     	        newCompositeNode(grammarAccess.getElementTypeAccess().getDetailsValueStringParserRuleCall_6_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleValueString_in_ruleElementType1507);
+                    pushFollow(FOLLOW_ruleValueString_in_ruleElementType1831);
                     lv_details_14_0=ruleValueString();
 
                     state._fsp--;
@@ -1803,47 +2215,47 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:762:4: (otherlv_15= 'version' otherlv_16= ':' ( (lv_version_17_0= ruleValueString ) )* )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:908:4: (otherlv_15= 'version' otherlv_16= ':' ( (lv_version_17_0= ruleValueString ) )* )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA20_0==31) ) {
-                alt20=1;
+            if ( (LA26_0==34) ) {
+                alt26=1;
             }
-            switch (alt20) {
+            switch (alt26) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:762:6: otherlv_15= 'version' otherlv_16= ':' ( (lv_version_17_0= ruleValueString ) )*
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:908:6: otherlv_15= 'version' otherlv_16= ':' ( (lv_version_17_0= ruleValueString ) )*
                     {
-                    otherlv_15=(Token)match(input,31,FOLLOW_31_in_ruleElementType1522); 
+                    otherlv_15=(Token)match(input,34,FOLLOW_34_in_ruleElementType1846); 
 
                         	newLeafNode(otherlv_15, grammarAccess.getElementTypeAccess().getVersionKeyword_7_0());
                         
-                    otherlv_16=(Token)match(input,13,FOLLOW_13_in_ruleElementType1534); 
+                    otherlv_16=(Token)match(input,13,FOLLOW_13_in_ruleElementType1858); 
 
                         	newLeafNode(otherlv_16, grammarAccess.getElementTypeAccess().getColonKeyword_7_1());
                         
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:770:1: ( (lv_version_17_0= ruleValueString ) )*
-                    loop19:
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:916:1: ( (lv_version_17_0= ruleValueString ) )*
+                    loop25:
                     do {
-                        int alt19=2;
-                        int LA19_0 = input.LA(1);
+                        int alt25=2;
+                        int LA25_0 = input.LA(1);
 
-                        if ( (LA19_0==RULE_STRING) ) {
-                            alt19=1;
+                        if ( (LA25_0==RULE_STRING) ) {
+                            alt25=1;
                         }
 
 
-                        switch (alt19) {
+                        switch (alt25) {
                     	case 1 :
-                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:771:1: (lv_version_17_0= ruleValueString )
+                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:917:1: (lv_version_17_0= ruleValueString )
                     	    {
-                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:771:1: (lv_version_17_0= ruleValueString )
-                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:772:3: lv_version_17_0= ruleValueString
+                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:917:1: (lv_version_17_0= ruleValueString )
+                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:918:3: lv_version_17_0= ruleValueString
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getElementTypeAccess().getVersionValueStringParserRuleCall_7_2_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleValueString_in_ruleElementType1555);
+                    	    pushFollow(FOLLOW_ruleValueString_in_ruleElementType1879);
                     	    lv_version_17_0=ruleValueString();
 
                     	    state._fsp--;
@@ -1867,7 +2279,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop19;
+                    	    break loop25;
                         }
                     } while (true);
 
@@ -1877,15 +2289,15 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_18=(Token)match(input,16,FOLLOW_16_in_ruleElementType1570); 
+            otherlv_18=(Token)match(input,16,FOLLOW_16_in_ruleElementType1894); 
 
                 	newLeafNode(otherlv_18, grammarAccess.getElementTypeAccess().getEndKeyword_8());
                 
-            this_ID_19=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleElementType1581); 
+            this_ID_19=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleElementType1905); 
              
                 newLeafNode(this_ID_19, grammarAccess.getElementTypeAccess().getIDTerminalRuleCall_9()); 
                 
-            otherlv_20=(Token)match(input,17,FOLLOW_17_in_ruleElementType1592); 
+            otherlv_20=(Token)match(input,17,FOLLOW_17_in_ruleElementType1916); 
 
                 	newLeafNode(otherlv_20, grammarAccess.getElementTypeAccess().getSemicolonKeyword_10());
                 
@@ -1910,7 +2322,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVerificationActivity"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:808:1: entryRuleVerificationActivity returns [EObject current=null] : iv_ruleVerificationActivity= ruleVerificationActivity EOF ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:954:1: entryRuleVerificationActivity returns [EObject current=null] : iv_ruleVerificationActivity= ruleVerificationActivity EOF ;
     public final EObject entryRuleVerificationActivity() throws RecognitionException {
         EObject current = null;
 
@@ -1918,17 +2330,17 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:809:2: (iv_ruleVerificationActivity= ruleVerificationActivity EOF )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:810:2: iv_ruleVerificationActivity= ruleVerificationActivity EOF
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:955:2: (iv_ruleVerificationActivity= ruleVerificationActivity EOF )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:956:2: iv_ruleVerificationActivity= ruleVerificationActivity EOF
             {
              newCompositeNode(grammarAccess.getVerificationActivityRule()); 
-            pushFollow(FOLLOW_ruleVerificationActivity_in_entryRuleVerificationActivity1628);
+            pushFollow(FOLLOW_ruleVerificationActivity_in_entryRuleVerificationActivity1952);
             iv_ruleVerificationActivity=ruleVerificationActivity();
 
             state._fsp--;
 
              current =iv_ruleVerificationActivity; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVerificationActivity1638); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVerificationActivity1962); 
 
             }
 
@@ -1946,7 +2358,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVerificationActivity"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:817:1: ruleVerificationActivity returns [EObject current=null] : (otherlv_0= 'verification' otherlv_1= 'activity' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= ruleValueString ) ) )? (otherlv_6= 'description' otherlv_7= ':' ( (lv_description_8_0= ruleValueString ) ) )? (otherlv_9= 'method' otherlv_10= ':' ( (lv_method_11_0= ruleVerificationMethod ) ) )? otherlv_12= 'end' this_ID_13= RULE_ID otherlv_14= ';' ) ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:963:1: ruleVerificationActivity returns [EObject current=null] : (otherlv_0= 'verification' otherlv_1= 'activity' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= ruleValueString ) ) )? (otherlv_6= 'description' otherlv_7= ':' ( (lv_description_8_0= ruleValueString ) ) )? (otherlv_9= 'method' otherlv_10= ':' ( (lv_method_11_0= ruleVerificationMethod ) ) )? (otherlv_12= 'assigned' otherlv_13= 'to' otherlv_14= ':' ( (otherlv_15= RULE_ID ) )* )? otherlv_16= 'end' this_ID_17= RULE_ID otherlv_18= ';' ) ;
     public final EObject ruleVerificationActivity() throws RecognitionException {
         EObject current = null;
 
@@ -1960,8 +2372,12 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
         Token otherlv_9=null;
         Token otherlv_10=null;
         Token otherlv_12=null;
-        Token this_ID_13=null;
+        Token otherlv_13=null;
         Token otherlv_14=null;
+        Token otherlv_15=null;
+        Token otherlv_16=null;
+        Token this_ID_17=null;
+        Token otherlv_18=null;
         AntlrDatatypeRuleToken lv_title_5_0 = null;
 
         AntlrDatatypeRuleToken lv_description_8_0 = null;
@@ -1972,27 +2388,27 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:820:28: ( (otherlv_0= 'verification' otherlv_1= 'activity' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= ruleValueString ) ) )? (otherlv_6= 'description' otherlv_7= ':' ( (lv_description_8_0= ruleValueString ) ) )? (otherlv_9= 'method' otherlv_10= ':' ( (lv_method_11_0= ruleVerificationMethod ) ) )? otherlv_12= 'end' this_ID_13= RULE_ID otherlv_14= ';' ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:821:1: (otherlv_0= 'verification' otherlv_1= 'activity' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= ruleValueString ) ) )? (otherlv_6= 'description' otherlv_7= ':' ( (lv_description_8_0= ruleValueString ) ) )? (otherlv_9= 'method' otherlv_10= ':' ( (lv_method_11_0= ruleVerificationMethod ) ) )? otherlv_12= 'end' this_ID_13= RULE_ID otherlv_14= ';' )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:966:28: ( (otherlv_0= 'verification' otherlv_1= 'activity' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= ruleValueString ) ) )? (otherlv_6= 'description' otherlv_7= ':' ( (lv_description_8_0= ruleValueString ) ) )? (otherlv_9= 'method' otherlv_10= ':' ( (lv_method_11_0= ruleVerificationMethod ) ) )? (otherlv_12= 'assigned' otherlv_13= 'to' otherlv_14= ':' ( (otherlv_15= RULE_ID ) )* )? otherlv_16= 'end' this_ID_17= RULE_ID otherlv_18= ';' ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:967:1: (otherlv_0= 'verification' otherlv_1= 'activity' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= ruleValueString ) ) )? (otherlv_6= 'description' otherlv_7= ':' ( (lv_description_8_0= ruleValueString ) ) )? (otherlv_9= 'method' otherlv_10= ':' ( (lv_method_11_0= ruleVerificationMethod ) ) )? (otherlv_12= 'assigned' otherlv_13= 'to' otherlv_14= ':' ( (otherlv_15= RULE_ID ) )* )? otherlv_16= 'end' this_ID_17= RULE_ID otherlv_18= ';' )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:821:1: (otherlv_0= 'verification' otherlv_1= 'activity' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= ruleValueString ) ) )? (otherlv_6= 'description' otherlv_7= ':' ( (lv_description_8_0= ruleValueString ) ) )? (otherlv_9= 'method' otherlv_10= ':' ( (lv_method_11_0= ruleVerificationMethod ) ) )? otherlv_12= 'end' this_ID_13= RULE_ID otherlv_14= ';' )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:821:3: otherlv_0= 'verification' otherlv_1= 'activity' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= ruleValueString ) ) )? (otherlv_6= 'description' otherlv_7= ':' ( (lv_description_8_0= ruleValueString ) ) )? (otherlv_9= 'method' otherlv_10= ':' ( (lv_method_11_0= ruleVerificationMethod ) ) )? otherlv_12= 'end' this_ID_13= RULE_ID otherlv_14= ';'
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:967:1: (otherlv_0= 'verification' otherlv_1= 'activity' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= ruleValueString ) ) )? (otherlv_6= 'description' otherlv_7= ':' ( (lv_description_8_0= ruleValueString ) ) )? (otherlv_9= 'method' otherlv_10= ':' ( (lv_method_11_0= ruleVerificationMethod ) ) )? (otherlv_12= 'assigned' otherlv_13= 'to' otherlv_14= ':' ( (otherlv_15= RULE_ID ) )* )? otherlv_16= 'end' this_ID_17= RULE_ID otherlv_18= ';' )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:967:3: otherlv_0= 'verification' otherlv_1= 'activity' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= ruleValueString ) ) )? (otherlv_6= 'description' otherlv_7= ':' ( (lv_description_8_0= ruleValueString ) ) )? (otherlv_9= 'method' otherlv_10= ':' ( (lv_method_11_0= ruleVerificationMethod ) ) )? (otherlv_12= 'assigned' otherlv_13= 'to' otherlv_14= ':' ( (otherlv_15= RULE_ID ) )* )? otherlv_16= 'end' this_ID_17= RULE_ID otherlv_18= ';'
             {
-            otherlv_0=(Token)match(input,32,FOLLOW_32_in_ruleVerificationActivity1675); 
+            otherlv_0=(Token)match(input,35,FOLLOW_35_in_ruleVerificationActivity1999); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getVerificationActivityAccess().getVerificationKeyword_0());
                 
-            otherlv_1=(Token)match(input,33,FOLLOW_33_in_ruleVerificationActivity1687); 
+            otherlv_1=(Token)match(input,36,FOLLOW_36_in_ruleVerificationActivity2011); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getVerificationActivityAccess().getActivityKeyword_1());
                 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:829:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:830:1: (lv_name_2_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:975:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:976:1: (lv_name_2_0= RULE_ID )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:830:1: (lv_name_2_0= RULE_ID )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:831:3: lv_name_2_0= RULE_ID
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:976:1: (lv_name_2_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:977:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVerificationActivity1704); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVerificationActivity2028); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getVerificationActivityAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -2012,35 +2428,35 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:847:2: (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= ruleValueString ) ) )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:993:2: (otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= ruleValueString ) ) )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA21_0==12) ) {
-                alt21=1;
+            if ( (LA27_0==12) ) {
+                alt27=1;
             }
-            switch (alt21) {
+            switch (alt27) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:847:4: otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:993:4: otherlv_3= 'title' otherlv_4= ':' ( (lv_title_5_0= ruleValueString ) )
                     {
-                    otherlv_3=(Token)match(input,12,FOLLOW_12_in_ruleVerificationActivity1722); 
+                    otherlv_3=(Token)match(input,12,FOLLOW_12_in_ruleVerificationActivity2046); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getVerificationActivityAccess().getTitleKeyword_3_0());
                         
-                    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleVerificationActivity1734); 
+                    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleVerificationActivity2058); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getVerificationActivityAccess().getColonKeyword_3_1());
                         
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:855:1: ( (lv_title_5_0= ruleValueString ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:856:1: (lv_title_5_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1001:1: ( (lv_title_5_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1002:1: (lv_title_5_0= ruleValueString )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:856:1: (lv_title_5_0= ruleValueString )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:857:3: lv_title_5_0= ruleValueString
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1002:1: (lv_title_5_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1003:3: lv_title_5_0= ruleValueString
                     {
                      
                     	        newCompositeNode(grammarAccess.getVerificationActivityAccess().getTitleValueStringParserRuleCall_3_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleValueString_in_ruleVerificationActivity1755);
+                    pushFollow(FOLLOW_ruleValueString_in_ruleVerificationActivity2079);
                     lv_title_5_0=ruleValueString();
 
                     state._fsp--;
@@ -2068,35 +2484,35 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:873:4: (otherlv_6= 'description' otherlv_7= ':' ( (lv_description_8_0= ruleValueString ) ) )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1019:4: (otherlv_6= 'description' otherlv_7= ':' ( (lv_description_8_0= ruleValueString ) ) )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA22_0==14) ) {
-                alt22=1;
+            if ( (LA28_0==14) ) {
+                alt28=1;
             }
-            switch (alt22) {
+            switch (alt28) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:873:6: otherlv_6= 'description' otherlv_7= ':' ( (lv_description_8_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1019:6: otherlv_6= 'description' otherlv_7= ':' ( (lv_description_8_0= ruleValueString ) )
                     {
-                    otherlv_6=(Token)match(input,14,FOLLOW_14_in_ruleVerificationActivity1770); 
+                    otherlv_6=(Token)match(input,14,FOLLOW_14_in_ruleVerificationActivity2094); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getVerificationActivityAccess().getDescriptionKeyword_4_0());
                         
-                    otherlv_7=(Token)match(input,13,FOLLOW_13_in_ruleVerificationActivity1782); 
+                    otherlv_7=(Token)match(input,13,FOLLOW_13_in_ruleVerificationActivity2106); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getVerificationActivityAccess().getColonKeyword_4_1());
                         
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:881:1: ( (lv_description_8_0= ruleValueString ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:882:1: (lv_description_8_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1027:1: ( (lv_description_8_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1028:1: (lv_description_8_0= ruleValueString )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:882:1: (lv_description_8_0= ruleValueString )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:883:3: lv_description_8_0= ruleValueString
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1028:1: (lv_description_8_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1029:3: lv_description_8_0= ruleValueString
                     {
                      
                     	        newCompositeNode(grammarAccess.getVerificationActivityAccess().getDescriptionValueStringParserRuleCall_4_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleValueString_in_ruleVerificationActivity1803);
+                    pushFollow(FOLLOW_ruleValueString_in_ruleVerificationActivity2127);
                     lv_description_8_0=ruleValueString();
 
                     state._fsp--;
@@ -2124,35 +2540,35 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:899:4: (otherlv_9= 'method' otherlv_10= ':' ( (lv_method_11_0= ruleVerificationMethod ) ) )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1045:4: (otherlv_9= 'method' otherlv_10= ':' ( (lv_method_11_0= ruleVerificationMethod ) ) )?
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( (LA23_0==34) ) {
-                alt23=1;
+            if ( (LA29_0==37) ) {
+                alt29=1;
             }
-            switch (alt23) {
+            switch (alt29) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:899:6: otherlv_9= 'method' otherlv_10= ':' ( (lv_method_11_0= ruleVerificationMethod ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1045:6: otherlv_9= 'method' otherlv_10= ':' ( (lv_method_11_0= ruleVerificationMethod ) )
                     {
-                    otherlv_9=(Token)match(input,34,FOLLOW_34_in_ruleVerificationActivity1818); 
+                    otherlv_9=(Token)match(input,37,FOLLOW_37_in_ruleVerificationActivity2142); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getVerificationActivityAccess().getMethodKeyword_5_0());
                         
-                    otherlv_10=(Token)match(input,13,FOLLOW_13_in_ruleVerificationActivity1830); 
+                    otherlv_10=(Token)match(input,13,FOLLOW_13_in_ruleVerificationActivity2154); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getVerificationActivityAccess().getColonKeyword_5_1());
                         
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:907:1: ( (lv_method_11_0= ruleVerificationMethod ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:908:1: (lv_method_11_0= ruleVerificationMethod )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1053:1: ( (lv_method_11_0= ruleVerificationMethod ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1054:1: (lv_method_11_0= ruleVerificationMethod )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:908:1: (lv_method_11_0= ruleVerificationMethod )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:909:3: lv_method_11_0= ruleVerificationMethod
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1054:1: (lv_method_11_0= ruleVerificationMethod )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1055:3: lv_method_11_0= ruleVerificationMethod
                     {
                      
                     	        newCompositeNode(grammarAccess.getVerificationActivityAccess().getMethodVerificationMethodParserRuleCall_5_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleVerificationMethod_in_ruleVerificationActivity1851);
+                    pushFollow(FOLLOW_ruleVerificationMethod_in_ruleVerificationActivity2175);
                     lv_method_11_0=ruleVerificationMethod();
 
                     state._fsp--;
@@ -2180,17 +2596,85 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_12=(Token)match(input,16,FOLLOW_16_in_ruleVerificationActivity1865); 
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1071:4: (otherlv_12= 'assigned' otherlv_13= 'to' otherlv_14= ':' ( (otherlv_15= RULE_ID ) )* )?
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-                	newLeafNode(otherlv_12, grammarAccess.getVerificationActivityAccess().getEndKeyword_6());
+            if ( (LA31_0==20) ) {
+                alt31=1;
+            }
+            switch (alt31) {
+                case 1 :
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1071:6: otherlv_12= 'assigned' otherlv_13= 'to' otherlv_14= ':' ( (otherlv_15= RULE_ID ) )*
+                    {
+                    otherlv_12=(Token)match(input,20,FOLLOW_20_in_ruleVerificationActivity2190); 
+
+                        	newLeafNode(otherlv_12, grammarAccess.getVerificationActivityAccess().getAssignedKeyword_6_0());
+                        
+                    otherlv_13=(Token)match(input,21,FOLLOW_21_in_ruleVerificationActivity2202); 
+
+                        	newLeafNode(otherlv_13, grammarAccess.getVerificationActivityAccess().getToKeyword_6_1());
+                        
+                    otherlv_14=(Token)match(input,13,FOLLOW_13_in_ruleVerificationActivity2214); 
+
+                        	newLeafNode(otherlv_14, grammarAccess.getVerificationActivityAccess().getColonKeyword_6_2());
+                        
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1083:1: ( (otherlv_15= RULE_ID ) )*
+                    loop30:
+                    do {
+                        int alt30=2;
+                        int LA30_0 = input.LA(1);
+
+                        if ( (LA30_0==RULE_ID) ) {
+                            alt30=1;
+                        }
+
+
+                        switch (alt30) {
+                    	case 1 :
+                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1084:1: (otherlv_15= RULE_ID )
+                    	    {
+                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1084:1: (otherlv_15= RULE_ID )
+                    	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1085:3: otherlv_15= RULE_ID
+                    	    {
+
+                    	    			if (current==null) {
+                    	    	            current = createModelElement(grammarAccess.getVerificationActivityRule());
+                    	    	        }
+                    	            
+                    	    otherlv_15=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVerificationActivity2234); 
+
+                    	    		newLeafNode(otherlv_15, grammarAccess.getVerificationActivityAccess().getAssignedToStakeholderCrossReference_6_3_0()); 
+                    	    	
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop30;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_16=(Token)match(input,16,FOLLOW_16_in_ruleVerificationActivity2249); 
+
+                	newLeafNode(otherlv_16, grammarAccess.getVerificationActivityAccess().getEndKeyword_7());
                 
-            this_ID_13=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVerificationActivity1876); 
+            this_ID_17=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVerificationActivity2260); 
              
-                newLeafNode(this_ID_13, grammarAccess.getVerificationActivityAccess().getIDTerminalRuleCall_7()); 
+                newLeafNode(this_ID_17, grammarAccess.getVerificationActivityAccess().getIDTerminalRuleCall_8()); 
                 
-            otherlv_14=(Token)match(input,17,FOLLOW_17_in_ruleVerificationActivity1887); 
+            otherlv_18=(Token)match(input,17,FOLLOW_17_in_ruleVerificationActivity2271); 
 
-                	newLeafNode(otherlv_14, grammarAccess.getVerificationActivityAccess().getSemicolonKeyword_8());
+                	newLeafNode(otherlv_18, grammarAccess.getVerificationActivityAccess().getSemicolonKeyword_9());
                 
 
             }
@@ -2213,7 +2697,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVerificationMethod"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:945:1: entryRuleVerificationMethod returns [String current=null] : iv_ruleVerificationMethod= ruleVerificationMethod EOF ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1116:1: entryRuleVerificationMethod returns [String current=null] : iv_ruleVerificationMethod= ruleVerificationMethod EOF ;
     public final String entryRuleVerificationMethod() throws RecognitionException {
         String current = null;
 
@@ -2221,17 +2705,17 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:946:2: (iv_ruleVerificationMethod= ruleVerificationMethod EOF )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:947:2: iv_ruleVerificationMethod= ruleVerificationMethod EOF
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1117:2: (iv_ruleVerificationMethod= ruleVerificationMethod EOF )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1118:2: iv_ruleVerificationMethod= ruleVerificationMethod EOF
             {
              newCompositeNode(grammarAccess.getVerificationMethodRule()); 
-            pushFollow(FOLLOW_ruleVerificationMethod_in_entryRuleVerificationMethod1924);
+            pushFollow(FOLLOW_ruleVerificationMethod_in_entryRuleVerificationMethod2308);
             iv_ruleVerificationMethod=ruleVerificationMethod();
 
             state._fsp--;
 
              current =iv_ruleVerificationMethod.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVerificationMethod1935); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVerificationMethod2319); 
 
             }
 
@@ -2249,7 +2733,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVerificationMethod"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:954:1: ruleVerificationMethod returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'manual' | kw= 'automatic' ) ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1125:1: ruleVerificationMethod returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'manual' | kw= 'automatic' ) ;
     public final AntlrDatatypeRuleToken ruleVerificationMethod() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2258,30 +2742,30 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:957:28: ( (kw= 'manual' | kw= 'automatic' ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:958:1: (kw= 'manual' | kw= 'automatic' )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1128:28: ( (kw= 'manual' | kw= 'automatic' ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1129:1: (kw= 'manual' | kw= 'automatic' )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:958:1: (kw= 'manual' | kw= 'automatic' )
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1129:1: (kw= 'manual' | kw= 'automatic' )
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( (LA24_0==35) ) {
-                alt24=1;
+            if ( (LA32_0==38) ) {
+                alt32=1;
             }
-            else if ( (LA24_0==36) ) {
-                alt24=2;
+            else if ( (LA32_0==39) ) {
+                alt32=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 24, 0, input);
+                    new NoViableAltException("", 32, 0, input);
 
                 throw nvae;
             }
-            switch (alt24) {
+            switch (alt32) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:959:2: kw= 'manual'
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1130:2: kw= 'manual'
                     {
-                    kw=(Token)match(input,35,FOLLOW_35_in_ruleVerificationMethod1973); 
+                    kw=(Token)match(input,38,FOLLOW_38_in_ruleVerificationMethod2357); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getVerificationMethodAccess().getManualKeyword_0()); 
@@ -2290,9 +2774,9 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:966:2: kw= 'automatic'
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1137:2: kw= 'automatic'
                     {
-                    kw=(Token)match(input,36,FOLLOW_36_in_ruleVerificationMethod1992); 
+                    kw=(Token)match(input,39,FOLLOW_39_in_ruleVerificationMethod2376); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getVerificationMethodAccess().getAutomaticKeyword_1()); 
@@ -2321,7 +2805,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVerificationResult"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:979:1: entryRuleVerificationResult returns [EObject current=null] : iv_ruleVerificationResult= ruleVerificationResult EOF ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1150:1: entryRuleVerificationResult returns [EObject current=null] : iv_ruleVerificationResult= ruleVerificationResult EOF ;
     public final EObject entryRuleVerificationResult() throws RecognitionException {
         EObject current = null;
 
@@ -2329,17 +2813,17 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:980:2: (iv_ruleVerificationResult= ruleVerificationResult EOF )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:981:2: iv_ruleVerificationResult= ruleVerificationResult EOF
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1151:2: (iv_ruleVerificationResult= ruleVerificationResult EOF )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1152:2: iv_ruleVerificationResult= ruleVerificationResult EOF
             {
              newCompositeNode(grammarAccess.getVerificationResultRule()); 
-            pushFollow(FOLLOW_ruleVerificationResult_in_entryRuleVerificationResult2032);
+            pushFollow(FOLLOW_ruleVerificationResult_in_entryRuleVerificationResult2416);
             iv_ruleVerificationResult=ruleVerificationResult();
 
             state._fsp--;
 
              current =iv_ruleVerificationResult; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVerificationResult2042); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVerificationResult2426); 
 
             }
 
@@ -2357,7 +2841,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVerificationResult"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:988:1: ruleVerificationResult returns [EObject current=null] : (otherlv_0= 'verification' otherlv_1= 'result' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'output' otherlv_6= ':' ( (lv_title_7_0= ruleValueString ) ) )? (otherlv_8= 'logfile' otherlv_9= ':' ( (lv_description_10_0= ruleValueString ) ) )? (otherlv_11= 'date' otherlv_12= ':' ( (lv_method_13_0= ruleVerificationMethod ) ) )? (otherlv_14= 'state' otherlv_15= ':' ( (lv_state_16_0= ruleVerificationResultState ) ) )? (otherlv_17= 'status' otherlv_18= ':' ( (lv_status_19_0= ruleVerificationResultStatus ) ) )? otherlv_20= 'end' this_ID_21= RULE_ID otherlv_22= ';' ) ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1159:1: ruleVerificationResult returns [EObject current=null] : (otherlv_0= 'verification' otherlv_1= 'result' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (otherlv_4= RULE_ID ) )* (otherlv_5= 'output' otherlv_6= ':' ( (lv_title_7_0= ruleValueString ) ) )? (otherlv_8= 'logfile' otherlv_9= ':' ( (lv_description_10_0= ruleValueString ) ) )? (otherlv_11= 'date' otherlv_12= ':' ( (lv_method_13_0= ruleValueString ) ) )? (otherlv_14= 'state' otherlv_15= ':' ( (lv_state_16_0= ruleVerificationResultState ) ) )? (otherlv_17= 'status' otherlv_18= ':' ( (lv_status_19_0= ruleVerificationResultStatus ) ) )? otherlv_20= 'end' this_ID_21= RULE_ID otherlv_22= ';' ) ;
     public final EObject ruleVerificationResult() throws RecognitionException {
         EObject current = null;
 
@@ -2393,27 +2877,27 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:991:28: ( (otherlv_0= 'verification' otherlv_1= 'result' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'output' otherlv_6= ':' ( (lv_title_7_0= ruleValueString ) ) )? (otherlv_8= 'logfile' otherlv_9= ':' ( (lv_description_10_0= ruleValueString ) ) )? (otherlv_11= 'date' otherlv_12= ':' ( (lv_method_13_0= ruleVerificationMethod ) ) )? (otherlv_14= 'state' otherlv_15= ':' ( (lv_state_16_0= ruleVerificationResultState ) ) )? (otherlv_17= 'status' otherlv_18= ':' ( (lv_status_19_0= ruleVerificationResultStatus ) ) )? otherlv_20= 'end' this_ID_21= RULE_ID otherlv_22= ';' ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:992:1: (otherlv_0= 'verification' otherlv_1= 'result' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'output' otherlv_6= ':' ( (lv_title_7_0= ruleValueString ) ) )? (otherlv_8= 'logfile' otherlv_9= ':' ( (lv_description_10_0= ruleValueString ) ) )? (otherlv_11= 'date' otherlv_12= ':' ( (lv_method_13_0= ruleVerificationMethod ) ) )? (otherlv_14= 'state' otherlv_15= ':' ( (lv_state_16_0= ruleVerificationResultState ) ) )? (otherlv_17= 'status' otherlv_18= ':' ( (lv_status_19_0= ruleVerificationResultStatus ) ) )? otherlv_20= 'end' this_ID_21= RULE_ID otherlv_22= ';' )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1162:28: ( (otherlv_0= 'verification' otherlv_1= 'result' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (otherlv_4= RULE_ID ) )* (otherlv_5= 'output' otherlv_6= ':' ( (lv_title_7_0= ruleValueString ) ) )? (otherlv_8= 'logfile' otherlv_9= ':' ( (lv_description_10_0= ruleValueString ) ) )? (otherlv_11= 'date' otherlv_12= ':' ( (lv_method_13_0= ruleValueString ) ) )? (otherlv_14= 'state' otherlv_15= ':' ( (lv_state_16_0= ruleVerificationResultState ) ) )? (otherlv_17= 'status' otherlv_18= ':' ( (lv_status_19_0= ruleVerificationResultStatus ) ) )? otherlv_20= 'end' this_ID_21= RULE_ID otherlv_22= ';' ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1163:1: (otherlv_0= 'verification' otherlv_1= 'result' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (otherlv_4= RULE_ID ) )* (otherlv_5= 'output' otherlv_6= ':' ( (lv_title_7_0= ruleValueString ) ) )? (otherlv_8= 'logfile' otherlv_9= ':' ( (lv_description_10_0= ruleValueString ) ) )? (otherlv_11= 'date' otherlv_12= ':' ( (lv_method_13_0= ruleValueString ) ) )? (otherlv_14= 'state' otherlv_15= ':' ( (lv_state_16_0= ruleVerificationResultState ) ) )? (otherlv_17= 'status' otherlv_18= ':' ( (lv_status_19_0= ruleVerificationResultStatus ) ) )? otherlv_20= 'end' this_ID_21= RULE_ID otherlv_22= ';' )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:992:1: (otherlv_0= 'verification' otherlv_1= 'result' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'output' otherlv_6= ':' ( (lv_title_7_0= ruleValueString ) ) )? (otherlv_8= 'logfile' otherlv_9= ':' ( (lv_description_10_0= ruleValueString ) ) )? (otherlv_11= 'date' otherlv_12= ':' ( (lv_method_13_0= ruleVerificationMethod ) ) )? (otherlv_14= 'state' otherlv_15= ':' ( (lv_state_16_0= ruleVerificationResultState ) ) )? (otherlv_17= 'status' otherlv_18= ':' ( (lv_status_19_0= ruleVerificationResultStatus ) ) )? otherlv_20= 'end' this_ID_21= RULE_ID otherlv_22= ';' )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:992:3: otherlv_0= 'verification' otherlv_1= 'result' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'output' otherlv_6= ':' ( (lv_title_7_0= ruleValueString ) ) )? (otherlv_8= 'logfile' otherlv_9= ':' ( (lv_description_10_0= ruleValueString ) ) )? (otherlv_11= 'date' otherlv_12= ':' ( (lv_method_13_0= ruleVerificationMethod ) ) )? (otherlv_14= 'state' otherlv_15= ':' ( (lv_state_16_0= ruleVerificationResultState ) ) )? (otherlv_17= 'status' otherlv_18= ':' ( (lv_status_19_0= ruleVerificationResultStatus ) ) )? otherlv_20= 'end' this_ID_21= RULE_ID otherlv_22= ';'
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1163:1: (otherlv_0= 'verification' otherlv_1= 'result' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (otherlv_4= RULE_ID ) )* (otherlv_5= 'output' otherlv_6= ':' ( (lv_title_7_0= ruleValueString ) ) )? (otherlv_8= 'logfile' otherlv_9= ':' ( (lv_description_10_0= ruleValueString ) ) )? (otherlv_11= 'date' otherlv_12= ':' ( (lv_method_13_0= ruleValueString ) ) )? (otherlv_14= 'state' otherlv_15= ':' ( (lv_state_16_0= ruleVerificationResultState ) ) )? (otherlv_17= 'status' otherlv_18= ':' ( (lv_status_19_0= ruleVerificationResultStatus ) ) )? otherlv_20= 'end' this_ID_21= RULE_ID otherlv_22= ';' )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1163:3: otherlv_0= 'verification' otherlv_1= 'result' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'of' ( (otherlv_4= RULE_ID ) )* (otherlv_5= 'output' otherlv_6= ':' ( (lv_title_7_0= ruleValueString ) ) )? (otherlv_8= 'logfile' otherlv_9= ':' ( (lv_description_10_0= ruleValueString ) ) )? (otherlv_11= 'date' otherlv_12= ':' ( (lv_method_13_0= ruleValueString ) ) )? (otherlv_14= 'state' otherlv_15= ':' ( (lv_state_16_0= ruleVerificationResultState ) ) )? (otherlv_17= 'status' otherlv_18= ':' ( (lv_status_19_0= ruleVerificationResultStatus ) ) )? otherlv_20= 'end' this_ID_21= RULE_ID otherlv_22= ';'
             {
-            otherlv_0=(Token)match(input,32,FOLLOW_32_in_ruleVerificationResult2079); 
+            otherlv_0=(Token)match(input,35,FOLLOW_35_in_ruleVerificationResult2463); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getVerificationResultAccess().getVerificationKeyword_0());
                 
-            otherlv_1=(Token)match(input,37,FOLLOW_37_in_ruleVerificationResult2091); 
+            otherlv_1=(Token)match(input,40,FOLLOW_40_in_ruleVerificationResult2475); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getVerificationResultAccess().getResultKeyword_1());
                 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1000:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1001:1: (lv_name_2_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1171:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1172:1: (lv_name_2_0= RULE_ID )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1001:1: (lv_name_2_0= RULE_ID )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1002:3: lv_name_2_0= RULE_ID
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1172:1: (lv_name_2_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1173:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVerificationResult2108); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVerificationResult2492); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getVerificationResultAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -2433,60 +2917,78 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,38,FOLLOW_38_in_ruleVerificationResult2125); 
+            otherlv_3=(Token)match(input,41,FOLLOW_41_in_ruleVerificationResult2509); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getVerificationResultAccess().getOfKeyword_3());
                 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1022:1: ( (otherlv_4= RULE_ID ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1023:1: (otherlv_4= RULE_ID )
-            {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1023:1: (otherlv_4= RULE_ID )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1024:3: otherlv_4= RULE_ID
-            {
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1193:1: ( (otherlv_4= RULE_ID ) )*
+            loop33:
+            do {
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-            			if (current==null) {
-            	            current = createModelElement(grammarAccess.getVerificationResultRule());
-            	        }
-                    
-            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVerificationResult2145); 
+                if ( (LA33_0==RULE_ID) ) {
+                    alt33=1;
+                }
 
-            		newLeafNode(otherlv_4, grammarAccess.getVerificationResultAccess().getReferencedVerificationMethodVerificationActivityCrossReference_4_0()); 
-            	
 
+                switch (alt33) {
+            	case 1 :
+            	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1194:1: (otherlv_4= RULE_ID )
+            	    {
+            	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1194:1: (otherlv_4= RULE_ID )
+            	    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1195:3: otherlv_4= RULE_ID
+            	    {
+
+            	    			if (current==null) {
+            	    	            current = createModelElement(grammarAccess.getVerificationResultRule());
+            	    	        }
+            	            
+            	    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVerificationResult2529); 
+
+            	    		newLeafNode(otherlv_4, grammarAccess.getVerificationResultAccess().getReferencedVerificationMethodVerificationActivityCrossReference_4_0()); 
+            	    	
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop33;
+                }
+            } while (true);
+
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1206:3: (otherlv_5= 'output' otherlv_6= ':' ( (lv_title_7_0= ruleValueString ) ) )?
+            int alt34=2;
+            int LA34_0 = input.LA(1);
+
+            if ( (LA34_0==42) ) {
+                alt34=1;
             }
-
-
-            }
-
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1035:2: (otherlv_5= 'output' otherlv_6= ':' ( (lv_title_7_0= ruleValueString ) ) )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
-
-            if ( (LA25_0==39) ) {
-                alt25=1;
-            }
-            switch (alt25) {
+            switch (alt34) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1035:4: otherlv_5= 'output' otherlv_6= ':' ( (lv_title_7_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1206:5: otherlv_5= 'output' otherlv_6= ':' ( (lv_title_7_0= ruleValueString ) )
                     {
-                    otherlv_5=(Token)match(input,39,FOLLOW_39_in_ruleVerificationResult2158); 
+                    otherlv_5=(Token)match(input,42,FOLLOW_42_in_ruleVerificationResult2543); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getVerificationResultAccess().getOutputKeyword_5_0());
                         
-                    otherlv_6=(Token)match(input,13,FOLLOW_13_in_ruleVerificationResult2170); 
+                    otherlv_6=(Token)match(input,13,FOLLOW_13_in_ruleVerificationResult2555); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getVerificationResultAccess().getColonKeyword_5_1());
                         
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1043:1: ( (lv_title_7_0= ruleValueString ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1044:1: (lv_title_7_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1214:1: ( (lv_title_7_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1215:1: (lv_title_7_0= ruleValueString )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1044:1: (lv_title_7_0= ruleValueString )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1045:3: lv_title_7_0= ruleValueString
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1215:1: (lv_title_7_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1216:3: lv_title_7_0= ruleValueString
                     {
                      
                     	        newCompositeNode(grammarAccess.getVerificationResultAccess().getTitleValueStringParserRuleCall_5_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleValueString_in_ruleVerificationResult2191);
+                    pushFollow(FOLLOW_ruleValueString_in_ruleVerificationResult2576);
                     lv_title_7_0=ruleValueString();
 
                     state._fsp--;
@@ -2514,35 +3016,35 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1061:4: (otherlv_8= 'logfile' otherlv_9= ':' ( (lv_description_10_0= ruleValueString ) ) )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1232:4: (otherlv_8= 'logfile' otherlv_9= ':' ( (lv_description_10_0= ruleValueString ) ) )?
+            int alt35=2;
+            int LA35_0 = input.LA(1);
 
-            if ( (LA26_0==40) ) {
-                alt26=1;
+            if ( (LA35_0==43) ) {
+                alt35=1;
             }
-            switch (alt26) {
+            switch (alt35) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1061:6: otherlv_8= 'logfile' otherlv_9= ':' ( (lv_description_10_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1232:6: otherlv_8= 'logfile' otherlv_9= ':' ( (lv_description_10_0= ruleValueString ) )
                     {
-                    otherlv_8=(Token)match(input,40,FOLLOW_40_in_ruleVerificationResult2206); 
+                    otherlv_8=(Token)match(input,43,FOLLOW_43_in_ruleVerificationResult2591); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getVerificationResultAccess().getLogfileKeyword_6_0());
                         
-                    otherlv_9=(Token)match(input,13,FOLLOW_13_in_ruleVerificationResult2218); 
+                    otherlv_9=(Token)match(input,13,FOLLOW_13_in_ruleVerificationResult2603); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getVerificationResultAccess().getColonKeyword_6_1());
                         
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1069:1: ( (lv_description_10_0= ruleValueString ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1070:1: (lv_description_10_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1240:1: ( (lv_description_10_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1241:1: (lv_description_10_0= ruleValueString )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1070:1: (lv_description_10_0= ruleValueString )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1071:3: lv_description_10_0= ruleValueString
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1241:1: (lv_description_10_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1242:3: lv_description_10_0= ruleValueString
                     {
                      
                     	        newCompositeNode(grammarAccess.getVerificationResultAccess().getDescriptionValueStringParserRuleCall_6_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleValueString_in_ruleVerificationResult2239);
+                    pushFollow(FOLLOW_ruleValueString_in_ruleVerificationResult2624);
                     lv_description_10_0=ruleValueString();
 
                     state._fsp--;
@@ -2570,36 +3072,36 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1087:4: (otherlv_11= 'date' otherlv_12= ':' ( (lv_method_13_0= ruleVerificationMethod ) ) )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1258:4: (otherlv_11= 'date' otherlv_12= ':' ( (lv_method_13_0= ruleValueString ) ) )?
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( (LA27_0==41) ) {
-                alt27=1;
+            if ( (LA36_0==44) ) {
+                alt36=1;
             }
-            switch (alt27) {
+            switch (alt36) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1087:6: otherlv_11= 'date' otherlv_12= ':' ( (lv_method_13_0= ruleVerificationMethod ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1258:6: otherlv_11= 'date' otherlv_12= ':' ( (lv_method_13_0= ruleValueString ) )
                     {
-                    otherlv_11=(Token)match(input,41,FOLLOW_41_in_ruleVerificationResult2254); 
+                    otherlv_11=(Token)match(input,44,FOLLOW_44_in_ruleVerificationResult2639); 
 
                         	newLeafNode(otherlv_11, grammarAccess.getVerificationResultAccess().getDateKeyword_7_0());
                         
-                    otherlv_12=(Token)match(input,13,FOLLOW_13_in_ruleVerificationResult2266); 
+                    otherlv_12=(Token)match(input,13,FOLLOW_13_in_ruleVerificationResult2651); 
 
                         	newLeafNode(otherlv_12, grammarAccess.getVerificationResultAccess().getColonKeyword_7_1());
                         
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1095:1: ( (lv_method_13_0= ruleVerificationMethod ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1096:1: (lv_method_13_0= ruleVerificationMethod )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1266:1: ( (lv_method_13_0= ruleValueString ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1267:1: (lv_method_13_0= ruleValueString )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1096:1: (lv_method_13_0= ruleVerificationMethod )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1097:3: lv_method_13_0= ruleVerificationMethod
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1267:1: (lv_method_13_0= ruleValueString )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1268:3: lv_method_13_0= ruleValueString
                     {
                      
-                    	        newCompositeNode(grammarAccess.getVerificationResultAccess().getMethodVerificationMethodParserRuleCall_7_2_0()); 
+                    	        newCompositeNode(grammarAccess.getVerificationResultAccess().getMethodValueStringParserRuleCall_7_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleVerificationMethod_in_ruleVerificationResult2287);
-                    lv_method_13_0=ruleVerificationMethod();
+                    pushFollow(FOLLOW_ruleValueString_in_ruleVerificationResult2672);
+                    lv_method_13_0=ruleValueString();
 
                     state._fsp--;
 
@@ -2611,7 +3113,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
                            			current, 
                            			"method",
                             		lv_method_13_0, 
-                            		"VerificationMethod");
+                            		"ValueString");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -2626,35 +3128,35 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1113:4: (otherlv_14= 'state' otherlv_15= ':' ( (lv_state_16_0= ruleVerificationResultState ) ) )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1284:4: (otherlv_14= 'state' otherlv_15= ':' ( (lv_state_16_0= ruleVerificationResultState ) ) )?
+            int alt37=2;
+            int LA37_0 = input.LA(1);
 
-            if ( (LA28_0==42) ) {
-                alt28=1;
+            if ( (LA37_0==45) ) {
+                alt37=1;
             }
-            switch (alt28) {
+            switch (alt37) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1113:6: otherlv_14= 'state' otherlv_15= ':' ( (lv_state_16_0= ruleVerificationResultState ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1284:6: otherlv_14= 'state' otherlv_15= ':' ( (lv_state_16_0= ruleVerificationResultState ) )
                     {
-                    otherlv_14=(Token)match(input,42,FOLLOW_42_in_ruleVerificationResult2302); 
+                    otherlv_14=(Token)match(input,45,FOLLOW_45_in_ruleVerificationResult2687); 
 
                         	newLeafNode(otherlv_14, grammarAccess.getVerificationResultAccess().getStateKeyword_8_0());
                         
-                    otherlv_15=(Token)match(input,13,FOLLOW_13_in_ruleVerificationResult2314); 
+                    otherlv_15=(Token)match(input,13,FOLLOW_13_in_ruleVerificationResult2699); 
 
                         	newLeafNode(otherlv_15, grammarAccess.getVerificationResultAccess().getColonKeyword_8_1());
                         
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1121:1: ( (lv_state_16_0= ruleVerificationResultState ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1122:1: (lv_state_16_0= ruleVerificationResultState )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1292:1: ( (lv_state_16_0= ruleVerificationResultState ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1293:1: (lv_state_16_0= ruleVerificationResultState )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1122:1: (lv_state_16_0= ruleVerificationResultState )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1123:3: lv_state_16_0= ruleVerificationResultState
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1293:1: (lv_state_16_0= ruleVerificationResultState )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1294:3: lv_state_16_0= ruleVerificationResultState
                     {
                      
                     	        newCompositeNode(grammarAccess.getVerificationResultAccess().getStateVerificationResultStateParserRuleCall_8_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleVerificationResultState_in_ruleVerificationResult2335);
+                    pushFollow(FOLLOW_ruleVerificationResultState_in_ruleVerificationResult2720);
                     lv_state_16_0=ruleVerificationResultState();
 
                     state._fsp--;
@@ -2682,35 +3184,35 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1139:4: (otherlv_17= 'status' otherlv_18= ':' ( (lv_status_19_0= ruleVerificationResultStatus ) ) )?
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1310:4: (otherlv_17= 'status' otherlv_18= ':' ( (lv_status_19_0= ruleVerificationResultStatus ) ) )?
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA29_0==43) ) {
-                alt29=1;
+            if ( (LA38_0==46) ) {
+                alt38=1;
             }
-            switch (alt29) {
+            switch (alt38) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1139:6: otherlv_17= 'status' otherlv_18= ':' ( (lv_status_19_0= ruleVerificationResultStatus ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1310:6: otherlv_17= 'status' otherlv_18= ':' ( (lv_status_19_0= ruleVerificationResultStatus ) )
                     {
-                    otherlv_17=(Token)match(input,43,FOLLOW_43_in_ruleVerificationResult2350); 
+                    otherlv_17=(Token)match(input,46,FOLLOW_46_in_ruleVerificationResult2735); 
 
                         	newLeafNode(otherlv_17, grammarAccess.getVerificationResultAccess().getStatusKeyword_9_0());
                         
-                    otherlv_18=(Token)match(input,13,FOLLOW_13_in_ruleVerificationResult2362); 
+                    otherlv_18=(Token)match(input,13,FOLLOW_13_in_ruleVerificationResult2747); 
 
                         	newLeafNode(otherlv_18, grammarAccess.getVerificationResultAccess().getColonKeyword_9_1());
                         
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1147:1: ( (lv_status_19_0= ruleVerificationResultStatus ) )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1148:1: (lv_status_19_0= ruleVerificationResultStatus )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1318:1: ( (lv_status_19_0= ruleVerificationResultStatus ) )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1319:1: (lv_status_19_0= ruleVerificationResultStatus )
                     {
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1148:1: (lv_status_19_0= ruleVerificationResultStatus )
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1149:3: lv_status_19_0= ruleVerificationResultStatus
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1319:1: (lv_status_19_0= ruleVerificationResultStatus )
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1320:3: lv_status_19_0= ruleVerificationResultStatus
                     {
                      
                     	        newCompositeNode(grammarAccess.getVerificationResultAccess().getStatusVerificationResultStatusParserRuleCall_9_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleVerificationResultStatus_in_ruleVerificationResult2383);
+                    pushFollow(FOLLOW_ruleVerificationResultStatus_in_ruleVerificationResult2768);
                     lv_status_19_0=ruleVerificationResultStatus();
 
                     state._fsp--;
@@ -2738,15 +3240,15 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_20=(Token)match(input,16,FOLLOW_16_in_ruleVerificationResult2397); 
+            otherlv_20=(Token)match(input,16,FOLLOW_16_in_ruleVerificationResult2782); 
 
                 	newLeafNode(otherlv_20, grammarAccess.getVerificationResultAccess().getEndKeyword_10());
                 
-            this_ID_21=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVerificationResult2408); 
+            this_ID_21=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVerificationResult2793); 
              
                 newLeafNode(this_ID_21, grammarAccess.getVerificationResultAccess().getIDTerminalRuleCall_11()); 
                 
-            otherlv_22=(Token)match(input,17,FOLLOW_17_in_ruleVerificationResult2419); 
+            otherlv_22=(Token)match(input,17,FOLLOW_17_in_ruleVerificationResult2804); 
 
                 	newLeafNode(otherlv_22, grammarAccess.getVerificationResultAccess().getSemicolonKeyword_12());
                 
@@ -2771,7 +3273,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVerificationResultState"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1185:1: entryRuleVerificationResultState returns [String current=null] : iv_ruleVerificationResultState= ruleVerificationResultState EOF ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1356:1: entryRuleVerificationResultState returns [String current=null] : iv_ruleVerificationResultState= ruleVerificationResultState EOF ;
     public final String entryRuleVerificationResultState() throws RecognitionException {
         String current = null;
 
@@ -2779,17 +3281,17 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1186:2: (iv_ruleVerificationResultState= ruleVerificationResultState EOF )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1187:2: iv_ruleVerificationResultState= ruleVerificationResultState EOF
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1357:2: (iv_ruleVerificationResultState= ruleVerificationResultState EOF )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1358:2: iv_ruleVerificationResultState= ruleVerificationResultState EOF
             {
              newCompositeNode(grammarAccess.getVerificationResultStateRule()); 
-            pushFollow(FOLLOW_ruleVerificationResultState_in_entryRuleVerificationResultState2456);
+            pushFollow(FOLLOW_ruleVerificationResultState_in_entryRuleVerificationResultState2841);
             iv_ruleVerificationResultState=ruleVerificationResultState();
 
             state._fsp--;
 
              current =iv_ruleVerificationResultState.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVerificationResultState2467); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVerificationResultState2852); 
 
             }
 
@@ -2807,7 +3309,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVerificationResultState"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1194:1: ruleVerificationResultState returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'state' kw= ':' (kw= 'manual' | kw= 'automatic' ) ) ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1365:1: ruleVerificationResultState returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'scheduled' | kw= 'passed' | kw= 'inprogress' ) ;
     public final AntlrDatatypeRuleToken ruleVerificationResultState() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2816,64 +3318,68 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1197:28: ( (kw= 'state' kw= ':' (kw= 'manual' | kw= 'automatic' ) ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1198:1: (kw= 'state' kw= ':' (kw= 'manual' | kw= 'automatic' ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1368:28: ( (kw= 'scheduled' | kw= 'passed' | kw= 'inprogress' ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1369:1: (kw= 'scheduled' | kw= 'passed' | kw= 'inprogress' )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1198:1: (kw= 'state' kw= ':' (kw= 'manual' | kw= 'automatic' ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1199:2: kw= 'state' kw= ':' (kw= 'manual' | kw= 'automatic' )
-            {
-            kw=(Token)match(input,42,FOLLOW_42_in_ruleVerificationResultState2505); 
-
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getVerificationResultStateAccess().getStateKeyword_0()); 
-                
-            kw=(Token)match(input,13,FOLLOW_13_in_ruleVerificationResultState2518); 
-
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getVerificationResultStateAccess().getColonKeyword_1()); 
-                
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1210:1: (kw= 'manual' | kw= 'automatic' )
-            int alt30=2;
-            int LA30_0 = input.LA(1);
-
-            if ( (LA30_0==35) ) {
-                alt30=1;
-            }
-            else if ( (LA30_0==36) ) {
-                alt30=2;
-            }
-            else {
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1369:1: (kw= 'scheduled' | kw= 'passed' | kw= 'inprogress' )
+            int alt39=3;
+            switch ( input.LA(1) ) {
+            case 47:
+                {
+                alt39=1;
+                }
+                break;
+            case 48:
+                {
+                alt39=2;
+                }
+                break;
+            case 49:
+                {
+                alt39=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 30, 0, input);
+                    new NoViableAltException("", 39, 0, input);
 
                 throw nvae;
             }
-            switch (alt30) {
+
+            switch (alt39) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1211:2: kw= 'manual'
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1370:2: kw= 'scheduled'
                     {
-                    kw=(Token)match(input,35,FOLLOW_35_in_ruleVerificationResultState2532); 
+                    kw=(Token)match(input,47,FOLLOW_47_in_ruleVerificationResultState2890); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getVerificationResultStateAccess().getManualKeyword_2_0()); 
+                            newLeafNode(kw, grammarAccess.getVerificationResultStateAccess().getScheduledKeyword_0()); 
                         
 
                     }
                     break;
                 case 2 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1218:2: kw= 'automatic'
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1377:2: kw= 'passed'
                     {
-                    kw=(Token)match(input,36,FOLLOW_36_in_ruleVerificationResultState2551); 
+                    kw=(Token)match(input,48,FOLLOW_48_in_ruleVerificationResultState2909); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getVerificationResultStateAccess().getAutomaticKeyword_2_1()); 
+                            newLeafNode(kw, grammarAccess.getVerificationResultStateAccess().getPassedKeyword_1()); 
                         
 
                     }
                     break;
+                case 3 :
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1384:2: kw= 'inprogress'
+                    {
+                    kw=(Token)match(input,49,FOLLOW_49_in_ruleVerificationResultState2928); 
 
-            }
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getVerificationResultStateAccess().getInprogressKeyword_2()); 
+                        
 
+                    }
+                    break;
 
             }
 
@@ -2895,7 +3401,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVerificationResultStatus"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1231:1: entryRuleVerificationResultStatus returns [String current=null] : iv_ruleVerificationResultStatus= ruleVerificationResultStatus EOF ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1397:1: entryRuleVerificationResultStatus returns [String current=null] : iv_ruleVerificationResultStatus= ruleVerificationResultStatus EOF ;
     public final String entryRuleVerificationResultStatus() throws RecognitionException {
         String current = null;
 
@@ -2903,17 +3409,17 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1232:2: (iv_ruleVerificationResultStatus= ruleVerificationResultStatus EOF )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1233:2: iv_ruleVerificationResultStatus= ruleVerificationResultStatus EOF
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1398:2: (iv_ruleVerificationResultStatus= ruleVerificationResultStatus EOF )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1399:2: iv_ruleVerificationResultStatus= ruleVerificationResultStatus EOF
             {
              newCompositeNode(grammarAccess.getVerificationResultStatusRule()); 
-            pushFollow(FOLLOW_ruleVerificationResultStatus_in_entryRuleVerificationResultStatus2593);
+            pushFollow(FOLLOW_ruleVerificationResultStatus_in_entryRuleVerificationResultStatus2969);
             iv_ruleVerificationResultStatus=ruleVerificationResultStatus();
 
             state._fsp--;
 
              current =iv_ruleVerificationResultStatus.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVerificationResultStatus2604); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVerificationResultStatus2980); 
 
             }
 
@@ -2931,7 +3437,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVerificationResultStatus"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1240:1: ruleVerificationResultStatus returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'status' kw= ':' (kw= 'ok' | kw= 'unknown' | kw= 'tbd' ) ) ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1406:1: ruleVerificationResultStatus returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'ok' | kw= 'unknown' | kw= 'tbd' ) ;
     public final AntlrDatatypeRuleToken ruleVerificationResultStatus() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2940,84 +3446,68 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1243:28: ( (kw= 'status' kw= ':' (kw= 'ok' | kw= 'unknown' | kw= 'tbd' ) ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1244:1: (kw= 'status' kw= ':' (kw= 'ok' | kw= 'unknown' | kw= 'tbd' ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1409:28: ( (kw= 'ok' | kw= 'unknown' | kw= 'tbd' ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1410:1: (kw= 'ok' | kw= 'unknown' | kw= 'tbd' )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1244:1: (kw= 'status' kw= ':' (kw= 'ok' | kw= 'unknown' | kw= 'tbd' ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1245:2: kw= 'status' kw= ':' (kw= 'ok' | kw= 'unknown' | kw= 'tbd' )
-            {
-            kw=(Token)match(input,43,FOLLOW_43_in_ruleVerificationResultStatus2642); 
-
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getStatusKeyword_0()); 
-                
-            kw=(Token)match(input,13,FOLLOW_13_in_ruleVerificationResultStatus2655); 
-
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getColonKeyword_1()); 
-                
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1256:1: (kw= 'ok' | kw= 'unknown' | kw= 'tbd' )
-            int alt31=3;
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1410:1: (kw= 'ok' | kw= 'unknown' | kw= 'tbd' )
+            int alt40=3;
             switch ( input.LA(1) ) {
-            case 44:
+            case 50:
                 {
-                alt31=1;
+                alt40=1;
                 }
                 break;
-            case 45:
+            case 51:
                 {
-                alt31=2;
+                alt40=2;
                 }
                 break;
-            case 46:
+            case 52:
                 {
-                alt31=3;
+                alt40=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 31, 0, input);
+                    new NoViableAltException("", 40, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt31) {
+            switch (alt40) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1257:2: kw= 'ok'
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1411:2: kw= 'ok'
                     {
-                    kw=(Token)match(input,44,FOLLOW_44_in_ruleVerificationResultStatus2669); 
+                    kw=(Token)match(input,50,FOLLOW_50_in_ruleVerificationResultStatus3018); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getOkKeyword_2_0()); 
+                            newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getOkKeyword_0()); 
                         
 
                     }
                     break;
                 case 2 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1264:2: kw= 'unknown'
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1418:2: kw= 'unknown'
                     {
-                    kw=(Token)match(input,45,FOLLOW_45_in_ruleVerificationResultStatus2688); 
+                    kw=(Token)match(input,51,FOLLOW_51_in_ruleVerificationResultStatus3037); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getUnknownKeyword_2_1()); 
+                            newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getUnknownKeyword_1()); 
                         
 
                     }
                     break;
                 case 3 :
-                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1271:2: kw= 'tbd'
+                    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisa.g:1425:2: kw= 'tbd'
                     {
-                    kw=(Token)match(input,46,FOLLOW_46_in_ruleVerificationResultStatus2707); 
+                    kw=(Token)match(input,52,FOLLOW_52_in_ruleVerificationResultStatus3056); 
 
                             current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getTbdKeyword_2_2()); 
+                            newLeafNode(kw, grammarAccess.getVerificationResultStatusAccess().getTbdKeyword_2()); 
                         
 
                     }
                     break;
-
-            }
-
 
             }
 
@@ -3044,11 +3534,11 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleAlisaModel_in_entryRuleAlisaModel75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAlisaModel85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStakeholder_in_ruleAlisaModel132 = new BitSet(new long[]{0x0000000102040802L});
-    public static final BitSet FOLLOW_ruleRequirement_in_ruleAlisaModel151 = new BitSet(new long[]{0x0000000102040802L});
-    public static final BitSet FOLLOW_ruleVerificationActivity_in_ruleAlisaModel170 = new BitSet(new long[]{0x0000000102040802L});
-    public static final BitSet FOLLOW_ruleVerificationResult_in_ruleAlisaModel189 = new BitSet(new long[]{0x0000000102040802L});
-    public static final BitSet FOLLOW_ruleElementType_in_ruleAlisaModel208 = new BitSet(new long[]{0x0000000102040802L});
+    public static final BitSet FOLLOW_ruleStakeholder_in_ruleAlisaModel132 = new BitSet(new long[]{0x0000000810040802L});
+    public static final BitSet FOLLOW_ruleRequirement_in_ruleAlisaModel151 = new BitSet(new long[]{0x0000000810040802L});
+    public static final BitSet FOLLOW_ruleVerificationActivity_in_ruleAlisaModel170 = new BitSet(new long[]{0x0000000810040802L});
+    public static final BitSet FOLLOW_ruleVerificationResult_in_ruleAlisaModel189 = new BitSet(new long[]{0x0000000810040802L});
+    public static final BitSet FOLLOW_ruleElementType_in_ruleAlisaModel208 = new BitSet(new long[]{0x0000000810040802L});
     public static final BitSet FOLLOW_ruleValueString_in_entryRuleValueString248 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleValueString259 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleValueString298 = new BitSet(new long[]{0x0000000000000002L});
@@ -3071,115 +3561,131 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleRequirement_in_entryRuleRequirement625 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleRequirement635 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_18_in_ruleRequirement672 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRequirement689 = new BitSet(new long[]{0x0000000000595000L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRequirement689 = new BitSet(new long[]{0x0000000003595000L});
     public static final BitSet FOLLOW_12_in_ruleRequirement707 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_13_in_ruleRequirement719 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleValueString_in_ruleRequirement740 = new BitSet(new long[]{0x0000000000594000L});
+    public static final BitSet FOLLOW_ruleValueString_in_ruleRequirement740 = new BitSet(new long[]{0x0000000003594000L});
     public static final BitSet FOLLOW_14_in_ruleRequirement755 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_13_in_ruleRequirement767 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleValueString_in_ruleRequirement788 = new BitSet(new long[]{0x0000000000590000L});
+    public static final BitSet FOLLOW_ruleValueString_in_ruleRequirement788 = new BitSet(new long[]{0x0000000003590000L});
     public static final BitSet FOLLOW_19_in_ruleRequirement803 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_13_in_ruleRequirement815 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleValueString_in_ruleRequirement836 = new BitSet(new long[]{0x0000000000510000L});
+    public static final BitSet FOLLOW_ruleValueString_in_ruleRequirement836 = new BitSet(new long[]{0x0000000003510000L});
     public static final BitSet FOLLOW_20_in_ruleRequirement851 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_21_in_ruleRequirement863 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleRequirement875 = new BitSet(new long[]{0x0000000000410020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRequirement895 = new BitSet(new long[]{0x0000000000410020L});
-    public static final BitSet FOLLOW_22_in_ruleRequirement911 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleRequirement923 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleRequirement935 = new BitSet(new long[]{0x0000000000010020L});
-    public static final BitSet FOLLOW_ruleRequirementDecomposition_in_ruleRequirement956 = new BitSet(new long[]{0x0000000000010020L});
-    public static final BitSet FOLLOW_16_in_ruleRequirement971 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRequirement982 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleRequirement993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRequirementDecomposition_in_entryRuleRequirementDecomposition1029 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRequirementDecomposition1039 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRequirementDecomposition1084 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRequirementDecomposition1108 = new BitSet(new long[]{0x0000000001800000L});
-    public static final BitSet FOLLOW_23_in_ruleRequirementDecomposition1133 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_24_in_ruleRequirementDecomposition1162 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleRequirementDecomposition_in_ruleRequirementDecomposition1199 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementType_in_entryRuleElementType1236 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleElementType1246 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleElementType1283 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleElementType1295 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleElementType1312 = new BitSet(new long[]{0x00000000F8010000L});
-    public static final BitSet FOLLOW_27_in_ruleElementType1330 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleElementType1342 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleValueString_in_ruleElementType1363 = new BitSet(new long[]{0x00000000F0010000L});
-    public static final BitSet FOLLOW_28_in_ruleElementType1378 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleElementType1390 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleValueString_in_ruleElementType1411 = new BitSet(new long[]{0x00000000E0010000L});
-    public static final BitSet FOLLOW_29_in_ruleElementType1426 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleElementType1438 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleValueString_in_ruleElementType1459 = new BitSet(new long[]{0x00000000C0010000L});
-    public static final BitSet FOLLOW_30_in_ruleElementType1474 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleElementType1486 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleValueString_in_ruleElementType1507 = new BitSet(new long[]{0x0000000080010000L});
-    public static final BitSet FOLLOW_31_in_ruleElementType1522 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleElementType1534 = new BitSet(new long[]{0x0000000000010010L});
-    public static final BitSet FOLLOW_ruleValueString_in_ruleElementType1555 = new BitSet(new long[]{0x0000000000010010L});
-    public static final BitSet FOLLOW_16_in_ruleElementType1570 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleElementType1581 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleElementType1592 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVerificationActivity_in_entryRuleVerificationActivity1628 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVerificationActivity1638 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_ruleVerificationActivity1675 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_33_in_ruleVerificationActivity1687 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVerificationActivity1704 = new BitSet(new long[]{0x0000000400015000L});
-    public static final BitSet FOLLOW_12_in_ruleVerificationActivity1722 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleVerificationActivity1734 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleValueString_in_ruleVerificationActivity1755 = new BitSet(new long[]{0x0000000400014000L});
-    public static final BitSet FOLLOW_14_in_ruleVerificationActivity1770 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleVerificationActivity1782 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleValueString_in_ruleVerificationActivity1803 = new BitSet(new long[]{0x0000000400010000L});
-    public static final BitSet FOLLOW_34_in_ruleVerificationActivity1818 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleVerificationActivity1830 = new BitSet(new long[]{0x0000001800000000L});
-    public static final BitSet FOLLOW_ruleVerificationMethod_in_ruleVerificationActivity1851 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleVerificationActivity1865 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVerificationActivity1876 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleVerificationActivity1887 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVerificationMethod_in_entryRuleVerificationMethod1924 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVerificationMethod1935 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_ruleVerificationMethod1973 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleVerificationMethod1992 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVerificationResult_in_entryRuleVerificationResult2032 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVerificationResult2042 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_ruleVerificationResult2079 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37_in_ruleVerificationResult2091 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVerificationResult2108 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_ruleVerificationResult2125 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVerificationResult2145 = new BitSet(new long[]{0x00000F8000010000L});
-    public static final BitSet FOLLOW_39_in_ruleVerificationResult2158 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleVerificationResult2170 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleValueString_in_ruleVerificationResult2191 = new BitSet(new long[]{0x00000F0000010000L});
-    public static final BitSet FOLLOW_40_in_ruleVerificationResult2206 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleVerificationResult2218 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleValueString_in_ruleVerificationResult2239 = new BitSet(new long[]{0x00000E0000010000L});
-    public static final BitSet FOLLOW_41_in_ruleVerificationResult2254 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleVerificationResult2266 = new BitSet(new long[]{0x0000001800000000L});
-    public static final BitSet FOLLOW_ruleVerificationMethod_in_ruleVerificationResult2287 = new BitSet(new long[]{0x00000C0000010000L});
-    public static final BitSet FOLLOW_42_in_ruleVerificationResult2302 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleVerificationResult2314 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_ruleVerificationResultState_in_ruleVerificationResult2335 = new BitSet(new long[]{0x0000080000010000L});
-    public static final BitSet FOLLOW_43_in_ruleVerificationResult2350 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleVerificationResult2362 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_ruleVerificationResultStatus_in_ruleVerificationResult2383 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleVerificationResult2397 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVerificationResult2408 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleVerificationResult2419 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVerificationResultState_in_entryRuleVerificationResultState2456 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVerificationResultState2467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_ruleVerificationResultState2505 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleVerificationResultState2518 = new BitSet(new long[]{0x0000001800000000L});
-    public static final BitSet FOLLOW_35_in_ruleVerificationResultState2532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleVerificationResultState2551 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVerificationResultStatus_in_entryRuleVerificationResultStatus2593 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVerificationResultStatus2604 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_ruleVerificationResultStatus2642 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleVerificationResultStatus2655 = new BitSet(new long[]{0x0000700000000000L});
-    public static final BitSet FOLLOW_44_in_ruleVerificationResultStatus2669 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_ruleVerificationResultStatus2688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_ruleVerificationResultStatus2707 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_ruleRequirement875 = new BitSet(new long[]{0x0000000003410020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRequirement895 = new BitSet(new long[]{0x0000000003410020L});
+    public static final BitSet FOLLOW_22_in_ruleRequirement911 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleRequirement923 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleRequirement935 = new BitSet(new long[]{0x0000000003010020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRequirement955 = new BitSet(new long[]{0x0000000003010020L});
+    public static final BitSet FOLLOW_24_in_ruleRequirement971 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleRequirement983 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleRequirement995 = new BitSet(new long[]{0x0000000002010020L});
+    public static final BitSet FOLLOW_ruleVerificationDecomposition_in_ruleRequirement1016 = new BitSet(new long[]{0x0000000002010020L});
+    public static final BitSet FOLLOW_25_in_ruleRequirement1032 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleRequirement1044 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleRequirement1056 = new BitSet(new long[]{0x0000000000010020L});
+    public static final BitSet FOLLOW_ruleRequirementDecomposition_in_ruleRequirement1077 = new BitSet(new long[]{0x0000000000010020L});
+    public static final BitSet FOLLOW_16_in_ruleRequirement1092 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRequirement1103 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleRequirement1114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRequirementDecomposition_in_entryRuleRequirementDecomposition1150 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRequirementDecomposition1160 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRequirementDecomposition1205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRequirementDecomposition1232 = new BitSet(new long[]{0x000000000C000000L});
+    public static final BitSet FOLLOW_26_in_ruleRequirementDecomposition1252 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_27_in_ruleRequirementDecomposition1281 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleRequirementDecomposition_in_ruleRequirementDecomposition1318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVerificationDecomposition_in_entryRuleVerificationDecomposition1355 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVerificationDecomposition1365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVerificationDecomposition1410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVerificationDecomposition1437 = new BitSet(new long[]{0x000000000C000000L});
+    public static final BitSet FOLLOW_26_in_ruleVerificationDecomposition1457 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_27_in_ruleVerificationDecomposition1486 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleVerificationDecomposition_in_ruleVerificationDecomposition1523 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementType_in_entryRuleElementType1560 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleElementType1570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleElementType1607 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleElementType1619 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleElementType1636 = new BitSet(new long[]{0x00000007C0010000L});
+    public static final BitSet FOLLOW_30_in_ruleElementType1654 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleElementType1666 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleValueString_in_ruleElementType1687 = new BitSet(new long[]{0x0000000780010000L});
+    public static final BitSet FOLLOW_31_in_ruleElementType1702 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleElementType1714 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleValueString_in_ruleElementType1735 = new BitSet(new long[]{0x0000000700010000L});
+    public static final BitSet FOLLOW_32_in_ruleElementType1750 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleElementType1762 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleValueString_in_ruleElementType1783 = new BitSet(new long[]{0x0000000600010000L});
+    public static final BitSet FOLLOW_33_in_ruleElementType1798 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleElementType1810 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleValueString_in_ruleElementType1831 = new BitSet(new long[]{0x0000000400010000L});
+    public static final BitSet FOLLOW_34_in_ruleElementType1846 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleElementType1858 = new BitSet(new long[]{0x0000000000010010L});
+    public static final BitSet FOLLOW_ruleValueString_in_ruleElementType1879 = new BitSet(new long[]{0x0000000000010010L});
+    public static final BitSet FOLLOW_16_in_ruleElementType1894 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleElementType1905 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleElementType1916 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVerificationActivity_in_entryRuleVerificationActivity1952 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVerificationActivity1962 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_ruleVerificationActivity1999 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_ruleVerificationActivity2011 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVerificationActivity2028 = new BitSet(new long[]{0x0000002000115000L});
+    public static final BitSet FOLLOW_12_in_ruleVerificationActivity2046 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleVerificationActivity2058 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleValueString_in_ruleVerificationActivity2079 = new BitSet(new long[]{0x0000002000114000L});
+    public static final BitSet FOLLOW_14_in_ruleVerificationActivity2094 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleVerificationActivity2106 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleValueString_in_ruleVerificationActivity2127 = new BitSet(new long[]{0x0000002000110000L});
+    public static final BitSet FOLLOW_37_in_ruleVerificationActivity2142 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleVerificationActivity2154 = new BitSet(new long[]{0x000000C000000000L});
+    public static final BitSet FOLLOW_ruleVerificationMethod_in_ruleVerificationActivity2175 = new BitSet(new long[]{0x0000000000110000L});
+    public static final BitSet FOLLOW_20_in_ruleVerificationActivity2190 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleVerificationActivity2202 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleVerificationActivity2214 = new BitSet(new long[]{0x0000000000010020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVerificationActivity2234 = new BitSet(new long[]{0x0000000000010020L});
+    public static final BitSet FOLLOW_16_in_ruleVerificationActivity2249 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVerificationActivity2260 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleVerificationActivity2271 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVerificationMethod_in_entryRuleVerificationMethod2308 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVerificationMethod2319 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_ruleVerificationMethod2357 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_ruleVerificationMethod2376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVerificationResult_in_entryRuleVerificationResult2416 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVerificationResult2426 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_ruleVerificationResult2463 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_40_in_ruleVerificationResult2475 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVerificationResult2492 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_41_in_ruleVerificationResult2509 = new BitSet(new long[]{0x00007C0000010020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVerificationResult2529 = new BitSet(new long[]{0x00007C0000010020L});
+    public static final BitSet FOLLOW_42_in_ruleVerificationResult2543 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleVerificationResult2555 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleValueString_in_ruleVerificationResult2576 = new BitSet(new long[]{0x0000780000010000L});
+    public static final BitSet FOLLOW_43_in_ruleVerificationResult2591 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleVerificationResult2603 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleValueString_in_ruleVerificationResult2624 = new BitSet(new long[]{0x0000700000010000L});
+    public static final BitSet FOLLOW_44_in_ruleVerificationResult2639 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleVerificationResult2651 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleValueString_in_ruleVerificationResult2672 = new BitSet(new long[]{0x0000600000010000L});
+    public static final BitSet FOLLOW_45_in_ruleVerificationResult2687 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleVerificationResult2699 = new BitSet(new long[]{0x0003800000000000L});
+    public static final BitSet FOLLOW_ruleVerificationResultState_in_ruleVerificationResult2720 = new BitSet(new long[]{0x0000400000010000L});
+    public static final BitSet FOLLOW_46_in_ruleVerificationResult2735 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleVerificationResult2747 = new BitSet(new long[]{0x001C000000000000L});
+    public static final BitSet FOLLOW_ruleVerificationResultStatus_in_ruleVerificationResult2768 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_16_in_ruleVerificationResult2782 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVerificationResult2793 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleVerificationResult2804 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVerificationResultState_in_entryRuleVerificationResultState2841 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVerificationResultState2852 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_ruleVerificationResultState2890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_ruleVerificationResultState2909 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_ruleVerificationResultState2928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVerificationResultStatus_in_entryRuleVerificationResultStatus2969 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVerificationResultStatus2980 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_ruleVerificationResultStatus3018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_ruleVerificationResultStatus3037 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_ruleVerificationResultStatus3056 = new BitSet(new long[]{0x0000000000000002L});
 
 }
