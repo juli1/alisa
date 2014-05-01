@@ -1,0 +1,28 @@
+requirement req1
+	title: "test"
+	description: "plop"
+	comment: "bla2"
+	referenced by: modelref
+	decomposed by: req2 and req3
+end req1;
+  
+requirement req2
+	title: "test"
+	description: "plop"
+	comment: "bla2"
+end req2;
+
+requirement req3
+	title: "test"
+	description: "plop"
+	comment: "bla2"
+end req3;
+
+system element modelref
+end modelref;
+
+verification activity test2
+end test2;
+
+verification result test3 of test2
+end test3;
