@@ -4,6 +4,8 @@
 
 stakeholder designer
 	title: "Chef Designer"
+	description: "to be added"
+	role: "to be added"
 end designer;
 
 stakeholder bulb_vendor
@@ -20,6 +22,8 @@ end electrician;
  
 requirement req1
 	title: "Light can be turned on"
+	description: "to be added"
+	comment: "to be added"
 	assigned to: designer
 	decomposed by: req1_2 and req1_3 and req1_4
 end req1;
@@ -36,6 +40,8 @@ end req1_3;
 
 requirement req1_4
 	title: "Bulb is functional"
+	description: "to be added"
+	comment: "to be added"
 	referenced by: bulb techspecs
 	verified by: va_ratling bulb_compliance_with_specs
 end req1_4;
@@ -58,6 +64,17 @@ verification activity bulb_compliance_with_specs
 	method: manual
 	assigned to: designer
 end bulb_compliance_with_specs;
+
+/**
+ * Verification Results
+ */
+verification result vr1 of va_ratling 
+	output: "to be added"
+	logfile: "to be added"
+	date: "to be added"
+	state: passed
+	status: ok
+end vr1;
 
 /**
  * System Elements
