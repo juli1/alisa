@@ -1,0 +1,98 @@
+grammar edu.cmu.sei.alisa.Alisa with org.eclipse.xtext.common.Terminals
+
+generate alisa "http://www.cmu.edu/sei/alisa/Alisa"
+
+AlisaModel:
+	content+=(Stakeholder|Requirement|VerificationActivity|VerificationResult|ElementType)*;
+	
+ValueString :
+	// remove quotes from string in ValueConverter
+	STRING
+;
+
+/*
+ * Stakeholder
+ */
+Stakeholder:
+	'stakeholder' name=ID
+	('title' ':' title=ValueString)?
+	('description' ':' description=ValueString)?
+	('role' ':' role=ValueString)?
+	'end' ID ';'
+;
+
+
+
+/*
+ * Requirement
+ */
+Requirement:
+	'requirement' name=ID
+	('title' ':' title=ValueString)?
+	('description' ':' description=ValueString)?
+	('comment' ':' comment=ValueString)?
+	('referenced' 'by' ':' referencedBy+=([ElementType])*)?
+	('decomposed' 'by' ':' decomposedBy+=(RequirementDecomposition)*)?
+	'end' ID ';'
+;
+
+RequirementDecomposition:
+	elements=([Requirement])|
+	left=(ID) type=('and'|'or') right=(RequirementDecomposition)
+;
+
+
+
+/*
+ * System Element
+ */
+ElementType:
+	'system' 'element' name=ID
+	('reference' ':' reference=ValueString)?
+	('element-type' ':' elementType=ValueString)?
+	('model-type' ':' modelType=ValueString)?
+	('documentDetails' ':' details=ValueString)?
+	('version' ':' version+=(ValueString)*)?
+	'end' ID ';'
+;
+
+/*
+ * Verification Activity
+ */
+
+VerificationActivity:
+	'verification' 'activity' name=ID
+	('title' ':' title=ValueString)?
+	('description' ':' description=ValueString)?
+	('method' ':' method=VerificationMethod)?
+	'end' ID ';'
+;
+
+
+VerificationMethod:
+	'manual' | 'automatic'
+;
+
+
+/*
+ * Verification Result
+ */
+
+VerificationResult:
+	'verification' 'result' name=ID 'of' referencedVerificationMethod=[VerificationActivity]
+	('output' ':' title=ValueString)?
+	('logfile' ':' description=ValueString)?
+	('date' ':' method=VerificationMethod)?
+	('state' ':' state=VerificationResultState)?
+	('status' ':' status=VerificationResultStatus)?
+	'end' ID ';'
+;
+
+VerificationResultState:
+	'state' ':' ('manual' | 'automatic')
+;
+
+VerificationResultStatus:
+	'status' ':' ('ok' | 'unknown' | 'tbd')
+;
+
