@@ -94,7 +94,7 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
      */
     @Override
     public void update(ViewerCell cell) {
-       
-        super.update(cell);
+       AlisaDebug.debug("[AlisaLabelProvider] update, element=" + cell.getElement());
+       super.update(cell);
     }
 }

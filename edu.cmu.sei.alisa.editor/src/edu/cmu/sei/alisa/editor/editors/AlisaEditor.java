@@ -7,6 +7,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -32,7 +33,10 @@ import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.MultiPageEditorPart;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 
-import edu.cmu.sei.alisa.editor.utils.AlisaContentProvider;
+import edu.cmu.sei.alisa.editor.utils.AlisaDebug;
+import edu.cmu.sei.alisa.editor.utils.AlisaLabelProvider;
+import edu.cmu.sei.alisa.editor.utils.AlisaRequirementsContentProvider;
+import edu.cmu.sei.alisa.editor.utils.AlisaStakeholdersContentProvider;
 
 /**
  * An example showing how to create a multi-page editor.
@@ -189,16 +193,32 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
     	}
     }
     
-    private void populateTablePage (int index) throws Exception {
-    	tableViewers[index].setContentProvider(new AlisaContentProvider());
+    private void populateTablePage (final int index) throws Exception {
+    	switch (index)
+    	{
+    		case INDEX_TABLE_REQUIREMENTS:
+    		{
+    			AlisaDebug.debug ("[AlisaEditor] set content provider for requirements");
+    			tableViewers[index].setContentProvider(new AlisaRequirementsContentProvider());
+    			break;
+    		}
+    		
+    		case INDEX_TABLE_STAKEHOLDERS:
+    		{
+    			AlisaDebug.debug ("[AlisaEditor] set content provider for stakeholders");
+    			tableViewers[index].setContentProvider(new AlisaStakeholdersContentProvider());
+    			break;
+    		}
 
+    	}
+    	
         // make the selection available
         getSite().setSelectionProvider(tableViewers[index]);
 
         tableViewers[index].getTable().getDisplay().asyncExec(
                 new Runnable() {
-                    public void run() { updateTableFromTextEditor(); }
-                }
+                    public void run() { updateTableFromTextEditor(index); }
+                } 
         );
     }
 
@@ -218,8 +238,52 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
     /**
      *
      */
-    private void updateTableFromTextEditor () {
-       
+    private void updateTableFromTextEditor (int index)
+    {
+    	int nbColumns = 0;
+    	String[] columnsNames = {};
+    	String[] columnsNamesStakeholders = {"Title" , "Description","Role"};
+    	String[] columnsNamesRequirements = {"Title" , "Description","Comment"};
+    	switch (index)
+    	{
+	    	case INDEX_TABLE_REQUIREMENTS:
+	    	{
+	    		nbColumns = 3;
+	    		columnsNames = columnsNamesRequirements;
+	    		break;
+	    	}
+	    	case INDEX_TABLE_STAKEHOLDERS:
+	    	{
+	    		nbColumns = 3;
+	    		columnsNames = columnsNamesStakeholders;
+	    		break;
+	    	}
+    	}
+    	
+    	tableHeaderMenu = new Menu(tableViewers[index].getTable());
+        TableColumn[] columns = tableViewers[index].getTable().getColumns();
+        if (columns.length > 0) 
+        {
+			// update column header text
+//			for (int i = 0; i < model.getHeader().size(); i++)
+//				columns[i].setText(model.getHeader().get(i));
+        } 
+        else 
+        {
+	        // create columns
+	        for (int i = 0; i < nbColumns; i++) {
+	            final TableViewerColumn column = new TableViewerColumn(tableViewers[index], SWT.LEFT);
+	            final int idx = i;
+	            column.getColumn().setText(columnsNames[i]);
+	            column.getColumn().setWidth(100);
+	            column.getColumn().setResizable(true);
+	            column.getColumn().setMoveable(true);
+	            column.setLabelProvider(new AlisaLabelProvider());
+	            addMenuItemToColumn(column.getColumn(), idx);
+	        }
+        }
+        
+        tableViewers[index].setInput(AlisaDebug.getSampleAlisaModel());
     }
 
  

@@ -18,8 +18,10 @@ import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
 
-public class AlisaContentProvider implements IStructuredContentProvider {
+public class AlisaStakeholdersContentProvider implements IStructuredContentProvider {
 
+	
+	
     /**
      * Returns the elements to display in the table viewer
      *
