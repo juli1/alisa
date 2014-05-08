@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="Alisa Graphical Editor"
+            extensions="alisa"
+            icon="icons/sample.gif"
+            contributorClass="edu.cmu.sei.alisa.editor.editors.AlisaEditorContributor"
+            class="edu.cmu.sei.alisa.editor.editors.AlisaEditor"
+            id="edu.cmu.sei.alisa.editor.editors.AlisaEditor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            name="Alisa Wizards"
+            id="edu.cmu.sei.alisa.editor">
+      </category>
+      <wizard
+            name="Alisa Editor file"
+            icon="icons/sample.gif"
+            category="edu.cmu.sei.alisa.editor"
+            class="edu.cmu.sei.alisa.editor.wizards.AlisaWizard"
+            id="edu.cmu.sei.alisa.editor.wizards.AlisaWizard">
+      </wizard>
+   </extension>
+
+</plugin>
