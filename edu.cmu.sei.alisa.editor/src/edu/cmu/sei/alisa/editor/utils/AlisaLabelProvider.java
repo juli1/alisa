@@ -26,6 +26,9 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
+import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.Stakeholder;
+
 
 public class AlisaLabelProvider extends StyledCellLabelProvider {
 
@@ -93,8 +96,48 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
      * @see org.eclipse.jface.viewers.StyledCellLabelProvider#update(org.eclipse.jface.viewers.ViewerCell)
      */
     @Override
-    public void update(ViewerCell cell) {
-       AlisaDebug.debug("[AlisaLabelProvider] update, element=" + cell.getElement());
+    public void update(ViewerCell cell) 
+    {
+    	int index = cell.getColumnIndex();
+    	String text = "N/A";
+//    	AlisaDebug.debug("[AlisaLabelProvider] update, element=" + cell.getElement());
+//    	AlisaDebug.debug("[AlisaLabelProvider] index=" + index);
+    	
+    	if (cell.getElement() instanceof Requirement)
+    	{
+    		Requirement requirement = (Requirement) cell.getElement();
+    		switch (index)
+    		{
+    			case 0:
+    				text = requirement.getTitle();
+    				break;
+    			case 1:
+    				text = requirement.getDescription();
+    				break;
+    			case 2:
+    				text = requirement.getComment();
+    				break;
+    		}
+    	}
+    	
+    	if (cell.getElement() instanceof Stakeholder)
+    	{
+    		Stakeholder stakeholder = (Stakeholder) cell.getElement();
+    		switch (index)
+    		{
+    			case 0:
+    				text = stakeholder.getTitle();
+    				break;
+    			case 1:
+    				text = stakeholder.getDescription();
+    				break;
+    			case 2:
+    				text = stakeholder.getRole();
+    				break;
+    		}
+    	}
+    	
+       cell.setText(text);
        super.update(cell);
     }
 }

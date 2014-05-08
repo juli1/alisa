@@ -3,6 +3,7 @@ package edu.cmu.sei.alisa.editor.utils;
 import edu.cmu.sei.alisa.alisa.AlisaFactory;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.impl.AlisaFactoryImpl;
 
 public class AlisaDebug {
@@ -30,6 +31,22 @@ public class AlisaDebug {
     	return requirements;
 	}
 	
+	public static Stakeholder[] getSampleStakeholders ()
+	{
+    	AlisaFactory factory = AlisaFactoryImpl.init();
+		Stakeholder[] stakeholders;
+		stakeholders = new Stakeholder[2];
+		stakeholders[0] = factory.createStakeholder();
+		stakeholders[0].setTitle("title1");
+		stakeholders[0].setDescription("desc1");
+		stakeholders[0].setRole("role1");
+		stakeholders[1] = factory.createStakeholder();
+		stakeholders[1].setTitle("title2");
+		stakeholders[1].setDescription("desc2");
+		stakeholders[1].setRole("role2");
+    	return stakeholders;
+	}
+	
 	public static AlisaModel getSampleAlisaModel ()
 	{
     	AlisaFactory factory = AlisaFactoryImpl.init();
@@ -39,6 +56,11 @@ public class AlisaDebug {
     	for (Requirement r : getSampleRequirements())
     	{
     		model.getContent().add(r);
+    	}
+    	
+    	for (Stakeholder s : getSampleStakeholders())
+    	{
+    		model.getContent().add(s);
     	}
     	return model;
 	}

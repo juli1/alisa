@@ -14,8 +14,15 @@
  */
 package edu.cmu.sei.alisa.editor.utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
+
+import edu.cmu.sei.alisa.alisa.AlisaModel;
+import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.Stakeholder;
 
 
 public class AlisaStakeholdersContentProvider implements IStructuredContentProvider {
@@ -27,10 +34,23 @@ public class AlisaStakeholdersContentProvider implements IStructuredContentProvi
      *
      * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
      */
-    public Object[] getElements(Object element) {
-
+    public Object[] getElements(Object element)
+    {
+    	List<Stakeholder> stakeholders = new ArrayList<Stakeholder>();
+    	AlisaDebug.debug ("[AlisaStakeholdersContentProvider] element=" + element);
    
-        return null;
+    	if (element instanceof AlisaModel)
+    	{
+    		AlisaModel am = (AlisaModel) element;
+    		for (Object o : am.getContent())
+    		{
+    			if (o instanceof Stakeholder)
+    			{
+    				stakeholders.add((Stakeholder)o);
+    			}
+    		}
+    	}
+        return stakeholders.toArray();
     }
 
     /**
