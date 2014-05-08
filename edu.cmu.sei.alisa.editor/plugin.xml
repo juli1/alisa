@@ -7,11 +7,11 @@
       <editor
             name="Alisa Graphical Editor"
             extensions="alisa"
-            icon="icons/sample.gif"
+            icon="icons/alisa.png"
             contributorClass="edu.cmu.sei.alisa.editor.editors.AlisaEditorContributor"
             class="edu.cmu.sei.alisa.editor.editors.AlisaEditor"
             id="edu.cmu.sei.alisa.editor.editors.AlisaEditor">
-      </editor>
+      </editor> 
    </extension>
    <extension
          point="org.eclipse.ui.newWizards">
@@ -21,7 +21,7 @@
       </category>
       <wizard
             name="Alisa Editor file"
-            icon="icons/sample.gif"
+            icon="icons/alisa.png"
             category="edu.cmu.sei.alisa.editor"
             class="edu.cmu.sei.alisa.editor.wizards.AlisaWizard"
             id="edu.cmu.sei.alisa.editor.wizards.AlisaWizard">
