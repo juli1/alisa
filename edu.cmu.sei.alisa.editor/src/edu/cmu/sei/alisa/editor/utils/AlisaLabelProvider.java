@@ -108,13 +108,16 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
     		Requirement requirement = (Requirement) cell.getElement();
     		switch (index)
     		{
-    			case 0:
+				case 0:
+					text = requirement.getName();
+					break;
+    			case 1:
     				text = requirement.getTitle();
     				break;
-    			case 1:
+    			case 2:
     				text = requirement.getDescription();
     				break;
-    			case 2:
+    			case 3:
     				text = requirement.getComment();
     				break;
     		}
@@ -125,13 +128,16 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
     		Stakeholder stakeholder = (Stakeholder) cell.getElement();
     		switch (index)
     		{
-    			case 0:
+				case 0:
+					text = stakeholder.getName();
+					break;
+    			case 1:
     				text = stakeholder.getTitle();
     				break;
-    			case 1:
+    			case 2:
     				text = stakeholder.getDescription();
     				break;
-    			case 2:
+    			case 3:
     				text = stakeholder.getRole();
     				break;
     		}

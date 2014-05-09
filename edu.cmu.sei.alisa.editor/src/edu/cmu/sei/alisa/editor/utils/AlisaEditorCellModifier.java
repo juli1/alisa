@@ -16,9 +16,11 @@ package edu.cmu.sei.alisa.editor.utils;
 
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.swt.widgets.TableItem;
+import org.eclipse.ui.IEditorPart;
 
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
+import edu.cmu.sei.alisa.editor.editors.AlisaEditor;
 
 /**
  *
@@ -26,7 +28,15 @@ import edu.cmu.sei.alisa.alisa.Stakeholder;
  *
  */
 public class AlisaEditorCellModifier implements ICellModifier {
-
+	private AlisaEditor alisaEditor;
+	
+	public AlisaEditorCellModifier (AlisaEditor editor)
+	{
+		super ();
+		this.alisaEditor = editor;
+	}
+	
+	
     /**
      * Checks whether the given property of the given element can be modified.
      *
@@ -58,6 +68,8 @@ public class AlisaEditorCellModifier implements ICellModifier {
         return "";
     }
 
+
+    
     /**
      * Modifies the value for the given property of the given element.
      * Has no effect if the element does not have the given property,
@@ -68,6 +80,9 @@ public class AlisaEditorCellModifier implements ICellModifier {
     public void modify (Object element, String property, Object value) {
         Object elementData;
     	int elementIndex;
+    	int editorIdentifier;
+    	
+    	editorIdentifier = -1;
     	elementData = ((TableItem) element).getData();
     	elementIndex = Integer.parseInt(property);
     	AlisaDebug.debug ("[AlisaEditorCellModifier] modify element=" + element + ";property=" + property + ";value=" + value );
@@ -76,68 +91,66 @@ public class AlisaEditorCellModifier implements ICellModifier {
     	if (elementData instanceof Requirement)
     	{
     		Requirement requirement = (Requirement) elementData;
+    		editorIdentifier = AlisaEditor.INDEX_TABLE_REQUIREMENTS;
     		switch (elementIndex)
     		{
-	    		case 0:
+	    		case 1:
 	    		{
 	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update requirement title");
 	    			requirement.setTitle((String)value);
 	    			break;
 	    		}
-	    		case 1:
+	    		case 2:
 	    		{
 	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update requirement desc");
 	    			requirement.setDescription((String)value);
 	    			break;
 	    		}
-	    		case 2:
+	    		case 3:
 	    		{
 	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update requirement comment");
 	    			requirement.setComment((String)value);
 	    			break;
 	    		}
     		}
+
     	}
     	
     	if (elementData instanceof Stakeholder)
     	{
     		Stakeholder stakeholder = (Stakeholder) elementData;
+    		editorIdentifier = AlisaEditor.INDEX_TABLE_STAKEHOLDERS;
     		switch (elementIndex)
     		{
-	    		case 0:
+	    		case 1:
 	    		{
 	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update stakeholder title");
 	    			stakeholder.setTitle((String)value);
 	    			break;
 	    		}
-	    		case 1:
+	    		case 2:
 	    		{
 	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update stakeholder desc");
 	    			stakeholder.setDescription((String)value);
 	    			break;
 	    		}
-	    		case 2:
+	    		case 3:
 	    		{
 	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update stakeholder role");
+	    			AlisaDebug.debug ("[AlisaEditorCellModifier] before role=" + stakeholder.getRole());
 	    			stakeholder.setRole((String)value);
+	    			AlisaDebug.debug ("[AlisaEditorCellModifier] after role=" + stakeholder.getRole());
+
 	    			break;
 	    		}
     		}    		
     	}
     	
-//
-//        if (element instanceof TableItem) {
-//            CSVRow row = (CSVRow) ((TableItem) element).getData();
-//
-//            if(elementIndex < row.getNumberOfElements()) {
-//                row.setRowEntry(elementIndex, value.toString());
-//            }
-//            else {
-//                for (int i=row.getNumberOfElements();i<elementIndex + 1;i++) {
-//                    row.addElement("");
-//                }
-//                row.setRowEntry(elementIndex, value.toString());
-//            }
-//        }
+    	if (editorIdentifier != -1)
+    	{
+    		alisaEditor.updateTable (editorIdentifier);
+    		
+    	}
+    	alisaEditor.updateTextualEditor();
     }
 }
