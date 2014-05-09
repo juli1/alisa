@@ -6,8 +6,10 @@ import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.dialogs.ErrorDialog;
+import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
+import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -34,9 +36,11 @@ import org.eclipse.ui.part.MultiPageEditorPart;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 
 import edu.cmu.sei.alisa.editor.utils.AlisaDebug;
+import edu.cmu.sei.alisa.editor.utils.AlisaEditorCellModifier;
 import edu.cmu.sei.alisa.editor.utils.AlisaLabelProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaRequirementsContentProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaStakeholdersContentProvider;
+import edu.cmu.sei.alisa.editor.utils.AlisaTextEditor;
 
 /**
  * An example showing how to create a multi-page editor.
@@ -52,7 +56,7 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
     private boolean isPageModified;
 
     public static final int NB_TABLE_VIEWERS    = 2;
-    public static final int INDEX_SOURCE  	    = 2;
+    public static final int INDEX_SOURCE  	    = 3;
     public static final int INDEX_TABLE_REQUIREMENTS 	= 1;
     public static final int INDEX_TABLE_STAKEHOLDERS 	= 0;
     public static final String[] TABLE_NAMES = {"Stakeholders" , "Requirements"};
@@ -98,7 +102,7 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
      */
     private void createSourcePage () {
         try {
-            editor = new XtextEditor();
+            editor = new AlisaTextEditor();
             editor.setInput(getEditorInput());
             addPage(editor, getEditorInput());
             setPageText(INDEX_SOURCE, "Alisa Textual");
@@ -235,31 +239,61 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
        }
     }
 
-    /**
-     *
-     */
-    private void updateTableFromTextEditor (int index)
+    private int getNbColumns (int index)
     {
-    	int nbColumns = 0;
-    	String[] columnsNames = {};
+    	switch (index)
+    	{
+	    	case INDEX_TABLE_REQUIREMENTS:
+	    	{
+	    		return 3;
+	    	}
+	    	case INDEX_TABLE_STAKEHOLDERS:
+	    	{
+	    		return 3;
+	    	}
+	    	
+	    	default:
+	    	{
+	    		return 0;
+	    	}		
+    	}
+    }
+    
+    private String[] getColumnName (int index)
+    {
+    	String[] columnsEmpty = {};
     	String[] columnsNamesStakeholders = {"Title" , "Description","Role"};
     	String[] columnsNamesRequirements = {"Title" , "Description","Comment"};
     	switch (index)
     	{
 	    	case INDEX_TABLE_REQUIREMENTS:
 	    	{
-	    		nbColumns = 3;
-	    		columnsNames = columnsNamesRequirements;
-	    		break;
+	    		return columnsNamesRequirements;
 	    	}
 	    	case INDEX_TABLE_STAKEHOLDERS:
 	    	{
-	    		nbColumns = 3;
-	    		columnsNames = columnsNamesStakeholders;
-	    		break;
+	    		return columnsNamesStakeholders;
+	    	}
+	    	
+	    	default:
+	    	{
+	    		return columnsEmpty;
 	    	}
     	}
-    	
+    }
+    
+    
+    
+    /**
+     *
+     */
+    private void updateTableFromTextEditor (int index)
+    {
+    	int nbColumns = getNbColumns (index);
+    	String[] columnsNames = getColumnName(index);
+
+
+
     	tableHeaderMenu = new Menu(tableViewers[index].getTable());
         TableColumn[] columns = tableViewers[index].getTable().getColumns();
         if (columns.length > 0) 
@@ -284,10 +318,27 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
         }
         
         tableViewers[index].setInput(AlisaDebug.getSampleAlisaModel());
+        defineCellEditing (index);
     }
 
  
+    private void defineCellEditing (int index)
+    {
+        String[] columnProperties = new String[getNbColumns(index)];
+        CellEditor[] cellEditors = new CellEditor[getNbColumns(index)];
 
+        for (int i = 0; i < getNbColumns(index); i++) {
+            columnProperties[i] = Integer.toString(i);
+            cellEditors[i] = new TextCellEditor(tableViewers[index].getTable());
+        }
+
+        tableViewers[index].setColumnProperties(columnProperties);
+
+        // XXX can be replaced by tableViewer.setEditingSupport()
+        tableViewers[index].setCellEditors(cellEditors);
+        tableViewers[index].setCellModifier(new AlisaEditorCellModifier());
+
+    }
 
     /**
      * @param column

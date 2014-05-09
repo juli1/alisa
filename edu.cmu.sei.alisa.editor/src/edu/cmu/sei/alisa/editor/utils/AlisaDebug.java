@@ -8,60 +8,74 @@ import edu.cmu.sei.alisa.alisa.impl.AlisaFactoryImpl;
 
 public class AlisaDebug {
 	static boolean DEBUG_ENABLE = true;
-
+	private static Requirement[] debugRequirements;
+	private static AlisaModel debugModel;
+	private static Stakeholder[] debugStakeholders;
+	private static boolean isInit = false;
+	private static AlisaFactory factory = AlisaFactoryImpl.init();
+	
 	public static void debug (String str) {
 		if (DEBUG_ENABLE) {
 			System.out.println(str);
 		}
 	}
 	
+	
+	
 	public static Requirement[] getSampleRequirements ()
 	{
-    	AlisaFactory factory = AlisaFactoryImpl.init();
-		Requirement[] requirements;
-    	requirements = new Requirement[2];
-    	requirements[0] = factory.createRequirement();
-    	requirements[0].setTitle("title1");
-    	requirements[0].setDescription("desc1");
-    	requirements[0].setComment("comment1");
-    	requirements[1] = factory.createRequirement();
-    	requirements[1].setTitle("title2");
-    	requirements[1].setDescription("desc2");
-    	requirements[1].setComment("comment2");
-    	return requirements;
+		initDebug ();
+    	return debugRequirements;
 	}
 	
 	public static Stakeholder[] getSampleStakeholders ()
 	{
-    	AlisaFactory factory = AlisaFactoryImpl.init();
-		Stakeholder[] stakeholders;
-		stakeholders = new Stakeholder[2];
-		stakeholders[0] = factory.createStakeholder();
-		stakeholders[0].setTitle("title1");
-		stakeholders[0].setDescription("desc1");
-		stakeholders[0].setRole("role1");
-		stakeholders[1] = factory.createStakeholder();
-		stakeholders[1].setTitle("title2");
-		stakeholders[1].setDescription("desc2");
-		stakeholders[1].setRole("role2");
-    	return stakeholders;
+		initDebug ();
+    	return debugStakeholders;
+	}
+	
+	public static void initDebug ()
+	{
+    	if (! isInit)
+    	{
+    		debugRequirements = new Requirement[2];
+    		debugRequirements[0] = factory.createRequirement();
+    		debugRequirements[0].setTitle("title1");
+    		debugRequirements[0].setDescription("desc1");
+    		debugRequirements[0].setComment("comment1");
+    		debugRequirements[1] = factory.createRequirement();
+    		debugRequirements[1].setTitle("title2");
+    		debugRequirements[1].setDescription("desc2");
+    		debugRequirements[1].setComment("comment2");
+    		
+    		debugStakeholders = new Stakeholder[2];
+			debugStakeholders[0] = factory.createStakeholder();
+			debugStakeholders[0].setTitle("title1");
+			debugStakeholders[0].setDescription("desc1");
+			debugStakeholders[0].setRole("role1");
+			debugStakeholders[1] = factory.createStakeholder();
+			debugStakeholders[1].setTitle("title2");
+			debugStakeholders[1].setDescription("desc2");
+			debugStakeholders[1].setRole("role2");
+			
+			debugModel = factory.createAlisaModel();
+	    	for (Requirement r : debugRequirements)
+	    	{
+	    		debugModel.getContent().add(r);
+	    	}
+	    	
+	    	for (Stakeholder s : debugStakeholders)
+	    	{
+	    		debugModel.getContent().add(s);
+	    	}
+    	}
+    	isInit = true;
 	}
 	
 	public static AlisaModel getSampleAlisaModel ()
 	{
-    	AlisaFactory factory = AlisaFactoryImpl.init();
-		Requirement[] requirements;
-    	requirements = new Requirement[2];
-    	AlisaModel model = factory.createAlisaModel();
-    	for (Requirement r : getSampleRequirements())
-    	{
-    		model.getContent().add(r);
-    	}
-    	
-    	for (Stakeholder s : getSampleStakeholders())
-    	{
-    		model.getContent().add(s);
-    	}
-    	return model;
+		initDebug ();
+
+    	return debugModel;
 	}
 }
