@@ -55,17 +55,65 @@ public class AlisaEditorCellModifier implements ICellModifier {
      */
     public Object getValue (Object element, String property)
     {
-    	AlisaDebug.debug ("[AlisaEditorCellModifier] getValue element=" + element + ";property=" + property);
-        int elementIndex = Integer.parseInt(property);
-//        CSVRow row = (CSVRow) element;
-//
-//        if(elementIndex < row.getNumberOfElements()) {
-//            return row.getElementAt(elementIndex);
-//        }
-//        else {
-//            return "";
-//        }
-        return "";
+    	int elementIndex;
+        Object elementData;
+        Object returnValue;
+        
+        
+        
+        AlisaDebug.debug ("[AlisaEditorCellModifier] getValue element=" + element + ";property=" + property);
+        
+        elementIndex = Integer.parseInt(property);
+        returnValue = "";
+        
+        
+        if (element instanceof Requirement)
+    	{
+    		Requirement requirement = (Requirement) element;
+    		switch (elementIndex)
+    		{
+	    		case 1:
+	    		{
+	    			returnValue = Utils.fixString (requirement.getTitle());
+	    			break;
+	    		}
+	    		case 2:
+	    		{
+	    			returnValue = Utils.fixString (requirement.getDescription());
+	    			break;
+	    		}
+	    		case 3:
+	    		{
+	    			returnValue = Utils.fixString (requirement.getComment());
+	    			break;
+	    		}
+    		}
+
+    	}
+    	
+    	if (element instanceof Stakeholder)
+    	{
+    		Stakeholder stakeholder = (Stakeholder) element;
+    		switch (elementIndex)
+    		{
+	    		case 1:
+	    		{
+	    			returnValue = Utils.fixString (stakeholder.getTitle());
+	    			break;
+	    		}
+	    		case 2:
+	    		{
+	    			returnValue = Utils.fixString (stakeholder.getDescription());
+	    			break;
+	    		}
+	    		case 3:
+	    		{
+	    			returnValue = Utils.fixString (stakeholder.getRole());
+	    			break;
+	    		}
+    		}    		
+    	}
+    	return returnValue;
     }
 
 
@@ -81,6 +129,8 @@ public class AlisaEditorCellModifier implements ICellModifier {
         Object elementData;
     	int elementIndex;
     	int editorIdentifier;
+    	String strVal;
+    	
     	
     	editorIdentifier = -1;
     	elementData = ((TableItem) element).getData();
@@ -97,19 +147,22 @@ public class AlisaEditorCellModifier implements ICellModifier {
 	    		case 1:
 	    		{
 	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update requirement title");
-	    			requirement.setTitle((String)value);
+	    			strVal = "\"" + (String)value +"\"";
+	    			requirement.setTitle(strVal);
 	    			break;
 	    		}
 	    		case 2:
 	    		{
 	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update requirement desc");
-	    			requirement.setDescription((String)value);
+	    			strVal = "\"" + (String)value +"\"";
+	    			requirement.setDescription(strVal);
 	    			break;
 	    		}
 	    		case 3:
 	    		{
 	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update requirement comment");
-	    			requirement.setComment((String)value);
+	    			strVal = "\"" + (String)value +"\"";
+	    			requirement.setComment(strVal);
 	    			break;
 	    		}
     		}
@@ -125,21 +178,24 @@ public class AlisaEditorCellModifier implements ICellModifier {
 	    		case 1:
 	    		{
 	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update stakeholder title");
-	    			stakeholder.setTitle((String)value);
+	    			strVal = "\"" + (String)value +"\"";
+	    			stakeholder.setTitle(strVal);
 	    			break;
 	    		}
 	    		case 2:
 	    		{
 	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update stakeholder desc");
-	    			stakeholder.setDescription((String)value);
+	    			strVal = "\"" + (String)value +"\"";
+	    			stakeholder.setDescription(strVal);
 	    			break;
 	    		}
 	    		case 3:
 	    		{
-	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update stakeholder role");
-	    			AlisaDebug.debug ("[AlisaEditorCellModifier] before role=" + stakeholder.getRole());
-	    			stakeholder.setRole((String)value);
-	    			AlisaDebug.debug ("[AlisaEditorCellModifier] after role=" + stakeholder.getRole());
+//	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update stakeholder role");
+//	    			AlisaDebug.debug ("[AlisaEditorCellModifier] before role=" + stakeholder.getRole());
+	    			strVal = "\"" + (String)value +"\"";
+	    			stakeholder.setRole(strVal);
+//	    			AlisaDebug.debug ("[AlisaEditorCellModifier] after role=" + stakeholder.getRole());
 
 	    			break;
 	    		}
