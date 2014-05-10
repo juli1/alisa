@@ -22,11 +22,7 @@ import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.editor.editors.AlisaEditor;
 
-/**
- *
- * @author fhenri
- *
- */
+
 public class AlisaEditorCellModifier implements ICellModifier {
 	private AlisaEditor alisaEditor;
 	
@@ -87,6 +83,24 @@ public class AlisaEditorCellModifier implements ICellModifier {
 	    			returnValue = Utils.fixString (requirement.getComment());
 	    			break;
 	    		}
+	    		case 4:
+	    		{
+	    			String strVal = "";
+	    			boolean firstPassed = false;
+	    			for (Stakeholder s : requirement.getAssignedTo())
+	    			{
+	    				if (firstPassed == true)
+	    				{
+	    					strVal += ",";
+	    				
+	    				}
+	    				
+	    				strVal += s.getName();
+	    				firstPassed = true;
+	    			}
+	    			returnValue = strVal;
+	    			break;
+	    		}
     		}
 
     	}
@@ -111,6 +125,8 @@ public class AlisaEditorCellModifier implements ICellModifier {
 	    			returnValue = Utils.fixString (stakeholder.getRole());
 	    			break;
 	    		}
+	    		
+	    		
     		}    		
     	}
     	return returnValue;
@@ -165,6 +181,22 @@ public class AlisaEditorCellModifier implements ICellModifier {
 	    			requirement.setComment(strVal);
 	    			break;
 	    		}
+	    		case 4:
+	    		{
+	    			strVal = "";
+	    			String newValues = (String)value;
+	    			for (String stakeholderName : newValues.split(","))
+	    			{
+	    				Stakeholder s = Utils.findStakeHolder(alisaEditor.getRootObject(), stakeholderName);
+	    				if (s != null)
+	    				{
+	    					AlisaDebug.debug ("[AlisaEditorCell] found stakeholder");
+	    					requirement.getAssignedTo().add(s);
+	    				}
+	    			}
+	    			break;
+	    		}
+	    		
     		}
 
     	}

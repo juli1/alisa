@@ -58,27 +58,22 @@ import edu.cmu.sei.alisa.editor.utils.AlisaRequirementsContentProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaStakeholdersContentProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaTextEditor;
 
-/**
- * An example showing how to create a multi-page editor.
- * This example has 3 pages:
- * <ul>
- * <li>page 0 contains a nested text editor.
- * <li>page 1 allows you to change the font used in page 2
- * <li>page 2 shows the words in page 0 in sorted order
- * </ul>
- */
+
 public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeListener{
 
     private boolean isPageModified;
 
+    /**
+     * Number of table viewers
+     */
     public static final int NB_TABLE_VIEWERS    = 2;
-    public static final int INDEX_SOURCE  	    = 2;
+    public static final int INDEX_SOURCE  	    = NB_TABLE_VIEWERS;
     public static final int INDEX_TABLE_REQUIREMENTS 	= 1;
     public static final int INDEX_TABLE_STAKEHOLDERS 	= 0;
     public static final String[] TABLE_NAMES = {"Stakeholders" , "Requirements"};
     
 	String[] columnsNamesStakeholders = {"ID", "Title" , "Description","Role"};
-	String[] columnsNamesRequirements = {"ID", "Title" , "Description","Comment"};
+	String[] columnsNamesRequirements = {"ID", "Title" , "Description","Comment", "Assigned To", "Decomposed by"};
 	
     /** The text editor used in page 0. */
     protected AlisaTextEditor editor;
@@ -321,11 +316,11 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
     	{
 	    	case INDEX_TABLE_REQUIREMENTS:
 	    	{
-	    		return columnsNamesStakeholders.length;
+	    		return columnsNamesRequirements.length;
 	    	}
 	    	case INDEX_TABLE_STAKEHOLDERS:
 	    	{
-	    		return columnsNamesRequirements.length;
+	    		return columnsNamesStakeholders.length;
 	    	}
 	    	
 	    	default:

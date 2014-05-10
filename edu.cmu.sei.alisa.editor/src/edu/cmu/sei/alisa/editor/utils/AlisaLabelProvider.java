@@ -27,6 +27,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
 import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.RequirementDecomposition;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 
 
@@ -120,6 +121,37 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
     			case 3:
     				text = requirement.getComment();
     				break;
+	    		case 4:
+	    		{
+	    			String strVal = "";
+	    			boolean firstPassed = false;
+	    			for (Stakeholder s : requirement.getAssignedTo())
+	    			{
+	    				if (firstPassed == true)
+	    				{
+	    					strVal += ",";
+	    				
+	    				}
+	    				
+	    				strVal += s.getName();
+	    				firstPassed = true;
+	    			}
+	    			text = strVal;
+	    			break;
+	    		}
+	    		
+	    		case 5:
+	    		{
+	    			String strVal = "";
+	    			boolean firstPassed = false;
+	    			for (RequirementDecomposition rtmp : requirement.getDecomposedBy())
+	    			{
+	    				strVal += Utils.getDecompositionString (rtmp);
+	    				
+	    			}
+	    			text = strVal;
+	    			break;
+	    		}
     		}
     	}
     	
