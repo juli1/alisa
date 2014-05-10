@@ -10,10 +10,11 @@ import org.eclipse.jface.viewers.Viewer;
 import edu.cmu.sei.alisa.alisa.AlisaFactory;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.impl.AlisaFactoryImpl;
 
 
-public class AlisaRequirementsContentProvider implements IStructuredContentProvider {
+public class AlisaVerificationActivitiesContentProvider implements IStructuredContentProvider {
 
 	
 	
@@ -25,21 +26,21 @@ public class AlisaRequirementsContentProvider implements IStructuredContentProvi
      */
     public Object[] getElements(Object element)
     {
-    	List<Requirement> requirements = new ArrayList<Requirement>();
-    	AlisaDebug.debug ("[AlisaRequirementsContentProvider] element=" + element);
+    	List<VerificationActivity> vas = new ArrayList<VerificationActivity>();
+    	AlisaDebug.debug ("[AlisaVerificationActivityContentProvider] element=" + element);
    
     	if (element instanceof AlisaModel)
     	{
     		AlisaModel am = (AlisaModel) element;
     		for (Object o : am.getContent())
     		{
-    			if (o instanceof Requirement)
+    			if (o instanceof VerificationActivity)
     			{
-    				requirements.add((Requirement)o);
+    				vas.add((VerificationActivity)o);
     			}
     		}
     	}
-        return requirements.toArray();
+        return vas.toArray();
     }
 
     /**

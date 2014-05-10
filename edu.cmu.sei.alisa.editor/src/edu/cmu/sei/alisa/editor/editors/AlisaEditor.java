@@ -15,10 +15,13 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.viewers.CellEditor;
+import org.eclipse.jface.viewers.CellLabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.KeyAdapter;
+import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -56,7 +59,9 @@ import edu.cmu.sei.alisa.editor.utils.AlisaEditorCellModifier;
 import edu.cmu.sei.alisa.editor.utils.AlisaLabelProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaRequirementsContentProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaStakeholdersContentProvider;
+import edu.cmu.sei.alisa.editor.utils.AlisaTableFilter;
 import edu.cmu.sei.alisa.editor.utils.AlisaTextEditor;
+import edu.cmu.sei.alisa.editor.utils.AlisaVerificationActivitiesContentProvider;
 
 
 public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeListener{
@@ -66,15 +71,17 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
     /**
      * Number of table viewers
      */
-    public static final int NB_TABLE_VIEWERS    = 2;
-    public static final int INDEX_SOURCE  	    = NB_TABLE_VIEWERS;
-    public static final int INDEX_TABLE_REQUIREMENTS 	= 1;
-    public static final int INDEX_TABLE_STAKEHOLDERS 	= 0;
-    public static final String[] TABLE_NAMES = {"Stakeholders" , "Requirements"};
+    public static final int INDEX_TABLE_VERIFICATION_ACTIVITIES 	= 2;
+    public static final int INDEX_TABLE_REQUIREMENTS 				= 1;
+    public static final int INDEX_TABLE_STAKEHOLDERS 				= 0;
+    public static final String[] TABLE_NAMES 						= {"Stakeholders" , "Requirements", "Verification Activity"};
+    public static final int NB_TABLE_VIEWERS    					= TABLE_NAMES.length;
+    public static final int INDEX_SOURCE  	    					= 3;
     
 	String[] columnsNamesStakeholders = {"ID", "Title" , "Description","Role"};
 	String[] columnsNamesRequirements = {"ID", "Title" , "Description","Comment", "Assigned To", "Decomposed by"};
-	
+	String[] columnsNamesVerificationActivities = {"ID", "Title" , "Description","Method", "Assigned To"};
+
     /** The text editor used in page 0. */
     protected AlisaTextEditor editor;
 
@@ -109,6 +116,7 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
         try {
             createStakeholderPage();
             createRequirementsPage();
+            createVerificationActivitiesPage();
             createSourcePage();
             updateTitle();
             populateTablePage();
@@ -146,7 +154,7 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
     } 
 
     
-    private void createTablePage (int index) {
+    private void createTablePage (final int index) {
         Composite parent = getContainer();
 
         // XXX move all the creation into its own component
@@ -191,7 +199,24 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
         final Table table = tableViewers[index].getTable();
         table.setHeaderVisible(true);
         table.setLinesVisible(true);
+        
+        
+        final AlisaTableFilter tableFilter = new AlisaTableFilter();
+        tableViewers[index].addFilter(tableFilter);
 
+        searchText.addKeyListener(new KeyAdapter() {
+            public void keyReleased(KeyEvent ke) {
+                tableFilter.setSearchText(searchText.getText());
+                String filterText = searchText.getText();
+                for (int i = 0; i<tableViewers[index].getColumnProperties().length; i++)
+                {
+                  CellLabelProvider labelProvider = tableViewers[index].getLabelProvider(i);
+                  ((AlisaLabelProvider) labelProvider).setSearchText(filterText);
+                }
+                tableViewers[index].refresh();
+            }
+        });
+        
         // Layout the viewer
         GridData gridData = new GridData();
         gridData.verticalAlignment = GridData.FILL;
@@ -212,6 +237,10 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
     
     private void createRequirementsPage () {
     	createTablePage (INDEX_TABLE_REQUIREMENTS);
+    }
+    
+    private void createVerificationActivitiesPage () {
+    	createTablePage (INDEX_TABLE_VERIFICATION_ACTIVITIES);
     }
     
 
@@ -245,6 +274,13 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
     		{
     			AlisaDebug.debug ("[AlisaEditor] set content provider for stakeholders");
     			tableViewers[index].setContentProvider(new AlisaStakeholdersContentProvider());
+    			break;
+    		}
+    		
+    		case INDEX_TABLE_VERIFICATION_ACTIVITIES:
+    		{
+    			AlisaDebug.debug ("[AlisaEditor] set content provider for verification activities");
+    			tableViewers[index].setContentProvider(new AlisaVerificationActivitiesContentProvider());
     			break;
     		}
 
@@ -322,6 +358,10 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 	    	{
 	    		return columnsNamesStakeholders.length;
 	    	}
+	    	case INDEX_TABLE_VERIFICATION_ACTIVITIES:
+	    	{
+	    		return columnsNamesVerificationActivities.length;
+	    	}
 	    	
 	    	default:
 	    	{
@@ -340,9 +380,15 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 	    	{
 	    		return columnsNamesRequirements;
 	    	}
+	    	
 	    	case INDEX_TABLE_STAKEHOLDERS:
 	    	{
 	    		return columnsNamesStakeholders;
+	    	}
+	    	
+	    	case INDEX_TABLE_VERIFICATION_ACTIVITIES:
+	    	{
+	    		return columnsNamesVerificationActivities;
 	    	}
 	    	
 	    	default:
@@ -465,14 +511,15 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
             getRootObject(true);
     		updateTableFromTextEditor (INDEX_TABLE_REQUIREMENTS);
     		updateTableFromTextEditor (INDEX_TABLE_STAKEHOLDERS);
+    		updateTableFromTextEditor (INDEX_TABLE_VERIFICATION_ACTIVITIES);
     	}
     	else
     	{
-    		Injector injector = Guice.createInjector(new  AlisaRuntimeModule());  
-    		Serializer serializer = injector.getInstance(Serializer.class);  
-    		String s = serializer.serialize(getRootObject());  
-    		AlisaDebug.debug("[AlisaEditor] editor input = " + getEditorInput());
-    		AlisaDebug.debug("[AlisaEditor] new model = " + s);
+//    		Injector injector = Guice.createInjector(new  AlisaRuntimeModule());  
+//    		Serializer serializer = injector.getInstance(Serializer.class);  
+//    		String s = serializer.serialize(getRootObject());  
+//    		AlisaDebug.debug("[AlisaEditor] editor input = " + getEditorInput());
+//    		AlisaDebug.debug("[AlisaEditor] new model = " + s);
     		EObject rootObject = getRootObject();
     		 ResourceSet rs = new ResourceSetImpl();
             IResource rsrc = ResourceUtil.getResource(getEditorInput());
@@ -483,21 +530,17 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
             }
             AlisaDebug.debug("[AlisaEditor] trying to save");
             resource.getContents().add (rootObject);
-            try {
+            try 
+            {
 				resource.save(null);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			} 
+            catch (IOException e) 
+			{
+				AlisaDebug.debug ("[AlisaEditor] exception when trying to save");
+//				e.printStackTrace();
 			}
     		
     	}
-//        if (getActivePage() == indexRequirements && isPageModified) {
-//            updateTextEditorFromTable();
-//        } else {
-//            updateTableFromTextEditor();
-//        }
-//
-//        isPageModified = false;
     }
 
     /**
@@ -560,6 +603,7 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
     protected void handlePropertyChange (int propertyId) {
         if (propertyId == IEditorPart.PROP_DIRTY)
             isPageModified = isDirty();
+        isPageModified = true;
         super.handlePropertyChange(propertyId);
     }
 
@@ -594,6 +638,10 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
      *
      */
     private void updateTextEditorFromTable () {
+    	/**
+    	 * old code but we have to replace with the xtext
+    	 * editor.
+    	 */
 //        editor
 //           .getDocumentProvider()
 //           .getDocument(editor.getEditorInput())

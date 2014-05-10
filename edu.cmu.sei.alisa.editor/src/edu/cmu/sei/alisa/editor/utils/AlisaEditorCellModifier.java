@@ -20,6 +20,7 @@ import org.eclipse.ui.IEditorPart;
 
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
+import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.editor.editors.AlisaEditor;
 
 
@@ -129,6 +130,29 @@ public class AlisaEditorCellModifier implements ICellModifier {
 	    		
     		}    		
     	}
+    	
+    	if (element instanceof VerificationActivity)
+    	{
+    		VerificationActivity va = (VerificationActivity) element;
+    		switch (elementIndex)
+    		{
+				case 0:
+					returnValue = va.getName();
+					break;
+    			case 1:
+    				returnValue = va.getTitle();
+    				break;
+    			case 2:
+    				returnValue = va.getDescription();
+    				break;
+    			case 3:
+    				returnValue = va.getMethod();
+    				break;
+    			case 4:
+    				returnValue = Utils.getStakeholderListAsString (va.getAssignedTo());
+    				break;
+    		}
+    	}
     	return returnValue;
     }
 
@@ -183,16 +207,11 @@ public class AlisaEditorCellModifier implements ICellModifier {
 	    		}
 	    		case 4:
 	    		{
-	    			strVal = "";
-	    			String newValues = (String)value;
-	    			for (String stakeholderName : newValues.split(","))
+	    			for (Stakeholder s : Utils.getStakeholdersFromString (alisaEditor.getRootObject(), (String) value))
 	    			{
-	    				Stakeholder s = Utils.findStakeHolder(alisaEditor.getRootObject(), stakeholderName);
-	    				if (s != null)
-	    				{
-	    					AlisaDebug.debug ("[AlisaEditorCell] found stakeholder");
-	    					requirement.getAssignedTo().add(s);
-	    				}
+    					AlisaDebug.debug ("[AlisaEditorCell] add stakeholder" + s.getName());
+
+	    				requirement.getAssignedTo().add(s);
 	    			}
 	    			break;
 	    		}
@@ -210,14 +229,14 @@ public class AlisaEditorCellModifier implements ICellModifier {
 	    		case 1:
 	    		{
 	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update stakeholder title");
-	    			strVal = "\"" + (String)value +"\"";
+	    			strVal = Utils.wrapValue(value);
 	    			stakeholder.setTitle(strVal);
 	    			break;
 	    		}
 	    		case 2:
 	    		{
 	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update stakeholder desc");
-	    			strVal = "\"" + (String)value +"\"";
+	    			strVal = Utils.wrapValue(value);
 	    			stakeholder.setDescription(strVal);
 	    			break;
 	    		}
@@ -225,13 +244,46 @@ public class AlisaEditorCellModifier implements ICellModifier {
 	    		{
 //	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update stakeholder role");
 //	    			AlisaDebug.debug ("[AlisaEditorCellModifier] before role=" + stakeholder.getRole());
-	    			strVal = "\"" + (String)value +"\"";
+	    			strVal = Utils.wrapValue(value);
 	    			stakeholder.setRole(strVal);
 //	    			AlisaDebug.debug ("[AlisaEditorCellModifier] after role=" + stakeholder.getRole());
 
 	    			break;
 	    		}
     		}    		
+    	}
+    	
+    	if (elementData instanceof VerificationActivity)
+    	{
+    		VerificationActivity va = (VerificationActivity) elementData;
+    		editorIdentifier = AlisaEditor.INDEX_TABLE_VERIFICATION_ACTIVITIES;
+    		switch (elementIndex)
+    		{
+				case 0:
+					va.setName(Utils.wrapValue(value));
+					break;
+    			case 1:
+    				va.setTitle(Utils.wrapValue(value));
+    				break;
+    			case 2:
+    				va.setDescription(Utils.wrapValue(value));
+    				break;
+    			case 3:
+    				String val = (String) value;
+    				if ((val.equalsIgnoreCase("manual")) || (val.equalsIgnoreCase("automatic")))
+    				{
+    					va.setMethod(val.toLowerCase());
+    				}
+    				break;
+    			case 4:
+	    			for (Stakeholder s : Utils.getStakeholdersFromString (alisaEditor.getRootObject(), (String) value))
+	    			{
+    					AlisaDebug.debug ("[AlisaEditorCell] add stakeholder" + s.getName());
+
+	    				va.getAssignedTo().add(s);
+	    			}
+    				break;
+    		}
     	}
     	
     	if (editorIdentifier != -1)

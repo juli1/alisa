@@ -29,8 +29,14 @@ import org.eclipse.swt.widgets.Display;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.RequirementDecomposition;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
+import edu.cmu.sei.alisa.alisa.VerificationActivity;
 
-
+/**
+ * This class is used to show the content
+ * of a label in the table.
+ * @author julien
+ *
+ */
 public class AlisaLabelProvider extends StyledCellLabelProvider {
 
     private String searchText;
@@ -123,20 +129,7 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
     				break;
 	    		case 4:
 	    		{
-	    			String strVal = "";
-	    			boolean firstPassed = false;
-	    			for (Stakeholder s : requirement.getAssignedTo())
-	    			{
-	    				if (firstPassed == true)
-	    				{
-	    					strVal += ",";
-	    				
-	    				}
-	    				
-	    				strVal += s.getName();
-	    				firstPassed = true;
-	    			}
-	    			text = strVal;
+	    			text = Utils.getStakeholderListAsString (requirement.getAssignedTo());
 	    			break;
 	    		}
 	    		
@@ -171,6 +164,29 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
     				break;
     			case 3:
     				text = stakeholder.getRole();
+    				break;
+    		}
+    	}
+    	
+    	if (cell.getElement() instanceof VerificationActivity)
+    	{
+    		VerificationActivity va = (VerificationActivity) cell.getElement();
+    		switch (index)
+    		{
+				case 0:
+					text = va.getName();
+					break;
+    			case 1:
+    				text = va.getTitle();
+    				break;
+    			case 2:
+    				text = va.getDescription();
+    				break;
+    			case 3:
+    				text = va.getMethod();
+    				break;
+    			case 4:
+    				text = Utils.getStakeholderListAsString (va.getAssignedTo());
     				break;
     		}
     	}
