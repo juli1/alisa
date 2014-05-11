@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="Alisa Action Set"
+            visible="true"
+            id="edu.cmu.sei.alisa.analysis.actionSet">
+         <menu
+               label="Alisa &amp;Menu"
+               id="alisaMenu">
+            <separator
+                  name="alisaGroup">
+            </separator>
+         </menu>
+         <action
+               label="&amp;Generate CAE"
+               icon="icons/alisa.png"
+               class="edu.cmu.sei.alisa.analysis.actions.GenerateCAE"
+               tooltip="Generate CAE notation"
+               menubarPath="alisaMenu/alisaGroup"
+               toolbarPath="alisaGroup"
+               id="edu.cmu.sei.alisa.analysis.actions.SampleAction">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

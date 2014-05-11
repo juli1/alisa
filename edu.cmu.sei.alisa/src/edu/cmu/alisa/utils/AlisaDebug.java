@@ -1,4 +1,4 @@
-package edu.cmu.sei.alisa.editor.utils;
+package edu.cmu.alisa.utils;
 
 import edu.cmu.sei.alisa.alisa.AlisaFactory;
 import edu.cmu.sei.alisa.alisa.AlisaModel;

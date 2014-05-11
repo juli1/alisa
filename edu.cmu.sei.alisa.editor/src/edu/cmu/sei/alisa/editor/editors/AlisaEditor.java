@@ -48,9 +48,10 @@ import org.eclipse.ui.ide.ResourceUtil;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.MultiPageEditorPart;
 
+import edu.cmu.alisa.utils.AlisaDebug;
+import edu.cmu.alisa.utils.Utils;
 import edu.cmu.sei.alisa.AlisaStandaloneSetup;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
-import edu.cmu.sei.alisa.editor.utils.AlisaDebug;
 import edu.cmu.sei.alisa.editor.utils.AlisaEditorCellModifier;
 import edu.cmu.sei.alisa.editor.utils.AlisaLabelProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaRequirementsContentProvider;
@@ -58,7 +59,6 @@ import edu.cmu.sei.alisa.editor.utils.AlisaStakeholdersContentProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaTableFilter;
 import edu.cmu.sei.alisa.editor.utils.AlisaTextEditor;
 import edu.cmu.sei.alisa.editor.utils.AlisaVerificationActivitiesContentProvider;
-import edu.cmu.sei.alisa.editor.utils.Utils;
 
 
 public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeListener{
@@ -89,14 +89,21 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 
     private AlisaModel alisaModel = null;
 
-
+    private static AlisaEditor currentInstance;
+    
+    public TableViewer getTableViewer (int id)
+    {
+    	return tableViewers[id];
+    }
+    
+    
     /**
      * Creates a multi-page editor example.
      */
     public AlisaEditor () {
         super();
         ResourcesPlugin.getWorkspace().addResourceChangeListener(this);
-    
+        currentInstance = this;
     }
     
     public AlisaTextEditor getTextualEditor ()
@@ -173,7 +180,7 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
          */
         Button add = new Button(canvas, SWT.PUSH | SWT.CENTER);
         add.setText("Add New");
-        add.setToolTipText("Add a new row at the end of the file");
+        add.setToolTipText("Add a new row");
         GridData buttonAddGridData = new GridData (GridData.HORIZONTAL_ALIGN_BEGINNING);
         buttonAddGridData.widthHint = 80;
         add.setLayoutData(buttonAddGridData);
@@ -730,5 +737,12 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
             });
         }
     }
+
+	public static AlisaEditor getCurrentInstance() {
+		
+		return currentInstance;
+	}
+
+
 
 }

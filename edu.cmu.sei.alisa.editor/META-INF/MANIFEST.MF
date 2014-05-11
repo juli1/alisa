@@ -13,4 +13,6 @@ Require-Bundle: org.eclipse.ui,
  edu.cmu.sei.alisa
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
+Export-Package: edu.cmu.sei.alisa.editor.editors, edu.cmu.sei.alisa.editor
 Import-Package: org.eclipse.xtext.ui.editor
+Bundle-Vendor: CMU/SEI

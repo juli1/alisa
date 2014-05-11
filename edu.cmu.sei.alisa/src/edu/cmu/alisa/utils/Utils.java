@@ -1,4 +1,4 @@
-package edu.cmu.sei.alisa.editor.utils;
+package edu.cmu.alisa.utils;
 
 import java.util.ArrayList;
 import java.util.List;
