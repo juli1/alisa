@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.CellLabelProvider;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.jface.viewers.TextCellEditor;
@@ -43,17 +44,10 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.editors.text.TextEditor;
 import org.eclipse.ui.ide.ResourceUtil;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.MultiPageEditorPart;
-import org.eclipse.xtext.serializer.impl.Serializer;
-import org.eclipse.xtext.ui.editor.XtextEditor;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-
-import edu.cmu.sei.alisa.AlisaRuntimeModule;
 import edu.cmu.sei.alisa.AlisaStandaloneSetup;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.editor.utils.AlisaDebug;
@@ -173,8 +167,10 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
         searchText.setLayoutData(
                 new GridData(GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
 
-        // Create and configure the buttons
 
+        /**
+         * Ability to add a new object into the model.
+         */
         Button add = new Button(canvas, SWT.PUSH | SWT.CENTER);
         add.setText("Add New");
         add.setToolTipText("Add a new row at the end of the file");
@@ -185,35 +181,56 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
         {
             public void widgetSelected(SelectionEvent e)
             {
-            	if (getActivePage() == INDEX_TABLE_REQUIREMENTS)
+            	/**
+            	 * depending on which page is selected, we
+            	 * add the appropriate object into the Alisa Model.
+            	 */
+            	switch (getActivePage())
             	{
-            		AlisaDebug.debug("[AlisaEditor] add requirement");
-
-                    Utils.addNewRequirement(getRootObject()); 
-            	}
-            	if (getActivePage() == INDEX_TABLE_STAKEHOLDERS)
-            	{
-            		AlisaDebug.debug("[AlisaEditor] add requirement");
-
-                    Utils.addNewStakeholder(getRootObject()); 
-            	}
-            	if (getActivePage() == INDEX_TABLE_VERIFICATION_ACTIVITIES)
-            	{
-            		AlisaDebug.debug("[AlisaEditor] add requirement");
-
-                    Utils.addNewVerificationActivity(getRootObject()); 
+	            	case INDEX_TABLE_REQUIREMENTS:
+	            	{
+	
+	                    Utils.addNewRequirement(getRootObject());
+	                    break;
+	            	}
+	            	case INDEX_TABLE_STAKEHOLDERS:
+	            	{
+	                    Utils.addNewStakeholder(getRootObject()); 
+	                    break;
+	            	}
+	            	case INDEX_TABLE_VERIFICATION_ACTIVITIES:
+	            	{
+	                    Utils.addNewVerificationActivity(getRootObject()); 
+	                    break;
+	            	}
             	}
                 updateTables();
-//                tableModified();
             }
         });
 
+        /**
+         * Add the delete button to remove the selected item
+         * from the requirements content.
+         */
         Button delete = new Button(canvas, SWT.PUSH | SWT.CENTER);
         delete.setText("Delete");
         delete.setToolTipText("Delete the current row");
         GridData buttonDelGridData = new GridData (GridData.HORIZONTAL_ALIGN_BEGINNING);
         buttonDelGridData.widthHint = 80;
         delete.setLayoutData(buttonDelGridData);
+        delete.addSelectionListener(new SelectionAdapter() {
+            public void widgetSelected(SelectionEvent e)
+            {
+                Object o = ((IStructuredSelection)
+                        tableViewers[getActivePage()].getSelection()).getFirstElement();
+                if (o != null)
+                {
+                	Utils.deleteObjectFromModel (getRootObject(),o); 
+                    getRootObject().getContent().remove(o);
+                    updateTables();
+                }
+            }
+        });
        
         tableViewers[index] = new TableViewer(canvas,
                 SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL | SWT.FULL_SELECTION |SWT.BORDER);
@@ -657,7 +674,9 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
      }
 
     /**
-     *
+     * should update the text of the textual editor.
+     * we should see how to make use of the xtext
+     * editor.
      */
     private void updateTextEditorFromTable () {
     	/**

@@ -160,4 +160,17 @@ public class Utils {
 		sh.setDescription("\"Desc\"");
 		model.getContent().add(sh);
 	}
+	
+	
+	/**
+	 * Remove an object from the model. Should make consistency
+	 * check if the node is not referenced before in order
+	 * to make sure the model is still consistent
+	 * @param model - the AlisaModel that contain the object to remove
+	 * @param o     - the object to be removed
+	 */
+	public static void deleteObjectFromModel (AlisaModel model, Object o)
+	{
+		model.getContent().remove (o);
+	}
 }
