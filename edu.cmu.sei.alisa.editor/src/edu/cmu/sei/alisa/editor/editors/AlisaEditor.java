@@ -22,6 +22,8 @@ import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -62,6 +64,7 @@ import edu.cmu.sei.alisa.editor.utils.AlisaStakeholdersContentProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaTableFilter;
 import edu.cmu.sei.alisa.editor.utils.AlisaTextEditor;
 import edu.cmu.sei.alisa.editor.utils.AlisaVerificationActivitiesContentProvider;
+import edu.cmu.sei.alisa.editor.utils.Utils;
 
 
 public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeListener{
@@ -171,23 +174,42 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
                 new GridData(GridData.GRAB_HORIZONTAL | GridData.HORIZONTAL_ALIGN_FILL));
 
         // Create and configure the buttons
-        Button insert = new Button(canvas, SWT.PUSH | SWT.CENTER);
-        insert.setText("Insert Row");
-        insert.setToolTipText("Insert a new row before the current one");
-        GridData buttonInsertGridData = new GridData (GridData.HORIZONTAL_ALIGN_BEGINNING);
-        buttonInsertGridData.widthHint = 80;
-        insert.setLayoutData(buttonInsertGridData);
 
         Button add = new Button(canvas, SWT.PUSH | SWT.CENTER);
-        add.setText("Add Row");
+        add.setText("Add New");
         add.setToolTipText("Add a new row at the end of the file");
         GridData buttonAddGridData = new GridData (GridData.HORIZONTAL_ALIGN_BEGINNING);
         buttonAddGridData.widthHint = 80;
         add.setLayoutData(buttonAddGridData);
+        add.addSelectionListener(new SelectionAdapter()
+        {
+            public void widgetSelected(SelectionEvent e)
+            {
+            	if (getActivePage() == INDEX_TABLE_REQUIREMENTS)
+            	{
+            		AlisaDebug.debug("[AlisaEditor] add requirement");
 
+                    Utils.addNewRequirement(getRootObject()); 
+            	}
+            	if (getActivePage() == INDEX_TABLE_STAKEHOLDERS)
+            	{
+            		AlisaDebug.debug("[AlisaEditor] add requirement");
+
+                    Utils.addNewStakeholder(getRootObject()); 
+            	}
+            	if (getActivePage() == INDEX_TABLE_VERIFICATION_ACTIVITIES)
+            	{
+            		AlisaDebug.debug("[AlisaEditor] add requirement");
+
+                    Utils.addNewVerificationActivity(getRootObject()); 
+            	}
+                updateTables();
+//                tableModified();
+            }
+        });
 
         Button delete = new Button(canvas, SWT.PUSH | SWT.CENTER);
-        delete.setText("Delete Row");
+        delete.setText("Delete");
         delete.setToolTipText("Delete the current row");
         GridData buttonDelGridData = new GridData (GridData.HORIZONTAL_ALIGN_BEGINNING);
         buttonDelGridData.widthHint = 80;

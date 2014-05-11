@@ -5,9 +5,13 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 
+import edu.cmu.sei.alisa.alisa.AlisaFactory;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
+import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.RequirementDecomposition;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
+import edu.cmu.sei.alisa.alisa.VerificationActivity;
+import edu.cmu.sei.alisa.alisa.impl.AlisaFactoryImpl;
 
 public class Utils {
 	public static String fixString (String s)
@@ -102,5 +106,58 @@ public class Utils {
 			}
 		}
 		return stakeholders;
+	}
+	
+	/**
+	 * Add a new requirement to the model
+	 * @param model - the alisa model that will contain the
+	 *                new requirement.
+	 */
+	private static int NEW_REQ_ID = 1;
+	public static void addNewRequirement (AlisaModel model)
+	{
+		AlisaFactory factory = AlisaFactoryImpl.init();
+		Requirement req = factory.createRequirement();
+		req.setTitle("\"Title\"");
+		req.setName("newreq" + NEW_REQ_ID++);
+		req.setComment("\"Comment\"");
+		req.setDescription("\"Desc\"");
+		model.getContent().add(req);
+	}
+	
+	
+	/**
+	 * Add a new verification activity to the model
+	 * @param model - the alisa model that will contain the
+	 *                new verification activity.
+	 */
+	private static int NEW_VA_ID = 1;
+	public static void addNewVerificationActivity (AlisaModel model)
+	{
+		AlisaFactory factory = AlisaFactoryImpl.init();
+		VerificationActivity va = factory.createVerificationActivity();
+		va.setTitle("\"Title\"");
+		va.setName("new_verification_activity" + NEW_VA_ID++);
+		va.setMethod("manual");
+		va.setDescription("\"Desc\"");
+		model.getContent().add(va);
+	}
+	
+	
+	/**
+	 * Add a new stakeholder to the model
+	 * @param model - the alisa model that will contain the
+	 *                new stakeholder.
+	 */
+	private static int NEW_SH_ID = 1;
+	public static void addNewStakeholder (AlisaModel model)
+	{
+		AlisaFactory factory = AlisaFactoryImpl.init();
+		Stakeholder sh = factory.createStakeholder();
+		sh.setTitle("\"Title\"");
+		sh.setName("newstakeholder" + NEW_SH_ID++);
+		sh.setRole("\"Role\"");
+		sh.setDescription("\"Desc\"");
+		model.getContent().add(sh);
 	}
 }
