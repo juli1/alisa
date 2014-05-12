@@ -9,7 +9,9 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
 import edu.cmu.alisa.utils.AlisaDebug;
+import edu.cmu.alisa.utils.Utils;
 import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.analysis.utils.GeneratorCAE;
 import edu.cmu.sei.alisa.editor.editors.AlisaEditor;
 
 /**
@@ -59,11 +61,14 @@ public class GenerateCAE implements IWorkbenchWindowActionDelegate {
 		}
 		else
 		{
+			GeneratorCAE.init();
+			GeneratorCAE.generate (null, requirement);
+			GeneratorCAE.save(edu.cmu.sei.alisa.analysis.utils.Utils.getSelectedProject());
 			AlisaDebug.debug("[GenerateCAE] selected requirement=" + requirement);
 		}
    
-	}
-
+	} 
+ 
 	/**
 	 * Selection in the workbench has been changed. We 
 	 * can change the state of the 'real' action here
