@@ -15,14 +15,7 @@ import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.analysis.utils.GeneratorCAE;
 import edu.cmu.sei.alisa.editor.editors.AlisaEditor;
 
-/**
- * Our sample action implements workbench action delegate.
- * The action proxy will be created by the workbench and
- * shown in the UI. When the user tries to use the action,
- * this delegate will be created and execution will be 
- * delegated to it.
- * @see IWorkbenchWindowActionDelegate
- */
+
 public class GenerateCAE implements IWorkbenchWindowActionDelegate {
 	private IWorkbenchWindow window;
 	/**

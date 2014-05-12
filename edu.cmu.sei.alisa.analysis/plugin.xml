@@ -22,9 +22,23 @@
                tooltip="Generate CAE notation"
                menubarPath="alisaMenu/alisaGroup"
                toolbarPath="alisaGroup"
-               id="edu.cmu.sei.alisa.analysis.actions.SampleAction">
+               id="edu.cmu.sei.alisa.analysis.actions.GenerateCAE">
+         </action>
+         <action
+               label="&amp;Check Requirements Semantics"
+               icon="icons/alisa.png"
+               class="edu.cmu.sei.alisa.analysis.actions.CheckWording"
+               tooltip="Check for Specific Words in the Requirements"
+               menubarPath="alisaMenu/alisaGroup"
+               toolbarPath="alisaGroup"
+               id="edu.cmu.sei.alisa.analysis.actions.CheckWording">
          </action>
       </actionSet>
    </extension>
-
+   <extension
+         id="edu.cmu.sei.alisa.analysis.markers.CheckWording"
+         name="Wording Error"
+         point="org.eclipse.core.resources.markers">
+      <persistent value="true"/>
+   </extension>
 </plugin>
