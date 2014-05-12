@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getElements <em>Elements</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getElement <em>Element</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getLeft <em>Left</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getType <em>Type</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getRight <em>Right</em>}</li>
@@ -26,30 +26,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface VerificationDecomposition extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Elements</b></em>' reference.
+   * Returns the value of the '<em><b>Element</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Elements</em>' reference isn't clear,
+   * If the meaning of the '<em>Element</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Elements</em>' reference.
-   * @see #setElements(VerificationActivity)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationDecomposition_Elements()
+   * @return the value of the '<em>Element</em>' reference.
+   * @see #setElement(VerificationActivity)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationDecomposition_Element()
    * @model
    * @generated
    */
-  VerificationActivity getElements();
+  VerificationActivity getElement();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getElements <em>Elements</em>}' reference.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getElement <em>Element</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Elements</em>' reference.
-   * @see #getElements()
+   * @param value the new value of the '<em>Element</em>' reference.
+   * @see #getElement()
    * @generated
    */
-  void setElements(VerificationActivity value);
+  void setElement(VerificationActivity value);
 
   /**
    * Returns the value of the '<em><b>Left</b></em>' reference.

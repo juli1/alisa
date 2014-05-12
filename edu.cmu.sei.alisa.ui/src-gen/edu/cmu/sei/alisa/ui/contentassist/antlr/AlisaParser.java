@@ -89,11 +89,11 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRequirementAccess().getReferencedByAssignment_6_3(), "rule__Requirement__ReferencedByAssignment_6_3");
 					put(grammarAccess.getRequirementAccess().getVerifiedByAssignment_7_3(), "rule__Requirement__VerifiedByAssignment_7_3");
 					put(grammarAccess.getRequirementAccess().getDecomposedByAssignment_8_3(), "rule__Requirement__DecomposedByAssignment_8_3");
-					put(grammarAccess.getRequirementDecompositionAccess().getElementsAssignment_0(), "rule__RequirementDecomposition__ElementsAssignment_0");
+					put(grammarAccess.getRequirementDecompositionAccess().getElementAssignment_0(), "rule__RequirementDecomposition__ElementAssignment_0");
 					put(grammarAccess.getRequirementDecompositionAccess().getLeftAssignment_1_0(), "rule__RequirementDecomposition__LeftAssignment_1_0");
 					put(grammarAccess.getRequirementDecompositionAccess().getTypeAssignment_1_1(), "rule__RequirementDecomposition__TypeAssignment_1_1");
 					put(grammarAccess.getRequirementDecompositionAccess().getRightAssignment_1_2(), "rule__RequirementDecomposition__RightAssignment_1_2");
-					put(grammarAccess.getVerificationDecompositionAccess().getElementsAssignment_0(), "rule__VerificationDecomposition__ElementsAssignment_0");
+					put(grammarAccess.getVerificationDecompositionAccess().getElementAssignment_0(), "rule__VerificationDecomposition__ElementAssignment_0");
 					put(grammarAccess.getVerificationDecompositionAccess().getLeftAssignment_1_0(), "rule__VerificationDecomposition__LeftAssignment_1_0");
 					put(grammarAccess.getVerificationDecompositionAccess().getTypeAssignment_1_1(), "rule__VerificationDecomposition__TypeAssignment_1_1");
 					put(grammarAccess.getVerificationDecompositionAccess().getRightAssignment_1_2(), "rule__VerificationDecomposition__RightAssignment_1_2");

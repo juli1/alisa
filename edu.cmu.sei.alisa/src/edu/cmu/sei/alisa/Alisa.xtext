@@ -39,12 +39,12 @@ Requirement:
 ;
 
 RequirementDecomposition:
-	elements=([Requirement])|
+	element=([Requirement])|
 	left=([Requirement]) type=('and'|'or') right=(RequirementDecomposition)
 ;
 
 VerificationDecomposition:
-	elements=([VerificationActivity])|
+	element=([VerificationActivity])|
 	left=([VerificationActivity]) type=('and'|'or') right=(VerificationDecomposition)
 ;
 

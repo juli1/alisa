@@ -1208,13 +1208,13 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RequirementDecomposition__Alternatives"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:436:1: rule__RequirementDecomposition__Alternatives : ( ( ( rule__RequirementDecomposition__ElementsAssignment_0 ) ) | ( ( rule__RequirementDecomposition__Group_1__0 ) ) );
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:436:1: rule__RequirementDecomposition__Alternatives : ( ( ( rule__RequirementDecomposition__ElementAssignment_0 ) ) | ( ( rule__RequirementDecomposition__Group_1__0 ) ) );
     public final void rule__RequirementDecomposition__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:440:1: ( ( ( rule__RequirementDecomposition__ElementsAssignment_0 ) ) | ( ( rule__RequirementDecomposition__Group_1__0 ) ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:440:1: ( ( ( rule__RequirementDecomposition__ElementAssignment_0 ) ) | ( ( rule__RequirementDecomposition__Group_1__0 ) ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1242,24 +1242,24 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
             }
             switch (alt3) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:441:1: ( ( rule__RequirementDecomposition__ElementsAssignment_0 ) )
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:441:1: ( ( rule__RequirementDecomposition__ElementAssignment_0 ) )
                     {
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:441:1: ( ( rule__RequirementDecomposition__ElementsAssignment_0 ) )
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:442:1: ( rule__RequirementDecomposition__ElementsAssignment_0 )
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:441:1: ( ( rule__RequirementDecomposition__ElementAssignment_0 ) )
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:442:1: ( rule__RequirementDecomposition__ElementAssignment_0 )
                     {
-                     before(grammarAccess.getRequirementDecompositionAccess().getElementsAssignment_0()); 
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:443:1: ( rule__RequirementDecomposition__ElementsAssignment_0 )
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:443:2: rule__RequirementDecomposition__ElementsAssignment_0
+                     before(grammarAccess.getRequirementDecompositionAccess().getElementAssignment_0()); 
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:443:1: ( rule__RequirementDecomposition__ElementAssignment_0 )
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:443:2: rule__RequirementDecomposition__ElementAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__RequirementDecomposition__ElementsAssignment_0_in_rule__RequirementDecomposition__Alternatives890);
-                    rule__RequirementDecomposition__ElementsAssignment_0();
+                    pushFollow(FOLLOW_rule__RequirementDecomposition__ElementAssignment_0_in_rule__RequirementDecomposition__Alternatives890);
+                    rule__RequirementDecomposition__ElementAssignment_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getRequirementDecompositionAccess().getElementsAssignment_0()); 
+                     after(grammarAccess.getRequirementDecompositionAccess().getElementAssignment_0()); 
 
                     }
 
@@ -1380,13 +1380,13 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VerificationDecomposition__Alternatives"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:484:1: rule__VerificationDecomposition__Alternatives : ( ( ( rule__VerificationDecomposition__ElementsAssignment_0 ) ) | ( ( rule__VerificationDecomposition__Group_1__0 ) ) );
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:484:1: rule__VerificationDecomposition__Alternatives : ( ( ( rule__VerificationDecomposition__ElementAssignment_0 ) ) | ( ( rule__VerificationDecomposition__Group_1__0 ) ) );
     public final void rule__VerificationDecomposition__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:488:1: ( ( ( rule__VerificationDecomposition__ElementsAssignment_0 ) ) | ( ( rule__VerificationDecomposition__Group_1__0 ) ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:488:1: ( ( ( rule__VerificationDecomposition__ElementAssignment_0 ) ) | ( ( rule__VerificationDecomposition__Group_1__0 ) ) )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -1414,24 +1414,24 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
             }
             switch (alt5) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:489:1: ( ( rule__VerificationDecomposition__ElementsAssignment_0 ) )
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:489:1: ( ( rule__VerificationDecomposition__ElementAssignment_0 ) )
                     {
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:489:1: ( ( rule__VerificationDecomposition__ElementsAssignment_0 ) )
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:490:1: ( rule__VerificationDecomposition__ElementsAssignment_0 )
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:489:1: ( ( rule__VerificationDecomposition__ElementAssignment_0 ) )
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:490:1: ( rule__VerificationDecomposition__ElementAssignment_0 )
                     {
-                     before(grammarAccess.getVerificationDecompositionAccess().getElementsAssignment_0()); 
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:491:1: ( rule__VerificationDecomposition__ElementsAssignment_0 )
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:491:2: rule__VerificationDecomposition__ElementsAssignment_0
+                     before(grammarAccess.getVerificationDecompositionAccess().getElementAssignment_0()); 
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:491:1: ( rule__VerificationDecomposition__ElementAssignment_0 )
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:491:2: rule__VerificationDecomposition__ElementAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__VerificationDecomposition__ElementsAssignment_0_in_rule__VerificationDecomposition__Alternatives996);
-                    rule__VerificationDecomposition__ElementsAssignment_0();
+                    pushFollow(FOLLOW_rule__VerificationDecomposition__ElementAssignment_0_in_rule__VerificationDecomposition__Alternatives996);
+                    rule__VerificationDecomposition__ElementAssignment_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getVerificationDecompositionAccess().getElementsAssignment_0()); 
+                     after(grammarAccess.getVerificationDecompositionAccess().getElementAssignment_0()); 
 
                     }
 
@@ -13461,9 +13461,9 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Requirement__DecomposedByAssignment_8_3"
 
 
-    // $ANTLR start "rule__RequirementDecomposition__ElementsAssignment_0"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5193:1: rule__RequirementDecomposition__ElementsAssignment_0 : ( ( RULE_ID ) ) ;
-    public final void rule__RequirementDecomposition__ElementsAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__RequirementDecomposition__ElementAssignment_0"
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5193:1: rule__RequirementDecomposition__ElementAssignment_0 : ( ( RULE_ID ) ) ;
+    public final void rule__RequirementDecomposition__ElementAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -13474,17 +13474,17 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5198:1: ( ( RULE_ID ) )
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5199:1: ( RULE_ID )
             {
-             before(grammarAccess.getRequirementDecompositionAccess().getElementsRequirementCrossReference_0_0()); 
+             before(grammarAccess.getRequirementDecompositionAccess().getElementRequirementCrossReference_0_0()); 
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5200:1: ( RULE_ID )
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5201:1: RULE_ID
             {
-             before(grammarAccess.getRequirementDecompositionAccess().getElementsRequirementIDTerminalRuleCall_0_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__RequirementDecomposition__ElementsAssignment_010306); 
-             after(grammarAccess.getRequirementDecompositionAccess().getElementsRequirementIDTerminalRuleCall_0_0_1()); 
+             before(grammarAccess.getRequirementDecompositionAccess().getElementRequirementIDTerminalRuleCall_0_0_1()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__RequirementDecomposition__ElementAssignment_010306); 
+             after(grammarAccess.getRequirementDecompositionAccess().getElementRequirementIDTerminalRuleCall_0_0_1()); 
 
             }
 
-             after(grammarAccess.getRequirementDecompositionAccess().getElementsRequirementCrossReference_0_0()); 
+             after(grammarAccess.getRequirementDecompositionAccess().getElementRequirementCrossReference_0_0()); 
 
             }
 
@@ -13503,7 +13503,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__RequirementDecomposition__ElementsAssignment_0"
+    // $ANTLR end "rule__RequirementDecomposition__ElementAssignment_0"
 
 
     // $ANTLR start "rule__RequirementDecomposition__LeftAssignment_1_0"
@@ -13639,9 +13639,9 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__RequirementDecomposition__RightAssignment_1_2"
 
 
-    // $ANTLR start "rule__VerificationDecomposition__ElementsAssignment_0"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5262:1: rule__VerificationDecomposition__ElementsAssignment_0 : ( ( RULE_ID ) ) ;
-    public final void rule__VerificationDecomposition__ElementsAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__VerificationDecomposition__ElementAssignment_0"
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5262:1: rule__VerificationDecomposition__ElementAssignment_0 : ( ( RULE_ID ) ) ;
+    public final void rule__VerificationDecomposition__ElementAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -13652,17 +13652,17 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5267:1: ( ( RULE_ID ) )
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5268:1: ( RULE_ID )
             {
-             before(grammarAccess.getVerificationDecompositionAccess().getElementsVerificationActivityCrossReference_0_0()); 
+             before(grammarAccess.getVerificationDecompositionAccess().getElementVerificationActivityCrossReference_0_0()); 
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5269:1: ( RULE_ID )
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5270:1: RULE_ID
             {
-             before(grammarAccess.getVerificationDecompositionAccess().getElementsVerificationActivityIDTerminalRuleCall_0_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__VerificationDecomposition__ElementsAssignment_010448); 
-             after(grammarAccess.getVerificationDecompositionAccess().getElementsVerificationActivityIDTerminalRuleCall_0_0_1()); 
+             before(grammarAccess.getVerificationDecompositionAccess().getElementVerificationActivityIDTerminalRuleCall_0_0_1()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__VerificationDecomposition__ElementAssignment_010448); 
+             after(grammarAccess.getVerificationDecompositionAccess().getElementVerificationActivityIDTerminalRuleCall_0_0_1()); 
 
             }
 
-             after(grammarAccess.getVerificationDecompositionAccess().getElementsVerificationActivityCrossReference_0_0()); 
+             after(grammarAccess.getVerificationDecompositionAccess().getElementVerificationActivityCrossReference_0_0()); 
 
             }
 
@@ -13681,7 +13681,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__VerificationDecomposition__ElementsAssignment_0"
+    // $ANTLR end "rule__VerificationDecomposition__ElementAssignment_0"
 
 
     // $ANTLR start "rule__VerificationDecomposition__LeftAssignment_1_0"
@@ -14596,11 +14596,11 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleVerificationActivity_in_rule__AlisaModel__ContentAlternatives_0824 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVerificationResult_in_rule__AlisaModel__ContentAlternatives_0841 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleElementType_in_rule__AlisaModel__ContentAlternatives_0858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RequirementDecomposition__ElementsAssignment_0_in_rule__RequirementDecomposition__Alternatives890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RequirementDecomposition__ElementAssignment_0_in_rule__RequirementDecomposition__Alternatives890 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__RequirementDecomposition__Group_1__0_in_rule__RequirementDecomposition__Alternatives908 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_11_in_rule__RequirementDecomposition__TypeAlternatives_1_1_0942 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_12_in_rule__RequirementDecomposition__TypeAlternatives_1_1_0962 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__VerificationDecomposition__ElementsAssignment_0_in_rule__VerificationDecomposition__Alternatives996 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__VerificationDecomposition__ElementAssignment_0_in_rule__VerificationDecomposition__Alternatives996 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VerificationDecomposition__Group_1__0_in_rule__VerificationDecomposition__Alternatives1014 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_11_in_rule__VerificationDecomposition__TypeAlternatives_1_1_01048 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_12_in_rule__VerificationDecomposition__TypeAlternatives_1_1_01068 = new BitSet(new long[]{0x0000000000000002L});
@@ -15005,11 +15005,11 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_ID_in_rule__Requirement__ReferencedByAssignment_6_310205 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVerificationDecomposition_in_rule__Requirement__VerifiedByAssignment_7_310240 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRequirementDecomposition_in_rule__Requirement__DecomposedByAssignment_8_310271 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__RequirementDecomposition__ElementsAssignment_010306 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__RequirementDecomposition__ElementAssignment_010306 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__RequirementDecomposition__LeftAssignment_1_010345 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__RequirementDecomposition__TypeAlternatives_1_1_0_in_rule__RequirementDecomposition__TypeAssignment_1_110380 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRequirementDecomposition_in_rule__RequirementDecomposition__RightAssignment_1_210413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__VerificationDecomposition__ElementsAssignment_010448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__VerificationDecomposition__ElementAssignment_010448 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__VerificationDecomposition__LeftAssignment_1_010487 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VerificationDecomposition__TypeAlternatives_1_1_0_in_rule__VerificationDecomposition__TypeAssignment_1_110522 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVerificationDecomposition_in_rule__VerificationDecomposition__RightAssignment_1_210555 = new BitSet(new long[]{0x0000000000000002L});

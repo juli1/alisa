@@ -1465,7 +1465,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
                             
                     otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRequirementDecomposition1205); 
 
-                    		newLeafNode(otherlv_0, grammarAccess.getRequirementDecompositionAccess().getElementsRequirementCrossReference_0_0()); 
+                    		newLeafNode(otherlv_0, grammarAccess.getRequirementDecompositionAccess().getElementRequirementCrossReference_0_0()); 
                     	
 
                     }
@@ -1721,7 +1721,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
                             
                     otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVerificationDecomposition1410); 
 
-                    		newLeafNode(otherlv_0, grammarAccess.getVerificationDecompositionAccess().getElementsVerificationActivityCrossReference_0_0()); 
+                    		newLeafNode(otherlv_0, grammarAccess.getVerificationDecompositionAccess().getElementVerificationActivityCrossReference_0_0()); 
                     	
 
                     }

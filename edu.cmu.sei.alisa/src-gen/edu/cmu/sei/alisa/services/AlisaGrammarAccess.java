@@ -378,9 +378,9 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	public class RequirementDecompositionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RequirementDecomposition");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cElementsAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final CrossReference cElementsRequirementCrossReference_0_0 = (CrossReference)cElementsAssignment_0.eContents().get(0);
-		private final RuleCall cElementsRequirementIDTerminalRuleCall_0_0_1 = (RuleCall)cElementsRequirementCrossReference_0_0.eContents().get(1);
+		private final Assignment cElementAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final CrossReference cElementRequirementCrossReference_0_0 = (CrossReference)cElementAssignment_0.eContents().get(0);
+		private final RuleCall cElementRequirementIDTerminalRuleCall_0_0_1 = (RuleCall)cElementRequirementCrossReference_0_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Assignment cLeftAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
 		private final CrossReference cLeftRequirementCrossReference_1_0_0 = (CrossReference)cLeftAssignment_1_0.eContents().get(0);
@@ -393,20 +393,20 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRightRequirementDecompositionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		//RequirementDecomposition:
-		//	elements=[Requirement] | left=[Requirement] type=("and" | "or") right=RequirementDecomposition;
+		//	element=[Requirement] | left=[Requirement] type=("and" | "or") right=RequirementDecomposition;
 		public ParserRule getRule() { return rule; }
 
-		//elements=[Requirement] | left=[Requirement] type=("and" | "or") right=RequirementDecomposition
+		//element=[Requirement] | left=[Requirement] type=("and" | "or") right=RequirementDecomposition
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//elements=[Requirement]
-		public Assignment getElementsAssignment_0() { return cElementsAssignment_0; }
+		//element=[Requirement]
+		public Assignment getElementAssignment_0() { return cElementAssignment_0; }
 
 		//[Requirement]
-		public CrossReference getElementsRequirementCrossReference_0_0() { return cElementsRequirementCrossReference_0_0; }
+		public CrossReference getElementRequirementCrossReference_0_0() { return cElementRequirementCrossReference_0_0; }
 
 		//ID
-		public RuleCall getElementsRequirementIDTerminalRuleCall_0_0_1() { return cElementsRequirementIDTerminalRuleCall_0_0_1; }
+		public RuleCall getElementRequirementIDTerminalRuleCall_0_0_1() { return cElementRequirementIDTerminalRuleCall_0_0_1; }
 
 		//left=[Requirement] type=("and" | "or") right=RequirementDecomposition
 		public Group getGroup_1() { return cGroup_1; }
@@ -442,9 +442,9 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	public class VerificationDecompositionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VerificationDecomposition");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cElementsAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final CrossReference cElementsVerificationActivityCrossReference_0_0 = (CrossReference)cElementsAssignment_0.eContents().get(0);
-		private final RuleCall cElementsVerificationActivityIDTerminalRuleCall_0_0_1 = (RuleCall)cElementsVerificationActivityCrossReference_0_0.eContents().get(1);
+		private final Assignment cElementAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final CrossReference cElementVerificationActivityCrossReference_0_0 = (CrossReference)cElementAssignment_0.eContents().get(0);
+		private final RuleCall cElementVerificationActivityIDTerminalRuleCall_0_0_1 = (RuleCall)cElementVerificationActivityCrossReference_0_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Assignment cLeftAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
 		private final CrossReference cLeftVerificationActivityCrossReference_1_0_0 = (CrossReference)cLeftAssignment_1_0.eContents().get(0);
@@ -457,20 +457,20 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRightVerificationDecompositionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		//VerificationDecomposition:
-		//	elements=[VerificationActivity] | left=[VerificationActivity] type=("and" | "or") right=VerificationDecomposition;
+		//	element=[VerificationActivity] | left=[VerificationActivity] type=("and" | "or") right=VerificationDecomposition;
 		public ParserRule getRule() { return rule; }
 
-		//elements=[VerificationActivity] | left=[VerificationActivity] type=("and" | "or") right=VerificationDecomposition
+		//element=[VerificationActivity] | left=[VerificationActivity] type=("and" | "or") right=VerificationDecomposition
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//elements=[VerificationActivity]
-		public Assignment getElementsAssignment_0() { return cElementsAssignment_0; }
+		//element=[VerificationActivity]
+		public Assignment getElementAssignment_0() { return cElementAssignment_0; }
 
 		//[VerificationActivity]
-		public CrossReference getElementsVerificationActivityCrossReference_0_0() { return cElementsVerificationActivityCrossReference_0_0; }
+		public CrossReference getElementVerificationActivityCrossReference_0_0() { return cElementVerificationActivityCrossReference_0_0; }
 
 		//ID
-		public RuleCall getElementsVerificationActivityIDTerminalRuleCall_0_0_1() { return cElementsVerificationActivityIDTerminalRuleCall_0_0_1; }
+		public RuleCall getElementVerificationActivityIDTerminalRuleCall_0_0_1() { return cElementVerificationActivityIDTerminalRuleCall_0_0_1; }
 
 		//left=[VerificationActivity] type=("and" | "or") right=VerificationDecomposition
 		public Group getGroup_1() { return cGroup_1; }
@@ -1112,7 +1112,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RequirementDecomposition:
-	//	elements=[Requirement] | left=[Requirement] type=("and" | "or") right=RequirementDecomposition;
+	//	element=[Requirement] | left=[Requirement] type=("and" | "or") right=RequirementDecomposition;
 	public RequirementDecompositionElements getRequirementDecompositionAccess() {
 		return (pRequirementDecomposition != null) ? pRequirementDecomposition : (pRequirementDecomposition = new RequirementDecompositionElements());
 	}
@@ -1122,7 +1122,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//VerificationDecomposition:
-	//	elements=[VerificationActivity] | left=[VerificationActivity] type=("and" | "or") right=VerificationDecomposition;
+	//	element=[VerificationActivity] | left=[VerificationActivity] type=("and" | "or") right=VerificationDecomposition;
 	public VerificationDecompositionElements getVerificationDecompositionAccess() {
 		return (pVerificationDecomposition != null) ? pVerificationDecomposition : (pVerificationDecomposition = new VerificationDecompositionElements());
 	}

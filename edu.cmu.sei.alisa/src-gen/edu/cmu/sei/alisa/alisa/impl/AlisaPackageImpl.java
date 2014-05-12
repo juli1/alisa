@@ -322,7 +322,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRequirementDecomposition_Elements()
+  public EReference getRequirementDecomposition_Element()
   {
     return (EReference)requirementDecompositionEClass.getEStructuralFeatures().get(0);
   }
@@ -372,7 +372,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVerificationDecomposition_Elements()
+  public EReference getVerificationDecomposition_Element()
   {
     return (EReference)verificationDecompositionEClass.getEStructuralFeatures().get(0);
   }
@@ -667,13 +667,13 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEReference(requirementEClass, REQUIREMENT__DECOMPOSED_BY);
 
     requirementDecompositionEClass = createEClass(REQUIREMENT_DECOMPOSITION);
-    createEReference(requirementDecompositionEClass, REQUIREMENT_DECOMPOSITION__ELEMENTS);
+    createEReference(requirementDecompositionEClass, REQUIREMENT_DECOMPOSITION__ELEMENT);
     createEReference(requirementDecompositionEClass, REQUIREMENT_DECOMPOSITION__LEFT);
     createEAttribute(requirementDecompositionEClass, REQUIREMENT_DECOMPOSITION__TYPE);
     createEReference(requirementDecompositionEClass, REQUIREMENT_DECOMPOSITION__RIGHT);
 
     verificationDecompositionEClass = createEClass(VERIFICATION_DECOMPOSITION);
-    createEReference(verificationDecompositionEClass, VERIFICATION_DECOMPOSITION__ELEMENTS);
+    createEReference(verificationDecompositionEClass, VERIFICATION_DECOMPOSITION__ELEMENT);
     createEReference(verificationDecompositionEClass, VERIFICATION_DECOMPOSITION__LEFT);
     createEAttribute(verificationDecompositionEClass, VERIFICATION_DECOMPOSITION__TYPE);
     createEReference(verificationDecompositionEClass, VERIFICATION_DECOMPOSITION__RIGHT);
@@ -754,13 +754,13 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEReference(getRequirement_DecomposedBy(), this.getRequirementDecomposition(), null, "decomposedBy", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(requirementDecompositionEClass, RequirementDecomposition.class, "RequirementDecomposition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRequirementDecomposition_Elements(), this.getRequirement(), null, "elements", null, 0, 1, RequirementDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRequirementDecomposition_Element(), this.getRequirement(), null, "element", null, 0, 1, RequirementDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRequirementDecomposition_Left(), this.getRequirement(), null, "left", null, 0, 1, RequirementDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRequirementDecomposition_Type(), ecorePackage.getEString(), "type", null, 0, 1, RequirementDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRequirementDecomposition_Right(), this.getRequirementDecomposition(), null, "right", null, 0, 1, RequirementDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verificationDecompositionEClass, VerificationDecomposition.class, "VerificationDecomposition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVerificationDecomposition_Elements(), this.getVerificationActivity(), null, "elements", null, 0, 1, VerificationDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVerificationDecomposition_Element(), this.getVerificationActivity(), null, "element", null, 0, 1, VerificationDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVerificationDecomposition_Left(), this.getVerificationActivity(), null, "left", null, 0, 1, VerificationDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVerificationDecomposition_Type(), ecorePackage.getEString(), "type", null, 0, 1, VerificationDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVerificationDecomposition_Right(), this.getVerificationDecomposition(), null, "right", null, 0, 1, VerificationDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -47,20 +47,28 @@ public class Utils {
 	{
 		String result = "";
 		
-		if (decomposition.getLeft() != null)
+		if (decomposition.getElement() != null)
 		{
-			result += decomposition.getLeft().getName();
+			result += decomposition.getElement().getName();
+		}
+		else
+		{
+		
+			if (decomposition.getLeft() != null)
+			{
+				result += decomposition.getLeft().getName();
+				
+			}
 			
-		}
-		
-		if (decomposition.getType() != null)
-		{
-			result += " " + decomposition.getType() + " "; 
-		}
-		
-		if (decomposition.getRight() != null)
-		{
-			result += getDecompositionString (decomposition.getRight()); 
+			if (decomposition.getType() != null)
+			{
+				result += " " + decomposition.getType() + " "; 
+			}
+			
+			if (decomposition.getRight() != null)
+			{
+				result += getDecompositionString (decomposition.getRight()); 
+			}
 		}
 		return result;
 	}

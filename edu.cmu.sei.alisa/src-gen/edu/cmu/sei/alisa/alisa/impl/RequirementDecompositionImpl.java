@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementDecompositionImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementDecompositionImpl#getElement <em>Element</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementDecompositionImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementDecompositionImpl#getType <em>Type</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementDecompositionImpl#getRight <em>Right</em>}</li>
@@ -34,14 +34,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container implements RequirementDecomposition
 {
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' reference.
+   * The cached value of the '{@link #getElement() <em>Element</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElements()
+   * @see #getElement()
    * @generated
    * @ordered
    */
-  protected Requirement elements;
+  protected Requirement element;
 
   /**
    * The cached value of the '{@link #getLeft() <em>Left</em>}' reference.
@@ -109,19 +109,19 @@ public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public Requirement getElements()
+  public Requirement getElement()
   {
-    if (elements != null && elements.eIsProxy())
+    if (element != null && element.eIsProxy())
     {
-      InternalEObject oldElements = (InternalEObject)elements;
-      elements = (Requirement)eResolveProxy(oldElements);
-      if (elements != oldElements)
+      InternalEObject oldElement = (InternalEObject)element;
+      element = (Requirement)eResolveProxy(oldElement);
+      if (element != oldElement)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.REQUIREMENT_DECOMPOSITION__ELEMENTS, oldElements, elements));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.REQUIREMENT_DECOMPOSITION__ELEMENT, oldElement, element));
       }
     }
-    return elements;
+    return element;
   }
 
   /**
@@ -129,9 +129,9 @@ public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public Requirement basicGetElements()
+  public Requirement basicGetElement()
   {
-    return elements;
+    return element;
   }
 
   /**
@@ -139,12 +139,12 @@ public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setElements(Requirement newElements)
+  public void setElement(Requirement newElement)
   {
-    Requirement oldElements = elements;
-    elements = newElements;
+    Requirement oldElement = element;
+    element = newElement;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT_DECOMPOSITION__ELEMENTS, oldElements, elements));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT_DECOMPOSITION__ELEMENT, oldElement, element));
   }
 
   /**
@@ -287,9 +287,9 @@ public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container i
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DECOMPOSITION__ELEMENTS:
-        if (resolve) return getElements();
-        return basicGetElements();
+      case AlisaPackage.REQUIREMENT_DECOMPOSITION__ELEMENT:
+        if (resolve) return getElement();
+        return basicGetElement();
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__LEFT:
         if (resolve) return getLeft();
         return basicGetLeft();
@@ -311,8 +311,8 @@ public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container i
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DECOMPOSITION__ELEMENTS:
-        setElements((Requirement)newValue);
+      case AlisaPackage.REQUIREMENT_DECOMPOSITION__ELEMENT:
+        setElement((Requirement)newValue);
         return;
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__LEFT:
         setLeft((Requirement)newValue);
@@ -337,8 +337,8 @@ public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container i
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DECOMPOSITION__ELEMENTS:
-        setElements((Requirement)null);
+      case AlisaPackage.REQUIREMENT_DECOMPOSITION__ELEMENT:
+        setElement((Requirement)null);
         return;
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__LEFT:
         setLeft((Requirement)null);
@@ -363,8 +363,8 @@ public class RequirementDecompositionImpl extends MinimalEObjectImpl.Container i
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DECOMPOSITION__ELEMENTS:
-        return elements != null;
+      case AlisaPackage.REQUIREMENT_DECOMPOSITION__ELEMENT:
+        return element != null;
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__LEFT:
         return left != null;
       case AlisaPackage.REQUIREMENT_DECOMPOSITION__TYPE:

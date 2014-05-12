@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationDecompositionImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationDecompositionImpl#getElement <em>Element</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationDecompositionImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationDecompositionImpl#getType <em>Type</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationDecompositionImpl#getRight <em>Right</em>}</li>
@@ -34,14 +34,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class VerificationDecompositionImpl extends MinimalEObjectImpl.Container implements VerificationDecomposition
 {
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' reference.
+   * The cached value of the '{@link #getElement() <em>Element</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElements()
+   * @see #getElement()
    * @generated
    * @ordered
    */
-  protected VerificationActivity elements;
+  protected VerificationActivity element;
 
   /**
    * The cached value of the '{@link #getLeft() <em>Left</em>}' reference.
@@ -109,19 +109,19 @@ public class VerificationDecompositionImpl extends MinimalEObjectImpl.Container 
    * <!-- end-user-doc -->
    * @generated
    */
-  public VerificationActivity getElements()
+  public VerificationActivity getElement()
   {
-    if (elements != null && elements.eIsProxy())
+    if (element != null && element.eIsProxy())
     {
-      InternalEObject oldElements = (InternalEObject)elements;
-      elements = (VerificationActivity)eResolveProxy(oldElements);
-      if (elements != oldElements)
+      InternalEObject oldElement = (InternalEObject)element;
+      element = (VerificationActivity)eResolveProxy(oldElement);
+      if (element != oldElement)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.VERIFICATION_DECOMPOSITION__ELEMENTS, oldElements, elements));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.VERIFICATION_DECOMPOSITION__ELEMENT, oldElement, element));
       }
     }
-    return elements;
+    return element;
   }
 
   /**
@@ -129,9 +129,9 @@ public class VerificationDecompositionImpl extends MinimalEObjectImpl.Container 
    * <!-- end-user-doc -->
    * @generated
    */
-  public VerificationActivity basicGetElements()
+  public VerificationActivity basicGetElement()
   {
-    return elements;
+    return element;
   }
 
   /**
@@ -139,12 +139,12 @@ public class VerificationDecompositionImpl extends MinimalEObjectImpl.Container 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setElements(VerificationActivity newElements)
+  public void setElement(VerificationActivity newElement)
   {
-    VerificationActivity oldElements = elements;
-    elements = newElements;
+    VerificationActivity oldElement = element;
+    element = newElement;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.VERIFICATION_DECOMPOSITION__ELEMENTS, oldElements, elements));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.VERIFICATION_DECOMPOSITION__ELEMENT, oldElement, element));
   }
 
   /**
@@ -287,9 +287,9 @@ public class VerificationDecompositionImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_DECOMPOSITION__ELEMENTS:
-        if (resolve) return getElements();
-        return basicGetElements();
+      case AlisaPackage.VERIFICATION_DECOMPOSITION__ELEMENT:
+        if (resolve) return getElement();
+        return basicGetElement();
       case AlisaPackage.VERIFICATION_DECOMPOSITION__LEFT:
         if (resolve) return getLeft();
         return basicGetLeft();
@@ -311,8 +311,8 @@ public class VerificationDecompositionImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_DECOMPOSITION__ELEMENTS:
-        setElements((VerificationActivity)newValue);
+      case AlisaPackage.VERIFICATION_DECOMPOSITION__ELEMENT:
+        setElement((VerificationActivity)newValue);
         return;
       case AlisaPackage.VERIFICATION_DECOMPOSITION__LEFT:
         setLeft((VerificationActivity)newValue);
@@ -337,8 +337,8 @@ public class VerificationDecompositionImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_DECOMPOSITION__ELEMENTS:
-        setElements((VerificationActivity)null);
+      case AlisaPackage.VERIFICATION_DECOMPOSITION__ELEMENT:
+        setElement((VerificationActivity)null);
         return;
       case AlisaPackage.VERIFICATION_DECOMPOSITION__LEFT:
         setLeft((VerificationActivity)null);
@@ -363,8 +363,8 @@ public class VerificationDecompositionImpl extends MinimalEObjectImpl.Container 
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_DECOMPOSITION__ELEMENTS:
-        return elements != null;
+      case AlisaPackage.VERIFICATION_DECOMPOSITION__ELEMENT:
+        return element != null;
       case AlisaPackage.VERIFICATION_DECOMPOSITION__LEFT:
         return left != null;
       case AlisaPackage.VERIFICATION_DECOMPOSITION__TYPE:

@@ -122,6 +122,7 @@ public class GeneratorCAE
 		evidence.setIdentifier(Integer.toString(id++));
 		evidence.setContent(content);
 		evidence.setDescription(verificationActivity.getDescription());
+		
 
 		argumentDiagram.getEvidence().add(evidence);
 		if (parent != null) 
@@ -146,6 +147,10 @@ public class GeneratorCAE
 			generate (parent, decomposition.getRight());
 		}
 		
+		if (decomposition.getElement() != null)
+		{
+			generate (parent, decomposition.getElement());
+		}
 	}
 	
 	public static void generate (ArgumentElement parent, VerificationDecomposition decomposition)
@@ -160,9 +165,9 @@ public class GeneratorCAE
 			generate (parent, decomposition.getRight());
 		}
 		
-		if (decomposition.getElements() != null)
+		if (decomposition.getElement() != null)
 		{
-			generate (parent, decomposition.getElements());
+			generate (parent, decomposition.getElement());
 		}
 	}
 	

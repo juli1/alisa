@@ -26,14 +26,14 @@
         eType="#//RequirementDecomposition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RequirementDecomposition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//Requirement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Requirement"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//RequirementDecomposition"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VerificationDecomposition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" eType="#//VerificationActivity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//VerificationActivity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//VerificationActivity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//VerificationDecomposition"

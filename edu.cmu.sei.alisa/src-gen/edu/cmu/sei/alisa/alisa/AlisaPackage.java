@@ -241,13 +241,13 @@ public interface AlisaPackage extends EPackage
   int REQUIREMENT_DECOMPOSITION = 3;
 
   /**
-   * The feature id for the '<em><b>Elements</b></em>' reference.
+   * The feature id for the '<em><b>Element</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DECOMPOSITION__ELEMENTS = 0;
+  int REQUIREMENT_DECOMPOSITION__ELEMENT = 0;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' reference.
@@ -296,13 +296,13 @@ public interface AlisaPackage extends EPackage
   int VERIFICATION_DECOMPOSITION = 4;
 
   /**
-   * The feature id for the '<em><b>Elements</b></em>' reference.
+   * The feature id for the '<em><b>Element</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFICATION_DECOMPOSITION__ELEMENTS = 0;
+  int VERIFICATION_DECOMPOSITION__ELEMENT = 0;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' reference.
@@ -744,15 +744,15 @@ public interface AlisaPackage extends EPackage
   EClass getRequirementDecomposition();
 
   /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.RequirementDecomposition#getElements <em>Elements</em>}'.
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.RequirementDecomposition#getElement <em>Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Elements</em>'.
-   * @see edu.cmu.sei.alisa.alisa.RequirementDecomposition#getElements()
+   * @return the meta object for the reference '<em>Element</em>'.
+   * @see edu.cmu.sei.alisa.alisa.RequirementDecomposition#getElement()
    * @see #getRequirementDecomposition()
    * @generated
    */
-  EReference getRequirementDecomposition_Elements();
+  EReference getRequirementDecomposition_Element();
 
   /**
    * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.RequirementDecomposition#getLeft <em>Left</em>}'.
@@ -798,15 +798,15 @@ public interface AlisaPackage extends EPackage
   EClass getVerificationDecomposition();
 
   /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getElements <em>Elements</em>}'.
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getElement <em>Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Elements</em>'.
-   * @see edu.cmu.sei.alisa.alisa.VerificationDecomposition#getElements()
+   * @return the meta object for the reference '<em>Element</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationDecomposition#getElement()
    * @see #getVerificationDecomposition()
    * @generated
    */
-  EReference getVerificationDecomposition_Elements();
+  EReference getVerificationDecomposition_Element();
 
   /**
    * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getLeft <em>Left</em>}'.
@@ -1237,12 +1237,12 @@ public interface AlisaPackage extends EPackage
     EClass REQUIREMENT_DECOMPOSITION = eINSTANCE.getRequirementDecomposition();
 
     /**
-     * The meta object literal for the '<em><b>Elements</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Element</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQUIREMENT_DECOMPOSITION__ELEMENTS = eINSTANCE.getRequirementDecomposition_Elements();
+    EReference REQUIREMENT_DECOMPOSITION__ELEMENT = eINSTANCE.getRequirementDecomposition_Element();
 
     /**
      * The meta object literal for the '<em><b>Left</b></em>' reference feature.
@@ -1279,12 +1279,12 @@ public interface AlisaPackage extends EPackage
     EClass VERIFICATION_DECOMPOSITION = eINSTANCE.getVerificationDecomposition();
 
     /**
-     * The meta object literal for the '<em><b>Elements</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Element</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VERIFICATION_DECOMPOSITION__ELEMENTS = eINSTANCE.getVerificationDecomposition_Elements();
+    EReference VERIFICATION_DECOMPOSITION__ELEMENT = eINSTANCE.getVerificationDecomposition_Element();
 
     /**
      * The meta object literal for the '<em><b>Left</b></em>' reference feature.

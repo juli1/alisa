@@ -108,7 +108,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (elements=[Requirement|ID] | (left=[Requirement|ID] (type='and' | type='or') right=RequirementDecomposition))
+	 *     (element=[Requirement|ID] | (left=[Requirement|ID] (type='and' | type='or') right=RequirementDecomposition))
 	 */
 	protected void sequence_RequirementDecomposition(EObject context, RequirementDecomposition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -153,7 +153,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (elements=[VerificationActivity|ID] | (left=[VerificationActivity|ID] (type='and' | type='or') right=VerificationDecomposition))
+	 *     (element=[VerificationActivity|ID] | (left=[VerificationActivity|ID] (type='and' | type='or') right=VerificationDecomposition))
 	 */
 	protected void sequence_VerificationDecomposition(EObject context, VerificationDecomposition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
