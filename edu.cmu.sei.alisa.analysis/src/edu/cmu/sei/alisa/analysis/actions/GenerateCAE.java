@@ -5,6 +5,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.MessageBox;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
@@ -41,8 +42,14 @@ public class GenerateCAE implements IWorkbenchWindowActionDelegate {
 		Requirement requirement;
 
 		requirement = null;
-		editor = AlisaEditor.getCurrentInstance();
-
+		editor      = null;
+		IEditorPart editorPart = window.getActivePage().getActiveEditor();
+		
+		if (editorPart instanceof AlisaEditor)
+		{
+			editor = (AlisaEditor) editorPart;
+		}
+		
 		if (editor != null)
 		{
 			Object o = ((IStructuredSelection)(editor.getTableViewer(AlisaEditor.INDEX_TABLE_REQUIREMENTS).getSelection())).getFirstElement();

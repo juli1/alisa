@@ -104,7 +104,7 @@ public class GeneratorCAE
 	{
 		String content = "";
 	
-		Justification justification = f.createJustification();
+		Evidence evidence = f.createEvidence();
 
 		content = verificationActivity.getName();
 		if (verificationActivity.getDescription() != null)
@@ -119,18 +119,18 @@ public class GeneratorCAE
 			}
 		}
 
-		justification.setIdentifier(Integer.toString(id++));
-		justification.setContent(content);
-		justification.setDescription(verificationActivity.getDescription());
+		evidence.setIdentifier(Integer.toString(id++));
+		evidence.setContent(content);
+		evidence.setDescription(verificationActivity.getDescription());
 
-		argumentDiagram.getJustifications().add(justification);
+		argumentDiagram.getEvidence().add(evidence);
 		if (parent != null) 
-		{
-			if (parent instanceof Argument)
+		{			
+			if (parent instanceof Claim)
 			{
-				Argument a = (Argument) parent;
-				a.getArgumentJustification().add(justification);
-			}
+				Claim c = (Claim) parent;
+				c.getClaimSolutions().add(evidence);
+			}			
 		}
 	}
 
@@ -150,9 +150,20 @@ public class GeneratorCAE
 	
 	public static void generate (ArgumentElement parent, VerificationDecomposition decomposition)
 	{
-		generate (parent, decomposition.getLeft());
-		generate (parent, decomposition.getRight());
-		generate (parent, decomposition.getElements());
+		if (decomposition.getLeft() != null)
+		{
+			generate (parent, decomposition.getLeft());
+		}
+		
+		if (decomposition.getRight() != null)
+		{
+			generate (parent, decomposition.getRight());
+		}
+		
+		if (decomposition.getElements() != null)
+		{
+			generate (parent, decomposition.getElements());
+		}
 	}
 	
 public static void save(IProject project) {

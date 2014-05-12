@@ -89,8 +89,6 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 
     private AlisaModel alisaModel = null;
 
-    private static AlisaEditor currentInstance;
-    
     public TableViewer getTableViewer (int id)
     {
     	return tableViewers[id];
@@ -103,7 +101,6 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
     public AlisaEditor () {
         super();
         ResourcesPlugin.getWorkspace().addResourceChangeListener(this);
-        currentInstance = this;
     }
     
     public AlisaTextEditor getTextualEditor ()
@@ -737,12 +734,5 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
             });
         }
     }
-
-	public static AlisaEditor getCurrentInstance() {
-		
-		return currentInstance;
-	}
-
-
 
 }
