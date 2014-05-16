@@ -72,6 +72,7 @@ Workflow {
     
     		// Xtend-based API for validation
     		fragment = validation.ValidatorFragment auto-inject {
+    			  composedCheck = "edu.cmu.sei.alisa.validation.AlisaValidator"
     		//    composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
     		//    composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
     		}
