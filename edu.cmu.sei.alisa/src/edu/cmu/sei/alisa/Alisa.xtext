@@ -18,7 +18,7 @@ Stakeholder:
 	('title' ':' title=ValueString)?
 	('description' ':' description=ValueString)?
 	('role' ':' role=ValueString)?
-	'end' ID ';'
+	'end' 'stakeholder' ';'
 ;
 
 
@@ -35,7 +35,7 @@ Requirement:
 	('referenced' 'by' ':' referencedBy+=([ElementType])*)?
 	('verified' 'by' ':' verifiedBy+=(VerificationDecomposition)*)?
 	('decomposed' 'by' ':' decomposedBy+=(RequirementDecomposition)*)?
-	'end' ID ';'
+	'end' 'requirement' ';'
 ;
 
 RequirementDecomposition:
@@ -60,7 +60,7 @@ ElementType:
 	('model-type' ':' modelType=ValueString)?
 	('documentDetails' ':' details=ValueString)?
 	('version' ':' version+=(ValueString)*)?
-	'end' ID ';'
+	'end' 'system' 'element' ';'
 ;
 
 /*
@@ -73,7 +73,7 @@ VerificationActivity:
 	('description' ':' description=ValueString)?
 	('method' ':' method=VerificationMethod)?
 	('assigned' 'to' ':' assignedTo+=([Stakeholder])*)?
-	'end' ID ';'
+	'end' 'verification' 'activity' ';'
 ;
 
 
@@ -93,7 +93,7 @@ VerificationResult:
 	('date' ':' method=ValueString)?
 	('state' ':' state=VerificationResultState)?
 	('status' ':' status=VerificationResultStatus)?
-	'end' ID ';'
+	'end' 'verification' 'result' ';'
 ;
 
 VerificationResultState:

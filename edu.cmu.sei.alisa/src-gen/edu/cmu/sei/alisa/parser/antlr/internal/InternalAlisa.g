@@ -311,9 +311,9 @@ ruleStakeholder returns [EObject current=null]
     {
     	newLeafNode(otherlv_11, grammarAccess.getStakeholderAccess().getEndKeyword_5());
     }
-this_ID_12=RULE_ID
-    { 
-    newLeafNode(this_ID_12, grammarAccess.getStakeholderAccess().getIDTerminalRuleCall_6()); 
+	otherlv_12='stakeholder' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getStakeholderAccess().getStakeholderKeyword_6());
     }
 	otherlv_13=';' 
     {
@@ -554,9 +554,9 @@ ruleRequirement returns [EObject current=null]
     {
     	newLeafNode(otherlv_27, grammarAccess.getRequirementAccess().getEndKeyword_9());
     }
-this_ID_28=RULE_ID
-    { 
-    newLeafNode(this_ID_28, grammarAccess.getRequirementAccess().getIDTerminalRuleCall_10()); 
+	otherlv_28='requirement' 
+    {
+    	newLeafNode(otherlv_28, grammarAccess.getRequirementAccess().getRequirementKeyword_10());
     }
 	otherlv_29=';' 
     {
@@ -935,13 +935,17 @@ ruleElementType returns [EObject current=null]
     {
     	newLeafNode(otherlv_18, grammarAccess.getElementTypeAccess().getEndKeyword_8());
     }
-this_ID_19=RULE_ID
-    { 
-    newLeafNode(this_ID_19, grammarAccess.getElementTypeAccess().getIDTerminalRuleCall_9()); 
-    }
-	otherlv_20=';' 
+	otherlv_19='system' 
     {
-    	newLeafNode(otherlv_20, grammarAccess.getElementTypeAccess().getSemicolonKeyword_10());
+    	newLeafNode(otherlv_19, grammarAccess.getElementTypeAccess().getSystemKeyword_9());
+    }
+	otherlv_20='element' 
+    {
+    	newLeafNode(otherlv_20, grammarAccess.getElementTypeAccess().getElementKeyword_10());
+    }
+	otherlv_21=';' 
+    {
+    	newLeafNode(otherlv_21, grammarAccess.getElementTypeAccess().getSemicolonKeyword_11());
     }
 )
 ;
@@ -1097,13 +1101,17 @@ ruleVerificationActivity returns [EObject current=null]
     {
     	newLeafNode(otherlv_16, grammarAccess.getVerificationActivityAccess().getEndKeyword_7());
     }
-this_ID_17=RULE_ID
-    { 
-    newLeafNode(this_ID_17, grammarAccess.getVerificationActivityAccess().getIDTerminalRuleCall_8()); 
-    }
-	otherlv_18=';' 
+	otherlv_17='verification' 
     {
-    	newLeafNode(otherlv_18, grammarAccess.getVerificationActivityAccess().getSemicolonKeyword_9());
+    	newLeafNode(otherlv_17, grammarAccess.getVerificationActivityAccess().getVerificationKeyword_8());
+    }
+	otherlv_18='activity' 
+    {
+    	newLeafNode(otherlv_18, grammarAccess.getVerificationActivityAccess().getActivityKeyword_9());
+    }
+	otherlv_19=';' 
+    {
+    	newLeafNode(otherlv_19, grammarAccess.getVerificationActivityAccess().getSemicolonKeyword_10());
     }
 )
 ;
@@ -1337,13 +1345,17 @@ ruleVerificationResult returns [EObject current=null]
     {
     	newLeafNode(otherlv_20, grammarAccess.getVerificationResultAccess().getEndKeyword_10());
     }
-this_ID_21=RULE_ID
-    { 
-    newLeafNode(this_ID_21, grammarAccess.getVerificationResultAccess().getIDTerminalRuleCall_11()); 
-    }
-	otherlv_22=';' 
+	otherlv_21='verification' 
     {
-    	newLeafNode(otherlv_22, grammarAccess.getVerificationResultAccess().getSemicolonKeyword_12());
+    	newLeafNode(otherlv_21, grammarAccess.getVerificationResultAccess().getVerificationKeyword_11());
+    }
+	otherlv_22='result' 
+    {
+    	newLeafNode(otherlv_22, grammarAccess.getVerificationResultAccess().getResultKeyword_12());
+    }
+	otherlv_23=';' 
+    {
+    	newLeafNode(otherlv_23, grammarAccess.getVerificationResultAccess().getSemicolonKeyword_13());
     }
 )
 ;

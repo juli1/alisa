@@ -961,10 +961,10 @@ public class InternalAlisaLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5610:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5610:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5719:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5719:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5610:11: ( '^' )?
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5719:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -973,7 +973,7 @@ public class InternalAlisaLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5610:11: '^'
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5719:11: '^'
                     {
                     match('^'); 
 
@@ -991,7 +991,7 @@ public class InternalAlisaLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5610:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5719:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1040,10 +1040,10 @@ public class InternalAlisaLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5612:10: ( ( '0' .. '9' )+ )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5612:12: ( '0' .. '9' )+
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5721:10: ( ( '0' .. '9' )+ )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5721:12: ( '0' .. '9' )+
             {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5612:12: ( '0' .. '9' )+
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5721:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1057,7 +1057,7 @@ public class InternalAlisaLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5612:13: '0' .. '9'
+            	    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5721:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1089,10 +1089,10 @@ public class InternalAlisaLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5614:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5614:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5723:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5723:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5614:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5723:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1110,10 +1110,10 @@ public class InternalAlisaLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5614:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5723:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5614:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5723:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1129,7 +1129,7 @@ public class InternalAlisaLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5614:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5723:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1145,7 +1145,7 @@ public class InternalAlisaLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5614:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5723:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1170,10 +1170,10 @@ public class InternalAlisaLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5614:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5723:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5614:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5723:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1189,7 +1189,7 @@ public class InternalAlisaLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5614:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5723:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1205,7 +1205,7 @@ public class InternalAlisaLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5614:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5723:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1248,12 +1248,12 @@ public class InternalAlisaLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5616:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5616:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5725:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5725:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5616:24: ( options {greedy=false; } : . )*
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5725:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1278,7 +1278,7 @@ public class InternalAlisaLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5616:52: .
+            	    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5725:52: .
             	    {
             	    matchAny(); 
 
@@ -1308,12 +1308,12 @@ public class InternalAlisaLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5618:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5618:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5727:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5727:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5618:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5727:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1326,7 +1326,7 @@ public class InternalAlisaLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5618:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5727:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1346,7 +1346,7 @@ public class InternalAlisaLexer extends Lexer {
                 }
             } while (true);
 
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5618:40: ( ( '\\r' )? '\\n' )?
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5727:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1355,9 +1355,9 @@ public class InternalAlisaLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5618:41: ( '\\r' )? '\\n'
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5727:41: ( '\\r' )? '\\n'
                     {
-                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5618:41: ( '\\r' )?
+                    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5727:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1366,7 +1366,7 @@ public class InternalAlisaLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5618:41: '\\r'
+                            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5727:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1398,10 +1398,10 @@ public class InternalAlisaLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5620:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5620:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5729:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5729:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5620:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5729:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1455,8 +1455,8 @@ public class InternalAlisaLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5622:16: ( . )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5622:18: .
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5731:16: ( . )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisa.g:5731:18: .
             {
             matchAny(); 
 

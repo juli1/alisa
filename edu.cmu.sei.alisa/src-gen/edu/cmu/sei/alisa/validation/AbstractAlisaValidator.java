@@ -6,7 +6,9 @@ package edu.cmu.sei.alisa.validation;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.xtext.validation.ComposedChecks;
 
+@ComposedChecks(validators= {edu.cmu.sei.alisa.validation.AlisaValidator.class})
 public class AbstractAlisaValidator extends org.eclipse.xtext.validation.AbstractDeclarativeValidator {
 
 	@Override

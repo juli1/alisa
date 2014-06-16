@@ -250,7 +250,9 @@
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
-            class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+            class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            fileExtensions="alisa"
+            >
       </participant>
    </extension>
    <extension
