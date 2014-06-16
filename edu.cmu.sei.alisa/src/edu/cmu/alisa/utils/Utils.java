@@ -122,7 +122,7 @@ public class Utils {
 	 *                new requirement.
 	 */
 	private static int NEW_REQ_ID = 1;
-	public static void addNewRequirement (AlisaModel model)
+	public static Requirement addNewRequirement (AlisaModel model)
 	{
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		Requirement req = factory.createRequirement();
@@ -131,8 +131,9 @@ public class Utils {
 		req.setComment("\"Comment\"");
 		req.setDescription("\"Desc\"");
 		model.getContent().add(req);
+		
+		return req;
 	}
-	
 	
 	/**
 	 * Add a new verification activity to the model
@@ -158,7 +159,7 @@ public class Utils {
 	 *                new stakeholder.
 	 */
 	private static int NEW_SH_ID = 1;
-	public static void addNewStakeholder (AlisaModel model)
+	public static Stakeholder addNewStakeholder (AlisaModel model)
 	{
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		Stakeholder sh = factory.createStakeholder();
@@ -167,7 +168,20 @@ public class Utils {
 		sh.setRole("\"Role\"");
 		sh.setDescription("\"Desc\"");
 		model.getContent().add(sh);
+		return sh;
 	}
+	
+	
+	/**
+	 * Create a new Model
+	 */
+	private static int NEW_MODEL_ID = 1;
+	public static AlisaModel createModel ()
+	{
+		AlisaFactory factory = AlisaFactoryImpl.init();
+		return factory.createAlisaModel();
+	}
+	
 	
 	
 	/**

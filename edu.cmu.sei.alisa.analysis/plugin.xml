@@ -25,6 +25,15 @@
                id="edu.cmu.sei.alisa.analysis.actions.GenerateCAE">
          </action>
          <action
+               label="&amp;Import Requirements (Word)"
+               icon="icons/wordicon.png"
+               class="edu.cmu.sei.alisa.analysis.actions.ImportWord"
+               tooltip="Import Requirements from a Word document"
+               menubarPath="alisaMenu/alisaGroup"
+               toolbarPath="alisaGroup"
+               id="edu.cmu.sei.alisa.analysis.actions.ImportWord">
+         </action>
+         <action
                label="&amp;Check Requirements Semantics"
                icon="icons/alisa.png"
                class="edu.cmu.sei.alisa.analysis.actions.CheckWording"

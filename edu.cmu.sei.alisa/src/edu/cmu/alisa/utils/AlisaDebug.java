@@ -20,6 +20,11 @@ public class AlisaDebug {
 		}
 	}
 	
+	public static void debug (String str1, String str2)
+	{
+		debug ("[" + str1 + "]" + " " + str2);
+	}
+	
 	
 	
 	public static Requirement[] getSampleRequirements ()
