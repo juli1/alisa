@@ -225,6 +225,9 @@ public class Utils {
 		{
 			newDecomposition.setLeft(subRequirement);
 			newDecomposition.setRight(actualDecomposition);
+			newDecomposition.setType("and");
+			parent.getDecomposedBy().add(newDecomposition);
+			
 		}
 		
 	}

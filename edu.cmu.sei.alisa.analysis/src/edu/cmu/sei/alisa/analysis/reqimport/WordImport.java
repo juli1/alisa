@@ -51,7 +51,7 @@ public class WordImport
 			if (depthToStyleIdentifier[tmp] == par.getStyleIndex())
 			{
 				AlisaDebug.debug("WordImport", "style index number " + par.getStyleIndex() + " is level " + (tmp + 1));
-				return tmp + 1;
+				return tmp;
 			}
 		}
 		return INVALID_STYLE;
@@ -71,13 +71,14 @@ public class WordImport
         Bookmarks bookmarks;
         Range range;
         StyleSheet styleSheet;
-        Stack<Requirement> requirementStack;
+        Requirement[] currentRequirements;
+        Requirement currentRequirement;
         
-          
+        currentRequirement = null;
+        currentRequirements 	= new Requirement[depthToStyleString.length];
         fs = null;
 
 		returnedModel = Utils.createModel();
-		requirementStack = new Stack<Requirement> ();
 		
         try {
             fs = new POIFSFileSystem(new FileInputStream(fileName));
@@ -150,18 +151,14 @@ public class WordImport
 
                 	if (isRequirementDescription (par))
                 	{
-                		if (requirementStack.size() > 0)
-                		{
-	            			Requirement currentRequirement = requirementStack.pop ();
-	
+
 	                		if (currentRequirement != null)
 	                		{
 	                			currentRequirement.setDescription(currentRequirement.getDescription().replace("\"", ""));
 	                			currentRequirement.setDescription(currentRequirement.getDescription().replace("\n", ""));
 	                			currentRequirement.setDescription("\"" + currentRequirement.getDescription() + " " + par.text() + "\"\n");
 	                		}
-	                		requirementStack.push (currentRequirement);
-                		}
+                		
                 	}
                 	
                 	if (isRequirementTitle (par))
@@ -178,42 +175,15 @@ public class WordImport
                 		
                 		req.getAssignedTo().add(genericStakeholder);
                 		
-            			AlisaDebug.debug("WordImport", "Creating new requirement " + req.getTitle() + "; level=" + reqLevel + " stack size " + requirementStack.size());
-
-                		
-                		if ((requirementStack.isEmpty() == false) && ((reqLevel >= requirementStack.size())))
-                		{
-
-                			Requirement parent;
-                			
-                			for (int tmp = reqLevel ; tmp < requirementStack.size() + 1 ; tmp++)
-                			{
-                    			parent = requirementStack.pop ();
-                			}
-                			
-                			parent = requirementStack.pop ();
-                			
-                			if (parent != null)
-                			{
-                    			Utils.addDependency (parent, req);	
-                			}
-                			
-                			requirementStack.push (parent);
-                			
-                			
-                		}
-                		
-                		if (reqLevel < requirementStack.size())
-                		{
-
-                			for (int tmp = reqLevel ; tmp < requirementStack.size() ; tmp++)
-                			{
-                    			requirementStack.pop ();
-                			}
-                			requirementStack.pop ();
-                		}
-
-                		requirementStack.push (req);
+        
+            			if ((reqLevel > 0) && (currentRequirements[reqLevel - 1] != null))
+            			{
+            				Utils.addDependency(currentRequirements[reqLevel - 1], req);
+            			}
+            			
+                		currentRequirements[reqLevel] = req;
+            			
+                		currentRequirement = req;
                 		
                 	}
                 	
