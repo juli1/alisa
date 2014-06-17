@@ -50,4 +50,58 @@
          point="org.eclipse.core.resources.markers">
       <persistent value="true"/>
    </extension>
+
+   <extension
+         id="edu.cmu.sei.alisa.header1"
+         name="Header1"
+         point="org.eclipse.core.runtime.preferences">
+          <initializer
+            class="edu.cmu.sei.alisa.analysis.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   
+   <extension
+         id="edu.cmu.sei.alisa.header2"
+         name="Header2"
+         point="org.eclipse.core.runtime.preferences">
+          <initializer
+            class="edu.cmu.sei.alisa.analysis.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   
+   <extension
+         id="edu.cmu.sei.alisa.header3"
+         name="Header3"
+         point="org.eclipse.core.runtime.preferences">
+          <initializer
+            class="edu.cmu.sei.alisa.analysis.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+
+   <extension
+         id="edu.cmu.sei.alisa.header4"
+         name="Header4"
+         point="org.eclipse.core.runtime.preferences">
+          <initializer
+            class="edu.cmu.sei.alisa.analysis.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   
+    <extension
+         id="edu.cmu.sei.alisa.header5"
+         name="Header5"
+         point="org.eclipse.core.runtime.preferences">
+          <initializer
+            class="edu.cmu.sei.alisa.analysis.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>  
+   
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="edu.cmu.sei.alisa.analysis.preferences.PreferencesPage"
+            id="edu.cmu.sei.alisa.analysis.PreferencePage"
+            name="Alisa Analysis">
+      </page>
+   </extension>
 </plugin>
