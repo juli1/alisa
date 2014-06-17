@@ -69,7 +69,7 @@ public class WordImport
 		HWPFDocument doc;
         POIFSFileSystem fs;
 //        WordExtractor wordExtractor;
-        Bookmarks bookmarks;
+//        Bookmarks bookmarks;
         Range range;
         StyleSheet styleSheet;
         Requirement[] currentRequirements;
@@ -85,7 +85,7 @@ public class WordImport
             fs = new POIFSFileSystem(new FileInputStream(fileName));
             doc = new HWPFDocument(fs);
 //            wordExtractor = new WordExtractor(doc);
-            bookmarks = doc.getBookmarks();
+//            bookmarks = doc.getBookmarks();
             range = doc.getRange();
             styleSheet = doc.getStyleSheet();
             Stakeholder genericStakeholder;
@@ -152,11 +152,16 @@ public class WordImport
             {
             	Section section = range.getSection(sid);
 
-            	AlisaDebug.debug("WordImport", "Section #" + sid);
+//            	AlisaDebug.debug("WordImport", "Section #" + sid);
                 for (int pid = 0 ; pid < section.numParagraphs() ; pid++)
                 {
                 	Paragraph par = section.getParagraph(pid);
 
+                	/**
+                	 * The paragraph is just a normal paragraph that details
+                	 * the content of the requirement. We then simply add
+                	 * the text content into the description of the requirement.
+                	 */
                 	if (isRequirementDescription (par))
                 	{
 
@@ -179,12 +184,21 @@ public class WordImport
                 		
                 	}
                 	
+                	/**
+                	 * Here, it means that the style of the paragraph
+                	 * is a heading. Depending on the heading style, we
+                	 * create a requirement at the appropriate depth.
+                	 */
                 	if (isRequirementTitle (par))
                 	{
                 		Requirement req;
                 		int reqLevel;
                 		String reqTitle;
                 		
+                		/**
+                		 * Get the requirement depth (in order to create
+                		 * the requirements hierarchy).
+                		 */
                 		reqLevel = getDepth(par);
                 		
                 		reqTitle = par.text();
@@ -194,9 +208,17 @@ public class WordImport
                 		req.setTitle("\"" + par.text() + "\"\n");
                 		req.setDescription("\"\"");
                 		
+                		/**
+                		 * Assign the requirement to a generic Stakeholder.
+                		 */
                 		req.getAssignedTo().add(genericStakeholder);
                 		
-        
+                		/**
+                		 * If the requirement level is more than 0, then, this
+                		 * requirement depends on another requirements. We then
+                		 * add a dependency between the new requirement and
+                		 * the requirement at level - 1
+                		 */
             			if ((reqLevel > 0) && (currentRequirements[reqLevel - 1] != null))
             			{
             				Utils.addDependency(currentRequirements[reqLevel - 1], req);
