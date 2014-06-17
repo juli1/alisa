@@ -195,4 +195,37 @@ public class Utils {
 	{
 		model.getContent().remove (o);
 	}
+	
+	public static void addDependency (Requirement parent, Requirement subRequirement)
+	{
+		RequirementDecomposition actualDecomposition;
+		RequirementDecomposition newDecomposition;
+		AlisaFactory factory;
+		
+		factory = AlisaFactoryImpl.init();
+		
+		newDecomposition = factory.createRequirementDecomposition();
+		
+		if (parent.getDecomposedBy().size() > 0)
+		{
+			actualDecomposition = parent.getDecomposedBy().get(0);
+		}
+		else
+		{
+			actualDecomposition = null;
+		}
+		
+		if (actualDecomposition == null)
+		{
+			newDecomposition.setElement(subRequirement);
+
+			parent.getDecomposedBy().add(newDecomposition);
+		}
+		else
+		{
+			newDecomposition.setLeft(subRequirement);
+			newDecomposition.setRight(actualDecomposition);
+		}
+		
+	}
 }

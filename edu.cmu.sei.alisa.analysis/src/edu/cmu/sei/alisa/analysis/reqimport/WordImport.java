@@ -3,6 +3,7 @@ package edu.cmu.sei.alisa.analysis.reqimport;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 import org.apache.poi.hwpf.HWPFDocument;
 import org.apache.poi.hwpf.extractor.WordExtractor;
@@ -19,6 +20,7 @@ import edu.cmu.alisa.utils.AlisaDebug;
 import edu.cmu.alisa.utils.Utils;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.Stakeholder;
 
 public class WordImport
 {
@@ -48,7 +50,8 @@ public class WordImport
 		{
 			if (depthToStyleIdentifier[tmp] == par.getStyleIndex())
 			{
-				return tmp;
+				AlisaDebug.debug("WordImport", "style index number " + par.getStyleIndex() + " is level " + (tmp + 1));
+				return tmp + 1;
 			}
 		}
 		return INVALID_STYLE;
@@ -68,12 +71,13 @@ public class WordImport
         Bookmarks bookmarks;
         Range range;
         StyleSheet styleSheet;
-        Requirement currentRequirement;
+        Stack<Requirement> requirementStack;
+        
           
         fs = null;
 
 		returnedModel = Utils.createModel();
-		currentRequirement = null;
+		requirementStack = new Stack<Requirement> ();
 		
         try {
             fs = new POIFSFileSystem(new FileInputStream(fileName));
@@ -84,6 +88,14 @@ public class WordImport
             bookmarks = doc.getBookmarks();
             range = doc.getRange();
             styleSheet = doc.getStyleSheet();
+            Stakeholder genericStakeholder;
+            
+            
+            /**
+             * Instantiate a generic stakeholder
+             */
+            genericStakeholder = Utils.addNewStakeholder(returnedModel);
+            genericStakeholder.setTitle("\"System designer\"");
             
             
             /**
@@ -138,11 +150,17 @@ public class WordImport
 
                 	if (isRequirementDescription (par))
                 	{
-                		if (currentRequirement != null)
+                		if (requirementStack.size() > 0)
                 		{
-                			currentRequirement.setDescription(currentRequirement.getDescription().replace("\"", ""));
-                			currentRequirement.setDescription(currentRequirement.getDescription().replace("\n", ""));
-                			currentRequirement.setDescription("\"" + currentRequirement.getDescription() + " " + par.text() + "\"\n");
+	            			Requirement currentRequirement = requirementStack.pop ();
+	
+	                		if (currentRequirement != null)
+	                		{
+	                			currentRequirement.setDescription(currentRequirement.getDescription().replace("\"", ""));
+	                			currentRequirement.setDescription(currentRequirement.getDescription().replace("\n", ""));
+	                			currentRequirement.setDescription("\"" + currentRequirement.getDescription() + " " + par.text() + "\"\n");
+	                		}
+	                		requirementStack.push (currentRequirement);
                 		}
                 	}
                 	
@@ -153,17 +171,57 @@ public class WordImport
                 		
                 		reqLevel = getDepth(par);
                 		
+                		
                 		req = Utils.addNewRequirement(returnedModel);
                 		req.setTitle("\"" + par.text() + "\"\n");
-                		req.setDescription("");
-                		currentRequirement = req;
+                		req.setDescription("\"\"");
+                		
+                		req.getAssignedTo().add(genericStakeholder);
+                		
+            			AlisaDebug.debug("WordImport", "Creating new requirement " + req.getTitle() + "; level=" + reqLevel + " stack size " + requirementStack.size());
+
+                		
+                		if ((requirementStack.isEmpty() == false) && ((reqLevel >= requirementStack.size())))
+                		{
+
+                			Requirement parent;
+                			
+                			for (int tmp = reqLevel ; tmp < requirementStack.size() + 1 ; tmp++)
+                			{
+                    			parent = requirementStack.pop ();
+                			}
+                			
+                			parent = requirementStack.pop ();
+                			
+                			if (parent != null)
+                			{
+                    			Utils.addDependency (parent, req);	
+                			}
+                			
+                			requirementStack.push (parent);
+                			
+                			
+                		}
+                		
+                		if (reqLevel < requirementStack.size())
+                		{
+
+                			for (int tmp = reqLevel ; tmp < requirementStack.size() ; tmp++)
+                			{
+                    			requirementStack.pop ();
+                			}
+                			requirementStack.pop ();
+                		}
+
+                		requirementStack.push (req);
+                		
                 	}
                 	
-                	AlisaDebug.debug("WordImport", "Paragraph #" + pid + " content= " + par.text());
-                	AlisaDebug.debug("WordImport", "Paragraph #" + pid + " style= " + par.getStyleIndex());
-                	
-                	AlisaDebug.debug("WordImport", "Paragraph #" + pid + " getIlfo= " + par.getIlfo());
-                	AlisaDebug.debug("WordImport", "Paragraph #" + pid + " getIlvl= " + par.getIlvl());
+//                	AlisaDebug.debug("WordImport", "Paragraph #" + pid + " content= " + par.text());
+//                	AlisaDebug.debug("WordImport", "Paragraph #" + pid + " style= " + par.getStyleIndex());
+//                	
+//                	AlisaDebug.debug("WordImport", "Paragraph #" + pid + " getIlfo= " + par.getIlfo());
+//                	AlisaDebug.debug("WordImport", "Paragraph #" + pid + " getIlvl= " + par.getIlvl());
                 }
             }
 
