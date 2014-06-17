@@ -21,15 +21,16 @@ import edu.cmu.alisa.utils.Utils;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
+import edu.cmu.sei.alisa.analysis.preferences.PreferencesValues;
 
 public class WordImport
 {
-	public static String[] depthToStyleString 	= {"Heading 1", "Heading 2", "Heading 3", "Heading 4", "Heading 5"};
-	public static int[] depthToStyleIdentifier 	= new int[depthToStyleString.length];
-	public static String[] normalStyleStrings 	= {"Text Body", "Normal"};
-	public static int[] normalStyleIdentifier 	= new int[normalStyleStrings.length];
-	public static final int INVALID_STYLE = -1;
-	private static int CURRENT_LEVEL = -1;
+	public static final int		MAX_DEPTH = 5;
+	public static int[] 		depthToStyleIdentifier 	= new int[MAX_DEPTH];
+	public static String[] 		normalStyleStrings 	= {"Text Body", "Normal"};
+	public static int[] 		normalStyleIdentifier 	= new int[normalStyleStrings.length];
+	public static final int 	INVALID_STYLE = -1;
+	private static int 			CURRENT_LEVEL = -1;
 	
 	
 	public static boolean isRequirementDescription (Paragraph par)
@@ -67,7 +68,7 @@ public class WordImport
 		AlisaModel returnedModel;
 		HWPFDocument doc;
         POIFSFileSystem fs;
-        WordExtractor wordExtractor;
+//        WordExtractor wordExtractor;
         Bookmarks bookmarks;
         Range range;
         StyleSheet styleSheet;
@@ -75,17 +76,15 @@ public class WordImport
         Requirement currentRequirement;
         
         currentRequirement = null;
-        currentRequirements 	= new Requirement[depthToStyleString.length];
+        currentRequirements 	= new Requirement[MAX_DEPTH];
         fs = null;
 
 		returnedModel = Utils.createModel();
 		
         try {
             fs = new POIFSFileSystem(new FileInputStream(fileName));
-             doc = new HWPFDocument(fs);
-//            fields = doc.getFields();
-//             doc.getParagraphTable()
-            wordExtractor = new WordExtractor(doc);
+            doc = new HWPFDocument(fs);
+//            wordExtractor = new WordExtractor(doc);
             bookmarks = doc.getBookmarks();
             range = doc.getRange();
             styleSheet = doc.getStyleSheet();
@@ -107,7 +106,7 @@ public class WordImport
     				normalStyleIdentifier[tmp] = INVALID_STYLE;
     		}
     		
-    		for (int tmp = 0 ; tmp < depthToStyleString.length ; tmp++)
+    		for (int tmp = 0 ; tmp < MAX_DEPTH ; tmp++)
     		{
     				depthToStyleIdentifier[tmp] = INVALID_STYLE;
     		}
@@ -122,6 +121,11 @@ public class WordImport
             	if ((styleDescription != null) && (styleDescription.getName() != null))
             	{
             		AlisaDebug.debug("WordImport", "Style #" + sid + " content= " + styleDescription.getName());
+            		
+            		/**
+            		 * Identify the Normal Style Identifier for the document
+            		 * We retrieve that information in the document style sheet.
+            		 */
             		for (int tmp = 0 ; tmp < normalStyleStrings.length ; tmp++)
             		{
             			if (styleDescription.getName().equalsIgnoreCase(normalStyleStrings[tmp]))
@@ -130,9 +134,13 @@ public class WordImport
             			}
             		}
             		
-            		for (int tmp = 0 ; tmp < depthToStyleString.length ; tmp++)
+            		/**
+            		 * Identify the Style Identifier for each Header
+            		 * We retrieve that information in the document style sheet.
+            		 */
+            		for (int tmp = 0 ; tmp < MAX_DEPTH ; tmp++)
             		{
-            			if (styleDescription.getName().equalsIgnoreCase(depthToStyleString[tmp]))
+            			if (styleDescription.getName().equalsIgnoreCase(PreferencesValues.getHeaderString (tmp)))
             			{
             				depthToStyleIdentifier[tmp] = sid;
             			}
@@ -154,9 +162,19 @@ public class WordImport
 
 	                		if (currentRequirement != null)
 	                		{
-	                			currentRequirement.setDescription(currentRequirement.getDescription().replace("\"", ""));
-	                			currentRequirement.setDescription(currentRequirement.getDescription().replace("\n", ""));
-	                			currentRequirement.setDescription("\"" + currentRequirement.getDescription() + " " + par.text() + "\"\n");
+	                			String existingText;
+	                			String additionalText;
+	                			
+	                			existingText = currentRequirement.getDescription();
+	                			existingText = existingText.replace("\"", "");
+	                			existingText = existingText.replace("\n", "");
+	                			
+	                			additionalText = par.text();
+	                			if (additionalText.length() > 1)
+	                			{
+		                			additionalText = additionalText.substring(0, additionalText.length() - 1);
+		                			currentRequirement.setDescription("\"" + existingText + " " + additionalText + "\"\n");
+	                			}
 	                		}
                 		
                 	}
@@ -165,9 +183,12 @@ public class WordImport
                 	{
                 		Requirement req;
                 		int reqLevel;
+                		String reqTitle;
                 		
                 		reqLevel = getDepth(par);
                 		
+                		reqTitle = par.text();
+                		reqTitle = reqTitle.substring(0,reqTitle.length() - 1);
                 		
                 		req = Utils.addNewRequirement(returnedModel);
                 		req.setTitle("\"" + par.text() + "\"\n");
@@ -218,7 +239,7 @@ public class WordImport
             
             
             
-            wordExtractor.close();
+//            wordExtractor.close();
  
         } catch (Exception e) {
             e.printStackTrace();
