@@ -27,7 +27,7 @@
          <action
                label="&amp;Import Requirements (Word)"
                icon="icons/wordicon.png"
-               class="edu.cmu.sei.alisa.analysis.actions.ImportWord"
+               class="edu.cmu.sei.alisa.analysis.actions.ImportWordRequirements"
                tooltip="Import Requirements from a Word document"
                menubarPath="alisaMenu/alisaGroup"
                toolbarPath="alisaGroup"

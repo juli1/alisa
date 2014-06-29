@@ -14,6 +14,9 @@ import org.apache.poi.hwpf.usermodel.Bookmarks;
 import org.apache.poi.hwpf.usermodel.Paragraph;
 import org.apache.poi.hwpf.usermodel.Range;
 import org.apache.poi.hwpf.usermodel.Section;
+import org.apache.poi.hwpf.usermodel.Table;
+import org.apache.poi.hwpf.usermodel.TableCell;
+import org.apache.poi.hwpf.usermodel.TableRow;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 
 import edu.cmu.alisa.utils.AlisaDebug;
@@ -63,7 +66,51 @@ public class WordImport
 		return (getDepth(par) != INVALID_STYLE);
 	}
 	
-	public static AlisaModel importFile (String fileName)
+	public static List<Table> getAllTables (HWPFDocument doc)
+	{
+		Range 			range;
+		List<Table> 	tables;
+		
+		tables = new ArrayList<Table>();
+		range = doc.getRange();
+		
+		for(int i=0;i<range.numParagraphs();i++)
+        {
+        	try
+        	{
+                Paragraph par=range.getParagraph(i);
+                if(par.isInTable())
+                {
+                	try
+                	{
+	                    Table table=range.getTable(par);
+	                    if (! tables.contains(table))
+	                    {
+	                    	tables.add (table);
+	                    }
+                	}
+                	catch (ArrayIndexOutOfBoundsException e)
+                	{
+                		AlisaDebug.debug ("WordImport", "array index out of bounds2");
+                	}
+                	catch (IllegalArgumentException e)
+                	{
+                		AlisaDebug.debug ("WordImport", "illegalargument");
+                	}
+                }
+                
+            }
+        	catch (ArrayIndexOutOfBoundsException e)
+        	{
+        		AlisaDebug.debug ("WordImport", "array index out of bounds");
+        		e.printStackTrace();
+        	}
+        }
+		return tables;
+	}
+	
+	
+	public static AlisaModel importFile (String fileName, ImportType importType)
 	{
 		AlisaModel returnedModel;
 		HWPFDocument doc;
@@ -74,6 +121,13 @@ public class WordImport
         StyleSheet styleSheet;
         Requirement[] currentRequirements;
         Requirement currentRequirement;
+        List<Table> tables;
+		int reqLevel;
+		String reqTitle;
+		String reqIdentifier;
+        Requirement req;
+        
+        
         
         currentRequirement = null;
         currentRequirements 	= new Requirement[MAX_DEPTH];
@@ -120,7 +174,7 @@ public class WordImport
             	StyleDescription styleDescription = styleSheet.getStyleDescription(sid);
             	if ((styleDescription != null) && (styleDescription.getName() != null))
             	{
-            		AlisaDebug.debug("WordImport", "Style #" + sid + " content= " + styleDescription.getName());
+//            		AlisaDebug.debug("WordImport", "Style #" + sid + " content= " + styleDescription.getName());
             		
             		/**
             		 * Identify the Normal Style Identifier for the document
@@ -148,15 +202,74 @@ public class WordImport
             	}
             }
             
+
+            
+            /**
+             * Import based on range and paragraphs
+             */
+            tables = getAllTables (doc);
+    		
+            for (Table table : tables)
+            {
+            	for (int rowId = 0 ; rowId < table.numRows() ; rowId++)
+            	{
+            		
+            		TableRow row = table.getRow(rowId);
+    
+            		if (row.numCells() < 2)
+            		{
+            			continue;
+            		}
+            
+            		reqTitle 		= Utils.filterString(row.getCell(1).text());
+            		reqIdentifier 	= Utils.fixIdentifier(Utils.filterString(row.getCell(0).text()));
+            		
+            		if ((reqTitle.length() > 0) && (reqIdentifier.length() > 0))
+            		{
+            			
+	            		AlisaDebug.debug ("WordImport" , "rowId  = " + rowId + " new requirement title = " + reqTitle + " identifier " + reqIdentifier);
+	            		req = Utils.addNewRequirement(returnedModel);
+	            		req.setTitle("\"" + reqTitle + "\"\n");
+	            		req.setDescription("\"\"");
+	            		req.setName(reqIdentifier);
+	            		/**
+	            		 * Assign the requirement to a generic Stakeholder.
+	            		 */
+	            		req.getAssignedTo().add(genericStakeholder);
+            		}
+
+            		
+            	}
+            }
+
+            
+            
+            /**
+             * Import based on the sections
+             */
             for (int sid = 0 ; sid < range.numSections() ; sid++)
             {
             	Section section = range.getSection(sid);
-
+            	
 //            	AlisaDebug.debug("WordImport", "Section #" + sid);
                 for (int pid = 0 ; pid < section.numParagraphs() ; pid++)
                 {
-                	Paragraph par = section.getParagraph(pid);
-
+                	Paragraph par = null;
+                	
+                	try
+                	{
+                		par = section.getParagraph(pid);
+                	}
+                	catch (ArrayIndexOutOfBoundsException e)
+                	{
+                		AlisaDebug.debug ("WordImport", "array index out of bounds2 when getting par");
+                	}
+                	
+                	if (par == null)
+                	{
+                		continue;
+                	}
+   
                 	/**
                 	 * The paragraph is just a normal paragraph that details
                 	 * the content of the requirement. We then simply add
@@ -191,10 +304,6 @@ public class WordImport
                 	 */
                 	if (isRequirementTitle (par))
                 	{
-                		Requirement req;
-                		int reqLevel;
-                		String reqTitle;
-                		
                 		/**
                 		 * Get the requirement depth (in order to create
                 		 * the requirements hierarchy).

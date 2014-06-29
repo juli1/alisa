@@ -26,6 +26,20 @@ public class Utils {
 		}
 	}
 	
+	public static String fixIdentifier (String id)
+	{
+		if ( ! (id.substring(0,1).matches("[a-zA-Z]")))
+		{
+			return "REQ_" + id;
+		}
+		return id;
+	}
+	
+	public static String filterString (String s)
+	{
+		return s.replaceAll("[^a-zA-Z0-9_. ]", "");
+	}
+	
 	public static Stakeholder findStakeHolder (AlisaModel alisaModel, String name)
 	{
 		for (EObject eo : alisaModel.getContent())

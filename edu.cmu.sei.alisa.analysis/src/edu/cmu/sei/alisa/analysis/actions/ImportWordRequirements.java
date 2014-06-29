@@ -61,12 +61,13 @@ import org.eclipse.ui.ide.ResourceUtil;
 import edu.cmu.alisa.utils.AlisaDebug;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.analysis.Activator;
+import edu.cmu.sei.alisa.analysis.reqimport.ImportType;
 import edu.cmu.sei.alisa.analysis.reqimport.WordImport;
 import edu.cmu.sei.alisa.analysis.utils.Utils;
 import edu.cmu.sei.alisa.editor.editors.AlisaEditor;
 
 
-public final class ImportWord implements IWorkbenchWindowActionDelegate  {
+public final class ImportWordRequirements implements IWorkbenchWindowActionDelegate  {
 
 	private String inputFile;
 	private IWorkbenchWindow window;
@@ -134,7 +135,7 @@ public final class ImportWord implements IWorkbenchWindowActionDelegate  {
 				/**
 				 * Import the Word file into a Alisa Model
 				 */
-				producedModel = WordImport.importFile(inputFile);
+				producedModel = WordImport.importFile(inputFile, ImportType.REQUIREMENTS);
 
 				
 				/**
