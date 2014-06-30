@@ -62,7 +62,8 @@ import edu.cmu.alisa.utils.AlisaDebug;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.analysis.Activator;
 import edu.cmu.sei.alisa.analysis.reqimport.ImportType;
-import edu.cmu.sei.alisa.analysis.reqimport.WordImport;
+import edu.cmu.sei.alisa.analysis.reqimport.WordDocImport;
+import edu.cmu.sei.alisa.analysis.reqimport.WordDocxImport;
 import edu.cmu.sei.alisa.analysis.utils.Utils;
 import edu.cmu.sei.alisa.editor.editors.AlisaEditor;
 
@@ -132,10 +133,20 @@ public final class ImportWordRequirements implements IWorkbenchWindowActionDeleg
 
 				AlisaDebug.debug("ImportWord" , "import file " + inputFile);
 				
+				
+				
 				/**
 				 * Import the Word file into a Alisa Model
 				 */
-				producedModel = WordImport.importFile(inputFile, ImportType.REQUIREMENTS);
+				String fileExtension = inputFile.substring(inputFile.length() - 3, inputFile.length());
+				if (fileExtension.equalsIgnoreCase("doc"))
+				{
+					producedModel = WordDocImport.importFile(inputFile, ImportType.REQUIREMENTS);
+				}
+				else
+				{
+					producedModel = WordDocxImport.importFile(inputFile, ImportType.REQUIREMENTS);
+				}
 
 				
 				/**
