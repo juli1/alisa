@@ -15,8 +15,11 @@ Require-Bundle: edu.cmu.sei.alisa;visibility:=reexport,
  org.antlr.runtime,
  org.eclipse.xtext.common.types.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
- org.eclipse.compare
-Import-Package: org.apache.log4j,
+ org.eclipse.compare,
+ edu.cmu.sei.alisa
+Import-Package: edu.cmu.sei.alisa.parser.antlr.lexer,
+ edu.cmu.sei.alisa.services,
+ org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: edu.cmu.sei.alisa.ui.quickfix,

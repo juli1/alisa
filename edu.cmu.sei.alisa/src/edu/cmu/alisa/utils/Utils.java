@@ -28,20 +28,11 @@ public class Utils {
 	
 	public static String fixIdentifier (String id)
 	{
-		String res;
-		
-		res = id.replaceAll("[^a-zA-Z0-9_]", "");
-		
-		if (res.length() <= 1)
+		if ( ! (id.substring(0,1).matches("[a-zA-Z]")))
 		{
-			return null;
+			return "REQ_" + id;
 		}
-		
-		if ( ! (res.substring(0,1).matches("[a-zA-Z]")))
-		{
-			return "REQ_" + res;
-		}
-		return res;
+		return id;
 	}
 	
 	public static String filterString (String s)

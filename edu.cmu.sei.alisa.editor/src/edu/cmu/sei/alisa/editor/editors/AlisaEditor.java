@@ -354,21 +354,12 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 	
 	        IResource rsrc = ResourceUtil.getResource(getEditorInput());
 	        Resource resource = rs.getResource(URI.createURI(rsrc.getLocationURI().toString()), true);
-
-	        if (resource.getContents().size() == 0)
+	        EObject eobject = resource.getContents().get(0);
+	        AlisaDebug.debug("[AlisaEditor] eobject=" + eobject);
+	        
+	        if (eobject instanceof AlisaModel)
 	        {
-	        	alisaModel = Utils.createModel();
-	        }
-	        else
-	        {
-		        EObject eobject = resource.getContents().get(0);
-		        
-		        AlisaDebug.debug("[AlisaEditor] eobject=" + eobject);
-		        
-		        if (eobject instanceof AlisaModel)
-		        {
-		        	alisaModel = (AlisaModel) eobject;
-		        }
+	        	alisaModel = (AlisaModel) eobject;
 	        }
     	}
     	

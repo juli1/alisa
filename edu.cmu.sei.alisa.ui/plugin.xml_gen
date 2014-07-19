@@ -376,23 +376,4 @@
 	    </page>
 	</extension>
 
-  <extension point="org.eclipse.compare.contentViewers">
-    <viewer id="edu.cmu.sei.alisa.Alisa.compare.contentViewers"
-            class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="alisa">
-    </viewer>
-  </extension>
-  <extension point="org.eclipse.compare.contentMergeViewers">
-    <viewer id="edu.cmu.sei.alisa.Alisa.compare.contentMergeViewers"
-            class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="alisa" label="Alisa Compare">
-     </viewer>
-  </extension>
-  <extension point="org.eclipse.ui.editors.documentProviders">
-    <provider id="edu.cmu.sei.alisa.Alisa.editors.documentProviders"
-            class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-            extensions="alisa">
-    </provider>
-  </extension>
-
 </plugin>
