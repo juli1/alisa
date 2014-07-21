@@ -1,9 +1,20 @@
-grammar edu.cmu.sei.alisa.Alisa with org.eclipse.xtext.common.Terminals
+grammar edu.cmu.sei.alisa.Alisa 
+
+
+//with org.osate.xtext.aadl2.properties.Properties
+
+with org.eclipse.xtext.common.Terminals
 
 generate alisa "http://www.cmu.edu/sei/alisa/Alisa"
 
+// make the AADL2 Meta model accessible
+import "platform:/resource/org.osate.aadl2/model/aadl2.ecore" as aadl2
+
+
 AlisaModel:
-	content+=(Stakeholder|Requirement|VerificationActivity|VerificationResult|ElementType)*;
+	content+=( //Goals | 
+		Stakeholder|Requirement|VerificationActivity|VerificationResult|ElementType
+	)*;
 	
 ValueString :
 	// remove quotes from string in ValueConverter
@@ -103,4 +114,45 @@ VerificationResultState:
 VerificationResultStatus:
 	'ok' | 'unknown' | 'tbd'
 ;
+
+//Goals:
+//	'goals' 'for' classifier = [aadl2::Classifier|QCLREF]
+//;
+//
+//Goal: 
+//	name=ID 'goal'
+//	('title' ':' title=ValueString)?
+//	('description' ':' description=ValueString)?
+//	('rationale' ':' rationale=ValueString)?
+//	('see' ':' modelReference=ValueString)?
+//;
+
+
+QCLREF:
+	ID '::' ID;
+
+
+QPREF:
+	ID ('::' ID)?;
+
+QCREF:
+	(ID '::')* ID ('.' ID)?;
+	
+STAR : '*';
+
+terminal STRING	: 
+			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'"
+		; 
+
+//terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal ID:	('a'..'z'
+        |'A'..'Z'
+        ) ( ('_')? ('a'..'z'
+        |'A'..'Z'
+        |'0'..'9'))*;
+	
+
+terminal WS			: (' '|'\t'|'\r'|'\n')+;
+
 
