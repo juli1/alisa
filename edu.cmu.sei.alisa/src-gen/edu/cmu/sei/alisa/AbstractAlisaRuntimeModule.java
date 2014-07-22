@@ -99,9 +99,9 @@ public abstract class AbstractAlisaRuntimeModule extends DefaultRuntimeModule {
 		return org.eclipse.xtext.conversion.impl.IgnoreCaseIDValueConverter.class;
 	}
 
-	// contributed by org.eclipse.xtext.generator.validation.ValidatorFragment
-	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends edu.cmu.sei.alisa.validation.AlisaValidator> bindAlisaValidator() {
-		return edu.cmu.sei.alisa.validation.AlisaValidator.class;
+	// contributed by org.eclipse.xtext.generator.validation.JavaValidatorFragment
+	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends edu.cmu.sei.alisa.validation.AlisaJavaValidator> bindAlisaJavaValidator() {
+		return edu.cmu.sei.alisa.validation.AlisaJavaValidator.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment

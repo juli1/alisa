@@ -132,11 +132,11 @@ classSplitting = true
 }
 
 // java-based API for validation
-fragment = validation.ValidatorFragment auto-inject {
+fragment = validation.JavaValidatorFragment {
 // composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
 // composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
 // registerForImportedPackages = true
-composedCheck = "edu.cmu.sei.alisa.validation.AlisaValidator"
+//composedCheck = "edu.cmu.sei.alisa.validation.AlisaValidator"
 }
 
 // scoping and exporting API

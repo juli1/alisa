@@ -17,7 +17,7 @@ import edu.cmu.sei.alisa.alisa.VerificationActivity
  *
  * see http://www.eclipse.org/Xtext/documentation.html#validation
  */
-class AlisaValidator extends AbstractAlisaValidator 
+class AlisaValidator extends AbstractAlisaJavaValidator 
 {
 
   public static val INVALID_IDENTIFIER = 'existingIdentifier'
