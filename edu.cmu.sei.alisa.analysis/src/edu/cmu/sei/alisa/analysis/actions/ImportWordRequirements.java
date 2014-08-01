@@ -30,19 +30,15 @@
 
 package edu.cmu.sei.alisa.analysis.actions;
 
-
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
-import org.osgi.framework.Bundle;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -60,61 +56,45 @@ import org.eclipse.ui.ide.ResourceUtil;
 
 import edu.cmu.alisa.utils.AlisaDebug;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
-import edu.cmu.sei.alisa.analysis.Activator;
-import edu.cmu.sei.alisa.analysis.reqimport.ImportType;
-import edu.cmu.sei.alisa.analysis.reqimport.WordImport;
+//import edu.cmu.sei.alisa.analysis.reqimport.WordImport;
 import edu.cmu.sei.alisa.analysis.utils.Utils;
 import edu.cmu.sei.alisa.editor.editors.AlisaEditor;
 
-
-public final class ImportWordRequirements implements IWorkbenchWindowActionDelegate  {
+public final class ImportWordRequirements implements IWorkbenchWindowActionDelegate {
 
 	private String inputFile;
 	private IWorkbenchWindow window;
 
+	AlisaModel producedModel;
 
-	AlisaModel 				producedModel;
-
-	public AlisaModel getModel ()
-	{
+	public AlisaModel getModel() {
 		return this.producedModel;
 	}
-	
-	public void setModel (AlisaModel am)
-	{
+
+	public void setModel(AlisaModel am) {
 		this.producedModel = am;
 	}
 
+	public void run(IAction action) {
+		final Display currentDisplay;
+		final AlisaEditor alisaEditor;
+		IEditorPart editorPart;
 
-
-
-
-	public void run(IAction action) 
-	{
-		final Display 		currentDisplay;
-		final AlisaEditor   alisaEditor;
-		IEditorPart 		editorPart;
-		
 		editorPart = window.getActivePage().getActiveEditor();
-		
-		
-		if (editorPart instanceof AlisaEditor)
-		{
+
+		if (editorPart instanceof AlisaEditor) {
 			alisaEditor = (AlisaEditor) editorPart;
-		}
-		else
-		{
+		} else {
 			alisaEditor = null;
 		}
-		
+
 		currentDisplay = PlatformUI.getWorkbench().getDisplay();
 
-		currentDisplay.syncExec(new Runnable(){
+		currentDisplay.syncExec(new Runnable() {
 
 			public void run() {
 				IWorkbenchWindow window;
 				Shell sh;
-
 
 				window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
 				sh = window.getShell();
@@ -122,41 +102,36 @@ public final class ImportWordRequirements implements IWorkbenchWindowActionDeleg
 				FileDialog fd = new FileDialog(sh, SWT.OPEN);
 				inputFile = fd.open();
 				String parentDirectory = new File(inputFile).getParent();
-				
 
-			}});
+			}
+		});
 
 		Job aadlGenerator = new Job("WORDIMPORT") {
 			protected IStatus run(IProgressMonitor monitor) {
 				monitor.beginTask("Importing the Word Requirement", 100);
 
-				AlisaDebug.debug("ImportWord" , "import file " + inputFile);
-				
+				AlisaDebug.debug("ImportWord", "import file " + inputFile);
+
 				/**
 				 * Import the Word file into a Alisa Model
 				 */
-				producedModel = WordImport.importFile(inputFile, ImportType.REQUIREMENTS);
+//				producedModel = WordImport.importFile(inputFile, ImportType.REQUIREMENTS);
 
-				
 				/**
 				 * Save the produced model into the current editor
 				 */
-	    		ResourceSet rs = new ResourceSetImpl();
-	            IResource rsrc = ResourceUtil.getResource(alisaEditor.getEditorInput());
-	            Resource resource = rs.getResource(URI.createURI(rsrc.getLocationURI().toString()), true);
-	            for (int i = 0 ; i < resource.getContents().size() ; i++)
-	            {
-	            	resource.getContents().remove(i);
-	            }
-	            AlisaDebug.debug("[AlisaEditor] trying to save");
-	            resource.getContents().add (producedModel);
-	            try 
-	            {
+				ResourceSet rs = new ResourceSetImpl();
+				IResource rsrc = ResourceUtil.getResource(alisaEditor.getEditorInput());
+				Resource resource = rs.getResource(URI.createURI(rsrc.getLocationURI().toString()), true);
+				for (int i = 0; i < resource.getContents().size(); i++) {
+					resource.getContents().remove(i);
+				}
+				AlisaDebug.debug("[AlisaEditor] trying to save");
+				resource.getContents().add(producedModel);
+				try {
 					resource.save(null);
-				} 
-	            catch (IOException e) 
-				{
-					AlisaDebug.debug ("[AlisaEditor] exception when trying to save");
+				} catch (IOException e) {
+					AlisaDebug.debug("[AlisaEditor] exception when trying to save");
 //					e.printStackTrace();
 				}
 
@@ -167,26 +142,18 @@ public final class ImportWordRequirements implements IWorkbenchWindowActionDeleg
 		};
 		aadlGenerator.schedule();
 
+	}
 
+	public void selectionChanged(IAction action, ISelection selection) {
 
 	}
 
-	public void selectionChanged(IAction action, ISelection selection) 
-	{
-		
-	}
-
-
-	
-	public void dispose() 
-	{
+	public void dispose() {
 
 	}
 
-	public void init(IWorkbenchWindow window) 
-	{
+	public void init(IWorkbenchWindow window) {
 		this.window = window;
 	}
-
 
 }
