@@ -247,39 +247,6 @@
         <persistent value="true"/>
     </extension>
 
-   <extension
-         point="org.eclipse.xtext.builder.participant">
-      <participant
-            class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
-            fileExtensions="alisa"
-            >
-      </participant>
-   </extension>
-   <extension
-            point="org.eclipse.ui.preferencePages">
-        <page
-            category="edu.cmu.sei.alisa.Alisa"
-            class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-            id="edu.cmu.sei.alisa.Alisa.compiler.preferencePage"
-            name="Compiler">
-            <keywordReference id="edu.cmu.sei.alisa.ui.keyword_Alisa"/>
-        </page>
-    </extension>
-    <extension
-            point="org.eclipse.ui.propertyPages">
-        <page
-            category="edu.cmu.sei.alisa.Alisa"
-            class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-            id="edu.cmu.sei.alisa.Alisa.compiler.propertyPage"
-            name="Compiler">
-            <keywordReference id="edu.cmu.sei.alisa.ui.keyword_Alisa"/>
-            <enabledWhen>
-	            <adapt type="org.eclipse.core.resources.IProject"/>
-			</enabledWhen>
-	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
-        </page>
-    </extension>
-
 	<!-- Quick Outline -->
 	<extension
 		point="org.eclipse.ui.handlers">

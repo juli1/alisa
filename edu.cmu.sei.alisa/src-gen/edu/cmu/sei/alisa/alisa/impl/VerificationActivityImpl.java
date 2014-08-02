@@ -3,21 +3,27 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
+import edu.cmu.sei.alisa.alisa.ElementReference;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
+import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +36,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getMethod <em>Method</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getVerificationParameters <em>Verification Parameters</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getDecomposedTo <em>Decomposed To</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getAssignedTo <em>Assigned To</em>}</li>
  * </ul>
  * </p>
@@ -117,6 +125,26 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
    * @ordered
    */
   protected String method = METHOD_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getVerificationParameters() <em>Verification Parameters</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVerificationParameters()
+   * @generated
+   * @ordered
+   */
+  protected EList<ElementReference> verificationParameters;
+
+  /**
+   * The cached value of the '{@link #getDecomposedTo() <em>Decomposed To</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDecomposedTo()
+   * @generated
+   * @ordered
+   */
+  protected EList<VerificationDecomposition> decomposedTo;
 
   /**
    * The cached value of the '{@link #getAssignedTo() <em>Assigned To</em>}' reference list.
@@ -246,6 +274,34 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<ElementReference> getVerificationParameters()
+  {
+    if (verificationParameters == null)
+    {
+      verificationParameters = new EObjectResolvingEList<ElementReference>(ElementReference.class, this, AlisaPackage.VERIFICATION_ACTIVITY__VERIFICATION_PARAMETERS);
+    }
+    return verificationParameters;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<VerificationDecomposition> getDecomposedTo()
+  {
+    if (decomposedTo == null)
+    {
+      decomposedTo = new EObjectContainmentEList<VerificationDecomposition>(VerificationDecomposition.class, this, AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO);
+    }
+    return decomposedTo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Stakeholder> getAssignedTo()
   {
     if (assignedTo == null)
@@ -253,6 +309,22 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
       assignedTo = new EObjectResolvingEList<Stakeholder>(Stakeholder.class, this, AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO);
     }
     return assignedTo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO:
+        return ((InternalEList<?>)getDecomposedTo()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -273,6 +345,10 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
         return getDescription();
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
         return getMethod();
+      case AlisaPackage.VERIFICATION_ACTIVITY__VERIFICATION_PARAMETERS:
+        return getVerificationParameters();
+      case AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO:
+        return getDecomposedTo();
       case AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO:
         return getAssignedTo();
     }
@@ -301,6 +377,14 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
         return;
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
         setMethod((String)newValue);
+        return;
+      case AlisaPackage.VERIFICATION_ACTIVITY__VERIFICATION_PARAMETERS:
+        getVerificationParameters().clear();
+        getVerificationParameters().addAll((Collection<? extends ElementReference>)newValue);
+        return;
+      case AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO:
+        getDecomposedTo().clear();
+        getDecomposedTo().addAll((Collection<? extends VerificationDecomposition>)newValue);
         return;
       case AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO:
         getAssignedTo().clear();
@@ -332,6 +416,12 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
         setMethod(METHOD_EDEFAULT);
         return;
+      case AlisaPackage.VERIFICATION_ACTIVITY__VERIFICATION_PARAMETERS:
+        getVerificationParameters().clear();
+        return;
+      case AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO:
+        getDecomposedTo().clear();
+        return;
       case AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO:
         getAssignedTo().clear();
         return;
@@ -357,6 +447,10 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
         return METHOD_EDEFAULT == null ? method != null : !METHOD_EDEFAULT.equals(method);
+      case AlisaPackage.VERIFICATION_ACTIVITY__VERIFICATION_PARAMETERS:
+        return verificationParameters != null && !verificationParameters.isEmpty();
+      case AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO:
+        return decomposedTo != null && !decomposedTo.isEmpty();
       case AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO:
         return assignedTo != null && !assignedTo.isEmpty();
     }

@@ -40,17 +40,23 @@
     </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//ElementType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ElementType/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ElementType/reference"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ElementType/elementType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ElementType/modelType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ElementType/details"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ElementType/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ElementType/elementName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ElementType/references"/>
+    </genClasses>
+    <genClasses ecoreClass="Alisa.ecore#//ElementReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ElementReference/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ElementReference/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ElementReference/referenceType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ElementReference/details"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ElementReference/version"/>
     </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//VerificationActivity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//VerificationActivity/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//VerificationActivity/title"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//VerificationActivity/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//VerificationActivity/method"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//VerificationActivity/verificationParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//VerificationActivity/decomposedTo"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//VerificationActivity/assignedTo"/>
     </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//VerificationResult">

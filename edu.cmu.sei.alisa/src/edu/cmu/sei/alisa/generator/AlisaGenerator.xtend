@@ -12,7 +12,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess
  * 
  * see http://www.eclipse.org/Xtext/documentation.html#TutorialCodeGeneration
  */
-class AlisaGenerator implements IGenerator {
+public class AlisaGenerator implements IGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
@@ -22,3 +22,4 @@ class AlisaGenerator implements IGenerator {
 //				.join(', '))
 	}
 }
+ 

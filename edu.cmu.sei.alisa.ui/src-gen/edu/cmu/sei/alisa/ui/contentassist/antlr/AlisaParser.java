@@ -70,14 +70,18 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getElementTypeAccess().getGroup(), "rule__ElementType__Group__0");
 					put(grammarAccess.getElementTypeAccess().getGroup_3(), "rule__ElementType__Group_3__0");
 					put(grammarAccess.getElementTypeAccess().getGroup_4(), "rule__ElementType__Group_4__0");
-					put(grammarAccess.getElementTypeAccess().getGroup_5(), "rule__ElementType__Group_5__0");
-					put(grammarAccess.getElementTypeAccess().getGroup_6(), "rule__ElementType__Group_6__0");
-					put(grammarAccess.getElementTypeAccess().getGroup_7(), "rule__ElementType__Group_7__0");
+					put(grammarAccess.getElementReferenceAccess().getGroup(), "rule__ElementReference__Group__0");
+					put(grammarAccess.getElementReferenceAccess().getGroup_3(), "rule__ElementReference__Group_3__0");
+					put(grammarAccess.getElementReferenceAccess().getGroup_4(), "rule__ElementReference__Group_4__0");
+					put(grammarAccess.getElementReferenceAccess().getGroup_5(), "rule__ElementReference__Group_5__0");
+					put(grammarAccess.getElementReferenceAccess().getGroup_6(), "rule__ElementReference__Group_6__0");
 					put(grammarAccess.getVerificationActivityAccess().getGroup(), "rule__VerificationActivity__Group__0");
 					put(grammarAccess.getVerificationActivityAccess().getGroup_3(), "rule__VerificationActivity__Group_3__0");
 					put(grammarAccess.getVerificationActivityAccess().getGroup_4(), "rule__VerificationActivity__Group_4__0");
 					put(grammarAccess.getVerificationActivityAccess().getGroup_5(), "rule__VerificationActivity__Group_5__0");
 					put(grammarAccess.getVerificationActivityAccess().getGroup_6(), "rule__VerificationActivity__Group_6__0");
+					put(grammarAccess.getVerificationActivityAccess().getGroup_7(), "rule__VerificationActivity__Group_7__0");
+					put(grammarAccess.getVerificationActivityAccess().getGroup_8(), "rule__VerificationActivity__Group_8__0");
 					put(grammarAccess.getVerificationResultAccess().getGroup(), "rule__VerificationResult__Group__0");
 					put(grammarAccess.getVerificationResultAccess().getGroup_5(), "rule__VerificationResult__Group_5__0");
 					put(grammarAccess.getVerificationResultAccess().getGroup_6(), "rule__VerificationResult__Group_6__0");
@@ -153,16 +157,20 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVerificationDecompositionAccess().getTypeAssignment_1_1(), "rule__VerificationDecomposition__TypeAssignment_1_1");
 					put(grammarAccess.getVerificationDecompositionAccess().getRightAssignment_1_2(), "rule__VerificationDecomposition__RightAssignment_1_2");
 					put(grammarAccess.getElementTypeAccess().getNameAssignment_2(), "rule__ElementType__NameAssignment_2");
-					put(grammarAccess.getElementTypeAccess().getReferenceAssignment_3_2(), "rule__ElementType__ReferenceAssignment_3_2");
-					put(grammarAccess.getElementTypeAccess().getElementTypeAssignment_4_2(), "rule__ElementType__ElementTypeAssignment_4_2");
-					put(grammarAccess.getElementTypeAccess().getModelTypeAssignment_5_2(), "rule__ElementType__ModelTypeAssignment_5_2");
-					put(grammarAccess.getElementTypeAccess().getDetailsAssignment_6_2(), "rule__ElementType__DetailsAssignment_6_2");
-					put(grammarAccess.getElementTypeAccess().getVersionAssignment_7_2(), "rule__ElementType__VersionAssignment_7_2");
+					put(grammarAccess.getElementTypeAccess().getElementNameAssignment_3_2(), "rule__ElementType__ElementNameAssignment_3_2");
+					put(grammarAccess.getElementTypeAccess().getReferencesAssignment_4_2(), "rule__ElementType__ReferencesAssignment_4_2");
+					put(grammarAccess.getElementReferenceAccess().getNameAssignment_2(), "rule__ElementReference__NameAssignment_2");
+					put(grammarAccess.getElementReferenceAccess().getUrlAssignment_3_2(), "rule__ElementReference__UrlAssignment_3_2");
+					put(grammarAccess.getElementReferenceAccess().getReferenceTypeAssignment_4_2(), "rule__ElementReference__ReferenceTypeAssignment_4_2");
+					put(grammarAccess.getElementReferenceAccess().getDetailsAssignment_5_2(), "rule__ElementReference__DetailsAssignment_5_2");
+					put(grammarAccess.getElementReferenceAccess().getVersionAssignment_6_2(), "rule__ElementReference__VersionAssignment_6_2");
 					put(grammarAccess.getVerificationActivityAccess().getNameAssignment_2(), "rule__VerificationActivity__NameAssignment_2");
 					put(grammarAccess.getVerificationActivityAccess().getTitleAssignment_3_2(), "rule__VerificationActivity__TitleAssignment_3_2");
 					put(grammarAccess.getVerificationActivityAccess().getDescriptionAssignment_4_2(), "rule__VerificationActivity__DescriptionAssignment_4_2");
 					put(grammarAccess.getVerificationActivityAccess().getMethodAssignment_5_2(), "rule__VerificationActivity__MethodAssignment_5_2");
-					put(grammarAccess.getVerificationActivityAccess().getAssignedToAssignment_6_3(), "rule__VerificationActivity__AssignedToAssignment_6_3");
+					put(grammarAccess.getVerificationActivityAccess().getVerificationParametersAssignment_6_2(), "rule__VerificationActivity__VerificationParametersAssignment_6_2");
+					put(grammarAccess.getVerificationActivityAccess().getDecomposedToAssignment_7_3(), "rule__VerificationActivity__DecomposedToAssignment_7_3");
+					put(grammarAccess.getVerificationActivityAccess().getAssignedToAssignment_8_3(), "rule__VerificationActivity__AssignedToAssignment_8_3");
 					put(grammarAccess.getVerificationResultAccess().getNameAssignment_2(), "rule__VerificationResult__NameAssignment_2");
 					put(grammarAccess.getVerificationResultAccess().getReferencedVerificationMethodAssignment_4(), "rule__VerificationResult__ReferencedVerificationMethodAssignment_4");
 					put(grammarAccess.getVerificationResultAccess().getTitleAssignment_5_2(), "rule__VerificationResult__TitleAssignment_5_2");
@@ -243,7 +251,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 	
 	@Override
 	protected String[] getInitialHiddenTokens() {
-		return new String[] { "RULE_WS", "RULE_SL_COMMENT" };
+		return new String[] { "RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT" };
 	}
 	
 	public AlisaGrammarAccess getGrammarAccess() {

@@ -139,11 +139,6 @@ public abstract class AbstractAlisaRuntimeModule extends DefaultRuntimeModule {
 		binder.bind(org.eclipse.xtext.resource.IResourceDescriptions.class).to(org.eclipse.xtext.resource.impl.ResourceSetBasedResourceDescriptions.class);
 	}
 
-	// contributed by org.eclipse.xtext.generator.generator.GeneratorFragment
-	public Class<? extends org.eclipse.xtext.generator.IGenerator> bindIGenerator() {
-		return edu.cmu.sei.alisa.generator.AlisaGenerator.class;
-	}
-
 	// contributed by org.eclipse.xtext.generator.formatting.FormatterFragment
 	public Class<? extends org.eclipse.xtext.formatting.IFormatter> bindIFormatter() {
 		return edu.cmu.sei.alisa.formatting.AlisaFormatter.class;

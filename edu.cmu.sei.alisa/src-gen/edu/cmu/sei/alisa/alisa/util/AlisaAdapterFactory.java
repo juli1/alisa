@@ -105,6 +105,11 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
         return createElementTypeAdapter();
       }
       @Override
+      public Adapter caseElementReference(ElementReference object)
+      {
+        return createElementReferenceAdapter();
+      }
+      @Override
       public Adapter caseVerificationActivity(VerificationActivity object)
       {
         return createVerificationActivityAdapter();
@@ -222,6 +227,21 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createElementTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.ElementReference <em>Element Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.ElementReference
+   * @generated
+   */
+  public Adapter createElementReferenceAdapter()
   {
     return null;
   }

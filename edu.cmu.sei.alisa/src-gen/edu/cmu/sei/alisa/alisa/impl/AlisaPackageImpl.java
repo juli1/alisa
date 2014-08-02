@@ -5,6 +5,7 @@ package edu.cmu.sei.alisa.alisa.impl;
 import edu.cmu.sei.alisa.alisa.AlisaFactory;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
+import edu.cmu.sei.alisa.alisa.ElementReference;
 import edu.cmu.sei.alisa.alisa.ElementType;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.RequirementDecomposition;
@@ -70,6 +71,13 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * @generated
    */
   private EClass elementTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elementReferenceEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -436,7 +444,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getElementType_Reference()
+  public EAttribute getElementType_ElementName()
   {
     return (EAttribute)elementTypeEClass.getEStructuralFeatures().get(1);
   }
@@ -446,9 +454,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getElementType_ElementType()
+  public EReference getElementType_References()
   {
-    return (EAttribute)elementTypeEClass.getEStructuralFeatures().get(2);
+    return (EReference)elementTypeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -456,9 +464,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getElementType_ModelType()
+  public EClass getElementReference()
   {
-    return (EAttribute)elementTypeEClass.getEStructuralFeatures().get(3);
+    return elementReferenceEClass;
   }
 
   /**
@@ -466,9 +474,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getElementType_Details()
+  public EAttribute getElementReference_Name()
   {
-    return (EAttribute)elementTypeEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)elementReferenceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -476,9 +484,39 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getElementType_Version()
+  public EAttribute getElementReference_Url()
   {
-    return (EAttribute)elementTypeEClass.getEStructuralFeatures().get(5);
+    return (EAttribute)elementReferenceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getElementReference_ReferenceType()
+  {
+    return (EAttribute)elementReferenceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getElementReference_Details()
+  {
+    return (EAttribute)elementReferenceEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getElementReference_Version()
+  {
+    return (EAttribute)elementReferenceEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -536,9 +574,29 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getVerificationActivity_AssignedTo()
+  public EReference getVerificationActivity_VerificationParameters()
   {
     return (EReference)verificationActivityEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVerificationActivity_DecomposedTo()
+  {
+    return (EReference)verificationActivityEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVerificationActivity_AssignedTo()
+  {
+    return (EReference)verificationActivityEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -684,17 +742,23 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
 
     elementTypeEClass = createEClass(ELEMENT_TYPE);
     createEAttribute(elementTypeEClass, ELEMENT_TYPE__NAME);
-    createEAttribute(elementTypeEClass, ELEMENT_TYPE__REFERENCE);
-    createEAttribute(elementTypeEClass, ELEMENT_TYPE__ELEMENT_TYPE);
-    createEAttribute(elementTypeEClass, ELEMENT_TYPE__MODEL_TYPE);
-    createEAttribute(elementTypeEClass, ELEMENT_TYPE__DETAILS);
-    createEAttribute(elementTypeEClass, ELEMENT_TYPE__VERSION);
+    createEAttribute(elementTypeEClass, ELEMENT_TYPE__ELEMENT_NAME);
+    createEReference(elementTypeEClass, ELEMENT_TYPE__REFERENCES);
+
+    elementReferenceEClass = createEClass(ELEMENT_REFERENCE);
+    createEAttribute(elementReferenceEClass, ELEMENT_REFERENCE__NAME);
+    createEAttribute(elementReferenceEClass, ELEMENT_REFERENCE__URL);
+    createEAttribute(elementReferenceEClass, ELEMENT_REFERENCE__REFERENCE_TYPE);
+    createEAttribute(elementReferenceEClass, ELEMENT_REFERENCE__DETAILS);
+    createEAttribute(elementReferenceEClass, ELEMENT_REFERENCE__VERSION);
 
     verificationActivityEClass = createEClass(VERIFICATION_ACTIVITY);
     createEAttribute(verificationActivityEClass, VERIFICATION_ACTIVITY__NAME);
     createEAttribute(verificationActivityEClass, VERIFICATION_ACTIVITY__TITLE);
     createEAttribute(verificationActivityEClass, VERIFICATION_ACTIVITY__DESCRIPTION);
     createEAttribute(verificationActivityEClass, VERIFICATION_ACTIVITY__METHOD);
+    createEReference(verificationActivityEClass, VERIFICATION_ACTIVITY__VERIFICATION_PARAMETERS);
+    createEReference(verificationActivityEClass, VERIFICATION_ACTIVITY__DECOMPOSED_TO);
     createEReference(verificationActivityEClass, VERIFICATION_ACTIVITY__ASSIGNED_TO);
 
     verificationResultEClass = createEClass(VERIFICATION_RESULT);
@@ -774,17 +838,23 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
 
     initEClass(elementTypeEClass, ElementType.class, "ElementType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getElementType_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ElementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getElementType_Reference(), theEcorePackage.getEString(), "reference", null, 0, 1, ElementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getElementType_ElementType(), theEcorePackage.getEString(), "elementType", null, 0, 1, ElementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getElementType_ModelType(), theEcorePackage.getEString(), "modelType", null, 0, 1, ElementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getElementType_Details(), theEcorePackage.getEString(), "details", null, 0, 1, ElementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getElementType_Version(), theEcorePackage.getEString(), "version", null, 0, -1, ElementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getElementType_ElementName(), theEcorePackage.getEString(), "elementName", null, 0, -1, ElementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElementType_References(), this.getElementReference(), null, "references", null, 0, -1, ElementType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elementReferenceEClass, ElementReference.class, "ElementReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getElementReference_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ElementReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getElementReference_Url(), theEcorePackage.getEString(), "url", null, 0, 1, ElementReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getElementReference_ReferenceType(), theEcorePackage.getEString(), "referenceType", null, 0, 1, ElementReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getElementReference_Details(), theEcorePackage.getEString(), "details", null, 0, 1, ElementReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getElementReference_Version(), theEcorePackage.getEString(), "version", null, 0, -1, ElementReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verificationActivityEClass, VerificationActivity.class, "VerificationActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVerificationActivity_Name(), theEcorePackage.getEString(), "name", null, 0, 1, VerificationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVerificationActivity_Title(), theEcorePackage.getEString(), "title", null, 0, 1, VerificationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVerificationActivity_Description(), theEcorePackage.getEString(), "description", null, 0, 1, VerificationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVerificationActivity_Method(), theEcorePackage.getEString(), "method", null, 0, 1, VerificationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVerificationActivity_VerificationParameters(), this.getElementReference(), null, "verificationParameters", null, 0, -1, VerificationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVerificationActivity_DecomposedTo(), this.getVerificationDecomposition(), null, "decomposedTo", null, 0, -1, VerificationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVerificationActivity_AssignedTo(), this.getStakeholder(), null, "assignedTo", null, 0, -1, VerificationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verificationResultEClass, VerificationResult.class, "VerificationResult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -70,6 +70,7 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
       case AlisaPackage.REQUIREMENT_DECOMPOSITION: return createRequirementDecomposition();
       case AlisaPackage.VERIFICATION_DECOMPOSITION: return createVerificationDecomposition();
       case AlisaPackage.ELEMENT_TYPE: return createElementType();
+      case AlisaPackage.ELEMENT_REFERENCE: return createElementReference();
       case AlisaPackage.VERIFICATION_ACTIVITY: return createVerificationActivity();
       case AlisaPackage.VERIFICATION_RESULT: return createVerificationResult();
       default:
@@ -141,6 +142,17 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
   {
     ElementTypeImpl elementType = new ElementTypeImpl();
     return elementType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ElementReference createElementReference()
+  {
+    ElementReferenceImpl elementReference = new ElementReferenceImpl();
+    return elementReference;
   }
 
   /**

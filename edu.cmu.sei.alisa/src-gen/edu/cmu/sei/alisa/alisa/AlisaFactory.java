@@ -77,6 +77,15 @@ public interface AlisaFactory extends EFactory
   ElementType createElementType();
 
   /**
+   * Returns a new object of class '<em>Element Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Reference</em>'.
+   * @generated
+   */
+  ElementReference createElementReference();
+
+  /**
    * Returns a new object of class '<em>Verification Activity</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

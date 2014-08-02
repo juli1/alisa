@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
+import edu.cmu.sei.alisa.alisa.ElementReference;
 import edu.cmu.sei.alisa.alisa.ElementType;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.RequirementDecomposition;
@@ -208,6 +209,12 @@ public class AlisaSemanticSequencer extends PropertiesSemanticSequencer {
 					return; 
 				}
 				else break;
+			case AlisaPackage.ELEMENT_REFERENCE:
+				if(context == grammarAccess.getElementReferenceRule()) {
+					sequence_ElementReference(context, (ElementReference) semanticObject); 
+					return; 
+				}
+				else break;
 			case AlisaPackage.ELEMENT_TYPE:
 				if(context == grammarAccess.getElementTypeRule()) {
 					sequence_ElementType(context, (ElementType) semanticObject); 
@@ -256,7 +263,14 @@ public class AlisaSemanticSequencer extends PropertiesSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (content+=Stakeholder | content+=Requirement | content+=VerificationActivity | content+=VerificationResult | content+=ElementType)*
+	 *     (
+	 *         content+=Stakeholder | 
+	 *         content+=Requirement | 
+	 *         content+=VerificationActivity | 
+	 *         content+=VerificationResult | 
+	 *         content+=ElementType | 
+	 *         content+=ElementReference
+	 *     )*
 	 */
 	protected void sequence_AlisaModel(EObject context, AlisaModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -265,14 +279,16 @@ public class AlisaSemanticSequencer extends PropertiesSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         reference=ValueString? 
-	 *         elementType=ValueString? 
-	 *         modelType=ValueString? 
-	 *         details=ValueString? 
-	 *         version+=ValueString*
-	 *     )
+	 *     (name=ID url=ValueString? referenceType=ValueString? details=ValueString? version+=ValueString*)
+	 */
+	protected void sequence_ElementReference(EObject context, ElementReference semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID elementName+=ValueString* references+=[ElementReference|ID]*)
 	 */
 	protected void sequence_ElementType(EObject context, ElementType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -317,7 +333,15 @@ public class AlisaSemanticSequencer extends PropertiesSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID title=ValueString? description=ValueString? method=VerificationMethod? assignedTo+=[Stakeholder|ID]*)
+	 *     (
+	 *         name=ID 
+	 *         title=ValueString? 
+	 *         description=ValueString? 
+	 *         method=VerificationMethod? 
+	 *         verificationParameters+=[ElementReference|ID]* 
+	 *         decomposedTo+=VerificationDecomposition* 
+	 *         assignedTo+=[Stakeholder|ID]*
+	 *     )
 	 */
 	protected void sequence_VerificationActivity(EObject context, VerificationActivity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
