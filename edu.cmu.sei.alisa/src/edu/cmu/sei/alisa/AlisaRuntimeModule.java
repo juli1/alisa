@@ -3,10 +3,23 @@
  */
 package edu.cmu.sei.alisa;
 
+import edu.cmu.sei.alisa.naming.AlisaQualifiedNameProvider;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class AlisaRuntimeModule extends edu.cmu.sei.alisa.AbstractAlisaRuntimeModule {
+	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return AlisaQualifiedNameProvider.class;
+	}
 
+	@Override
+	public Class<? extends org.eclipse.xtext.linking.ILinkingService> bindILinkingService() {
+		return org.osate.xtext.aadl2.linking.Aadl2LinkingService.class;
+	}
+
+	@Override
+	public Class<? extends org.eclipse.xtext.scoping.IGlobalScopeProvider> bindIGlobalScopeProvider() {
+		return org.osate.xtext.aadl2.scoping.Aadl2GlobalScopeProvider.class;
+	}
 }
- 

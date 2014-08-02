@@ -78,6 +78,7 @@ ElementType:
 ElementReference:
 	'element' 'reference' name=ID
 	('url' ':' url=ValueString)?
+	('model' 'reference' ':' modelReference=[aadl2::ComponentType|QCREF]|modelReference=[aadl2::ComponentImplementation|QCREF])?
 	('reference-type' ':' referenceType=ValueString)?
 	('documentDetails' ':' details=ValueString)?
 	('version' ':' version+=(ValueString)*)?
