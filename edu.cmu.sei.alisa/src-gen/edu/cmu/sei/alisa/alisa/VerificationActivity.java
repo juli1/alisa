@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getMethod <em>Method</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getVerificationParameters <em>Verification Parameters</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getDecomposedTo <em>Decomposed To</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getAssignedTo <em>Assigned To</em>}</li>
  * </ul>
@@ -133,22 +132,6 @@ public interface VerificationActivity extends EObject
    * @generated
    */
   void setMethod(String value);
-
-  /**
-   * Returns the value of the '<em><b>Verification Parameters</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.ElementReference}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Verification Parameters</em>' reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Verification Parameters</em>' reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationActivity_VerificationParameters()
-   * @model
-   * @generated
-   */
-  EList<ElementReference> getVerificationParameters();
 
   /**
    * Returns the value of the '<em><b>Decomposed To</b></em>' containment reference list.

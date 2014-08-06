@@ -17,6 +17,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import org.osate.aadl2.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +30,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ElementReferenceImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ElementReferenceImpl#getUrl <em>Url</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ElementReferenceImpl#getModelReference <em>Model Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ElementReferenceImpl#getReferenceType <em>Reference Type</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ElementReferenceImpl#getDetails <em>Details</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ElementReferenceImpl#getVersion <em>Version</em>}</li>
@@ -76,6 +80,16 @@ public class ElementReferenceImpl extends MinimalEObjectImpl.Container implement
    * @ordered
    */
   protected String url = URL_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getModelReference() <em>Model Reference</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getModelReference()
+   * @generated
+   * @ordered
+   */
+  protected EList<NamedElement> modelReference;
 
   /**
    * The default value of the '{@link #getReferenceType() <em>Reference Type</em>}' attribute.
@@ -199,6 +213,20 @@ public class ElementReferenceImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<NamedElement> getModelReference()
+  {
+    if (modelReference == null)
+    {
+      modelReference = new EObjectResolvingEList<NamedElement>(NamedElement.class, this, AlisaPackage.ELEMENT_REFERENCE__MODEL_REFERENCE);
+    }
+    return modelReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getReferenceType()
   {
     return referenceType;
@@ -268,6 +296,8 @@ public class ElementReferenceImpl extends MinimalEObjectImpl.Container implement
         return getName();
       case AlisaPackage.ELEMENT_REFERENCE__URL:
         return getUrl();
+      case AlisaPackage.ELEMENT_REFERENCE__MODEL_REFERENCE:
+        return getModelReference();
       case AlisaPackage.ELEMENT_REFERENCE__REFERENCE_TYPE:
         return getReferenceType();
       case AlisaPackage.ELEMENT_REFERENCE__DETAILS:
@@ -294,6 +324,10 @@ public class ElementReferenceImpl extends MinimalEObjectImpl.Container implement
         return;
       case AlisaPackage.ELEMENT_REFERENCE__URL:
         setUrl((String)newValue);
+        return;
+      case AlisaPackage.ELEMENT_REFERENCE__MODEL_REFERENCE:
+        getModelReference().clear();
+        getModelReference().addAll((Collection<? extends NamedElement>)newValue);
         return;
       case AlisaPackage.ELEMENT_REFERENCE__REFERENCE_TYPE:
         setReferenceType((String)newValue);
@@ -325,6 +359,9 @@ public class ElementReferenceImpl extends MinimalEObjectImpl.Container implement
       case AlisaPackage.ELEMENT_REFERENCE__URL:
         setUrl(URL_EDEFAULT);
         return;
+      case AlisaPackage.ELEMENT_REFERENCE__MODEL_REFERENCE:
+        getModelReference().clear();
+        return;
       case AlisaPackage.ELEMENT_REFERENCE__REFERENCE_TYPE:
         setReferenceType(REFERENCE_TYPE_EDEFAULT);
         return;
@@ -352,6 +389,8 @@ public class ElementReferenceImpl extends MinimalEObjectImpl.Container implement
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.ELEMENT_REFERENCE__URL:
         return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
+      case AlisaPackage.ELEMENT_REFERENCE__MODEL_REFERENCE:
+        return modelReference != null && !modelReference.isEmpty();
       case AlisaPackage.ELEMENT_REFERENCE__REFERENCE_TYPE:
         return REFERENCE_TYPE_EDEFAULT == null ? referenceType != null : !REFERENCE_TYPE_EDEFAULT.equals(referenceType);
       case AlisaPackage.ELEMENT_REFERENCE__DETAILS:

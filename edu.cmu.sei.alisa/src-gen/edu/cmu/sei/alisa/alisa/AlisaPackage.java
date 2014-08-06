@@ -360,22 +360,49 @@ public interface AlisaPackage extends EPackage
   int ELEMENT_TYPE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Element Name</b></em>' attribute list.
+   * The feature id for the '<em><b>Reference</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT_TYPE__ELEMENT_NAME = 1;
+  int ELEMENT_TYPE__REFERENCE = 1;
 
   /**
-   * The feature id for the '<em><b>References</b></em>' reference list.
+   * The feature id for the '<em><b>Element Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT_TYPE__REFERENCES = 2;
+  int ELEMENT_TYPE__ELEMENT_TYPE = 2;
+
+  /**
+   * The feature id for the '<em><b>Model Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_TYPE__MODEL_TYPE = 3;
+
+  /**
+   * The feature id for the '<em><b>Details</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_TYPE__DETAILS = 4;
+
+  /**
+   * The feature id for the '<em><b>Version</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_TYPE__VERSION = 5;
 
   /**
    * The number of structural features of the '<em>Element Type</em>' class.
@@ -384,7 +411,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT_TYPE_FEATURE_COUNT = 3;
+  int ELEMENT_TYPE_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ElementReferenceImpl <em>Element Reference</em>}' class.
@@ -415,13 +442,22 @@ public interface AlisaPackage extends EPackage
   int ELEMENT_REFERENCE__URL = 1;
 
   /**
+   * The feature id for the '<em><b>Model Reference</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_REFERENCE__MODEL_REFERENCE = 2;
+
+  /**
    * The feature id for the '<em><b>Reference Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT_REFERENCE__REFERENCE_TYPE = 2;
+  int ELEMENT_REFERENCE__REFERENCE_TYPE = 3;
 
   /**
    * The feature id for the '<em><b>Details</b></em>' attribute.
@@ -430,7 +466,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT_REFERENCE__DETAILS = 3;
+  int ELEMENT_REFERENCE__DETAILS = 4;
 
   /**
    * The feature id for the '<em><b>Version</b></em>' attribute list.
@@ -439,7 +475,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT_REFERENCE__VERSION = 4;
+  int ELEMENT_REFERENCE__VERSION = 5;
 
   /**
    * The number of structural features of the '<em>Element Reference</em>' class.
@@ -448,7 +484,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT_REFERENCE_FEATURE_COUNT = 5;
+  int ELEMENT_REFERENCE_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl <em>Verification Activity</em>}' class.
@@ -497,22 +533,13 @@ public interface AlisaPackage extends EPackage
   int VERIFICATION_ACTIVITY__METHOD = 3;
 
   /**
-   * The feature id for the '<em><b>Verification Parameters</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VERIFICATION_ACTIVITY__VERIFICATION_PARAMETERS = 4;
-
-  /**
    * The feature id for the '<em><b>Decomposed To</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFICATION_ACTIVITY__DECOMPOSED_TO = 5;
+  int VERIFICATION_ACTIVITY__DECOMPOSED_TO = 4;
 
   /**
    * The feature id for the '<em><b>Assigned To</b></em>' reference list.
@@ -521,7 +548,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_ACTIVITY__ASSIGNED_TO = 6;
+  int VERIFICATION_ACTIVITY__ASSIGNED_TO = 5;
 
   /**
    * The number of structural features of the '<em>Verification Activity</em>' class.
@@ -530,7 +557,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_ACTIVITY_FEATURE_COUNT = 7;
+  int VERIFICATION_ACTIVITY_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl <em>Verification Result</em>}' class.
@@ -918,26 +945,59 @@ public interface AlisaPackage extends EPackage
   EAttribute getElementType_Name();
 
   /**
-   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.ElementType#getElementName <em>Element Name</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ElementType#getReference <em>Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Element Name</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ElementType#getElementName()
+   * @return the meta object for the attribute '<em>Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ElementType#getReference()
    * @see #getElementType()
    * @generated
    */
-  EAttribute getElementType_ElementName();
+  EAttribute getElementType_Reference();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ElementType#getReferences <em>References</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ElementType#getElementType <em>Element Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>References</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ElementType#getReferences()
+   * @return the meta object for the attribute '<em>Element Type</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ElementType#getElementType()
    * @see #getElementType()
    * @generated
    */
-  EReference getElementType_References();
+  EAttribute getElementType_ElementType();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ElementType#getModelType <em>Model Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Model Type</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ElementType#getModelType()
+   * @see #getElementType()
+   * @generated
+   */
+  EAttribute getElementType_ModelType();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ElementType#getDetails <em>Details</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Details</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ElementType#getDetails()
+   * @see #getElementType()
+   * @generated
+   */
+  EAttribute getElementType_Details();
+
+  /**
+   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.ElementType#getVersion <em>Version</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Version</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ElementType#getVersion()
+   * @see #getElementType()
+   * @generated
+   */
+  EAttribute getElementType_Version();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.ElementReference <em>Element Reference</em>}'.
@@ -970,6 +1030,17 @@ public interface AlisaPackage extends EPackage
    * @generated
    */
   EAttribute getElementReference_Url();
+
+  /**
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ElementReference#getModelReference <em>Model Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Model Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ElementReference#getModelReference()
+   * @see #getElementReference()
+   * @generated
+   */
+  EReference getElementReference_ModelReference();
 
   /**
    * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ElementReference#getReferenceType <em>Reference Type</em>}'.
@@ -1057,17 +1128,6 @@ public interface AlisaPackage extends EPackage
    * @generated
    */
   EAttribute getVerificationActivity_Method();
-
-  /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getVerificationParameters <em>Verification Parameters</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Verification Parameters</em>'.
-   * @see edu.cmu.sei.alisa.alisa.VerificationActivity#getVerificationParameters()
-   * @see #getVerificationActivity()
-   * @generated
-   */
-  EReference getVerificationActivity_VerificationParameters();
 
   /**
    * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getDecomposedTo <em>Decomposed To</em>}'.
@@ -1438,20 +1498,44 @@ public interface AlisaPackage extends EPackage
     EAttribute ELEMENT_TYPE__NAME = eINSTANCE.getElementType_Name();
 
     /**
-     * The meta object literal for the '<em><b>Element Name</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Reference</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ELEMENT_TYPE__ELEMENT_NAME = eINSTANCE.getElementType_ElementName();
+    EAttribute ELEMENT_TYPE__REFERENCE = eINSTANCE.getElementType_Reference();
 
     /**
-     * The meta object literal for the '<em><b>References</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Element Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ELEMENT_TYPE__REFERENCES = eINSTANCE.getElementType_References();
+    EAttribute ELEMENT_TYPE__ELEMENT_TYPE = eINSTANCE.getElementType_ElementType();
+
+    /**
+     * The meta object literal for the '<em><b>Model Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT_TYPE__MODEL_TYPE = eINSTANCE.getElementType_ModelType();
+
+    /**
+     * The meta object literal for the '<em><b>Details</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT_TYPE__DETAILS = eINSTANCE.getElementType_Details();
+
+    /**
+     * The meta object literal for the '<em><b>Version</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT_TYPE__VERSION = eINSTANCE.getElementType_Version();
 
     /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ElementReferenceImpl <em>Element Reference</em>}' class.
@@ -1478,6 +1562,14 @@ public interface AlisaPackage extends EPackage
      * @generated
      */
     EAttribute ELEMENT_REFERENCE__URL = eINSTANCE.getElementReference_Url();
+
+    /**
+     * The meta object literal for the '<em><b>Model Reference</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT_REFERENCE__MODEL_REFERENCE = eINSTANCE.getElementReference_ModelReference();
 
     /**
      * The meta object literal for the '<em><b>Reference Type</b></em>' attribute feature.
@@ -1544,14 +1636,6 @@ public interface AlisaPackage extends EPackage
      * @generated
      */
     EAttribute VERIFICATION_ACTIVITY__METHOD = eINSTANCE.getVerificationActivity_Method();
-
-    /**
-     * The meta object literal for the '<em><b>Verification Parameters</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference VERIFICATION_ACTIVITY__VERIFICATION_PARAMETERS = eINSTANCE.getVerificationActivity_VerificationParameters();
 
     /**
      * The meta object literal for the '<em><b>Decomposed To</b></em>' containment reference list feature.

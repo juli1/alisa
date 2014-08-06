@@ -26,7 +26,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
-import edu.cmu.alisa.utils.Utils;
+import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.RequirementDecomposition;
 import edu.cmu.sei.alisa.alisa.Stakeholder;

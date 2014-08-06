@@ -18,8 +18,8 @@ import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.ui.IEditorPart;
 
-import edu.cmu.alisa.utils.AlisaDebug;
-import edu.cmu.alisa.utils.Utils;
+import edu.cmu.alisa.sei.utils.AlisaDebug;
+import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;

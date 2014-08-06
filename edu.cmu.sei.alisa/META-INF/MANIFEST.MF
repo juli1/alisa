@@ -5,32 +5,32 @@ Bundle-Vendor: CMU/SEI
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: edu.cmu.sei.alisa; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0";visibility:=reexport,
- org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
- org.apache.log4j;bundle-version="1.2.15";visibility:=reexport,
- org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional;visibility:=reexport,
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
  org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
  org.eclipse.emf.codegen.ecore;resolution:=optional,
  org.eclipse.emf.mwe.utils;resolution:=optional,
  org.eclipse.emf.mwe2.launch;resolution:=optional,
- org.eclipse.xtext.util;bundle-version="2.0.1",
- org.eclipse.emf.ecore;bundle-version="2.7.0";visibility:=reexport,
- org.eclipse.emf.common;bundle-version="2.7.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
  org.antlr.runtime,
  org.eclipse.xtext.common.types,
- org.osate.aadl2,
- org.osate.xtext.aadl2.properties,
- org.eclipse.core.runtime;bundle-version="3.7.0",
- org.osate.aadl2.modelsupport;bundle-version="1.0.0",
- org.osate.core;bundle-version="1.0.0",
- org.eclipse.ui;bundle-version="3.7.0",
- org.osate.annexsupport,
- org.eclipse.uml2.codegen.ecore;bundle-version="1.9.100",
- edu.cmu.sei.alisa
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
+ org.eclipse.uml2;bundle-version="5.0.0",
+ org.eclipse.uml2.types;bundle-version="2.0.0",
+ org.eclipse.uml2.uml;bundle-version="5.0.0",
+ org.eclipse.emf.codegen.ecore.ui;bundle-version="2.10.0",
+ org.eclipse.emf.codegen.ui;bundle-version="2.6.0",
+ org.eclipse.emf.eef.codegen.ecore;bundle-version="1.3.0",
+ org.eclipse.uml2.codegen.ecore;bundle-version="2.0.0",
+ org.eclipse.uml2.codegen.ecore.ui;bundle-version="2.0.0",
+ org.osate.aadl2;bundle-version="1.0.0"
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: edu.cmu.alisa.utils,
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: edu.cmu.alisa.sei.utils,
  edu.cmu.sei.alisa,
  edu.cmu.sei.alisa.alisa,
  edu.cmu.sei.alisa.alisa.impl,
@@ -42,5 +42,4 @@ Export-Package: edu.cmu.alisa.utils,
  edu.cmu.sei.alisa.scoping,
  edu.cmu.sei.alisa.serializer,
  edu.cmu.sei.alisa.services,
- edu.cmu.sei.alisa.validation,
- edu.cmu.sei.alisa.parser.antlr.lexer
+ edu.cmu.sei.alisa.validation

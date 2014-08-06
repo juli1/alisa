@@ -6,6 +6,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.osate.aadl2.NamedElement;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Element Reference</b></em>'.
@@ -16,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ElementReference#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ElementReference#getUrl <em>Url</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.ElementReference#getModelReference <em>Model Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ElementReference#getReferenceType <em>Reference Type</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ElementReference#getDetails <em>Details</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ElementReference#getVersion <em>Version</em>}</li>
@@ -79,6 +82,22 @@ public interface ElementReference extends EObject
    * @generated
    */
   void setUrl(String value);
+
+  /**
+   * Returns the value of the '<em><b>Model Reference</b></em>' reference list.
+   * The list contents are of type {@link org.osate.aadl2.NamedElement}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Model Reference</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Model Reference</em>' reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getElementReference_ModelReference()
+   * @model
+   * @generated
+   */
+  EList<NamedElement> getModelReference();
 
   /**
    * Returns the value of the '<em><b>Reference Type</b></em>' attribute.

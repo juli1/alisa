@@ -9,8 +9,8 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
-import edu.cmu.alisa.utils.AlisaDebug;
-import edu.cmu.alisa.utils.Utils;
+import edu.cmu.alisa.sei.utils.AlisaDebug;
+import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.analysis.utils.GeneratorCAE;
 import edu.cmu.sei.alisa.editor.editors.AlisaEditor;

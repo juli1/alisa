@@ -19,8 +19,8 @@ import org.apache.poi.hwpf.usermodel.TableCell;
 import org.apache.poi.hwpf.usermodel.TableRow;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 
-import edu.cmu.alisa.utils.AlisaDebug;
-import edu.cmu.alisa.utils.Utils;
+import edu.cmu.alisa.sei.utils.AlisaDebug;
+import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;

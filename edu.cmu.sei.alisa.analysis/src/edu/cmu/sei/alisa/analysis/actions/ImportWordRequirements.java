@@ -54,7 +54,7 @@ import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.ResourceUtil;
 
-import edu.cmu.alisa.utils.AlisaDebug;
+import edu.cmu.alisa.sei.utils.AlisaDebug;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 //import edu.cmu.sei.alisa.analysis.reqimport.WordImport;
 import edu.cmu.sei.alisa.analysis.utils.Utils;

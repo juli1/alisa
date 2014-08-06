@@ -1,24 +1,20 @@
-grammar edu.cmu.sei.alisa.Alisa 
-
-
-with org.osate.xtext.aadl2.properties.Properties hidden(WS, ML_COMMENT, SL_COMMENT)
-
-//with org.eclipse.xtext.common.Terminals
+grammar edu.cmu.sei.alisa.Alisa with org.eclipse.xtext.common.Terminals
 
 generate alisa "http://www.cmu.edu/sei/alisa/Alisa"
-
-// make the AADL2 Meta model accessible
-import "http://aadl.info/AADL/2.0" as aadl2
+//import "platform:/resource/org.osate.aadl2/model/aadl2.ecore" as aadl2
+//import "http://aadl.info/AADL/2.0" as aadl2
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "platform:/resource/org.osate.aadl2/model/aadl2.ecore" as aadl2
+
+
+
 
 AlisaModel:
-	content+=( //Goals | 
-		Stakeholder|Requirement|VerificationActivity|VerificationResult|ElementType|ElementReference
-	)*;
+	content+=(Stakeholder|Requirement|VerificationActivity|VerificationResult|ElementType)*;
 	
 ValueString :
-	// remove quotes from string in ValueConverter
+	// remove quotes from string in ValueConverter 
 	STRING
 ;
 
@@ -67,22 +63,26 @@ VerificationDecomposition:
  */
 ElementType:
 	'system' 'element' name=ID
-	('name' ':' elementName+=(ValueString)*)?
-	('references' ':' references+=([ElementReference])+)?
+	('reference' ':' reference=ValueString)?
+	('element-type' ':' elementType=ValueString)?
+	('model-type' ':' modelType=ValueString)?
+	('documentDetails' ':' details=ValueString)?
+	('version' ':' version+=(ValueString)*)?
 	'end' 'system' 'element' ';'
 ;
+
 
 /*
  * Element Reference
  */
 ElementReference:
-	'element' 'reference' name=ID
-	('url' ':' url=ValueString)?
-	('model' 'reference' ':' modelReference=[aadl2::ComponentType|QCREF]|modelReference=[aadl2::ComponentImplementation|QCREF])?
-	('reference-type' ':' referenceType=ValueString)?
-	('documentDetails' ':' details=ValueString)?
-	('version' ':' version+=(ValueString)*)?
-	'end' 'element' 'reference' ';'
+'element' 'reference' name=ID
+('url' ':' url=ValueString)?
+('model' 'reference' ':' modelReference+=[aadl2::NamedElement|RELREF])?
+('reference-type' ':' referenceType=ValueString)?
+('documentDetails' ':' details=ValueString)?
+('version' ':' version+=(ValueString)*)?
+'end' 'element' 'reference' ';'
 ;
 
 /*
@@ -94,12 +94,12 @@ VerificationActivity:
 	('title' ':' title=ValueString)?
 	('description' ':' description=ValueString)?
 	('method' ':' method=VerificationMethod)?
-	('parameters' ':' verificationParameters+=([ElementReference])*)?
+//	('parameters' ':' verificationParameters+=([ElementReference])*)?
 	('decomposed' 'to' ':' decomposedTo+=(VerificationDecomposition)*)?
 	('assigned' 'to' ':' assignedTo+=([Stakeholder])*)?
 	'end' 'verification' 'activity' ';'
 ;
-
+ 
 
 VerificationMethod:
 	'manual' | 'automatic'
@@ -128,6 +128,50 @@ VerificationResultStatus:
 	'ok' | 'unknown' | 'tbd'
 ;
 
-terminal ML_COMMENT :
-'/*' -> '*/';
+	// classifier reference
+QCLREF:
+	(ID '::')* ID ('.' ID)?;
+
+	// package reference
+QPREF:
+	ID ('::' ID)*;
+
+// error model element reference or other multi-dot path with or without qualifier
+QNEREF:
+	(ID '::')* ID ('.' ID)*;
+
+//  dotted path property ref or property ref
+QCRELREF:
+	(QNEREF (PAREF)?)|PAREF
+;
+
+// dotted path as relative reference
+RELREF:
+	ID ('.' ID)* ;	
+
+// reference to property (association)	
+PAREF: '#' ID ('::' ID)?;
+
+// requirement or goal reference (just dotted)
+REQREF: (ID '.')* ID ;
+
+STAR:
+	'*';
+
+terminal STRING:
+	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | '"'))* '"' |
+	"'" ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | "'"))* "'";
+
+	//terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+
+terminal ID:
+	('a'..'z'
+	| 'A'..'Z') (('_')? ('a'..'z'
+	| 'A'..'Z'
+	| '0'..'9'))*;
+
+terminal WS:
+	(' ' | '\t' | '\r' | '\n')+;
+
+
 

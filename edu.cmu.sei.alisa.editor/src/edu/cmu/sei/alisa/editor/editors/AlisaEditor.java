@@ -48,8 +48,8 @@ import org.eclipse.ui.ide.ResourceUtil;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.MultiPageEditorPart;
 
-import edu.cmu.alisa.utils.AlisaDebug;
-import edu.cmu.alisa.utils.Utils;
+import edu.cmu.alisa.sei.utils.AlisaDebug;
+import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.AlisaStandaloneSetup;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.editor.utils.AlisaEditorCellModifier;

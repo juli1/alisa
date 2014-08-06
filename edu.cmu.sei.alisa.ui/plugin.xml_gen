@@ -224,27 +224,60 @@
     </extension>
 
 
-    <!-- marker definitions for edu.cmu.sei.alisa.Alisa -->
-    <extension
-            id="alisa.check.fast"
-            name="Alisa Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.fast"/>
-        <persistent value="true"/>
+	<!-- marker definitions for edu.cmu.sei.alisa.Alisa -->
+	<extension
+	        id="alisa.check.fast"
+	        name="Alisa Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.fast"/>
+	    <persistent value="true"/>
+	</extension>
+	<extension
+	        id="alisa.check.normal"
+	        name="Alisa Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.normal"/>
+	    <persistent value="true"/>
+	</extension>
+	<extension
+	        id="alisa.check.expensive"
+	        name="Alisa Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.expensive"/>
+	    <persistent value="true"/>
+	</extension>
+
+   <extension
+         point="org.eclipse.xtext.builder.participant">
+      <participant
+            class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            fileExtensions="alisa"
+            >
+      </participant>
+   </extension>
+   <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            category="edu.cmu.sei.alisa.Alisa"
+            class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="edu.cmu.sei.alisa.Alisa.compiler.preferencePage"
+            name="Compiler">
+            <keywordReference id="edu.cmu.sei.alisa.ui.keyword_Alisa"/>
+        </page>
     </extension>
     <extension
-            id="alisa.check.normal"
-            name="Alisa Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.normal"/>
-        <persistent value="true"/>
-    </extension>
-    <extension
-            id="alisa.check.expensive"
-            name="Alisa Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.expensive"/>
-        <persistent value="true"/>
+            point="org.eclipse.ui.propertyPages">
+        <page
+            category="edu.cmu.sei.alisa.Alisa"
+            class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="edu.cmu.sei.alisa.Alisa.compiler.propertyPage"
+            name="Compiler">
+            <keywordReference id="edu.cmu.sei.alisa.ui.keyword_Alisa"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
     </extension>
 
 	<!-- Quick Outline -->
@@ -308,40 +341,6 @@
             </attribute>
         </markerResolutionGenerator>
     </extension>
-   	<!-- Rename Refactoring -->
-	<extension point="org.eclipse.ui.handlers">
-		<handler 
-			class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
-			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
-			<activeWhen>
-				<reference
-					definitionId="edu.cmu.sei.alisa.Alisa.Editor.opened">
-				</reference>
-			</activeWhen>
-		</handler>
-	</extension>
-    <extension point="org.eclipse.ui.menus">
-         <menuContribution
-            locationURI="popup:#TextEditorContext?after=group.edit">
-         <command commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
-               style="push">
-            <visibleWhen checkEnabled="false">
-               <reference
-                     definitionId="edu.cmu.sei.alisa.Alisa.Editor.opened">
-               </reference>
-            </visibleWhen>
-         </command>
-      </menuContribution>
-   </extension>
-   <extension point="org.eclipse.ui.preferencePages">
-	    <page
-	        category="edu.cmu.sei.alisa.Alisa"
-	        class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-	        id="edu.cmu.sei.alisa.Alisa.refactoring"
-	        name="Refactoring">
-	        <keywordReference id="edu.cmu.sei.alisa.ui.keyword_Alisa"/>
-	    </page>
-	</extension>
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 

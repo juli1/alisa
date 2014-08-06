@@ -4,25 +4,25 @@ requirement req1
 	comment: "bla2"
 	referenced by: modelref
 	decomposed by: req2 and req3
-end req1;
+end requirement; 
   
 requirement req2
 	title: "test"
 	description: "plop"
 	comment: "bla2"
-end req2;
+end requirement;
 
-requirement req3
+requirement req2
 	title: "test"
 	description: "plop"
 	comment: "bla2"
-end req3;
+end requirement;
 
 system element modelref
-end modelref;
+end system element;
 
 verification activity test2
-end test2;
+end verification activity;
 
 verification result test3 of test2
-end test3;
+end verification result;

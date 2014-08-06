@@ -3,7 +3,6 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.ElementReference;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
@@ -36,7 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getMethod <em>Method</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getVerificationParameters <em>Verification Parameters</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getDecomposedTo <em>Decomposed To</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getAssignedTo <em>Assigned To</em>}</li>
  * </ul>
@@ -125,16 +123,6 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
    * @ordered
    */
   protected String method = METHOD_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getVerificationParameters() <em>Verification Parameters</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVerificationParameters()
-   * @generated
-   * @ordered
-   */
-  protected EList<ElementReference> verificationParameters;
 
   /**
    * The cached value of the '{@link #getDecomposedTo() <em>Decomposed To</em>}' containment reference list.
@@ -274,20 +262,6 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ElementReference> getVerificationParameters()
-  {
-    if (verificationParameters == null)
-    {
-      verificationParameters = new EObjectResolvingEList<ElementReference>(ElementReference.class, this, AlisaPackage.VERIFICATION_ACTIVITY__VERIFICATION_PARAMETERS);
-    }
-    return verificationParameters;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<VerificationDecomposition> getDecomposedTo()
   {
     if (decomposedTo == null)
@@ -345,8 +319,6 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
         return getDescription();
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
         return getMethod();
-      case AlisaPackage.VERIFICATION_ACTIVITY__VERIFICATION_PARAMETERS:
-        return getVerificationParameters();
       case AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO:
         return getDecomposedTo();
       case AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO:
@@ -377,10 +349,6 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
         return;
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
         setMethod((String)newValue);
-        return;
-      case AlisaPackage.VERIFICATION_ACTIVITY__VERIFICATION_PARAMETERS:
-        getVerificationParameters().clear();
-        getVerificationParameters().addAll((Collection<? extends ElementReference>)newValue);
         return;
       case AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO:
         getDecomposedTo().clear();
@@ -416,9 +384,6 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
         setMethod(METHOD_EDEFAULT);
         return;
-      case AlisaPackage.VERIFICATION_ACTIVITY__VERIFICATION_PARAMETERS:
-        getVerificationParameters().clear();
-        return;
       case AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO:
         getDecomposedTo().clear();
         return;
@@ -447,8 +412,6 @@ public class VerificationActivityImpl extends MinimalEObjectImpl.Container imple
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
         return METHOD_EDEFAULT == null ? method != null : !METHOD_EDEFAULT.equals(method);
-      case AlisaPackage.VERIFICATION_ACTIVITY__VERIFICATION_PARAMETERS:
-        return verificationParameters != null && !verificationParameters.isEmpty();
       case AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO:
         return decomposedTo != null && !decomposedTo.isEmpty();
       case AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO:
