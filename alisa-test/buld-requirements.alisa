@@ -1,0 +1,53 @@
+requirement document bulb
+
+/**
+ * Stakeholders
+ */
+
+stakeholder designer
+	title: "Chef Designer"
+	description: "to be added"
+	role: "to be added"
+end stakeholder;
+
+stakeholder bulb_vendor
+	title: "Home Depot"
+end stakeholder; 
+
+stakeholder electrician
+	title: "Contractor Electricity Company"
+end stakeholder;
+
+/**
+ * Requirements
+ */
+ 
+requirement req1
+	title: "Light can be turned on"
+	description: "to be added"
+	comment: "to be added"
+	assigned to: designer
+	decomposed by: req1_2 and req1_3 and req1_4
+end requirement;
+
+requirement req1_2
+	title: "Power in on"
+	assigned to: electrician
+end requirement;
+
+requirement req1_3
+	title: "Switch is connected"
+	assigned to: electrician
+end requirement;
+
+requirement req1_4
+	title: "Bulb is functional" 
+	description: "to be added" 
+	comment: "to be added"
+	referenced by: bulb techspecs
+	verified by: va_ratling bulb_compliance_with_specs
+end requirement;
+
+
+ 
+end requirement document;
