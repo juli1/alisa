@@ -8,11 +8,107 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "platform:/resource/org.osate.aadl2/model/aadl2.ecore" as aadl2
 
 
-
-
 AlisaModel:
-	content+=(Stakeholder|Requirement|VerificationActivity|VerificationResult|ElementType)*;
+	('imports' importedNamespace+=[Document](',' importedNamespace+=[Document])*';')?
+	('with' importedNamespace+=[aadl2::AadlPackage|QPREF](',' importedNamespace+=[aadl2::AadlPackage|QPREF])*';')?
+	content+=(Goals | ReqSpecifications | VerificationLibrary | RequirementDocument | ExternalDocuments | VerificationActivity | VerificationResult | ElementType)*;
+
+
+//AlisaModel:
+//	content+=(Stakeholder|Requirement|VerificationActivity|VerificationResult|ElementType)*;
+//	
+
+Document: 
+	RequirementDocument | ExternalDocuments | VerificationLibrary
+;
+
+RequirementDocument:
+	'requirement' 'document' name=ID
+	content += (Requirement | Stakeholder | ElementType | ElementReference)* 
+	'end' 'requirement' 'document'
+	';';
+
+VerificationLibrary:
+	'verification' 'library' name=ID
+	content += (VerificationActivity | Stakeholder | VerificationResult | ElementType | ElementReference)* 
+	'end' 'verification' 'library'
+	';';
+
+
+Goals:
+	'goals' name=ID 'for' classifier=[aadl2::Classifier|QCLREF]
+	(goals += Goal)*
+	'end' 'goals'';'
+	;
 	
+
+Goal:
+	'goal' name=ID 
+	( 'for' goalTarget=[aadl2::NamedElement|RELREF])?
+	('title' ':' title=ValueString ';')? 
+	('description' ':' description=ValueString';')? 
+	('assertion' ':' 	assert=ValueString ';')? 
+	('rationale' ':' rationale=ValueString';')? 
+	('see' ':' modelReference+=QCRELREF (',' modelReference+=QCRELREF)*';')? 
+	('refines' ':' refinesReference+=[Goal|REQREF](',' refinesReference+=[Goal|REQREF])*';')? 
+	('decomposes' ':' decomposesReference+=[ReqSpec|REQREF](',' decomposesReference+=[ReqSpec|REQREF])*';')? 
+	('see' 'stakeholder' 'req' ':' stakeholderReference+=[Requirement|REQREF] (',' stakeholderReference+=[Requirement|REQREF])*';')?
+	('see' 'document' ':' docReferences+=[ExternalDocument|RELREF] (',' docReferences+=[ExternalDocument|RELREF])*';')? 
+	 'end''goal'';';
+
+ReqSpecifications:
+	'requirements' name=ID 'for' reqTarget=[aadl2::NamedElement|QCLREF]//(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
+	(reqs+=ReqSpec)*
+	'end' 'requirements' ';';
+
+ReqKind : 'requirement'|'assumption'|'input''assumption'|'guarantee'|'output''guarantee'|'invariant'|'constraint'|'design''constraint';
+	
+ReqSpec:
+	reqkind=ReqKind name=ID   
+	
+	( 'for' reqTarget=[aadl2::NamedElement|RELREF])?
+	('title' ':' title=ValueString';')? 
+	('description' ':' description=ValueString';')? 
+	('assertion' ':' assert=ValueString';')? 
+	('rationale' ':' rationale=ValueString';')? 
+	('see' ':' modelReference+=QCRELREF (',' modelReference+=QCRELREF)*';')? 
+	('see' 'goal' ':' goalReference+=[Goal] (',' goalReference+=[Goal])*';')?
+	('see' 'hazard' ':' hazardReference+=QNEREF (',' hazardReference+=QNEREF)*';')? // hazardReference+=[aadl2::NamedElement|QNEREF]
+	('refines' ':' refinesReference+=[ReqSpec|REQREF](',' refinesReference+=[ReqSpec|REQREF])*';')? 
+	('decomposes' ':' decomposesReference+=[ReqSpec|REQREF](',' decomposesReference+=[ReqSpec|REQREF])*';')? 
+	('see' 'stakeholder' 'req' ':' stakeholderreqReference+=[Requirement|REQREF] (',' stakeholderreqReference+=[Requirement|REQREF])*';')?
+	('see' 'system' 'req' ':' systemreqReference+=[Requirement|REQREF] (',' systemreqReference+=[Requirement|REQREF])*';')?
+	('see' 'document' ':' docReferences+=[ExternalDocument|RELREF] (',' docReferences+=[ExternalDocument|RELREF])*';')? 
+	'end''req'';';
+
+
+ExternalDocuments:
+	'documents'
+	name=ID 
+	docs+=ExternalDocument ( docs+=ExternalDocument)*
+	'end''documents' ';'
+	
+;
+
+
+ExternalDocument:
+	'document'
+	name=ID 'see' ':' xternalReference=STRING ';'
+	
+;
+
+Aliases:
+	'aliases''for' aliasesTarget=[aadl2::NamedElement|QCLREF] ':'
+	aliases+=Alias ( aliases+=Alias)*
+	'end' 'aliases'';'
+;
+
+Alias:
+	alias=ValueString 'found' 'in' docRef+=[Document] (',' docRef+=[Document])* ';'
+;
+
+
+
 ValueString :
 	// remove quotes from string in ValueConverter 
 	STRING
@@ -39,21 +135,21 @@ Requirement:
 	('title' ':' title=ValueString)?
 	('description' ':' description=ValueString)?
 	('comment' ':' comment=ValueString)?
-	('assigned' 'to' ':' assignedTo+=([Stakeholder])*)?
-	('referenced' 'by' ':' referencedBy+=([ElementType])*)?
+	('assigned' 'to' ':' assignedTo+=([Stakeholder|RELREF])*)?
+	('referenced' 'by' ':' referencedBy+=([ElementType|RELREF])*)?
 	('verified' 'by' ':' verifiedBy+=(VerificationDecomposition)*)?
 	('decomposed' 'by' ':' decomposedBy+=(RequirementDecomposition)*)?
 	'end' 'requirement' ';'
 ;
 
 RequirementDecomposition:
-	element=([Requirement])|
-	left=([Requirement]) type=('and'|'or') right=(RequirementDecomposition)
+	element=([Requirement|RELREF])|
+	left=([Requirement|RELREF]) type=('and'|'or') right=(RequirementDecomposition)
 ;
 
 VerificationDecomposition:
-	element=([VerificationActivity])|
-	left=([VerificationActivity]) type=('and'|'or') right=(VerificationDecomposition)
+	element=([VerificationActivity|RELREF])|
+	left=([VerificationActivity|RELREF]) type=('and'|'or') right=(VerificationDecomposition)
 ;
 
 
@@ -96,7 +192,7 @@ VerificationActivity:
 	('method' ':' method=VerificationMethod)?
 //	('parameters' ':' verificationParameters+=([ElementReference])*)?
 	('decomposed' 'to' ':' decomposedTo+=(VerificationDecomposition)*)?
-	('assigned' 'to' ':' assignedTo+=([Stakeholder])*)?
+	('assigned' 'to' ':' assignedTo+=([Stakeholder|RELREF])*)?
 	'end' 'verification' 'activity' ';'
 ;
  
