@@ -1,0 +1,35 @@
+imports bulb_requirements;
+
+verification library bulb_verif   
+/**
+ * Verification activities 
+ */ 
+ 
+verification activity va_ratling 
+	title: "Check the bulb is not ratling"
+	description: "shake the bulb and check it does not make a sound"
+	method: manual 
+	assigned to: bulb_requirements.bulb_vendor
+end verification activity;
+ 
+verification activity bulb_compliance_with_specs
+	title: "Check the bulb compliance with the technical specifications (voltage, etc)"
+	description: "refers to the technical specs"
+	method: manual  
+	assigned to: bulb_requirements.designer  
+end verification activity;  
+ 
+/** 
+ * Verification Results 
+ */
+verification result vr1 of va_ratling 
+	output: "to be added"
+	logfile: "to be added"
+	date: "to be added"
+	state: passed
+	status: ok
+end verification result;
+ 
+
+ 
+end verification library;

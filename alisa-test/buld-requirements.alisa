@@ -1,4 +1,6 @@
-requirement document bulb
+imports bulb_verif;
+
+requirement document bulb_requirements
 
 /**
  * Stakeholders
@@ -19,7 +21,7 @@ stakeholder electrician
 end stakeholder;
 
 /**
- * Requirements
+ * Requirements 
  */
  
 requirement req1
@@ -40,14 +42,30 @@ requirement req1_3
 	assigned to: electrician
 end requirement;
 
-requirement req1_4
+requirement req1_4 
 	title: "Bulb is functional" 
-	description: "to be added" 
+	description: "to be added"  
 	comment: "to be added"
 	referenced by: bulb techspecs
-	verified by: va_ratling bulb_compliance_with_specs
-end requirement;
-
-
+	verified by: bulb_verif.va_ratling and bulb_verif.bulb_compliance_with_specs
+end requirement; 
  
-end requirement document;
+/**
+ * System Elements 
+ */ 
+
+system element bulb 
+	reference: "aadl component of the bulb"
+	element-type: "model"
+	model-type: "aadl"
+	version: "0.1"
+end system element;
+
+system element techspecs
+	reference: "Technical Specifications"
+	element-type: "document"
+	model-type: "document"
+	version: "0.1"
+end system element;
+ 
+end requirement document; 
