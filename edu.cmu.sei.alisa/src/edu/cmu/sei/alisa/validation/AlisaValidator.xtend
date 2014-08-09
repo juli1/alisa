@@ -9,6 +9,8 @@ import org.eclipse.xtext.validation.Check
 import edu.cmu.sei.alisa.alisa.AlisaModel
 import edu.cmu.sei.alisa.alisa.Stakeholder
 import edu.cmu.sei.alisa.alisa.VerificationActivity
+import edu.cmu.sei.alisa.alisa.VerificationLibrary
+import edu.cmu.sei.alisa.alisa.RequirementDocument
 
 //import org.eclipse.xtext.validation.Check
 
@@ -28,8 +30,8 @@ class AlisaValidator extends AbstractAlisaValidator
 	}
 	
 	def checkStakeholderName(Stakeholder stakeholder)
-	{
-		var model = (stakeholder.eContainer() as AlisaModel);
+	{ 
+		var model = (stakeholder.eContainer() as RequirementDocument);
 		if (model != null) {
 			for (other : model.content)
 			{
@@ -59,24 +61,28 @@ class AlisaValidator extends AbstractAlisaValidator
 	
 	def checkVerificationActivityName (VerificationActivity verificationActivity)
 	{
-		var model = (verificationActivity.eContainer() as AlisaModel);
-		if (model != null) {
-			for (other : model.content)
-			{
-				if (other instanceof VerificationActivity)
+		if (verificationActivity.eContainer() instanceof VerificationLibrary)
+		{
+			var model = (verificationActivity.eContainer() as VerificationLibrary);
+			if (model != null) {
+				for (other : model.content)
 				{
-					var otherVA = other as VerificationActivity;
-					if (otherVA != null)
+					if (other instanceof VerificationActivity)
 					{
-						if ((otherVA != verificationActivity) && (otherVA.name.equalsIgnoreCase(verificationActivity.name)))
+						var otherVA = other as VerificationActivity;
+						if (otherVA != null)
 						{
-							error("Verification Activities names have to be unique", AlisaPackage$Literals::VERIFICATION_ACTIVITY__NAME);
-							return;
+							if ((otherVA != verificationActivity) && (otherVA.name.equalsIgnoreCase(verificationActivity.name)))
+							{
+								error("Verification Activities names have to be unique", AlisaPackage$Literals::VERIFICATION_ACTIVITY__NAME);
+								return;
+							}
 						}
 					}
 				}
 			}
 		}
+		
 	}
 
 	@Check
@@ -86,7 +92,7 @@ class AlisaValidator extends AbstractAlisaValidator
 	
 	def checkRequirementName(Requirement requirement)
 	{
-		var model = (requirement.eContainer() as AlisaModel);
+		var model = (requirement.eContainer() as RequirementDocument);
 		if (model != null) {
 			for (other : model.content)
 			{
