@@ -4,11 +4,12 @@
 package edu.cmu.sei.alisa.validation;
 
 import com.google.common.base.Objects;
-import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
+import edu.cmu.sei.alisa.alisa.VerificationLibrary;
 import edu.cmu.sei.alisa.validation.AbstractAlisaValidator;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -30,7 +31,7 @@ public class AlisaValidator extends AbstractAlisaValidator {
   
   public void checkStakeholderName(final Stakeholder stakeholder) {
     EObject _eContainer = stakeholder.eContainer();
-    AlisaModel model = ((AlisaModel) _eContainer);
+    RequirementDocument model = ((RequirementDocument) _eContainer);
     boolean _notEquals = (!Objects.equal(model, null));
     if (_notEquals) {
       EList<EObject> _content = model.getContent();
@@ -66,28 +67,31 @@ public class AlisaValidator extends AbstractAlisaValidator {
   
   public void checkVerificationActivityName(final VerificationActivity verificationActivity) {
     EObject _eContainer = verificationActivity.eContainer();
-    AlisaModel model = ((AlisaModel) _eContainer);
-    boolean _notEquals = (!Objects.equal(model, null));
-    if (_notEquals) {
-      EList<EObject> _content = model.getContent();
-      for (final EObject other : _content) {
-        if ((other instanceof VerificationActivity)) {
-          VerificationActivity otherVA = ((VerificationActivity) other);
-          boolean _notEquals_1 = (!Objects.equal(otherVA, null));
-          if (_notEquals_1) {
-            boolean _and = false;
-            boolean _notEquals_2 = (!Objects.equal(otherVA, verificationActivity));
-            if (!_notEquals_2) {
-              _and = false;
-            } else {
-              String _name = otherVA.getName();
-              String _name_1 = verificationActivity.getName();
-              boolean _equalsIgnoreCase = _name.equalsIgnoreCase(_name_1);
-              _and = _equalsIgnoreCase;
-            }
-            if (_and) {
-              this.error("Verification Activities names have to be unique", AlisaPackage.Literals.VERIFICATION_ACTIVITY__NAME);
-              return;
+    if ((_eContainer instanceof VerificationLibrary)) {
+      EObject _eContainer_1 = verificationActivity.eContainer();
+      VerificationLibrary model = ((VerificationLibrary) _eContainer_1);
+      boolean _notEquals = (!Objects.equal(model, null));
+      if (_notEquals) {
+        EList<EObject> _content = model.getContent();
+        for (final EObject other : _content) {
+          if ((other instanceof VerificationActivity)) {
+            VerificationActivity otherVA = ((VerificationActivity) other);
+            boolean _notEquals_1 = (!Objects.equal(otherVA, null));
+            if (_notEquals_1) {
+              boolean _and = false;
+              boolean _notEquals_2 = (!Objects.equal(otherVA, verificationActivity));
+              if (!_notEquals_2) {
+                _and = false;
+              } else {
+                String _name = otherVA.getName();
+                String _name_1 = verificationActivity.getName();
+                boolean _equalsIgnoreCase = _name.equalsIgnoreCase(_name_1);
+                _and = _equalsIgnoreCase;
+              }
+              if (_and) {
+                this.error("Verification Activities names have to be unique", AlisaPackage.Literals.VERIFICATION_ACTIVITY__NAME);
+                return;
+              }
             }
           }
         }
@@ -102,7 +106,7 @@ public class AlisaValidator extends AbstractAlisaValidator {
   
   public void checkRequirementName(final Requirement requirement) {
     EObject _eContainer = requirement.eContainer();
-    AlisaModel model = ((AlisaModel) _eContainer);
+    RequirementDocument model = ((RequirementDocument) _eContainer);
     boolean _notEquals = (!Objects.equal(model, null));
     if (_notEquals) {
       EList<EObject> _content = model.getContent();

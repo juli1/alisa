@@ -79,6 +79,93 @@ public class AlisaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AlisaPackage.DOCUMENT:
+      {
+        Document document = (Document)theEObject;
+        T result = caseDocument(document);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.REQUIREMENT_DOCUMENT:
+      {
+        RequirementDocument requirementDocument = (RequirementDocument)theEObject;
+        T result = caseRequirementDocument(requirementDocument);
+        if (result == null) result = caseDocument(requirementDocument);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.VERIFICATION_LIBRARY:
+      {
+        VerificationLibrary verificationLibrary = (VerificationLibrary)theEObject;
+        T result = caseVerificationLibrary(verificationLibrary);
+        if (result == null) result = caseDocument(verificationLibrary);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.GOALS:
+      {
+        Goals goals = (Goals)theEObject;
+        T result = caseGoals(goals);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.GOAL:
+      {
+        Goal goal = (Goal)theEObject;
+        T result = caseGoal(goal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.REQ_SPECIFICATIONS:
+      {
+        ReqSpecifications reqSpecifications = (ReqSpecifications)theEObject;
+        T result = caseReqSpecifications(reqSpecifications);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.REQ_SPEC:
+      {
+        ReqSpec reqSpec = (ReqSpec)theEObject;
+        T result = caseReqSpec(reqSpec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.EXTERNAL_DOCUMENTS:
+      {
+        ExternalDocuments externalDocuments = (ExternalDocuments)theEObject;
+        T result = caseExternalDocuments(externalDocuments);
+        if (result == null) result = caseDocument(externalDocuments);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.EXTERNAL_DOCUMENT:
+      {
+        ExternalDocument externalDocument = (ExternalDocument)theEObject;
+        T result = caseExternalDocument(externalDocument);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.ALIASES:
+      {
+        Aliases aliases = (Aliases)theEObject;
+        T result = caseAliases(aliases);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.ALIAS:
+      {
+        Alias alias = (Alias)theEObject;
+        T result = caseAlias(alias);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.NOTES:
+      {
+        Notes notes = (Notes)theEObject;
+        T result = caseNotes(notes);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AlisaPackage.STAKEHOLDER:
       {
         Stakeholder stakeholder = (Stakeholder)theEObject;
@@ -151,6 +238,198 @@ public class AlisaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAlisaModel(AlisaModel object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Document</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Document</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDocument(Document object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Requirement Document</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Requirement Document</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRequirementDocument(RequirementDocument object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Verification Library</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Verification Library</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVerificationLibrary(VerificationLibrary object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Goals</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Goals</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGoals(Goals object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Goal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Goal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGoal(Goal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Req Specifications</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Req Specifications</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReqSpecifications(ReqSpecifications object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Req Spec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Req Spec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReqSpec(ReqSpec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>External Documents</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>External Documents</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExternalDocuments(ExternalDocuments object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>External Document</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>External Document</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExternalDocument(ExternalDocument object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Aliases</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Aliases</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAliases(Aliases object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Alias</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Alias</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlias(Alias object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Notes</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Notes</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNotes(Notes object)
   {
     return null;
   }

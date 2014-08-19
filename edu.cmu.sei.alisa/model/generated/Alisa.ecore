@@ -2,9 +2,110 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="alisa" nsURI="http://www.cmu.edu/sei/alisa/Alisa" nsPrefix="alisa">
   <eClassifiers xsi:type="ecore:EClass" name="AlisaModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importedNamespace" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
         eType="ecore:EClass platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Document">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequirementDocument" eSuperTypes="#//Document">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VerificationLibrary" eSuperTypes="#//Document">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Goals">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" eType="ecore:EClass platform:/resource/org.osate.aadl2/model/aadl2.ecore#//Classifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goals" upperBound="-1"
+        eType="#//Goal" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Goal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goalTarget" eType="ecore:EClass platform:/resource/org.osate.aadl2/model/aadl2.ecore#//NamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assert" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rationale" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="issue" unique="false" upperBound="-1"
+        eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelReference" unique="false"
+        upperBound="-1" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refinesReference" unique="false"
+        upperBound="-1" eType="#//Goal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decomposesReference" unique="false"
+        upperBound="-1" eType="#//ReqSpec"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="evolvesReference" unique="false"
+        upperBound="-1" eType="#//Goal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stakeholderReference" unique="false"
+        upperBound="-1" eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="docReferences" unique="false"
+        upperBound="-1" eType="#//ExternalDocument"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReqSpecifications">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reqTarget" eType="ecore:EClass platform:/resource/org.osate.aadl2/model/aadl2.ecore#//NamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reqs" upperBound="-1" eType="#//ReqSpec"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReqSpec">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reqkind" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reqTarget" eType="ecore:EClass platform:/resource/org.osate.aadl2/model/aadl2.ecore#//NamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assert" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rationale" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="issue" unique="false" upperBound="-1"
+        eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelReference" unique="false"
+        upperBound="-1" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goalReference" unique="false"
+        upperBound="-1" eType="#//Goal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hazardReference" unique="false"
+        upperBound="-1" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refinesReference" unique="false"
+        upperBound="-1" eType="#//ReqSpec"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decomposesReference" unique="false"
+        upperBound="-1" eType="#//ReqSpec"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="evolvesReference" unique="false"
+        upperBound="-1" eType="#//ReqSpec"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stakeholderreqReference"
+        unique="false" upperBound="-1" eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="systemreqReference" unique="false"
+        upperBound="-1" eType="#//Requirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="docReferences" unique="false"
+        upperBound="-1" eType="#//ExternalDocument"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalDocuments" eSuperTypes="#//Document">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="docs" upperBound="-1" eType="#//ExternalDocument"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalDocument">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xternalReference" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Aliases">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aliasesTarget" eType="ecore:EClass platform:/resource/org.osate.aadl2/model/aadl2.ecore#//NamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aliases" upperBound="-1"
+        eType="#//Alias" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Alias">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="docRef" unique="false"
+        upperBound="-1" eType="#//Document"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Notes">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notesTarget" eType="ecore:EClass platform:/resource/org.osate.aadl2/model/aadl2.ecore#//NamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notes" unique="false" upperBound="-1"
+        eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Stakeholder">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>

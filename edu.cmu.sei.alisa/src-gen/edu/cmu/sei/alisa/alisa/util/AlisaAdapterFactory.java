@@ -80,6 +80,66 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
         return createAlisaModelAdapter();
       }
       @Override
+      public Adapter caseDocument(Document object)
+      {
+        return createDocumentAdapter();
+      }
+      @Override
+      public Adapter caseRequirementDocument(RequirementDocument object)
+      {
+        return createRequirementDocumentAdapter();
+      }
+      @Override
+      public Adapter caseVerificationLibrary(VerificationLibrary object)
+      {
+        return createVerificationLibraryAdapter();
+      }
+      @Override
+      public Adapter caseGoals(Goals object)
+      {
+        return createGoalsAdapter();
+      }
+      @Override
+      public Adapter caseGoal(Goal object)
+      {
+        return createGoalAdapter();
+      }
+      @Override
+      public Adapter caseReqSpecifications(ReqSpecifications object)
+      {
+        return createReqSpecificationsAdapter();
+      }
+      @Override
+      public Adapter caseReqSpec(ReqSpec object)
+      {
+        return createReqSpecAdapter();
+      }
+      @Override
+      public Adapter caseExternalDocuments(ExternalDocuments object)
+      {
+        return createExternalDocumentsAdapter();
+      }
+      @Override
+      public Adapter caseExternalDocument(ExternalDocument object)
+      {
+        return createExternalDocumentAdapter();
+      }
+      @Override
+      public Adapter caseAliases(Aliases object)
+      {
+        return createAliasesAdapter();
+      }
+      @Override
+      public Adapter caseAlias(Alias object)
+      {
+        return createAliasAdapter();
+      }
+      @Override
+      public Adapter caseNotes(Notes object)
+      {
+        return createNotesAdapter();
+      }
+      @Override
       public Adapter caseStakeholder(Stakeholder object)
       {
         return createStakeholderAdapter();
@@ -152,6 +212,186 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAlisaModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Document <em>Document</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.Document
+   * @generated
+   */
+  public Adapter createDocumentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.RequirementDocument <em>Requirement Document</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.RequirementDocument
+   * @generated
+   */
+  public Adapter createRequirementDocumentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.VerificationLibrary <em>Verification Library</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.VerificationLibrary
+   * @generated
+   */
+  public Adapter createVerificationLibraryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Goals <em>Goals</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.Goals
+   * @generated
+   */
+  public Adapter createGoalsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Goal <em>Goal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.Goal
+   * @generated
+   */
+  public Adapter createGoalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.ReqSpecifications <em>Req Specifications</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.ReqSpecifications
+   * @generated
+   */
+  public Adapter createReqSpecificationsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.ReqSpec <em>Req Spec</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.ReqSpec
+   * @generated
+   */
+  public Adapter createReqSpecAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.ExternalDocuments <em>External Documents</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.ExternalDocuments
+   * @generated
+   */
+  public Adapter createExternalDocumentsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.ExternalDocument <em>External Document</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.ExternalDocument
+   * @generated
+   */
+  public Adapter createExternalDocumentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Aliases <em>Aliases</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.Aliases
+   * @generated
+   */
+  public Adapter createAliasesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Alias <em>Alias</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.Alias
+   * @generated
+   */
+  public Adapter createAliasAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Notes <em>Notes</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.Notes
+   * @generated
+   */
+  public Adapter createNotesAdapter()
   {
     return null;
   }

@@ -32,6 +32,114 @@ public interface AlisaFactory extends EFactory
   AlisaModel createAlisaModel();
 
   /**
+   * Returns a new object of class '<em>Document</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Document</em>'.
+   * @generated
+   */
+  Document createDocument();
+
+  /**
+   * Returns a new object of class '<em>Requirement Document</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Requirement Document</em>'.
+   * @generated
+   */
+  RequirementDocument createRequirementDocument();
+
+  /**
+   * Returns a new object of class '<em>Verification Library</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Verification Library</em>'.
+   * @generated
+   */
+  VerificationLibrary createVerificationLibrary();
+
+  /**
+   * Returns a new object of class '<em>Goals</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Goals</em>'.
+   * @generated
+   */
+  Goals createGoals();
+
+  /**
+   * Returns a new object of class '<em>Goal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Goal</em>'.
+   * @generated
+   */
+  Goal createGoal();
+
+  /**
+   * Returns a new object of class '<em>Req Specifications</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Req Specifications</em>'.
+   * @generated
+   */
+  ReqSpecifications createReqSpecifications();
+
+  /**
+   * Returns a new object of class '<em>Req Spec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Req Spec</em>'.
+   * @generated
+   */
+  ReqSpec createReqSpec();
+
+  /**
+   * Returns a new object of class '<em>External Documents</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>External Documents</em>'.
+   * @generated
+   */
+  ExternalDocuments createExternalDocuments();
+
+  /**
+   * Returns a new object of class '<em>External Document</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>External Document</em>'.
+   * @generated
+   */
+  ExternalDocument createExternalDocument();
+
+  /**
+   * Returns a new object of class '<em>Aliases</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Aliases</em>'.
+   * @generated
+   */
+  Aliases createAliases();
+
+  /**
+   * Returns a new object of class '<em>Alias</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alias</em>'.
+   * @generated
+   */
+  Alias createAlias();
+
+  /**
+   * Returns a new object of class '<em>Notes</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Notes</em>'.
+   * @generated
+   */
+  Notes createNotes();
+
+  /**
    * Returns a new object of class '<em>Stakeholder</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

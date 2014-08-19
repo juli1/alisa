@@ -11,7 +11,9 @@ import "platform:/resource/org.osate.aadl2/model/aadl2.ecore" as aadl2
 AlisaModel:
 	('imports' importedNamespace+=[Document](',' importedNamespace+=[Document])*';')?
 	('with' importedNamespace+=[aadl2::AadlPackage|QPREF](',' importedNamespace+=[aadl2::AadlPackage|QPREF])*';')?
-	content+=(Goals | ReqSpecifications | VerificationLibrary | RequirementDocument | ExternalDocuments | VerificationActivity | VerificationResult | ElementType)*;
+	content+=(Goals | ReqSpecifications | VerificationLibrary | RequirementDocument | ExternalDocuments | VerificationActivity | VerificationResult | ElementType
+		|Aliases | Notes
+	)*;
 
 
 //AlisaModel:
@@ -49,9 +51,11 @@ Goal:
 	('description' ':' description=ValueString';')? 
 	('assertion' ':' 	assert=ValueString ';')? 
 	('rationale' ':' rationale=ValueString';')? 
+	('issues' ':' issue+=ValueString (','issue+=ValueString)* ';')? 
 	('see' ':' modelReference+=QCRELREF (',' modelReference+=QCRELREF)*';')? 
 	('refines' ':' refinesReference+=[Goal|REQREF](',' refinesReference+=[Goal|REQREF])*';')? 
 	('decomposes' ':' decomposesReference+=[ReqSpec|REQREF](',' decomposesReference+=[ReqSpec|REQREF])*';')? 
+	('evolves' ':' evolvesReference+=[Goal|REQREF](',' evolvesReference+=[Goal|REQREF])*';')? 
 	('see' 'stakeholder' 'req' ':' stakeholderReference+=[Requirement|REQREF] (',' stakeholderReference+=[Requirement|REQREF])*';')?
 	('see' 'document' ':' docReferences+=[ExternalDocument|RELREF] (',' docReferences+=[ExternalDocument|RELREF])*';')? 
 	 'end''goal'';';
@@ -71,11 +75,13 @@ ReqSpec:
 	('description' ':' description=ValueString';')? 
 	('assertion' ':' assert=ValueString';')? 
 	('rationale' ':' rationale=ValueString';')? 
+	('issues' ':' issue+=ValueString (','issue+=ValueString)* ';')? 
 	('see' ':' modelReference+=QCRELREF (',' modelReference+=QCRELREF)*';')? 
 	('see' 'goal' ':' goalReference+=[Goal] (',' goalReference+=[Goal])*';')?
 	('see' 'hazard' ':' hazardReference+=QNEREF (',' hazardReference+=QNEREF)*';')? // hazardReference+=[aadl2::NamedElement|QNEREF]
 	('refines' ':' refinesReference+=[ReqSpec|REQREF](',' refinesReference+=[ReqSpec|REQREF])*';')? 
 	('decomposes' ':' decomposesReference+=[ReqSpec|REQREF](',' decomposesReference+=[ReqSpec|REQREF])*';')? 
+	('evolves' ':' evolvesReference+=[ReqSpec|REQREF](',' evolvesReference+=[ReqSpec|REQREF])*';')? 
 	('see' 'stakeholder' 'req' ':' stakeholderreqReference+=[Requirement|REQREF] (',' stakeholderreqReference+=[Requirement|REQREF])*';')?
 	('see' 'system' 'req' ':' systemreqReference+=[Requirement|REQREF] (',' systemreqReference+=[Requirement|REQREF])*';')?
 	('see' 'document' ':' docReferences+=[ExternalDocument|RELREF] (',' docReferences+=[ExternalDocument|RELREF])*';')? 
@@ -106,6 +112,23 @@ Aliases:
 Alias:
 	alias=ValueString 'found' 'in' docRef+=[Document] (',' docRef+=[Document])* ';'
 ;
+
+
+
+Notes:
+	'notes''for' notesTarget=[aadl2::NamedElement|QCLREF]//(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) ':'
+	notes+=ValueString ( notes+=ValueString)*
+	'end' 'notes'';'
+;
+
+//
+//NamedElement returns aadl2::NamedElement:
+//ReqSpec| Goal//| RequirementDocument
+//|VerificationActivity|VerificationResult;
+//
+//Element returns aadl2::Element:
+//	Goals | ReqSpecifications 
+//;
 
 
 

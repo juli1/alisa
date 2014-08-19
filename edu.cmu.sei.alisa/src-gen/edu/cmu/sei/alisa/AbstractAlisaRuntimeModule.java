@@ -54,39 +54,49 @@ public abstract class AbstractAlisaRuntimeModule extends DefaultRuntimeModule {
 		return org.eclipse.xtext.serializer.impl.Serializer.class;
 	}
 
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	// contributed by org.eclipse.xtext.generator.parser.antlr.ex.rt.AntlrGeneratorFragment
 	public Class<? extends org.eclipse.xtext.parser.IParser> bindIParser() {
 		return edu.cmu.sei.alisa.parser.antlr.AlisaParser.class;
 	}
 
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	// contributed by org.eclipse.xtext.generator.parser.antlr.ex.rt.AntlrGeneratorFragment
 	public Class<? extends org.eclipse.xtext.parser.ITokenToStringConverter> bindITokenToStringConverter() {
 		return org.eclipse.xtext.parser.antlr.AntlrTokenToStringConverter.class;
 	}
 
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	// contributed by org.eclipse.xtext.generator.parser.antlr.ex.rt.AntlrGeneratorFragment
 	public Class<? extends org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider> bindIAntlrTokenFileProvider() {
 		return edu.cmu.sei.alisa.parser.antlr.AlisaAntlrTokenFileProvider.class;
 	}
 
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	// contributed by org.eclipse.xtext.generator.parser.antlr.ex.rt.AntlrGeneratorFragment
 	public Class<? extends org.eclipse.xtext.parser.antlr.Lexer> bindLexer() {
-		return edu.cmu.sei.alisa.parser.antlr.internal.InternalAlisaLexer.class;
+		return edu.cmu.sei.alisa.parser.antlr.lexer.InternalAlisaLexer.class;
 	}
 
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
-	public com.google.inject.Provider<edu.cmu.sei.alisa.parser.antlr.internal.InternalAlisaLexer> provideInternalAlisaLexer() {
-		return org.eclipse.xtext.parser.antlr.LexerProvider.create(edu.cmu.sei.alisa.parser.antlr.internal.InternalAlisaLexer.class);
+	// contributed by org.eclipse.xtext.generator.parser.antlr.ex.rt.AntlrGeneratorFragment
+	public com.google.inject.Provider<edu.cmu.sei.alisa.parser.antlr.lexer.InternalAlisaLexer> provideInternalAlisaLexer() {
+		return org.eclipse.xtext.parser.antlr.LexerProvider.create(edu.cmu.sei.alisa.parser.antlr.lexer.InternalAlisaLexer.class);
 	}
 
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	// contributed by org.eclipse.xtext.generator.parser.antlr.ex.rt.AntlrGeneratorFragment
 	public void configureRuntimeLexer(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.parser.antlr.LexerBindings.RUNTIME)).to(edu.cmu.sei.alisa.parser.antlr.internal.InternalAlisaLexer.class);
+		binder.bind(org.eclipse.xtext.parser.antlr.Lexer.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.parser.antlr.LexerBindings.RUNTIME)).to(edu.cmu.sei.alisa.parser.antlr.lexer.InternalAlisaLexer.class);
 	}
 
-	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrGeneratorFragment
+	// contributed by org.eclipse.xtext.generator.parser.antlr.ex.rt.AntlrGeneratorFragment
 	public Class<? extends org.eclipse.xtext.parser.antlr.ITokenDefProvider> bindITokenDefProvider() {
 		return org.eclipse.xtext.parser.antlr.AntlrTokenDefProvider.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.parser.antlr.ex.rt.AntlrGeneratorFragment
+	public Class<? extends org.eclipse.xtext.parsetree.reconstr.ITokenSerializer.IKeywordSerializer> bindITokenSerializer$IKeywordSerializer() {
+		return org.eclipse.xtext.parsetree.reconstr.impl.IgnoreCaseKeywordSerializer.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.parser.antlr.ex.rt.AntlrGeneratorFragment
+	public Class<? extends org.eclipse.xtext.conversion.impl.AbstractIDValueConverter> bindAbstractIDValueConverter() {
+		return org.eclipse.xtext.conversion.impl.IgnoreCaseIDValueConverter.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.validation.ValidatorFragment

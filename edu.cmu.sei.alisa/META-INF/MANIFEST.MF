@@ -42,4 +42,5 @@ Export-Package: edu.cmu.alisa.sei.utils,
  edu.cmu.sei.alisa.scoping,
  edu.cmu.sei.alisa.serializer,
  edu.cmu.sei.alisa.services,
- edu.cmu.sei.alisa.validation
+ edu.cmu.sei.alisa.validation,
+ edu.cmu.sei.alisa.parser.antlr.lexer

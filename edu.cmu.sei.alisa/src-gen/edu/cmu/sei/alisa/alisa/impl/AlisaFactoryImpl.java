@@ -65,6 +65,18 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
     switch (eClass.getClassifierID())
     {
       case AlisaPackage.ALISA_MODEL: return createAlisaModel();
+      case AlisaPackage.DOCUMENT: return createDocument();
+      case AlisaPackage.REQUIREMENT_DOCUMENT: return createRequirementDocument();
+      case AlisaPackage.VERIFICATION_LIBRARY: return createVerificationLibrary();
+      case AlisaPackage.GOALS: return createGoals();
+      case AlisaPackage.GOAL: return createGoal();
+      case AlisaPackage.REQ_SPECIFICATIONS: return createReqSpecifications();
+      case AlisaPackage.REQ_SPEC: return createReqSpec();
+      case AlisaPackage.EXTERNAL_DOCUMENTS: return createExternalDocuments();
+      case AlisaPackage.EXTERNAL_DOCUMENT: return createExternalDocument();
+      case AlisaPackage.ALIASES: return createAliases();
+      case AlisaPackage.ALIAS: return createAlias();
+      case AlisaPackage.NOTES: return createNotes();
       case AlisaPackage.STAKEHOLDER: return createStakeholder();
       case AlisaPackage.REQUIREMENT: return createRequirement();
       case AlisaPackage.REQUIREMENT_DECOMPOSITION: return createRequirementDecomposition();
@@ -87,6 +99,138 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
   {
     AlisaModelImpl alisaModel = new AlisaModelImpl();
     return alisaModel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Document createDocument()
+  {
+    DocumentImpl document = new DocumentImpl();
+    return document;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RequirementDocument createRequirementDocument()
+  {
+    RequirementDocumentImpl requirementDocument = new RequirementDocumentImpl();
+    return requirementDocument;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VerificationLibrary createVerificationLibrary()
+  {
+    VerificationLibraryImpl verificationLibrary = new VerificationLibraryImpl();
+    return verificationLibrary;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Goals createGoals()
+  {
+    GoalsImpl goals = new GoalsImpl();
+    return goals;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Goal createGoal()
+  {
+    GoalImpl goal = new GoalImpl();
+    return goal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReqSpecifications createReqSpecifications()
+  {
+    ReqSpecificationsImpl reqSpecifications = new ReqSpecificationsImpl();
+    return reqSpecifications;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReqSpec createReqSpec()
+  {
+    ReqSpecImpl reqSpec = new ReqSpecImpl();
+    return reqSpec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExternalDocuments createExternalDocuments()
+  {
+    ExternalDocumentsImpl externalDocuments = new ExternalDocumentsImpl();
+    return externalDocuments;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExternalDocument createExternalDocument()
+  {
+    ExternalDocumentImpl externalDocument = new ExternalDocumentImpl();
+    return externalDocument;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Aliases createAliases()
+  {
+    AliasesImpl aliases = new AliasesImpl();
+    return aliases;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Alias createAlias()
+  {
+    AliasImpl alias = new AliasImpl();
+    return alias;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Notes createNotes()
+  {
+    NotesImpl notes = new NotesImpl();
+    return notes;
   }
 
   /**

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.AlisaModelImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.AlisaModelImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
@@ -35,6 +37,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class AlisaModelImpl extends MinimalEObjectImpl.Container implements AlisaModel
 {
+  /**
+   * The cached value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImportedNamespace()
+   * @generated
+   * @ordered
+   */
+  protected EList<EObject> importedNamespace;
+
   /**
    * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -64,6 +76,20 @@ public class AlisaModelImpl extends MinimalEObjectImpl.Container implements Alis
   protected EClass eStaticClass()
   {
     return AlisaPackage.Literals.ALISA_MODEL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<EObject> getImportedNamespace()
+  {
+    if (importedNamespace == null)
+    {
+      importedNamespace = new EObjectResolvingEList<EObject>(EObject.class, this, AlisaPackage.ALISA_MODEL__IMPORTED_NAMESPACE);
+    }
+    return importedNamespace;
   }
 
   /**
@@ -106,6 +132,8 @@ public class AlisaModelImpl extends MinimalEObjectImpl.Container implements Alis
   {
     switch (featureID)
     {
+      case AlisaPackage.ALISA_MODEL__IMPORTED_NAMESPACE:
+        return getImportedNamespace();
       case AlisaPackage.ALISA_MODEL__CONTENT:
         return getContent();
     }
@@ -123,6 +151,10 @@ public class AlisaModelImpl extends MinimalEObjectImpl.Container implements Alis
   {
     switch (featureID)
     {
+      case AlisaPackage.ALISA_MODEL__IMPORTED_NAMESPACE:
+        getImportedNamespace().clear();
+        getImportedNamespace().addAll((Collection<? extends EObject>)newValue);
+        return;
       case AlisaPackage.ALISA_MODEL__CONTENT:
         getContent().clear();
         getContent().addAll((Collection<? extends EObject>)newValue);
@@ -141,6 +173,9 @@ public class AlisaModelImpl extends MinimalEObjectImpl.Container implements Alis
   {
     switch (featureID)
     {
+      case AlisaPackage.ALISA_MODEL__IMPORTED_NAMESPACE:
+        getImportedNamespace().clear();
+        return;
       case AlisaPackage.ALISA_MODEL__CONTENT:
         getContent().clear();
         return;
@@ -158,6 +193,8 @@ public class AlisaModelImpl extends MinimalEObjectImpl.Container implements Alis
   {
     switch (featureID)
     {
+      case AlisaPackage.ALISA_MODEL__IMPORTED_NAMESPACE:
+        return importedNamespace != null && !importedNamespace.isEmpty();
       case AlisaPackage.ALISA_MODEL__CONTENT:
         return content != null && !content.isEmpty();
     }
