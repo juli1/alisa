@@ -1416,12 +1416,12 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGoals"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:620:1: ruleGoals returns [EObject current=null] : (otherlv_0= KEYWORD_26 ( (lv_name_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_26 otherlv_7= KEYWORD_6 ) ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:620:1: ruleGoals returns [EObject current=null] : (otherlv_0= KEYWORD_26 ( (lv_fqn_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_26 otherlv_7= KEYWORD_6 ) ;
     public final EObject ruleGoals() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_name_1_0=null;
+        Token lv_fqn_1_0=null;
         Token otherlv_2=null;
         Token otherlv_5=null;
         Token otherlv_6=null;
@@ -1432,25 +1432,25 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:623:28: ( (otherlv_0= KEYWORD_26 ( (lv_name_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_26 otherlv_7= KEYWORD_6 ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:624:1: (otherlv_0= KEYWORD_26 ( (lv_name_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_26 otherlv_7= KEYWORD_6 )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:623:28: ( (otherlv_0= KEYWORD_26 ( (lv_fqn_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_26 otherlv_7= KEYWORD_6 ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:624:1: (otherlv_0= KEYWORD_26 ( (lv_fqn_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_26 otherlv_7= KEYWORD_6 )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:624:1: (otherlv_0= KEYWORD_26 ( (lv_name_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_26 otherlv_7= KEYWORD_6 )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:625:2: otherlv_0= KEYWORD_26 ( (lv_name_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_26 otherlv_7= KEYWORD_6
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:624:1: (otherlv_0= KEYWORD_26 ( (lv_fqn_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_26 otherlv_7= KEYWORD_6 )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:625:2: otherlv_0= KEYWORD_26 ( (lv_fqn_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_26 otherlv_7= KEYWORD_6
             {
             otherlv_0=(Token)match(input,KEYWORD_26,FOLLOW_KEYWORD_26_in_ruleGoals1070); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getGoalsAccess().getGoalsKeyword_0());
                 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:629:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:630:1: (lv_name_1_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:629:1: ( (lv_fqn_1_0= RULE_ID ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:630:1: (lv_fqn_1_0= RULE_ID )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:630:1: (lv_name_1_0= RULE_ID )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:631:3: lv_name_1_0= RULE_ID
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:630:1: (lv_fqn_1_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:631:3: lv_fqn_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGoals1086); 
+            lv_fqn_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGoals1086); 
 
-            			newLeafNode(lv_name_1_0, grammarAccess.getGoalsAccess().getNameIDTerminalRuleCall_1_0()); 
+            			newLeafNode(lv_fqn_1_0, grammarAccess.getGoalsAccess().getFqnIDTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
@@ -1458,8 +1458,8 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
             	        }
                    		setWithLastConsumed(
                    			current, 
-                   			"name",
-                    		lv_name_1_0, 
+                   			"fqn",
+                    		lv_fqn_1_0, 
                     		"ID");
             	    
 
@@ -1618,12 +1618,12 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGoal"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:717:1: ruleGoal returns [EObject current=null] : (otherlv_0= KEYWORD_22 ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_49 otherlv_33= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_35= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_37= KEYWORD_6 )? (otherlv_38= KEYWORD_67 otherlv_39= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_41= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_43= KEYWORD_6 )? (otherlv_44= KEYWORD_45 otherlv_45= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_47= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_49= KEYWORD_6 )? (otherlv_50= KEYWORD_18 otherlv_51= KEYWORD_73 otherlv_52= KEYWORD_17 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_18 otherlv_59= KEYWORD_54 otherlv_60= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_62= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_64= KEYWORD_6 )? otherlv_65= KEYWORD_15 otherlv_66= KEYWORD_22 otherlv_67= KEYWORD_6 ) ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:717:1: ruleGoal returns [EObject current=null] : (otherlv_0= KEYWORD_22 ( (lv_fqn_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_49 otherlv_33= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_35= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_37= KEYWORD_6 )? (otherlv_38= KEYWORD_67 otherlv_39= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_41= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_43= KEYWORD_6 )? (otherlv_44= KEYWORD_45 otherlv_45= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_47= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_49= KEYWORD_6 )? (otherlv_50= KEYWORD_18 otherlv_51= KEYWORD_73 otherlv_52= KEYWORD_17 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_18 otherlv_59= KEYWORD_54 otherlv_60= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_62= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_64= KEYWORD_6 )? otherlv_65= KEYWORD_15 otherlv_66= KEYWORD_22 otherlv_67= KEYWORD_6 ) ;
     public final EObject ruleGoal() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_name_1_0=null;
+        Token lv_fqn_1_0=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
@@ -1691,25 +1691,25 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:720:28: ( (otherlv_0= KEYWORD_22 ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_49 otherlv_33= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_35= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_37= KEYWORD_6 )? (otherlv_38= KEYWORD_67 otherlv_39= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_41= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_43= KEYWORD_6 )? (otherlv_44= KEYWORD_45 otherlv_45= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_47= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_49= KEYWORD_6 )? (otherlv_50= KEYWORD_18 otherlv_51= KEYWORD_73 otherlv_52= KEYWORD_17 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_18 otherlv_59= KEYWORD_54 otherlv_60= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_62= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_64= KEYWORD_6 )? otherlv_65= KEYWORD_15 otherlv_66= KEYWORD_22 otherlv_67= KEYWORD_6 ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:721:1: (otherlv_0= KEYWORD_22 ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_49 otherlv_33= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_35= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_37= KEYWORD_6 )? (otherlv_38= KEYWORD_67 otherlv_39= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_41= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_43= KEYWORD_6 )? (otherlv_44= KEYWORD_45 otherlv_45= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_47= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_49= KEYWORD_6 )? (otherlv_50= KEYWORD_18 otherlv_51= KEYWORD_73 otherlv_52= KEYWORD_17 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_18 otherlv_59= KEYWORD_54 otherlv_60= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_62= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_64= KEYWORD_6 )? otherlv_65= KEYWORD_15 otherlv_66= KEYWORD_22 otherlv_67= KEYWORD_6 )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:720:28: ( (otherlv_0= KEYWORD_22 ( (lv_fqn_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_49 otherlv_33= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_35= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_37= KEYWORD_6 )? (otherlv_38= KEYWORD_67 otherlv_39= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_41= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_43= KEYWORD_6 )? (otherlv_44= KEYWORD_45 otherlv_45= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_47= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_49= KEYWORD_6 )? (otherlv_50= KEYWORD_18 otherlv_51= KEYWORD_73 otherlv_52= KEYWORD_17 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_18 otherlv_59= KEYWORD_54 otherlv_60= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_62= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_64= KEYWORD_6 )? otherlv_65= KEYWORD_15 otherlv_66= KEYWORD_22 otherlv_67= KEYWORD_6 ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:721:1: (otherlv_0= KEYWORD_22 ( (lv_fqn_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_49 otherlv_33= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_35= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_37= KEYWORD_6 )? (otherlv_38= KEYWORD_67 otherlv_39= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_41= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_43= KEYWORD_6 )? (otherlv_44= KEYWORD_45 otherlv_45= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_47= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_49= KEYWORD_6 )? (otherlv_50= KEYWORD_18 otherlv_51= KEYWORD_73 otherlv_52= KEYWORD_17 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_18 otherlv_59= KEYWORD_54 otherlv_60= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_62= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_64= KEYWORD_6 )? otherlv_65= KEYWORD_15 otherlv_66= KEYWORD_22 otherlv_67= KEYWORD_6 )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:721:1: (otherlv_0= KEYWORD_22 ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_49 otherlv_33= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_35= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_37= KEYWORD_6 )? (otherlv_38= KEYWORD_67 otherlv_39= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_41= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_43= KEYWORD_6 )? (otherlv_44= KEYWORD_45 otherlv_45= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_47= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_49= KEYWORD_6 )? (otherlv_50= KEYWORD_18 otherlv_51= KEYWORD_73 otherlv_52= KEYWORD_17 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_18 otherlv_59= KEYWORD_54 otherlv_60= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_62= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_64= KEYWORD_6 )? otherlv_65= KEYWORD_15 otherlv_66= KEYWORD_22 otherlv_67= KEYWORD_6 )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:722:2: otherlv_0= KEYWORD_22 ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_49 otherlv_33= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_35= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_37= KEYWORD_6 )? (otherlv_38= KEYWORD_67 otherlv_39= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_41= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_43= KEYWORD_6 )? (otherlv_44= KEYWORD_45 otherlv_45= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_47= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_49= KEYWORD_6 )? (otherlv_50= KEYWORD_18 otherlv_51= KEYWORD_73 otherlv_52= KEYWORD_17 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_18 otherlv_59= KEYWORD_54 otherlv_60= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_62= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_64= KEYWORD_6 )? otherlv_65= KEYWORD_15 otherlv_66= KEYWORD_22 otherlv_67= KEYWORD_6
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:721:1: (otherlv_0= KEYWORD_22 ( (lv_fqn_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_49 otherlv_33= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_35= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_37= KEYWORD_6 )? (otherlv_38= KEYWORD_67 otherlv_39= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_41= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_43= KEYWORD_6 )? (otherlv_44= KEYWORD_45 otherlv_45= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_47= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_49= KEYWORD_6 )? (otherlv_50= KEYWORD_18 otherlv_51= KEYWORD_73 otherlv_52= KEYWORD_17 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_18 otherlv_59= KEYWORD_54 otherlv_60= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_62= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_64= KEYWORD_6 )? otherlv_65= KEYWORD_15 otherlv_66= KEYWORD_22 otherlv_67= KEYWORD_6 )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:722:2: otherlv_0= KEYWORD_22 ( (lv_fqn_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_49 otherlv_33= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_35= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_37= KEYWORD_6 )? (otherlv_38= KEYWORD_67 otherlv_39= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_41= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_43= KEYWORD_6 )? (otherlv_44= KEYWORD_45 otherlv_45= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_47= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_49= KEYWORD_6 )? (otherlv_50= KEYWORD_18 otherlv_51= KEYWORD_73 otherlv_52= KEYWORD_17 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_18 otherlv_59= KEYWORD_54 otherlv_60= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_62= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_64= KEYWORD_6 )? otherlv_65= KEYWORD_15 otherlv_66= KEYWORD_22 otherlv_67= KEYWORD_6
             {
             otherlv_0=(Token)match(input,KEYWORD_22,FOLLOW_KEYWORD_22_in_ruleGoal1267); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getGoalAccess().getGoalKeyword_0());
                 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:726:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:727:1: (lv_name_1_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:726:1: ( (lv_fqn_1_0= RULE_ID ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:727:1: (lv_fqn_1_0= RULE_ID )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:727:1: (lv_name_1_0= RULE_ID )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:728:3: lv_name_1_0= RULE_ID
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:727:1: (lv_fqn_1_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:728:3: lv_fqn_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGoal1283); 
+            lv_fqn_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleGoal1283); 
 
-            			newLeafNode(lv_name_1_0, grammarAccess.getGoalAccess().getNameIDTerminalRuleCall_1_0()); 
+            			newLeafNode(lv_fqn_1_0, grammarAccess.getGoalAccess().getFqnIDTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
@@ -1717,8 +1717,8 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
             	        }
                    		setWithLastConsumed(
                    			current, 
-                   			"name",
-                    		lv_name_1_0, 
+                   			"fqn",
+                    		lv_fqn_1_0, 
                     		"ID");
             	    
 
@@ -2908,12 +2908,12 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReqSpecifications"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1305:1: ruleReqSpecifications returns [EObject current=null] : (otherlv_0= KEYWORD_75 ( (lv_name_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_reqs_4_0= ruleReqSpec ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_75 otherlv_7= KEYWORD_6 ) ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1305:1: ruleReqSpecifications returns [EObject current=null] : (otherlv_0= KEYWORD_75 ( (lv_fqn_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_reqs_4_0= ruleReqSpec ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_75 otherlv_7= KEYWORD_6 ) ;
     public final EObject ruleReqSpecifications() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_name_1_0=null;
+        Token lv_fqn_1_0=null;
         Token otherlv_2=null;
         Token otherlv_5=null;
         Token otherlv_6=null;
@@ -2924,25 +2924,25 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1308:28: ( (otherlv_0= KEYWORD_75 ( (lv_name_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_reqs_4_0= ruleReqSpec ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_75 otherlv_7= KEYWORD_6 ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1309:1: (otherlv_0= KEYWORD_75 ( (lv_name_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_reqs_4_0= ruleReqSpec ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_75 otherlv_7= KEYWORD_6 )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1308:28: ( (otherlv_0= KEYWORD_75 ( (lv_fqn_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_reqs_4_0= ruleReqSpec ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_75 otherlv_7= KEYWORD_6 ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1309:1: (otherlv_0= KEYWORD_75 ( (lv_fqn_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_reqs_4_0= ruleReqSpec ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_75 otherlv_7= KEYWORD_6 )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1309:1: (otherlv_0= KEYWORD_75 ( (lv_name_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_reqs_4_0= ruleReqSpec ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_75 otherlv_7= KEYWORD_6 )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1310:2: otherlv_0= KEYWORD_75 ( (lv_name_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_reqs_4_0= ruleReqSpec ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_75 otherlv_7= KEYWORD_6
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1309:1: (otherlv_0= KEYWORD_75 ( (lv_fqn_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_reqs_4_0= ruleReqSpec ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_75 otherlv_7= KEYWORD_6 )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1310:2: otherlv_0= KEYWORD_75 ( (lv_fqn_1_0= RULE_ID ) ) otherlv_2= KEYWORD_16 ( ( ruleQCLREF ) ) ( (lv_reqs_4_0= ruleReqSpec ) )* otherlv_5= KEYWORD_15 otherlv_6= KEYWORD_75 otherlv_7= KEYWORD_6
             {
             otherlv_0=(Token)match(input,KEYWORD_75,FOLLOW_KEYWORD_75_in_ruleReqSpecifications2413); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getReqSpecificationsAccess().getRequirementsKeyword_0());
                 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1314:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1315:1: (lv_name_1_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1314:1: ( (lv_fqn_1_0= RULE_ID ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1315:1: (lv_fqn_1_0= RULE_ID )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1315:1: (lv_name_1_0= RULE_ID )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1316:3: lv_name_1_0= RULE_ID
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1315:1: (lv_fqn_1_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1316:3: lv_fqn_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReqSpecifications2429); 
+            lv_fqn_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReqSpecifications2429); 
 
-            			newLeafNode(lv_name_1_0, grammarAccess.getReqSpecificationsAccess().getNameIDTerminalRuleCall_1_0()); 
+            			newLeafNode(lv_fqn_1_0, grammarAccess.getReqSpecificationsAccess().getFqnIDTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
@@ -2950,8 +2950,8 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
             	        }
                    		setWithLastConsumed(
                    			current, 
-                   			"name",
-                    		lv_name_1_0, 
+                   			"fqn",
+                    		lv_fqn_1_0, 
                     		"ID");
             	    
 
@@ -3352,11 +3352,11 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReqSpec"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1497:1: ruleReqSpec returns [EObject current=null] : ( ( (lv_reqkind_0_0= ruleReqKind ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_18 otherlv_33= KEYWORD_22 otherlv_34= KEYWORD_5 ( (otherlv_35= RULE_ID ) ) (otherlv_36= KEYWORD_3 ( (otherlv_37= RULE_ID ) ) )* otherlv_38= KEYWORD_6 )? (otherlv_39= KEYWORD_18 otherlv_40= KEYWORD_33 otherlv_41= KEYWORD_5 ( (lv_hazardReference_42_0= ruleQNEREF ) ) (otherlv_43= KEYWORD_3 ( (lv_hazardReference_44_0= ruleQNEREF ) ) )* otherlv_45= KEYWORD_6 )? (otherlv_46= KEYWORD_49 otherlv_47= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_49= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_51= KEYWORD_6 )? (otherlv_52= KEYWORD_67 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_45 otherlv_59= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_61= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_63= KEYWORD_6 )? (otherlv_64= KEYWORD_18 otherlv_65= KEYWORD_73 otherlv_66= KEYWORD_17 otherlv_67= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_69= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_71= KEYWORD_6 )? (otherlv_72= KEYWORD_18 otherlv_73= KEYWORD_41 otherlv_74= KEYWORD_17 otherlv_75= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_77= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_79= KEYWORD_6 )? (otherlv_80= KEYWORD_18 otherlv_81= KEYWORD_54 otherlv_82= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_84= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_86= KEYWORD_6 )? otherlv_87= KEYWORD_15 otherlv_88= KEYWORD_17 otherlv_89= KEYWORD_6 ) ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1497:1: ruleReqSpec returns [EObject current=null] : ( ( (lv_reqkind_0_0= ruleReqKind ) ) ( (lv_fqn_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_18 otherlv_33= KEYWORD_22 otherlv_34= KEYWORD_5 ( (otherlv_35= RULE_ID ) ) (otherlv_36= KEYWORD_3 ( (otherlv_37= RULE_ID ) ) )* otherlv_38= KEYWORD_6 )? (otherlv_39= KEYWORD_18 otherlv_40= KEYWORD_33 otherlv_41= KEYWORD_5 ( (lv_hazardReference_42_0= ruleQNEREF ) ) (otherlv_43= KEYWORD_3 ( (lv_hazardReference_44_0= ruleQNEREF ) ) )* otherlv_45= KEYWORD_6 )? (otherlv_46= KEYWORD_49 otherlv_47= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_49= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_51= KEYWORD_6 )? (otherlv_52= KEYWORD_67 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_45 otherlv_59= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_61= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_63= KEYWORD_6 )? (otherlv_64= KEYWORD_18 otherlv_65= KEYWORD_73 otherlv_66= KEYWORD_17 otherlv_67= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_69= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_71= KEYWORD_6 )? (otherlv_72= KEYWORD_18 otherlv_73= KEYWORD_41 otherlv_74= KEYWORD_17 otherlv_75= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_77= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_79= KEYWORD_6 )? (otherlv_80= KEYWORD_18 otherlv_81= KEYWORD_54 otherlv_82= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_84= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_86= KEYWORD_6 )? otherlv_87= KEYWORD_15 otherlv_88= KEYWORD_17 otherlv_89= KEYWORD_6 ) ;
     public final EObject ruleReqSpec() throws RecognitionException {
         EObject current = null;
 
-        Token lv_name_1_0=null;
+        Token lv_fqn_1_0=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
@@ -3448,11 +3448,11 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1500:28: ( ( ( (lv_reqkind_0_0= ruleReqKind ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_18 otherlv_33= KEYWORD_22 otherlv_34= KEYWORD_5 ( (otherlv_35= RULE_ID ) ) (otherlv_36= KEYWORD_3 ( (otherlv_37= RULE_ID ) ) )* otherlv_38= KEYWORD_6 )? (otherlv_39= KEYWORD_18 otherlv_40= KEYWORD_33 otherlv_41= KEYWORD_5 ( (lv_hazardReference_42_0= ruleQNEREF ) ) (otherlv_43= KEYWORD_3 ( (lv_hazardReference_44_0= ruleQNEREF ) ) )* otherlv_45= KEYWORD_6 )? (otherlv_46= KEYWORD_49 otherlv_47= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_49= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_51= KEYWORD_6 )? (otherlv_52= KEYWORD_67 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_45 otherlv_59= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_61= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_63= KEYWORD_6 )? (otherlv_64= KEYWORD_18 otherlv_65= KEYWORD_73 otherlv_66= KEYWORD_17 otherlv_67= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_69= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_71= KEYWORD_6 )? (otherlv_72= KEYWORD_18 otherlv_73= KEYWORD_41 otherlv_74= KEYWORD_17 otherlv_75= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_77= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_79= KEYWORD_6 )? (otherlv_80= KEYWORD_18 otherlv_81= KEYWORD_54 otherlv_82= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_84= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_86= KEYWORD_6 )? otherlv_87= KEYWORD_15 otherlv_88= KEYWORD_17 otherlv_89= KEYWORD_6 ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1501:1: ( ( (lv_reqkind_0_0= ruleReqKind ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_18 otherlv_33= KEYWORD_22 otherlv_34= KEYWORD_5 ( (otherlv_35= RULE_ID ) ) (otherlv_36= KEYWORD_3 ( (otherlv_37= RULE_ID ) ) )* otherlv_38= KEYWORD_6 )? (otherlv_39= KEYWORD_18 otherlv_40= KEYWORD_33 otherlv_41= KEYWORD_5 ( (lv_hazardReference_42_0= ruleQNEREF ) ) (otherlv_43= KEYWORD_3 ( (lv_hazardReference_44_0= ruleQNEREF ) ) )* otherlv_45= KEYWORD_6 )? (otherlv_46= KEYWORD_49 otherlv_47= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_49= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_51= KEYWORD_6 )? (otherlv_52= KEYWORD_67 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_45 otherlv_59= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_61= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_63= KEYWORD_6 )? (otherlv_64= KEYWORD_18 otherlv_65= KEYWORD_73 otherlv_66= KEYWORD_17 otherlv_67= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_69= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_71= KEYWORD_6 )? (otherlv_72= KEYWORD_18 otherlv_73= KEYWORD_41 otherlv_74= KEYWORD_17 otherlv_75= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_77= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_79= KEYWORD_6 )? (otherlv_80= KEYWORD_18 otherlv_81= KEYWORD_54 otherlv_82= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_84= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_86= KEYWORD_6 )? otherlv_87= KEYWORD_15 otherlv_88= KEYWORD_17 otherlv_89= KEYWORD_6 )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1500:28: ( ( ( (lv_reqkind_0_0= ruleReqKind ) ) ( (lv_fqn_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_18 otherlv_33= KEYWORD_22 otherlv_34= KEYWORD_5 ( (otherlv_35= RULE_ID ) ) (otherlv_36= KEYWORD_3 ( (otherlv_37= RULE_ID ) ) )* otherlv_38= KEYWORD_6 )? (otherlv_39= KEYWORD_18 otherlv_40= KEYWORD_33 otherlv_41= KEYWORD_5 ( (lv_hazardReference_42_0= ruleQNEREF ) ) (otherlv_43= KEYWORD_3 ( (lv_hazardReference_44_0= ruleQNEREF ) ) )* otherlv_45= KEYWORD_6 )? (otherlv_46= KEYWORD_49 otherlv_47= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_49= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_51= KEYWORD_6 )? (otherlv_52= KEYWORD_67 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_45 otherlv_59= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_61= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_63= KEYWORD_6 )? (otherlv_64= KEYWORD_18 otherlv_65= KEYWORD_73 otherlv_66= KEYWORD_17 otherlv_67= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_69= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_71= KEYWORD_6 )? (otherlv_72= KEYWORD_18 otherlv_73= KEYWORD_41 otherlv_74= KEYWORD_17 otherlv_75= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_77= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_79= KEYWORD_6 )? (otherlv_80= KEYWORD_18 otherlv_81= KEYWORD_54 otherlv_82= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_84= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_86= KEYWORD_6 )? otherlv_87= KEYWORD_15 otherlv_88= KEYWORD_17 otherlv_89= KEYWORD_6 ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1501:1: ( ( (lv_reqkind_0_0= ruleReqKind ) ) ( (lv_fqn_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_18 otherlv_33= KEYWORD_22 otherlv_34= KEYWORD_5 ( (otherlv_35= RULE_ID ) ) (otherlv_36= KEYWORD_3 ( (otherlv_37= RULE_ID ) ) )* otherlv_38= KEYWORD_6 )? (otherlv_39= KEYWORD_18 otherlv_40= KEYWORD_33 otherlv_41= KEYWORD_5 ( (lv_hazardReference_42_0= ruleQNEREF ) ) (otherlv_43= KEYWORD_3 ( (lv_hazardReference_44_0= ruleQNEREF ) ) )* otherlv_45= KEYWORD_6 )? (otherlv_46= KEYWORD_49 otherlv_47= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_49= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_51= KEYWORD_6 )? (otherlv_52= KEYWORD_67 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_45 otherlv_59= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_61= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_63= KEYWORD_6 )? (otherlv_64= KEYWORD_18 otherlv_65= KEYWORD_73 otherlv_66= KEYWORD_17 otherlv_67= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_69= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_71= KEYWORD_6 )? (otherlv_72= KEYWORD_18 otherlv_73= KEYWORD_41 otherlv_74= KEYWORD_17 otherlv_75= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_77= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_79= KEYWORD_6 )? (otherlv_80= KEYWORD_18 otherlv_81= KEYWORD_54 otherlv_82= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_84= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_86= KEYWORD_6 )? otherlv_87= KEYWORD_15 otherlv_88= KEYWORD_17 otherlv_89= KEYWORD_6 )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1501:1: ( ( (lv_reqkind_0_0= ruleReqKind ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_18 otherlv_33= KEYWORD_22 otherlv_34= KEYWORD_5 ( (otherlv_35= RULE_ID ) ) (otherlv_36= KEYWORD_3 ( (otherlv_37= RULE_ID ) ) )* otherlv_38= KEYWORD_6 )? (otherlv_39= KEYWORD_18 otherlv_40= KEYWORD_33 otherlv_41= KEYWORD_5 ( (lv_hazardReference_42_0= ruleQNEREF ) ) (otherlv_43= KEYWORD_3 ( (lv_hazardReference_44_0= ruleQNEREF ) ) )* otherlv_45= KEYWORD_6 )? (otherlv_46= KEYWORD_49 otherlv_47= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_49= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_51= KEYWORD_6 )? (otherlv_52= KEYWORD_67 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_45 otherlv_59= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_61= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_63= KEYWORD_6 )? (otherlv_64= KEYWORD_18 otherlv_65= KEYWORD_73 otherlv_66= KEYWORD_17 otherlv_67= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_69= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_71= KEYWORD_6 )? (otherlv_72= KEYWORD_18 otherlv_73= KEYWORD_41 otherlv_74= KEYWORD_17 otherlv_75= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_77= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_79= KEYWORD_6 )? (otherlv_80= KEYWORD_18 otherlv_81= KEYWORD_54 otherlv_82= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_84= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_86= KEYWORD_6 )? otherlv_87= KEYWORD_15 otherlv_88= KEYWORD_17 otherlv_89= KEYWORD_6 )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1501:2: ( (lv_reqkind_0_0= ruleReqKind ) ) ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_18 otherlv_33= KEYWORD_22 otherlv_34= KEYWORD_5 ( (otherlv_35= RULE_ID ) ) (otherlv_36= KEYWORD_3 ( (otherlv_37= RULE_ID ) ) )* otherlv_38= KEYWORD_6 )? (otherlv_39= KEYWORD_18 otherlv_40= KEYWORD_33 otherlv_41= KEYWORD_5 ( (lv_hazardReference_42_0= ruleQNEREF ) ) (otherlv_43= KEYWORD_3 ( (lv_hazardReference_44_0= ruleQNEREF ) ) )* otherlv_45= KEYWORD_6 )? (otherlv_46= KEYWORD_49 otherlv_47= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_49= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_51= KEYWORD_6 )? (otherlv_52= KEYWORD_67 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_45 otherlv_59= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_61= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_63= KEYWORD_6 )? (otherlv_64= KEYWORD_18 otherlv_65= KEYWORD_73 otherlv_66= KEYWORD_17 otherlv_67= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_69= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_71= KEYWORD_6 )? (otherlv_72= KEYWORD_18 otherlv_73= KEYWORD_41 otherlv_74= KEYWORD_17 otherlv_75= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_77= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_79= KEYWORD_6 )? (otherlv_80= KEYWORD_18 otherlv_81= KEYWORD_54 otherlv_82= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_84= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_86= KEYWORD_6 )? otherlv_87= KEYWORD_15 otherlv_88= KEYWORD_17 otherlv_89= KEYWORD_6
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1501:1: ( ( (lv_reqkind_0_0= ruleReqKind ) ) ( (lv_fqn_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_18 otherlv_33= KEYWORD_22 otherlv_34= KEYWORD_5 ( (otherlv_35= RULE_ID ) ) (otherlv_36= KEYWORD_3 ( (otherlv_37= RULE_ID ) ) )* otherlv_38= KEYWORD_6 )? (otherlv_39= KEYWORD_18 otherlv_40= KEYWORD_33 otherlv_41= KEYWORD_5 ( (lv_hazardReference_42_0= ruleQNEREF ) ) (otherlv_43= KEYWORD_3 ( (lv_hazardReference_44_0= ruleQNEREF ) ) )* otherlv_45= KEYWORD_6 )? (otherlv_46= KEYWORD_49 otherlv_47= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_49= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_51= KEYWORD_6 )? (otherlv_52= KEYWORD_67 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_45 otherlv_59= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_61= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_63= KEYWORD_6 )? (otherlv_64= KEYWORD_18 otherlv_65= KEYWORD_73 otherlv_66= KEYWORD_17 otherlv_67= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_69= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_71= KEYWORD_6 )? (otherlv_72= KEYWORD_18 otherlv_73= KEYWORD_41 otherlv_74= KEYWORD_17 otherlv_75= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_77= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_79= KEYWORD_6 )? (otherlv_80= KEYWORD_18 otherlv_81= KEYWORD_54 otherlv_82= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_84= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_86= KEYWORD_6 )? otherlv_87= KEYWORD_15 otherlv_88= KEYWORD_17 otherlv_89= KEYWORD_6 )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1501:2: ( (lv_reqkind_0_0= ruleReqKind ) ) ( (lv_fqn_1_0= RULE_ID ) ) (otherlv_2= KEYWORD_16 ( ( ruleRELREF ) ) )? (otherlv_4= KEYWORD_31 otherlv_5= KEYWORD_5 ( (lv_title_6_0= ruleValueString ) ) otherlv_7= KEYWORD_6 )? (otherlv_8= KEYWORD_71 otherlv_9= KEYWORD_5 ( (lv_description_10_0= ruleValueString ) ) otherlv_11= KEYWORD_6 )? (otherlv_12= KEYWORD_56 otherlv_13= KEYWORD_5 ( (lv_assert_14_0= ruleValueString ) ) otherlv_15= KEYWORD_6 )? (otherlv_16= KEYWORD_61 otherlv_17= KEYWORD_5 ( (lv_rationale_18_0= ruleValueString ) ) otherlv_19= KEYWORD_6 )? (otherlv_20= KEYWORD_34 otherlv_21= KEYWORD_5 ( (lv_issue_22_0= ruleValueString ) ) (otherlv_23= KEYWORD_3 ( (lv_issue_24_0= ruleValueString ) ) )* otherlv_25= KEYWORD_6 )? (otherlv_26= KEYWORD_18 otherlv_27= KEYWORD_5 ( (lv_modelReference_28_0= ruleQCRELREF ) ) (otherlv_29= KEYWORD_3 ( (lv_modelReference_30_0= ruleQCRELREF ) ) )* otherlv_31= KEYWORD_6 )? (otherlv_32= KEYWORD_18 otherlv_33= KEYWORD_22 otherlv_34= KEYWORD_5 ( (otherlv_35= RULE_ID ) ) (otherlv_36= KEYWORD_3 ( (otherlv_37= RULE_ID ) ) )* otherlv_38= KEYWORD_6 )? (otherlv_39= KEYWORD_18 otherlv_40= KEYWORD_33 otherlv_41= KEYWORD_5 ( (lv_hazardReference_42_0= ruleQNEREF ) ) (otherlv_43= KEYWORD_3 ( (lv_hazardReference_44_0= ruleQNEREF ) ) )* otherlv_45= KEYWORD_6 )? (otherlv_46= KEYWORD_49 otherlv_47= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_49= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_51= KEYWORD_6 )? (otherlv_52= KEYWORD_67 otherlv_53= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_55= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_57= KEYWORD_6 )? (otherlv_58= KEYWORD_45 otherlv_59= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_61= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_63= KEYWORD_6 )? (otherlv_64= KEYWORD_18 otherlv_65= KEYWORD_73 otherlv_66= KEYWORD_17 otherlv_67= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_69= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_71= KEYWORD_6 )? (otherlv_72= KEYWORD_18 otherlv_73= KEYWORD_41 otherlv_74= KEYWORD_17 otherlv_75= KEYWORD_5 ( ( ruleREQREF ) ) (otherlv_77= KEYWORD_3 ( ( ruleREQREF ) ) )* otherlv_79= KEYWORD_6 )? (otherlv_80= KEYWORD_18 otherlv_81= KEYWORD_54 otherlv_82= KEYWORD_5 ( ( ruleRELREF ) ) (otherlv_84= KEYWORD_3 ( ( ruleRELREF ) ) )* otherlv_86= KEYWORD_6 )? otherlv_87= KEYWORD_15 otherlv_88= KEYWORD_17 otherlv_89= KEYWORD_6
             {
             // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1501:2: ( (lv_reqkind_0_0= ruleReqKind ) )
             // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1502:1: (lv_reqkind_0_0= ruleReqKind )
@@ -3485,15 +3485,15 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1519:2: ( (lv_name_1_0= RULE_ID ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1520:1: (lv_name_1_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1519:2: ( (lv_fqn_1_0= RULE_ID ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1520:1: (lv_fqn_1_0= RULE_ID )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1520:1: (lv_name_1_0= RULE_ID )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1521:3: lv_name_1_0= RULE_ID
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1520:1: (lv_fqn_1_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:1521:3: lv_fqn_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReqSpec2902); 
+            lv_fqn_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReqSpec2902); 
 
-            			newLeafNode(lv_name_1_0, grammarAccess.getReqSpecAccess().getNameIDTerminalRuleCall_1_0()); 
+            			newLeafNode(lv_fqn_1_0, grammarAccess.getReqSpecAccess().getFqnIDTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
@@ -3501,8 +3501,8 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
             	        }
                    		setWithLastConsumed(
                    			current, 
-                   			"name",
-                    		lv_name_1_0, 
+                   			"fqn",
+                    		lv_fqn_1_0, 
                     		"ID");
             	    
 
@@ -5051,12 +5051,12 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExternalDocuments"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2270:1: ruleExternalDocuments returns [EObject current=null] : (otherlv_0= KEYWORD_58 ( (lv_name_1_0= RULE_ID ) ) ( (lv_docs_2_0= ruleExternalDocument ) ) ( (lv_docs_3_0= ruleExternalDocument ) )* otherlv_4= KEYWORD_15 otherlv_5= KEYWORD_58 otherlv_6= KEYWORD_6 ) ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2270:1: ruleExternalDocuments returns [EObject current=null] : (otherlv_0= KEYWORD_58 ( (lv_fqn_1_0= RULE_ID ) ) ( (lv_docs_2_0= ruleExternalDocument ) ) ( (lv_docs_3_0= ruleExternalDocument ) )* otherlv_4= KEYWORD_15 otherlv_5= KEYWORD_58 otherlv_6= KEYWORD_6 ) ;
     public final EObject ruleExternalDocuments() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_name_1_0=null;
+        Token lv_fqn_1_0=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
         Token otherlv_6=null;
@@ -5068,25 +5068,25 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2273:28: ( (otherlv_0= KEYWORD_58 ( (lv_name_1_0= RULE_ID ) ) ( (lv_docs_2_0= ruleExternalDocument ) ) ( (lv_docs_3_0= ruleExternalDocument ) )* otherlv_4= KEYWORD_15 otherlv_5= KEYWORD_58 otherlv_6= KEYWORD_6 ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2274:1: (otherlv_0= KEYWORD_58 ( (lv_name_1_0= RULE_ID ) ) ( (lv_docs_2_0= ruleExternalDocument ) ) ( (lv_docs_3_0= ruleExternalDocument ) )* otherlv_4= KEYWORD_15 otherlv_5= KEYWORD_58 otherlv_6= KEYWORD_6 )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2273:28: ( (otherlv_0= KEYWORD_58 ( (lv_fqn_1_0= RULE_ID ) ) ( (lv_docs_2_0= ruleExternalDocument ) ) ( (lv_docs_3_0= ruleExternalDocument ) )* otherlv_4= KEYWORD_15 otherlv_5= KEYWORD_58 otherlv_6= KEYWORD_6 ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2274:1: (otherlv_0= KEYWORD_58 ( (lv_fqn_1_0= RULE_ID ) ) ( (lv_docs_2_0= ruleExternalDocument ) ) ( (lv_docs_3_0= ruleExternalDocument ) )* otherlv_4= KEYWORD_15 otherlv_5= KEYWORD_58 otherlv_6= KEYWORD_6 )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2274:1: (otherlv_0= KEYWORD_58 ( (lv_name_1_0= RULE_ID ) ) ( (lv_docs_2_0= ruleExternalDocument ) ) ( (lv_docs_3_0= ruleExternalDocument ) )* otherlv_4= KEYWORD_15 otherlv_5= KEYWORD_58 otherlv_6= KEYWORD_6 )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2275:2: otherlv_0= KEYWORD_58 ( (lv_name_1_0= RULE_ID ) ) ( (lv_docs_2_0= ruleExternalDocument ) ) ( (lv_docs_3_0= ruleExternalDocument ) )* otherlv_4= KEYWORD_15 otherlv_5= KEYWORD_58 otherlv_6= KEYWORD_6
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2274:1: (otherlv_0= KEYWORD_58 ( (lv_fqn_1_0= RULE_ID ) ) ( (lv_docs_2_0= ruleExternalDocument ) ) ( (lv_docs_3_0= ruleExternalDocument ) )* otherlv_4= KEYWORD_15 otherlv_5= KEYWORD_58 otherlv_6= KEYWORD_6 )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2275:2: otherlv_0= KEYWORD_58 ( (lv_fqn_1_0= RULE_ID ) ) ( (lv_docs_2_0= ruleExternalDocument ) ) ( (lv_docs_3_0= ruleExternalDocument ) )* otherlv_4= KEYWORD_15 otherlv_5= KEYWORD_58 otherlv_6= KEYWORD_6
             {
             otherlv_0=(Token)match(input,KEYWORD_58,FOLLOW_KEYWORD_58_in_ruleExternalDocuments4370); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getExternalDocumentsAccess().getDocumentsKeyword_0());
                 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2279:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2280:1: (lv_name_1_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2279:1: ( (lv_fqn_1_0= RULE_ID ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2280:1: (lv_fqn_1_0= RULE_ID )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2280:1: (lv_name_1_0= RULE_ID )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2281:3: lv_name_1_0= RULE_ID
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2280:1: (lv_fqn_1_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2281:3: lv_fqn_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleExternalDocuments4386); 
+            lv_fqn_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleExternalDocuments4386); 
 
-            			newLeafNode(lv_name_1_0, grammarAccess.getExternalDocumentsAccess().getNameIDTerminalRuleCall_1_0()); 
+            			newLeafNode(lv_fqn_1_0, grammarAccess.getExternalDocumentsAccess().getFqnIDTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
@@ -5094,8 +5094,8 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
             	        }
                    		setWithLastConsumed(
                    			current, 
-                   			"name",
-                    		lv_name_1_0, 
+                   			"fqn",
+                    		lv_fqn_1_0, 
                     		"ID");
             	    
 
@@ -5253,12 +5253,12 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExternalDocument"
-    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2365:1: ruleExternalDocument returns [EObject current=null] : (otherlv_0= KEYWORD_54 ( (lv_name_1_0= RULE_ID ) ) otherlv_2= KEYWORD_18 otherlv_3= KEYWORD_5 ( (lv_xternalReference_4_0= RULE_STRING ) ) otherlv_5= KEYWORD_6 ) ;
+    // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2365:1: ruleExternalDocument returns [EObject current=null] : (otherlv_0= KEYWORD_54 ( (lv_fqn_1_0= RULE_ID ) ) otherlv_2= KEYWORD_18 otherlv_3= KEYWORD_5 ( (lv_xternalReference_4_0= RULE_STRING ) ) otherlv_5= KEYWORD_6 ) ;
     public final EObject ruleExternalDocument() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_name_1_0=null;
+        Token lv_fqn_1_0=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
         Token lv_xternalReference_4_0=null;
@@ -5267,25 +5267,25 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2368:28: ( (otherlv_0= KEYWORD_54 ( (lv_name_1_0= RULE_ID ) ) otherlv_2= KEYWORD_18 otherlv_3= KEYWORD_5 ( (lv_xternalReference_4_0= RULE_STRING ) ) otherlv_5= KEYWORD_6 ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2369:1: (otherlv_0= KEYWORD_54 ( (lv_name_1_0= RULE_ID ) ) otherlv_2= KEYWORD_18 otherlv_3= KEYWORD_5 ( (lv_xternalReference_4_0= RULE_STRING ) ) otherlv_5= KEYWORD_6 )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2368:28: ( (otherlv_0= KEYWORD_54 ( (lv_fqn_1_0= RULE_ID ) ) otherlv_2= KEYWORD_18 otherlv_3= KEYWORD_5 ( (lv_xternalReference_4_0= RULE_STRING ) ) otherlv_5= KEYWORD_6 ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2369:1: (otherlv_0= KEYWORD_54 ( (lv_fqn_1_0= RULE_ID ) ) otherlv_2= KEYWORD_18 otherlv_3= KEYWORD_5 ( (lv_xternalReference_4_0= RULE_STRING ) ) otherlv_5= KEYWORD_6 )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2369:1: (otherlv_0= KEYWORD_54 ( (lv_name_1_0= RULE_ID ) ) otherlv_2= KEYWORD_18 otherlv_3= KEYWORD_5 ( (lv_xternalReference_4_0= RULE_STRING ) ) otherlv_5= KEYWORD_6 )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2370:2: otherlv_0= KEYWORD_54 ( (lv_name_1_0= RULE_ID ) ) otherlv_2= KEYWORD_18 otherlv_3= KEYWORD_5 ( (lv_xternalReference_4_0= RULE_STRING ) ) otherlv_5= KEYWORD_6
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2369:1: (otherlv_0= KEYWORD_54 ( (lv_fqn_1_0= RULE_ID ) ) otherlv_2= KEYWORD_18 otherlv_3= KEYWORD_5 ( (lv_xternalReference_4_0= RULE_STRING ) ) otherlv_5= KEYWORD_6 )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2370:2: otherlv_0= KEYWORD_54 ( (lv_fqn_1_0= RULE_ID ) ) otherlv_2= KEYWORD_18 otherlv_3= KEYWORD_5 ( (lv_xternalReference_4_0= RULE_STRING ) ) otherlv_5= KEYWORD_6
             {
             otherlv_0=(Token)match(input,KEYWORD_54,FOLLOW_KEYWORD_54_in_ruleExternalDocument4553); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getExternalDocumentAccess().getDocumentKeyword_0());
                 
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2374:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2375:1: (lv_name_1_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2374:1: ( (lv_fqn_1_0= RULE_ID ) )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2375:1: (lv_fqn_1_0= RULE_ID )
             {
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2375:1: (lv_name_1_0= RULE_ID )
-            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2376:3: lv_name_1_0= RULE_ID
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2375:1: (lv_fqn_1_0= RULE_ID )
+            // ../edu.cmu.sei.alisa/src-gen/edu/cmu/sei/alisa/parser/antlr/internal/InternalAlisaParser.g:2376:3: lv_fqn_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleExternalDocument4569); 
+            lv_fqn_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleExternalDocument4569); 
 
-            			newLeafNode(lv_name_1_0, grammarAccess.getExternalDocumentAccess().getNameIDTerminalRuleCall_1_0()); 
+            			newLeafNode(lv_fqn_1_0, grammarAccess.getExternalDocumentAccess().getFqnIDTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
@@ -5293,8 +5293,8 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
             	        }
                    		setWithLastConsumed(
                    			current, 
-                   			"name",
-                    		lv_name_1_0, 
+                   			"fqn",
+                    		lv_fqn_1_0, 
                     		"ID");
             	    
 

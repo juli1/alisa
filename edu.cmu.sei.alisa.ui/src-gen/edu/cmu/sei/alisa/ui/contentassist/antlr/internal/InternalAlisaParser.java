@@ -6716,31 +6716,31 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goals__Group__1__Impl"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2500:1: rule__Goals__Group__1__Impl : ( ( rule__Goals__NameAssignment_1 ) ) ;
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2500:1: rule__Goals__Group__1__Impl : ( ( rule__Goals__FqnAssignment_1 ) ) ;
     public final void rule__Goals__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2504:1: ( ( ( rule__Goals__NameAssignment_1 ) ) )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2505:1: ( ( rule__Goals__NameAssignment_1 ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2504:1: ( ( ( rule__Goals__FqnAssignment_1 ) ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2505:1: ( ( rule__Goals__FqnAssignment_1 ) )
             {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2505:1: ( ( rule__Goals__NameAssignment_1 ) )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2506:1: ( rule__Goals__NameAssignment_1 )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2505:1: ( ( rule__Goals__FqnAssignment_1 ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2506:1: ( rule__Goals__FqnAssignment_1 )
             {
-             before(grammarAccess.getGoalsAccess().getNameAssignment_1()); 
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2507:1: ( rule__Goals__NameAssignment_1 )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2507:2: rule__Goals__NameAssignment_1
+             before(grammarAccess.getGoalsAccess().getFqnAssignment_1()); 
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2507:1: ( rule__Goals__FqnAssignment_1 )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2507:2: rule__Goals__FqnAssignment_1
             {
-            pushFollow(FOLLOW_rule__Goals__NameAssignment_1_in_rule__Goals__Group__1__Impl5153);
-            rule__Goals__NameAssignment_1();
+            pushFollow(FOLLOW_rule__Goals__FqnAssignment_1_in_rule__Goals__Group__1__Impl5153);
+            rule__Goals__FqnAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalsAccess().getNameAssignment_1()); 
+             after(grammarAccess.getGoalsAccess().getFqnAssignment_1()); 
 
             }
 
@@ -7359,31 +7359,31 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__Group__1__Impl"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2757:1: rule__Goal__Group__1__Impl : ( ( rule__Goal__NameAssignment_1 ) ) ;
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2757:1: rule__Goal__Group__1__Impl : ( ( rule__Goal__FqnAssignment_1 ) ) ;
     public final void rule__Goal__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2761:1: ( ( ( rule__Goal__NameAssignment_1 ) ) )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2762:1: ( ( rule__Goal__NameAssignment_1 ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2761:1: ( ( ( rule__Goal__FqnAssignment_1 ) ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2762:1: ( ( rule__Goal__FqnAssignment_1 ) )
             {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2762:1: ( ( rule__Goal__NameAssignment_1 ) )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2763:1: ( rule__Goal__NameAssignment_1 )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2762:1: ( ( rule__Goal__FqnAssignment_1 ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2763:1: ( rule__Goal__FqnAssignment_1 )
             {
-             before(grammarAccess.getGoalAccess().getNameAssignment_1()); 
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2764:1: ( rule__Goal__NameAssignment_1 )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2764:2: rule__Goal__NameAssignment_1
+             before(grammarAccess.getGoalAccess().getFqnAssignment_1()); 
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2764:1: ( rule__Goal__FqnAssignment_1 )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2764:2: rule__Goal__FqnAssignment_1
             {
-            pushFollow(FOLLOW_rule__Goal__NameAssignment_1_in_rule__Goal__Group__1__Impl5657);
-            rule__Goal__NameAssignment_1();
+            pushFollow(FOLLOW_rule__Goal__FqnAssignment_1_in_rule__Goal__Group__1__Impl5657);
+            rule__Goal__FqnAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalAccess().getNameAssignment_1()); 
+             after(grammarAccess.getGoalAccess().getFqnAssignment_1()); 
 
             }
 
@@ -14440,31 +14440,31 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReqSpecifications__Group__1__Impl"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5530:1: rule__ReqSpecifications__Group__1__Impl : ( ( rule__ReqSpecifications__NameAssignment_1 ) ) ;
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5530:1: rule__ReqSpecifications__Group__1__Impl : ( ( rule__ReqSpecifications__FqnAssignment_1 ) ) ;
     public final void rule__ReqSpecifications__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5534:1: ( ( ( rule__ReqSpecifications__NameAssignment_1 ) ) )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5535:1: ( ( rule__ReqSpecifications__NameAssignment_1 ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5534:1: ( ( ( rule__ReqSpecifications__FqnAssignment_1 ) ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5535:1: ( ( rule__ReqSpecifications__FqnAssignment_1 ) )
             {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5535:1: ( ( rule__ReqSpecifications__NameAssignment_1 ) )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5536:1: ( rule__ReqSpecifications__NameAssignment_1 )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5535:1: ( ( rule__ReqSpecifications__FqnAssignment_1 ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5536:1: ( rule__ReqSpecifications__FqnAssignment_1 )
             {
-             before(grammarAccess.getReqSpecificationsAccess().getNameAssignment_1()); 
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5537:1: ( rule__ReqSpecifications__NameAssignment_1 )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5537:2: rule__ReqSpecifications__NameAssignment_1
+             before(grammarAccess.getReqSpecificationsAccess().getFqnAssignment_1()); 
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5537:1: ( rule__ReqSpecifications__FqnAssignment_1 )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5537:2: rule__ReqSpecifications__FqnAssignment_1
             {
-            pushFollow(FOLLOW_rule__ReqSpecifications__NameAssignment_1_in_rule__ReqSpecifications__Group__1__Impl11106);
-            rule__ReqSpecifications__NameAssignment_1();
+            pushFollow(FOLLOW_rule__ReqSpecifications__FqnAssignment_1_in_rule__ReqSpecifications__Group__1__Impl11106);
+            rule__ReqSpecifications__FqnAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getReqSpecificationsAccess().getNameAssignment_1()); 
+             after(grammarAccess.getReqSpecificationsAccess().getFqnAssignment_1()); 
 
             }
 
@@ -15528,31 +15528,31 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReqSpec__Group__1__Impl"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5980:1: rule__ReqSpec__Group__1__Impl : ( ( rule__ReqSpec__NameAssignment_1 ) ) ;
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5980:1: rule__ReqSpec__Group__1__Impl : ( ( rule__ReqSpec__FqnAssignment_1 ) ) ;
     public final void rule__ReqSpec__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5984:1: ( ( ( rule__ReqSpec__NameAssignment_1 ) ) )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5985:1: ( ( rule__ReqSpec__NameAssignment_1 ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5984:1: ( ( ( rule__ReqSpec__FqnAssignment_1 ) ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5985:1: ( ( rule__ReqSpec__FqnAssignment_1 ) )
             {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5985:1: ( ( rule__ReqSpec__NameAssignment_1 ) )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5986:1: ( rule__ReqSpec__NameAssignment_1 )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5985:1: ( ( rule__ReqSpec__FqnAssignment_1 ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5986:1: ( rule__ReqSpec__FqnAssignment_1 )
             {
-             before(grammarAccess.getReqSpecAccess().getNameAssignment_1()); 
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5987:1: ( rule__ReqSpec__NameAssignment_1 )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5987:2: rule__ReqSpec__NameAssignment_1
+             before(grammarAccess.getReqSpecAccess().getFqnAssignment_1()); 
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5987:1: ( rule__ReqSpec__FqnAssignment_1 )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:5987:2: rule__ReqSpec__FqnAssignment_1
             {
-            pushFollow(FOLLOW_rule__ReqSpec__NameAssignment_1_in_rule__ReqSpec__Group__1__Impl11983);
-            rule__ReqSpec__NameAssignment_1();
+            pushFollow(FOLLOW_rule__ReqSpec__FqnAssignment_1_in_rule__ReqSpec__Group__1__Impl11983);
+            rule__ReqSpec__FqnAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getReqSpecAccess().getNameAssignment_1()); 
+             after(grammarAccess.getReqSpecAccess().getFqnAssignment_1()); 
 
             }
 
@@ -24898,31 +24898,31 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExternalDocuments__Group__1__Impl"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9647:1: rule__ExternalDocuments__Group__1__Impl : ( ( rule__ExternalDocuments__NameAssignment_1 ) ) ;
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9647:1: rule__ExternalDocuments__Group__1__Impl : ( ( rule__ExternalDocuments__FqnAssignment_1 ) ) ;
     public final void rule__ExternalDocuments__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9651:1: ( ( ( rule__ExternalDocuments__NameAssignment_1 ) ) )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9652:1: ( ( rule__ExternalDocuments__NameAssignment_1 ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9651:1: ( ( ( rule__ExternalDocuments__FqnAssignment_1 ) ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9652:1: ( ( rule__ExternalDocuments__FqnAssignment_1 ) )
             {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9652:1: ( ( rule__ExternalDocuments__NameAssignment_1 ) )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9653:1: ( rule__ExternalDocuments__NameAssignment_1 )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9652:1: ( ( rule__ExternalDocuments__FqnAssignment_1 ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9653:1: ( rule__ExternalDocuments__FqnAssignment_1 )
             {
-             before(grammarAccess.getExternalDocumentsAccess().getNameAssignment_1()); 
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9654:1: ( rule__ExternalDocuments__NameAssignment_1 )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9654:2: rule__ExternalDocuments__NameAssignment_1
+             before(grammarAccess.getExternalDocumentsAccess().getFqnAssignment_1()); 
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9654:1: ( rule__ExternalDocuments__FqnAssignment_1 )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9654:2: rule__ExternalDocuments__FqnAssignment_1
             {
-            pushFollow(FOLLOW_rule__ExternalDocuments__NameAssignment_1_in_rule__ExternalDocuments__Group__1__Impl19188);
-            rule__ExternalDocuments__NameAssignment_1();
+            pushFollow(FOLLOW_rule__ExternalDocuments__FqnAssignment_1_in_rule__ExternalDocuments__Group__1__Impl19188);
+            rule__ExternalDocuments__FqnAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getExternalDocumentsAccess().getNameAssignment_1()); 
+             after(grammarAccess.getExternalDocumentsAccess().getFqnAssignment_1()); 
 
             }
 
@@ -25466,31 +25466,31 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExternalDocument__Group__1__Impl"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9871:1: rule__ExternalDocument__Group__1__Impl : ( ( rule__ExternalDocument__NameAssignment_1 ) ) ;
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9871:1: rule__ExternalDocument__Group__1__Impl : ( ( rule__ExternalDocument__FqnAssignment_1 ) ) ;
     public final void rule__ExternalDocument__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9875:1: ( ( ( rule__ExternalDocument__NameAssignment_1 ) ) )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9876:1: ( ( rule__ExternalDocument__NameAssignment_1 ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9875:1: ( ( ( rule__ExternalDocument__FqnAssignment_1 ) ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9876:1: ( ( rule__ExternalDocument__FqnAssignment_1 ) )
             {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9876:1: ( ( rule__ExternalDocument__NameAssignment_1 ) )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9877:1: ( rule__ExternalDocument__NameAssignment_1 )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9876:1: ( ( rule__ExternalDocument__FqnAssignment_1 ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9877:1: ( rule__ExternalDocument__FqnAssignment_1 )
             {
-             before(grammarAccess.getExternalDocumentAccess().getNameAssignment_1()); 
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9878:1: ( rule__ExternalDocument__NameAssignment_1 )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9878:2: rule__ExternalDocument__NameAssignment_1
+             before(grammarAccess.getExternalDocumentAccess().getFqnAssignment_1()); 
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9878:1: ( rule__ExternalDocument__FqnAssignment_1 )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:9878:2: rule__ExternalDocument__FqnAssignment_1
             {
-            pushFollow(FOLLOW_rule__ExternalDocument__NameAssignment_1_in_rule__ExternalDocument__Group__1__Impl19628);
-            rule__ExternalDocument__NameAssignment_1();
+            pushFollow(FOLLOW_rule__ExternalDocument__FqnAssignment_1_in_rule__ExternalDocument__Group__1__Impl19628);
+            rule__ExternalDocument__FqnAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getExternalDocumentAccess().getNameAssignment_1()); 
+             after(grammarAccess.getExternalDocumentAccess().getFqnAssignment_1()); 
 
             }
 
@@ -44889,9 +44889,9 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__VerificationLibrary__ContentAssignment_3"
 
 
-    // $ANTLR start "rule__Goals__NameAssignment_1"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17528:1: rule__Goals__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Goals__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Goals__FqnAssignment_1"
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17528:1: rule__Goals__FqnAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Goals__FqnAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -44902,9 +44902,9 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17533:1: ( RULE_ID )
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17534:1: RULE_ID
             {
-             before(grammarAccess.getGoalsAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Goals__NameAssignment_134671); 
-             after(grammarAccess.getGoalsAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getGoalsAccess().getFqnIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Goals__FqnAssignment_134671); 
+             after(grammarAccess.getGoalsAccess().getFqnIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -44923,7 +44923,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Goals__NameAssignment_1"
+    // $ANTLR end "rule__Goals__FqnAssignment_1"
 
 
     // $ANTLR start "rule__Goals__ClassifierAssignment_3"
@@ -45016,9 +45016,9 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Goals__GoalsAssignment_4"
 
 
-    // $ANTLR start "rule__Goal__NameAssignment_1"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17577:1: rule__Goal__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Goal__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Goal__FqnAssignment_1"
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17577:1: rule__Goal__FqnAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Goal__FqnAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -45029,9 +45029,9 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17582:1: ( RULE_ID )
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17583:1: RULE_ID
             {
-             before(grammarAccess.getGoalAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Goal__NameAssignment_134772); 
-             after(grammarAccess.getGoalAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getGoalAccess().getFqnIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Goal__FqnAssignment_134772); 
+             after(grammarAccess.getGoalAccess().getFqnIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -45050,7 +45050,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Goal__NameAssignment_1"
+    // $ANTLR end "rule__Goal__FqnAssignment_1"
 
 
     // $ANTLR start "rule__Goal__GoalTargetAssignment_2_1"
@@ -45920,9 +45920,9 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Goal__DocReferencesAssignment_13_4_1"
 
 
-    // $ANTLR start "rule__ReqSpecifications__NameAssignment_1"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17921:1: rule__ReqSpecifications__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__ReqSpecifications__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ReqSpecifications__FqnAssignment_1"
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17921:1: rule__ReqSpecifications__FqnAssignment_1 : ( RULE_ID ) ;
+    public final void rule__ReqSpecifications__FqnAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -45933,9 +45933,9 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17926:1: ( RULE_ID )
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17927:1: RULE_ID
             {
-             before(grammarAccess.getReqSpecificationsAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ReqSpecifications__NameAssignment_135480); 
-             after(grammarAccess.getReqSpecificationsAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getReqSpecificationsAccess().getFqnIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ReqSpecifications__FqnAssignment_135480); 
+             after(grammarAccess.getReqSpecificationsAccess().getFqnIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -45954,7 +45954,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ReqSpecifications__NameAssignment_1"
+    // $ANTLR end "rule__ReqSpecifications__FqnAssignment_1"
 
 
     // $ANTLR start "rule__ReqSpecifications__ReqTargetAssignment_3"
@@ -46088,9 +46088,9 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ReqSpec__ReqkindAssignment_0"
 
 
-    // $ANTLR start "rule__ReqSpec__NameAssignment_1"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17985:1: rule__ReqSpec__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__ReqSpec__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ReqSpec__FqnAssignment_1"
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17985:1: rule__ReqSpec__FqnAssignment_1 : ( RULE_ID ) ;
+    public final void rule__ReqSpec__FqnAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -46101,9 +46101,9 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17990:1: ( RULE_ID )
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17991:1: RULE_ID
             {
-             before(grammarAccess.getReqSpecAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ReqSpec__NameAssignment_135612); 
-             after(grammarAccess.getReqSpecAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getReqSpecAccess().getFqnIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ReqSpec__FqnAssignment_135612); 
+             after(grammarAccess.getReqSpecAccess().getFqnIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -46122,7 +46122,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ReqSpec__NameAssignment_1"
+    // $ANTLR end "rule__ReqSpec__FqnAssignment_1"
 
 
     // $ANTLR start "rule__ReqSpec__ReqTargetAssignment_2_1"
@@ -47262,9 +47262,9 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ReqSpec__DocReferencesAssignment_16_4_1"
 
 
-    // $ANTLR start "rule__ExternalDocuments__NameAssignment_1"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:18435:1: rule__ExternalDocuments__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__ExternalDocuments__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ExternalDocuments__FqnAssignment_1"
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:18435:1: rule__ExternalDocuments__FqnAssignment_1 : ( RULE_ID ) ;
+    public final void rule__ExternalDocuments__FqnAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -47275,9 +47275,9 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:18440:1: ( RULE_ID )
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:18441:1: RULE_ID
             {
-             before(grammarAccess.getExternalDocumentsAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ExternalDocuments__NameAssignment_136538); 
-             after(grammarAccess.getExternalDocumentsAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getExternalDocumentsAccess().getFqnIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ExternalDocuments__FqnAssignment_136538); 
+             after(grammarAccess.getExternalDocumentsAccess().getFqnIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -47296,7 +47296,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ExternalDocuments__NameAssignment_1"
+    // $ANTLR end "rule__ExternalDocuments__FqnAssignment_1"
 
 
     // $ANTLR start "rule__ExternalDocuments__DocsAssignment_2"
@@ -47381,9 +47381,9 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ExternalDocuments__DocsAssignment_3"
 
 
-    // $ANTLR start "rule__ExternalDocument__NameAssignment_1"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:18480:1: rule__ExternalDocument__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__ExternalDocument__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ExternalDocument__FqnAssignment_1"
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:18480:1: rule__ExternalDocument__FqnAssignment_1 : ( RULE_ID ) ;
+    public final void rule__ExternalDocument__FqnAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -47394,9 +47394,9 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:18485:1: ( RULE_ID )
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:18486:1: RULE_ID
             {
-             before(grammarAccess.getExternalDocumentAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ExternalDocument__NameAssignment_136631); 
-             after(grammarAccess.getExternalDocumentAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getExternalDocumentAccess().getFqnIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ExternalDocument__FqnAssignment_136631); 
+             after(grammarAccess.getExternalDocumentAccess().getFqnIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -47415,7 +47415,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ExternalDocument__NameAssignment_1"
+    // $ANTLR end "rule__ExternalDocument__FqnAssignment_1"
 
 
     // $ANTLR start "rule__ExternalDocument__XternalReferenceAssignment_4"
@@ -50159,7 +50159,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_KEYWORD_26_in_rule__Goals__Group__0__Impl5092 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Goals__Group__1__Impl_in_rule__Goals__Group__15123 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
     public static final BitSet FOLLOW_rule__Goals__Group__2_in_rule__Goals__Group__15126 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Goals__NameAssignment_1_in_rule__Goals__Group__1__Impl5153 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Goals__FqnAssignment_1_in_rule__Goals__Group__1__Impl5153 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Goals__Group__2__Impl_in_rule__Goals__Group__25183 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
     public static final BitSet FOLLOW_rule__Goals__Group__3_in_rule__Goals__Group__25186 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_KEYWORD_16_in_rule__Goals__Group__2__Impl5214 = new BitSet(new long[]{0x0000000000000002L});
@@ -50182,7 +50182,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_KEYWORD_22_in_rule__Goal__Group__0__Impl5596 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Goal__Group__1__Impl_in_rule__Goal__Group__15627 = new BitSet(new long[]{0x8200084401088200L,0x0000000000000005L});
     public static final BitSet FOLLOW_rule__Goal__Group__2_in_rule__Goal__Group__15630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Goal__NameAssignment_1_in_rule__Goal__Group__1__Impl5657 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Goal__FqnAssignment_1_in_rule__Goal__Group__1__Impl5657 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Goal__Group__2__Impl_in_rule__Goal__Group__25687 = new BitSet(new long[]{0x8200084401088200L,0x0000000000000005L});
     public static final BitSet FOLLOW_rule__Goal__Group__3_in_rule__Goal__Group__25690 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Goal__Group_2__0_in_rule__Goal__Group__2__Impl5717 = new BitSet(new long[]{0x0000000000000002L});
@@ -50423,7 +50423,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_KEYWORD_75_in_rule__ReqSpecifications__Group__0__Impl11045 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ReqSpecifications__Group__1__Impl_in_rule__ReqSpecifications__Group__111076 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
     public static final BitSet FOLLOW_rule__ReqSpecifications__Group__2_in_rule__ReqSpecifications__Group__111079 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReqSpecifications__NameAssignment_1_in_rule__ReqSpecifications__Group__1__Impl11106 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReqSpecifications__FqnAssignment_1_in_rule__ReqSpecifications__Group__1__Impl11106 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ReqSpecifications__Group__2__Impl_in_rule__ReqSpecifications__Group__211136 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
     public static final BitSet FOLLOW_rule__ReqSpecifications__Group__3_in_rule__ReqSpecifications__Group__211139 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_KEYWORD_16_in_rule__ReqSpecifications__Group__2__Impl11167 = new BitSet(new long[]{0x0000000000000002L});
@@ -50461,7 +50461,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__ReqSpec__ReqkindAssignment_0_in_rule__ReqSpec__Group__0__Impl11923 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ReqSpec__Group__1__Impl_in_rule__ReqSpec__Group__111953 = new BitSet(new long[]{0x8200084401088200L,0x0000000000000005L});
     public static final BitSet FOLLOW_rule__ReqSpec__Group__2_in_rule__ReqSpec__Group__111956 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReqSpec__NameAssignment_1_in_rule__ReqSpec__Group__1__Impl11983 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReqSpec__FqnAssignment_1_in_rule__ReqSpec__Group__1__Impl11983 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ReqSpec__Group__2__Impl_in_rule__ReqSpec__Group__212013 = new BitSet(new long[]{0x8200084401088200L,0x0000000000000005L});
     public static final BitSet FOLLOW_rule__ReqSpec__Group__3_in_rule__ReqSpec__Group__212016 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ReqSpec__Group_2__0_in_rule__ReqSpec__Group__2__Impl12043 = new BitSet(new long[]{0x0000000000000002L});
@@ -50780,7 +50780,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_KEYWORD_58_in_rule__ExternalDocuments__Group__0__Impl19127 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ExternalDocuments__Group__1__Impl_in_rule__ExternalDocuments__Group__119158 = new BitSet(new long[]{0x0000000020000000L});
     public static final BitSet FOLLOW_rule__ExternalDocuments__Group__2_in_rule__ExternalDocuments__Group__119161 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ExternalDocuments__NameAssignment_1_in_rule__ExternalDocuments__Group__1__Impl19188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ExternalDocuments__FqnAssignment_1_in_rule__ExternalDocuments__Group__1__Impl19188 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ExternalDocuments__Group__2__Impl_in_rule__ExternalDocuments__Group__219218 = new BitSet(new long[]{0x8000000020000000L});
     public static final BitSet FOLLOW_rule__ExternalDocuments__Group__3_in_rule__ExternalDocuments__Group__219221 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ExternalDocuments__DocsAssignment_2_in_rule__ExternalDocuments__Group__2__Impl19248 = new BitSet(new long[]{0x0000000000000002L});
@@ -50800,7 +50800,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_KEYWORD_54_in_rule__ExternalDocument__Group__0__Impl19567 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ExternalDocument__Group__1__Impl_in_rule__ExternalDocument__Group__119598 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_rule__ExternalDocument__Group__2_in_rule__ExternalDocument__Group__119601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ExternalDocument__NameAssignment_1_in_rule__ExternalDocument__Group__1__Impl19628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ExternalDocument__FqnAssignment_1_in_rule__ExternalDocument__Group__1__Impl19628 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ExternalDocument__Group__2__Impl_in_rule__ExternalDocument__Group__219658 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
     public static final BitSet FOLLOW_rule__ExternalDocument__Group__3_in_rule__ExternalDocument__Group__219661 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_KEYWORD_18_in_rule__ExternalDocument__Group__2__Impl19689 = new BitSet(new long[]{0x0000000000000002L});
@@ -51457,10 +51457,10 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__RequirementDocument__ContentAlternatives_3_0_in_rule__RequirementDocument__ContentAssignment_334574 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__VerificationLibrary__NameAssignment_234607 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VerificationLibrary__ContentAlternatives_3_0_in_rule__VerificationLibrary__ContentAssignment_334638 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Goals__NameAssignment_134671 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Goals__FqnAssignment_134671 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQCLREF_in_rule__Goals__ClassifierAssignment_334706 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleGoal_in_rule__Goals__GoalsAssignment_434741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Goal__NameAssignment_134772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Goal__FqnAssignment_134772 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRELREF_in_rule__Goal__GoalTargetAssignment_2_134807 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValueString_in_rule__Goal__TitleAssignment_3_234842 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValueString_in_rule__Goal__DescriptionAssignment_4_234873 = new BitSet(new long[]{0x0000000000000002L});
@@ -51480,11 +51480,11 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleREQREF_in_rule__Goal__StakeholderReferenceAssignment_12_5_135367 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRELREF_in_rule__Goal__DocReferencesAssignment_13_335406 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRELREF_in_rule__Goal__DocReferencesAssignment_13_4_135445 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ReqSpecifications__NameAssignment_135480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ReqSpecifications__FqnAssignment_135480 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQCLREF_in_rule__ReqSpecifications__ReqTargetAssignment_335515 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleReqSpec_in_rule__ReqSpecifications__ReqsAssignment_435550 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleReqKind_in_rule__ReqSpec__ReqkindAssignment_035581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ReqSpec__NameAssignment_135612 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ReqSpec__FqnAssignment_135612 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRELREF_in_rule__ReqSpec__ReqTargetAssignment_2_135647 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValueString_in_rule__ReqSpec__TitleAssignment_3_235682 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValueString_in_rule__ReqSpec__DescriptionAssignment_4_235713 = new BitSet(new long[]{0x0000000000000002L});
@@ -51510,10 +51510,10 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleREQREF_in_rule__ReqSpec__SystemreqReferenceAssignment_15_5_136425 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRELREF_in_rule__ReqSpec__DocReferencesAssignment_16_336464 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRELREF_in_rule__ReqSpec__DocReferencesAssignment_16_4_136503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ExternalDocuments__NameAssignment_136538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ExternalDocuments__FqnAssignment_136538 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExternalDocument_in_rule__ExternalDocuments__DocsAssignment_236569 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleExternalDocument_in_rule__ExternalDocuments__DocsAssignment_336600 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ExternalDocument__NameAssignment_136631 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ExternalDocument__FqnAssignment_136631 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__ExternalDocument__XternalReferenceAssignment_436662 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQCLREF_in_rule__Aliases__AliasesTargetAssignment_236697 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAlias_in_rule__Aliases__AliasesAssignment_436732 = new BitSet(new long[]{0x0000000000000002L});

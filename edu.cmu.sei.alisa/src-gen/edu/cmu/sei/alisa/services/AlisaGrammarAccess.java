@@ -349,8 +349,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Goals");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cGoalsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cFqnAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFqnIDTerminalRuleCall_1_0 = (RuleCall)cFqnAssignment_1.eContents().get(0);
 		private final Keyword cForKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cClassifierAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cClassifierClassifierCrossReference_3_0 = (CrossReference)cClassifierAssignment_3.eContents().get(0);
@@ -362,20 +362,20 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Goals:
-		//	"goals" name=ID "for" classifier=[aadl2::Classifier|QCLREF] goals+=Goal* "end" "goals" ";";
+		//	"goals" fqn=ID "for" classifier=[aadl2::Classifier|QCLREF] goals+=Goal* "end" "goals" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"goals" name=ID "for" classifier=[aadl2::Classifier|QCLREF] goals+=Goal* "end" "goals" ";"
+		//"goals" fqn=ID "for" classifier=[aadl2::Classifier|QCLREF] goals+=Goal* "end" "goals" ";"
 		public Group getGroup() { return cGroup; }
 
 		//"goals"
 		public Keyword getGoalsKeyword_0() { return cGoalsKeyword_0; }
 
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//fqn=ID
+		public Assignment getFqnAssignment_1() { return cFqnAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getFqnIDTerminalRuleCall_1_0() { return cFqnIDTerminalRuleCall_1_0; }
 
 		//"for"
 		public Keyword getForKeyword_2() { return cForKeyword_2; }
@@ -409,8 +409,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Goal");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cGoalKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cFqnAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFqnIDTerminalRuleCall_1_0 = (RuleCall)cFqnAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cForKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cGoalTargetAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -528,7 +528,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		//Goal:
-		//	"goal" name=ID ("for" goalTarget=[aadl2::NamedElement|RELREF])? ("title" ":" title=ValueString ";")? ("description"
+		//	"goal" fqn=ID ("for" goalTarget=[aadl2::NamedElement|RELREF])? ("title" ":" title=ValueString ";")? ("description"
 		//	":" description=ValueString ";")? ("assertion" ":" assert=ValueString ";")? ("rationale" ":" rationale=ValueString
 		//	";")? ("issues" ":" issue+=ValueString ("," issue+=ValueString)* ";")? ("see" ":" modelReference+=QCRELREF (","
 		//	modelReference+=QCRELREF)* ";")? ("refines" ":" refinesReference+=[Goal|REQREF] (","
@@ -539,7 +539,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//	docReferences+=[ExternalDocument|RELREF] ("," docReferences+=[ExternalDocument|RELREF])* ";")? "end" "goal" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"goal" name=ID ("for" goalTarget=[aadl2::NamedElement|RELREF])? ("title" ":" title=ValueString ";")? ("description" ":"
+		//"goal" fqn=ID ("for" goalTarget=[aadl2::NamedElement|RELREF])? ("title" ":" title=ValueString ";")? ("description" ":"
 		//description=ValueString ";")? ("assertion" ":" assert=ValueString ";")? ("rationale" ":" rationale=ValueString ";")?
 		//("issues" ":" issue+=ValueString ("," issue+=ValueString)* ";")? ("see" ":" modelReference+=QCRELREF (","
 		//modelReference+=QCRELREF)* ";")? ("refines" ":" refinesReference+=[Goal|REQREF] ("," refinesReference+=[Goal|REQREF])*
@@ -553,11 +553,11 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//"goal"
 		public Keyword getGoalKeyword_0() { return cGoalKeyword_0; }
 
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//fqn=ID
+		public Assignment getFqnAssignment_1() { return cFqnAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getFqnIDTerminalRuleCall_1_0() { return cFqnIDTerminalRuleCall_1_0; }
 
 		//("for" goalTarget=[aadl2::NamedElement|RELREF])?
 		public Group getGroup_2() { return cGroup_2; }
@@ -910,8 +910,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReqSpecifications");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRequirementsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cFqnAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFqnIDTerminalRuleCall_1_0 = (RuleCall)cFqnAssignment_1.eContents().get(0);
 		private final Keyword cForKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cReqTargetAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cReqTargetNamedElementCrossReference_3_0 = (CrossReference)cReqTargetAssignment_3.eContents().get(0);
@@ -923,22 +923,22 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//ReqSpecifications:
-		//	"requirements" name=ID "for" reqTarget= //(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
+		//	"requirements" fqn=ID "for" reqTarget= //(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
 		//	[aadl2::NamedElement|QCLREF] reqs+=ReqSpec* "end" "requirements" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"requirements" name=ID "for" reqTarget= //(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
+		//"requirements" fqn=ID "for" reqTarget= //(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
 		//[aadl2::NamedElement|QCLREF] reqs+=ReqSpec* "end" "requirements" ";"
 		public Group getGroup() { return cGroup; }
 
 		//"requirements"
 		public Keyword getRequirementsKeyword_0() { return cRequirementsKeyword_0; }
 
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//fqn=ID
+		public Assignment getFqnAssignment_1() { return cFqnAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getFqnIDTerminalRuleCall_1_0() { return cFqnIDTerminalRuleCall_1_0; }
 
 		//"for"
 		public Keyword getForKeyword_2() { return cForKeyword_2; }
@@ -1045,8 +1045,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cReqkindAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cReqkindReqKindParserRuleCall_0_0 = (RuleCall)cReqkindAssignment_0.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cFqnAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFqnIDTerminalRuleCall_1_0 = (RuleCall)cFqnAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cForKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cReqTargetAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -1202,7 +1202,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_19 = (Keyword)cGroup.eContents().get(19);
 		
 		//ReqSpec:
-		//	reqkind=ReqKind name=ID ("for" reqTarget=[aadl2::NamedElement|RELREF])? ("title" ":" title=ValueString ";")?
+		//	reqkind=ReqKind fqn=ID ("for" reqTarget=[aadl2::NamedElement|RELREF])? ("title" ":" title=ValueString ";")?
 		//	("description" ":" description=ValueString ";")? ("assertion" ":" assert=ValueString ";")? ("rationale" ":"
 		//	rationale=ValueString ";")? ("issues" ":" issue+=ValueString ("," issue+=ValueString)* ";")? ("see" ":"
 		//	modelReference+=QCRELREF ("," modelReference+=QCRELREF)* ";")? ("see" "goal" ":" goalReference+=[Goal] (","
@@ -1216,7 +1216,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//	"end" "req" ";";
 		public ParserRule getRule() { return rule; }
 
-		//reqkind=ReqKind name=ID ("for" reqTarget=[aadl2::NamedElement|RELREF])? ("title" ":" title=ValueString ";")?
+		//reqkind=ReqKind fqn=ID ("for" reqTarget=[aadl2::NamedElement|RELREF])? ("title" ":" title=ValueString ";")?
 		//("description" ":" description=ValueString ";")? ("assertion" ":" assert=ValueString ";")? ("rationale" ":"
 		//rationale=ValueString ";")? ("issues" ":" issue+=ValueString ("," issue+=ValueString)* ";")? ("see" ":"
 		//modelReference+=QCRELREF ("," modelReference+=QCRELREF)* ";")? ("see" "goal" ":" goalReference+=[Goal] (","
@@ -1236,11 +1236,11 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ReqKind
 		public RuleCall getReqkindReqKindParserRuleCall_0_0() { return cReqkindReqKindParserRuleCall_0_0; }
 
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//fqn=ID
+		public Assignment getFqnAssignment_1() { return cFqnAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getFqnIDTerminalRuleCall_1_0() { return cFqnIDTerminalRuleCall_1_0; }
 
 		//("for" reqTarget=[aadl2::NamedElement|RELREF])?
 		public Group getGroup_2() { return cGroup_2; }
@@ -1707,8 +1707,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExternalDocuments");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDocumentsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cFqnAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFqnIDTerminalRuleCall_1_0 = (RuleCall)cFqnAssignment_1.eContents().get(0);
 		private final Assignment cDocsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cDocsExternalDocumentParserRuleCall_2_0 = (RuleCall)cDocsAssignment_2.eContents().get(0);
 		private final Assignment cDocsAssignment_3 = (Assignment)cGroup.eContents().get(3);
@@ -1718,20 +1718,20 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ExternalDocuments:
-		//	"documents" name=ID docs+=ExternalDocument docs+=ExternalDocument* "end" "documents" ";";
+		//	"documents" fqn=ID docs+=ExternalDocument docs+=ExternalDocument* "end" "documents" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"documents" name=ID docs+=ExternalDocument docs+=ExternalDocument* "end" "documents" ";"
+		//"documents" fqn=ID docs+=ExternalDocument docs+=ExternalDocument* "end" "documents" ";"
 		public Group getGroup() { return cGroup; }
 
 		//"documents"
 		public Keyword getDocumentsKeyword_0() { return cDocumentsKeyword_0; }
 
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//fqn=ID
+		public Assignment getFqnAssignment_1() { return cFqnAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getFqnIDTerminalRuleCall_1_0() { return cFqnIDTerminalRuleCall_1_0; }
 
 		//docs+=ExternalDocument
 		public Assignment getDocsAssignment_2() { return cDocsAssignment_2; }
@@ -1759,8 +1759,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExternalDocument");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDocumentKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cFqnAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFqnIDTerminalRuleCall_1_0 = (RuleCall)cFqnAssignment_1.eContents().get(0);
 		private final Keyword cSeeKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cXternalReferenceAssignment_4 = (Assignment)cGroup.eContents().get(4);
@@ -1768,20 +1768,20 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ExternalDocument:
-		//	"document" name=ID "see" ":" xternalReference=STRING ";";
+		//	"document" fqn=ID "see" ":" xternalReference=STRING ";";
 		public ParserRule getRule() { return rule; }
 
-		//"document" name=ID "see" ":" xternalReference=STRING ";"
+		//"document" fqn=ID "see" ":" xternalReference=STRING ";"
 		public Group getGroup() { return cGroup; }
 
 		//"document"
 		public Keyword getDocumentKeyword_0() { return cDocumentKeyword_0; }
 
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//fqn=ID
+		public Assignment getFqnAssignment_1() { return cFqnAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getFqnIDTerminalRuleCall_1_0() { return cFqnIDTerminalRuleCall_1_0; }
 
 		//"see"
 		public Keyword getSeeKeyword_2() { return cSeeKeyword_2; }
@@ -3525,7 +3525,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Goals:
-	//	"goals" name=ID "for" classifier=[aadl2::Classifier|QCLREF] goals+=Goal* "end" "goals" ";";
+	//	"goals" fqn=ID "for" classifier=[aadl2::Classifier|QCLREF] goals+=Goal* "end" "goals" ";";
 	public GoalsElements getGoalsAccess() {
 		return (pGoals != null) ? pGoals : (pGoals = new GoalsElements());
 	}
@@ -3535,7 +3535,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Goal:
-	//	"goal" name=ID ("for" goalTarget=[aadl2::NamedElement|RELREF])? ("title" ":" title=ValueString ";")? ("description"
+	//	"goal" fqn=ID ("for" goalTarget=[aadl2::NamedElement|RELREF])? ("title" ":" title=ValueString ";")? ("description"
 	//	":" description=ValueString ";")? ("assertion" ":" assert=ValueString ";")? ("rationale" ":" rationale=ValueString
 	//	";")? ("issues" ":" issue+=ValueString ("," issue+=ValueString)* ";")? ("see" ":" modelReference+=QCRELREF (","
 	//	modelReference+=QCRELREF)* ";")? ("refines" ":" refinesReference+=[Goal|REQREF] (","
@@ -3553,7 +3553,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ReqSpecifications:
-	//	"requirements" name=ID "for" reqTarget= //(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
+	//	"requirements" fqn=ID "for" reqTarget= //(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
 	//	[aadl2::NamedElement|QCLREF] reqs+=ReqSpec* "end" "requirements" ";";
 	public ReqSpecificationsElements getReqSpecificationsAccess() {
 		return (pReqSpecifications != null) ? pReqSpecifications : (pReqSpecifications = new ReqSpecificationsElements());
@@ -3575,7 +3575,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ReqSpec:
-	//	reqkind=ReqKind name=ID ("for" reqTarget=[aadl2::NamedElement|RELREF])? ("title" ":" title=ValueString ";")?
+	//	reqkind=ReqKind fqn=ID ("for" reqTarget=[aadl2::NamedElement|RELREF])? ("title" ":" title=ValueString ";")?
 	//	("description" ":" description=ValueString ";")? ("assertion" ":" assert=ValueString ";")? ("rationale" ":"
 	//	rationale=ValueString ";")? ("issues" ":" issue+=ValueString ("," issue+=ValueString)* ";")? ("see" ":"
 	//	modelReference+=QCRELREF ("," modelReference+=QCRELREF)* ";")? ("see" "goal" ":" goalReference+=[Goal] (","
@@ -3596,7 +3596,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ExternalDocuments:
-	//	"documents" name=ID docs+=ExternalDocument docs+=ExternalDocument* "end" "documents" ";";
+	//	"documents" fqn=ID docs+=ExternalDocument docs+=ExternalDocument* "end" "documents" ";";
 	public ExternalDocumentsElements getExternalDocumentsAccess() {
 		return (pExternalDocuments != null) ? pExternalDocuments : (pExternalDocuments = new ExternalDocumentsElements());
 	}
@@ -3606,7 +3606,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ExternalDocument:
-	//	"document" name=ID "see" ":" xternalReference=STRING ";";
+	//	"document" fqn=ID "see" ":" xternalReference=STRING ";";
 	public ExternalDocumentElements getExternalDocumentAccess() {
 		return (pExternalDocument != null) ? pExternalDocument : (pExternalDocument = new ExternalDocumentElements());
 	}

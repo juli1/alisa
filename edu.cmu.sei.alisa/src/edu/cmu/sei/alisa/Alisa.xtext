@@ -38,14 +38,14 @@ VerificationLibrary:
 
 
 Goals:
-	'goals' name=ID 'for' classifier=[aadl2::Classifier|QCLREF]
+	'goals' fqn=ID 'for' classifier=[aadl2::Classifier|QCLREF]
 	(goals += Goal)*
 	'end' 'goals'';'
 	;
 	
 
 Goal:
-	'goal' name=ID 
+	'goal' fqn=ID 
 	( 'for' goalTarget=[aadl2::NamedElement|RELREF])?
 	('title' ':' title=ValueString ';')? 
 	('description' ':' description=ValueString';')? 
@@ -61,14 +61,14 @@ Goal:
 	 'end''goal'';';
 
 ReqSpecifications:
-	'requirements' name=ID 'for' reqTarget=[aadl2::NamedElement|QCLREF]//(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
+	'requirements' fqn=ID 'for' reqTarget=[aadl2::NamedElement|QCLREF]//(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
 	(reqs+=ReqSpec)*
 	'end' 'requirements' ';';
 
 ReqKind : 'requirement'|'assumption'|'input''assumption'|'guarantee'|'output''guarantee'|'invariant'|'constraint'|'design''constraint';
 	
 ReqSpec:
-	reqkind=ReqKind name=ID   
+	reqkind=ReqKind fqn=ID   
 	
 	( 'for' reqTarget=[aadl2::NamedElement|RELREF])?
 	('title' ':' title=ValueString';')? 
@@ -90,7 +90,7 @@ ReqSpec:
 
 ExternalDocuments:
 	'documents'
-	name=ID 
+	fqn=ID 
 	docs+=ExternalDocument ( docs+=ExternalDocument)*
 	'end''documents' ';'
 	
@@ -99,7 +99,7 @@ ExternalDocuments:
 
 ExternalDocument:
 	'document'
-	name=ID 'see' ':' xternalReference=STRING ';'
+	fqn=ID 'see' ':' xternalReference=STRING ';'
 	
 ;
 
