@@ -38,14 +38,14 @@ VerificationLibrary:
 
 
 Goals:
-	'goals' fqn=ID 'for' classifier=[aadl2::Classifier|QCLREF]
+	'goals' name=ID 'for' classifier=[aadl2::Classifier|QCLREF]
 	(goals += Goal)*
 	'end' 'goals'';'
 	;
 	
 
 Goal:
-	'goal' fqn=ID 
+	'goal' name=ID 
 	( 'for' goalTarget=[aadl2::NamedElement|RELREF])?
 	('title' ':' title=ValueString ';')? 
 	('description' ':' description=ValueString';')? 
@@ -61,14 +61,14 @@ Goal:
 	 'end''goal'';';
 
 ReqSpecifications:
-	'requirements' fqn=ID 'for' reqTarget=[aadl2::NamedElement|QCLREF]//(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
+	'requirements' name=ID 'for' reqTarget=[aadl2::NamedElement|QCLREF]//(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
 	(reqs+=ReqSpec)*
 	'end' 'requirements' ';';
 
 ReqKind : 'requirement'|'assumption'|'input''assumption'|'guarantee'|'output''guarantee'|'invariant'|'constraint'|'design''constraint';
 	
 ReqSpec:
-	reqkind=ReqKind fqn=ID   
+	reqkind=ReqKind name=ID   
 	
 	( 'for' reqTarget=[aadl2::NamedElement|RELREF])?
 	('title' ':' title=ValueString';')? 
@@ -82,6 +82,7 @@ ReqSpec:
 	('refines' ':' refinesReference+=[ReqSpec|REQREF](',' refinesReference+=[ReqSpec|REQREF])*';')? 
 	('decomposes' ':' decomposesReference+=[ReqSpec|REQREF](',' decomposesReference+=[ReqSpec|REQREF])*';')? 
 	('evolves' ':' evolvesReference+=[ReqSpec|REQREF](',' evolvesReference+=[ReqSpec|REQREF])*';')? 
+	('verified' 'by' ':' verifiedBy+=(VerificationDecomposition)*)?
 	('see' 'stakeholder' 'req' ':' stakeholderreqReference+=[Requirement|REQREF] (',' stakeholderreqReference+=[Requirement|REQREF])*';')?
 	('see' 'system' 'req' ':' systemreqReference+=[Requirement|REQREF] (',' systemreqReference+=[Requirement|REQREF])*';')?
 	('see' 'document' ':' docReferences+=[ExternalDocument|RELREF] (',' docReferences+=[ExternalDocument|RELREF])*';')? 
@@ -90,7 +91,7 @@ ReqSpec:
 
 ExternalDocuments:
 	'documents'
-	fqn=ID 
+	name=ID 
 	docs+=ExternalDocument ( docs+=ExternalDocument)*
 	'end''documents' ';'
 	
@@ -99,7 +100,7 @@ ExternalDocuments:
 
 ExternalDocument:
 	'document'
-	fqn=ID 'see' ':' xternalReference=STRING ';'
+	name=ID 'see' ':' xternalReference=STRING ';'
 	
 ;
 
@@ -221,7 +222,7 @@ VerificationActivity:
  
 
 VerificationMethod:
-	'manual' | 'automatic'
+	'manual' | 'automatic' | 'review' | 'testing' | 'analysis' | 'verification'
 ;
 
 
@@ -240,11 +241,11 @@ VerificationResult:
 ;
 
 VerificationResultState:
-	'scheduled' | 'passed' | 'inprogress'
+	'scheduled' | 'completed' | 'inprogress'
 ;
 
 VerificationResultStatus:
-	'ok' | 'unknown' | 'tbd'
+	'pass' | 'fail' | 'unknown'
 ;
 
 	// classifier reference

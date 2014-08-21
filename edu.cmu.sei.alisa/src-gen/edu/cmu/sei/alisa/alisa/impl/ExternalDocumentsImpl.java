@@ -8,15 +8,12 @@ import edu.cmu.sei.alisa.alisa.ExternalDocuments;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -28,7 +25,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentsImpl#getFqn <em>Fqn</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentsImpl#getDocs <em>Docs</em>}</li>
  * </ul>
  * </p>
@@ -37,26 +33,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ExternalDocumentsImpl extends DocumentImpl implements ExternalDocuments
 {
-  /**
-   * The default value of the '{@link #getFqn() <em>Fqn</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFqn()
-   * @generated
-   * @ordered
-   */
-  protected static final String FQN_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getFqn() <em>Fqn</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFqn()
-   * @generated
-   * @ordered
-   */
-  protected String fqn = FQN_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getDocs() <em>Docs</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -86,29 +62,6 @@ public class ExternalDocumentsImpl extends DocumentImpl implements ExternalDocum
   protected EClass eStaticClass()
   {
     return AlisaPackage.Literals.EXTERNAL_DOCUMENTS;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getFqn()
-  {
-    return fqn;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFqn(String newFqn)
-  {
-    String oldFqn = fqn;
-    fqn = newFqn;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.EXTERNAL_DOCUMENTS__FQN, oldFqn, fqn));
   }
 
   /**
@@ -151,8 +104,6 @@ public class ExternalDocumentsImpl extends DocumentImpl implements ExternalDocum
   {
     switch (featureID)
     {
-      case AlisaPackage.EXTERNAL_DOCUMENTS__FQN:
-        return getFqn();
       case AlisaPackage.EXTERNAL_DOCUMENTS__DOCS:
         return getDocs();
     }
@@ -170,9 +121,6 @@ public class ExternalDocumentsImpl extends DocumentImpl implements ExternalDocum
   {
     switch (featureID)
     {
-      case AlisaPackage.EXTERNAL_DOCUMENTS__FQN:
-        setFqn((String)newValue);
-        return;
       case AlisaPackage.EXTERNAL_DOCUMENTS__DOCS:
         getDocs().clear();
         getDocs().addAll((Collection<? extends ExternalDocument>)newValue);
@@ -191,9 +139,6 @@ public class ExternalDocumentsImpl extends DocumentImpl implements ExternalDocum
   {
     switch (featureID)
     {
-      case AlisaPackage.EXTERNAL_DOCUMENTS__FQN:
-        setFqn(FQN_EDEFAULT);
-        return;
       case AlisaPackage.EXTERNAL_DOCUMENTS__DOCS:
         getDocs().clear();
         return;
@@ -211,29 +156,10 @@ public class ExternalDocumentsImpl extends DocumentImpl implements ExternalDocum
   {
     switch (featureID)
     {
-      case AlisaPackage.EXTERNAL_DOCUMENTS__FQN:
-        return FQN_EDEFAULT == null ? fqn != null : !FQN_EDEFAULT.equals(fqn);
       case AlisaPackage.EXTERNAL_DOCUMENTS__DOCS:
         return docs != null && !docs.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (fqn: ");
-    result.append(fqn);
-    result.append(')');
-    return result.toString();
   }
 
 } //ExternalDocumentsImpl

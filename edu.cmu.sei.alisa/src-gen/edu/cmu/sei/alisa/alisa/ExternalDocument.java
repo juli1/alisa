@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ExternalDocument#getFqn <em>Fqn</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.ExternalDocument#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ExternalDocument#getXternalReference <em>Xternal Reference</em>}</li>
  * </ul>
  * </p>
@@ -24,30 +24,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface ExternalDocument extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Fqn</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Fqn</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Fqn</em>' attribute.
-   * @see #setFqn(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getExternalDocument_Fqn()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getExternalDocument_Name()
    * @model
    * @generated
    */
-  String getFqn();
+  String getName();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ExternalDocument#getFqn <em>Fqn</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ExternalDocument#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Fqn</em>' attribute.
-   * @see #getFqn()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setFqn(String value);
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Xternal Reference</b></em>' attribute.

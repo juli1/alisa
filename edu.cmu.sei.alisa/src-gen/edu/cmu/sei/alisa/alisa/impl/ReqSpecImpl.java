@@ -7,10 +7,12 @@ import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.ReqSpec;
 import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -22,7 +24,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.osate.aadl2.NamedElement;
 
@@ -34,7 +38,7 @@ import org.osate.aadl2.NamedElement;
  * The following features are implemented:
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getReqkind <em>Reqkind</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getFqn <em>Fqn</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getReqTarget <em>Req Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getDescription <em>Description</em>}</li>
@@ -47,6 +51,7 @@ import org.osate.aadl2.NamedElement;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getRefinesReference <em>Refines Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getDecomposesReference <em>Decomposes Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getEvolvesReference <em>Evolves Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getVerifiedBy <em>Verified By</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getStakeholderreqReference <em>Stakeholderreq Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getSystemreqReference <em>Systemreq Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getDocReferences <em>Doc References</em>}</li>
@@ -78,24 +83,24 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   protected String reqkind = REQKIND_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getFqn() <em>Fqn</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFqn()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String FQN_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getFqn() <em>Fqn</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFqn()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String fqn = FQN_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getReqTarget() <em>Req Target</em>}' reference.
@@ -258,6 +263,16 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   protected EList<ReqSpec> evolvesReference;
 
   /**
+   * The cached value of the '{@link #getVerifiedBy() <em>Verified By</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVerifiedBy()
+   * @generated
+   * @ordered
+   */
+  protected EList<VerificationDecomposition> verifiedBy;
+
+  /**
    * The cached value of the '{@link #getStakeholderreqReference() <em>Stakeholderreq Reference</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -336,9 +351,9 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getFqn()
+  public String getName()
   {
-    return fqn;
+    return name;
   }
 
   /**
@@ -346,12 +361,12 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFqn(String newFqn)
+  public void setName(String newName)
   {
-    String oldFqn = fqn;
-    fqn = newFqn;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQ_SPEC__FQN, oldFqn, fqn));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQ_SPEC__NAME, oldName, name));
   }
 
   /**
@@ -592,6 +607,20 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<VerificationDecomposition> getVerifiedBy()
+  {
+    if (verifiedBy == null)
+    {
+      verifiedBy = new EObjectContainmentEList<VerificationDecomposition>(VerificationDecomposition.class, this, AlisaPackage.REQ_SPEC__VERIFIED_BY);
+    }
+    return verifiedBy;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Requirement> getStakeholderreqReference()
   {
     if (stakeholderreqReference == null)
@@ -635,14 +664,30 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AlisaPackage.REQ_SPEC__VERIFIED_BY:
+        return ((InternalEList<?>)getVerifiedBy()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case AlisaPackage.REQ_SPEC__REQKIND:
         return getReqkind();
-      case AlisaPackage.REQ_SPEC__FQN:
-        return getFqn();
+      case AlisaPackage.REQ_SPEC__NAME:
+        return getName();
       case AlisaPackage.REQ_SPEC__REQ_TARGET:
         if (resolve) return getReqTarget();
         return basicGetReqTarget();
@@ -668,6 +713,8 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
         return getDecomposesReference();
       case AlisaPackage.REQ_SPEC__EVOLVES_REFERENCE:
         return getEvolvesReference();
+      case AlisaPackage.REQ_SPEC__VERIFIED_BY:
+        return getVerifiedBy();
       case AlisaPackage.REQ_SPEC__STAKEHOLDERREQ_REFERENCE:
         return getStakeholderreqReference();
       case AlisaPackage.REQ_SPEC__SYSTEMREQ_REFERENCE:
@@ -692,8 +739,8 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
       case AlisaPackage.REQ_SPEC__REQKIND:
         setReqkind((String)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__FQN:
-        setFqn((String)newValue);
+      case AlisaPackage.REQ_SPEC__NAME:
+        setName((String)newValue);
         return;
       case AlisaPackage.REQ_SPEC__REQ_TARGET:
         setReqTarget((NamedElement)newValue);
@@ -738,6 +785,10 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
         getEvolvesReference().clear();
         getEvolvesReference().addAll((Collection<? extends ReqSpec>)newValue);
         return;
+      case AlisaPackage.REQ_SPEC__VERIFIED_BY:
+        getVerifiedBy().clear();
+        getVerifiedBy().addAll((Collection<? extends VerificationDecomposition>)newValue);
+        return;
       case AlisaPackage.REQ_SPEC__STAKEHOLDERREQ_REFERENCE:
         getStakeholderreqReference().clear();
         getStakeholderreqReference().addAll((Collection<? extends Requirement>)newValue);
@@ -767,8 +818,8 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
       case AlisaPackage.REQ_SPEC__REQKIND:
         setReqkind(REQKIND_EDEFAULT);
         return;
-      case AlisaPackage.REQ_SPEC__FQN:
-        setFqn(FQN_EDEFAULT);
+      case AlisaPackage.REQ_SPEC__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case AlisaPackage.REQ_SPEC__REQ_TARGET:
         setReqTarget((NamedElement)null);
@@ -806,6 +857,9 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
       case AlisaPackage.REQ_SPEC__EVOLVES_REFERENCE:
         getEvolvesReference().clear();
         return;
+      case AlisaPackage.REQ_SPEC__VERIFIED_BY:
+        getVerifiedBy().clear();
+        return;
       case AlisaPackage.REQ_SPEC__STAKEHOLDERREQ_REFERENCE:
         getStakeholderreqReference().clear();
         return;
@@ -831,8 +885,8 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
     {
       case AlisaPackage.REQ_SPEC__REQKIND:
         return REQKIND_EDEFAULT == null ? reqkind != null : !REQKIND_EDEFAULT.equals(reqkind);
-      case AlisaPackage.REQ_SPEC__FQN:
-        return FQN_EDEFAULT == null ? fqn != null : !FQN_EDEFAULT.equals(fqn);
+      case AlisaPackage.REQ_SPEC__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.REQ_SPEC__REQ_TARGET:
         return reqTarget != null;
       case AlisaPackage.REQ_SPEC__TITLE:
@@ -857,6 +911,8 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
         return decomposesReference != null && !decomposesReference.isEmpty();
       case AlisaPackage.REQ_SPEC__EVOLVES_REFERENCE:
         return evolvesReference != null && !evolvesReference.isEmpty();
+      case AlisaPackage.REQ_SPEC__VERIFIED_BY:
+        return verifiedBy != null && !verifiedBy.isEmpty();
       case AlisaPackage.REQ_SPEC__STAKEHOLDERREQ_REFERENCE:
         return stakeholderreqReference != null && !stakeholderreqReference.isEmpty();
       case AlisaPackage.REQ_SPEC__SYSTEMREQ_REFERENCE:
@@ -880,8 +936,8 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (reqkind: ");
     result.append(reqkind);
-    result.append(", fqn: ");
-    result.append(fqn);
+    result.append(", name: ");
+    result.append(name);
     result.append(", title: ");
     result.append(title);
     result.append(", description: ");

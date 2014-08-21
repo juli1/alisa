@@ -20,6 +20,7 @@ public class AlisaSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AlisaGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_ElementReference___VersionKeyword_7_0_ColonKeyword_7_1__q;
 	protected AbstractElementAlias match_ElementType___VersionKeyword_7_0_ColonKeyword_7_1__q;
+	protected AbstractElementAlias match_ReqSpec___VerifiedKeyword_14_0_ByKeyword_14_1_ColonKeyword_14_2__q;
 	protected AbstractElementAlias match_Requirement___AssignedKeyword_5_0_ToKeyword_5_1_ColonKeyword_5_2__q;
 	protected AbstractElementAlias match_Requirement___DecomposedKeyword_8_0_ByKeyword_8_1_ColonKeyword_8_2__q;
 	protected AbstractElementAlias match_Requirement___ReferencedKeyword_6_0_ByKeyword_6_1_ColonKeyword_6_2__q;
@@ -32,6 +33,7 @@ public class AlisaSyntacticSequencer extends AbstractSyntacticSequencer {
 		grammarAccess = (AlisaGrammarAccess) access;
 		match_ElementReference___VersionKeyword_7_0_ColonKeyword_7_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getElementReferenceAccess().getVersionKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getElementReferenceAccess().getColonKeyword_7_1()));
 		match_ElementType___VersionKeyword_7_0_ColonKeyword_7_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getElementTypeAccess().getVersionKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getElementTypeAccess().getColonKeyword_7_1()));
+		match_ReqSpec___VerifiedKeyword_14_0_ByKeyword_14_1_ColonKeyword_14_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getReqSpecAccess().getVerifiedKeyword_14_0()), new TokenAlias(false, false, grammarAccess.getReqSpecAccess().getByKeyword_14_1()), new TokenAlias(false, false, grammarAccess.getReqSpecAccess().getColonKeyword_14_2()));
 		match_Requirement___AssignedKeyword_5_0_ToKeyword_5_1_ColonKeyword_5_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRequirementAccess().getAssignedKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getRequirementAccess().getToKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getRequirementAccess().getColonKeyword_5_2()));
 		match_Requirement___DecomposedKeyword_8_0_ByKeyword_8_1_ColonKeyword_8_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRequirementAccess().getDecomposedKeyword_8_0()), new TokenAlias(false, false, grammarAccess.getRequirementAccess().getByKeyword_8_1()), new TokenAlias(false, false, grammarAccess.getRequirementAccess().getColonKeyword_8_2()));
 		match_Requirement___ReferencedKeyword_6_0_ByKeyword_6_1_ColonKeyword_6_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getRequirementAccess().getReferencedKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getRequirementAccess().getByKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getRequirementAccess().getColonKeyword_6_2()));
@@ -56,6 +58,8 @@ public class AlisaSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_ElementReference___VersionKeyword_7_0_ColonKeyword_7_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_ElementType___VersionKeyword_7_0_ColonKeyword_7_1__q.equals(syntax))
 				emit_ElementType___VersionKeyword_7_0_ColonKeyword_7_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_ReqSpec___VerifiedKeyword_14_0_ByKeyword_14_1_ColonKeyword_14_2__q.equals(syntax))
+				emit_ReqSpec___VerifiedKeyword_14_0_ByKeyword_14_1_ColonKeyword_14_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Requirement___AssignedKeyword_5_0_ToKeyword_5_1_ColonKeyword_5_2__q.equals(syntax))
 				emit_Requirement___AssignedKeyword_5_0_ToKeyword_5_1_ColonKeyword_5_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Requirement___DecomposedKeyword_8_0_ByKeyword_8_1_ColonKeyword_8_2__q.equals(syntax))
@@ -85,6 +89,14 @@ public class AlisaSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('version' ':')?
 	 */
 	protected void emit_ElementType___VersionKeyword_7_0_ColonKeyword_7_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ('verified' 'by' ':')?
+	 */
+	protected void emit_ReqSpec___VerifiedKeyword_14_0_ByKeyword_14_1_ColonKeyword_14_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

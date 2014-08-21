@@ -32,7 +32,7 @@ import org.osate.aadl2.Classifier;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getFqn <em>Fqn</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getClassifier <em>Classifier</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getGoals <em>Goals</em>}</li>
  * </ul>
@@ -43,24 +43,24 @@ import org.osate.aadl2.Classifier;
 public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
 {
   /**
-   * The default value of the '{@link #getFqn() <em>Fqn</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFqn()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String FQN_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getFqn() <em>Fqn</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFqn()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String fqn = FQN_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getClassifier() <em>Classifier</em>}' reference.
@@ -108,9 +108,9 @@ public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getFqn()
+  public String getName()
   {
-    return fqn;
+    return name;
   }
 
   /**
@@ -118,12 +118,12 @@ public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFqn(String newFqn)
+  public void setName(String newName)
   {
-    String oldFqn = fqn;
-    fqn = newFqn;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOALS__FQN, oldFqn, fqn));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOALS__NAME, oldName, name));
   }
 
   /**
@@ -209,8 +209,8 @@ public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
   {
     switch (featureID)
     {
-      case AlisaPackage.GOALS__FQN:
-        return getFqn();
+      case AlisaPackage.GOALS__NAME:
+        return getName();
       case AlisaPackage.GOALS__CLASSIFIER:
         if (resolve) return getClassifier();
         return basicGetClassifier();
@@ -231,8 +231,8 @@ public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
   {
     switch (featureID)
     {
-      case AlisaPackage.GOALS__FQN:
-        setFqn((String)newValue);
+      case AlisaPackage.GOALS__NAME:
+        setName((String)newValue);
         return;
       case AlisaPackage.GOALS__CLASSIFIER:
         setClassifier((Classifier)newValue);
@@ -255,8 +255,8 @@ public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
   {
     switch (featureID)
     {
-      case AlisaPackage.GOALS__FQN:
-        setFqn(FQN_EDEFAULT);
+      case AlisaPackage.GOALS__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case AlisaPackage.GOALS__CLASSIFIER:
         setClassifier((Classifier)null);
@@ -278,8 +278,8 @@ public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
   {
     switch (featureID)
     {
-      case AlisaPackage.GOALS__FQN:
-        return FQN_EDEFAULT == null ? fqn != null : !FQN_EDEFAULT.equals(fqn);
+      case AlisaPackage.GOALS__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.GOALS__CLASSIFIER:
         return classifier != null;
       case AlisaPackage.GOALS__GOALS:
@@ -299,8 +299,8 @@ public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (fqn: ");
-    result.append(fqn);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

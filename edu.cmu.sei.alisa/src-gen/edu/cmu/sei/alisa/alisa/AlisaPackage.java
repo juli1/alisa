@@ -104,13 +104,22 @@ public interface AlisaPackage extends EPackage
   int DOCUMENT = 1;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOCUMENT__NAME = 0;
+
+  /**
    * The number of structural features of the '<em>Document</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOCUMENT_FEATURE_COUNT = 0;
+  int DOCUMENT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RequirementDocumentImpl <em>Requirement Document</em>}' class.
@@ -129,7 +138,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DOCUMENT__NAME = DOCUMENT_FEATURE_COUNT + 0;
+  int REQUIREMENT_DOCUMENT__NAME = DOCUMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' containment reference list.
@@ -138,7 +147,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DOCUMENT__CONTENT = DOCUMENT_FEATURE_COUNT + 1;
+  int REQUIREMENT_DOCUMENT__CONTENT = DOCUMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Requirement Document</em>' class.
@@ -147,7 +156,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DOCUMENT_FEATURE_COUNT = DOCUMENT_FEATURE_COUNT + 2;
+  int REQUIREMENT_DOCUMENT_FEATURE_COUNT = DOCUMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationLibraryImpl <em>Verification Library</em>}' class.
@@ -166,7 +175,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_LIBRARY__NAME = DOCUMENT_FEATURE_COUNT + 0;
+  int VERIFICATION_LIBRARY__NAME = DOCUMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' containment reference list.
@@ -175,7 +184,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_LIBRARY__CONTENT = DOCUMENT_FEATURE_COUNT + 1;
+  int VERIFICATION_LIBRARY__CONTENT = DOCUMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Verification Library</em>' class.
@@ -184,7 +193,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_LIBRARY_FEATURE_COUNT = DOCUMENT_FEATURE_COUNT + 2;
+  int VERIFICATION_LIBRARY_FEATURE_COUNT = DOCUMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl <em>Goals</em>}' class.
@@ -197,13 +206,13 @@ public interface AlisaPackage extends EPackage
   int GOALS = 4;
 
   /**
-   * The feature id for the '<em><b>Fqn</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOALS__FQN = 0;
+  int GOALS__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Classifier</b></em>' reference.
@@ -243,13 +252,13 @@ public interface AlisaPackage extends EPackage
   int GOAL = 5;
 
   /**
-   * The feature id for the '<em><b>Fqn</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOAL__FQN = 0;
+  int GOAL__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Goal Target</b></em>' reference.
@@ -379,13 +388,13 @@ public interface AlisaPackage extends EPackage
   int REQ_SPECIFICATIONS = 6;
 
   /**
-   * The feature id for the '<em><b>Fqn</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQ_SPECIFICATIONS__FQN = 0;
+  int REQ_SPECIFICATIONS__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Req Target</b></em>' reference.
@@ -434,13 +443,13 @@ public interface AlisaPackage extends EPackage
   int REQ_SPEC__REQKIND = 0;
 
   /**
-   * The feature id for the '<em><b>Fqn</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQ_SPEC__FQN = 1;
+  int REQ_SPEC__NAME = 1;
 
   /**
    * The feature id for the '<em><b>Req Target</b></em>' reference.
@@ -551,13 +560,22 @@ public interface AlisaPackage extends EPackage
   int REQ_SPEC__EVOLVES_REFERENCE = 13;
 
   /**
+   * The feature id for the '<em><b>Verified By</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQ_SPEC__VERIFIED_BY = 14;
+
+  /**
    * The feature id for the '<em><b>Stakeholderreq Reference</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQ_SPEC__STAKEHOLDERREQ_REFERENCE = 14;
+  int REQ_SPEC__STAKEHOLDERREQ_REFERENCE = 15;
 
   /**
    * The feature id for the '<em><b>Systemreq Reference</b></em>' reference list.
@@ -566,7 +584,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__SYSTEMREQ_REFERENCE = 15;
+  int REQ_SPEC__SYSTEMREQ_REFERENCE = 16;
 
   /**
    * The feature id for the '<em><b>Doc References</b></em>' reference list.
@@ -575,7 +593,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__DOC_REFERENCES = 16;
+  int REQ_SPEC__DOC_REFERENCES = 17;
 
   /**
    * The number of structural features of the '<em>Req Spec</em>' class.
@@ -584,7 +602,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC_FEATURE_COUNT = 17;
+  int REQ_SPEC_FEATURE_COUNT = 18;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentsImpl <em>External Documents</em>}' class.
@@ -597,13 +615,13 @@ public interface AlisaPackage extends EPackage
   int EXTERNAL_DOCUMENTS = 8;
 
   /**
-   * The feature id for the '<em><b>Fqn</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTERNAL_DOCUMENTS__FQN = DOCUMENT_FEATURE_COUNT + 0;
+  int EXTERNAL_DOCUMENTS__NAME = DOCUMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Docs</b></em>' containment reference list.
@@ -612,7 +630,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTERNAL_DOCUMENTS__DOCS = DOCUMENT_FEATURE_COUNT + 1;
+  int EXTERNAL_DOCUMENTS__DOCS = DOCUMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>External Documents</em>' class.
@@ -621,7 +639,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTERNAL_DOCUMENTS_FEATURE_COUNT = DOCUMENT_FEATURE_COUNT + 2;
+  int EXTERNAL_DOCUMENTS_FEATURE_COUNT = DOCUMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentImpl <em>External Document</em>}' class.
@@ -634,13 +652,13 @@ public interface AlisaPackage extends EPackage
   int EXTERNAL_DOCUMENT = 9;
 
   /**
-   * The feature id for the '<em><b>Fqn</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTERNAL_DOCUMENT__FQN = 0;
+  int EXTERNAL_DOCUMENT__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Xternal Reference</b></em>' attribute.
@@ -1372,6 +1390,17 @@ public interface AlisaPackage extends EPackage
   EClass getDocument();
 
   /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Document#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Document#getName()
+   * @see #getDocument()
+   * @generated
+   */
+  EAttribute getDocument_Name();
+
+  /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.RequirementDocument <em>Requirement Document</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1380,17 +1409,6 @@ public interface AlisaPackage extends EPackage
    * @generated
    */
   EClass getRequirementDocument();
-
-  /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.RequirementDocument#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see edu.cmu.sei.alisa.alisa.RequirementDocument#getName()
-   * @see #getRequirementDocument()
-   * @generated
-   */
-  EAttribute getRequirementDocument_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.RequirementDocument#getContent <em>Content</em>}'.
@@ -1414,17 +1432,6 @@ public interface AlisaPackage extends EPackage
   EClass getVerificationLibrary();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.VerificationLibrary#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see edu.cmu.sei.alisa.alisa.VerificationLibrary#getName()
-   * @see #getVerificationLibrary()
-   * @generated
-   */
-  EAttribute getVerificationLibrary_Name();
-
-  /**
    * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.VerificationLibrary#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1446,15 +1453,15 @@ public interface AlisaPackage extends EPackage
   EClass getGoals();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Goals#getFqn <em>Fqn</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Goals#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fqn</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goals#getFqn()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Goals#getName()
    * @see #getGoals()
    * @generated
    */
-  EAttribute getGoals_Fqn();
+  EAttribute getGoals_Name();
 
   /**
    * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.Goals#getClassifier <em>Classifier</em>}'.
@@ -1489,15 +1496,15 @@ public interface AlisaPackage extends EPackage
   EClass getGoal();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Goal#getFqn <em>Fqn</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Goal#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fqn</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getFqn()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Goal#getName()
    * @see #getGoal()
    * @generated
    */
-  EAttribute getGoal_Fqn();
+  EAttribute getGoal_Name();
 
   /**
    * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.Goal#getGoalTarget <em>Goal Target</em>}'.
@@ -1642,15 +1649,15 @@ public interface AlisaPackage extends EPackage
   EClass getReqSpecifications();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ReqSpecifications#getFqn <em>Fqn</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ReqSpecifications#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fqn</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpecifications#getFqn()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ReqSpecifications#getName()
    * @see #getReqSpecifications()
    * @generated
    */
-  EAttribute getReqSpecifications_Fqn();
+  EAttribute getReqSpecifications_Name();
 
   /**
    * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.ReqSpecifications#getReqTarget <em>Req Target</em>}'.
@@ -1696,15 +1703,15 @@ public interface AlisaPackage extends EPackage
   EAttribute getReqSpec_Reqkind();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getFqn <em>Fqn</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fqn</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getFqn()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getName()
    * @see #getReqSpec()
    * @generated
    */
-  EAttribute getReqSpec_Fqn();
+  EAttribute getReqSpec_Name();
 
   /**
    * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getReqTarget <em>Req Target</em>}'.
@@ -1839,6 +1846,17 @@ public interface AlisaPackage extends EPackage
   EReference getReqSpec_EvolvesReference();
 
   /**
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getVerifiedBy <em>Verified By</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Verified By</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getVerifiedBy()
+   * @see #getReqSpec()
+   * @generated
+   */
+  EReference getReqSpec_VerifiedBy();
+
+  /**
    * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getStakeholderreqReference <em>Stakeholderreq Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1882,17 +1900,6 @@ public interface AlisaPackage extends EPackage
   EClass getExternalDocuments();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ExternalDocuments#getFqn <em>Fqn</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fqn</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ExternalDocuments#getFqn()
-   * @see #getExternalDocuments()
-   * @generated
-   */
-  EAttribute getExternalDocuments_Fqn();
-
-  /**
    * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.ExternalDocuments#getDocs <em>Docs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1914,15 +1921,15 @@ public interface AlisaPackage extends EPackage
   EClass getExternalDocument();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ExternalDocument#getFqn <em>Fqn</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ExternalDocument#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fqn</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ExternalDocument#getFqn()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ExternalDocument#getName()
    * @see #getExternalDocument()
    * @generated
    */
-  EAttribute getExternalDocument_Fqn();
+  EAttribute getExternalDocument_Name();
 
   /**
    * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ExternalDocument#getXternalReference <em>Xternal Reference</em>}'.
@@ -2666,6 +2673,14 @@ public interface AlisaPackage extends EPackage
     EClass DOCUMENT = eINSTANCE.getDocument();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DOCUMENT__NAME = eINSTANCE.getDocument_Name();
+
+    /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.RequirementDocumentImpl <em>Requirement Document</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2674,14 +2689,6 @@ public interface AlisaPackage extends EPackage
      * @generated
      */
     EClass REQUIREMENT_DOCUMENT = eINSTANCE.getRequirementDocument();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute REQUIREMENT_DOCUMENT__NAME = eINSTANCE.getRequirementDocument_Name();
 
     /**
      * The meta object literal for the '<em><b>Content</b></em>' containment reference list feature.
@@ -2702,14 +2709,6 @@ public interface AlisaPackage extends EPackage
     EClass VERIFICATION_LIBRARY = eINSTANCE.getVerificationLibrary();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VERIFICATION_LIBRARY__NAME = eINSTANCE.getVerificationLibrary_Name();
-
-    /**
      * The meta object literal for the '<em><b>Content</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2728,12 +2727,12 @@ public interface AlisaPackage extends EPackage
     EClass GOALS = eINSTANCE.getGoals();
 
     /**
-     * The meta object literal for the '<em><b>Fqn</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GOALS__FQN = eINSTANCE.getGoals_Fqn();
+    EAttribute GOALS__NAME = eINSTANCE.getGoals_Name();
 
     /**
      * The meta object literal for the '<em><b>Classifier</b></em>' reference feature.
@@ -2762,12 +2761,12 @@ public interface AlisaPackage extends EPackage
     EClass GOAL = eINSTANCE.getGoal();
 
     /**
-     * The meta object literal for the '<em><b>Fqn</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GOAL__FQN = eINSTANCE.getGoal_Fqn();
+    EAttribute GOAL__NAME = eINSTANCE.getGoal_Name();
 
     /**
      * The meta object literal for the '<em><b>Goal Target</b></em>' reference feature.
@@ -2876,12 +2875,12 @@ public interface AlisaPackage extends EPackage
     EClass REQ_SPECIFICATIONS = eINSTANCE.getReqSpecifications();
 
     /**
-     * The meta object literal for the '<em><b>Fqn</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQ_SPECIFICATIONS__FQN = eINSTANCE.getReqSpecifications_Fqn();
+    EAttribute REQ_SPECIFICATIONS__NAME = eINSTANCE.getReqSpecifications_Name();
 
     /**
      * The meta object literal for the '<em><b>Req Target</b></em>' reference feature.
@@ -2918,12 +2917,12 @@ public interface AlisaPackage extends EPackage
     EAttribute REQ_SPEC__REQKIND = eINSTANCE.getReqSpec_Reqkind();
 
     /**
-     * The meta object literal for the '<em><b>Fqn</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQ_SPEC__FQN = eINSTANCE.getReqSpec_Fqn();
+    EAttribute REQ_SPEC__NAME = eINSTANCE.getReqSpec_Name();
 
     /**
      * The meta object literal for the '<em><b>Req Target</b></em>' reference feature.
@@ -3022,6 +3021,14 @@ public interface AlisaPackage extends EPackage
     EReference REQ_SPEC__EVOLVES_REFERENCE = eINSTANCE.getReqSpec_EvolvesReference();
 
     /**
+     * The meta object literal for the '<em><b>Verified By</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REQ_SPEC__VERIFIED_BY = eINSTANCE.getReqSpec_VerifiedBy();
+
+    /**
      * The meta object literal for the '<em><b>Stakeholderreq Reference</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3056,14 +3063,6 @@ public interface AlisaPackage extends EPackage
     EClass EXTERNAL_DOCUMENTS = eINSTANCE.getExternalDocuments();
 
     /**
-     * The meta object literal for the '<em><b>Fqn</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXTERNAL_DOCUMENTS__FQN = eINSTANCE.getExternalDocuments_Fqn();
-
-    /**
      * The meta object literal for the '<em><b>Docs</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3082,12 +3081,12 @@ public interface AlisaPackage extends EPackage
     EClass EXTERNAL_DOCUMENT = eINSTANCE.getExternalDocument();
 
     /**
-     * The meta object literal for the '<em><b>Fqn</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXTERNAL_DOCUMENT__FQN = eINSTANCE.getExternalDocument_Fqn();
+    EAttribute EXTERNAL_DOCUMENT__NAME = eINSTANCE.getExternalDocument_Name();
 
     /**
      * The meta object literal for the '<em><b>Xternal Reference</b></em>' attribute feature.

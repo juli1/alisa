@@ -33,7 +33,7 @@ import org.osate.aadl2.NamedElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getFqn <em>Fqn</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getGoalTarget <em>Goal Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getDescription <em>Description</em>}</li>
@@ -54,24 +54,24 @@ import org.osate.aadl2.NamedElement;
 public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
 {
   /**
-   * The default value of the '{@link #getFqn() <em>Fqn</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFqn()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String FQN_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getFqn() <em>Fqn</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFqn()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String fqn = FQN_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getGoalTarget() <em>Goal Target</em>}' reference.
@@ -259,9 +259,9 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getFqn()
+  public String getName()
   {
-    return fqn;
+    return name;
   }
 
   /**
@@ -269,12 +269,12 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFqn(String newFqn)
+  public void setName(String newName)
   {
-    String oldFqn = fqn;
-    fqn = newFqn;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOAL__FQN, oldFqn, fqn));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOAL__NAME, oldName, name));
   }
 
   /**
@@ -520,8 +520,8 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
   {
     switch (featureID)
     {
-      case AlisaPackage.GOAL__FQN:
-        return getFqn();
+      case AlisaPackage.GOAL__NAME:
+        return getName();
       case AlisaPackage.GOAL__GOAL_TARGET:
         if (resolve) return getGoalTarget();
         return basicGetGoalTarget();
@@ -562,8 +562,8 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
   {
     switch (featureID)
     {
-      case AlisaPackage.GOAL__FQN:
-        setFqn((String)newValue);
+      case AlisaPackage.GOAL__NAME:
+        setName((String)newValue);
         return;
       case AlisaPackage.GOAL__GOAL_TARGET:
         setGoalTarget((NamedElement)newValue);
@@ -622,8 +622,8 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
   {
     switch (featureID)
     {
-      case AlisaPackage.GOAL__FQN:
-        setFqn(FQN_EDEFAULT);
+      case AlisaPackage.GOAL__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case AlisaPackage.GOAL__GOAL_TARGET:
         setGoalTarget((NamedElement)null);
@@ -675,8 +675,8 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
   {
     switch (featureID)
     {
-      case AlisaPackage.GOAL__FQN:
-        return FQN_EDEFAULT == null ? fqn != null : !FQN_EDEFAULT.equals(fqn);
+      case AlisaPackage.GOAL__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.GOAL__GOAL_TARGET:
         return goalTarget != null;
       case AlisaPackage.GOAL__TITLE:
@@ -716,8 +716,8 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (fqn: ");
-    result.append(fqn);
+    result.append(" (name: ");
+    result.append(name);
     result.append(", title: ");
     result.append(title);
     result.append(", description: ");

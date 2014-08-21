@@ -7,7 +7,6 @@ import edu.cmu.sei.alisa.alisa.VerificationLibrary;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -15,8 +14,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -28,7 +25,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationLibraryImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationLibraryImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
@@ -37,26 +33,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class VerificationLibraryImpl extends DocumentImpl implements VerificationLibrary
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -86,29 +62,6 @@ public class VerificationLibraryImpl extends DocumentImpl implements Verificatio
   protected EClass eStaticClass()
   {
     return AlisaPackage.Literals.VERIFICATION_LIBRARY;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.VERIFICATION_LIBRARY__NAME, oldName, name));
   }
 
   /**
@@ -151,8 +104,6 @@ public class VerificationLibraryImpl extends DocumentImpl implements Verificatio
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_LIBRARY__NAME:
-        return getName();
       case AlisaPackage.VERIFICATION_LIBRARY__CONTENT:
         return getContent();
     }
@@ -170,9 +121,6 @@ public class VerificationLibraryImpl extends DocumentImpl implements Verificatio
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_LIBRARY__NAME:
-        setName((String)newValue);
-        return;
       case AlisaPackage.VERIFICATION_LIBRARY__CONTENT:
         getContent().clear();
         getContent().addAll((Collection<? extends EObject>)newValue);
@@ -191,9 +139,6 @@ public class VerificationLibraryImpl extends DocumentImpl implements Verificatio
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_LIBRARY__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case AlisaPackage.VERIFICATION_LIBRARY__CONTENT:
         getContent().clear();
         return;
@@ -211,29 +156,10 @@ public class VerificationLibraryImpl extends DocumentImpl implements Verificatio
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_LIBRARY__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.VERIFICATION_LIBRARY__CONTENT:
         return content != null && !content.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //VerificationLibraryImpl

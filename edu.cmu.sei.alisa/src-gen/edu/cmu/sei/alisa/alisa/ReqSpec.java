@@ -17,7 +17,7 @@ import org.osate.aadl2.NamedElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getReqkind <em>Reqkind</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getFqn <em>Fqn</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getReqTarget <em>Req Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getDescription <em>Description</em>}</li>
@@ -30,6 +30,7 @@ import org.osate.aadl2.NamedElement;
  *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getRefinesReference <em>Refines Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getDecomposesReference <em>Decomposes Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getEvolvesReference <em>Evolves Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getVerifiedBy <em>Verified By</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getStakeholderreqReference <em>Stakeholderreq Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getSystemreqReference <em>Systemreq Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getDocReferences <em>Doc References</em>}</li>
@@ -69,30 +70,30 @@ public interface ReqSpec extends EObject
   void setReqkind(String value);
 
   /**
-   * Returns the value of the '<em><b>Fqn</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Fqn</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Fqn</em>' attribute.
-   * @see #setFqn(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_Fqn()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_Name()
    * @model
    * @generated
    */
-  String getFqn();
+  String getName();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getFqn <em>Fqn</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Fqn</em>' attribute.
-   * @see #getFqn()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setFqn(String value);
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Req Target</b></em>' reference.
@@ -335,6 +336,22 @@ public interface ReqSpec extends EObject
    * @generated
    */
   EList<ReqSpec> getEvolvesReference();
+
+  /**
+   * Returns the value of the '<em><b>Verified By</b></em>' containment reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.VerificationDecomposition}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Verified By</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Verified By</em>' containment reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_VerifiedBy()
+   * @model containment="true"
+   * @generated
+   */
+  EList<VerificationDecomposition> getVerifiedBy();
 
   /**
    * Returns the value of the '<em><b>Stakeholderreq Reference</b></em>' reference list.

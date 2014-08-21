@@ -247,18 +247,18 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (fqn=ID xternalReference=STRING)
+	 *     (name=ID xternalReference=STRING)
 	 */
 	protected void sequence_ExternalDocument(EObject context, ExternalDocument semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AlisaPackage.Literals.EXTERNAL_DOCUMENT__FQN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AlisaPackage.Literals.EXTERNAL_DOCUMENT__FQN));
+			if(transientValues.isValueTransient(semanticObject, AlisaPackage.Literals.EXTERNAL_DOCUMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AlisaPackage.Literals.EXTERNAL_DOCUMENT__NAME));
 			if(transientValues.isValueTransient(semanticObject, AlisaPackage.Literals.EXTERNAL_DOCUMENT__XTERNAL_REFERENCE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AlisaPackage.Literals.EXTERNAL_DOCUMENT__XTERNAL_REFERENCE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getExternalDocumentAccess().getFqnIDTerminalRuleCall_1_0(), semanticObject.getFqn());
+		feeder.accept(grammarAccess.getExternalDocumentAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getExternalDocumentAccess().getXternalReferenceSTRINGTerminalRuleCall_4_0(), semanticObject.getXternalReference());
 		feeder.finish();
 	}
@@ -266,7 +266,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (fqn=ID docs+=ExternalDocument docs+=ExternalDocument*)
+	 *     (name=ID docs+=ExternalDocument docs+=ExternalDocument*)
 	 */
 	protected void sequence_ExternalDocuments(EObject context, ExternalDocuments semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -276,7 +276,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (
-	 *         fqn=ID 
+	 *         name=ID 
 	 *         goalTarget=[NamedElement|RELREF]? 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
@@ -298,7 +298,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (fqn=ID classifier=[Classifier|QCLREF] goals+=Goal*)
+	 *     (name=ID classifier=[Classifier|QCLREF] goals+=Goal*)
 	 */
 	protected void sequence_Goals(EObject context, Goals semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -318,7 +318,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         reqkind=ReqKind 
-	 *         fqn=ID 
+	 *         name=ID 
 	 *         reqTarget=[NamedElement|RELREF]? 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
@@ -331,6 +331,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (refinesReference+=[ReqSpec|REQREF] refinesReference+=[ReqSpec|REQREF]*)? 
 	 *         (decomposesReference+=[ReqSpec|REQREF] decomposesReference+=[ReqSpec|REQREF]*)? 
 	 *         (evolvesReference+=[ReqSpec|REQREF] evolvesReference+=[ReqSpec|REQREF]*)? 
+	 *         verifiedBy+=VerificationDecomposition* 
 	 *         (stakeholderreqReference+=[Requirement|REQREF] stakeholderreqReference+=[Requirement|REQREF]*)? 
 	 *         (systemreqReference+=[Requirement|REQREF] systemreqReference+=[Requirement|REQREF]*)? 
 	 *         (docReferences+=[ExternalDocument|RELREF] docReferences+=[ExternalDocument|RELREF]*)?
@@ -343,7 +344,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (fqn=ID reqTarget=[NamedElement|QCLREF] reqs+=ReqSpec*)
+	 *     (name=ID reqTarget=[NamedElement|QCLREF] reqs+=ReqSpec*)
 	 */
 	protected void sequence_ReqSpecifications(EObject context, ReqSpecifications semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

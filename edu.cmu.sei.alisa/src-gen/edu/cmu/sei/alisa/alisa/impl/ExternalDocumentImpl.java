@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentImpl#getFqn <em>Fqn</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentImpl#getXternalReference <em>Xternal Reference</em>}</li>
  * </ul>
  * </p>
@@ -29,24 +29,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implements ExternalDocument
 {
   /**
-   * The default value of the '{@link #getFqn() <em>Fqn</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFqn()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String FQN_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getFqn() <em>Fqn</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFqn()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String fqn = FQN_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #getXternalReference() <em>Xternal Reference</em>}' attribute.
@@ -94,9 +94,9 @@ public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getFqn()
+  public String getName()
   {
-    return fqn;
+    return name;
   }
 
   /**
@@ -104,12 +104,12 @@ public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFqn(String newFqn)
+  public void setName(String newName)
   {
-    String oldFqn = fqn;
-    fqn = newFqn;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.EXTERNAL_DOCUMENT__FQN, oldFqn, fqn));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.EXTERNAL_DOCUMENT__NAME, oldName, name));
   }
 
   /**
@@ -145,8 +145,8 @@ public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case AlisaPackage.EXTERNAL_DOCUMENT__FQN:
-        return getFqn();
+      case AlisaPackage.EXTERNAL_DOCUMENT__NAME:
+        return getName();
       case AlisaPackage.EXTERNAL_DOCUMENT__XTERNAL_REFERENCE:
         return getXternalReference();
     }
@@ -163,8 +163,8 @@ public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case AlisaPackage.EXTERNAL_DOCUMENT__FQN:
-        setFqn((String)newValue);
+      case AlisaPackage.EXTERNAL_DOCUMENT__NAME:
+        setName((String)newValue);
         return;
       case AlisaPackage.EXTERNAL_DOCUMENT__XTERNAL_REFERENCE:
         setXternalReference((String)newValue);
@@ -183,8 +183,8 @@ public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case AlisaPackage.EXTERNAL_DOCUMENT__FQN:
-        setFqn(FQN_EDEFAULT);
+      case AlisaPackage.EXTERNAL_DOCUMENT__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case AlisaPackage.EXTERNAL_DOCUMENT__XTERNAL_REFERENCE:
         setXternalReference(XTERNAL_REFERENCE_EDEFAULT);
@@ -203,8 +203,8 @@ public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case AlisaPackage.EXTERNAL_DOCUMENT__FQN:
-        return FQN_EDEFAULT == null ? fqn != null : !FQN_EDEFAULT.equals(fqn);
+      case AlisaPackage.EXTERNAL_DOCUMENT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.EXTERNAL_DOCUMENT__XTERNAL_REFERENCE:
         return XTERNAL_REFERENCE_EDEFAULT == null ? xternalReference != null : !XTERNAL_REFERENCE_EDEFAULT.equals(xternalReference);
     }
@@ -222,8 +222,8 @@ public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implement
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (fqn: ");
-    result.append(fqn);
+    result.append(" (name: ");
+    result.append(name);
     result.append(", xternalReference: ");
     result.append(xternalReference);
     result.append(')');
