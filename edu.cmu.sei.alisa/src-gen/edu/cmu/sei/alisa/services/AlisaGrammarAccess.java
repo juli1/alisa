@@ -987,14 +987,20 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
 		private final Keyword cDesignKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cConstraintKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
+		private final Keyword cDevelopmentKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cRequirementKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
+		private final Keyword cSystemKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Keyword cRequirementKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
 		
 		//ReqKind:
 		//	"requirement" | "assumption" | "input" "assumption" | "guarantee" | "output" "guarantee" | "invariant" | "constraint"
-		//	| "design" "constraint";
+		//	| "design" "constraint" | "development" "requirement" | "system" "requirement";
 		public ParserRule getRule() { return rule; }
 
 		//"requirement" | "assumption" | "input" "assumption" | "guarantee" | "output" "guarantee" | "invariant" | "constraint" |
-		//"design" "constraint"
+		//"design" "constraint" | "development" "requirement" | "system" "requirement"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"requirement"
@@ -1038,6 +1044,24 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"constraint"
 		public Keyword getConstraintKeyword_7_1() { return cConstraintKeyword_7_1; }
+
+		//"development" "requirement"
+		public Group getGroup_8() { return cGroup_8; }
+
+		//"development"
+		public Keyword getDevelopmentKeyword_8_0() { return cDevelopmentKeyword_8_0; }
+
+		//"requirement"
+		public Keyword getRequirementKeyword_8_1() { return cRequirementKeyword_8_1; }
+
+		//"system" "requirement"
+		public Group getGroup_9() { return cGroup_9; }
+
+		//"system"
+		public Keyword getSystemKeyword_9_0() { return cSystemKeyword_9_0; }
+
+		//"requirement"
+		public Keyword getRequirementKeyword_9_1() { return cRequirementKeyword_9_1; }
 	}
 
 	public class ReqSpecElements extends AbstractParserRuleElementFinder {
@@ -3426,18 +3450,6 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
-
-	public class STARElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "STAR");
-		private final Keyword cAsteriskKeyword = (Keyword)rule.eContents().get(1);
-		
-		//STAR:
-		//	"*";
-		public ParserRule getRule() { return rule; }
-
-		//"*"
-		public Keyword getAsteriskKeyword() { return cAsteriskKeyword; }
-	}
 	
 	
 	private AlisaModelElements pAlisaModel;
@@ -3473,7 +3485,6 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	private RELREFElements pRELREF;
 	private PAREFElements pPAREF;
 	private REQREFElements pREQREF;
-	private STARElements pSTAR;
 	private TerminalRule tSTRING;
 	private TerminalRule tID;
 	private TerminalRule tWS;
@@ -3605,7 +3616,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ReqKind:
 	//	"requirement" | "assumption" | "input" "assumption" | "guarantee" | "output" "guarantee" | "invariant" | "constraint"
-	//	| "design" "constraint";
+	//	| "design" "constraint" | "development" "requirement" | "system" "requirement";
 	public ReqKindElements getReqKindAccess() {
 		return (pReqKind != null) ? pReqKind : (pReqKind = new ReqKindElements());
 	}
@@ -3915,16 +3926,6 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getREQREFRule() {
 		return getREQREFAccess().getRule();
-	}
-
-	//STAR:
-	//	"*";
-	public STARElements getSTARAccess() {
-		return (pSTAR != null) ? pSTAR : (pSTAR = new STARElements());
-	}
-	
-	public ParserRule getSTARRule() {
-		return getSTARAccess().getRule();
 	}
 
 	//terminal STRING:

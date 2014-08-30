@@ -65,7 +65,7 @@ ReqSpecifications:
 	(reqs+=ReqSpec)*
 	'end' 'requirements' ';';
 
-ReqKind : 'requirement'|'assumption'|'input''assumption'|'guarantee'|'output''guarantee'|'invariant'|'constraint'|'design''constraint';
+ReqKind : 'requirement'|'assumption'|'input''assumption'|'guarantee'|'output''guarantee'|'invariant'|'constraint'|'design''constraint'|'development' 'requirement'|'system' 'requirement';
 	
 ReqSpec:
 	reqkind=ReqKind name=ID   
@@ -274,9 +274,6 @@ PAREF: '#' ID ('::' ID)?;
 
 // requirement or goal reference (just dotted)
 REQREF: (ID '.')* ID ;
-
-STAR:
-	'*';
 
 terminal STRING:
 	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | '"'))* '"' |

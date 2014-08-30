@@ -8,4 +8,13 @@ package edu.cmu.sei.alisa;
  */
 public class AlisaRuntimeModule extends edu.cmu.sei.alisa.AbstractAlisaRuntimeModule {
 
+	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameConverter> bindIQualifiedNameConverter() {
+		return edu.cmu.sei.alisa.naming.AlisaQualifiedNameConverter.class;
+	}
+
+	@Override
+	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return edu.cmu.sei.alisa.naming.AlisaQualifiedNameProvider.class;
+	}
+
 }

@@ -82,6 +82,8 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getReqKindAccess().getGroup_2(), "rule__ReqKind__Group_2__0");
 					put(grammarAccess.getReqKindAccess().getGroup_4(), "rule__ReqKind__Group_4__0");
 					put(grammarAccess.getReqKindAccess().getGroup_7(), "rule__ReqKind__Group_7__0");
+					put(grammarAccess.getReqKindAccess().getGroup_8(), "rule__ReqKind__Group_8__0");
+					put(grammarAccess.getReqKindAccess().getGroup_9(), "rule__ReqKind__Group_9__0");
 					put(grammarAccess.getReqSpecAccess().getGroup(), "rule__ReqSpec__Group__0");
 					put(grammarAccess.getReqSpecAccess().getGroup_2(), "rule__ReqSpec__Group_2__0");
 					put(grammarAccess.getReqSpecAccess().getGroup_3(), "rule__ReqSpec__Group_3__0");
