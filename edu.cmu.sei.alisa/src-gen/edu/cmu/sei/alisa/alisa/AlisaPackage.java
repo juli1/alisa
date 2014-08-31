@@ -215,13 +215,13 @@ public interface AlisaPackage extends EPackage
   int GOALS__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Classifier</b></em>' reference.
+   * The feature id for the '<em><b>Goal Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOALS__CLASSIFIER = 1;
+  int GOALS__GOAL_TARGET = 1;
 
   /**
    * The feature id for the '<em><b>Goals</b></em>' containment reference list.
@@ -1464,15 +1464,15 @@ public interface AlisaPackage extends EPackage
   EAttribute getGoals_Name();
 
   /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.Goals#getClassifier <em>Classifier</em>}'.
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.Goals#getGoalTarget <em>Goal Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Classifier</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goals#getClassifier()
+   * @return the meta object for the reference '<em>Goal Target</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Goals#getGoalTarget()
    * @see #getGoals()
    * @generated
    */
-  EReference getGoals_Classifier();
+  EReference getGoals_GoalTarget();
 
   /**
    * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.Goals#getGoals <em>Goals</em>}'.
@@ -2735,12 +2735,12 @@ public interface AlisaPackage extends EPackage
     EAttribute GOALS__NAME = eINSTANCE.getGoals_Name();
 
     /**
-     * The meta object literal for the '<em><b>Classifier</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Goal Target</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GOALS__CLASSIFIER = eINSTANCE.getGoals_Classifier();
+    EReference GOALS__GOAL_TARGET = eINSTANCE.getGoals_GoalTarget();
 
     /**
      * The meta object literal for the '<em><b>Goals</b></em>' containment reference list feature.

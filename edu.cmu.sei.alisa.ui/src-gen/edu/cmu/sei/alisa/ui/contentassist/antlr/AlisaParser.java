@@ -180,7 +180,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVerificationLibraryAccess().getNameAssignment_2(), "rule__VerificationLibrary__NameAssignment_2");
 					put(grammarAccess.getVerificationLibraryAccess().getContentAssignment_3(), "rule__VerificationLibrary__ContentAssignment_3");
 					put(grammarAccess.getGoalsAccess().getNameAssignment_1(), "rule__Goals__NameAssignment_1");
-					put(grammarAccess.getGoalsAccess().getClassifierAssignment_3(), "rule__Goals__ClassifierAssignment_3");
+					put(grammarAccess.getGoalsAccess().getGoalTargetAssignment_3(), "rule__Goals__GoalTargetAssignment_3");
 					put(grammarAccess.getGoalsAccess().getGoalsAssignment_4(), "rule__Goals__GoalsAssignment_4");
 					put(grammarAccess.getGoalAccess().getNameAssignment_1(), "rule__Goal__NameAssignment_1");
 					put(grammarAccess.getGoalAccess().getGoalTargetAssignment_2_1(), "rule__Goal__GoalTargetAssignment_2_1");

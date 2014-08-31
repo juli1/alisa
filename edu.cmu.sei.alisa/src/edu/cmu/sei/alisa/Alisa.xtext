@@ -38,7 +38,7 @@ VerificationLibrary:
 
 
 Goals:
-	'goals' name=ID 'for' classifier=[aadl2::Classifier|QCLREF]
+	'goals' name=ID 'for' goalTarget=[aadl2::NamedElement|QCLREF]
 	(goals += Goal)*
 	'end' 'goals'';'
 	;

@@ -1487,7 +1487,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
             	        }
                     
              
-            	        newCompositeNode(grammarAccess.getGoalsAccess().getClassifierClassifierCrossReference_3_0()); 
+            	        newCompositeNode(grammarAccess.getGoalsAccess().getGoalTargetNamedElementCrossReference_3_0()); 
             	    
             pushFollow(FOLLOW_ruleQCLREF_in_ruleGoals1126);
             ruleQCLREF();

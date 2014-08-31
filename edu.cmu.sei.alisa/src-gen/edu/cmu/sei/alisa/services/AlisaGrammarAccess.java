@@ -352,9 +352,9 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cForKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cClassifierAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cClassifierClassifierCrossReference_3_0 = (CrossReference)cClassifierAssignment_3.eContents().get(0);
-		private final RuleCall cClassifierClassifierQCLREFParserRuleCall_3_0_1 = (RuleCall)cClassifierClassifierCrossReference_3_0.eContents().get(1);
+		private final Assignment cGoalTargetAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cGoalTargetNamedElementCrossReference_3_0 = (CrossReference)cGoalTargetAssignment_3.eContents().get(0);
+		private final RuleCall cGoalTargetNamedElementQCLREFParserRuleCall_3_0_1 = (RuleCall)cGoalTargetNamedElementCrossReference_3_0.eContents().get(1);
 		private final Assignment cGoalsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cGoalsGoalParserRuleCall_4_0 = (RuleCall)cGoalsAssignment_4.eContents().get(0);
 		private final Keyword cEndKeyword_5 = (Keyword)cGroup.eContents().get(5);
@@ -362,10 +362,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Goals:
-		//	"goals" name=ID "for" classifier=[aadl2::Classifier|QCLREF] goals+=Goal* "end" "goals" ";";
+		//	"goals" name=ID "for" goalTarget=[aadl2::NamedElement|QCLREF] goals+=Goal* "end" "goals" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"goals" name=ID "for" classifier=[aadl2::Classifier|QCLREF] goals+=Goal* "end" "goals" ";"
+		//"goals" name=ID "for" goalTarget=[aadl2::NamedElement|QCLREF] goals+=Goal* "end" "goals" ";"
 		public Group getGroup() { return cGroup; }
 
 		//"goals"
@@ -380,14 +380,14 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//"for"
 		public Keyword getForKeyword_2() { return cForKeyword_2; }
 
-		//classifier=[aadl2::Classifier|QCLREF]
-		public Assignment getClassifierAssignment_3() { return cClassifierAssignment_3; }
+		//goalTarget=[aadl2::NamedElement|QCLREF]
+		public Assignment getGoalTargetAssignment_3() { return cGoalTargetAssignment_3; }
 
-		//[aadl2::Classifier|QCLREF]
-		public CrossReference getClassifierClassifierCrossReference_3_0() { return cClassifierClassifierCrossReference_3_0; }
+		//[aadl2::NamedElement|QCLREF]
+		public CrossReference getGoalTargetNamedElementCrossReference_3_0() { return cGoalTargetNamedElementCrossReference_3_0; }
 
 		//QCLREF
-		public RuleCall getClassifierClassifierQCLREFParserRuleCall_3_0_1() { return cClassifierClassifierQCLREFParserRuleCall_3_0_1; }
+		public RuleCall getGoalTargetNamedElementQCLREFParserRuleCall_3_0_1() { return cGoalTargetNamedElementQCLREFParserRuleCall_3_0_1; }
 
 		//goals+=Goal*
 		public Assignment getGoalsAssignment_4() { return cGoalsAssignment_4; }
@@ -3576,7 +3576,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Goals:
-	//	"goals" name=ID "for" classifier=[aadl2::Classifier|QCLREF] goals+=Goal* "end" "goals" ";";
+	//	"goals" name=ID "for" goalTarget=[aadl2::NamedElement|QCLREF] goals+=Goal* "end" "goals" ";";
 	public GoalsElements getGoalsAccess() {
 		return (pGoals != null) ? pGoals : (pGoals = new GoalsElements());
 	}

@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.osate.aadl2.Classifier;
+import org.osate.aadl2.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +33,7 @@ import org.osate.aadl2.Classifier;
  * The following features are implemented:
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getClassifier <em>Classifier</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getGoalTarget <em>Goal Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getGoals <em>Goals</em>}</li>
  * </ul>
  * </p>
@@ -63,14 +63,14 @@ public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getClassifier() <em>Classifier</em>}' reference.
+   * The cached value of the '{@link #getGoalTarget() <em>Goal Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClassifier()
+   * @see #getGoalTarget()
    * @generated
    * @ordered
    */
-  protected Classifier classifier;
+  protected NamedElement goalTarget;
 
   /**
    * The cached value of the '{@link #getGoals() <em>Goals</em>}' containment reference list.
@@ -131,19 +131,19 @@ public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
    * <!-- end-user-doc -->
    * @generated
    */
-  public Classifier getClassifier()
+  public NamedElement getGoalTarget()
   {
-    if (classifier != null && ((EObject)classifier).eIsProxy())
+    if (goalTarget != null && ((EObject)goalTarget).eIsProxy())
     {
-      InternalEObject oldClassifier = (InternalEObject)classifier;
-      classifier = (Classifier)eResolveProxy(oldClassifier);
-      if (classifier != oldClassifier)
+      InternalEObject oldGoalTarget = (InternalEObject)goalTarget;
+      goalTarget = (NamedElement)eResolveProxy(oldGoalTarget);
+      if (goalTarget != oldGoalTarget)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.GOALS__CLASSIFIER, oldClassifier, classifier));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.GOALS__GOAL_TARGET, oldGoalTarget, goalTarget));
       }
     }
-    return classifier;
+    return goalTarget;
   }
 
   /**
@@ -151,9 +151,9 @@ public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
    * <!-- end-user-doc -->
    * @generated
    */
-  public Classifier basicGetClassifier()
+  public NamedElement basicGetGoalTarget()
   {
-    return classifier;
+    return goalTarget;
   }
 
   /**
@@ -161,12 +161,12 @@ public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setClassifier(Classifier newClassifier)
+  public void setGoalTarget(NamedElement newGoalTarget)
   {
-    Classifier oldClassifier = classifier;
-    classifier = newClassifier;
+    NamedElement oldGoalTarget = goalTarget;
+    goalTarget = newGoalTarget;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOALS__CLASSIFIER, oldClassifier, classifier));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOALS__GOAL_TARGET, oldGoalTarget, goalTarget));
   }
 
   /**
@@ -211,9 +211,9 @@ public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
     {
       case AlisaPackage.GOALS__NAME:
         return getName();
-      case AlisaPackage.GOALS__CLASSIFIER:
-        if (resolve) return getClassifier();
-        return basicGetClassifier();
+      case AlisaPackage.GOALS__GOAL_TARGET:
+        if (resolve) return getGoalTarget();
+        return basicGetGoalTarget();
       case AlisaPackage.GOALS__GOALS:
         return getGoals();
     }
@@ -234,8 +234,8 @@ public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
       case AlisaPackage.GOALS__NAME:
         setName((String)newValue);
         return;
-      case AlisaPackage.GOALS__CLASSIFIER:
-        setClassifier((Classifier)newValue);
+      case AlisaPackage.GOALS__GOAL_TARGET:
+        setGoalTarget((NamedElement)newValue);
         return;
       case AlisaPackage.GOALS__GOALS:
         getGoals().clear();
@@ -258,8 +258,8 @@ public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
       case AlisaPackage.GOALS__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AlisaPackage.GOALS__CLASSIFIER:
-        setClassifier((Classifier)null);
+      case AlisaPackage.GOALS__GOAL_TARGET:
+        setGoalTarget((NamedElement)null);
         return;
       case AlisaPackage.GOALS__GOALS:
         getGoals().clear();
@@ -280,8 +280,8 @@ public class GoalsImpl extends MinimalEObjectImpl.Container implements Goals
     {
       case AlisaPackage.GOALS__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AlisaPackage.GOALS__CLASSIFIER:
-        return classifier != null;
+      case AlisaPackage.GOALS__GOAL_TARGET:
+        return goalTarget != null;
       case AlisaPackage.GOALS__GOALS:
         return goals != null && !goals.isEmpty();
     }

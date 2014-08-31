@@ -372,7 +372,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGoals_Classifier()
+  public EReference getGoals_GoalTarget()
   {
     return (EReference)goalsEClass.getEStructuralFeatures().get(1);
   }
@@ -1472,7 +1472,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
 
     goalsEClass = createEClass(GOALS);
     createEAttribute(goalsEClass, GOALS__NAME);
-    createEReference(goalsEClass, GOALS__CLASSIFIER);
+    createEReference(goalsEClass, GOALS__GOAL_TARGET);
     createEReference(goalsEClass, GOALS__GOALS);
 
     goalEClass = createEClass(GOAL);
@@ -1649,7 +1649,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
 
     initEClass(goalsEClass, Goals.class, "Goals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGoals_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Goals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoals_Classifier(), theAadl2Package.getClassifier(), null, "classifier", null, 0, 1, Goals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGoals_GoalTarget(), theAadl2Package.getNamedElement(), null, "goalTarget", null, 0, 1, Goals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGoals_Goals(), this.getGoal(), null, "goals", null, 0, -1, Goals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

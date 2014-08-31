@@ -657,7 +657,7 @@ ruleGoals returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getGoalsAccess().getClassifierClassifierCrossReference_3_0()); 
+	        newCompositeNode(grammarAccess.getGoalsAccess().getGoalTargetNamedElementCrossReference_3_0()); 
 	    }
 		ruleQCLREF		{ 
 	        afterParserOrEnumRuleCall();

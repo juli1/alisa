@@ -7027,31 +7027,31 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goals__Group__3__Impl"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2606:1: rule__Goals__Group__3__Impl : ( ( rule__Goals__ClassifierAssignment_3 ) ) ;
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2606:1: rule__Goals__Group__3__Impl : ( ( rule__Goals__GoalTargetAssignment_3 ) ) ;
     public final void rule__Goals__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2610:1: ( ( ( rule__Goals__ClassifierAssignment_3 ) ) )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2611:1: ( ( rule__Goals__ClassifierAssignment_3 ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2610:1: ( ( ( rule__Goals__GoalTargetAssignment_3 ) ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2611:1: ( ( rule__Goals__GoalTargetAssignment_3 ) )
             {
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2611:1: ( ( rule__Goals__ClassifierAssignment_3 ) )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2612:1: ( rule__Goals__ClassifierAssignment_3 )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2611:1: ( ( rule__Goals__GoalTargetAssignment_3 ) )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2612:1: ( rule__Goals__GoalTargetAssignment_3 )
             {
-             before(grammarAccess.getGoalsAccess().getClassifierAssignment_3()); 
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2613:1: ( rule__Goals__ClassifierAssignment_3 )
-            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2613:2: rule__Goals__ClassifierAssignment_3
+             before(grammarAccess.getGoalsAccess().getGoalTargetAssignment_3()); 
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2613:1: ( rule__Goals__GoalTargetAssignment_3 )
+            // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:2613:2: rule__Goals__GoalTargetAssignment_3
             {
-            pushFollow(FOLLOW_rule__Goals__ClassifierAssignment_3_in_rule__Goals__Group__3__Impl5389);
-            rule__Goals__ClassifierAssignment_3();
+            pushFollow(FOLLOW_rule__Goals__GoalTargetAssignment_3_in_rule__Goals__Group__3__Impl5389);
+            rule__Goals__GoalTargetAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalsAccess().getClassifierAssignment_3()); 
+             after(grammarAccess.getGoalsAccess().getGoalTargetAssignment_3()); 
 
             }
 
@@ -45786,9 +45786,9 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Goals__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Goals__ClassifierAssignment_3"
-    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17879:1: rule__Goals__ClassifierAssignment_3 : ( ( ruleQCLREF ) ) ;
-    public final void rule__Goals__ClassifierAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Goals__GoalTargetAssignment_3"
+    // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17879:1: rule__Goals__GoalTargetAssignment_3 : ( ( ruleQCLREF ) ) ;
+    public final void rule__Goals__GoalTargetAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -45799,21 +45799,21 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17884:1: ( ( ruleQCLREF ) )
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17885:1: ( ruleQCLREF )
             {
-             before(grammarAccess.getGoalsAccess().getClassifierClassifierCrossReference_3_0()); 
+             before(grammarAccess.getGoalsAccess().getGoalTargetNamedElementCrossReference_3_0()); 
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17886:1: ( ruleQCLREF )
             // ../edu.cmu.sei.alisa.ui/src-gen/edu/cmu/sei/alisa/ui/contentassist/antlr/internal/InternalAlisaParser.g:17887:1: ruleQCLREF
             {
-             before(grammarAccess.getGoalsAccess().getClassifierClassifierQCLREFParserRuleCall_3_0_1()); 
-            pushFollow(FOLLOW_ruleQCLREF_in_rule__Goals__ClassifierAssignment_335385);
+             before(grammarAccess.getGoalsAccess().getGoalTargetNamedElementQCLREFParserRuleCall_3_0_1()); 
+            pushFollow(FOLLOW_ruleQCLREF_in_rule__Goals__GoalTargetAssignment_335385);
             ruleQCLREF();
 
             state._fsp--;
 
-             after(grammarAccess.getGoalsAccess().getClassifierClassifierQCLREFParserRuleCall_3_0_1()); 
+             after(grammarAccess.getGoalsAccess().getGoalTargetNamedElementQCLREFParserRuleCall_3_0_1()); 
 
             }
 
-             after(grammarAccess.getGoalsAccess().getClassifierClassifierCrossReference_3_0()); 
+             after(grammarAccess.getGoalsAccess().getGoalTargetNamedElementCrossReference_3_0()); 
 
             }
 
@@ -45832,7 +45832,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Goals__ClassifierAssignment_3"
+    // $ANTLR end "rule__Goals__GoalTargetAssignment_3"
 
 
     // $ANTLR start "rule__Goals__GoalsAssignment_4"
@@ -51072,7 +51072,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_KEYWORD_14_in_rule__Goals__Group__2__Impl5328 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Goals__Group__3__Impl_in_rule__Goals__Group__35359 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000021L});
     public static final BitSet FOLLOW_rule__Goals__Group__4_in_rule__Goals__Group__35362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Goals__ClassifierAssignment_3_in_rule__Goals__Group__3__Impl5389 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Goals__GoalTargetAssignment_3_in_rule__Goals__Group__3__Impl5389 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Goals__Group__4__Impl_in_rule__Goals__Group__45419 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000021L});
     public static final BitSet FOLLOW_rule__Goals__Group__5_in_rule__Goals__Group__45422 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Goals__GoalsAssignment_4_in_rule__Goals__Group__4__Impl5449 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000001L});
@@ -52389,7 +52389,7 @@ public class InternalAlisaParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_ID_in_rule__VerificationLibrary__NameAssignment_235286 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VerificationLibrary__ContentAlternatives_3_0_in_rule__VerificationLibrary__ContentAssignment_335317 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Goals__NameAssignment_135350 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQCLREF_in_rule__Goals__ClassifierAssignment_335385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQCLREF_in_rule__Goals__GoalTargetAssignment_335385 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleGoal_in_rule__Goals__GoalsAssignment_435420 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Goal__NameAssignment_135451 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRELREF_in_rule__Goal__GoalTargetAssignment_2_135486 = new BitSet(new long[]{0x0000000000000002L});

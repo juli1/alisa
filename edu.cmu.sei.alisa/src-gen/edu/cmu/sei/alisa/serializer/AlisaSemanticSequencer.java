@@ -298,7 +298,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID classifier=[Classifier|QCLREF] goals+=Goal*)
+	 *     (name=ID goalTarget=[NamedElement|QCLREF] goals+=Goal*)
 	 */
 	protected void sequence_Goals(EObject context, Goals semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

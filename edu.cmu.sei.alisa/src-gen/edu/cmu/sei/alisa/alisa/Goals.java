@@ -6,7 +6,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.osate.aadl2.Classifier;
+import org.osate.aadl2.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +17,7 @@ import org.osate.aadl2.Classifier;
  * The following features are supported:
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goals#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.Goals#getClassifier <em>Classifier</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Goals#getGoalTarget <em>Goal Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goals#getGoals <em>Goals</em>}</li>
  * </ul>
  * </p>
@@ -55,30 +55,30 @@ public interface Goals extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Classifier</b></em>' reference.
+   * Returns the value of the '<em><b>Goal Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Classifier</em>' reference isn't clear,
+   * If the meaning of the '<em>Goal Target</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Classifier</em>' reference.
-   * @see #setClassifier(Classifier)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getGoals_Classifier()
+   * @return the value of the '<em>Goal Target</em>' reference.
+   * @see #setGoalTarget(NamedElement)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getGoals_GoalTarget()
    * @model
    * @generated
    */
-  Classifier getClassifier();
+  NamedElement getGoalTarget();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Goals#getClassifier <em>Classifier</em>}' reference.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Goals#getGoalTarget <em>Goal Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Classifier</em>' reference.
-   * @see #getClassifier()
+   * @param value the new value of the '<em>Goal Target</em>' reference.
+   * @see #getGoalTarget()
    * @generated
    */
-  void setClassifier(Classifier value);
+  void setGoalTarget(NamedElement value);
 
   /**
    * Returns the value of the '<em><b>Goals</b></em>' containment reference list.

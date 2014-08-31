@@ -2609,9 +2609,9 @@ rule__Goals__Group__3__Impl
     }
 :
 (
-{ before(grammarAccess.getGoalsAccess().getClassifierAssignment_3()); }
-(rule__Goals__ClassifierAssignment_3)
-{ after(grammarAccess.getGoalsAccess().getClassifierAssignment_3()); }
+{ before(grammarAccess.getGoalsAccess().getGoalTargetAssignment_3()); }
+(rule__Goals__GoalTargetAssignment_3)
+{ after(grammarAccess.getGoalsAccess().getGoalTargetAssignment_3()); }
 )
 
 ;
@@ -17876,18 +17876,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Goals__ClassifierAssignment_3
+rule__Goals__GoalTargetAssignment_3
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getGoalsAccess().getClassifierClassifierCrossReference_3_0()); }
+{ before(grammarAccess.getGoalsAccess().getGoalTargetNamedElementCrossReference_3_0()); }
 (
-{ before(grammarAccess.getGoalsAccess().getClassifierClassifierQCLREFParserRuleCall_3_0_1()); }
-	ruleQCLREF{ after(grammarAccess.getGoalsAccess().getClassifierClassifierQCLREFParserRuleCall_3_0_1()); }
+{ before(grammarAccess.getGoalsAccess().getGoalTargetNamedElementQCLREFParserRuleCall_3_0_1()); }
+	ruleQCLREF{ after(grammarAccess.getGoalsAccess().getGoalTargetNamedElementQCLREFParserRuleCall_3_0_1()); }
 )
-{ after(grammarAccess.getGoalsAccess().getClassifierClassifierCrossReference_3_0()); }
+{ after(grammarAccess.getGoalsAccess().getGoalTargetNamedElementCrossReference_3_0()); }
 )
 
 ;
