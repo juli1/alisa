@@ -17,7 +17,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -28,8 +27,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.osate.aadl2.NamedElement;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Req Spec</b></em>'.
@@ -39,7 +36,7 @@ import org.osate.aadl2.NamedElement;
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getReqkind <em>Reqkind</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getReqTarget <em>Req Target</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getAssert <em>Assert</em>}</li>
@@ -103,14 +100,24 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getReqTarget() <em>Req Target</em>}' reference.
+   * The default value of the '{@link #getTarget() <em>Target</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getReqTarget()
+   * @see #getTarget()
    * @generated
    * @ordered
    */
-  protected NamedElement reqTarget;
+  protected static final String TARGET_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTarget()
+   * @generated
+   * @ordered
+   */
+  protected String target = TARGET_EDEFAULT;
 
   /**
    * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -374,19 +381,9 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * <!-- end-user-doc -->
    * @generated
    */
-  public NamedElement getReqTarget()
+  public String getTarget()
   {
-    if (reqTarget != null && ((EObject)reqTarget).eIsProxy())
-    {
-      InternalEObject oldReqTarget = (InternalEObject)reqTarget;
-      reqTarget = (NamedElement)eResolveProxy(oldReqTarget);
-      if (reqTarget != oldReqTarget)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.REQ_SPEC__REQ_TARGET, oldReqTarget, reqTarget));
-      }
-    }
-    return reqTarget;
+    return target;
   }
 
   /**
@@ -394,22 +391,12 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * <!-- end-user-doc -->
    * @generated
    */
-  public NamedElement basicGetReqTarget()
+  public void setTarget(String newTarget)
   {
-    return reqTarget;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setReqTarget(NamedElement newReqTarget)
-  {
-    NamedElement oldReqTarget = reqTarget;
-    reqTarget = newReqTarget;
+    String oldTarget = target;
+    target = newTarget;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQ_SPEC__REQ_TARGET, oldReqTarget, reqTarget));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQ_SPEC__TARGET, oldTarget, target));
   }
 
   /**
@@ -688,9 +675,8 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
         return getReqkind();
       case AlisaPackage.REQ_SPEC__NAME:
         return getName();
-      case AlisaPackage.REQ_SPEC__REQ_TARGET:
-        if (resolve) return getReqTarget();
-        return basicGetReqTarget();
+      case AlisaPackage.REQ_SPEC__TARGET:
+        return getTarget();
       case AlisaPackage.REQ_SPEC__TITLE:
         return getTitle();
       case AlisaPackage.REQ_SPEC__DESCRIPTION:
@@ -742,8 +728,8 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
       case AlisaPackage.REQ_SPEC__NAME:
         setName((String)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__REQ_TARGET:
-        setReqTarget((NamedElement)newValue);
+      case AlisaPackage.REQ_SPEC__TARGET:
+        setTarget((String)newValue);
         return;
       case AlisaPackage.REQ_SPEC__TITLE:
         setTitle((String)newValue);
@@ -821,8 +807,8 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
       case AlisaPackage.REQ_SPEC__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AlisaPackage.REQ_SPEC__REQ_TARGET:
-        setReqTarget((NamedElement)null);
+      case AlisaPackage.REQ_SPEC__TARGET:
+        setTarget(TARGET_EDEFAULT);
         return;
       case AlisaPackage.REQ_SPEC__TITLE:
         setTitle(TITLE_EDEFAULT);
@@ -887,8 +873,8 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
         return REQKIND_EDEFAULT == null ? reqkind != null : !REQKIND_EDEFAULT.equals(reqkind);
       case AlisaPackage.REQ_SPEC__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AlisaPackage.REQ_SPEC__REQ_TARGET:
-        return reqTarget != null;
+      case AlisaPackage.REQ_SPEC__TARGET:
+        return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
       case AlisaPackage.REQ_SPEC__TITLE:
         return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
       case AlisaPackage.REQ_SPEC__DESCRIPTION:
@@ -938,6 +924,8 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
     result.append(reqkind);
     result.append(", name: ");
     result.append(name);
+    result.append(", target: ");
+    result.append(target);
     result.append(", title: ");
     result.append(title);
     result.append(", description: ");

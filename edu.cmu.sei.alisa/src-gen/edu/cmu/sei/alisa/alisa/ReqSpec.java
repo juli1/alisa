@@ -6,8 +6,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.osate.aadl2.NamedElement;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Req Spec</b></em>'.
@@ -18,7 +16,7 @@ import org.osate.aadl2.NamedElement;
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getReqkind <em>Reqkind</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getReqTarget <em>Req Target</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getTarget <em>Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getAssert <em>Assert</em>}</li>
@@ -96,30 +94,30 @@ public interface ReqSpec extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Req Target</b></em>' reference.
+   * Returns the value of the '<em><b>Target</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Req Target</em>' reference isn't clear,
+   * If the meaning of the '<em>Target</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Req Target</em>' reference.
-   * @see #setReqTarget(NamedElement)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_ReqTarget()
+   * @return the value of the '<em>Target</em>' attribute.
+   * @see #setTarget(String)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_Target()
    * @model
    * @generated
    */
-  NamedElement getReqTarget();
+  String getTarget();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getReqTarget <em>Req Target</em>}' reference.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getTarget <em>Target</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Req Target</em>' reference.
-   * @see #getReqTarget()
+   * @param value the new value of the '<em>Target</em>' attribute.
+   * @see #getTarget()
    * @generated
    */
-  void setReqTarget(NamedElement value);
+  void setTarget(String value);
 
   /**
    * Returns the value of the '<em><b>Title</b></em>' attribute.

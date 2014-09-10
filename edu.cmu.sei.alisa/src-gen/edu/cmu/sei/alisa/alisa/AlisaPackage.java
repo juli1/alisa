@@ -261,13 +261,13 @@ public interface AlisaPackage extends EPackage
   int GOAL__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Goal Target</b></em>' reference.
+   * The feature id for the '<em><b>Element</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOAL__GOAL_TARGET = 1;
+  int GOAL__ELEMENT = 1;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -452,13 +452,13 @@ public interface AlisaPackage extends EPackage
   int REQ_SPEC__NAME = 1;
 
   /**
-   * The feature id for the '<em><b>Req Target</b></em>' reference.
+   * The feature id for the '<em><b>Target</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQ_SPEC__REQ_TARGET = 2;
+  int REQ_SPEC__TARGET = 2;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1507,15 +1507,15 @@ public interface AlisaPackage extends EPackage
   EAttribute getGoal_Name();
 
   /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.Goal#getGoalTarget <em>Goal Target</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Goal#getElement <em>Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Goal Target</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getGoalTarget()
+   * @return the meta object for the attribute '<em>Element</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Goal#getElement()
    * @see #getGoal()
    * @generated
    */
-  EReference getGoal_GoalTarget();
+  EAttribute getGoal_Element();
 
   /**
    * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Goal#getTitle <em>Title</em>}'.
@@ -1714,15 +1714,15 @@ public interface AlisaPackage extends EPackage
   EAttribute getReqSpec_Name();
 
   /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getReqTarget <em>Req Target</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Req Target</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getReqTarget()
+   * @return the meta object for the attribute '<em>Target</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getTarget()
    * @see #getReqSpec()
    * @generated
    */
-  EReference getReqSpec_ReqTarget();
+  EAttribute getReqSpec_Target();
 
   /**
    * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getTitle <em>Title</em>}'.
@@ -2769,12 +2769,12 @@ public interface AlisaPackage extends EPackage
     EAttribute GOAL__NAME = eINSTANCE.getGoal_Name();
 
     /**
-     * The meta object literal for the '<em><b>Goal Target</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Element</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GOAL__GOAL_TARGET = eINSTANCE.getGoal_GoalTarget();
+    EAttribute GOAL__ELEMENT = eINSTANCE.getGoal_Element();
 
     /**
      * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
@@ -2925,12 +2925,12 @@ public interface AlisaPackage extends EPackage
     EAttribute REQ_SPEC__NAME = eINSTANCE.getReqSpec_Name();
 
     /**
-     * The meta object literal for the '<em><b>Req Target</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQ_SPEC__REQ_TARGET = eINSTANCE.getReqSpec_ReqTarget();
+    EAttribute REQ_SPEC__TARGET = eINSTANCE.getReqSpec_Target();
 
     /**
      * The meta object literal for the '<em><b>Title</b></em>' attribute feature.

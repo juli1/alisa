@@ -277,7 +277,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         goalTarget=[NamedElement|RELREF]? 
+	 *         element=RELREF? 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
 	 *         assert=ValueString? 
@@ -285,7 +285,8 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (issue+=ValueString issue+=ValueString*)? 
 	 *         (modelReference+=QCRELREF modelReference+=QCRELREF*)? 
 	 *         (refinesReference+=[Goal|REQREF] refinesReference+=[Goal|REQREF]*)? 
-	 *         (decomposesReference+=[ReqSpec|REQREF] decomposesReference+=[ReqSpec|REQREF]*)? 
+	 *         (decomposesReference+=[Goal|REQREF] decomposesReference+=[Goal|REQREF]*)? 
+	 *         (evolvesReference+=[Goal|REQREF] evolvesReference+=[Goal|REQREF]*)? 
 	 *         (evolvesReference+=[Goal|REQREF] evolvesReference+=[Goal|REQREF]*)? 
 	 *         (stakeholderReference+=[Requirement|REQREF] stakeholderReference+=[Requirement|REQREF]*)? 
 	 *         (docReferences+=[ExternalDocument|RELREF] docReferences+=[ExternalDocument|RELREF]*)?
@@ -319,7 +320,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (
 	 *         reqkind=ReqKind 
 	 *         name=ID 
-	 *         reqTarget=[NamedElement|RELREF]? 
+	 *         target=RELREF? 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
 	 *         assert=ValueString? 

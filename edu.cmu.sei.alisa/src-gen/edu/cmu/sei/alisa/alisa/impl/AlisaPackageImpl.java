@@ -412,9 +412,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGoal_GoalTarget()
+  public EAttribute getGoal_Element()
   {
-    return (EReference)goalEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)goalEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -602,9 +602,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReqSpec_ReqTarget()
+  public EAttribute getReqSpec_Target()
   {
-    return (EReference)reqSpecEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)reqSpecEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1477,7 +1477,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
 
     goalEClass = createEClass(GOAL);
     createEAttribute(goalEClass, GOAL__NAME);
-    createEReference(goalEClass, GOAL__GOAL_TARGET);
+    createEAttribute(goalEClass, GOAL__ELEMENT);
     createEAttribute(goalEClass, GOAL__TITLE);
     createEAttribute(goalEClass, GOAL__DESCRIPTION);
     createEAttribute(goalEClass, GOAL__ASSERT);
@@ -1498,7 +1498,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     reqSpecEClass = createEClass(REQ_SPEC);
     createEAttribute(reqSpecEClass, REQ_SPEC__REQKIND);
     createEAttribute(reqSpecEClass, REQ_SPEC__NAME);
-    createEReference(reqSpecEClass, REQ_SPEC__REQ_TARGET);
+    createEAttribute(reqSpecEClass, REQ_SPEC__TARGET);
     createEAttribute(reqSpecEClass, REQ_SPEC__TITLE);
     createEAttribute(reqSpecEClass, REQ_SPEC__DESCRIPTION);
     createEAttribute(reqSpecEClass, REQ_SPEC__ASSERT);
@@ -1654,7 +1654,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
 
     initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGoal_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoal_GoalTarget(), theAadl2Package.getNamedElement(), null, "goalTarget", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGoal_Element(), theEcorePackage.getEString(), "element", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGoal_Title(), theEcorePackage.getEString(), "title", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGoal_Description(), theEcorePackage.getEString(), "description", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGoal_Assert(), theEcorePackage.getEString(), "assert", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1662,7 +1662,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEAttribute(getGoal_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGoal_ModelReference(), theEcorePackage.getEString(), "modelReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGoal_RefinesReference(), this.getGoal(), null, "refinesReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoal_DecomposesReference(), this.getReqSpec(), null, "decomposesReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGoal_DecomposesReference(), this.getGoal(), null, "decomposesReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGoal_EvolvesReference(), this.getGoal(), null, "evolvesReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGoal_StakeholderReference(), this.getRequirement(), null, "stakeholderReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGoal_DocReferences(), this.getExternalDocument(), null, "docReferences", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1675,7 +1675,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEClass(reqSpecEClass, ReqSpec.class, "ReqSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getReqSpec_Reqkind(), theEcorePackage.getEString(), "reqkind", null, 0, 1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getReqSpec_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReqSpec_ReqTarget(), theAadl2Package.getNamedElement(), null, "reqTarget", null, 0, 1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getReqSpec_Target(), theEcorePackage.getEString(), "target", null, 0, 1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getReqSpec_Title(), theEcorePackage.getEString(), "title", null, 0, 1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getReqSpec_Description(), theEcorePackage.getEString(), "description", null, 0, 1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getReqSpec_Assert(), theEcorePackage.getEString(), "assert", null, 0, 1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

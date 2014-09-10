@@ -46,7 +46,7 @@ Goals:
 
 Goal:
 	'goal' name=ID 
-	( 'for' goalTarget=[aadl2::NamedElement|RELREF])?
+	( 'for' element=RELREF)? //goalTarget=[aadl2::NamedElement|RELREF])?
 	('title' ':' title=ValueString ';')? 
 	('description' ':' description=ValueString';')? 
 	('assertion' ':' 	assert=ValueString ';')? 
@@ -54,8 +54,9 @@ Goal:
 	('issues' ':' issue+=ValueString (','issue+=ValueString)* ';')? 
 	('see' ':' modelReference+=QCRELREF (',' modelReference+=QCRELREF)*';')? 
 	('refines' ':' refinesReference+=[Goal|REQREF](',' refinesReference+=[Goal|REQREF])*';')? 
-	('decomposes' ':' decomposesReference+=[ReqSpec|REQREF](',' decomposesReference+=[ReqSpec|REQREF])*';')? 
+	('decomposes' ':' decomposesReference+=[Goal|REQREF](',' decomposesReference+=[Goal|REQREF])*';')? 
 	('evolves' ':' evolvesReference+=[Goal|REQREF](',' evolvesReference+=[Goal|REQREF])*';')? 
+	('conflicts' ':' evolvesReference+=[Goal|REQREF](',' evolvesReference+=[Goal|REQREF])*';')? 
 	('see' 'stakeholder' 'req' ':' stakeholderReference+=[Requirement|REQREF] (',' stakeholderReference+=[Requirement|REQREF])*';')?
 	('see' 'document' ':' docReferences+=[ExternalDocument|RELREF] (',' docReferences+=[ExternalDocument|RELREF])*';')? 
 	 'end''goal'';';
@@ -70,7 +71,7 @@ ReqKind : 'requirement'|'assumption'|'input''assumption'|'guarantee'|'output''gu
 ReqSpec:
 	reqkind=ReqKind name=ID   
 	
-	( 'for' reqTarget=[aadl2::NamedElement|RELREF])?
+	( 'for' target=RELREF)? //reqTarget=[aadl2::NamedElement|RELREF])?
 	('title' ':' title=ValueString';')? 
 	('description' ':' description=ValueString';')? 
 	('assertion' ':' assert=ValueString';')? 

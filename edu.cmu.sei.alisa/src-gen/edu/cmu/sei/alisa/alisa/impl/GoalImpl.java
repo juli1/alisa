@@ -5,7 +5,6 @@ package edu.cmu.sei.alisa.alisa.impl;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
-import edu.cmu.sei.alisa.alisa.ReqSpec;
 import edu.cmu.sei.alisa.alisa.Requirement;
 
 import java.util.Collection;
@@ -15,16 +14,12 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
-import org.osate.aadl2.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +29,7 @@ import org.osate.aadl2.NamedElement;
  * The following features are implemented:
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getGoalTarget <em>Goal Target</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getElement <em>Element</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getAssert <em>Assert</em>}</li>
@@ -74,14 +69,24 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getGoalTarget() <em>Goal Target</em>}' reference.
+   * The default value of the '{@link #getElement() <em>Element</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGoalTarget()
+   * @see #getElement()
    * @generated
    * @ordered
    */
-  protected NamedElement goalTarget;
+  protected static final String ELEMENT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getElement() <em>Element</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElement()
+   * @generated
+   * @ordered
+   */
+  protected String element = ELEMENT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -201,7 +206,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
    * @generated
    * @ordered
    */
-  protected EList<ReqSpec> decomposesReference;
+  protected EList<Goal> decomposesReference;
 
   /**
    * The cached value of the '{@link #getEvolvesReference() <em>Evolves Reference</em>}' reference list.
@@ -282,19 +287,9 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public NamedElement getGoalTarget()
+  public String getElement()
   {
-    if (goalTarget != null && ((EObject)goalTarget).eIsProxy())
-    {
-      InternalEObject oldGoalTarget = (InternalEObject)goalTarget;
-      goalTarget = (NamedElement)eResolveProxy(oldGoalTarget);
-      if (goalTarget != oldGoalTarget)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.GOAL__GOAL_TARGET, oldGoalTarget, goalTarget));
-      }
-    }
-    return goalTarget;
+    return element;
   }
 
   /**
@@ -302,22 +297,12 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public NamedElement basicGetGoalTarget()
+  public void setElement(String newElement)
   {
-    return goalTarget;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setGoalTarget(NamedElement newGoalTarget)
-  {
-    NamedElement oldGoalTarget = goalTarget;
-    goalTarget = newGoalTarget;
+    String oldElement = element;
+    element = newElement;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOAL__GOAL_TARGET, oldGoalTarget, goalTarget));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOAL__ELEMENT, oldElement, element));
   }
 
   /**
@@ -459,11 +444,11 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ReqSpec> getDecomposesReference()
+  public EList<Goal> getDecomposesReference()
   {
     if (decomposesReference == null)
     {
-      decomposesReference = new EObjectResolvingEList<ReqSpec>(ReqSpec.class, this, AlisaPackage.GOAL__DECOMPOSES_REFERENCE);
+      decomposesReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.GOAL__DECOMPOSES_REFERENCE);
     }
     return decomposesReference;
   }
@@ -522,9 +507,8 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
     {
       case AlisaPackage.GOAL__NAME:
         return getName();
-      case AlisaPackage.GOAL__GOAL_TARGET:
-        if (resolve) return getGoalTarget();
-        return basicGetGoalTarget();
+      case AlisaPackage.GOAL__ELEMENT:
+        return getElement();
       case AlisaPackage.GOAL__TITLE:
         return getTitle();
       case AlisaPackage.GOAL__DESCRIPTION:
@@ -565,8 +549,8 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
       case AlisaPackage.GOAL__NAME:
         setName((String)newValue);
         return;
-      case AlisaPackage.GOAL__GOAL_TARGET:
-        setGoalTarget((NamedElement)newValue);
+      case AlisaPackage.GOAL__ELEMENT:
+        setElement((String)newValue);
         return;
       case AlisaPackage.GOAL__TITLE:
         setTitle((String)newValue);
@@ -594,7 +578,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
         return;
       case AlisaPackage.GOAL__DECOMPOSES_REFERENCE:
         getDecomposesReference().clear();
-        getDecomposesReference().addAll((Collection<? extends ReqSpec>)newValue);
+        getDecomposesReference().addAll((Collection<? extends Goal>)newValue);
         return;
       case AlisaPackage.GOAL__EVOLVES_REFERENCE:
         getEvolvesReference().clear();
@@ -625,8 +609,8 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
       case AlisaPackage.GOAL__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AlisaPackage.GOAL__GOAL_TARGET:
-        setGoalTarget((NamedElement)null);
+      case AlisaPackage.GOAL__ELEMENT:
+        setElement(ELEMENT_EDEFAULT);
         return;
       case AlisaPackage.GOAL__TITLE:
         setTitle(TITLE_EDEFAULT);
@@ -677,8 +661,8 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
     {
       case AlisaPackage.GOAL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AlisaPackage.GOAL__GOAL_TARGET:
-        return goalTarget != null;
+      case AlisaPackage.GOAL__ELEMENT:
+        return ELEMENT_EDEFAULT == null ? element != null : !ELEMENT_EDEFAULT.equals(element);
       case AlisaPackage.GOAL__TITLE:
         return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
       case AlisaPackage.GOAL__DESCRIPTION:
@@ -718,6 +702,8 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", element: ");
+    result.append(element);
     result.append(", title: ");
     result.append(title);
     result.append(", description: ");

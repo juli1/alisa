@@ -6,8 +6,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.osate.aadl2.NamedElement;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Goal</b></em>'.
@@ -17,7 +15,7 @@ import org.osate.aadl2.NamedElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getGoalTarget <em>Goal Target</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getElement <em>Element</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getAssert <em>Assert</em>}</li>
@@ -65,30 +63,30 @@ public interface Goal extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Goal Target</b></em>' reference.
+   * Returns the value of the '<em><b>Element</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Goal Target</em>' reference isn't clear,
+   * If the meaning of the '<em>Element</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Goal Target</em>' reference.
-   * @see #setGoalTarget(NamedElement)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getGoal_GoalTarget()
+   * @return the value of the '<em>Element</em>' attribute.
+   * @see #setElement(String)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getGoal_Element()
    * @model
    * @generated
    */
-  NamedElement getGoalTarget();
+  String getElement();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Goal#getGoalTarget <em>Goal Target</em>}' reference.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Goal#getElement <em>Element</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Goal Target</em>' reference.
-   * @see #getGoalTarget()
+   * @param value the new value of the '<em>Element</em>' attribute.
+   * @see #getElement()
    * @generated
    */
-  void setGoalTarget(NamedElement value);
+  void setElement(String value);
 
   /**
    * Returns the value of the '<em><b>Title</b></em>' attribute.
@@ -244,7 +242,7 @@ public interface Goal extends EObject
 
   /**
    * Returns the value of the '<em><b>Decomposes Reference</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.ReqSpec}.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Goal}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Decomposes Reference</em>' reference list isn't clear,
@@ -256,7 +254,7 @@ public interface Goal extends EObject
    * @model
    * @generated
    */
-  EList<ReqSpec> getDecomposesReference();
+  EList<Goal> getDecomposesReference();
 
   /**
    * Returns the value of the '<em><b>Evolves Reference</b></em>' reference list.
