@@ -15,7 +15,7 @@
                   name="alisaGroup">
             </separator>
          </menu>
-         <action
+         <!--action
                label="&amp;Generate CAE"
                icon="icons/alisa.png"
                class="edu.cmu.sei.alisa.analysis.actions.GenerateCAE"
@@ -23,7 +23,7 @@
                menubarPath="alisaMenu/alisaGroup"
                toolbarPath="alisaGroup"
                id="edu.cmu.sei.alisa.analysis.actions.GenerateCAE">
-         </action>
+         </action-->
          <action
                label="&amp;Import Requirements (Word)"
                icon="icons/wordicon.png"

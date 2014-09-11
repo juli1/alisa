@@ -9,15 +9,12 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
-import edu.cmu.alisa.sei.utils.AlisaDebug;
-import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.alisa.Requirement;
-import edu.cmu.sei.alisa.analysis.utils.GeneratorCAE;
 import edu.cmu.sei.alisa.editor.editors.AlisaEditor;
-
 
 public class GenerateCAE implements IWorkbenchWindowActionDelegate {
 	private IWorkbenchWindow window;
+
 	/**
 	 * The constructor.
 	 */
@@ -35,40 +32,35 @@ public class GenerateCAE implements IWorkbenchWindowActionDelegate {
 		Requirement requirement;
 
 		requirement = null;
-		editor      = null;
+		editor = null;
 		IEditorPart editorPart = window.getActivePage().getActiveEditor();
-		
-		if (editorPart instanceof AlisaEditor)
-		{
+
+		if (editorPart instanceof AlisaEditor) {
 			editor = (AlisaEditor) editorPart;
 		}
-		
-		if (editor != null)
-		{
-			Object o = ((IStructuredSelection)(editor.getTableViewer(AlisaEditor.INDEX_TABLE_REQUIREMENTS).getSelection())).getFirstElement();
-			if (o instanceof Requirement)
-			{
-				requirement = (Requirement)o;
+
+		if (editor != null) {
+			Object o = ((IStructuredSelection) (editor.getTableViewer(AlisaEditor.INDEX_TABLE_REQUIREMENTS)
+					.getSelection())).getFirstElement();
+			if (o instanceof Requirement) {
+				requirement = (Requirement) o;
 			}
 		}
-		
-		if (requirement == null)
-		{
+
+		if (requirement == null) {
 			MessageBox dialog = new MessageBox(window.getShell(), SWT.OK);
 			dialog.setText("Alisa CAE Generator");
-			dialog.setMessage("You must select a requirement");				
-			dialog.open(); 
+			dialog.setMessage("You must select a requirement");
+			dialog.open();
+		} else {
+//			GeneratorCAE.init();
+//			GeneratorCAE.generate (null, requirement);
+//			GeneratorCAE.save(edu.cmu.sei.alisa.analysis.utils.Utils.getSelectedProject());
+//			AlisaDebug.debug("[GenerateCAE] selected requirement=" + requirement);
 		}
-		else
-		{
-			GeneratorCAE.init();
-			GeneratorCAE.generate (null, requirement);
-			GeneratorCAE.save(edu.cmu.sei.alisa.analysis.utils.Utils.getSelectedProject());
-			AlisaDebug.debug("[GenerateCAE] selected requirement=" + requirement);
-		}
-   
-	} 
- 
+
+	}
+
 	/**
 	 * Selection in the workbench has been changed. We 
 	 * can change the state of the 'real' action here
