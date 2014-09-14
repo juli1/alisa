@@ -3,8 +3,7 @@
       id="edu.cmu.sei.alisa.feature"
       label="Alisa Requirement Specification and Assurance Feature"
       version="1.0.0.qualifier"
-      provider-name="CMU-SEI"
-      plugin="org.osate.branding">
+      provider-name="CMU-SEI">
 
    <description url="http://www.aadl.info">
       Provide support for Requirement Specification and Assurance
@@ -20,10 +19,6 @@
 Use of the Open Source AADL Tool Environment (OSATE) is subject
 to the terms of the license set forth at http://www.aadl.info/OSATELicense.html.
    </license>
-
-   <url>
-      <update label="OSATE2" url="http://www.aadl.info/osate2/updates"/>
-   </url>
 
    <requires>
       <import plugin="org.eclipse.xtext"/>
