@@ -5,7 +5,7 @@
    <extension
          point="org.eclipse.ui.editors">
       <editor
-            name="Alisa Graphical Editor"
+            name="Alisa Table Editor"
             extensions="alisa"
             icon="icons/alisa.png"
             contributorClass="edu.cmu.sei.alisa.editor.editors.AlisaEditorContributor"

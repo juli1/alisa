@@ -1,4 +1,3 @@
-
 package edu.cmu.sei.alisa.editor.utils;
 
 import java.util.ArrayList;
@@ -8,48 +7,42 @@ import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
 import edu.cmu.alisa.sei.utils.AlisaDebug;
-import edu.cmu.sei.alisa.alisa.AlisaFactory;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.Requirement;
-import edu.cmu.sei.alisa.alisa.impl.AlisaFactoryImpl;
-
+import edu.cmu.sei.alisa.alisa.RequirementDocument;
 
 public class AlisaRequirementsContentProvider implements IStructuredContentProvider {
 
-	
-	
-	
-    /**
-     * Returns the elements to display in the table viewer
-     *
-     * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
-     */
-    public Object[] getElements(Object element)
-    {
-    	List<Requirement> requirements = new ArrayList<Requirement>();
-    	AlisaDebug.debug ("[AlisaRequirementsContentProvider] element=" + element);
-   
-    	if (element instanceof AlisaModel)
-    	{
-    		AlisaModel am = (AlisaModel) element;
-    		for (Object o : am.getContent())
-    		{
-    			if (o instanceof Requirement)
-    			{
-    				requirements.add((Requirement)o);
-    			}
-    		}
-    	}
-        return requirements.toArray();
-    }
+	/**
+	 * Returns the elements to display in the table viewer
+	 *
+	 * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
+	 */
+	public Object[] getElements(Object element) {
+		List<Requirement> requirements = new ArrayList<Requirement>();
+		AlisaDebug.debug("[AlisaRequirementsContentProvider] element=" + element);
 
-    /**
-     * @see org.eclipse.jface.viewers.IContentProvider#dispose()
-     */
-    public void dispose() {
-    }
+		if (element instanceof AlisaModel) {
+			AlisaModel am = (AlisaModel) element;
+			for (Object o : am.getContent()) {
+				if (o instanceof RequirementDocument) {
+					for (Object oo : ((RequirementDocument) o).getContent()) {
+						if (oo instanceof Requirement) {
+							requirements.add((Requirement) oo);
+						}
+					}
+				}
+			}
+		}
+		return requirements.toArray();
+	}
 
+	/**
+	 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
+	 */
+	public void dispose() {
+	}
 
-    public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-    }
+	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+	}
 }
