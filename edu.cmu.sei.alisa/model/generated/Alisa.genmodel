@@ -91,6 +91,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Stakeholder/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Stakeholder/role"/>
     </genClasses>
+    <genClasses ecoreClass="Alisa.ecore#//Stakeholders">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Stakeholders/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//Stakeholders/stakeholder"/>
+    </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//DocumentedRequirement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//DocumentedRequirement/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//DocumentedRequirement/title"/>

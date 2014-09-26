@@ -125,6 +125,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStakeholderAccess().getGroup_2(), "rule__Stakeholder__Group_2__0");
 					put(grammarAccess.getStakeholderAccess().getGroup_3(), "rule__Stakeholder__Group_3__0");
 					put(grammarAccess.getStakeholderAccess().getGroup_4(), "rule__Stakeholder__Group_4__0");
+					put(grammarAccess.getStakeholdersAccess().getGroup(), "rule__Stakeholders__Group__0");
 					put(grammarAccess.getDocumentedRequirementAccess().getGroup(), "rule__DocumentedRequirement__Group__0");
 					put(grammarAccess.getDocumentedRequirementAccess().getGroup_2(), "rule__DocumentedRequirement__Group_2__0");
 					put(grammarAccess.getDocumentedRequirementAccess().getGroup_3(), "rule__DocumentedRequirement__Group_3__0");
@@ -259,6 +260,8 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStakeholderAccess().getTitleAssignment_2_2(), "rule__Stakeholder__TitleAssignment_2_2");
 					put(grammarAccess.getStakeholderAccess().getDescriptionAssignment_3_2(), "rule__Stakeholder__DescriptionAssignment_3_2");
 					put(grammarAccess.getStakeholderAccess().getRoleAssignment_4_2(), "rule__Stakeholder__RoleAssignment_4_2");
+					put(grammarAccess.getStakeholdersAccess().getNameAssignment_1(), "rule__Stakeholders__NameAssignment_1");
+					put(grammarAccess.getStakeholdersAccess().getStakeholderAssignment_2(), "rule__Stakeholders__StakeholderAssignment_2");
 					put(grammarAccess.getDocumentedRequirementAccess().getNameAssignment_1(), "rule__DocumentedRequirement__NameAssignment_1");
 					put(grammarAccess.getDocumentedRequirementAccess().getTitleAssignment_2_2(), "rule__DocumentedRequirement__TitleAssignment_2_2");
 					put(grammarAccess.getDocumentedRequirementAccess().getDescriptionAssignment_3_2(), "rule__DocumentedRequirement__DescriptionAssignment_3_2");

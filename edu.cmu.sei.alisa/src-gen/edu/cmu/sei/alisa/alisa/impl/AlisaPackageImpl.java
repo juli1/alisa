@@ -21,6 +21,7 @@ import edu.cmu.sei.alisa.alisa.ReqSpec;
 import edu.cmu.sei.alisa.alisa.ReqSpecifications;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
+import edu.cmu.sei.alisa.alisa.Stakeholders;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
 import edu.cmu.sei.alisa.alisa.VerificationLibrary;
@@ -141,6 +142,13 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * @generated
    */
   private EClass stakeholderEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stakeholdersEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -962,6 +970,36 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getStakeholders()
+  {
+    return stakeholdersEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStakeholders_Name()
+  {
+    return (EAttribute)stakeholdersEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStakeholders_Stakeholder()
+  {
+    return (EReference)stakeholdersEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDocumentedRequirement()
   {
     return documentedRequirementEClass;
@@ -1551,6 +1589,10 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEAttribute(stakeholderEClass, STAKEHOLDER__DESCRIPTION);
     createEAttribute(stakeholderEClass, STAKEHOLDER__ROLE);
 
+    stakeholdersEClass = createEClass(STAKEHOLDERS);
+    createEAttribute(stakeholdersEClass, STAKEHOLDERS__NAME);
+    createEReference(stakeholdersEClass, STAKEHOLDERS__STAKEHOLDER);
+
     documentedRequirementEClass = createEClass(DOCUMENTED_REQUIREMENT);
     createEAttribute(documentedRequirementEClass, DOCUMENTED_REQUIREMENT__NAME);
     createEAttribute(documentedRequirementEClass, DOCUMENTED_REQUIREMENT__TITLE);
@@ -1728,6 +1770,10 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEAttribute(getStakeholder_Title(), theEcorePackage.getEString(), "title", null, 0, 1, Stakeholder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStakeholder_Description(), theEcorePackage.getEString(), "description", null, 0, 1, Stakeholder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStakeholder_Role(), theEcorePackage.getEString(), "role", null, 0, 1, Stakeholder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stakeholdersEClass, Stakeholders.class, "Stakeholders", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStakeholders_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Stakeholders.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStakeholders_Stakeholder(), this.getStakeholder(), null, "stakeholder", null, 0, -1, Stakeholders.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(documentedRequirementEClass, DocumentedRequirement.class, "DocumentedRequirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDocumentedRequirement_Name(), theEcorePackage.getEString(), "name", null, 0, 1, DocumentedRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

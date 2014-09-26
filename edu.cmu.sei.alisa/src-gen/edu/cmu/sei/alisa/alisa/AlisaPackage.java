@@ -854,6 +854,43 @@ public interface AlisaPackage extends EPackage
   int STAKEHOLDER_FEATURE_COUNT = 4;
 
   /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.StakeholdersImpl <em>Stakeholders</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.StakeholdersImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getStakeholders()
+   * @generated
+   */
+  int STAKEHOLDERS = 14;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STAKEHOLDERS__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Stakeholder</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STAKEHOLDERS__STAKEHOLDER = 1;
+
+  /**
+   * The number of structural features of the '<em>Stakeholders</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STAKEHOLDERS_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.DocumentedRequirementImpl <em>Documented Requirement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -861,7 +898,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getDocumentedRequirement()
    * @generated
    */
-  int DOCUMENTED_REQUIREMENT = 14;
+  int DOCUMENTED_REQUIREMENT = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -952,7 +989,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getDocumentedRequirementDecomposition()
    * @generated
    */
-  int DOCUMENTED_REQUIREMENT_DECOMPOSITION = 15;
+  int DOCUMENTED_REQUIREMENT_DECOMPOSITION = 16;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -1007,7 +1044,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationDecomposition()
    * @generated
    */
-  int VERIFICATION_DECOMPOSITION = 16;
+  int VERIFICATION_DECOMPOSITION = 17;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -1062,7 +1099,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getElementType()
    * @generated
    */
-  int ELEMENT_TYPE = 17;
+  int ELEMENT_TYPE = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1135,7 +1172,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getElementReference()
    * @generated
    */
-  int ELEMENT_REFERENCE = 18;
+  int ELEMENT_REFERENCE = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1208,7 +1245,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationActivity()
    * @generated
    */
-  int VERIFICATION_ACTIVITY = 19;
+  int VERIFICATION_ACTIVITY = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1281,7 +1318,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationResult()
    * @generated
    */
-  int VERIFICATION_RESULT = 20;
+  int VERIFICATION_RESULT = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2111,6 +2148,38 @@ public interface AlisaPackage extends EPackage
    * @generated
    */
   EAttribute getStakeholder_Role();
+
+  /**
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.Stakeholders <em>Stakeholders</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Stakeholders</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Stakeholders
+   * @generated
+   */
+  EClass getStakeholders();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Stakeholders#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Stakeholders#getName()
+   * @see #getStakeholders()
+   * @generated
+   */
+  EAttribute getStakeholders_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.Stakeholders#getStakeholder <em>Stakeholder</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Stakeholder</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Stakeholders#getStakeholder()
+   * @see #getStakeholders()
+   * @generated
+   */
+  EReference getStakeholders_Stakeholder();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirement <em>Documented Requirement</em>}'.
@@ -3243,6 +3312,32 @@ public interface AlisaPackage extends EPackage
      * @generated
      */
     EAttribute STAKEHOLDER__ROLE = eINSTANCE.getStakeholder_Role();
+
+    /**
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.StakeholdersImpl <em>Stakeholders</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.StakeholdersImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getStakeholders()
+     * @generated
+     */
+    EClass STAKEHOLDERS = eINSTANCE.getStakeholders();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STAKEHOLDERS__NAME = eINSTANCE.getStakeholders_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Stakeholder</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STAKEHOLDERS__STAKEHOLDER = eINSTANCE.getStakeholders_Stakeholder();
 
     /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.DocumentedRequirementImpl <em>Documented Requirement</em>}' class.

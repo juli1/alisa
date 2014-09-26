@@ -173,6 +173,13 @@ public class AlisaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AlisaPackage.STAKEHOLDERS:
+      {
+        Stakeholders stakeholders = (Stakeholders)theEObject;
+        T result = caseStakeholders(stakeholders);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AlisaPackage.DOCUMENTED_REQUIREMENT:
       {
         DocumentedRequirement documentedRequirement = (DocumentedRequirement)theEObject;
@@ -446,6 +453,22 @@ public class AlisaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStakeholder(Stakeholder object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Stakeholders</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Stakeholders</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStakeholders(Stakeholders object)
   {
     return null;
   }

@@ -18,6 +18,7 @@ import edu.cmu.alisa.sei.utils.AlisaDebug;
 import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
+import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.analysis.preferences.PreferencesValues;
 
@@ -85,6 +86,7 @@ public class WordImport {
 
 	public static AlisaModel importFile(String fileName, ImportType importType) {
 		AlisaModel returnedModel;
+		RequirementDocument reqdoc;
 		HWPFDocument doc;
 		POIFSFileSystem fs;
 //        WordExtractor wordExtractor;
@@ -104,6 +106,7 @@ public class WordImport {
 		fs = null;
 
 		returnedModel = Utils.createModel();
+		reqdoc = Utils.createReqDoc(returnedModel);
 
 		try {
 			fs = new POIFSFileSystem(new FileInputStream(fileName));
@@ -183,7 +186,7 @@ public class WordImport {
 
 						AlisaDebug.debug("WordImport", "rowId  = " + rowId + " new requirement title = " + reqTitle
 								+ " identifier " + reqIdentifier);
-						req = Utils.addNewDocumentedRequirement(returnedModel);
+						req = Utils.addNewDocumentedRequirement(reqdoc);
 						req.setTitle("\"" + reqTitle + "\"\n");
 						req.setDescription("\"\"");
 						req.setName(reqIdentifier);
@@ -255,7 +258,7 @@ public class WordImport {
 						reqTitle = par.text();
 						reqTitle = reqTitle.substring(0, reqTitle.length() - 1);
 
-						req = Utils.addNewDocumentedRequirement(returnedModel);
+						req = Utils.addNewDocumentedRequirement(reqdoc);
 						req.setTitle("\"" + par.text() + "\"\n");
 						req.setDescription("\"\"");
 

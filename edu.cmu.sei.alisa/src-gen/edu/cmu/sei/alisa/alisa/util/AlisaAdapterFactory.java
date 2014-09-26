@@ -145,6 +145,11 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
         return createStakeholderAdapter();
       }
       @Override
+      public Adapter caseStakeholders(Stakeholders object)
+      {
+        return createStakeholdersAdapter();
+      }
+      @Override
       public Adapter caseDocumentedRequirement(DocumentedRequirement object)
       {
         return createDocumentedRequirementAdapter();
@@ -407,6 +412,21 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStakeholderAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Stakeholders <em>Stakeholders</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.Stakeholders
+   * @generated
+   */
+  public Adapter createStakeholdersAdapter()
   {
     return null;
   }

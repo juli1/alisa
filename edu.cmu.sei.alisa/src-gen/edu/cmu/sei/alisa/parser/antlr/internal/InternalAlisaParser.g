@@ -221,9 +221,9 @@ ruleAlisaModel returns [EObject current=null]
 	    }
 
     |		{ 
-	        newCompositeNode(grammarAccess.getAlisaModelAccess().getContentExternalDocumentsParserRuleCall_2_0_4()); 
+	        newCompositeNode(grammarAccess.getAlisaModelAccess().getContentStakeholdersParserRuleCall_2_0_4()); 
 	    }
-		lv_content_10_5=ruleExternalDocuments		{
+		lv_content_10_5=ruleStakeholders		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAlisaModelRule());
 	        }
@@ -231,14 +231,14 @@ ruleAlisaModel returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_10_5, 
-        		"ExternalDocuments");
+        		"Stakeholders");
 	        afterParserOrEnumRuleCall();
 	    }
 
     |		{ 
-	        newCompositeNode(grammarAccess.getAlisaModelAccess().getContentVerificationActivityParserRuleCall_2_0_5()); 
+	        newCompositeNode(grammarAccess.getAlisaModelAccess().getContentExternalDocumentsParserRuleCall_2_0_5()); 
 	    }
-		lv_content_10_6=ruleVerificationActivity		{
+		lv_content_10_6=ruleExternalDocuments		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAlisaModelRule());
 	        }
@@ -246,14 +246,14 @@ ruleAlisaModel returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_10_6, 
-        		"VerificationActivity");
+        		"ExternalDocuments");
 	        afterParserOrEnumRuleCall();
 	    }
 
     |		{ 
-	        newCompositeNode(grammarAccess.getAlisaModelAccess().getContentVerificationResultParserRuleCall_2_0_6()); 
+	        newCompositeNode(grammarAccess.getAlisaModelAccess().getContentVerificationActivityParserRuleCall_2_0_6()); 
 	    }
-		lv_content_10_7=ruleVerificationResult		{
+		lv_content_10_7=ruleVerificationActivity		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAlisaModelRule());
 	        }
@@ -261,14 +261,14 @@ ruleAlisaModel returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_10_7, 
-        		"VerificationResult");
+        		"VerificationActivity");
 	        afterParserOrEnumRuleCall();
 	    }
 
     |		{ 
-	        newCompositeNode(grammarAccess.getAlisaModelAccess().getContentElementTypeParserRuleCall_2_0_7()); 
+	        newCompositeNode(grammarAccess.getAlisaModelAccess().getContentVerificationResultParserRuleCall_2_0_7()); 
 	    }
-		lv_content_10_8=ruleElementType		{
+		lv_content_10_8=ruleVerificationResult		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAlisaModelRule());
 	        }
@@ -276,14 +276,14 @@ ruleAlisaModel returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_10_8, 
-        		"ElementType");
+        		"VerificationResult");
 	        afterParserOrEnumRuleCall();
 	    }
 
     |		{ 
-	        newCompositeNode(grammarAccess.getAlisaModelAccess().getContentAliasesParserRuleCall_2_0_8()); 
+	        newCompositeNode(grammarAccess.getAlisaModelAccess().getContentElementTypeParserRuleCall_2_0_8()); 
 	    }
-		lv_content_10_9=ruleAliases		{
+		lv_content_10_9=ruleElementType		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAlisaModelRule());
 	        }
@@ -291,14 +291,14 @@ ruleAlisaModel returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_10_9, 
-        		"Aliases");
+        		"ElementType");
 	        afterParserOrEnumRuleCall();
 	    }
 
     |		{ 
-	        newCompositeNode(grammarAccess.getAlisaModelAccess().getContentNotesParserRuleCall_2_0_9()); 
+	        newCompositeNode(grammarAccess.getAlisaModelAccess().getContentAliasesParserRuleCall_2_0_9()); 
 	    }
-		lv_content_10_10=ruleNotes		{
+		lv_content_10_10=ruleAliases		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAlisaModelRule());
 	        }
@@ -306,6 +306,21 @@ ruleAlisaModel returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_10_10, 
+        		"Aliases");
+	        afterParserOrEnumRuleCall();
+	    }
+
+    |		{ 
+	        newCompositeNode(grammarAccess.getAlisaModelAccess().getContentNotesParserRuleCall_2_0_10()); 
+	    }
+		lv_content_10_11=ruleNotes		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAlisaModelRule());
+	        }
+       		add(
+       			$current, 
+       			"content",
+        		lv_content_10_11, 
         		"Notes");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -383,9 +398,9 @@ ruleRequirementDocument returns [EObject current=null]
 	    }
 
     |		{ 
-	        newCompositeNode(grammarAccess.getRequirementDocumentAccess().getContentStakeholderParserRuleCall_3_0_1()); 
+	        newCompositeNode(grammarAccess.getRequirementDocumentAccess().getContentElementTypeParserRuleCall_3_0_1()); 
 	    }
-		lv_content_3_2=ruleStakeholder		{
+		lv_content_3_2=ruleElementType		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRequirementDocumentRule());
 	        }
@@ -393,14 +408,14 @@ ruleRequirementDocument returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_3_2, 
-        		"Stakeholder");
+        		"ElementType");
 	        afterParserOrEnumRuleCall();
 	    }
 
     |		{ 
-	        newCompositeNode(grammarAccess.getRequirementDocumentAccess().getContentElementTypeParserRuleCall_3_0_2()); 
+	        newCompositeNode(grammarAccess.getRequirementDocumentAccess().getContentElementReferenceParserRuleCall_3_0_2()); 
 	    }
-		lv_content_3_3=ruleElementType		{
+		lv_content_3_3=ruleElementReference		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRequirementDocumentRule());
 	        }
@@ -408,21 +423,6 @@ ruleRequirementDocument returns [EObject current=null]
        			$current, 
        			"content",
         		lv_content_3_3, 
-        		"ElementType");
-	        afterParserOrEnumRuleCall();
-	    }
-
-    |		{ 
-	        newCompositeNode(grammarAccess.getRequirementDocumentAccess().getContentElementReferenceParserRuleCall_3_0_3()); 
-	    }
-		lv_content_3_4=ruleElementReference		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getRequirementDocumentRule());
-	        }
-       		add(
-       			$current, 
-       			"content",
-        		lv_content_3_4, 
         		"ElementReference");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -472,7 +472,7 @@ ruleVerificationLibrary returns [EObject current=null]
     }
     @after { leaveRule(); }:
 (
-	otherlv_0=KEYWORD_80
+	otherlv_0=KEYWORD_81
     {
     	newLeafNode(otherlv_0, grammarAccess.getVerificationLibraryAccess().getVerificationKeyword_0());
     }
@@ -586,7 +586,7 @@ ruleVerificationLibrary returns [EObject current=null]
     	newLeafNode(otherlv_4, grammarAccess.getVerificationLibraryAccess().getEndKeyword_4());
     }
 
-	otherlv_5=KEYWORD_80
+	otherlv_5=KEYWORD_81
     {
     	newLeafNode(otherlv_5, grammarAccess.getVerificationLibraryAccess().getVerificationKeyword_5());
     }
@@ -1410,7 +1410,7 @@ ruleReqSpecifications returns [EObject current=null]
     }
     @after { leaveRule(); }:
 (
-	otherlv_0=KEYWORD_79
+	otherlv_0=KEYWORD_80
     {
     	newLeafNode(otherlv_0, grammarAccess.getReqSpecificationsAccess().getRequirementsKeyword_0());
     }
@@ -1476,7 +1476,7 @@ ruleReqSpecifications returns [EObject current=null]
     	newLeafNode(otherlv_5, grammarAccess.getReqSpecificationsAccess().getEndKeyword_5());
     }
 
-	otherlv_6=KEYWORD_79
+	otherlv_6=KEYWORD_80
     {
     	newLeafNode(otherlv_6, grammarAccess.getReqSpecificationsAccess().getRequirementsKeyword_6());
     }
@@ -3065,6 +3065,83 @@ ruleStakeholder returns [EObject current=null]
 
 
 
+// Entry rule entryRuleStakeholders
+entryRuleStakeholders returns [EObject current=null]
+	:
+	{ newCompositeNode(grammarAccess.getStakeholdersRule()); }
+	 iv_ruleStakeholders=ruleStakeholders 
+	 { $current=$iv_ruleStakeholders.current; } 
+	 EOF 
+;
+
+// Rule Stakeholders
+ruleStakeholders returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	otherlv_0=KEYWORD_79
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getStakeholdersAccess().getOrganizationKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getStakeholdersAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getStakeholdersRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getStakeholdersAccess().getStakeholderStakeholderParserRuleCall_2_0()); 
+	    }
+		lv_stakeholder_2_0=ruleStakeholder		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getStakeholdersRule());
+	        }
+       		add(
+       			$current, 
+       			"stakeholder",
+        		lv_stakeholder_2_0, 
+        		"Stakeholder");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*
+	otherlv_3=KEYWORD_13
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getStakeholdersAccess().getEndKeyword_3());
+    }
+
+	otherlv_4=KEYWORD_79
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getStakeholdersAccess().getOrganizationKeyword_4());
+    }
+
+	otherlv_5=KEYWORD_5
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getStakeholdersAccess().getSemicolonKeyword_5());
+    }
+)
+;
+
+
+
+
+
 // Entry rule entryRuleDocumentedRequirement
 entryRuleDocumentedRequirement returns [EObject current=null]
 	:
@@ -3700,7 +3777,7 @@ ruleElementType returns [EObject current=null]
 
 )
 ))?(
-	otherlv_12=KEYWORD_82
+	otherlv_12=KEYWORD_83
     {
     	newLeafNode(otherlv_12, grammarAccess.getElementTypeAccess().getDocumentDetailsKeyword_6_0());
     }
@@ -3883,7 +3960,7 @@ ruleElementReference returns [EObject current=null]
 
 )
 ))?(
-	otherlv_10=KEYWORD_81
+	otherlv_10=KEYWORD_82
     {
     	newLeafNode(otherlv_10, grammarAccess.getElementReferenceAccess().getReferenceTypeKeyword_5_0());
     }
@@ -3911,7 +3988,7 @@ ruleElementReference returns [EObject current=null]
 
 )
 ))?(
-	otherlv_13=KEYWORD_82
+	otherlv_13=KEYWORD_83
     {
     	newLeafNode(otherlv_13, grammarAccess.getElementReferenceAccess().getDocumentDetailsKeyword_6_0());
     }
@@ -4008,7 +4085,7 @@ ruleVerificationActivity returns [EObject current=null]
     }
     @after { leaveRule(); }:
 (
-	otherlv_0=KEYWORD_80
+	otherlv_0=KEYWORD_81
     {
     	newLeafNode(otherlv_0, grammarAccess.getVerificationActivityAccess().getVerificationKeyword_0());
     }
@@ -4213,7 +4290,7 @@ ruleVerificationActivity returns [EObject current=null]
     	newLeafNode(otherlv_25, grammarAccess.getVerificationActivityAccess().getEndKeyword_8());
     }
 
-	otherlv_26=KEYWORD_80
+	otherlv_26=KEYWORD_81
     {
     	newLeafNode(otherlv_26, grammarAccess.getVerificationActivityAccess().getVerificationKeyword_9());
     }
@@ -4285,7 +4362,7 @@ ruleVerificationMethod returns [AntlrDatatypeRuleToken current=new AntlrDatatype
     }
 
     |
-	kw=KEYWORD_80 
+	kw=KEYWORD_81 
     {
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getVerificationMethodAccess().getVerificationKeyword_5()); 
@@ -4312,7 +4389,7 @@ ruleVerificationResult returns [EObject current=null]
     }
     @after { leaveRule(); }:
 (
-	otherlv_0=KEYWORD_80
+	otherlv_0=KEYWORD_81
     {
     	newLeafNode(otherlv_0, grammarAccess.getVerificationResultAccess().getVerificationKeyword_0());
     }
@@ -4528,7 +4605,7 @@ ruleVerificationResult returns [EObject current=null]
     	newLeafNode(otherlv_25, grammarAccess.getVerificationResultAccess().getEndKeyword_10());
     }
 
-	otherlv_26=KEYWORD_80
+	otherlv_26=KEYWORD_81
     {
     	newLeafNode(otherlv_26, grammarAccess.getVerificationResultAccess().getVerificationKeyword_11());
     }

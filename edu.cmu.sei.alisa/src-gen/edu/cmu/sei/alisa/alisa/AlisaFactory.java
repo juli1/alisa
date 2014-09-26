@@ -149,6 +149,15 @@ public interface AlisaFactory extends EFactory
   Stakeholder createStakeholder();
 
   /**
+   * Returns a new object of class '<em>Stakeholders</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Stakeholders</em>'.
+   * @generated
+   */
+  Stakeholders createStakeholders();
+
+  /**
    * Returns a new object of class '<em>Documented Requirement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

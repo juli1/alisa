@@ -78,6 +78,7 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
       case AlisaPackage.ALIAS: return createAlias();
       case AlisaPackage.NOTES: return createNotes();
       case AlisaPackage.STAKEHOLDER: return createStakeholder();
+      case AlisaPackage.STAKEHOLDERS: return createStakeholders();
       case AlisaPackage.DOCUMENTED_REQUIREMENT: return createDocumentedRequirement();
       case AlisaPackage.DOCUMENTED_REQUIREMENT_DECOMPOSITION: return createDocumentedRequirementDecomposition();
       case AlisaPackage.VERIFICATION_DECOMPOSITION: return createVerificationDecomposition();
@@ -242,6 +243,17 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
   {
     StakeholderImpl stakeholder = new StakeholderImpl();
     return stakeholder;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Stakeholders createStakeholders()
+  {
+    StakeholdersImpl stakeholders = new StakeholdersImpl();
+    return stakeholders;
   }
 
   /**

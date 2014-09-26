@@ -19,6 +19,7 @@ import edu.cmu.sei.alisa.alisa.ReqSpec;
 import edu.cmu.sei.alisa.alisa.ReqSpecifications;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
+import edu.cmu.sei.alisa.alisa.Stakeholders;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
 import edu.cmu.sei.alisa.alisa.VerificationLibrary;
@@ -142,6 +143,12 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case AlisaPackage.STAKEHOLDERS:
+				if(context == grammarAccess.getStakeholdersRule()) {
+					sequence_Stakeholders(context, (Stakeholders) semanticObject); 
+					return; 
+				}
+				else break;
 			case AlisaPackage.VERIFICATION_ACTIVITY:
 				if(context == grammarAccess.getVerificationActivityRule()) {
 					sequence_VerificationActivity(context, (VerificationActivity) semanticObject); 
@@ -199,6 +206,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *             content+=ReqSpecifications | 
 	 *             content+=VerificationLibrary | 
 	 *             content+=RequirementDocument | 
+	 *             content+=Stakeholders | 
 	 *             content+=ExternalDocuments | 
 	 *             content+=VerificationActivity | 
 	 *             content+=VerificationResult | 
@@ -385,7 +393,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (content+=DocumentedRequirement | content+=Stakeholder | content+=ElementType | content+=ElementReference)*)
+	 *     (name=ID (content+=DocumentedRequirement | content+=ElementType | content+=ElementReference)*)
 	 */
 	protected void sequence_RequirementDocument(EObject context, RequirementDocument semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -397,6 +405,15 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (name=ID title=ValueString? description=ValueString? role=ValueString?)
 	 */
 	protected void sequence_Stakeholder(EObject context, Stakeholder semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID stakeholder+=Stakeholder*)
+	 */
+	protected void sequence_Stakeholders(EObject context, Stakeholders semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -49,23 +49,24 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cContentReqSpecificationsParserRuleCall_2_0_1 = (RuleCall)cContentAlternatives_2_0.eContents().get(1);
 		private final RuleCall cContentVerificationLibraryParserRuleCall_2_0_2 = (RuleCall)cContentAlternatives_2_0.eContents().get(2);
 		private final RuleCall cContentRequirementDocumentParserRuleCall_2_0_3 = (RuleCall)cContentAlternatives_2_0.eContents().get(3);
-		private final RuleCall cContentExternalDocumentsParserRuleCall_2_0_4 = (RuleCall)cContentAlternatives_2_0.eContents().get(4);
-		private final RuleCall cContentVerificationActivityParserRuleCall_2_0_5 = (RuleCall)cContentAlternatives_2_0.eContents().get(5);
-		private final RuleCall cContentVerificationResultParserRuleCall_2_0_6 = (RuleCall)cContentAlternatives_2_0.eContents().get(6);
-		private final RuleCall cContentElementTypeParserRuleCall_2_0_7 = (RuleCall)cContentAlternatives_2_0.eContents().get(7);
-		private final RuleCall cContentAliasesParserRuleCall_2_0_8 = (RuleCall)cContentAlternatives_2_0.eContents().get(8);
-		private final RuleCall cContentNotesParserRuleCall_2_0_9 = (RuleCall)cContentAlternatives_2_0.eContents().get(9);
+		private final RuleCall cContentStakeholdersParserRuleCall_2_0_4 = (RuleCall)cContentAlternatives_2_0.eContents().get(4);
+		private final RuleCall cContentExternalDocumentsParserRuleCall_2_0_5 = (RuleCall)cContentAlternatives_2_0.eContents().get(5);
+		private final RuleCall cContentVerificationActivityParserRuleCall_2_0_6 = (RuleCall)cContentAlternatives_2_0.eContents().get(6);
+		private final RuleCall cContentVerificationResultParserRuleCall_2_0_7 = (RuleCall)cContentAlternatives_2_0.eContents().get(7);
+		private final RuleCall cContentElementTypeParserRuleCall_2_0_8 = (RuleCall)cContentAlternatives_2_0.eContents().get(8);
+		private final RuleCall cContentAliasesParserRuleCall_2_0_9 = (RuleCall)cContentAlternatives_2_0.eContents().get(9);
+		private final RuleCall cContentNotesParserRuleCall_2_0_10 = (RuleCall)cContentAlternatives_2_0.eContents().get(10);
 		
 		//AlisaModel:
 		//	("imports" importedNamespace+=[Document] ("," importedNamespace+=[Document])* ";")? ("with"
 		//	importedNamespace+=[aadl2::AadlPackage|QPREF] ("," importedNamespace+=[aadl2::AadlPackage|QPREF])* ";")?
-		//	content+=(Goals | ReqSpecifications | VerificationLibrary | RequirementDocument | ExternalDocuments |
+		//	content+=(Goals | ReqSpecifications | VerificationLibrary | RequirementDocument | Stakeholders | ExternalDocuments |
 		//	VerificationActivity | VerificationResult | ElementType | Aliases | Notes)*;
 		public ParserRule getRule() { return rule; }
 
 		//("imports" importedNamespace+=[Document] ("," importedNamespace+=[Document])* ";")? ("with"
 		//importedNamespace+=[aadl2::AadlPackage|QPREF] ("," importedNamespace+=[aadl2::AadlPackage|QPREF])* ";")?
-		//content+=(Goals | ReqSpecifications | VerificationLibrary | RequirementDocument | ExternalDocuments |
+		//content+=(Goals | ReqSpecifications | VerificationLibrary | RequirementDocument | Stakeholders | ExternalDocuments |
 		//VerificationActivity | VerificationResult | ElementType | Aliases | Notes)*
 		public Group getGroup() { return cGroup; }
 
@@ -135,12 +136,12 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//";"
 		public Keyword getSemicolonKeyword_1_3() { return cSemicolonKeyword_1_3; }
 
-		//content+=(Goals | ReqSpecifications | VerificationLibrary | RequirementDocument | ExternalDocuments |
+		//content+=(Goals | ReqSpecifications | VerificationLibrary | RequirementDocument | Stakeholders | ExternalDocuments |
 		//VerificationActivity | VerificationResult | ElementType | Aliases | Notes)*
 		public Assignment getContentAssignment_2() { return cContentAssignment_2; }
 
-		//Goals | ReqSpecifications | VerificationLibrary | RequirementDocument | ExternalDocuments | VerificationActivity |
-		//VerificationResult | ElementType | Aliases | Notes
+		//Goals | ReqSpecifications | VerificationLibrary | RequirementDocument | Stakeholders | ExternalDocuments |
+		//VerificationActivity | VerificationResult | ElementType | Aliases | Notes
 		public Alternatives getContentAlternatives_2_0() { return cContentAlternatives_2_0; }
 
 		//Goals
@@ -155,23 +156,26 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//RequirementDocument
 		public RuleCall getContentRequirementDocumentParserRuleCall_2_0_3() { return cContentRequirementDocumentParserRuleCall_2_0_3; }
 
+		//Stakeholders
+		public RuleCall getContentStakeholdersParserRuleCall_2_0_4() { return cContentStakeholdersParserRuleCall_2_0_4; }
+
 		//ExternalDocuments
-		public RuleCall getContentExternalDocumentsParserRuleCall_2_0_4() { return cContentExternalDocumentsParserRuleCall_2_0_4; }
+		public RuleCall getContentExternalDocumentsParserRuleCall_2_0_5() { return cContentExternalDocumentsParserRuleCall_2_0_5; }
 
 		//VerificationActivity
-		public RuleCall getContentVerificationActivityParserRuleCall_2_0_5() { return cContentVerificationActivityParserRuleCall_2_0_5; }
+		public RuleCall getContentVerificationActivityParserRuleCall_2_0_6() { return cContentVerificationActivityParserRuleCall_2_0_6; }
 
 		//VerificationResult
-		public RuleCall getContentVerificationResultParserRuleCall_2_0_6() { return cContentVerificationResultParserRuleCall_2_0_6; }
+		public RuleCall getContentVerificationResultParserRuleCall_2_0_7() { return cContentVerificationResultParserRuleCall_2_0_7; }
 
 		//ElementType
-		public RuleCall getContentElementTypeParserRuleCall_2_0_7() { return cContentElementTypeParserRuleCall_2_0_7; }
+		public RuleCall getContentElementTypeParserRuleCall_2_0_8() { return cContentElementTypeParserRuleCall_2_0_8; }
 
 		//Aliases
-		public RuleCall getContentAliasesParserRuleCall_2_0_8() { return cContentAliasesParserRuleCall_2_0_8; }
+		public RuleCall getContentAliasesParserRuleCall_2_0_9() { return cContentAliasesParserRuleCall_2_0_9; }
 
 		//Notes
-		public RuleCall getContentNotesParserRuleCall_2_0_9() { return cContentNotesParserRuleCall_2_0_9; }
+		public RuleCall getContentNotesParserRuleCall_2_0_10() { return cContentNotesParserRuleCall_2_0_10; }
 	}
 
 	public class DocumentElements extends AbstractParserRuleElementFinder {
@@ -211,21 +215,20 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cContentAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final Alternatives cContentAlternatives_3_0 = (Alternatives)cContentAssignment_3.eContents().get(0);
 		private final RuleCall cContentDocumentedRequirementParserRuleCall_3_0_0 = (RuleCall)cContentAlternatives_3_0.eContents().get(0);
-		private final RuleCall cContentStakeholderParserRuleCall_3_0_1 = (RuleCall)cContentAlternatives_3_0.eContents().get(1);
-		private final RuleCall cContentElementTypeParserRuleCall_3_0_2 = (RuleCall)cContentAlternatives_3_0.eContents().get(2);
-		private final RuleCall cContentElementReferenceParserRuleCall_3_0_3 = (RuleCall)cContentAlternatives_3_0.eContents().get(3);
+		private final RuleCall cContentElementTypeParserRuleCall_3_0_1 = (RuleCall)cContentAlternatives_3_0.eContents().get(1);
+		private final RuleCall cContentElementReferenceParserRuleCall_3_0_2 = (RuleCall)cContentAlternatives_3_0.eContents().get(2);
 		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Keyword cRequirementKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Keyword cDocumentKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cSemicolonKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//RequirementDocument:
-		//	"requirement" "document" name=ID content+=(DocumentedRequirement | Stakeholder | ElementType | ElementReference)*
-		//	"end" "requirement" "document" ";";
+		//	"requirement" "document" name=ID content+=(DocumentedRequirement | ElementType | ElementReference)* "end"
+		//	"requirement" "document" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"requirement" "document" name=ID content+=(DocumentedRequirement | Stakeholder | ElementType | ElementReference)* "end"
-		//"requirement" "document" ";"
+		//"requirement" "document" name=ID content+=(DocumentedRequirement | ElementType | ElementReference)* "end" "requirement"
+		//"document" ";"
 		public Group getGroup() { return cGroup; }
 
 		//"requirement"
@@ -240,23 +243,20 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//content+=(DocumentedRequirement | Stakeholder | ElementType | ElementReference)*
+		//content+=(DocumentedRequirement | ElementType | ElementReference)*
 		public Assignment getContentAssignment_3() { return cContentAssignment_3; }
 
-		//DocumentedRequirement | Stakeholder | ElementType | ElementReference
+		//DocumentedRequirement | ElementType | ElementReference
 		public Alternatives getContentAlternatives_3_0() { return cContentAlternatives_3_0; }
 
 		//DocumentedRequirement
 		public RuleCall getContentDocumentedRequirementParserRuleCall_3_0_0() { return cContentDocumentedRequirementParserRuleCall_3_0_0; }
 
-		//Stakeholder
-		public RuleCall getContentStakeholderParserRuleCall_3_0_1() { return cContentStakeholderParserRuleCall_3_0_1; }
-
 		//ElementType
-		public RuleCall getContentElementTypeParserRuleCall_3_0_2() { return cContentElementTypeParserRuleCall_3_0_2; }
+		public RuleCall getContentElementTypeParserRuleCall_3_0_1() { return cContentElementTypeParserRuleCall_3_0_1; }
 
 		//ElementReference
-		public RuleCall getContentElementReferenceParserRuleCall_3_0_3() { return cContentElementReferenceParserRuleCall_3_0_3; }
+		public RuleCall getContentElementReferenceParserRuleCall_3_0_2() { return cContentElementReferenceParserRuleCall_3_0_2; }
 
 		//"end"
 		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
@@ -2272,6 +2272,50 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getSemicolonKeyword_7() { return cSemicolonKeyword_7; }
 	}
 
+	public class StakeholdersElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Stakeholders");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOrganizationKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cStakeholderAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cStakeholderStakeholderParserRuleCall_2_0 = (RuleCall)cStakeholderAssignment_2.eContents().get(0);
+		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cOrganizationKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Stakeholders:
+		//	"organization" name=ID stakeholder+=Stakeholder* "end" "organization" ";";
+		public ParserRule getRule() { return rule; }
+
+		//"organization" name=ID stakeholder+=Stakeholder* "end" "organization" ";"
+		public Group getGroup() { return cGroup; }
+
+		//"organization"
+		public Keyword getOrganizationKeyword_0() { return cOrganizationKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//stakeholder+=Stakeholder*
+		public Assignment getStakeholderAssignment_2() { return cStakeholderAssignment_2; }
+
+		//Stakeholder
+		public RuleCall getStakeholderStakeholderParserRuleCall_2_0() { return cStakeholderStakeholderParserRuleCall_2_0; }
+
+		//"end"
+		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
+
+		//"organization"
+		public Keyword getOrganizationKeyword_4() { return cOrganizationKeyword_4; }
+
+		//";"
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
+	}
+
 	public class DocumentedRequirementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DocumentedRequirement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3652,6 +3696,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	private NotesElements pNotes;
 	private ValueStringElements pValueString;
 	private StakeholderElements pStakeholder;
+	private StakeholdersElements pStakeholders;
 	private DocumentedRequirementElements pDocumentedRequirement;
 	private DocumentedRequirementDecompositionElements pDocumentedRequirementDecomposition;
 	private VerificationDecompositionElements pVerificationDecomposition;
@@ -3714,7 +3759,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	//AlisaModel:
 	//	("imports" importedNamespace+=[Document] ("," importedNamespace+=[Document])* ";")? ("with"
 	//	importedNamespace+=[aadl2::AadlPackage|QPREF] ("," importedNamespace+=[aadl2::AadlPackage|QPREF])* ";")?
-	//	content+=(Goals | ReqSpecifications | VerificationLibrary | RequirementDocument | ExternalDocuments |
+	//	content+=(Goals | ReqSpecifications | VerificationLibrary | RequirementDocument | Stakeholders | ExternalDocuments |
 	//	VerificationActivity | VerificationResult | ElementType | Aliases | Notes)*;
 	public AlisaModelElements getAlisaModelAccess() {
 		return (pAlisaModel != null) ? pAlisaModel : (pAlisaModel = new AlisaModelElements());
@@ -3738,8 +3783,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RequirementDocument:
-	//	"requirement" "document" name=ID content+=(DocumentedRequirement | Stakeholder | ElementType | ElementReference)*
-	//	"end" "requirement" "document" ";";
+	//	"requirement" "document" name=ID content+=(DocumentedRequirement | ElementType | ElementReference)* "end"
+	//	"requirement" "document" ";";
 	public RequirementDocumentElements getRequirementDocumentAccess() {
 		return (pRequirementDocument != null) ? pRequirementDocument : (pRequirementDocument = new RequirementDocumentElements());
 	}
@@ -3916,6 +3961,16 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getStakeholderRule() {
 		return getStakeholderAccess().getRule();
+	}
+
+	//Stakeholders:
+	//	"organization" name=ID stakeholder+=Stakeholder* "end" "organization" ";";
+	public StakeholdersElements getStakeholdersAccess() {
+		return (pStakeholders != null) ? pStakeholders : (pStakeholders = new StakeholdersElements());
+	}
+	
+	public ParserRule getStakeholdersRule() {
+		return getStakeholdersAccess().getRule();
 	}
 
 	/// *

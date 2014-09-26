@@ -7,6 +7,7 @@ import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -51,6 +52,7 @@ import edu.cmu.alisa.sei.utils.AlisaDebug;
 import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.AlisaStandaloneSetup;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
+import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.editor.utils.AlisaEditorCellModifier;
 import edu.cmu.sei.alisa.editor.utils.AlisaLabelProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaRequirementsContentProvider;
@@ -180,7 +182,7 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 				switch (getActivePage()) {
 				case INDEX_TABLE_REQUIREMENTS: {
 
-					Utils.addNewDocumentedRequirement(getRootObject());
+					Utils.addNewDocumentedRequirement(getReqDoc());
 					break;
 				}
 				case INDEX_TABLE_STAKEHOLDERS: {
@@ -210,8 +212,7 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 			public void widgetSelected(SelectionEvent e) {
 				Object o = ((IStructuredSelection) tableViewers[getActivePage()].getSelection()).getFirstElement();
 				if (o != null) {
-					Utils.deleteObjectFromModel(getRootObject(), o);
-					getRootObject().getContent().remove(o);
+					Utils.deleteObjectFromModel(o);
 					updateTables();
 				}
 			}
@@ -309,6 +310,17 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 				updateTableFromTextEditor(index);
 			}
 		});
+	}
+
+	public RequirementDocument getReqDoc() {
+		AlisaModel model = getRootObject(false);
+		EList<EObject> content = model.getContent();
+		for (EObject res : content) {
+			if (res instanceof RequirementDocument) {
+				return (RequirementDocument) res;
+			}
+		}
+		return Utils.createReqDoc(model);
 	}
 
 	public AlisaModel getRootObject() {

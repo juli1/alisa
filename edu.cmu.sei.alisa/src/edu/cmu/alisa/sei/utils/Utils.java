@@ -9,6 +9,7 @@ import edu.cmu.sei.alisa.alisa.AlisaFactory;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition;
+import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.impl.AlisaFactoryImpl;
@@ -131,14 +132,14 @@ public class Utils {
 	 */
 	private static int NEW_REQ_ID = 1;
 
-	public static DocumentedRequirement addNewDocumentedRequirement(AlisaModel model) {
+	public static DocumentedRequirement addNewDocumentedRequirement(RequirementDocument reqdoc) {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		DocumentedRequirement req = factory.createDocumentedRequirement();
 		req.setTitle("\"Title\"");
 		req.setName("newreq" + NEW_REQ_ID++);
 		req.setComment("\"Comment\"");
 		req.setDescription("\"Desc\"");
-		model.getContent().add(req);
+		reqdoc.getContent().add(req);
 
 		return req;
 	}
@@ -188,15 +189,24 @@ public class Utils {
 		return factory.createAlisaModel();
 	}
 
+	public static RequirementDocument createReqDoc(AlisaModel model) {
+		AlisaFactory factory = AlisaFactoryImpl.init();
+		RequirementDocument reqdoc = factory.createRequirementDocument();
+		model.getContent().add(reqdoc);
+		return reqdoc;
+	}
+
 	/**
 	 * Remove an object from the model. Should make consistency
 	 * check if the node is not referenced before in order
 	 * to make sure the model is still consistent
-	 * @param model - the AlisaModel that contain the object to remove
 	 * @param o     - the object to be removed
 	 */
-	public static void deleteObjectFromModel(AlisaModel model, Object o) {
-		model.getContent().remove(o);
+	public static void deleteObjectFromModel(Object o) {
+		if (o instanceof DocumentedRequirement) {
+			RequirementDocument reqdoc = (RequirementDocument) ((DocumentedRequirement) o).eContainer();
+			reqdoc.getContent().remove(o);
+		}
 	}
 
 	public static void addDependency(DocumentedRequirement parent, DocumentedRequirement subDocumentedRequirement) {

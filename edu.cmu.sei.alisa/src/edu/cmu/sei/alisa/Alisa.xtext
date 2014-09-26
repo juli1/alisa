@@ -11,7 +11,8 @@ import "platform:/resource/org.osate.aadl2/model/aadl2.ecore" as aadl2
 AlisaModel:
 	('imports' importedNamespace+=[Document](',' importedNamespace+=[Document])*';')?
 	('with' importedNamespace+=[aadl2::AadlPackage|QPREF](',' importedNamespace+=[aadl2::AadlPackage|QPREF])*';')?
-	content+=(Goals | ReqSpecifications | VerificationLibrary | RequirementDocument | ExternalDocuments | VerificationActivity | VerificationResult | ElementType
+	content+=(Goals | ReqSpecifications | VerificationLibrary | RequirementDocument  
+		| Stakeholders |ExternalDocuments | VerificationActivity | VerificationResult | ElementType
 		|Aliases | Notes
 	)*;
 
@@ -26,7 +27,7 @@ Document:
 
 RequirementDocument:
 	'requirement' 'document' name=ID
-	content += (DocumentedRequirement | Stakeholder | ElementType | ElementReference)* 
+	content += (DocumentedRequirement  | ElementType | ElementReference)* 
 	'end' 'requirement' 'document'
 	';';
 
@@ -151,6 +152,12 @@ Stakeholder:
 	'end' 'stakeholder' ';'
 ;
 
+
+Stakeholders:
+	'organization' name=ID 
+	(stakeholder += Stakeholder)*
+	'end' 'organization'';'
+	;
 
 
 /*
