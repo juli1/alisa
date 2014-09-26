@@ -10,23 +10,23 @@ import org.osate.aadl2.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Req Specifications</b></em>'.
+ * A representation of the model object '<em><b>Requirements</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpecifications#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpecifications#getReqTarget <em>Req Target</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpecifications#getReqs <em>Reqs</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirements#getName <em>Name</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirements#getReqTarget <em>Req Target</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirements#getReqs <em>Reqs</em>}</li>
  * </ul>
  * </p>
  *
- * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpecifications()
+ * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirements()
  * @model
  * @generated
  */
-public interface ReqSpecifications extends EObject
+public interface Requirements extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -38,14 +38,14 @@ public interface ReqSpecifications extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpecifications_Name()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirements_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ReqSpecifications#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Requirements#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -64,14 +64,14 @@ public interface ReqSpecifications extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Req Target</em>' reference.
    * @see #setReqTarget(NamedElement)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpecifications_ReqTarget()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirements_ReqTarget()
    * @model
    * @generated
    */
   NamedElement getReqTarget();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ReqSpecifications#getReqTarget <em>Req Target</em>}' reference.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Requirements#getReqTarget <em>Req Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Req Target</em>' reference.
@@ -82,7 +82,7 @@ public interface ReqSpecifications extends EObject
 
   /**
    * Returns the value of the '<em><b>Reqs</b></em>' containment reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.ReqSpec}.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Requirement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Reqs</em>' containment reference list isn't clear,
@@ -90,10 +90,10 @@ public interface ReqSpecifications extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Reqs</em>' containment reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpecifications_Reqs()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirements_Reqs()
    * @model containment="true"
    * @generated
    */
-  EList<ReqSpec> getReqs();
+  EList<Requirement> getReqs();
 
-} // ReqSpecifications
+} // Requirements

@@ -105,14 +105,14 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
         return createGoalAdapter();
       }
       @Override
-      public Adapter caseReqSpecifications(ReqSpecifications object)
+      public Adapter caseRequirements(Requirements object)
       {
-        return createReqSpecificationsAdapter();
+        return createRequirementsAdapter();
       }
       @Override
-      public Adapter caseReqSpec(ReqSpec object)
+      public Adapter caseRequirement(Requirement object)
       {
-        return createReqSpecAdapter();
+        return createRequirementAdapter();
       }
       @Override
       public Adapter caseExternalDocuments(ExternalDocuments object)
@@ -297,31 +297,31 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.ReqSpecifications <em>Req Specifications</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Requirements <em>Requirements</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpecifications
+   * @see edu.cmu.sei.alisa.alisa.Requirements
    * @generated
    */
-  public Adapter createReqSpecificationsAdapter()
+  public Adapter createRequirementsAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.ReqSpec <em>Req Spec</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Requirement <em>Requirement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec
+   * @see edu.cmu.sei.alisa.alisa.Requirement
    * @generated
    */
-  public Adapter createReqSpecAdapter()
+  public Adapter createRequirementAdapter()
   {
     return null;
   }

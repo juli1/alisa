@@ -70,8 +70,8 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
       case AlisaPackage.VERIFICATION_LIBRARY: return createVerificationLibrary();
       case AlisaPackage.GOALS: return createGoals();
       case AlisaPackage.GOAL: return createGoal();
-      case AlisaPackage.REQ_SPECIFICATIONS: return createReqSpecifications();
-      case AlisaPackage.REQ_SPEC: return createReqSpec();
+      case AlisaPackage.REQUIREMENTS: return createRequirements();
+      case AlisaPackage.REQUIREMENT: return createRequirement();
       case AlisaPackage.EXTERNAL_DOCUMENTS: return createExternalDocuments();
       case AlisaPackage.EXTERNAL_DOCUMENT: return createExternalDocument();
       case AlisaPackage.ALIASES: return createAliases();
@@ -162,10 +162,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReqSpecifications createReqSpecifications()
+  public Requirements createRequirements()
   {
-    ReqSpecificationsImpl reqSpecifications = new ReqSpecificationsImpl();
-    return reqSpecifications;
+    RequirementsImpl requirements = new RequirementsImpl();
+    return requirements;
   }
 
   /**
@@ -173,10 +173,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReqSpec createReqSpec()
+  public Requirement createRequirement()
   {
-    ReqSpecImpl reqSpec = new ReqSpecImpl();
-    return reqSpec;
+    RequirementImpl requirement = new RequirementImpl();
+    return requirement;
   }
 
   /**

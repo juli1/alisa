@@ -15,8 +15,8 @@ import org.osate.xtext.aadl2.properties.linking.PropertiesLinkingService;
 
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Goals;
-import edu.cmu.sei.alisa.alisa.ReqSpec;
-import edu.cmu.sei.alisa.alisa.ReqSpecifications;
+import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.Requirements;
 
 public class AlisaLinkingService extends PropertiesLinkingService {
 
@@ -32,14 +32,14 @@ public class AlisaLinkingService extends PropertiesLinkingService {
 		final String name = getCrossRefNodeAsString(node);
 		if (requiredType == ne) {
 			NamedElement e = null;
-			if (context instanceof Goals || context instanceof ReqSpecifications) {
+			if (context instanceof Goals || context instanceof Requirements) {
 				EObject res = findClassifier(context, reference, name);
 				return Collections.singletonList(res);
 			}
 			if (context instanceof Goal) {
 				e = ((Goals) context.eContainer()).getGoalTarget();
-			} else if (context instanceof ReqSpec) {
-				e = ((ReqSpecifications) context.eContainer()).getReqTarget();
+			} else if (context instanceof Requirement) {
+				e = ((Requirements) context.eContainer()).getReqTarget();
 
 			}
 			if (e instanceof Classifier) {

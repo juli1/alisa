@@ -77,22 +77,22 @@ public interface AlisaFactory extends EFactory
   Goal createGoal();
 
   /**
-   * Returns a new object of class '<em>Req Specifications</em>'.
+   * Returns a new object of class '<em>Requirements</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Req Specifications</em>'.
+   * @return a new object of class '<em>Requirements</em>'.
    * @generated
    */
-  ReqSpecifications createReqSpecifications();
+  Requirements createRequirements();
 
   /**
-   * Returns a new object of class '<em>Req Spec</em>'.
+   * Returns a new object of class '<em>Requirement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Req Spec</em>'.
+   * @return a new object of class '<em>Requirement</em>'.
    * @generated
    */
-  ReqSpec createReqSpec();
+  Requirement createRequirement();
 
   /**
    * Returns a new object of class '<em>External Documents</em>'.

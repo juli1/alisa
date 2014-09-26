@@ -11,8 +11,8 @@ import "platform:/resource/org.osate.aadl2/model/aadl2.ecore" as aadl2
 AlisaModel:
 	('imports' importedNamespace+=[Document](',' importedNamespace+=[Document])*';')?
 	('with' importedNamespace+=[aadl2::AadlPackage|QPREF](',' importedNamespace+=[aadl2::AadlPackage|QPREF])*';')?
-	content+=(Goals | ReqSpecifications | VerificationLibrary | RequirementDocument  
-		| Stakeholders |ExternalDocuments | VerificationActivity | VerificationResult | ElementType
+	content+=(Goals | Requirements | VerificationLibrary | RequirementDocument  
+		| Stakeholders |ExternalDocuments 
 		|Aliases | Notes
 	)*;
 
@@ -33,7 +33,7 @@ RequirementDocument:
 
 VerificationLibrary:
 	'verification' 'library' name=ID
-	content += (VerificationActivity | Stakeholder | VerificationResult | ElementType | ElementReference)* 
+	content += (VerificationActivity | VerificationResult | ElementType | ElementReference)* 
 	'end' 'verification' 'library'
 	';';
 
@@ -63,14 +63,14 @@ Goal:
 	('see' 'document' ':' docReferences+=[ExternalDocument|RELREF] (',' docReferences+=[ExternalDocument|RELREF])*';')? 
 	 'end''goal'';';
 
-ReqSpecifications:
+Requirements:
 	'requirements' name=ID 'for' reqTarget=[aadl2::NamedElement|QCLREF]//(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
-	(reqs+=ReqSpec)*
+	(reqs+=Requirement)*
 	'end' 'requirements' ';';
 
 ReqKind : 'requirement'|'assumption'|'input''assumption'|'guarantee'|'output''guarantee'|'invariant'|'constraint'|'design''constraint'|'development' 'requirement'|'system' 'requirement';
 	
-ReqSpec:
+Requirement:
 	reqkind=ReqKind name=ID   
 	
 	( 'for' target=RELREF)? //reqTarget=[aadl2::NamedElement|RELREF])?
@@ -82,9 +82,9 @@ ReqSpec:
 	('see' ':' modelReference+=QCRELREF (',' modelReference+=QCRELREF)*';')? 
 	('see' 'goal' ':' goalReference+=[Goal] (',' goalReference+=[Goal])*';')?
 	('see' 'hazard' ':' hazardReference+=QNEREF (',' hazardReference+=QNEREF)*';')? // hazardReference+=[aadl2::NamedElement|QNEREF]
-	('refines' ':' refinesReference+=[ReqSpec|REQREF](',' refinesReference+=[ReqSpec|REQREF])*';')? 
-	('decomposes' ':' decomposesReference+=[ReqSpec|REQREF](',' decomposesReference+=[ReqSpec|REQREF])*';')? 
-	('evolves' ':' evolvesReference+=[ReqSpec|REQREF](',' evolvesReference+=[ReqSpec|REQREF])*';')? 
+	('refines' ':' refinesReference+=[Requirement|REQREF](',' refinesReference+=[Requirement|REQREF])*';')? 
+	('decomposes' ':' decomposesReference+=[Requirement|REQREF](',' decomposesReference+=[Requirement|REQREF])*';')? 
+	('evolves' ':' evolvesReference+=[Requirement|REQREF](',' evolvesReference+=[Requirement|REQREF])*';')? 
 	('verified' 'by' ':' verifiedBy+=(VerificationDecomposition)*)?
 	('see' 'stakeholder' 'req' ':' stakeholderreqReference+=[DocumentedRequirement|REQREF] (',' stakeholderreqReference+=[DocumentedRequirement|REQREF])*';')?
 	('see' 'system' 'req' ':' systemreqReference+=[DocumentedRequirement|REQREF] (',' systemreqReference+=[DocumentedRequirement|REQREF])*';')?

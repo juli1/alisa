@@ -15,9 +15,9 @@ import edu.cmu.sei.alisa.alisa.ExternalDocuments;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Goals;
 import edu.cmu.sei.alisa.alisa.Notes;
-import edu.cmu.sei.alisa.alisa.ReqSpec;
-import edu.cmu.sei.alisa.alisa.ReqSpecifications;
+import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
+import edu.cmu.sei.alisa.alisa.Requirements;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.Stakeholders;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
@@ -118,15 +118,9 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
-			case AlisaPackage.REQ_SPEC:
-				if(context == grammarAccess.getReqSpecRule()) {
-					sequence_ReqSpec(context, (ReqSpec) semanticObject); 
-					return; 
-				}
-				else break;
-			case AlisaPackage.REQ_SPECIFICATIONS:
-				if(context == grammarAccess.getReqSpecificationsRule()) {
-					sequence_ReqSpecifications(context, (ReqSpecifications) semanticObject); 
+			case AlisaPackage.REQUIREMENT:
+				if(context == grammarAccess.getRequirementRule()) {
+					sequence_Requirement(context, (Requirement) semanticObject); 
 					return; 
 				}
 				else break;
@@ -134,6 +128,12 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				if(context == grammarAccess.getDocumentRule() ||
 				   context == grammarAccess.getRequirementDocumentRule()) {
 					sequence_RequirementDocument(context, (RequirementDocument) semanticObject); 
+					return; 
+				}
+				else break;
+			case AlisaPackage.REQUIREMENTS:
+				if(context == grammarAccess.getRequirementsRule()) {
+					sequence_Requirements(context, (Requirements) semanticObject); 
 					return; 
 				}
 				else break;
@@ -203,14 +203,11 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (importedNamespace+=[AadlPackage|QPREF] importedNamespace+=[AadlPackage|QPREF]*)? 
 	 *         (
 	 *             content+=Goals | 
-	 *             content+=ReqSpecifications | 
+	 *             content+=Requirements | 
 	 *             content+=VerificationLibrary | 
 	 *             content+=RequirementDocument | 
 	 *             content+=Stakeholders | 
 	 *             content+=ExternalDocuments | 
-	 *             content+=VerificationActivity | 
-	 *             content+=VerificationResult | 
-	 *             content+=ElementType | 
 	 *             content+=Aliases | 
 	 *             content+=Notes
 	 *         )*
@@ -356,6 +353,15 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     (name=ID (content+=DocumentedRequirement | content+=ElementType | content+=ElementReference)*)
+	 */
+	protected void sequence_RequirementDocument(EObject context, RequirementDocument semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         reqkind=ReqKind 
 	 *         name=ID 
@@ -368,34 +374,25 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (modelReference+=QCRELREF modelReference+=QCRELREF*)? 
 	 *         (goalReference+=[Goal|ID] goalReference+=[Goal|ID]*)? 
 	 *         (hazardReference+=QNEREF hazardReference+=QNEREF*)? 
-	 *         (refinesReference+=[ReqSpec|REQREF] refinesReference+=[ReqSpec|REQREF]*)? 
-	 *         (decomposesReference+=[ReqSpec|REQREF] decomposesReference+=[ReqSpec|REQREF]*)? 
-	 *         (evolvesReference+=[ReqSpec|REQREF] evolvesReference+=[ReqSpec|REQREF]*)? 
+	 *         (refinesReference+=[Requirement|REQREF] refinesReference+=[Requirement|REQREF]*)? 
+	 *         (decomposesReference+=[Requirement|REQREF] decomposesReference+=[Requirement|REQREF]*)? 
+	 *         (evolvesReference+=[Requirement|REQREF] evolvesReference+=[Requirement|REQREF]*)? 
 	 *         verifiedBy+=VerificationDecomposition* 
 	 *         (stakeholderreqReference+=[DocumentedRequirement|REQREF] stakeholderreqReference+=[DocumentedRequirement|REQREF]*)? 
 	 *         (systemreqReference+=[DocumentedRequirement|REQREF] systemreqReference+=[DocumentedRequirement|REQREF]*)? 
 	 *         (docReferences+=[ExternalDocument|RELREF] docReferences+=[ExternalDocument|RELREF]*)?
 	 *     )
 	 */
-	protected void sequence_ReqSpec(EObject context, ReqSpec semanticObject) {
+	protected void sequence_Requirement(EObject context, Requirement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID reqTarget=[NamedElement|QCLREF] reqs+=ReqSpec*)
+	 *     (name=ID reqTarget=[NamedElement|QCLREF] reqs+=Requirement*)
 	 */
-	protected void sequence_ReqSpecifications(EObject context, ReqSpecifications semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID (content+=DocumentedRequirement | content+=ElementType | content+=ElementReference)*)
-	 */
-	protected void sequence_RequirementDocument(EObject context, RequirementDocument semanticObject) {
+	protected void sequence_Requirements(EObject context, Requirements semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -445,10 +442,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         (content+=VerificationActivity | content+=Stakeholder | content+=VerificationResult | content+=ElementType | content+=ElementReference)*
-	 *     )
+	 *     (name=ID (content+=VerificationActivity | content+=VerificationResult | content+=ElementType | content+=ElementReference)*)
 	 */
 	protected void sequence_VerificationLibrary(EObject context, VerificationLibrary semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -3,8 +3,8 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.ReqSpec;
-import edu.cmu.sei.alisa.alisa.ReqSpecifications;
+import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.Requirements;
 
 import java.util.Collection;
 
@@ -27,20 +27,20 @@ import org.osate.aadl2.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Req Specifications</b></em>'.
+ * An implementation of the model object '<em><b>Requirements</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecificationsImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecificationsImpl#getReqTarget <em>Req Target</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecificationsImpl#getReqs <em>Reqs</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementsImpl#getName <em>Name</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementsImpl#getReqTarget <em>Req Target</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementsImpl#getReqs <em>Reqs</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ReqSpecificationsImpl extends MinimalEObjectImpl.Container implements ReqSpecifications
+public class RequirementsImpl extends MinimalEObjectImpl.Container implements Requirements
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -80,14 +80,14 @@ public class ReqSpecificationsImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected EList<ReqSpec> reqs;
+  protected EList<Requirement> reqs;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ReqSpecificationsImpl()
+  protected RequirementsImpl()
   {
     super();
   }
@@ -100,7 +100,7 @@ public class ReqSpecificationsImpl extends MinimalEObjectImpl.Container implemen
   @Override
   protected EClass eStaticClass()
   {
-    return AlisaPackage.Literals.REQ_SPECIFICATIONS;
+    return AlisaPackage.Literals.REQUIREMENTS;
   }
 
   /**
@@ -123,7 +123,7 @@ public class ReqSpecificationsImpl extends MinimalEObjectImpl.Container implemen
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQ_SPECIFICATIONS__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENTS__NAME, oldName, name));
   }
 
   /**
@@ -140,7 +140,7 @@ public class ReqSpecificationsImpl extends MinimalEObjectImpl.Container implemen
       if (reqTarget != oldReqTarget)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.REQ_SPECIFICATIONS__REQ_TARGET, oldReqTarget, reqTarget));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.REQUIREMENTS__REQ_TARGET, oldReqTarget, reqTarget));
       }
     }
     return reqTarget;
@@ -166,7 +166,7 @@ public class ReqSpecificationsImpl extends MinimalEObjectImpl.Container implemen
     NamedElement oldReqTarget = reqTarget;
     reqTarget = newReqTarget;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQ_SPECIFICATIONS__REQ_TARGET, oldReqTarget, reqTarget));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENTS__REQ_TARGET, oldReqTarget, reqTarget));
   }
 
   /**
@@ -174,11 +174,11 @@ public class ReqSpecificationsImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ReqSpec> getReqs()
+  public EList<Requirement> getReqs()
   {
     if (reqs == null)
     {
-      reqs = new EObjectContainmentEList<ReqSpec>(ReqSpec.class, this, AlisaPackage.REQ_SPECIFICATIONS__REQS);
+      reqs = new EObjectContainmentEList<Requirement>(Requirement.class, this, AlisaPackage.REQUIREMENTS__REQS);
     }
     return reqs;
   }
@@ -193,7 +193,7 @@ public class ReqSpecificationsImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case AlisaPackage.REQ_SPECIFICATIONS__REQS:
+      case AlisaPackage.REQUIREMENTS__REQS:
         return ((InternalEList<?>)getReqs()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -209,12 +209,12 @@ public class ReqSpecificationsImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case AlisaPackage.REQ_SPECIFICATIONS__NAME:
+      case AlisaPackage.REQUIREMENTS__NAME:
         return getName();
-      case AlisaPackage.REQ_SPECIFICATIONS__REQ_TARGET:
+      case AlisaPackage.REQUIREMENTS__REQ_TARGET:
         if (resolve) return getReqTarget();
         return basicGetReqTarget();
-      case AlisaPackage.REQ_SPECIFICATIONS__REQS:
+      case AlisaPackage.REQUIREMENTS__REQS:
         return getReqs();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -231,15 +231,15 @@ public class ReqSpecificationsImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case AlisaPackage.REQ_SPECIFICATIONS__NAME:
+      case AlisaPackage.REQUIREMENTS__NAME:
         setName((String)newValue);
         return;
-      case AlisaPackage.REQ_SPECIFICATIONS__REQ_TARGET:
+      case AlisaPackage.REQUIREMENTS__REQ_TARGET:
         setReqTarget((NamedElement)newValue);
         return;
-      case AlisaPackage.REQ_SPECIFICATIONS__REQS:
+      case AlisaPackage.REQUIREMENTS__REQS:
         getReqs().clear();
-        getReqs().addAll((Collection<? extends ReqSpec>)newValue);
+        getReqs().addAll((Collection<? extends Requirement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -255,13 +255,13 @@ public class ReqSpecificationsImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case AlisaPackage.REQ_SPECIFICATIONS__NAME:
+      case AlisaPackage.REQUIREMENTS__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AlisaPackage.REQ_SPECIFICATIONS__REQ_TARGET:
+      case AlisaPackage.REQUIREMENTS__REQ_TARGET:
         setReqTarget((NamedElement)null);
         return;
-      case AlisaPackage.REQ_SPECIFICATIONS__REQS:
+      case AlisaPackage.REQUIREMENTS__REQS:
         getReqs().clear();
         return;
     }
@@ -278,11 +278,11 @@ public class ReqSpecificationsImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case AlisaPackage.REQ_SPECIFICATIONS__NAME:
+      case AlisaPackage.REQUIREMENTS__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AlisaPackage.REQ_SPECIFICATIONS__REQ_TARGET:
+      case AlisaPackage.REQUIREMENTS__REQ_TARGET:
         return reqTarget != null;
-      case AlisaPackage.REQ_SPECIFICATIONS__REQS:
+      case AlisaPackage.REQUIREMENTS__REQS:
         return reqs != null && !reqs.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -305,4 +305,4 @@ public class ReqSpecificationsImpl extends MinimalEObjectImpl.Container implemen
     return result.toString();
   }
 
-} //ReqSpecificationsImpl
+} //RequirementsImpl

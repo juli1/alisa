@@ -387,14 +387,14 @@ public interface AlisaPackage extends EPackage
   int GOAL_FEATURE_COUNT = 14;
 
   /**
-   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecificationsImpl <em>Req Specifications</em>}' class.
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RequirementsImpl <em>Requirements</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see edu.cmu.sei.alisa.alisa.impl.ReqSpecificationsImpl
-   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getReqSpecifications()
+   * @see edu.cmu.sei.alisa.alisa.impl.RequirementsImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRequirements()
    * @generated
    */
-  int REQ_SPECIFICATIONS = 6;
+  int REQUIREMENTS = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -403,7 +403,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPECIFICATIONS__NAME = 0;
+  int REQUIREMENTS__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Req Target</b></em>' reference.
@@ -412,7 +412,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPECIFICATIONS__REQ_TARGET = 1;
+  int REQUIREMENTS__REQ_TARGET = 1;
 
   /**
    * The feature id for the '<em><b>Reqs</b></em>' containment reference list.
@@ -421,26 +421,26 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPECIFICATIONS__REQS = 2;
+  int REQUIREMENTS__REQS = 2;
 
   /**
-   * The number of structural features of the '<em>Req Specifications</em>' class.
+   * The number of structural features of the '<em>Requirements</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQ_SPECIFICATIONS_FEATURE_COUNT = 3;
+  int REQUIREMENTS_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl <em>Req Spec</em>}' class.
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl <em>Requirement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl
-   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.impl.RequirementImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRequirement()
    * @generated
    */
-  int REQ_SPEC = 7;
+  int REQUIREMENT = 7;
 
   /**
    * The feature id for the '<em><b>Reqkind</b></em>' attribute.
@@ -449,7 +449,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__REQKIND = 0;
+  int REQUIREMENT__REQKIND = 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -458,7 +458,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__NAME = 1;
+  int REQUIREMENT__NAME = 1;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' attribute.
@@ -467,7 +467,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__TARGET = 2;
+  int REQUIREMENT__TARGET = 2;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -476,7 +476,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__TITLE = 3;
+  int REQUIREMENT__TITLE = 3;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -485,7 +485,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__DESCRIPTION = 4;
+  int REQUIREMENT__DESCRIPTION = 4;
 
   /**
    * The feature id for the '<em><b>Assert</b></em>' attribute.
@@ -494,7 +494,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__ASSERT = 5;
+  int REQUIREMENT__ASSERT = 5;
 
   /**
    * The feature id for the '<em><b>Rationale</b></em>' attribute.
@@ -503,7 +503,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__RATIONALE = 6;
+  int REQUIREMENT__RATIONALE = 6;
 
   /**
    * The feature id for the '<em><b>Issue</b></em>' attribute list.
@@ -512,7 +512,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__ISSUE = 7;
+  int REQUIREMENT__ISSUE = 7;
 
   /**
    * The feature id for the '<em><b>Model Reference</b></em>' attribute list.
@@ -521,7 +521,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__MODEL_REFERENCE = 8;
+  int REQUIREMENT__MODEL_REFERENCE = 8;
 
   /**
    * The feature id for the '<em><b>Goal Reference</b></em>' reference list.
@@ -530,7 +530,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__GOAL_REFERENCE = 9;
+  int REQUIREMENT__GOAL_REFERENCE = 9;
 
   /**
    * The feature id for the '<em><b>Hazard Reference</b></em>' attribute list.
@@ -539,7 +539,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__HAZARD_REFERENCE = 10;
+  int REQUIREMENT__HAZARD_REFERENCE = 10;
 
   /**
    * The feature id for the '<em><b>Refines Reference</b></em>' reference list.
@@ -548,7 +548,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__REFINES_REFERENCE = 11;
+  int REQUIREMENT__REFINES_REFERENCE = 11;
 
   /**
    * The feature id for the '<em><b>Decomposes Reference</b></em>' reference list.
@@ -557,7 +557,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__DECOMPOSES_REFERENCE = 12;
+  int REQUIREMENT__DECOMPOSES_REFERENCE = 12;
 
   /**
    * The feature id for the '<em><b>Evolves Reference</b></em>' reference list.
@@ -566,7 +566,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__EVOLVES_REFERENCE = 13;
+  int REQUIREMENT__EVOLVES_REFERENCE = 13;
 
   /**
    * The feature id for the '<em><b>Verified By</b></em>' containment reference list.
@@ -575,7 +575,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__VERIFIED_BY = 14;
+  int REQUIREMENT__VERIFIED_BY = 14;
 
   /**
    * The feature id for the '<em><b>Stakeholderreq Reference</b></em>' reference list.
@@ -584,7 +584,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__STAKEHOLDERREQ_REFERENCE = 15;
+  int REQUIREMENT__STAKEHOLDERREQ_REFERENCE = 15;
 
   /**
    * The feature id for the '<em><b>Systemreq Reference</b></em>' reference list.
@@ -593,7 +593,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__SYSTEMREQ_REFERENCE = 16;
+  int REQUIREMENT__SYSTEMREQ_REFERENCE = 16;
 
   /**
    * The feature id for the '<em><b>Doc References</b></em>' reference list.
@@ -602,16 +602,16 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQ_SPEC__DOC_REFERENCES = 17;
+  int REQUIREMENT__DOC_REFERENCES = 17;
 
   /**
-   * The number of structural features of the '<em>Req Spec</em>' class.
+   * The number of structural features of the '<em>Requirement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQ_SPEC_FEATURE_COUNT = 18;
+  int REQUIREMENT_FEATURE_COUNT = 18;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentsImpl <em>External Documents</em>}' class.
@@ -1696,255 +1696,255 @@ public interface AlisaPackage extends EPackage
   EReference getGoal_DocReferences();
 
   /**
-   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.ReqSpecifications <em>Req Specifications</em>}'.
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.Requirements <em>Requirements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Req Specifications</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpecifications
+   * @return the meta object for class '<em>Requirements</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Requirements
    * @generated
    */
-  EClass getReqSpecifications();
+  EClass getRequirements();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ReqSpecifications#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirements#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpecifications#getName()
-   * @see #getReqSpecifications()
+   * @see edu.cmu.sei.alisa.alisa.Requirements#getName()
+   * @see #getRequirements()
    * @generated
    */
-  EAttribute getReqSpecifications_Name();
+  EAttribute getRequirements_Name();
 
   /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.ReqSpecifications#getReqTarget <em>Req Target</em>}'.
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.Requirements#getReqTarget <em>Req Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Req Target</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpecifications#getReqTarget()
-   * @see #getReqSpecifications()
+   * @see edu.cmu.sei.alisa.alisa.Requirements#getReqTarget()
+   * @see #getRequirements()
    * @generated
    */
-  EReference getReqSpecifications_ReqTarget();
+  EReference getRequirements_ReqTarget();
 
   /**
-   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.ReqSpecifications#getReqs <em>Reqs</em>}'.
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.Requirements#getReqs <em>Reqs</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Reqs</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpecifications#getReqs()
-   * @see #getReqSpecifications()
+   * @see edu.cmu.sei.alisa.alisa.Requirements#getReqs()
+   * @see #getRequirements()
    * @generated
    */
-  EReference getReqSpecifications_Reqs();
+  EReference getRequirements_Reqs();
 
   /**
-   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.ReqSpec <em>Req Spec</em>}'.
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.Requirement <em>Requirement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Req Spec</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec
+   * @return the meta object for class '<em>Requirement</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Requirement
    * @generated
    */
-  EClass getReqSpec();
+  EClass getRequirement();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getReqkind <em>Reqkind</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getReqkind <em>Reqkind</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Reqkind</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getReqkind()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getReqkind()
+   * @see #getRequirement()
    * @generated
    */
-  EAttribute getReqSpec_Reqkind();
+  EAttribute getRequirement_Reqkind();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getName()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getName()
+   * @see #getRequirement()
    * @generated
    */
-  EAttribute getReqSpec_Name();
+  EAttribute getRequirement_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getTarget <em>Target</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Target</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getTarget()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getTarget()
+   * @see #getRequirement()
    * @generated
    */
-  EAttribute getReqSpec_Target();
+  EAttribute getRequirement_Target();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getTitle <em>Title</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getTitle <em>Title</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Title</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getTitle()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getTitle()
+   * @see #getRequirement()
    * @generated
    */
-  EAttribute getReqSpec_Title();
+  EAttribute getRequirement_Title();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getDescription()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getDescription()
+   * @see #getRequirement()
    * @generated
    */
-  EAttribute getReqSpec_Description();
+  EAttribute getRequirement_Description();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getAssert <em>Assert</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getAssert <em>Assert</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Assert</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getAssert()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getAssert()
+   * @see #getRequirement()
    * @generated
    */
-  EAttribute getReqSpec_Assert();
+  EAttribute getRequirement_Assert();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getRationale <em>Rationale</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getRationale <em>Rationale</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Rationale</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getRationale()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getRationale()
+   * @see #getRequirement()
    * @generated
    */
-  EAttribute getReqSpec_Rationale();
+  EAttribute getRequirement_Rationale();
 
   /**
-   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getIssue <em>Issue</em>}'.
+   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.Requirement#getIssue <em>Issue</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute list '<em>Issue</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getIssue()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getIssue()
+   * @see #getRequirement()
    * @generated
    */
-  EAttribute getReqSpec_Issue();
+  EAttribute getRequirement_Issue();
 
   /**
-   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getModelReference <em>Model Reference</em>}'.
+   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.Requirement#getModelReference <em>Model Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute list '<em>Model Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getModelReference()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getModelReference()
+   * @see #getRequirement()
    * @generated
    */
-  EAttribute getReqSpec_ModelReference();
+  EAttribute getRequirement_ModelReference();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getGoalReference <em>Goal Reference</em>}'.
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getGoalReference <em>Goal Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Goal Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getGoalReference()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getGoalReference()
+   * @see #getRequirement()
    * @generated
    */
-  EReference getReqSpec_GoalReference();
+  EReference getRequirement_GoalReference();
 
   /**
-   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getHazardReference <em>Hazard Reference</em>}'.
+   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.Requirement#getHazardReference <em>Hazard Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute list '<em>Hazard Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getHazardReference()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getHazardReference()
+   * @see #getRequirement()
    * @generated
    */
-  EAttribute getReqSpec_HazardReference();
+  EAttribute getRequirement_HazardReference();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getRefinesReference <em>Refines Reference</em>}'.
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getRefinesReference <em>Refines Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Refines Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getRefinesReference()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getRefinesReference()
+   * @see #getRequirement()
    * @generated
    */
-  EReference getReqSpec_RefinesReference();
+  EReference getRequirement_RefinesReference();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getDecomposesReference <em>Decomposes Reference</em>}'.
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getDecomposesReference <em>Decomposes Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Decomposes Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getDecomposesReference()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getDecomposesReference()
+   * @see #getRequirement()
    * @generated
    */
-  EReference getReqSpec_DecomposesReference();
+  EReference getRequirement_DecomposesReference();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getEvolvesReference <em>Evolves Reference</em>}'.
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getEvolvesReference <em>Evolves Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Evolves Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getEvolvesReference()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getEvolvesReference()
+   * @see #getRequirement()
    * @generated
    */
-  EReference getReqSpec_EvolvesReference();
+  EReference getRequirement_EvolvesReference();
 
   /**
-   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getVerifiedBy <em>Verified By</em>}'.
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getVerifiedBy <em>Verified By</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Verified By</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getVerifiedBy()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getVerifiedBy()
+   * @see #getRequirement()
    * @generated
    */
-  EReference getReqSpec_VerifiedBy();
+  EReference getRequirement_VerifiedBy();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getStakeholderreqReference <em>Stakeholderreq Reference</em>}'.
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getStakeholderreqReference <em>Stakeholderreq Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Stakeholderreq Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getStakeholderreqReference()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getStakeholderreqReference()
+   * @see #getRequirement()
    * @generated
    */
-  EReference getReqSpec_StakeholderreqReference();
+  EReference getRequirement_StakeholderreqReference();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getSystemreqReference <em>Systemreq Reference</em>}'.
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getSystemreqReference <em>Systemreq Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Systemreq Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getSystemreqReference()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getSystemreqReference()
+   * @see #getRequirement()
    * @generated
    */
-  EReference getReqSpec_SystemreqReference();
+  EReference getRequirement_SystemreqReference();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getDocReferences <em>Doc References</em>}'.
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getDocReferences <em>Doc References</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Doc References</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ReqSpec#getDocReferences()
-   * @see #getReqSpec()
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getDocReferences()
+   * @see #getRequirement()
    * @generated
    */
-  EReference getReqSpec_DocReferences();
+  EReference getRequirement_DocReferences();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.ExternalDocuments <em>External Documents</em>}'.
@@ -2962,14 +2962,14 @@ public interface AlisaPackage extends EPackage
     EReference GOAL__DOC_REFERENCES = eINSTANCE.getGoal_DocReferences();
 
     /**
-     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecificationsImpl <em>Req Specifications</em>}' class.
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.RequirementsImpl <em>Requirements</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see edu.cmu.sei.alisa.alisa.impl.ReqSpecificationsImpl
-     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getReqSpecifications()
+     * @see edu.cmu.sei.alisa.alisa.impl.RequirementsImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRequirements()
      * @generated
      */
-    EClass REQ_SPECIFICATIONS = eINSTANCE.getReqSpecifications();
+    EClass REQUIREMENTS = eINSTANCE.getRequirements();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2977,7 +2977,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQ_SPECIFICATIONS__NAME = eINSTANCE.getReqSpecifications_Name();
+    EAttribute REQUIREMENTS__NAME = eINSTANCE.getRequirements_Name();
 
     /**
      * The meta object literal for the '<em><b>Req Target</b></em>' reference feature.
@@ -2985,7 +2985,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQ_SPECIFICATIONS__REQ_TARGET = eINSTANCE.getReqSpecifications_ReqTarget();
+    EReference REQUIREMENTS__REQ_TARGET = eINSTANCE.getRequirements_ReqTarget();
 
     /**
      * The meta object literal for the '<em><b>Reqs</b></em>' containment reference list feature.
@@ -2993,17 +2993,17 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQ_SPECIFICATIONS__REQS = eINSTANCE.getReqSpecifications_Reqs();
+    EReference REQUIREMENTS__REQS = eINSTANCE.getRequirements_Reqs();
 
     /**
-     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl <em>Req Spec</em>}' class.
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl <em>Requirement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl
-     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getReqSpec()
+     * @see edu.cmu.sei.alisa.alisa.impl.RequirementImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRequirement()
      * @generated
      */
-    EClass REQ_SPEC = eINSTANCE.getReqSpec();
+    EClass REQUIREMENT = eINSTANCE.getRequirement();
 
     /**
      * The meta object literal for the '<em><b>Reqkind</b></em>' attribute feature.
@@ -3011,7 +3011,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQ_SPEC__REQKIND = eINSTANCE.getReqSpec_Reqkind();
+    EAttribute REQUIREMENT__REQKIND = eINSTANCE.getRequirement_Reqkind();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3019,7 +3019,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQ_SPEC__NAME = eINSTANCE.getReqSpec_Name();
+    EAttribute REQUIREMENT__NAME = eINSTANCE.getRequirement_Name();
 
     /**
      * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
@@ -3027,7 +3027,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQ_SPEC__TARGET = eINSTANCE.getReqSpec_Target();
+    EAttribute REQUIREMENT__TARGET = eINSTANCE.getRequirement_Target();
 
     /**
      * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
@@ -3035,7 +3035,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQ_SPEC__TITLE = eINSTANCE.getReqSpec_Title();
+    EAttribute REQUIREMENT__TITLE = eINSTANCE.getRequirement_Title();
 
     /**
      * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -3043,7 +3043,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQ_SPEC__DESCRIPTION = eINSTANCE.getReqSpec_Description();
+    EAttribute REQUIREMENT__DESCRIPTION = eINSTANCE.getRequirement_Description();
 
     /**
      * The meta object literal for the '<em><b>Assert</b></em>' attribute feature.
@@ -3051,7 +3051,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQ_SPEC__ASSERT = eINSTANCE.getReqSpec_Assert();
+    EAttribute REQUIREMENT__ASSERT = eINSTANCE.getRequirement_Assert();
 
     /**
      * The meta object literal for the '<em><b>Rationale</b></em>' attribute feature.
@@ -3059,7 +3059,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQ_SPEC__RATIONALE = eINSTANCE.getReqSpec_Rationale();
+    EAttribute REQUIREMENT__RATIONALE = eINSTANCE.getRequirement_Rationale();
 
     /**
      * The meta object literal for the '<em><b>Issue</b></em>' attribute list feature.
@@ -3067,7 +3067,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQ_SPEC__ISSUE = eINSTANCE.getReqSpec_Issue();
+    EAttribute REQUIREMENT__ISSUE = eINSTANCE.getRequirement_Issue();
 
     /**
      * The meta object literal for the '<em><b>Model Reference</b></em>' attribute list feature.
@@ -3075,7 +3075,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQ_SPEC__MODEL_REFERENCE = eINSTANCE.getReqSpec_ModelReference();
+    EAttribute REQUIREMENT__MODEL_REFERENCE = eINSTANCE.getRequirement_ModelReference();
 
     /**
      * The meta object literal for the '<em><b>Goal Reference</b></em>' reference list feature.
@@ -3083,7 +3083,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQ_SPEC__GOAL_REFERENCE = eINSTANCE.getReqSpec_GoalReference();
+    EReference REQUIREMENT__GOAL_REFERENCE = eINSTANCE.getRequirement_GoalReference();
 
     /**
      * The meta object literal for the '<em><b>Hazard Reference</b></em>' attribute list feature.
@@ -3091,7 +3091,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQ_SPEC__HAZARD_REFERENCE = eINSTANCE.getReqSpec_HazardReference();
+    EAttribute REQUIREMENT__HAZARD_REFERENCE = eINSTANCE.getRequirement_HazardReference();
 
     /**
      * The meta object literal for the '<em><b>Refines Reference</b></em>' reference list feature.
@@ -3099,7 +3099,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQ_SPEC__REFINES_REFERENCE = eINSTANCE.getReqSpec_RefinesReference();
+    EReference REQUIREMENT__REFINES_REFERENCE = eINSTANCE.getRequirement_RefinesReference();
 
     /**
      * The meta object literal for the '<em><b>Decomposes Reference</b></em>' reference list feature.
@@ -3107,7 +3107,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQ_SPEC__DECOMPOSES_REFERENCE = eINSTANCE.getReqSpec_DecomposesReference();
+    EReference REQUIREMENT__DECOMPOSES_REFERENCE = eINSTANCE.getRequirement_DecomposesReference();
 
     /**
      * The meta object literal for the '<em><b>Evolves Reference</b></em>' reference list feature.
@@ -3115,7 +3115,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQ_SPEC__EVOLVES_REFERENCE = eINSTANCE.getReqSpec_EvolvesReference();
+    EReference REQUIREMENT__EVOLVES_REFERENCE = eINSTANCE.getRequirement_EvolvesReference();
 
     /**
      * The meta object literal for the '<em><b>Verified By</b></em>' containment reference list feature.
@@ -3123,7 +3123,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQ_SPEC__VERIFIED_BY = eINSTANCE.getReqSpec_VerifiedBy();
+    EReference REQUIREMENT__VERIFIED_BY = eINSTANCE.getRequirement_VerifiedBy();
 
     /**
      * The meta object literal for the '<em><b>Stakeholderreq Reference</b></em>' reference list feature.
@@ -3131,7 +3131,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQ_SPEC__STAKEHOLDERREQ_REFERENCE = eINSTANCE.getReqSpec_StakeholderreqReference();
+    EReference REQUIREMENT__STAKEHOLDERREQ_REFERENCE = eINSTANCE.getRequirement_StakeholderreqReference();
 
     /**
      * The meta object literal for the '<em><b>Systemreq Reference</b></em>' reference list feature.
@@ -3139,7 +3139,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQ_SPEC__SYSTEMREQ_REFERENCE = eINSTANCE.getReqSpec_SystemreqReference();
+    EReference REQUIREMENT__SYSTEMREQ_REFERENCE = eINSTANCE.getRequirement_SystemreqReference();
 
     /**
      * The meta object literal for the '<em><b>Doc References</b></em>' reference list feature.
@@ -3147,7 +3147,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQ_SPEC__DOC_REFERENCES = eINSTANCE.getReqSpec_DocReferences();
+    EReference REQUIREMENT__DOC_REFERENCES = eINSTANCE.getRequirement_DocReferences();
 
     /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentsImpl <em>External Documents</em>}' class.

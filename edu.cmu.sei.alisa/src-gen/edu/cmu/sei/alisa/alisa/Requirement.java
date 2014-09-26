@@ -8,38 +8,38 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Req Spec</b></em>'.
+ * A representation of the model object '<em><b>Requirement</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getReqkind <em>Reqkind</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getTarget <em>Target</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getTitle <em>Title</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getDescription <em>Description</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getAssert <em>Assert</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getRationale <em>Rationale</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getIssue <em>Issue</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getModelReference <em>Model Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getGoalReference <em>Goal Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getHazardReference <em>Hazard Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getRefinesReference <em>Refines Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getDecomposesReference <em>Decomposes Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getEvolvesReference <em>Evolves Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getVerifiedBy <em>Verified By</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getStakeholderreqReference <em>Stakeholderreq Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getSystemreqReference <em>Systemreq Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ReqSpec#getDocReferences <em>Doc References</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getReqkind <em>Reqkind</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getName <em>Name</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getTarget <em>Target</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getTitle <em>Title</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getDescription <em>Description</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getAssert <em>Assert</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getRationale <em>Rationale</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getIssue <em>Issue</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getModelReference <em>Model Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getGoalReference <em>Goal Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getHazardReference <em>Hazard Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getRefinesReference <em>Refines Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getDecomposesReference <em>Decomposes Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getEvolvesReference <em>Evolves Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getVerifiedBy <em>Verified By</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getStakeholderreqReference <em>Stakeholderreq Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getSystemreqReference <em>Systemreq Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getDocReferences <em>Doc References</em>}</li>
  * </ul>
  * </p>
  *
- * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec()
+ * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement()
  * @model
  * @generated
  */
-public interface ReqSpec extends EObject
+public interface Requirement extends EObject
 {
   /**
    * Returns the value of the '<em><b>Reqkind</b></em>' attribute.
@@ -51,14 +51,14 @@ public interface ReqSpec extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Reqkind</em>' attribute.
    * @see #setReqkind(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_Reqkind()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_Reqkind()
    * @model
    * @generated
    */
   String getReqkind();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getReqkind <em>Reqkind</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Requirement#getReqkind <em>Reqkind</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Reqkind</em>' attribute.
@@ -77,14 +77,14 @@ public interface ReqSpec extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_Name()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Requirement#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -103,14 +103,14 @@ public interface ReqSpec extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Target</em>' attribute.
    * @see #setTarget(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_Target()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_Target()
    * @model
    * @generated
    */
   String getTarget();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getTarget <em>Target</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Requirement#getTarget <em>Target</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Target</em>' attribute.
@@ -129,14 +129,14 @@ public interface ReqSpec extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Title</em>' attribute.
    * @see #setTitle(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_Title()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_Title()
    * @model
    * @generated
    */
   String getTitle();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getTitle <em>Title</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Requirement#getTitle <em>Title</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Title</em>' attribute.
@@ -155,14 +155,14 @@ public interface ReqSpec extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Description</em>' attribute.
    * @see #setDescription(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_Description()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_Description()
    * @model
    * @generated
    */
   String getDescription();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Requirement#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.
@@ -181,14 +181,14 @@ public interface ReqSpec extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Assert</em>' attribute.
    * @see #setAssert(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_Assert()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_Assert()
    * @model
    * @generated
    */
   String getAssert();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getAssert <em>Assert</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Requirement#getAssert <em>Assert</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Assert</em>' attribute.
@@ -207,14 +207,14 @@ public interface ReqSpec extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Rationale</em>' attribute.
    * @see #setRationale(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_Rationale()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_Rationale()
    * @model
    * @generated
    */
   String getRationale();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ReqSpec#getRationale <em>Rationale</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Requirement#getRationale <em>Rationale</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Rationale</em>' attribute.
@@ -233,7 +233,7 @@ public interface ReqSpec extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Issue</em>' attribute list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_Issue()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_Issue()
    * @model unique="false"
    * @generated
    */
@@ -249,7 +249,7 @@ public interface ReqSpec extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Model Reference</em>' attribute list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_ModelReference()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_ModelReference()
    * @model unique="false"
    * @generated
    */
@@ -265,7 +265,7 @@ public interface ReqSpec extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Goal Reference</em>' reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_GoalReference()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_GoalReference()
    * @model
    * @generated
    */
@@ -281,7 +281,7 @@ public interface ReqSpec extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Hazard Reference</em>' attribute list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_HazardReference()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_HazardReference()
    * @model unique="false"
    * @generated
    */
@@ -289,7 +289,7 @@ public interface ReqSpec extends EObject
 
   /**
    * Returns the value of the '<em><b>Refines Reference</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.ReqSpec}.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Requirement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Refines Reference</em>' reference list isn't clear,
@@ -297,15 +297,15 @@ public interface ReqSpec extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Refines Reference</em>' reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_RefinesReference()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_RefinesReference()
    * @model
    * @generated
    */
-  EList<ReqSpec> getRefinesReference();
+  EList<Requirement> getRefinesReference();
 
   /**
    * Returns the value of the '<em><b>Decomposes Reference</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.ReqSpec}.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Requirement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Decomposes Reference</em>' reference list isn't clear,
@@ -313,15 +313,15 @@ public interface ReqSpec extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Decomposes Reference</em>' reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_DecomposesReference()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_DecomposesReference()
    * @model
    * @generated
    */
-  EList<ReqSpec> getDecomposesReference();
+  EList<Requirement> getDecomposesReference();
 
   /**
    * Returns the value of the '<em><b>Evolves Reference</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.ReqSpec}.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Requirement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Evolves Reference</em>' reference list isn't clear,
@@ -329,11 +329,11 @@ public interface ReqSpec extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Evolves Reference</em>' reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_EvolvesReference()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_EvolvesReference()
    * @model
    * @generated
    */
-  EList<ReqSpec> getEvolvesReference();
+  EList<Requirement> getEvolvesReference();
 
   /**
    * Returns the value of the '<em><b>Verified By</b></em>' containment reference list.
@@ -345,7 +345,7 @@ public interface ReqSpec extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Verified By</em>' containment reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_VerifiedBy()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_VerifiedBy()
    * @model containment="true"
    * @generated
    */
@@ -361,7 +361,7 @@ public interface ReqSpec extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Stakeholderreq Reference</em>' reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_StakeholderreqReference()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_StakeholderreqReference()
    * @model
    * @generated
    */
@@ -377,7 +377,7 @@ public interface ReqSpec extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Systemreq Reference</em>' reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_SystemreqReference()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_SystemreqReference()
    * @model
    * @generated
    */
@@ -393,10 +393,10 @@ public interface ReqSpec extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Doc References</em>' reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getReqSpec_DocReferences()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_DocReferences()
    * @model
    * @generated
    */
   EList<ExternalDocument> getDocReferences();
 
-} // ReqSpec
+} // Requirement

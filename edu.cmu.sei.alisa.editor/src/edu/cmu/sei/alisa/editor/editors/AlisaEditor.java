@@ -53,6 +53,7 @@ import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.AlisaStandaloneSetup;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
+import edu.cmu.sei.alisa.alisa.Stakeholders;
 import edu.cmu.sei.alisa.editor.utils.AlisaEditorCellModifier;
 import edu.cmu.sei.alisa.editor.utils.AlisaLabelProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaRequirementsContentProvider;
@@ -211,8 +212,8 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 		delete.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
 				Object o = ((IStructuredSelection) tableViewers[getActivePage()].getSelection()).getFirstElement();
-				if (o != null) {
-					Utils.deleteObjectFromModel(o);
+				if (o != null && o instanceof EObject) {
+					Utils.deleteObjectFromModel((EObject) o);
 					updateTables();
 				}
 			}
@@ -320,7 +321,22 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 				return (RequirementDocument) res;
 			}
 		}
-		return Utils.createReqDoc(model);
+		RequirementDocument reqdoc = Utils.createReqDoc(model);
+		reqdoc.setName("new req doc");
+		return reqdoc;
+	}
+
+	public Stakeholders getStakeholders() {
+		AlisaModel model = getRootObject(false);
+		EList<EObject> content = model.getContent();
+		for (EObject res : content) {
+			if (res instanceof Stakeholders) {
+				return (Stakeholders) res;
+			}
+		}
+		Stakeholders sh = Utils.createStakeholders(model);
+		sh.setName("new org");
+		return sh;
 	}
 
 	public AlisaModel getRootObject() {

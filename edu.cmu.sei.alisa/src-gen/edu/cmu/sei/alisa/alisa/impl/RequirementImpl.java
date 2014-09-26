@@ -6,7 +6,7 @@ import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
-import edu.cmu.sei.alisa.alisa.ReqSpec;
+import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
 
 import java.util.Collection;
@@ -29,35 +29,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Req Spec</b></em>'.
+ * An implementation of the model object '<em><b>Requirement</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getReqkind <em>Reqkind</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getTitle <em>Title</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getAssert <em>Assert</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getRationale <em>Rationale</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getIssue <em>Issue</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getModelReference <em>Model Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getGoalReference <em>Goal Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getHazardReference <em>Hazard Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getRefinesReference <em>Refines Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getDecomposesReference <em>Decomposes Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getEvolvesReference <em>Evolves Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getVerifiedBy <em>Verified By</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getStakeholderreqReference <em>Stakeholderreq Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getSystemreqReference <em>Systemreq Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecImpl#getDocReferences <em>Doc References</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getReqkind <em>Reqkind</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getAssert <em>Assert</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getRationale <em>Rationale</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getIssue <em>Issue</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getModelReference <em>Model Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getGoalReference <em>Goal Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getHazardReference <em>Hazard Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getRefinesReference <em>Refines Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getDecomposesReference <em>Decomposes Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getEvolvesReference <em>Evolves Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getVerifiedBy <em>Verified By</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getStakeholderreqReference <em>Stakeholderreq Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getSystemreqReference <em>Systemreq Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getDocReferences <em>Doc References</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
+public class RequirementImpl extends MinimalEObjectImpl.Container implements Requirement
 {
   /**
    * The default value of the '{@link #getReqkind() <em>Reqkind</em>}' attribute.
@@ -247,7 +247,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * @generated
    * @ordered
    */
-  protected EList<ReqSpec> refinesReference;
+  protected EList<Requirement> refinesReference;
 
   /**
    * The cached value of the '{@link #getDecomposesReference() <em>Decomposes Reference</em>}' reference list.
@@ -257,7 +257,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * @generated
    * @ordered
    */
-  protected EList<ReqSpec> decomposesReference;
+  protected EList<Requirement> decomposesReference;
 
   /**
    * The cached value of the '{@link #getEvolvesReference() <em>Evolves Reference</em>}' reference list.
@@ -267,7 +267,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * @generated
    * @ordered
    */
-  protected EList<ReqSpec> evolvesReference;
+  protected EList<Requirement> evolvesReference;
 
   /**
    * The cached value of the '{@link #getVerifiedBy() <em>Verified By</em>}' containment reference list.
@@ -314,7 +314,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ReqSpecImpl()
+  protected RequirementImpl()
   {
     super();
   }
@@ -327,7 +327,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   @Override
   protected EClass eStaticClass()
   {
-    return AlisaPackage.Literals.REQ_SPEC;
+    return AlisaPackage.Literals.REQUIREMENT;
   }
 
   /**
@@ -350,7 +350,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
     String oldReqkind = reqkind;
     reqkind = newReqkind;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQ_SPEC__REQKIND, oldReqkind, reqkind));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT__REQKIND, oldReqkind, reqkind));
   }
 
   /**
@@ -373,7 +373,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQ_SPEC__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT__NAME, oldName, name));
   }
 
   /**
@@ -396,7 +396,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
     String oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQ_SPEC__TARGET, oldTarget, target));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT__TARGET, oldTarget, target));
   }
 
   /**
@@ -419,7 +419,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
     String oldTitle = title;
     title = newTitle;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQ_SPEC__TITLE, oldTitle, title));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT__TITLE, oldTitle, title));
   }
 
   /**
@@ -442,7 +442,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
     String oldDescription = description;
     description = newDescription;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQ_SPEC__DESCRIPTION, oldDescription, description));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT__DESCRIPTION, oldDescription, description));
   }
 
   /**
@@ -465,7 +465,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
     String oldAssert = assert_;
     assert_ = newAssert;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQ_SPEC__ASSERT, oldAssert, assert_));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT__ASSERT, oldAssert, assert_));
   }
 
   /**
@@ -488,7 +488,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
     String oldRationale = rationale;
     rationale = newRationale;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQ_SPEC__RATIONALE, oldRationale, rationale));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT__RATIONALE, oldRationale, rationale));
   }
 
   /**
@@ -500,7 +500,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   {
     if (issue == null)
     {
-      issue = new EDataTypeEList<String>(String.class, this, AlisaPackage.REQ_SPEC__ISSUE);
+      issue = new EDataTypeEList<String>(String.class, this, AlisaPackage.REQUIREMENT__ISSUE);
     }
     return issue;
   }
@@ -514,7 +514,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   {
     if (modelReference == null)
     {
-      modelReference = new EDataTypeEList<String>(String.class, this, AlisaPackage.REQ_SPEC__MODEL_REFERENCE);
+      modelReference = new EDataTypeEList<String>(String.class, this, AlisaPackage.REQUIREMENT__MODEL_REFERENCE);
     }
     return modelReference;
   }
@@ -528,7 +528,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   {
     if (goalReference == null)
     {
-      goalReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.REQ_SPEC__GOAL_REFERENCE);
+      goalReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.REQUIREMENT__GOAL_REFERENCE);
     }
     return goalReference;
   }
@@ -542,7 +542,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   {
     if (hazardReference == null)
     {
-      hazardReference = new EDataTypeEList<String>(String.class, this, AlisaPackage.REQ_SPEC__HAZARD_REFERENCE);
+      hazardReference = new EDataTypeEList<String>(String.class, this, AlisaPackage.REQUIREMENT__HAZARD_REFERENCE);
     }
     return hazardReference;
   }
@@ -552,11 +552,11 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ReqSpec> getRefinesReference()
+  public EList<Requirement> getRefinesReference()
   {
     if (refinesReference == null)
     {
-      refinesReference = new EObjectResolvingEList<ReqSpec>(ReqSpec.class, this, AlisaPackage.REQ_SPEC__REFINES_REFERENCE);
+      refinesReference = new EObjectResolvingEList<Requirement>(Requirement.class, this, AlisaPackage.REQUIREMENT__REFINES_REFERENCE);
     }
     return refinesReference;
   }
@@ -566,11 +566,11 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ReqSpec> getDecomposesReference()
+  public EList<Requirement> getDecomposesReference()
   {
     if (decomposesReference == null)
     {
-      decomposesReference = new EObjectResolvingEList<ReqSpec>(ReqSpec.class, this, AlisaPackage.REQ_SPEC__DECOMPOSES_REFERENCE);
+      decomposesReference = new EObjectResolvingEList<Requirement>(Requirement.class, this, AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE);
     }
     return decomposesReference;
   }
@@ -580,11 +580,11 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ReqSpec> getEvolvesReference()
+  public EList<Requirement> getEvolvesReference()
   {
     if (evolvesReference == null)
     {
-      evolvesReference = new EObjectResolvingEList<ReqSpec>(ReqSpec.class, this, AlisaPackage.REQ_SPEC__EVOLVES_REFERENCE);
+      evolvesReference = new EObjectResolvingEList<Requirement>(Requirement.class, this, AlisaPackage.REQUIREMENT__EVOLVES_REFERENCE);
     }
     return evolvesReference;
   }
@@ -598,7 +598,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   {
     if (verifiedBy == null)
     {
-      verifiedBy = new EObjectContainmentEList<VerificationDecomposition>(VerificationDecomposition.class, this, AlisaPackage.REQ_SPEC__VERIFIED_BY);
+      verifiedBy = new EObjectContainmentEList<VerificationDecomposition>(VerificationDecomposition.class, this, AlisaPackage.REQUIREMENT__VERIFIED_BY);
     }
     return verifiedBy;
   }
@@ -612,7 +612,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   {
     if (stakeholderreqReference == null)
     {
-      stakeholderreqReference = new EObjectResolvingEList<DocumentedRequirement>(DocumentedRequirement.class, this, AlisaPackage.REQ_SPEC__STAKEHOLDERREQ_REFERENCE);
+      stakeholderreqReference = new EObjectResolvingEList<DocumentedRequirement>(DocumentedRequirement.class, this, AlisaPackage.REQUIREMENT__STAKEHOLDERREQ_REFERENCE);
     }
     return stakeholderreqReference;
   }
@@ -626,7 +626,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   {
     if (systemreqReference == null)
     {
-      systemreqReference = new EObjectResolvingEList<DocumentedRequirement>(DocumentedRequirement.class, this, AlisaPackage.REQ_SPEC__SYSTEMREQ_REFERENCE);
+      systemreqReference = new EObjectResolvingEList<DocumentedRequirement>(DocumentedRequirement.class, this, AlisaPackage.REQUIREMENT__SYSTEMREQ_REFERENCE);
     }
     return systemreqReference;
   }
@@ -640,7 +640,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   {
     if (docReferences == null)
     {
-      docReferences = new EObjectResolvingEList<ExternalDocument>(ExternalDocument.class, this, AlisaPackage.REQ_SPEC__DOC_REFERENCES);
+      docReferences = new EObjectResolvingEList<ExternalDocument>(ExternalDocument.class, this, AlisaPackage.REQUIREMENT__DOC_REFERENCES);
     }
     return docReferences;
   }
@@ -655,7 +655,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   {
     switch (featureID)
     {
-      case AlisaPackage.REQ_SPEC__VERIFIED_BY:
+      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
         return ((InternalEList<?>)getVerifiedBy()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -671,41 +671,41 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   {
     switch (featureID)
     {
-      case AlisaPackage.REQ_SPEC__REQKIND:
+      case AlisaPackage.REQUIREMENT__REQKIND:
         return getReqkind();
-      case AlisaPackage.REQ_SPEC__NAME:
+      case AlisaPackage.REQUIREMENT__NAME:
         return getName();
-      case AlisaPackage.REQ_SPEC__TARGET:
+      case AlisaPackage.REQUIREMENT__TARGET:
         return getTarget();
-      case AlisaPackage.REQ_SPEC__TITLE:
+      case AlisaPackage.REQUIREMENT__TITLE:
         return getTitle();
-      case AlisaPackage.REQ_SPEC__DESCRIPTION:
+      case AlisaPackage.REQUIREMENT__DESCRIPTION:
         return getDescription();
-      case AlisaPackage.REQ_SPEC__ASSERT:
+      case AlisaPackage.REQUIREMENT__ASSERT:
         return getAssert();
-      case AlisaPackage.REQ_SPEC__RATIONALE:
+      case AlisaPackage.REQUIREMENT__RATIONALE:
         return getRationale();
-      case AlisaPackage.REQ_SPEC__ISSUE:
+      case AlisaPackage.REQUIREMENT__ISSUE:
         return getIssue();
-      case AlisaPackage.REQ_SPEC__MODEL_REFERENCE:
+      case AlisaPackage.REQUIREMENT__MODEL_REFERENCE:
         return getModelReference();
-      case AlisaPackage.REQ_SPEC__GOAL_REFERENCE:
+      case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
         return getGoalReference();
-      case AlisaPackage.REQ_SPEC__HAZARD_REFERENCE:
+      case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
         return getHazardReference();
-      case AlisaPackage.REQ_SPEC__REFINES_REFERENCE:
+      case AlisaPackage.REQUIREMENT__REFINES_REFERENCE:
         return getRefinesReference();
-      case AlisaPackage.REQ_SPEC__DECOMPOSES_REFERENCE:
+      case AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE:
         return getDecomposesReference();
-      case AlisaPackage.REQ_SPEC__EVOLVES_REFERENCE:
+      case AlisaPackage.REQUIREMENT__EVOLVES_REFERENCE:
         return getEvolvesReference();
-      case AlisaPackage.REQ_SPEC__VERIFIED_BY:
+      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
         return getVerifiedBy();
-      case AlisaPackage.REQ_SPEC__STAKEHOLDERREQ_REFERENCE:
+      case AlisaPackage.REQUIREMENT__STAKEHOLDERREQ_REFERENCE:
         return getStakeholderreqReference();
-      case AlisaPackage.REQ_SPEC__SYSTEMREQ_REFERENCE:
+      case AlisaPackage.REQUIREMENT__SYSTEMREQ_REFERENCE:
         return getSystemreqReference();
-      case AlisaPackage.REQ_SPEC__DOC_REFERENCES:
+      case AlisaPackage.REQUIREMENT__DOC_REFERENCES:
         return getDocReferences();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -722,68 +722,68 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   {
     switch (featureID)
     {
-      case AlisaPackage.REQ_SPEC__REQKIND:
+      case AlisaPackage.REQUIREMENT__REQKIND:
         setReqkind((String)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__NAME:
+      case AlisaPackage.REQUIREMENT__NAME:
         setName((String)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__TARGET:
+      case AlisaPackage.REQUIREMENT__TARGET:
         setTarget((String)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__TITLE:
+      case AlisaPackage.REQUIREMENT__TITLE:
         setTitle((String)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__DESCRIPTION:
+      case AlisaPackage.REQUIREMENT__DESCRIPTION:
         setDescription((String)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__ASSERT:
+      case AlisaPackage.REQUIREMENT__ASSERT:
         setAssert((String)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__RATIONALE:
+      case AlisaPackage.REQUIREMENT__RATIONALE:
         setRationale((String)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__ISSUE:
+      case AlisaPackage.REQUIREMENT__ISSUE:
         getIssue().clear();
         getIssue().addAll((Collection<? extends String>)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__MODEL_REFERENCE:
+      case AlisaPackage.REQUIREMENT__MODEL_REFERENCE:
         getModelReference().clear();
         getModelReference().addAll((Collection<? extends String>)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__GOAL_REFERENCE:
+      case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
         getGoalReference().clear();
         getGoalReference().addAll((Collection<? extends Goal>)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__HAZARD_REFERENCE:
+      case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
         getHazardReference().clear();
         getHazardReference().addAll((Collection<? extends String>)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__REFINES_REFERENCE:
+      case AlisaPackage.REQUIREMENT__REFINES_REFERENCE:
         getRefinesReference().clear();
-        getRefinesReference().addAll((Collection<? extends ReqSpec>)newValue);
+        getRefinesReference().addAll((Collection<? extends Requirement>)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__DECOMPOSES_REFERENCE:
+      case AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE:
         getDecomposesReference().clear();
-        getDecomposesReference().addAll((Collection<? extends ReqSpec>)newValue);
+        getDecomposesReference().addAll((Collection<? extends Requirement>)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__EVOLVES_REFERENCE:
+      case AlisaPackage.REQUIREMENT__EVOLVES_REFERENCE:
         getEvolvesReference().clear();
-        getEvolvesReference().addAll((Collection<? extends ReqSpec>)newValue);
+        getEvolvesReference().addAll((Collection<? extends Requirement>)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__VERIFIED_BY:
+      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
         getVerifiedBy().clear();
         getVerifiedBy().addAll((Collection<? extends VerificationDecomposition>)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__STAKEHOLDERREQ_REFERENCE:
+      case AlisaPackage.REQUIREMENT__STAKEHOLDERREQ_REFERENCE:
         getStakeholderreqReference().clear();
         getStakeholderreqReference().addAll((Collection<? extends DocumentedRequirement>)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__SYSTEMREQ_REFERENCE:
+      case AlisaPackage.REQUIREMENT__SYSTEMREQ_REFERENCE:
         getSystemreqReference().clear();
         getSystemreqReference().addAll((Collection<? extends DocumentedRequirement>)newValue);
         return;
-      case AlisaPackage.REQ_SPEC__DOC_REFERENCES:
+      case AlisaPackage.REQUIREMENT__DOC_REFERENCES:
         getDocReferences().clear();
         getDocReferences().addAll((Collection<? extends ExternalDocument>)newValue);
         return;
@@ -801,58 +801,58 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   {
     switch (featureID)
     {
-      case AlisaPackage.REQ_SPEC__REQKIND:
+      case AlisaPackage.REQUIREMENT__REQKIND:
         setReqkind(REQKIND_EDEFAULT);
         return;
-      case AlisaPackage.REQ_SPEC__NAME:
+      case AlisaPackage.REQUIREMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AlisaPackage.REQ_SPEC__TARGET:
+      case AlisaPackage.REQUIREMENT__TARGET:
         setTarget(TARGET_EDEFAULT);
         return;
-      case AlisaPackage.REQ_SPEC__TITLE:
+      case AlisaPackage.REQUIREMENT__TITLE:
         setTitle(TITLE_EDEFAULT);
         return;
-      case AlisaPackage.REQ_SPEC__DESCRIPTION:
+      case AlisaPackage.REQUIREMENT__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
-      case AlisaPackage.REQ_SPEC__ASSERT:
+      case AlisaPackage.REQUIREMENT__ASSERT:
         setAssert(ASSERT_EDEFAULT);
         return;
-      case AlisaPackage.REQ_SPEC__RATIONALE:
+      case AlisaPackage.REQUIREMENT__RATIONALE:
         setRationale(RATIONALE_EDEFAULT);
         return;
-      case AlisaPackage.REQ_SPEC__ISSUE:
+      case AlisaPackage.REQUIREMENT__ISSUE:
         getIssue().clear();
         return;
-      case AlisaPackage.REQ_SPEC__MODEL_REFERENCE:
+      case AlisaPackage.REQUIREMENT__MODEL_REFERENCE:
         getModelReference().clear();
         return;
-      case AlisaPackage.REQ_SPEC__GOAL_REFERENCE:
+      case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
         getGoalReference().clear();
         return;
-      case AlisaPackage.REQ_SPEC__HAZARD_REFERENCE:
+      case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
         getHazardReference().clear();
         return;
-      case AlisaPackage.REQ_SPEC__REFINES_REFERENCE:
+      case AlisaPackage.REQUIREMENT__REFINES_REFERENCE:
         getRefinesReference().clear();
         return;
-      case AlisaPackage.REQ_SPEC__DECOMPOSES_REFERENCE:
+      case AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE:
         getDecomposesReference().clear();
         return;
-      case AlisaPackage.REQ_SPEC__EVOLVES_REFERENCE:
+      case AlisaPackage.REQUIREMENT__EVOLVES_REFERENCE:
         getEvolvesReference().clear();
         return;
-      case AlisaPackage.REQ_SPEC__VERIFIED_BY:
+      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
         getVerifiedBy().clear();
         return;
-      case AlisaPackage.REQ_SPEC__STAKEHOLDERREQ_REFERENCE:
+      case AlisaPackage.REQUIREMENT__STAKEHOLDERREQ_REFERENCE:
         getStakeholderreqReference().clear();
         return;
-      case AlisaPackage.REQ_SPEC__SYSTEMREQ_REFERENCE:
+      case AlisaPackage.REQUIREMENT__SYSTEMREQ_REFERENCE:
         getSystemreqReference().clear();
         return;
-      case AlisaPackage.REQ_SPEC__DOC_REFERENCES:
+      case AlisaPackage.REQUIREMENT__DOC_REFERENCES:
         getDocReferences().clear();
         return;
     }
@@ -869,41 +869,41 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
   {
     switch (featureID)
     {
-      case AlisaPackage.REQ_SPEC__REQKIND:
+      case AlisaPackage.REQUIREMENT__REQKIND:
         return REQKIND_EDEFAULT == null ? reqkind != null : !REQKIND_EDEFAULT.equals(reqkind);
-      case AlisaPackage.REQ_SPEC__NAME:
+      case AlisaPackage.REQUIREMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AlisaPackage.REQ_SPEC__TARGET:
+      case AlisaPackage.REQUIREMENT__TARGET:
         return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
-      case AlisaPackage.REQ_SPEC__TITLE:
+      case AlisaPackage.REQUIREMENT__TITLE:
         return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-      case AlisaPackage.REQ_SPEC__DESCRIPTION:
+      case AlisaPackage.REQUIREMENT__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-      case AlisaPackage.REQ_SPEC__ASSERT:
+      case AlisaPackage.REQUIREMENT__ASSERT:
         return ASSERT_EDEFAULT == null ? assert_ != null : !ASSERT_EDEFAULT.equals(assert_);
-      case AlisaPackage.REQ_SPEC__RATIONALE:
+      case AlisaPackage.REQUIREMENT__RATIONALE:
         return RATIONALE_EDEFAULT == null ? rationale != null : !RATIONALE_EDEFAULT.equals(rationale);
-      case AlisaPackage.REQ_SPEC__ISSUE:
+      case AlisaPackage.REQUIREMENT__ISSUE:
         return issue != null && !issue.isEmpty();
-      case AlisaPackage.REQ_SPEC__MODEL_REFERENCE:
+      case AlisaPackage.REQUIREMENT__MODEL_REFERENCE:
         return modelReference != null && !modelReference.isEmpty();
-      case AlisaPackage.REQ_SPEC__GOAL_REFERENCE:
+      case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
         return goalReference != null && !goalReference.isEmpty();
-      case AlisaPackage.REQ_SPEC__HAZARD_REFERENCE:
+      case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
         return hazardReference != null && !hazardReference.isEmpty();
-      case AlisaPackage.REQ_SPEC__REFINES_REFERENCE:
+      case AlisaPackage.REQUIREMENT__REFINES_REFERENCE:
         return refinesReference != null && !refinesReference.isEmpty();
-      case AlisaPackage.REQ_SPEC__DECOMPOSES_REFERENCE:
+      case AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE:
         return decomposesReference != null && !decomposesReference.isEmpty();
-      case AlisaPackage.REQ_SPEC__EVOLVES_REFERENCE:
+      case AlisaPackage.REQUIREMENT__EVOLVES_REFERENCE:
         return evolvesReference != null && !evolvesReference.isEmpty();
-      case AlisaPackage.REQ_SPEC__VERIFIED_BY:
+      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
         return verifiedBy != null && !verifiedBy.isEmpty();
-      case AlisaPackage.REQ_SPEC__STAKEHOLDERREQ_REFERENCE:
+      case AlisaPackage.REQUIREMENT__STAKEHOLDERREQ_REFERENCE:
         return stakeholderreqReference != null && !stakeholderreqReference.isEmpty();
-      case AlisaPackage.REQ_SPEC__SYSTEMREQ_REFERENCE:
+      case AlisaPackage.REQUIREMENT__SYSTEMREQ_REFERENCE:
         return systemreqReference != null && !systemreqReference.isEmpty();
-      case AlisaPackage.REQ_SPEC__DOC_REFERENCES:
+      case AlisaPackage.REQUIREMENT__DOC_REFERENCES:
         return docReferences != null && !docReferences.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -944,4 +944,4 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
     return result.toString();
   }
 
-} //ReqSpecImpl
+} //RequirementImpl

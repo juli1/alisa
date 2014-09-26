@@ -11,6 +11,7 @@ import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
+import edu.cmu.sei.alisa.alisa.Stakeholders;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.impl.AlisaFactoryImpl;
 
@@ -196,16 +197,31 @@ public class Utils {
 		return reqdoc;
 	}
 
+	public static Stakeholders createStakeholders(AlisaModel model) {
+		AlisaFactory factory = AlisaFactoryImpl.init();
+		Stakeholders reqdoc = factory.createStakeholders();
+		model.getContent().add(reqdoc);
+		return reqdoc;
+	}
+
 	/**
 	 * Remove an object from the model. Should make consistency
 	 * check if the node is not referenced before in order
 	 * to make sure the model is still consistent
 	 * @param o     - the object to be removed
 	 */
-	public static void deleteObjectFromModel(Object o) {
+	public static void deleteObjectFromModel(EObject o) {
 		if (o instanceof DocumentedRequirement) {
-			RequirementDocument reqdoc = (RequirementDocument) ((DocumentedRequirement) o).eContainer();
+			RequirementDocument reqdoc = (RequirementDocument) o.eContainer();
 			reqdoc.getContent().remove(o);
+		}
+		if (o instanceof Stakeholder) {
+			Stakeholders container = (Stakeholders) o.eContainer();
+			container.getStakeholder().remove(o);
+		}
+		if (o instanceof Stakeholders) {
+			AlisaModel container = (AlisaModel) o.eContainer();
+			container.getContent().remove(o);
 		}
 	}
 

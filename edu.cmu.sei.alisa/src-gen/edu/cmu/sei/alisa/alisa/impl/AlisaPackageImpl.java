@@ -17,9 +17,9 @@ import edu.cmu.sei.alisa.alisa.ExternalDocuments;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Goals;
 import edu.cmu.sei.alisa.alisa.Notes;
-import edu.cmu.sei.alisa.alisa.ReqSpec;
-import edu.cmu.sei.alisa.alisa.ReqSpecifications;
+import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
+import edu.cmu.sei.alisa.alisa.Requirements;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.Stakeholders;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
@@ -92,14 +92,14 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass reqSpecificationsEClass = null;
+  private EClass requirementsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass reqSpecEClass = null;
+  private EClass requirementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -550,9 +550,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getReqSpecifications()
+  public EClass getRequirements()
   {
-    return reqSpecificationsEClass;
+    return requirementsEClass;
   }
 
   /**
@@ -560,9 +560,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getReqSpecifications_Name()
+  public EAttribute getRequirements_Name()
   {
-    return (EAttribute)reqSpecificationsEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)requirementsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -570,9 +570,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReqSpecifications_ReqTarget()
+  public EReference getRequirements_ReqTarget()
   {
-    return (EReference)reqSpecificationsEClass.getEStructuralFeatures().get(1);
+    return (EReference)requirementsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -580,9 +580,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReqSpecifications_Reqs()
+  public EReference getRequirements_Reqs()
   {
-    return (EReference)reqSpecificationsEClass.getEStructuralFeatures().get(2);
+    return (EReference)requirementsEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -590,9 +590,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getReqSpec()
+  public EClass getRequirement()
   {
-    return reqSpecEClass;
+    return requirementEClass;
   }
 
   /**
@@ -600,9 +600,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getReqSpec_Reqkind()
+  public EAttribute getRequirement_Reqkind()
   {
-    return (EAttribute)reqSpecEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -610,9 +610,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getReqSpec_Name()
+  public EAttribute getRequirement_Name()
   {
-    return (EAttribute)reqSpecEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -620,9 +620,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getReqSpec_Target()
+  public EAttribute getRequirement_Target()
   {
-    return (EAttribute)reqSpecEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -630,9 +630,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getReqSpec_Title()
+  public EAttribute getRequirement_Title()
   {
-    return (EAttribute)reqSpecEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -640,9 +640,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getReqSpec_Description()
+  public EAttribute getRequirement_Description()
   {
-    return (EAttribute)reqSpecEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -650,9 +650,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getReqSpec_Assert()
+  public EAttribute getRequirement_Assert()
   {
-    return (EAttribute)reqSpecEClass.getEStructuralFeatures().get(5);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -660,9 +660,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getReqSpec_Rationale()
+  public EAttribute getRequirement_Rationale()
   {
-    return (EAttribute)reqSpecEClass.getEStructuralFeatures().get(6);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -670,9 +670,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getReqSpec_Issue()
+  public EAttribute getRequirement_Issue()
   {
-    return (EAttribute)reqSpecEClass.getEStructuralFeatures().get(7);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -680,9 +680,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getReqSpec_ModelReference()
+  public EAttribute getRequirement_ModelReference()
   {
-    return (EAttribute)reqSpecEClass.getEStructuralFeatures().get(8);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -690,9 +690,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReqSpec_GoalReference()
+  public EReference getRequirement_GoalReference()
   {
-    return (EReference)reqSpecEClass.getEStructuralFeatures().get(9);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -700,9 +700,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getReqSpec_HazardReference()
+  public EAttribute getRequirement_HazardReference()
   {
-    return (EAttribute)reqSpecEClass.getEStructuralFeatures().get(10);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(10);
   }
 
   /**
@@ -710,9 +710,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReqSpec_RefinesReference()
+  public EReference getRequirement_RefinesReference()
   {
-    return (EReference)reqSpecEClass.getEStructuralFeatures().get(11);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(11);
   }
 
   /**
@@ -720,9 +720,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReqSpec_DecomposesReference()
+  public EReference getRequirement_DecomposesReference()
   {
-    return (EReference)reqSpecEClass.getEStructuralFeatures().get(12);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -730,9 +730,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReqSpec_EvolvesReference()
+  public EReference getRequirement_EvolvesReference()
   {
-    return (EReference)reqSpecEClass.getEStructuralFeatures().get(13);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(13);
   }
 
   /**
@@ -740,9 +740,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReqSpec_VerifiedBy()
+  public EReference getRequirement_VerifiedBy()
   {
-    return (EReference)reqSpecEClass.getEStructuralFeatures().get(14);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(14);
   }
 
   /**
@@ -750,9 +750,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReqSpec_StakeholderreqReference()
+  public EReference getRequirement_StakeholderreqReference()
   {
-    return (EReference)reqSpecEClass.getEStructuralFeatures().get(15);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(15);
   }
 
   /**
@@ -760,9 +760,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReqSpec_SystemreqReference()
+  public EReference getRequirement_SystemreqReference()
   {
-    return (EReference)reqSpecEClass.getEStructuralFeatures().get(16);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(16);
   }
 
   /**
@@ -770,9 +770,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReqSpec_DocReferences()
+  public EReference getRequirement_DocReferences()
   {
-    return (EReference)reqSpecEClass.getEStructuralFeatures().get(17);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(17);
   }
 
   /**
@@ -1539,30 +1539,30 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEReference(goalEClass, GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE);
     createEReference(goalEClass, GOAL__DOC_REFERENCES);
 
-    reqSpecificationsEClass = createEClass(REQ_SPECIFICATIONS);
-    createEAttribute(reqSpecificationsEClass, REQ_SPECIFICATIONS__NAME);
-    createEReference(reqSpecificationsEClass, REQ_SPECIFICATIONS__REQ_TARGET);
-    createEReference(reqSpecificationsEClass, REQ_SPECIFICATIONS__REQS);
+    requirementsEClass = createEClass(REQUIREMENTS);
+    createEAttribute(requirementsEClass, REQUIREMENTS__NAME);
+    createEReference(requirementsEClass, REQUIREMENTS__REQ_TARGET);
+    createEReference(requirementsEClass, REQUIREMENTS__REQS);
 
-    reqSpecEClass = createEClass(REQ_SPEC);
-    createEAttribute(reqSpecEClass, REQ_SPEC__REQKIND);
-    createEAttribute(reqSpecEClass, REQ_SPEC__NAME);
-    createEAttribute(reqSpecEClass, REQ_SPEC__TARGET);
-    createEAttribute(reqSpecEClass, REQ_SPEC__TITLE);
-    createEAttribute(reqSpecEClass, REQ_SPEC__DESCRIPTION);
-    createEAttribute(reqSpecEClass, REQ_SPEC__ASSERT);
-    createEAttribute(reqSpecEClass, REQ_SPEC__RATIONALE);
-    createEAttribute(reqSpecEClass, REQ_SPEC__ISSUE);
-    createEAttribute(reqSpecEClass, REQ_SPEC__MODEL_REFERENCE);
-    createEReference(reqSpecEClass, REQ_SPEC__GOAL_REFERENCE);
-    createEAttribute(reqSpecEClass, REQ_SPEC__HAZARD_REFERENCE);
-    createEReference(reqSpecEClass, REQ_SPEC__REFINES_REFERENCE);
-    createEReference(reqSpecEClass, REQ_SPEC__DECOMPOSES_REFERENCE);
-    createEReference(reqSpecEClass, REQ_SPEC__EVOLVES_REFERENCE);
-    createEReference(reqSpecEClass, REQ_SPEC__VERIFIED_BY);
-    createEReference(reqSpecEClass, REQ_SPEC__STAKEHOLDERREQ_REFERENCE);
-    createEReference(reqSpecEClass, REQ_SPEC__SYSTEMREQ_REFERENCE);
-    createEReference(reqSpecEClass, REQ_SPEC__DOC_REFERENCES);
+    requirementEClass = createEClass(REQUIREMENT);
+    createEAttribute(requirementEClass, REQUIREMENT__REQKIND);
+    createEAttribute(requirementEClass, REQUIREMENT__NAME);
+    createEAttribute(requirementEClass, REQUIREMENT__TARGET);
+    createEAttribute(requirementEClass, REQUIREMENT__TITLE);
+    createEAttribute(requirementEClass, REQUIREMENT__DESCRIPTION);
+    createEAttribute(requirementEClass, REQUIREMENT__ASSERT);
+    createEAttribute(requirementEClass, REQUIREMENT__RATIONALE);
+    createEAttribute(requirementEClass, REQUIREMENT__ISSUE);
+    createEAttribute(requirementEClass, REQUIREMENT__MODEL_REFERENCE);
+    createEReference(requirementEClass, REQUIREMENT__GOAL_REFERENCE);
+    createEAttribute(requirementEClass, REQUIREMENT__HAZARD_REFERENCE);
+    createEReference(requirementEClass, REQUIREMENT__REFINES_REFERENCE);
+    createEReference(requirementEClass, REQUIREMENT__DECOMPOSES_REFERENCE);
+    createEReference(requirementEClass, REQUIREMENT__EVOLVES_REFERENCE);
+    createEReference(requirementEClass, REQUIREMENT__VERIFIED_BY);
+    createEReference(requirementEClass, REQUIREMENT__STAKEHOLDERREQ_REFERENCE);
+    createEReference(requirementEClass, REQUIREMENT__SYSTEMREQ_REFERENCE);
+    createEReference(requirementEClass, REQUIREMENT__DOC_REFERENCES);
 
     externalDocumentsEClass = createEClass(EXTERNAL_DOCUMENTS);
     createEReference(externalDocumentsEClass, EXTERNAL_DOCUMENTS__DOCS);
@@ -1721,30 +1721,30 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEReference(getGoal_StakeholderRequirementReference(), this.getDocumentedRequirement(), null, "stakeholderRequirementReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGoal_DocReferences(), this.getExternalDocument(), null, "docReferences", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(reqSpecificationsEClass, ReqSpecifications.class, "ReqSpecifications", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getReqSpecifications_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ReqSpecifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReqSpecifications_ReqTarget(), theAadl2Package.getNamedElement(), null, "reqTarget", null, 0, 1, ReqSpecifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReqSpecifications_Reqs(), this.getReqSpec(), null, "reqs", null, 0, -1, ReqSpecifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(requirementsEClass, Requirements.class, "Requirements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRequirements_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRequirements_ReqTarget(), theAadl2Package.getNamedElement(), null, "reqTarget", null, 0, 1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRequirements_Reqs(), this.getRequirement(), null, "reqs", null, 0, -1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(reqSpecEClass, ReqSpec.class, "ReqSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getReqSpec_Reqkind(), theEcorePackage.getEString(), "reqkind", null, 0, 1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getReqSpec_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getReqSpec_Target(), theEcorePackage.getEString(), "target", null, 0, 1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getReqSpec_Title(), theEcorePackage.getEString(), "title", null, 0, 1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getReqSpec_Description(), theEcorePackage.getEString(), "description", null, 0, 1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getReqSpec_Assert(), theEcorePackage.getEString(), "assert", null, 0, 1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getReqSpec_Rationale(), theEcorePackage.getEString(), "rationale", null, 0, 1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getReqSpec_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getReqSpec_ModelReference(), theEcorePackage.getEString(), "modelReference", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReqSpec_GoalReference(), this.getGoal(), null, "goalReference", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getReqSpec_HazardReference(), theEcorePackage.getEString(), "hazardReference", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReqSpec_RefinesReference(), this.getReqSpec(), null, "refinesReference", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReqSpec_DecomposesReference(), this.getReqSpec(), null, "decomposesReference", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReqSpec_EvolvesReference(), this.getReqSpec(), null, "evolvesReference", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReqSpec_VerifiedBy(), this.getVerificationDecomposition(), null, "verifiedBy", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReqSpec_StakeholderreqReference(), this.getDocumentedRequirement(), null, "stakeholderreqReference", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReqSpec_SystemreqReference(), this.getDocumentedRequirement(), null, "systemreqReference", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReqSpec_DocReferences(), this.getExternalDocument(), null, "docReferences", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(requirementEClass, Requirement.class, "Requirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRequirement_Reqkind(), theEcorePackage.getEString(), "reqkind", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRequirement_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRequirement_Target(), theEcorePackage.getEString(), "target", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRequirement_Title(), theEcorePackage.getEString(), "title", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRequirement_Description(), theEcorePackage.getEString(), "description", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRequirement_Assert(), theEcorePackage.getEString(), "assert", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRequirement_Rationale(), theEcorePackage.getEString(), "rationale", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRequirement_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRequirement_ModelReference(), theEcorePackage.getEString(), "modelReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRequirement_GoalReference(), this.getGoal(), null, "goalReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRequirement_HazardReference(), theEcorePackage.getEString(), "hazardReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRequirement_RefinesReference(), this.getRequirement(), null, "refinesReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRequirement_DecomposesReference(), this.getRequirement(), null, "decomposesReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRequirement_EvolvesReference(), this.getRequirement(), null, "evolvesReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRequirement_VerifiedBy(), this.getVerificationDecomposition(), null, "verifiedBy", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRequirement_StakeholderreqReference(), this.getDocumentedRequirement(), null, "stakeholderreqReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRequirement_SystemreqReference(), this.getDocumentedRequirement(), null, "systemreqReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRequirement_DocReferences(), this.getExternalDocument(), null, "docReferences", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(externalDocumentsEClass, ExternalDocuments.class, "ExternalDocuments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExternalDocuments_Docs(), this.getExternalDocument(), null, "docs", null, 0, -1, ExternalDocuments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
