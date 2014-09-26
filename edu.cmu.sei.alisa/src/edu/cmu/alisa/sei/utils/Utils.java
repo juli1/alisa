@@ -71,6 +71,26 @@ public class Utils {
 	}
 
 	/**
+	 * Convert a list of strings into a readable string
+	 * @param stakeholders
+	 * @return
+	 */
+	public static String getStringListAsString(List<String> stringList) {
+		String strVal = "";
+		boolean firstPassed = false;
+		for (String s : stringList) {
+			if (firstPassed == true) {
+				strVal += ",";
+
+			}
+
+			strVal += s;
+			firstPassed = true;
+		}
+		return strVal;
+	}
+
+	/**
 	 * Convert a list of stakeholders into a readable string
 	 * @param stakeholders
 	 * @return

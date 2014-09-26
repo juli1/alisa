@@ -8,10 +8,10 @@ import org.eclipse.jface.viewers.Viewer;
 
 import edu.cmu.alisa.sei.utils.AlisaDebug;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
-import edu.cmu.sei.alisa.alisa.VerificationActivity;
-import edu.cmu.sei.alisa.alisa.VerificationLibrary;
+import edu.cmu.sei.alisa.alisa.ExternalDocument;
+import edu.cmu.sei.alisa.alisa.ExternalDocuments;
 
-public class AlisaVerificationActivitiesContentProvider implements IStructuredContentProvider {
+public class AlisaExternalDocumentsContentProvider implements IStructuredContentProvider {
 
 	/**
 	 * Returns the elements to display in the table viewer
@@ -19,23 +19,20 @@ public class AlisaVerificationActivitiesContentProvider implements IStructuredCo
 	 * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
 	 */
 	public Object[] getElements(Object element) {
-		List<VerificationActivity> vas = new ArrayList<VerificationActivity>();
-		AlisaDebug.debug("[AlisaVerificationActivityContentProvider] element=" + element);
+		List<ExternalDocument> requirements = new ArrayList<ExternalDocument>();
+		AlisaDebug.debug("[AlisaRequirementsContentProvider] element=" + element);
 
 		if (element instanceof AlisaModel) {
 			AlisaModel am = (AlisaModel) element;
-			for (Object obj : am.getContent()) {
-				if (obj instanceof VerificationLibrary) {
-					VerificationLibrary lib = (VerificationLibrary) obj;
-					for (Object o : lib.getContent()) {
-						if (o instanceof VerificationActivity) {
-							vas.add((VerificationActivity) o);
-						}
+			for (Object o : am.getContent()) {
+				if (o instanceof ExternalDocuments) {
+					for (ExternalDocument oo : ((ExternalDocuments) o).getDocs()) {
+						requirements.add(oo);
 					}
 				}
 			}
 		}
-		return vas.toArray();
+		return requirements.toArray();
 	}
 
 	/**

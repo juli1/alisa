@@ -25,7 +25,9 @@ import org.eclipse.swt.widgets.Display;
 import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition;
+import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
+import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 
@@ -192,10 +194,53 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
 				text = goal.getDescription();
 				break;
 			case 3:
-				text = goal.getRationale();
+				text = goal.getAssert();
 				break;
 			case 4:
+				text = goal.getRationale();
+				break;
+			case 5:
+				text = Utils.getStringListAsString(goal.getIssue());
+				break;
+			case 6:
 				text = Utils.getStakeholderListAsString(goal.getStakeholderReference());
+				break;
+			}
+
+		}
+
+		if (cell.getElement() instanceof Requirement) {
+			Requirement req = (Requirement) cell.getElement();
+			switch (index) {
+			case 0:
+				text = req.getName();
+				break;
+			case 1:
+				text = req.getTitle();
+				break;
+			case 2:
+				text = req.getDescription();
+				break;
+			case 3:
+				text = req.getAssert();
+				break;
+			case 4:
+				text = req.getRationale();
+				break;
+			case 5:
+				text = Utils.getStringListAsString(req.getIssue());
+				break;
+			}
+		}
+
+		if (cell.getElement() instanceof ExternalDocument) {
+			ExternalDocument extdoc = (ExternalDocument) cell.getElement();
+			switch (index) {
+			case 0:
+				text = extdoc.getName();
+				break;
+			case 1:
+				text = extdoc.getXternalReference();
 				break;
 			}
 		}

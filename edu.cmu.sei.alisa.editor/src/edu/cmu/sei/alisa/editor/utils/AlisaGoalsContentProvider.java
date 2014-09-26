@@ -6,12 +6,11 @@ import java.util.List;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
-import edu.cmu.alisa.sei.utils.AlisaDebug;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
-import edu.cmu.sei.alisa.alisa.VerificationActivity;
-import edu.cmu.sei.alisa.alisa.VerificationLibrary;
+import edu.cmu.sei.alisa.alisa.Goal;
+import edu.cmu.sei.alisa.alisa.Goals;
 
-public class AlisaVerificationActivitiesContentProvider implements IStructuredContentProvider {
+public class AlisaGoalsContentProvider implements IStructuredContentProvider {
 
 	/**
 	 * Returns the elements to display in the table viewer
@@ -19,23 +18,24 @@ public class AlisaVerificationActivitiesContentProvider implements IStructuredCo
 	 * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
 	 */
 	public Object[] getElements(Object element) {
-		List<VerificationActivity> vas = new ArrayList<VerificationActivity>();
-		AlisaDebug.debug("[AlisaVerificationActivityContentProvider] element=" + element);
+		List<Goal> goals = new ArrayList<Goal>();
 
 		if (element instanceof AlisaModel) {
 			AlisaModel am = (AlisaModel) element;
-			for (Object obj : am.getContent()) {
-				if (obj instanceof VerificationLibrary) {
-					VerificationLibrary lib = (VerificationLibrary) obj;
-					for (Object o : lib.getContent()) {
-						if (o instanceof VerificationActivity) {
-							vas.add((VerificationActivity) o);
-						}
+			for (Object o : am.getContent()) {
+				if (o instanceof Goals) {
+					for (Goal g : ((Goals) o).getGoals()) {
+						goals.add(g);
 					}
 				}
 			}
 		}
-		return vas.toArray();
+		if (element instanceof Goals) {
+			for (Goal g : ((Goals) element).getGoals()) {
+				goals.add(g);
+			}
+		}
+		return goals.toArray();
 	}
 
 	/**

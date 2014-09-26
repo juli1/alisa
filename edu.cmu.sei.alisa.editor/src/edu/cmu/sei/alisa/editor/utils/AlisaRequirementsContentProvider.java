@@ -6,10 +6,9 @@ import java.util.List;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
-import edu.cmu.alisa.sei.utils.AlisaDebug;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
-import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
-import edu.cmu.sei.alisa.alisa.RequirementDocument;
+import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.Requirements;
 
 public class AlisaRequirementsContentProvider implements IStructuredContentProvider {
 
@@ -19,22 +18,24 @@ public class AlisaRequirementsContentProvider implements IStructuredContentProvi
 	 * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
 	 */
 	public Object[] getElements(Object element) {
-		List<DocumentedRequirement> requirements = new ArrayList<DocumentedRequirement>();
-		AlisaDebug.debug("[AlisaRequirementsContentProvider] element=" + element);
+		List<Requirement> reqs = new ArrayList<Requirement>();
 
 		if (element instanceof AlisaModel) {
 			AlisaModel am = (AlisaModel) element;
 			for (Object o : am.getContent()) {
-				if (o instanceof RequirementDocument) {
-					for (Object oo : ((RequirementDocument) o).getContent()) {
-						if (oo instanceof DocumentedRequirement) {
-							requirements.add((DocumentedRequirement) oo);
-						}
+				if (o instanceof Requirements) {
+					for (Requirement g : ((Requirements) o).getReqs()) {
+						reqs.add(g);
 					}
 				}
 			}
 		}
-		return requirements.toArray();
+		if (element instanceof Requirements) {
+			for (Requirement g : ((Requirements) element).getReqs()) {
+				reqs.add(g);
+			}
+		}
+		return reqs.toArray();
 	}
 
 	/**

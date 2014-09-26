@@ -8,8 +8,8 @@ import org.eclipse.jface.viewers.Viewer;
 
 import edu.cmu.alisa.sei.utils.AlisaDebug;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
-import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
+import edu.cmu.sei.alisa.alisa.Stakeholders;
 
 public class AlisaStakeholdersContentProvider implements IStructuredContentProvider {
 
@@ -25,8 +25,8 @@ public class AlisaStakeholdersContentProvider implements IStructuredContentProvi
 		if (element instanceof AlisaModel) {
 			AlisaModel am = (AlisaModel) element;
 			for (Object o : am.getContent()) {
-				if (o instanceof RequirementDocument) {
-					for (Object oo : ((RequirementDocument) o).getContent()) {
+				if (o instanceof Stakeholders) {
+					for (Object oo : ((Stakeholders) o).getStakeholder()) {
 						if (oo instanceof Stakeholder) {
 							stakeholders.add((Stakeholder) oo);
 						}

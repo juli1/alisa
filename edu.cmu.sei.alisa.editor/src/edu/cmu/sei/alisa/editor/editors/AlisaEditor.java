@@ -54,9 +54,9 @@ import edu.cmu.sei.alisa.AlisaStandaloneSetup;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Stakeholders;
+import edu.cmu.sei.alisa.editor.utils.AlisaDocumentedRequirementsContentProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaEditorCellModifier;
 import edu.cmu.sei.alisa.editor.utils.AlisaLabelProvider;
-import edu.cmu.sei.alisa.editor.utils.AlisaRequirementsContentProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaStakeholdersContentProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaTableFilter;
 import edu.cmu.sei.alisa.editor.utils.AlisaTextEditor;
@@ -69,15 +69,25 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 	/**
 	 * Number of table viewers
 	 */
-	public static final int INDEX_TABLE_VERIFICATION_ACTIVITIES = 2;
-	public static final int INDEX_TABLE_REQUIREMENTS = 1;
+	public static final int INDEX_TABLE_VERIFICATION_ACTIVITIES = 5;
+	public static final int INDEX_TABLE_EXTERNAL_DOCUMENTS = 4;
+	public static final int INDEX_TABLE_DOCUMENTED_REQUIREMENTS = 3;
+	public static final int INDEX_TABLE_REQUIREMENTS = 2;
+	public static final int INDEX_TABLE_GOALS = 1;
 	public static final int INDEX_TABLE_STAKEHOLDERS = 0;
-	public static final String[] TABLE_NAMES = { "Stakeholders", "Requirements", "Verification Activity" };
+	public static final String[] TABLE_NAMES = { "Stakeholders", "Goals", "Requirements", "Documented Requirements",
+			"External Documents", "Verification Activity" };
 	public static final int NB_TABLE_VIEWERS = TABLE_NAMES.length;
-	public static final int INDEX_SOURCE = 3;
+	public static final int INDEX_SOURCE = 6;
 
-	String[] columnsNamesStakeholders = { "ID", "Title", "Description", "Role" };
-	String[] columnsNamesRequirements = { "ID", "Title", "Description", "Comment", "Assigned To", "Decomposed by" };
+	String[] columnsNamesStakeholders = { "Name", "Title", "Description", "Role" };
+	String[] columnsNamesGoals = { "ID", "Title", "Description", "Assertion", "Rationale", "Issues", "Assigned To",
+			"Decomposes" };
+	String[] columnsNamesRequirements = { "ID", "Title", "Description", "Assertion", "Rationale", "Issues",
+			"Decomposes" };
+	String[] columnsNamesDocumentedRequirements = { "ID", "Title", "Description", "Comment", "Assigned To",
+			"Decomposed by" };
+	String[] columnsNamesExternalDocuments = { "Name", "External Reference" };
 	String[] columnsNamesVerificationActivities = { "ID", "Title", "Description", "Method", "Assigned To" };
 
 	/** The text editor used in page 0. */
@@ -285,7 +295,7 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 		switch (index) {
 		case INDEX_TABLE_REQUIREMENTS: {
 			AlisaDebug.debug("[AlisaEditor] set content provider for requirements");
-			tableViewers[index].setContentProvider(new AlisaRequirementsContentProvider());
+			tableViewers[index].setContentProvider(new AlisaDocumentedRequirementsContentProvider());
 			break;
 		}
 
