@@ -210,7 +210,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Assignment cContentAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final Alternatives cContentAlternatives_3_0 = (Alternatives)cContentAssignment_3.eContents().get(0);
-		private final RuleCall cContentRequirementParserRuleCall_3_0_0 = (RuleCall)cContentAlternatives_3_0.eContents().get(0);
+		private final RuleCall cContentDocumentedRequirementParserRuleCall_3_0_0 = (RuleCall)cContentAlternatives_3_0.eContents().get(0);
 		private final RuleCall cContentStakeholderParserRuleCall_3_0_1 = (RuleCall)cContentAlternatives_3_0.eContents().get(1);
 		private final RuleCall cContentElementTypeParserRuleCall_3_0_2 = (RuleCall)cContentAlternatives_3_0.eContents().get(2);
 		private final RuleCall cContentElementReferenceParserRuleCall_3_0_3 = (RuleCall)cContentAlternatives_3_0.eContents().get(3);
@@ -220,11 +220,11 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//RequirementDocument:
-		//	"requirement" "document" name=ID content+=(Requirement | Stakeholder | ElementType | ElementReference)* "end"
-		//	"requirement" "document" ";";
+		//	"requirement" "document" name=ID content+=(DocumentedRequirement | Stakeholder | ElementType | ElementReference)*
+		//	"end" "requirement" "document" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"requirement" "document" name=ID content+=(Requirement | Stakeholder | ElementType | ElementReference)* "end"
+		//"requirement" "document" name=ID content+=(DocumentedRequirement | Stakeholder | ElementType | ElementReference)* "end"
 		//"requirement" "document" ";"
 		public Group getGroup() { return cGroup; }
 
@@ -240,14 +240,14 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//content+=(Requirement | Stakeholder | ElementType | ElementReference)*
+		//content+=(DocumentedRequirement | Stakeholder | ElementType | ElementReference)*
 		public Assignment getContentAssignment_3() { return cContentAssignment_3; }
 
-		//Requirement | Stakeholder | ElementType | ElementReference
+		//DocumentedRequirement | Stakeholder | ElementType | ElementReference
 		public Alternatives getContentAlternatives_3_0() { return cContentAlternatives_3_0; }
 
-		//Requirement
-		public RuleCall getContentRequirementParserRuleCall_3_0_0() { return cContentRequirementParserRuleCall_3_0_0; }
+		//DocumentedRequirement
+		public RuleCall getContentDocumentedRequirementParserRuleCall_3_0_0() { return cContentDocumentedRequirementParserRuleCall_3_0_0; }
 
 		//Stakeholder
 		public RuleCall getContentStakeholderParserRuleCall_3_0_1() { return cContentStakeholderParserRuleCall_3_0_1; }
@@ -508,35 +508,47 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEvolvesReferenceGoalREQREFParserRuleCall_12_3_1_0_1 = (RuleCall)cEvolvesReferenceGoalCrossReference_12_3_1_0.eContents().get(1);
 		private final Keyword cSemicolonKeyword_12_4 = (Keyword)cGroup_12.eContents().get(4);
 		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
-		private final Keyword cSeeKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
-		private final Keyword cStakeholderKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
-		private final Keyword cReqKeyword_13_2 = (Keyword)cGroup_13.eContents().get(2);
-		private final Keyword cColonKeyword_13_3 = (Keyword)cGroup_13.eContents().get(3);
-		private final Assignment cStakeholderReferenceAssignment_13_4 = (Assignment)cGroup_13.eContents().get(4);
-		private final CrossReference cStakeholderReferenceRequirementCrossReference_13_4_0 = (CrossReference)cStakeholderReferenceAssignment_13_4.eContents().get(0);
-		private final RuleCall cStakeholderReferenceRequirementREQREFParserRuleCall_13_4_0_1 = (RuleCall)cStakeholderReferenceRequirementCrossReference_13_4_0.eContents().get(1);
-		private final Group cGroup_13_5 = (Group)cGroup_13.eContents().get(5);
-		private final Keyword cCommaKeyword_13_5_0 = (Keyword)cGroup_13_5.eContents().get(0);
-		private final Assignment cStakeholderReferenceAssignment_13_5_1 = (Assignment)cGroup_13_5.eContents().get(1);
-		private final CrossReference cStakeholderReferenceRequirementCrossReference_13_5_1_0 = (CrossReference)cStakeholderReferenceAssignment_13_5_1.eContents().get(0);
-		private final RuleCall cStakeholderReferenceRequirementREQREFParserRuleCall_13_5_1_0_1 = (RuleCall)cStakeholderReferenceRequirementCrossReference_13_5_1_0.eContents().get(1);
-		private final Keyword cSemicolonKeyword_13_6 = (Keyword)cGroup_13.eContents().get(6);
+		private final Keyword cStakeholderKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
+		private final Keyword cColonKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
+		private final Assignment cStakeholderReferenceAssignment_13_2 = (Assignment)cGroup_13.eContents().get(2);
+		private final CrossReference cStakeholderReferenceStakeholderCrossReference_13_2_0 = (CrossReference)cStakeholderReferenceAssignment_13_2.eContents().get(0);
+		private final RuleCall cStakeholderReferenceStakeholderRELREFParserRuleCall_13_2_0_1 = (RuleCall)cStakeholderReferenceStakeholderCrossReference_13_2_0.eContents().get(1);
+		private final Group cGroup_13_3 = (Group)cGroup_13.eContents().get(3);
+		private final Keyword cCommaKeyword_13_3_0 = (Keyword)cGroup_13_3.eContents().get(0);
+		private final Assignment cStakeholderReferenceAssignment_13_3_1 = (Assignment)cGroup_13_3.eContents().get(1);
+		private final CrossReference cStakeholderReferenceStakeholderCrossReference_13_3_1_0 = (CrossReference)cStakeholderReferenceAssignment_13_3_1.eContents().get(0);
+		private final RuleCall cStakeholderReferenceStakeholderRELREFParserRuleCall_13_3_1_0_1 = (RuleCall)cStakeholderReferenceStakeholderCrossReference_13_3_1_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_13_4 = (Keyword)cGroup_13.eContents().get(4);
 		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
 		private final Keyword cSeeKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
-		private final Keyword cDocumentKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
-		private final Keyword cColonKeyword_14_2 = (Keyword)cGroup_14.eContents().get(2);
-		private final Assignment cDocReferencesAssignment_14_3 = (Assignment)cGroup_14.eContents().get(3);
-		private final CrossReference cDocReferencesExternalDocumentCrossReference_14_3_0 = (CrossReference)cDocReferencesAssignment_14_3.eContents().get(0);
-		private final RuleCall cDocReferencesExternalDocumentRELREFParserRuleCall_14_3_0_1 = (RuleCall)cDocReferencesExternalDocumentCrossReference_14_3_0.eContents().get(1);
-		private final Group cGroup_14_4 = (Group)cGroup_14.eContents().get(4);
-		private final Keyword cCommaKeyword_14_4_0 = (Keyword)cGroup_14_4.eContents().get(0);
-		private final Assignment cDocReferencesAssignment_14_4_1 = (Assignment)cGroup_14_4.eContents().get(1);
-		private final CrossReference cDocReferencesExternalDocumentCrossReference_14_4_1_0 = (CrossReference)cDocReferencesAssignment_14_4_1.eContents().get(0);
-		private final RuleCall cDocReferencesExternalDocumentRELREFParserRuleCall_14_4_1_0_1 = (RuleCall)cDocReferencesExternalDocumentCrossReference_14_4_1_0.eContents().get(1);
-		private final Keyword cSemicolonKeyword_14_5 = (Keyword)cGroup_14.eContents().get(5);
-		private final Keyword cEndKeyword_15 = (Keyword)cGroup.eContents().get(15);
-		private final Keyword cGoalKeyword_16 = (Keyword)cGroup.eContents().get(16);
-		private final Keyword cSemicolonKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Keyword cStakeholderKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
+		private final Keyword cReqKeyword_14_2 = (Keyword)cGroup_14.eContents().get(2);
+		private final Keyword cColonKeyword_14_3 = (Keyword)cGroup_14.eContents().get(3);
+		private final Assignment cStakeholderRequirementReferenceAssignment_14_4 = (Assignment)cGroup_14.eContents().get(4);
+		private final CrossReference cStakeholderRequirementReferenceDocumentedRequirementCrossReference_14_4_0 = (CrossReference)cStakeholderRequirementReferenceAssignment_14_4.eContents().get(0);
+		private final RuleCall cStakeholderRequirementReferenceDocumentedRequirementREQREFParserRuleCall_14_4_0_1 = (RuleCall)cStakeholderRequirementReferenceDocumentedRequirementCrossReference_14_4_0.eContents().get(1);
+		private final Group cGroup_14_5 = (Group)cGroup_14.eContents().get(5);
+		private final Keyword cCommaKeyword_14_5_0 = (Keyword)cGroup_14_5.eContents().get(0);
+		private final Assignment cStakeholderRequirementReferenceAssignment_14_5_1 = (Assignment)cGroup_14_5.eContents().get(1);
+		private final CrossReference cStakeholderRequirementReferenceDocumentedRequirementCrossReference_14_5_1_0 = (CrossReference)cStakeholderRequirementReferenceAssignment_14_5_1.eContents().get(0);
+		private final RuleCall cStakeholderRequirementReferenceDocumentedRequirementREQREFParserRuleCall_14_5_1_0_1 = (RuleCall)cStakeholderRequirementReferenceDocumentedRequirementCrossReference_14_5_1_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_14_6 = (Keyword)cGroup_14.eContents().get(6);
+		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
+		private final Keyword cSeeKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
+		private final Keyword cDocumentKeyword_15_1 = (Keyword)cGroup_15.eContents().get(1);
+		private final Keyword cColonKeyword_15_2 = (Keyword)cGroup_15.eContents().get(2);
+		private final Assignment cDocReferencesAssignment_15_3 = (Assignment)cGroup_15.eContents().get(3);
+		private final CrossReference cDocReferencesExternalDocumentCrossReference_15_3_0 = (CrossReference)cDocReferencesAssignment_15_3.eContents().get(0);
+		private final RuleCall cDocReferencesExternalDocumentRELREFParserRuleCall_15_3_0_1 = (RuleCall)cDocReferencesExternalDocumentCrossReference_15_3_0.eContents().get(1);
+		private final Group cGroup_15_4 = (Group)cGroup_15.eContents().get(4);
+		private final Keyword cCommaKeyword_15_4_0 = (Keyword)cGroup_15_4.eContents().get(0);
+		private final Assignment cDocReferencesAssignment_15_4_1 = (Assignment)cGroup_15_4.eContents().get(1);
+		private final CrossReference cDocReferencesExternalDocumentCrossReference_15_4_1_0 = (CrossReference)cDocReferencesAssignment_15_4_1.eContents().get(0);
+		private final RuleCall cDocReferencesExternalDocumentRELREFParserRuleCall_15_4_1_0_1 = (RuleCall)cDocReferencesExternalDocumentCrossReference_15_4_1_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_15_5 = (Keyword)cGroup_15.eContents().get(5);
+		private final Keyword cEndKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Keyword cGoalKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Keyword cSemicolonKeyword_18 = (Keyword)cGroup.eContents().get(18);
 		
 		//Goal:
 		//	"goal" name=ID ("for" element=RELREF)? //goalTarget=[aadl2::NamedElement|RELREF])?
@@ -546,9 +558,11 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//	refinesReference+=[Goal|REQREF] ("," refinesReference+=[Goal|REQREF])* ";")? ("decomposes" ":"
 		//	decomposesReference+=[Goal|REQREF] ("," decomposesReference+=[Goal|REQREF])* ";")? ("evolves" ":"
 		//	evolvesReference+=[Goal|REQREF] ("," evolvesReference+=[Goal|REQREF])* ";")? ("conflicts" ":"
-		//	evolvesReference+=[Goal|REQREF] ("," evolvesReference+=[Goal|REQREF])* ";")? ("see" "stakeholder" "req" ":"
-		//	stakeholderReference+=[Requirement|REQREF] ("," stakeholderReference+=[Requirement|REQREF])* ";")? ("see" "document"
-		//	":" docReferences+=[ExternalDocument|RELREF] ("," docReferences+=[ExternalDocument|RELREF])* ";")? "end" "goal" ";";
+		//	evolvesReference+=[Goal|REQREF] ("," evolvesReference+=[Goal|REQREF])* ";")? ("stakeholder" ":"
+		//	stakeholderReference+=[Stakeholder|RELREF] ("," stakeholderReference+=[Stakeholder|RELREF])* ";")? ("see"
+		//	"stakeholder" "req" ":" stakeholderRequirementReference+=[DocumentedRequirement|REQREF] (","
+		//	stakeholderRequirementReference+=[DocumentedRequirement|REQREF])* ";")? ("see" "document" ":"
+		//	docReferences+=[ExternalDocument|RELREF] ("," docReferences+=[ExternalDocument|RELREF])* ";")? "end" "goal" ";";
 		public ParserRule getRule() { return rule; }
 
 		//"goal" name=ID ("for" element=RELREF)? //goalTarget=[aadl2::NamedElement|RELREF])?
@@ -558,9 +572,11 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//refinesReference+=[Goal|REQREF] ("," refinesReference+=[Goal|REQREF])* ";")? ("decomposes" ":"
 		//decomposesReference+=[Goal|REQREF] ("," decomposesReference+=[Goal|REQREF])* ";")? ("evolves" ":"
 		//evolvesReference+=[Goal|REQREF] ("," evolvesReference+=[Goal|REQREF])* ";")? ("conflicts" ":"
-		//evolvesReference+=[Goal|REQREF] ("," evolvesReference+=[Goal|REQREF])* ";")? ("see" "stakeholder" "req" ":"
-		//stakeholderReference+=[Requirement|REQREF] ("," stakeholderReference+=[Requirement|REQREF])* ";")? ("see" "document"
-		//":" docReferences+=[ExternalDocument|RELREF] ("," docReferences+=[ExternalDocument|RELREF])* ";")? "end" "goal" ";"
+		//evolvesReference+=[Goal|REQREF] ("," evolvesReference+=[Goal|REQREF])* ";")? ("stakeholder" ":"
+		//stakeholderReference+=[Stakeholder|RELREF] ("," stakeholderReference+=[Stakeholder|RELREF])* ";")? ("see"
+		//"stakeholder" "req" ":" stakeholderRequirementReference+=[DocumentedRequirement|REQREF] (","
+		//stakeholderRequirementReference+=[DocumentedRequirement|REQREF])* ";")? ("see" "document" ":"
+		//docReferences+=[ExternalDocument|RELREF] ("," docReferences+=[ExternalDocument|RELREF])* ";")? "end" "goal" ";"
 		public Group getGroup() { return cGroup; }
 
 		//"goal"
@@ -860,96 +876,132 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//";"
 		public Keyword getSemicolonKeyword_12_4() { return cSemicolonKeyword_12_4; }
 
-		//("see" "stakeholder" "req" ":" stakeholderReference+=[Requirement|REQREF] (","
-		//stakeholderReference+=[Requirement|REQREF])* ";")?
+		//("stakeholder" ":" stakeholderReference+=[Stakeholder|RELREF] ("," stakeholderReference+=[Stakeholder|RELREF])* ";")?
 		public Group getGroup_13() { return cGroup_13; }
 
-		//"see"
-		public Keyword getSeeKeyword_13_0() { return cSeeKeyword_13_0; }
-
 		//"stakeholder"
-		public Keyword getStakeholderKeyword_13_1() { return cStakeholderKeyword_13_1; }
-
-		//"req"
-		public Keyword getReqKeyword_13_2() { return cReqKeyword_13_2; }
+		public Keyword getStakeholderKeyword_13_0() { return cStakeholderKeyword_13_0; }
 
 		//":"
-		public Keyword getColonKeyword_13_3() { return cColonKeyword_13_3; }
+		public Keyword getColonKeyword_13_1() { return cColonKeyword_13_1; }
 
-		//stakeholderReference+=[Requirement|REQREF]
-		public Assignment getStakeholderReferenceAssignment_13_4() { return cStakeholderReferenceAssignment_13_4; }
+		//stakeholderReference+=[Stakeholder|RELREF]
+		public Assignment getStakeholderReferenceAssignment_13_2() { return cStakeholderReferenceAssignment_13_2; }
 
-		//[Requirement|REQREF]
-		public CrossReference getStakeholderReferenceRequirementCrossReference_13_4_0() { return cStakeholderReferenceRequirementCrossReference_13_4_0; }
+		//[Stakeholder|RELREF]
+		public CrossReference getStakeholderReferenceStakeholderCrossReference_13_2_0() { return cStakeholderReferenceStakeholderCrossReference_13_2_0; }
 
-		//REQREF
-		public RuleCall getStakeholderReferenceRequirementREQREFParserRuleCall_13_4_0_1() { return cStakeholderReferenceRequirementREQREFParserRuleCall_13_4_0_1; }
+		//RELREF
+		public RuleCall getStakeholderReferenceStakeholderRELREFParserRuleCall_13_2_0_1() { return cStakeholderReferenceStakeholderRELREFParserRuleCall_13_2_0_1; }
 
-		//("," stakeholderReference+=[Requirement|REQREF])*
-		public Group getGroup_13_5() { return cGroup_13_5; }
+		//("," stakeholderReference+=[Stakeholder|RELREF])*
+		public Group getGroup_13_3() { return cGroup_13_3; }
 
 		//","
-		public Keyword getCommaKeyword_13_5_0() { return cCommaKeyword_13_5_0; }
+		public Keyword getCommaKeyword_13_3_0() { return cCommaKeyword_13_3_0; }
 
-		//stakeholderReference+=[Requirement|REQREF]
-		public Assignment getStakeholderReferenceAssignment_13_5_1() { return cStakeholderReferenceAssignment_13_5_1; }
+		//stakeholderReference+=[Stakeholder|RELREF]
+		public Assignment getStakeholderReferenceAssignment_13_3_1() { return cStakeholderReferenceAssignment_13_3_1; }
 
-		//[Requirement|REQREF]
-		public CrossReference getStakeholderReferenceRequirementCrossReference_13_5_1_0() { return cStakeholderReferenceRequirementCrossReference_13_5_1_0; }
+		//[Stakeholder|RELREF]
+		public CrossReference getStakeholderReferenceStakeholderCrossReference_13_3_1_0() { return cStakeholderReferenceStakeholderCrossReference_13_3_1_0; }
 
-		//REQREF
-		public RuleCall getStakeholderReferenceRequirementREQREFParserRuleCall_13_5_1_0_1() { return cStakeholderReferenceRequirementREQREFParserRuleCall_13_5_1_0_1; }
+		//RELREF
+		public RuleCall getStakeholderReferenceStakeholderRELREFParserRuleCall_13_3_1_0_1() { return cStakeholderReferenceStakeholderRELREFParserRuleCall_13_3_1_0_1; }
 
 		//";"
-		public Keyword getSemicolonKeyword_13_6() { return cSemicolonKeyword_13_6; }
+		public Keyword getSemicolonKeyword_13_4() { return cSemicolonKeyword_13_4; }
 
-		//("see" "document" ":" docReferences+=[ExternalDocument|RELREF] ("," docReferences+=[ExternalDocument|RELREF])* ";")?
+		//("see" "stakeholder" "req" ":" stakeholderRequirementReference+=[DocumentedRequirement|REQREF] (","
+		//stakeholderRequirementReference+=[DocumentedRequirement|REQREF])* ";")?
 		public Group getGroup_14() { return cGroup_14; }
 
 		//"see"
 		public Keyword getSeeKeyword_14_0() { return cSeeKeyword_14_0; }
 
-		//"document"
-		public Keyword getDocumentKeyword_14_1() { return cDocumentKeyword_14_1; }
+		//"stakeholder"
+		public Keyword getStakeholderKeyword_14_1() { return cStakeholderKeyword_14_1; }
+
+		//"req"
+		public Keyword getReqKeyword_14_2() { return cReqKeyword_14_2; }
 
 		//":"
-		public Keyword getColonKeyword_14_2() { return cColonKeyword_14_2; }
+		public Keyword getColonKeyword_14_3() { return cColonKeyword_14_3; }
 
-		//docReferences+=[ExternalDocument|RELREF]
-		public Assignment getDocReferencesAssignment_14_3() { return cDocReferencesAssignment_14_3; }
+		//stakeholderRequirementReference+=[DocumentedRequirement|REQREF]
+		public Assignment getStakeholderRequirementReferenceAssignment_14_4() { return cStakeholderRequirementReferenceAssignment_14_4; }
 
-		//[ExternalDocument|RELREF]
-		public CrossReference getDocReferencesExternalDocumentCrossReference_14_3_0() { return cDocReferencesExternalDocumentCrossReference_14_3_0; }
+		//[DocumentedRequirement|REQREF]
+		public CrossReference getStakeholderRequirementReferenceDocumentedRequirementCrossReference_14_4_0() { return cStakeholderRequirementReferenceDocumentedRequirementCrossReference_14_4_0; }
 
-		//RELREF
-		public RuleCall getDocReferencesExternalDocumentRELREFParserRuleCall_14_3_0_1() { return cDocReferencesExternalDocumentRELREFParserRuleCall_14_3_0_1; }
+		//REQREF
+		public RuleCall getStakeholderRequirementReferenceDocumentedRequirementREQREFParserRuleCall_14_4_0_1() { return cStakeholderRequirementReferenceDocumentedRequirementREQREFParserRuleCall_14_4_0_1; }
 
-		//("," docReferences+=[ExternalDocument|RELREF])*
-		public Group getGroup_14_4() { return cGroup_14_4; }
+		//("," stakeholderRequirementReference+=[DocumentedRequirement|REQREF])*
+		public Group getGroup_14_5() { return cGroup_14_5; }
 
 		//","
-		public Keyword getCommaKeyword_14_4_0() { return cCommaKeyword_14_4_0; }
+		public Keyword getCommaKeyword_14_5_0() { return cCommaKeyword_14_5_0; }
+
+		//stakeholderRequirementReference+=[DocumentedRequirement|REQREF]
+		public Assignment getStakeholderRequirementReferenceAssignment_14_5_1() { return cStakeholderRequirementReferenceAssignment_14_5_1; }
+
+		//[DocumentedRequirement|REQREF]
+		public CrossReference getStakeholderRequirementReferenceDocumentedRequirementCrossReference_14_5_1_0() { return cStakeholderRequirementReferenceDocumentedRequirementCrossReference_14_5_1_0; }
+
+		//REQREF
+		public RuleCall getStakeholderRequirementReferenceDocumentedRequirementREQREFParserRuleCall_14_5_1_0_1() { return cStakeholderRequirementReferenceDocumentedRequirementREQREFParserRuleCall_14_5_1_0_1; }
+
+		//";"
+		public Keyword getSemicolonKeyword_14_6() { return cSemicolonKeyword_14_6; }
+
+		//("see" "document" ":" docReferences+=[ExternalDocument|RELREF] ("," docReferences+=[ExternalDocument|RELREF])* ";")?
+		public Group getGroup_15() { return cGroup_15; }
+
+		//"see"
+		public Keyword getSeeKeyword_15_0() { return cSeeKeyword_15_0; }
+
+		//"document"
+		public Keyword getDocumentKeyword_15_1() { return cDocumentKeyword_15_1; }
+
+		//":"
+		public Keyword getColonKeyword_15_2() { return cColonKeyword_15_2; }
 
 		//docReferences+=[ExternalDocument|RELREF]
-		public Assignment getDocReferencesAssignment_14_4_1() { return cDocReferencesAssignment_14_4_1; }
+		public Assignment getDocReferencesAssignment_15_3() { return cDocReferencesAssignment_15_3; }
 
 		//[ExternalDocument|RELREF]
-		public CrossReference getDocReferencesExternalDocumentCrossReference_14_4_1_0() { return cDocReferencesExternalDocumentCrossReference_14_4_1_0; }
+		public CrossReference getDocReferencesExternalDocumentCrossReference_15_3_0() { return cDocReferencesExternalDocumentCrossReference_15_3_0; }
 
 		//RELREF
-		public RuleCall getDocReferencesExternalDocumentRELREFParserRuleCall_14_4_1_0_1() { return cDocReferencesExternalDocumentRELREFParserRuleCall_14_4_1_0_1; }
+		public RuleCall getDocReferencesExternalDocumentRELREFParserRuleCall_15_3_0_1() { return cDocReferencesExternalDocumentRELREFParserRuleCall_15_3_0_1; }
+
+		//("," docReferences+=[ExternalDocument|RELREF])*
+		public Group getGroup_15_4() { return cGroup_15_4; }
+
+		//","
+		public Keyword getCommaKeyword_15_4_0() { return cCommaKeyword_15_4_0; }
+
+		//docReferences+=[ExternalDocument|RELREF]
+		public Assignment getDocReferencesAssignment_15_4_1() { return cDocReferencesAssignment_15_4_1; }
+
+		//[ExternalDocument|RELREF]
+		public CrossReference getDocReferencesExternalDocumentCrossReference_15_4_1_0() { return cDocReferencesExternalDocumentCrossReference_15_4_1_0; }
+
+		//RELREF
+		public RuleCall getDocReferencesExternalDocumentRELREFParserRuleCall_15_4_1_0_1() { return cDocReferencesExternalDocumentRELREFParserRuleCall_15_4_1_0_1; }
 
 		//";"
-		public Keyword getSemicolonKeyword_14_5() { return cSemicolonKeyword_14_5; }
+		public Keyword getSemicolonKeyword_15_5() { return cSemicolonKeyword_15_5; }
 
 		//"end"
-		public Keyword getEndKeyword_15() { return cEndKeyword_15; }
+		public Keyword getEndKeyword_16() { return cEndKeyword_16; }
 
 		//"goal"
-		public Keyword getGoalKeyword_16() { return cGoalKeyword_16; }
+		public Keyword getGoalKeyword_17() { return cGoalKeyword_17; }
 
 		//";"
-		public Keyword getSemicolonKeyword_17() { return cSemicolonKeyword_17; }
+		public Keyword getSemicolonKeyword_18() { return cSemicolonKeyword_18; }
 	}
 
 	public class ReqSpecificationsElements extends AbstractParserRuleElementFinder {
@@ -1237,13 +1289,13 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cReqKeyword_15_2 = (Keyword)cGroup_15.eContents().get(2);
 		private final Keyword cColonKeyword_15_3 = (Keyword)cGroup_15.eContents().get(3);
 		private final Assignment cStakeholderreqReferenceAssignment_15_4 = (Assignment)cGroup_15.eContents().get(4);
-		private final CrossReference cStakeholderreqReferenceRequirementCrossReference_15_4_0 = (CrossReference)cStakeholderreqReferenceAssignment_15_4.eContents().get(0);
-		private final RuleCall cStakeholderreqReferenceRequirementREQREFParserRuleCall_15_4_0_1 = (RuleCall)cStakeholderreqReferenceRequirementCrossReference_15_4_0.eContents().get(1);
+		private final CrossReference cStakeholderreqReferenceDocumentedRequirementCrossReference_15_4_0 = (CrossReference)cStakeholderreqReferenceAssignment_15_4.eContents().get(0);
+		private final RuleCall cStakeholderreqReferenceDocumentedRequirementREQREFParserRuleCall_15_4_0_1 = (RuleCall)cStakeholderreqReferenceDocumentedRequirementCrossReference_15_4_0.eContents().get(1);
 		private final Group cGroup_15_5 = (Group)cGroup_15.eContents().get(5);
 		private final Keyword cCommaKeyword_15_5_0 = (Keyword)cGroup_15_5.eContents().get(0);
 		private final Assignment cStakeholderreqReferenceAssignment_15_5_1 = (Assignment)cGroup_15_5.eContents().get(1);
-		private final CrossReference cStakeholderreqReferenceRequirementCrossReference_15_5_1_0 = (CrossReference)cStakeholderreqReferenceAssignment_15_5_1.eContents().get(0);
-		private final RuleCall cStakeholderreqReferenceRequirementREQREFParserRuleCall_15_5_1_0_1 = (RuleCall)cStakeholderreqReferenceRequirementCrossReference_15_5_1_0.eContents().get(1);
+		private final CrossReference cStakeholderreqReferenceDocumentedRequirementCrossReference_15_5_1_0 = (CrossReference)cStakeholderreqReferenceAssignment_15_5_1.eContents().get(0);
+		private final RuleCall cStakeholderreqReferenceDocumentedRequirementREQREFParserRuleCall_15_5_1_0_1 = (RuleCall)cStakeholderreqReferenceDocumentedRequirementCrossReference_15_5_1_0.eContents().get(1);
 		private final Keyword cSemicolonKeyword_15_6 = (Keyword)cGroup_15.eContents().get(6);
 		private final Group cGroup_16 = (Group)cGroup.eContents().get(16);
 		private final Keyword cSeeKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
@@ -1251,13 +1303,13 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cReqKeyword_16_2 = (Keyword)cGroup_16.eContents().get(2);
 		private final Keyword cColonKeyword_16_3 = (Keyword)cGroup_16.eContents().get(3);
 		private final Assignment cSystemreqReferenceAssignment_16_4 = (Assignment)cGroup_16.eContents().get(4);
-		private final CrossReference cSystemreqReferenceRequirementCrossReference_16_4_0 = (CrossReference)cSystemreqReferenceAssignment_16_4.eContents().get(0);
-		private final RuleCall cSystemreqReferenceRequirementREQREFParserRuleCall_16_4_0_1 = (RuleCall)cSystemreqReferenceRequirementCrossReference_16_4_0.eContents().get(1);
+		private final CrossReference cSystemreqReferenceDocumentedRequirementCrossReference_16_4_0 = (CrossReference)cSystemreqReferenceAssignment_16_4.eContents().get(0);
+		private final RuleCall cSystemreqReferenceDocumentedRequirementREQREFParserRuleCall_16_4_0_1 = (RuleCall)cSystemreqReferenceDocumentedRequirementCrossReference_16_4_0.eContents().get(1);
 		private final Group cGroup_16_5 = (Group)cGroup_16.eContents().get(5);
 		private final Keyword cCommaKeyword_16_5_0 = (Keyword)cGroup_16_5.eContents().get(0);
 		private final Assignment cSystemreqReferenceAssignment_16_5_1 = (Assignment)cGroup_16_5.eContents().get(1);
-		private final CrossReference cSystemreqReferenceRequirementCrossReference_16_5_1_0 = (CrossReference)cSystemreqReferenceAssignment_16_5_1.eContents().get(0);
-		private final RuleCall cSystemreqReferenceRequirementREQREFParserRuleCall_16_5_1_0_1 = (RuleCall)cSystemreqReferenceRequirementCrossReference_16_5_1_0.eContents().get(1);
+		private final CrossReference cSystemreqReferenceDocumentedRequirementCrossReference_16_5_1_0 = (CrossReference)cSystemreqReferenceAssignment_16_5_1.eContents().get(0);
+		private final RuleCall cSystemreqReferenceDocumentedRequirementREQREFParserRuleCall_16_5_1_0_1 = (RuleCall)cSystemreqReferenceDocumentedRequirementCrossReference_16_5_1_0.eContents().get(1);
 		private final Keyword cSemicolonKeyword_16_6 = (Keyword)cGroup_16.eContents().get(6);
 		private final Group cGroup_17 = (Group)cGroup.eContents().get(17);
 		private final Keyword cSeeKeyword_17_0 = (Keyword)cGroup_17.eContents().get(0);
@@ -1286,10 +1338,12 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//	("refines" ":" refinesReference+=[ReqSpec|REQREF] ("," refinesReference+=[ReqSpec|REQREF])* ";")? ("decomposes" ":"
 		//	decomposesReference+=[ReqSpec|REQREF] ("," decomposesReference+=[ReqSpec|REQREF])* ";")? ("evolves" ":"
 		//	evolvesReference+=[ReqSpec|REQREF] ("," evolvesReference+=[ReqSpec|REQREF])* ";")? ("verified" "by" ":"
-		//	verifiedBy+=VerificationDecomposition*)? ("see" "stakeholder" "req" ":" stakeholderreqReference+=[Requirement|REQREF]
-		//	("," stakeholderreqReference+=[Requirement|REQREF])* ";")? ("see" "system" "req" ":"
-		//	systemreqReference+=[Requirement|REQREF] ("," systemreqReference+=[Requirement|REQREF])* ";")? ("see" "document" ":"
-		//	docReferences+=[ExternalDocument|RELREF] ("," docReferences+=[ExternalDocument|RELREF])* ";")? "end" "req" ";";
+		//	verifiedBy+=VerificationDecomposition*)? ("see" "stakeholder" "req" ":"
+		//	stakeholderreqReference+=[DocumentedRequirement|REQREF] (","
+		//	stakeholderreqReference+=[DocumentedRequirement|REQREF])* ";")? ("see" "system" "req" ":"
+		//	systemreqReference+=[DocumentedRequirement|REQREF] ("," systemreqReference+=[DocumentedRequirement|REQREF])* ";")?
+		//	("see" "document" ":" docReferences+=[ExternalDocument|RELREF] ("," docReferences+=[ExternalDocument|RELREF])* ";")?
+		//	"end" "req" ";";
 		public ParserRule getRule() { return rule; }
 
 		//reqkind=ReqKind name=ID ("for" target=RELREF)? //reqTarget=[aadl2::NamedElement|RELREF])?
@@ -1301,9 +1355,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//("refines" ":" refinesReference+=[ReqSpec|REQREF] ("," refinesReference+=[ReqSpec|REQREF])* ";")? ("decomposes" ":"
 		//decomposesReference+=[ReqSpec|REQREF] ("," decomposesReference+=[ReqSpec|REQREF])* ";")? ("evolves" ":"
 		//evolvesReference+=[ReqSpec|REQREF] ("," evolvesReference+=[ReqSpec|REQREF])* ";")? ("verified" "by" ":"
-		//verifiedBy+=VerificationDecomposition*)? ("see" "stakeholder" "req" ":" stakeholderreqReference+=[Requirement|REQREF]
-		//("," stakeholderreqReference+=[Requirement|REQREF])* ";")? ("see" "system" "req" ":"
-		//systemreqReference+=[Requirement|REQREF] ("," systemreqReference+=[Requirement|REQREF])* ";")? ("see" "document" ":"
+		//verifiedBy+=VerificationDecomposition*)? ("see" "stakeholder" "req" ":"
+		//stakeholderreqReference+=[DocumentedRequirement|REQREF] ("," stakeholderreqReference+=[DocumentedRequirement|REQREF])*
+		//";")? ("see" "system" "req" ":" systemreqReference+=[DocumentedRequirement|REQREF] (","
+		//systemreqReference+=[DocumentedRequirement|REQREF])* ";")? ("see" "document" ":"
 		//docReferences+=[ExternalDocument|RELREF] ("," docReferences+=[ExternalDocument|RELREF])* ";")? "end" "req" ";"
 		public Group getGroup() { return cGroup; }
 
@@ -1661,8 +1716,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//VerificationDecomposition
 		public RuleCall getVerifiedByVerificationDecompositionParserRuleCall_14_3_0() { return cVerifiedByVerificationDecompositionParserRuleCall_14_3_0; }
 
-		//("see" "stakeholder" "req" ":" stakeholderreqReference+=[Requirement|REQREF] (","
-		//stakeholderreqReference+=[Requirement|REQREF])* ";")?
+		//("see" "stakeholder" "req" ":" stakeholderreqReference+=[DocumentedRequirement|REQREF] (","
+		//stakeholderreqReference+=[DocumentedRequirement|REQREF])* ";")?
 		public Group getGroup_15() { return cGroup_15; }
 
 		//"see"
@@ -1677,34 +1732,35 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_15_3() { return cColonKeyword_15_3; }
 
-		//stakeholderreqReference+=[Requirement|REQREF]
+		//stakeholderreqReference+=[DocumentedRequirement|REQREF]
 		public Assignment getStakeholderreqReferenceAssignment_15_4() { return cStakeholderreqReferenceAssignment_15_4; }
 
-		//[Requirement|REQREF]
-		public CrossReference getStakeholderreqReferenceRequirementCrossReference_15_4_0() { return cStakeholderreqReferenceRequirementCrossReference_15_4_0; }
+		//[DocumentedRequirement|REQREF]
+		public CrossReference getStakeholderreqReferenceDocumentedRequirementCrossReference_15_4_0() { return cStakeholderreqReferenceDocumentedRequirementCrossReference_15_4_0; }
 
 		//REQREF
-		public RuleCall getStakeholderreqReferenceRequirementREQREFParserRuleCall_15_4_0_1() { return cStakeholderreqReferenceRequirementREQREFParserRuleCall_15_4_0_1; }
+		public RuleCall getStakeholderreqReferenceDocumentedRequirementREQREFParserRuleCall_15_4_0_1() { return cStakeholderreqReferenceDocumentedRequirementREQREFParserRuleCall_15_4_0_1; }
 
-		//("," stakeholderreqReference+=[Requirement|REQREF])*
+		//("," stakeholderreqReference+=[DocumentedRequirement|REQREF])*
 		public Group getGroup_15_5() { return cGroup_15_5; }
 
 		//","
 		public Keyword getCommaKeyword_15_5_0() { return cCommaKeyword_15_5_0; }
 
-		//stakeholderreqReference+=[Requirement|REQREF]
+		//stakeholderreqReference+=[DocumentedRequirement|REQREF]
 		public Assignment getStakeholderreqReferenceAssignment_15_5_1() { return cStakeholderreqReferenceAssignment_15_5_1; }
 
-		//[Requirement|REQREF]
-		public CrossReference getStakeholderreqReferenceRequirementCrossReference_15_5_1_0() { return cStakeholderreqReferenceRequirementCrossReference_15_5_1_0; }
+		//[DocumentedRequirement|REQREF]
+		public CrossReference getStakeholderreqReferenceDocumentedRequirementCrossReference_15_5_1_0() { return cStakeholderreqReferenceDocumentedRequirementCrossReference_15_5_1_0; }
 
 		//REQREF
-		public RuleCall getStakeholderreqReferenceRequirementREQREFParserRuleCall_15_5_1_0_1() { return cStakeholderreqReferenceRequirementREQREFParserRuleCall_15_5_1_0_1; }
+		public RuleCall getStakeholderreqReferenceDocumentedRequirementREQREFParserRuleCall_15_5_1_0_1() { return cStakeholderreqReferenceDocumentedRequirementREQREFParserRuleCall_15_5_1_0_1; }
 
 		//";"
 		public Keyword getSemicolonKeyword_15_6() { return cSemicolonKeyword_15_6; }
 
-		//("see" "system" "req" ":" systemreqReference+=[Requirement|REQREF] ("," systemreqReference+=[Requirement|REQREF])* ";")?
+		//("see" "system" "req" ":" systemreqReference+=[DocumentedRequirement|REQREF] (","
+		//systemreqReference+=[DocumentedRequirement|REQREF])* ";")?
 		public Group getGroup_16() { return cGroup_16; }
 
 		//"see"
@@ -1719,29 +1775,29 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_16_3() { return cColonKeyword_16_3; }
 
-		//systemreqReference+=[Requirement|REQREF]
+		//systemreqReference+=[DocumentedRequirement|REQREF]
 		public Assignment getSystemreqReferenceAssignment_16_4() { return cSystemreqReferenceAssignment_16_4; }
 
-		//[Requirement|REQREF]
-		public CrossReference getSystemreqReferenceRequirementCrossReference_16_4_0() { return cSystemreqReferenceRequirementCrossReference_16_4_0; }
+		//[DocumentedRequirement|REQREF]
+		public CrossReference getSystemreqReferenceDocumentedRequirementCrossReference_16_4_0() { return cSystemreqReferenceDocumentedRequirementCrossReference_16_4_0; }
 
 		//REQREF
-		public RuleCall getSystemreqReferenceRequirementREQREFParserRuleCall_16_4_0_1() { return cSystemreqReferenceRequirementREQREFParserRuleCall_16_4_0_1; }
+		public RuleCall getSystemreqReferenceDocumentedRequirementREQREFParserRuleCall_16_4_0_1() { return cSystemreqReferenceDocumentedRequirementREQREFParserRuleCall_16_4_0_1; }
 
-		//("," systemreqReference+=[Requirement|REQREF])*
+		//("," systemreqReference+=[DocumentedRequirement|REQREF])*
 		public Group getGroup_16_5() { return cGroup_16_5; }
 
 		//","
 		public Keyword getCommaKeyword_16_5_0() { return cCommaKeyword_16_5_0; }
 
-		//systemreqReference+=[Requirement|REQREF]
+		//systemreqReference+=[DocumentedRequirement|REQREF]
 		public Assignment getSystemreqReferenceAssignment_16_5_1() { return cSystemreqReferenceAssignment_16_5_1; }
 
-		//[Requirement|REQREF]
-		public CrossReference getSystemreqReferenceRequirementCrossReference_16_5_1_0() { return cSystemreqReferenceRequirementCrossReference_16_5_1_0; }
+		//[DocumentedRequirement|REQREF]
+		public CrossReference getSystemreqReferenceDocumentedRequirementCrossReference_16_5_1_0() { return cSystemreqReferenceDocumentedRequirementCrossReference_16_5_1_0; }
 
 		//REQREF
-		public RuleCall getSystemreqReferenceRequirementREQREFParserRuleCall_16_5_1_0_1() { return cSystemreqReferenceRequirementREQREFParserRuleCall_16_5_1_0_1; }
+		public RuleCall getSystemreqReferenceDocumentedRequirementREQREFParserRuleCall_16_5_1_0_1() { return cSystemreqReferenceDocumentedRequirementREQREFParserRuleCall_16_5_1_0_1; }
 
 		//";"
 		public Keyword getSemicolonKeyword_16_6() { return cSemicolonKeyword_16_6; }
@@ -2115,16 +2171,19 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		private final Assignment cTitleAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
 		private final RuleCall cTitleValueStringParserRuleCall_2_2_0 = (RuleCall)cTitleAssignment_2_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cDescriptionKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		private final Assignment cDescriptionAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
 		private final RuleCall cDescriptionValueStringParserRuleCall_3_2_0 = (RuleCall)cDescriptionAssignment_3_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cRoleKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
 		private final Assignment cRoleAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
 		private final RuleCall cRoleValueStringParserRuleCall_4_2_0 = (RuleCall)cRoleAssignment_4_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
 		private final Keyword cEndKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Keyword cStakeholderKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cSemicolonKeyword_7 = (Keyword)cGroup.eContents().get(7);
@@ -2132,12 +2191,12 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		/// *
 		// * Stakeholder
 		// * / Stakeholder:
-		//	"stakeholder" name=ID ("title" ":" title=ValueString)? ("description" ":" description=ValueString)? ("role" ":"
-		//	role=ValueString)? "end" "stakeholder" ";";
+		//	"stakeholder" name=ID ("title" ":" title=ValueString ";")? ("description" ":" description=ValueString ";")? ("role"
+		//	":" role=ValueString ";")? "end" "stakeholder" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"stakeholder" name=ID ("title" ":" title=ValueString)? ("description" ":" description=ValueString)? ("role" ":"
-		//role=ValueString)? "end" "stakeholder" ";"
+		//"stakeholder" name=ID ("title" ":" title=ValueString ";")? ("description" ":" description=ValueString ";")? ("role" ":"
+		//role=ValueString ";")? "end" "stakeholder" ";"
 		public Group getGroup() { return cGroup; }
 
 		//"stakeholder"
@@ -2149,7 +2208,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//("title" ":" title=ValueString)?
+		//("title" ":" title=ValueString ";")?
 		public Group getGroup_2() { return cGroup_2; }
 
 		//"title"
@@ -2164,7 +2223,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ValueString
 		public RuleCall getTitleValueStringParserRuleCall_2_2_0() { return cTitleValueStringParserRuleCall_2_2_0; }
 
-		//("description" ":" description=ValueString)?
+		//";"
+		public Keyword getSemicolonKeyword_2_3() { return cSemicolonKeyword_2_3; }
+
+		//("description" ":" description=ValueString ";")?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"description"
@@ -2179,7 +2241,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ValueString
 		public RuleCall getDescriptionValueStringParserRuleCall_3_2_0() { return cDescriptionValueStringParserRuleCall_3_2_0; }
 
-		//("role" ":" role=ValueString)?
+		//";"
+		public Keyword getSemicolonKeyword_3_3() { return cSemicolonKeyword_3_3; }
+
+		//("role" ":" role=ValueString ";")?
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"role"
@@ -2194,6 +2259,9 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ValueString
 		public RuleCall getRoleValueStringParserRuleCall_4_2_0() { return cRoleValueStringParserRuleCall_4_2_0; }
 
+		//";"
+		public Keyword getSemicolonKeyword_4_3() { return cSemicolonKeyword_4_3; }
+
 		//"end"
 		public Keyword getEndKeyword_5() { return cEndKeyword_5; }
 
@@ -2204,8 +2272,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getSemicolonKeyword_7() { return cSemicolonKeyword_7; }
 	}
 
-	public class RequirementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Requirement");
+	public class DocumentedRequirementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DocumentedRequirement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRequirementKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -2215,16 +2283,19 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		private final Assignment cTitleAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
 		private final RuleCall cTitleValueStringParserRuleCall_2_2_0 = (RuleCall)cTitleAssignment_2_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cDescriptionKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		private final Assignment cDescriptionAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
 		private final RuleCall cDescriptionValueStringParserRuleCall_3_2_0 = (RuleCall)cDescriptionAssignment_3_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cCommentKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
 		private final Assignment cCommentAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
 		private final RuleCall cCommentValueStringParserRuleCall_4_2_0 = (RuleCall)cCommentAssignment_4_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cAssignedKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cToKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
@@ -2232,6 +2303,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cAssignedToAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
 		private final CrossReference cAssignedToStakeholderCrossReference_5_3_0 = (CrossReference)cAssignedToAssignment_5_3.eContents().get(0);
 		private final RuleCall cAssignedToStakeholderRELREFParserRuleCall_5_3_0_1 = (RuleCall)cAssignedToStakeholderCrossReference_5_3_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cReferencedKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cByKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
@@ -2239,35 +2311,38 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cReferencedByAssignment_6_3 = (Assignment)cGroup_6.eContents().get(3);
 		private final CrossReference cReferencedByElementTypeCrossReference_6_3_0 = (CrossReference)cReferencedByAssignment_6_3.eContents().get(0);
 		private final RuleCall cReferencedByElementTypeRELREFParserRuleCall_6_3_0_1 = (RuleCall)cReferencedByElementTypeCrossReference_6_3_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
 		private final Keyword cVerifiedKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cByKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
 		private final Keyword cColonKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
 		private final Assignment cVerifiedByAssignment_7_3 = (Assignment)cGroup_7.eContents().get(3);
 		private final RuleCall cVerifiedByVerificationDecompositionParserRuleCall_7_3_0 = (RuleCall)cVerifiedByAssignment_7_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
 		private final Keyword cDecomposedKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final Keyword cByKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
 		private final Keyword cColonKeyword_8_2 = (Keyword)cGroup_8.eContents().get(2);
 		private final Assignment cDecomposedByAssignment_8_3 = (Assignment)cGroup_8.eContents().get(3);
-		private final RuleCall cDecomposedByRequirementDecompositionParserRuleCall_8_3_0 = (RuleCall)cDecomposedByAssignment_8_3.eContents().get(0);
+		private final RuleCall cDecomposedByDocumentedRequirementDecompositionParserRuleCall_8_3_0 = (RuleCall)cDecomposedByAssignment_8_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_8_4 = (Keyword)cGroup_8.eContents().get(4);
 		private final Keyword cEndKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Keyword cRequirementKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Keyword cSemicolonKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		/// *
 		// * Requirement
-		// * / Requirement:
-		//	"requirement" name=ID ("title" ":" title=ValueString)? ("description" ":" description=ValueString)? ("comment" ":"
-		//	comment=ValueString)? ("assigned" "to" ":" assignedTo+=[Stakeholder|RELREF]*)? ("referenced" "by" ":"
-		//	referencedBy+=[ElementType|RELREF]*)? ("verified" "by" ":" verifiedBy+=VerificationDecomposition*)? ("decomposed"
-		//	"by" ":" decomposedBy+=RequirementDecomposition*)? "end" "requirement" ";";
+		// * / DocumentedRequirement:
+		//	"requirement" name=ID ("title" ":" title=ValueString ";")? ("description" ":" description=ValueString ";")?
+		//	("comment" ":" comment=ValueString ";")? ("assigned" "to" ":" assignedTo+=[Stakeholder|RELREF]* ";")? ("referenced"
+		//	"by" ":" referencedBy+=[ElementType|RELREF]* ";")? ("verified" "by" ":" verifiedBy+=VerificationDecomposition* ";")?
+		//	("decomposed" "by" ":" decomposedBy+=DocumentedRequirementDecomposition* ";")? "end" "requirement" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"requirement" name=ID ("title" ":" title=ValueString)? ("description" ":" description=ValueString)? ("comment" ":"
-		//comment=ValueString)? ("assigned" "to" ":" assignedTo+=[Stakeholder|RELREF]*)? ("referenced" "by" ":"
-		//referencedBy+=[ElementType|RELREF]*)? ("verified" "by" ":" verifiedBy+=VerificationDecomposition*)? ("decomposed" "by"
-		//":" decomposedBy+=RequirementDecomposition*)? "end" "requirement" ";"
+		//"requirement" name=ID ("title" ":" title=ValueString ";")? ("description" ":" description=ValueString ";")? ("comment"
+		//":" comment=ValueString ";")? ("assigned" "to" ":" assignedTo+=[Stakeholder|RELREF]* ";")? ("referenced" "by" ":"
+		//referencedBy+=[ElementType|RELREF]* ";")? ("verified" "by" ":" verifiedBy+=VerificationDecomposition* ";")?
+		//("decomposed" "by" ":" decomposedBy+=DocumentedRequirementDecomposition* ";")? "end" "requirement" ";"
 		public Group getGroup() { return cGroup; }
 
 		//"requirement"
@@ -2279,7 +2354,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//("title" ":" title=ValueString)?
+		//("title" ":" title=ValueString ";")?
 		public Group getGroup_2() { return cGroup_2; }
 
 		//"title"
@@ -2294,7 +2369,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ValueString
 		public RuleCall getTitleValueStringParserRuleCall_2_2_0() { return cTitleValueStringParserRuleCall_2_2_0; }
 
-		//("description" ":" description=ValueString)?
+		//";"
+		public Keyword getSemicolonKeyword_2_3() { return cSemicolonKeyword_2_3; }
+
+		//("description" ":" description=ValueString ";")?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"description"
@@ -2309,7 +2387,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ValueString
 		public RuleCall getDescriptionValueStringParserRuleCall_3_2_0() { return cDescriptionValueStringParserRuleCall_3_2_0; }
 
-		//("comment" ":" comment=ValueString)?
+		//";"
+		public Keyword getSemicolonKeyword_3_3() { return cSemicolonKeyword_3_3; }
+
+		//("comment" ":" comment=ValueString ";")?
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"comment"
@@ -2324,7 +2405,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ValueString
 		public RuleCall getCommentValueStringParserRuleCall_4_2_0() { return cCommentValueStringParserRuleCall_4_2_0; }
 
-		//("assigned" "to" ":" assignedTo+=[Stakeholder|RELREF]*)?
+		//";"
+		public Keyword getSemicolonKeyword_4_3() { return cSemicolonKeyword_4_3; }
+
+		//("assigned" "to" ":" assignedTo+=[Stakeholder|RELREF]* ";")?
 		public Group getGroup_5() { return cGroup_5; }
 
 		//"assigned"
@@ -2345,7 +2429,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//RELREF
 		public RuleCall getAssignedToStakeholderRELREFParserRuleCall_5_3_0_1() { return cAssignedToStakeholderRELREFParserRuleCall_5_3_0_1; }
 
-		//("referenced" "by" ":" referencedBy+=[ElementType|RELREF]*)?
+		//";"
+		public Keyword getSemicolonKeyword_5_4() { return cSemicolonKeyword_5_4; }
+
+		//("referenced" "by" ":" referencedBy+=[ElementType|RELREF]* ";")?
 		public Group getGroup_6() { return cGroup_6; }
 
 		//"referenced"
@@ -2366,7 +2453,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//RELREF
 		public RuleCall getReferencedByElementTypeRELREFParserRuleCall_6_3_0_1() { return cReferencedByElementTypeRELREFParserRuleCall_6_3_0_1; }
 
-		//("verified" "by" ":" verifiedBy+=VerificationDecomposition*)?
+		//";"
+		public Keyword getSemicolonKeyword_6_4() { return cSemicolonKeyword_6_4; }
+
+		//("verified" "by" ":" verifiedBy+=VerificationDecomposition* ";")?
 		public Group getGroup_7() { return cGroup_7; }
 
 		//"verified"
@@ -2384,7 +2474,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//VerificationDecomposition
 		public RuleCall getVerifiedByVerificationDecompositionParserRuleCall_7_3_0() { return cVerifiedByVerificationDecompositionParserRuleCall_7_3_0; }
 
-		//("decomposed" "by" ":" decomposedBy+=RequirementDecomposition*)?
+		//";"
+		public Keyword getSemicolonKeyword_7_4() { return cSemicolonKeyword_7_4; }
+
+		//("decomposed" "by" ":" decomposedBy+=DocumentedRequirementDecomposition* ";")?
 		public Group getGroup_8() { return cGroup_8; }
 
 		//"decomposed"
@@ -2396,11 +2489,14 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_8_2() { return cColonKeyword_8_2; }
 
-		//decomposedBy+=RequirementDecomposition*
+		//decomposedBy+=DocumentedRequirementDecomposition*
 		public Assignment getDecomposedByAssignment_8_3() { return cDecomposedByAssignment_8_3; }
 
-		//RequirementDecomposition
-		public RuleCall getDecomposedByRequirementDecompositionParserRuleCall_8_3_0() { return cDecomposedByRequirementDecompositionParserRuleCall_8_3_0; }
+		//DocumentedRequirementDecomposition
+		public RuleCall getDecomposedByDocumentedRequirementDecompositionParserRuleCall_8_3_0() { return cDecomposedByDocumentedRequirementDecompositionParserRuleCall_8_3_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_8_4() { return cSemicolonKeyword_8_4; }
 
 		//"end"
 		public Keyword getEndKeyword_9() { return cEndKeyword_9; }
@@ -2412,50 +2508,52 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getSemicolonKeyword_11() { return cSemicolonKeyword_11; }
 	}
 
-	public class RequirementDecompositionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RequirementDecomposition");
+	public class DocumentedRequirementDecompositionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DocumentedRequirementDecomposition");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cElementAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final CrossReference cElementRequirementCrossReference_0_0 = (CrossReference)cElementAssignment_0.eContents().get(0);
-		private final RuleCall cElementRequirementRELREFParserRuleCall_0_0_1 = (RuleCall)cElementRequirementCrossReference_0_0.eContents().get(1);
+		private final CrossReference cElementDocumentedRequirementCrossReference_0_0 = (CrossReference)cElementAssignment_0.eContents().get(0);
+		private final RuleCall cElementDocumentedRequirementRELREFParserRuleCall_0_0_1 = (RuleCall)cElementDocumentedRequirementCrossReference_0_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Assignment cLeftAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final CrossReference cLeftRequirementCrossReference_1_0_0 = (CrossReference)cLeftAssignment_1_0.eContents().get(0);
-		private final RuleCall cLeftRequirementRELREFParserRuleCall_1_0_0_1 = (RuleCall)cLeftRequirementCrossReference_1_0_0.eContents().get(1);
+		private final CrossReference cLeftDocumentedRequirementCrossReference_1_0_0 = (CrossReference)cLeftAssignment_1_0.eContents().get(0);
+		private final RuleCall cLeftDocumentedRequirementRELREFParserRuleCall_1_0_0_1 = (RuleCall)cLeftDocumentedRequirementCrossReference_1_0_0.eContents().get(1);
 		private final Assignment cTypeAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final Alternatives cTypeAlternatives_1_1_0 = (Alternatives)cTypeAssignment_1_1.eContents().get(0);
 		private final Keyword cTypeAndKeyword_1_1_0_0 = (Keyword)cTypeAlternatives_1_1_0.eContents().get(0);
 		private final Keyword cTypeOrKeyword_1_1_0_1 = (Keyword)cTypeAlternatives_1_1_0.eContents().get(1);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightRequirementDecompositionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		private final RuleCall cRightDocumentedRequirementDecompositionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//RequirementDecomposition:
-		//	element=[Requirement|RELREF] | left=[Requirement|RELREF] type=("and" | "or") right=RequirementDecomposition;
+		//DocumentedRequirementDecomposition:
+		//	element=[DocumentedRequirement|RELREF] | left=[DocumentedRequirement|RELREF] type=("and" | "or")
+		//	right=DocumentedRequirementDecomposition;
 		public ParserRule getRule() { return rule; }
 
-		//element=[Requirement|RELREF] | left=[Requirement|RELREF] type=("and" | "or") right=RequirementDecomposition
+		//element=[DocumentedRequirement|RELREF] | left=[DocumentedRequirement|RELREF] type=("and" | "or")
+		//right=DocumentedRequirementDecomposition
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//element=[Requirement|RELREF]
+		//element=[DocumentedRequirement|RELREF]
 		public Assignment getElementAssignment_0() { return cElementAssignment_0; }
 
-		//[Requirement|RELREF]
-		public CrossReference getElementRequirementCrossReference_0_0() { return cElementRequirementCrossReference_0_0; }
+		//[DocumentedRequirement|RELREF]
+		public CrossReference getElementDocumentedRequirementCrossReference_0_0() { return cElementDocumentedRequirementCrossReference_0_0; }
 
 		//RELREF
-		public RuleCall getElementRequirementRELREFParserRuleCall_0_0_1() { return cElementRequirementRELREFParserRuleCall_0_0_1; }
+		public RuleCall getElementDocumentedRequirementRELREFParserRuleCall_0_0_1() { return cElementDocumentedRequirementRELREFParserRuleCall_0_0_1; }
 
-		//left=[Requirement|RELREF] type=("and" | "or") right=RequirementDecomposition
+		//left=[DocumentedRequirement|RELREF] type=("and" | "or") right=DocumentedRequirementDecomposition
 		public Group getGroup_1() { return cGroup_1; }
 
-		//left=[Requirement|RELREF]
+		//left=[DocumentedRequirement|RELREF]
 		public Assignment getLeftAssignment_1_0() { return cLeftAssignment_1_0; }
 
-		//[Requirement|RELREF]
-		public CrossReference getLeftRequirementCrossReference_1_0_0() { return cLeftRequirementCrossReference_1_0_0; }
+		//[DocumentedRequirement|RELREF]
+		public CrossReference getLeftDocumentedRequirementCrossReference_1_0_0() { return cLeftDocumentedRequirementCrossReference_1_0_0; }
 
 		//RELREF
-		public RuleCall getLeftRequirementRELREFParserRuleCall_1_0_0_1() { return cLeftRequirementRELREFParserRuleCall_1_0_0_1; }
+		public RuleCall getLeftDocumentedRequirementRELREFParserRuleCall_1_0_0_1() { return cLeftDocumentedRequirementRELREFParserRuleCall_1_0_0_1; }
 
 		//type=("and" | "or")
 		public Assignment getTypeAssignment_1_1() { return cTypeAssignment_1_1; }
@@ -2469,11 +2567,11 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//"or"
 		public Keyword getTypeOrKeyword_1_1_0_1() { return cTypeOrKeyword_1_1_0_1; }
 
-		//right=RequirementDecomposition
+		//right=DocumentedRequirementDecomposition
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
-		//RequirementDecomposition
-		public RuleCall getRightRequirementDecompositionParserRuleCall_1_2_0() { return cRightRequirementDecompositionParserRuleCall_1_2_0; }
+		//DocumentedRequirementDecomposition
+		public RuleCall getRightDocumentedRequirementDecompositionParserRuleCall_1_2_0() { return cRightDocumentedRequirementDecompositionParserRuleCall_1_2_0; }
 	}
 
 	public class VerificationDecompositionElements extends AbstractParserRuleElementFinder {
@@ -2862,22 +2960,26 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		private final Assignment cTitleAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
 		private final RuleCall cTitleValueStringParserRuleCall_3_2_0 = (RuleCall)cTitleAssignment_3_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cDescriptionKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cColonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
 		private final Assignment cDescriptionAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
 		private final RuleCall cDescriptionValueStringParserRuleCall_4_2_0 = (RuleCall)cDescriptionAssignment_4_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cMethodKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
 		private final Assignment cMethodAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
 		private final RuleCall cMethodVerificationMethodParserRuleCall_5_2_0 = (RuleCall)cMethodAssignment_5_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cDecomposedKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cToKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
 		private final Keyword cColonKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
 		private final Assignment cDecomposedToAssignment_6_3 = (Assignment)cGroup_6.eContents().get(3);
 		private final RuleCall cDecomposedToVerificationDecompositionParserRuleCall_6_3_0 = (RuleCall)cDecomposedToAssignment_6_3.eContents().get(0);
+		private final Keyword cSemicolonKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
 		private final Keyword cAssignedKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cToKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
@@ -2885,6 +2987,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cAssignedToAssignment_7_3 = (Assignment)cGroup_7.eContents().get(3);
 		private final CrossReference cAssignedToStakeholderCrossReference_7_3_0 = (CrossReference)cAssignedToAssignment_7_3.eContents().get(0);
 		private final RuleCall cAssignedToStakeholderRELREFParserRuleCall_7_3_0_1 = (RuleCall)cAssignedToStakeholderCrossReference_7_3_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
 		private final Keyword cEndKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Keyword cVerificationKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Keyword cActivityKeyword_10 = (Keyword)cGroup.eContents().get(10);
@@ -2893,16 +2996,16 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		/// *
 		// * Verification Activity
 		// * / VerificationActivity:
-		//	"verification" "activity" name=ID ("title" ":" title=ValueString)? ("description" ":" description=ValueString)?
-		//	("method" ":" method=VerificationMethod)? //	('parameters' ':' verificationParameters+=([ElementReference])*)?
-		//	("decomposed" "to" ":" decomposedTo+=VerificationDecomposition*)? ("assigned" "to" ":"
-		//	assignedTo+=[Stakeholder|RELREF]*)? "end" "verification" "activity" ";";
+		//	"verification" "activity" name=ID ("title" ":" title=ValueString ";")? ("description" ":" description=ValueString
+		//	";")? ("method" ":" method=VerificationMethod ";")? //	('parameters' ':' verificationParameters+=([ElementReference])*)?
+		//	("decomposed" "to" ":" decomposedTo+=VerificationDecomposition* ";")? ("assigned" "to" ":"
+		//	assignedTo+=[Stakeholder|RELREF]* ";")? "end" "verification" "activity" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"verification" "activity" name=ID ("title" ":" title=ValueString)? ("description" ":" description=ValueString)?
-		//("method" ":" method=VerificationMethod)? //	('parameters' ':' verificationParameters+=([ElementReference])*)?
-		//("decomposed" "to" ":" decomposedTo+=VerificationDecomposition*)? ("assigned" "to" ":"
-		//assignedTo+=[Stakeholder|RELREF]*)? "end" "verification" "activity" ";"
+		//"verification" "activity" name=ID ("title" ":" title=ValueString ";")? ("description" ":" description=ValueString ";")?
+		//("method" ":" method=VerificationMethod ";")? //	('parameters' ':' verificationParameters+=([ElementReference])*)?
+		//("decomposed" "to" ":" decomposedTo+=VerificationDecomposition* ";")? ("assigned" "to" ":"
+		//assignedTo+=[Stakeholder|RELREF]* ";")? "end" "verification" "activity" ";"
 		public Group getGroup() { return cGroup; }
 
 		//"verification"
@@ -2917,7 +3020,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//("title" ":" title=ValueString)?
+		//("title" ":" title=ValueString ";")?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"title"
@@ -2932,7 +3035,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ValueString
 		public RuleCall getTitleValueStringParserRuleCall_3_2_0() { return cTitleValueStringParserRuleCall_3_2_0; }
 
-		//("description" ":" description=ValueString)?
+		//";"
+		public Keyword getSemicolonKeyword_3_3() { return cSemicolonKeyword_3_3; }
+
+		//("description" ":" description=ValueString ";")?
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"description"
@@ -2947,7 +3053,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ValueString
 		public RuleCall getDescriptionValueStringParserRuleCall_4_2_0() { return cDescriptionValueStringParserRuleCall_4_2_0; }
 
-		//("method" ":" method=VerificationMethod)?
+		//";"
+		public Keyword getSemicolonKeyword_4_3() { return cSemicolonKeyword_4_3; }
+
+		//("method" ":" method=VerificationMethod ";")?
 		public Group getGroup_5() { return cGroup_5; }
 
 		//"method"
@@ -2962,7 +3071,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//VerificationMethod
 		public RuleCall getMethodVerificationMethodParserRuleCall_5_2_0() { return cMethodVerificationMethodParserRuleCall_5_2_0; }
 
-		//("decomposed" "to" ":" decomposedTo+=VerificationDecomposition*)?
+		//";"
+		public Keyword getSemicolonKeyword_5_3() { return cSemicolonKeyword_5_3; }
+
+		//("decomposed" "to" ":" decomposedTo+=VerificationDecomposition* ";")?
 		public Group getGroup_6() { return cGroup_6; }
 
 		//"decomposed"
@@ -2980,7 +3092,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//VerificationDecomposition
 		public RuleCall getDecomposedToVerificationDecompositionParserRuleCall_6_3_0() { return cDecomposedToVerificationDecompositionParserRuleCall_6_3_0; }
 
-		//("assigned" "to" ":" assignedTo+=[Stakeholder|RELREF]*)?
+		//";"
+		public Keyword getSemicolonKeyword_6_4() { return cSemicolonKeyword_6_4; }
+
+		//("assigned" "to" ":" assignedTo+=[Stakeholder|RELREF]* ";")?
 		public Group getGroup_7() { return cGroup_7; }
 
 		//"assigned"
@@ -3000,6 +3115,9 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 
 		//RELREF
 		public RuleCall getAssignedToStakeholderRELREFParserRuleCall_7_3_0_1() { return cAssignedToStakeholderRELREFParserRuleCall_7_3_0_1; }
+
+		//";"
+		public Keyword getSemicolonKeyword_7_4() { return cSemicolonKeyword_7_4; }
 
 		//"end"
 		public Keyword getEndKeyword_8() { return cEndKeyword_8; }
@@ -3066,26 +3184,31 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
 		private final Assignment cTitleAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
 		private final RuleCall cTitleValueStringParserRuleCall_5_2_0 = (RuleCall)cTitleAssignment_5_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cLogfileKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cColonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
 		private final Assignment cDescriptionAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
 		private final RuleCall cDescriptionValueStringParserRuleCall_6_2_0 = (RuleCall)cDescriptionAssignment_6_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_6_3 = (Keyword)cGroup_6.eContents().get(3);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
 		private final Keyword cDateKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cColonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
 		private final Assignment cMethodAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
 		private final RuleCall cMethodValueStringParserRuleCall_7_2_0 = (RuleCall)cMethodAssignment_7_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_7_3 = (Keyword)cGroup_7.eContents().get(3);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
 		private final Keyword cStateKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
 		private final Assignment cStateAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
 		private final RuleCall cStateVerificationResultStateParserRuleCall_8_2_0 = (RuleCall)cStateAssignment_8_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_8_3 = (Keyword)cGroup_8.eContents().get(3);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
 		private final Keyword cStatusKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
 		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
 		private final Assignment cStatusAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
 		private final RuleCall cStatusVerificationResultStatusParserRuleCall_9_2_0 = (RuleCall)cStatusAssignment_9_2.eContents().get(0);
+		private final Keyword cSemicolonKeyword_9_3 = (Keyword)cGroup_9.eContents().get(3);
 		private final Keyword cEndKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Keyword cVerificationKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Keyword cResultKeyword_12 = (Keyword)cGroup.eContents().get(12);
@@ -3095,13 +3218,15 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		// * Verification Result
 		// * / VerificationResult:
 		//	"verification" "result" name=ID "of" referencedVerificationMethod+=[VerificationActivity]* ("output" ":"
-		//	title=ValueString)? ("logfile" ":" description=ValueString)? ("date" ":" method=ValueString)? ("state" ":"
-		//	state=VerificationResultState)? ("status" ":" status=VerificationResultStatus)? "end" "verification" "result" ";";
+		//	title=ValueString ";")? ("logfile" ":" description=ValueString ";")? ("date" ":" method=ValueString ";")? ("state"
+		//	":" state=VerificationResultState ";")? ("status" ":" status=VerificationResultStatus ";")? "end" "verification"
+		//	"result" ";";
 		public ParserRule getRule() { return rule; }
 
 		//"verification" "result" name=ID "of" referencedVerificationMethod+=[VerificationActivity]* ("output" ":"
-		//title=ValueString)? ("logfile" ":" description=ValueString)? ("date" ":" method=ValueString)? ("state" ":"
-		//state=VerificationResultState)? ("status" ":" status=VerificationResultStatus)? "end" "verification" "result" ";"
+		//title=ValueString ";")? ("logfile" ":" description=ValueString ";")? ("date" ":" method=ValueString ";")? ("state" ":"
+		//state=VerificationResultState ";")? ("status" ":" status=VerificationResultStatus ";")? "end" "verification" "result"
+		//";"
 		public Group getGroup() { return cGroup; }
 
 		//"verification"
@@ -3128,7 +3253,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getReferencedVerificationMethodVerificationActivityIDTerminalRuleCall_4_0_1() { return cReferencedVerificationMethodVerificationActivityIDTerminalRuleCall_4_0_1; }
 
-		//("output" ":" title=ValueString)?
+		//("output" ":" title=ValueString ";")?
 		public Group getGroup_5() { return cGroup_5; }
 
 		//"output"
@@ -3143,7 +3268,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ValueString
 		public RuleCall getTitleValueStringParserRuleCall_5_2_0() { return cTitleValueStringParserRuleCall_5_2_0; }
 
-		//("logfile" ":" description=ValueString)?
+		//";"
+		public Keyword getSemicolonKeyword_5_3() { return cSemicolonKeyword_5_3; }
+
+		//("logfile" ":" description=ValueString ";")?
 		public Group getGroup_6() { return cGroup_6; }
 
 		//"logfile"
@@ -3158,7 +3286,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ValueString
 		public RuleCall getDescriptionValueStringParserRuleCall_6_2_0() { return cDescriptionValueStringParserRuleCall_6_2_0; }
 
-		//("date" ":" method=ValueString)?
+		//";"
+		public Keyword getSemicolonKeyword_6_3() { return cSemicolonKeyword_6_3; }
+
+		//("date" ":" method=ValueString ";")?
 		public Group getGroup_7() { return cGroup_7; }
 
 		//"date"
@@ -3173,7 +3304,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ValueString
 		public RuleCall getMethodValueStringParserRuleCall_7_2_0() { return cMethodValueStringParserRuleCall_7_2_0; }
 
-		//("state" ":" state=VerificationResultState)?
+		//";"
+		public Keyword getSemicolonKeyword_7_3() { return cSemicolonKeyword_7_3; }
+
+		//("state" ":" state=VerificationResultState ";")?
 		public Group getGroup_8() { return cGroup_8; }
 
 		//"state"
@@ -3188,7 +3322,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//VerificationResultState
 		public RuleCall getStateVerificationResultStateParserRuleCall_8_2_0() { return cStateVerificationResultStateParserRuleCall_8_2_0; }
 
-		//("status" ":" status=VerificationResultStatus)?
+		//";"
+		public Keyword getSemicolonKeyword_8_3() { return cSemicolonKeyword_8_3; }
+
+		//("status" ":" status=VerificationResultStatus ";")?
 		public Group getGroup_9() { return cGroup_9; }
 
 		//"status"
@@ -3202,6 +3339,9 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 
 		//VerificationResultStatus
 		public RuleCall getStatusVerificationResultStatusParserRuleCall_9_2_0() { return cStatusVerificationResultStatusParserRuleCall_9_2_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_9_3() { return cSemicolonKeyword_9_3; }
 
 		//"end"
 		public Keyword getEndKeyword_10() { return cEndKeyword_10; }
@@ -3512,8 +3652,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	private NotesElements pNotes;
 	private ValueStringElements pValueString;
 	private StakeholderElements pStakeholder;
-	private RequirementElements pRequirement;
-	private RequirementDecompositionElements pRequirementDecomposition;
+	private DocumentedRequirementElements pDocumentedRequirement;
+	private DocumentedRequirementDecompositionElements pDocumentedRequirementDecomposition;
 	private VerificationDecompositionElements pVerificationDecomposition;
 	private ElementTypeElements pElementType;
 	private ElementReferenceElements pElementReference;
@@ -3598,8 +3738,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RequirementDocument:
-	//	"requirement" "document" name=ID content+=(Requirement | Stakeholder | ElementType | ElementReference)* "end"
-	//	"requirement" "document" ";";
+	//	"requirement" "document" name=ID content+=(DocumentedRequirement | Stakeholder | ElementType | ElementReference)*
+	//	"end" "requirement" "document" ";";
 	public RequirementDocumentElements getRequirementDocumentAccess() {
 		return (pRequirementDocument != null) ? pRequirementDocument : (pRequirementDocument = new RequirementDocumentElements());
 	}
@@ -3637,9 +3777,11 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	//	refinesReference+=[Goal|REQREF] ("," refinesReference+=[Goal|REQREF])* ";")? ("decomposes" ":"
 	//	decomposesReference+=[Goal|REQREF] ("," decomposesReference+=[Goal|REQREF])* ";")? ("evolves" ":"
 	//	evolvesReference+=[Goal|REQREF] ("," evolvesReference+=[Goal|REQREF])* ";")? ("conflicts" ":"
-	//	evolvesReference+=[Goal|REQREF] ("," evolvesReference+=[Goal|REQREF])* ";")? ("see" "stakeholder" "req" ":"
-	//	stakeholderReference+=[Requirement|REQREF] ("," stakeholderReference+=[Requirement|REQREF])* ";")? ("see" "document"
-	//	":" docReferences+=[ExternalDocument|RELREF] ("," docReferences+=[ExternalDocument|RELREF])* ";")? "end" "goal" ";";
+	//	evolvesReference+=[Goal|REQREF] ("," evolvesReference+=[Goal|REQREF])* ";")? ("stakeholder" ":"
+	//	stakeholderReference+=[Stakeholder|RELREF] ("," stakeholderReference+=[Stakeholder|RELREF])* ";")? ("see"
+	//	"stakeholder" "req" ":" stakeholderRequirementReference+=[DocumentedRequirement|REQREF] (","
+	//	stakeholderRequirementReference+=[DocumentedRequirement|REQREF])* ";")? ("see" "document" ":"
+	//	docReferences+=[ExternalDocument|RELREF] ("," docReferences+=[ExternalDocument|RELREF])* ";")? "end" "goal" ";";
 	public GoalElements getGoalAccess() {
 		return (pGoal != null) ? pGoal : (pGoal = new GoalElements());
 	}
@@ -3680,10 +3822,12 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	//	("refines" ":" refinesReference+=[ReqSpec|REQREF] ("," refinesReference+=[ReqSpec|REQREF])* ";")? ("decomposes" ":"
 	//	decomposesReference+=[ReqSpec|REQREF] ("," decomposesReference+=[ReqSpec|REQREF])* ";")? ("evolves" ":"
 	//	evolvesReference+=[ReqSpec|REQREF] ("," evolvesReference+=[ReqSpec|REQREF])* ";")? ("verified" "by" ":"
-	//	verifiedBy+=VerificationDecomposition*)? ("see" "stakeholder" "req" ":" stakeholderreqReference+=[Requirement|REQREF]
-	//	("," stakeholderreqReference+=[Requirement|REQREF])* ";")? ("see" "system" "req" ":"
-	//	systemreqReference+=[Requirement|REQREF] ("," systemreqReference+=[Requirement|REQREF])* ";")? ("see" "document" ":"
-	//	docReferences+=[ExternalDocument|RELREF] ("," docReferences+=[ExternalDocument|RELREF])* ";")? "end" "req" ";";
+	//	verifiedBy+=VerificationDecomposition*)? ("see" "stakeholder" "req" ":"
+	//	stakeholderreqReference+=[DocumentedRequirement|REQREF] (","
+	//	stakeholderreqReference+=[DocumentedRequirement|REQREF])* ";")? ("see" "system" "req" ":"
+	//	systemreqReference+=[DocumentedRequirement|REQREF] ("," systemreqReference+=[DocumentedRequirement|REQREF])* ";")?
+	//	("see" "document" ":" docReferences+=[ExternalDocument|RELREF] ("," docReferences+=[ExternalDocument|RELREF])* ";")?
+	//	"end" "req" ";";
 	public ReqSpecElements getReqSpecAccess() {
 		return (pReqSpec != null) ? pReqSpec : (pReqSpec = new ReqSpecElements());
 	}
@@ -3764,8 +3908,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * Stakeholder
 	// * / Stakeholder:
-	//	"stakeholder" name=ID ("title" ":" title=ValueString)? ("description" ":" description=ValueString)? ("role" ":"
-	//	role=ValueString)? "end" "stakeholder" ";";
+	//	"stakeholder" name=ID ("title" ":" title=ValueString ";")? ("description" ":" description=ValueString ";")? ("role"
+	//	":" role=ValueString ";")? "end" "stakeholder" ";";
 	public StakeholderElements getStakeholderAccess() {
 		return (pStakeholder != null) ? pStakeholder : (pStakeholder = new StakeholderElements());
 	}
@@ -3776,27 +3920,28 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 
 	/// *
 	// * Requirement
-	// * / Requirement:
-	//	"requirement" name=ID ("title" ":" title=ValueString)? ("description" ":" description=ValueString)? ("comment" ":"
-	//	comment=ValueString)? ("assigned" "to" ":" assignedTo+=[Stakeholder|RELREF]*)? ("referenced" "by" ":"
-	//	referencedBy+=[ElementType|RELREF]*)? ("verified" "by" ":" verifiedBy+=VerificationDecomposition*)? ("decomposed"
-	//	"by" ":" decomposedBy+=RequirementDecomposition*)? "end" "requirement" ";";
-	public RequirementElements getRequirementAccess() {
-		return (pRequirement != null) ? pRequirement : (pRequirement = new RequirementElements());
+	// * / DocumentedRequirement:
+	//	"requirement" name=ID ("title" ":" title=ValueString ";")? ("description" ":" description=ValueString ";")?
+	//	("comment" ":" comment=ValueString ";")? ("assigned" "to" ":" assignedTo+=[Stakeholder|RELREF]* ";")? ("referenced"
+	//	"by" ":" referencedBy+=[ElementType|RELREF]* ";")? ("verified" "by" ":" verifiedBy+=VerificationDecomposition* ";")?
+	//	("decomposed" "by" ":" decomposedBy+=DocumentedRequirementDecomposition* ";")? "end" "requirement" ";";
+	public DocumentedRequirementElements getDocumentedRequirementAccess() {
+		return (pDocumentedRequirement != null) ? pDocumentedRequirement : (pDocumentedRequirement = new DocumentedRequirementElements());
 	}
 	
-	public ParserRule getRequirementRule() {
-		return getRequirementAccess().getRule();
+	public ParserRule getDocumentedRequirementRule() {
+		return getDocumentedRequirementAccess().getRule();
 	}
 
-	//RequirementDecomposition:
-	//	element=[Requirement|RELREF] | left=[Requirement|RELREF] type=("and" | "or") right=RequirementDecomposition;
-	public RequirementDecompositionElements getRequirementDecompositionAccess() {
-		return (pRequirementDecomposition != null) ? pRequirementDecomposition : (pRequirementDecomposition = new RequirementDecompositionElements());
+	//DocumentedRequirementDecomposition:
+	//	element=[DocumentedRequirement|RELREF] | left=[DocumentedRequirement|RELREF] type=("and" | "or")
+	//	right=DocumentedRequirementDecomposition;
+	public DocumentedRequirementDecompositionElements getDocumentedRequirementDecompositionAccess() {
+		return (pDocumentedRequirementDecomposition != null) ? pDocumentedRequirementDecomposition : (pDocumentedRequirementDecomposition = new DocumentedRequirementDecompositionElements());
 	}
 	
-	public ParserRule getRequirementDecompositionRule() {
-		return getRequirementDecompositionAccess().getRule();
+	public ParserRule getDocumentedRequirementDecompositionRule() {
+		return getDocumentedRequirementDecompositionAccess().getRule();
 	}
 
 	//VerificationDecomposition:
@@ -3841,10 +3986,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * Verification Activity
 	// * / VerificationActivity:
-	//	"verification" "activity" name=ID ("title" ":" title=ValueString)? ("description" ":" description=ValueString)?
-	//	("method" ":" method=VerificationMethod)? //	('parameters' ':' verificationParameters+=([ElementReference])*)?
-	//	("decomposed" "to" ":" decomposedTo+=VerificationDecomposition*)? ("assigned" "to" ":"
-	//	assignedTo+=[Stakeholder|RELREF]*)? "end" "verification" "activity" ";";
+	//	"verification" "activity" name=ID ("title" ":" title=ValueString ";")? ("description" ":" description=ValueString
+	//	";")? ("method" ":" method=VerificationMethod ";")? //	('parameters' ':' verificationParameters+=([ElementReference])*)?
+	//	("decomposed" "to" ":" decomposedTo+=VerificationDecomposition* ";")? ("assigned" "to" ":"
+	//	assignedTo+=[Stakeholder|RELREF]* ";")? "end" "verification" "activity" ";";
 	public VerificationActivityElements getVerificationActivityAccess() {
 		return (pVerificationActivity != null) ? pVerificationActivity : (pVerificationActivity = new VerificationActivityElements());
 	}
@@ -3867,8 +4012,9 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	// * Verification Result
 	// * / VerificationResult:
 	//	"verification" "result" name=ID "of" referencedVerificationMethod+=[VerificationActivity]* ("output" ":"
-	//	title=ValueString)? ("logfile" ":" description=ValueString)? ("date" ":" method=ValueString)? ("state" ":"
-	//	state=VerificationResultState)? ("status" ":" status=VerificationResultStatus)? "end" "verification" "result" ";";
+	//	title=ValueString ";")? ("logfile" ":" description=ValueString ";")? ("date" ":" method=ValueString ";")? ("state"
+	//	":" state=VerificationResultState ";")? ("status" ":" status=VerificationResultStatus ";")? "end" "verification"
+	//	"result" ";";
 	public VerificationResultElements getVerificationResultAccess() {
 		return (pVerificationResult != null) ? pVerificationResult : (pVerificationResult = new VerificationResultElements());
 	}

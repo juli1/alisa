@@ -149,22 +149,22 @@ public interface AlisaFactory extends EFactory
   Stakeholder createStakeholder();
 
   /**
-   * Returns a new object of class '<em>Requirement</em>'.
+   * Returns a new object of class '<em>Documented Requirement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Requirement</em>'.
+   * @return a new object of class '<em>Documented Requirement</em>'.
    * @generated
    */
-  Requirement createRequirement();
+  DocumentedRequirement createDocumentedRequirement();
 
   /**
-   * Returns a new object of class '<em>Requirement Decomposition</em>'.
+   * Returns a new object of class '<em>Documented Requirement Decomposition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Requirement Decomposition</em>'.
+   * @return a new object of class '<em>Documented Requirement Decomposition</em>'.
    * @generated
    */
-  RequirementDecomposition createRequirementDecomposition();
+  DocumentedRequirementDecomposition createDocumentedRequirementDecomposition();
 
   /**
    * Returns a new object of class '<em>Verification Decomposition</em>'.

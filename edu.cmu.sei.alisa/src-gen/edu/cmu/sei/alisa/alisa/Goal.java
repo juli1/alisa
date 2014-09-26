@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getDecomposesReference <em>Decomposes Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getEvolvesReference <em>Evolves Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getStakeholderReference <em>Stakeholder Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getStakeholderRequirementReference <em>Stakeholder Requirement Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getDocReferences <em>Doc References</em>}</li>
  * </ul>
  * </p>
@@ -274,7 +275,7 @@ public interface Goal extends EObject
 
   /**
    * Returns the value of the '<em><b>Stakeholder Reference</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Requirement}.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Stakeholder}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Stakeholder Reference</em>' reference list isn't clear,
@@ -286,7 +287,23 @@ public interface Goal extends EObject
    * @model
    * @generated
    */
-  EList<Requirement> getStakeholderReference();
+  EList<Stakeholder> getStakeholderReference();
+
+  /**
+   * Returns the value of the '<em><b>Stakeholder Requirement Reference</b></em>' reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.DocumentedRequirement}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Stakeholder Requirement Reference</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Stakeholder Requirement Reference</em>' reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getGoal_StakeholderRequirementReference()
+   * @model
+   * @generated
+   */
+  EList<DocumentedRequirement> getStakeholderRequirementReference();
 
   /**
    * Returns the value of the '<em><b>Doc References</b></em>' reference list.

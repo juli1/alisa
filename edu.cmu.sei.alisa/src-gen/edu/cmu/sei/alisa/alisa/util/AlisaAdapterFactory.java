@@ -145,14 +145,14 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
         return createStakeholderAdapter();
       }
       @Override
-      public Adapter caseRequirement(Requirement object)
+      public Adapter caseDocumentedRequirement(DocumentedRequirement object)
       {
-        return createRequirementAdapter();
+        return createDocumentedRequirementAdapter();
       }
       @Override
-      public Adapter caseRequirementDecomposition(RequirementDecomposition object)
+      public Adapter caseDocumentedRequirementDecomposition(DocumentedRequirementDecomposition object)
       {
-        return createRequirementDecompositionAdapter();
+        return createDocumentedRequirementDecompositionAdapter();
       }
       @Override
       public Adapter caseVerificationDecomposition(VerificationDecomposition object)
@@ -412,31 +412,31 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Requirement <em>Requirement</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirement <em>Documented Requirement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.Requirement
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirement
    * @generated
    */
-  public Adapter createRequirementAdapter()
+  public Adapter createDocumentedRequirementAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.RequirementDecomposition <em>Requirement Decomposition</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition <em>Documented Requirement Decomposition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.RequirementDecomposition
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition
    * @generated
    */
-  public Adapter createRequirementDecompositionAdapter()
+  public Adapter createDocumentedRequirementDecompositionAdapter()
   {
     return null;
   }

@@ -78,8 +78,8 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
       case AlisaPackage.ALIAS: return createAlias();
       case AlisaPackage.NOTES: return createNotes();
       case AlisaPackage.STAKEHOLDER: return createStakeholder();
-      case AlisaPackage.REQUIREMENT: return createRequirement();
-      case AlisaPackage.REQUIREMENT_DECOMPOSITION: return createRequirementDecomposition();
+      case AlisaPackage.DOCUMENTED_REQUIREMENT: return createDocumentedRequirement();
+      case AlisaPackage.DOCUMENTED_REQUIREMENT_DECOMPOSITION: return createDocumentedRequirementDecomposition();
       case AlisaPackage.VERIFICATION_DECOMPOSITION: return createVerificationDecomposition();
       case AlisaPackage.ELEMENT_TYPE: return createElementType();
       case AlisaPackage.ELEMENT_REFERENCE: return createElementReference();
@@ -249,10 +249,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Requirement createRequirement()
+  public DocumentedRequirement createDocumentedRequirement()
   {
-    RequirementImpl requirement = new RequirementImpl();
-    return requirement;
+    DocumentedRequirementImpl documentedRequirement = new DocumentedRequirementImpl();
+    return documentedRequirement;
   }
 
   /**
@@ -260,10 +260,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public RequirementDecomposition createRequirementDecomposition()
+  public DocumentedRequirementDecomposition createDocumentedRequirementDecomposition()
   {
-    RequirementDecompositionImpl requirementDecomposition = new RequirementDecompositionImpl();
-    return requirementDecomposition;
+    DocumentedRequirementDecompositionImpl documentedRequirementDecomposition = new DocumentedRequirementDecompositionImpl();
+    return documentedRequirementDecomposition;
   }
 
   /**

@@ -173,17 +173,17 @@ public class AlisaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AlisaPackage.REQUIREMENT:
+      case AlisaPackage.DOCUMENTED_REQUIREMENT:
       {
-        Requirement requirement = (Requirement)theEObject;
-        T result = caseRequirement(requirement);
+        DocumentedRequirement documentedRequirement = (DocumentedRequirement)theEObject;
+        T result = caseDocumentedRequirement(documentedRequirement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AlisaPackage.REQUIREMENT_DECOMPOSITION:
+      case AlisaPackage.DOCUMENTED_REQUIREMENT_DECOMPOSITION:
       {
-        RequirementDecomposition requirementDecomposition = (RequirementDecomposition)theEObject;
-        T result = caseRequirementDecomposition(requirementDecomposition);
+        DocumentedRequirementDecomposition documentedRequirementDecomposition = (DocumentedRequirementDecomposition)theEObject;
+        T result = caseDocumentedRequirementDecomposition(documentedRequirementDecomposition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -451,33 +451,33 @@ public class AlisaSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Requirement</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Documented Requirement</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Requirement</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Documented Requirement</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseRequirement(Requirement object)
+  public T caseDocumentedRequirement(DocumentedRequirement object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Requirement Decomposition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Documented Requirement Decomposition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Requirement Decomposition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Documented Requirement Decomposition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseRequirementDecomposition(RequirementDecomposition object)
+  public T caseDocumentedRequirementDecomposition(DocumentedRequirementDecomposition object)
   {
     return null;
   }

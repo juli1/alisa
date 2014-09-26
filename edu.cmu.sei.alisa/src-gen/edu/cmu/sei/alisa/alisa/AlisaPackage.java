@@ -360,13 +360,22 @@ public interface AlisaPackage extends EPackage
   int GOAL__STAKEHOLDER_REFERENCE = 11;
 
   /**
+   * The feature id for the '<em><b>Stakeholder Requirement Reference</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE = 12;
+
+  /**
    * The feature id for the '<em><b>Doc References</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOAL__DOC_REFERENCES = 12;
+  int GOAL__DOC_REFERENCES = 13;
 
   /**
    * The number of structural features of the '<em>Goal</em>' class.
@@ -375,7 +384,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL_FEATURE_COUNT = 13;
+  int GOAL_FEATURE_COUNT = 14;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ReqSpecificationsImpl <em>Req Specifications</em>}' class.
@@ -845,14 +854,14 @@ public interface AlisaPackage extends EPackage
   int STAKEHOLDER_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl <em>Requirement</em>}' class.
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.DocumentedRequirementImpl <em>Documented Requirement</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see edu.cmu.sei.alisa.alisa.impl.RequirementImpl
-   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRequirement()
+   * @see edu.cmu.sei.alisa.alisa.impl.DocumentedRequirementImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getDocumentedRequirement()
    * @generated
    */
-  int REQUIREMENT = 14;
+  int DOCUMENTED_REQUIREMENT = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -861,7 +870,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__NAME = 0;
+  int DOCUMENTED_REQUIREMENT__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -870,7 +879,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__TITLE = 1;
+  int DOCUMENTED_REQUIREMENT__TITLE = 1;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -879,7 +888,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__DESCRIPTION = 2;
+  int DOCUMENTED_REQUIREMENT__DESCRIPTION = 2;
 
   /**
    * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -888,7 +897,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__COMMENT = 3;
+  int DOCUMENTED_REQUIREMENT__COMMENT = 3;
 
   /**
    * The feature id for the '<em><b>Assigned To</b></em>' reference list.
@@ -897,7 +906,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__ASSIGNED_TO = 4;
+  int DOCUMENTED_REQUIREMENT__ASSIGNED_TO = 4;
 
   /**
    * The feature id for the '<em><b>Referenced By</b></em>' reference list.
@@ -906,7 +915,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__REFERENCED_BY = 5;
+  int DOCUMENTED_REQUIREMENT__REFERENCED_BY = 5;
 
   /**
    * The feature id for the '<em><b>Verified By</b></em>' containment reference list.
@@ -915,7 +924,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__VERIFIED_BY = 6;
+  int DOCUMENTED_REQUIREMENT__VERIFIED_BY = 6;
 
   /**
    * The feature id for the '<em><b>Decomposed By</b></em>' containment reference list.
@@ -924,26 +933,26 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__DECOMPOSED_BY = 7;
+  int DOCUMENTED_REQUIREMENT__DECOMPOSED_BY = 7;
 
   /**
-   * The number of structural features of the '<em>Requirement</em>' class.
+   * The number of structural features of the '<em>Documented Requirement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQUIREMENT_FEATURE_COUNT = 8;
+  int DOCUMENTED_REQUIREMENT_FEATURE_COUNT = 8;
 
   /**
-   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RequirementDecompositionImpl <em>Requirement Decomposition</em>}' class.
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.DocumentedRequirementDecompositionImpl <em>Documented Requirement Decomposition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see edu.cmu.sei.alisa.alisa.impl.RequirementDecompositionImpl
-   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRequirementDecomposition()
+   * @see edu.cmu.sei.alisa.alisa.impl.DocumentedRequirementDecompositionImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getDocumentedRequirementDecomposition()
    * @generated
    */
-  int REQUIREMENT_DECOMPOSITION = 15;
+  int DOCUMENTED_REQUIREMENT_DECOMPOSITION = 15;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -952,7 +961,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DECOMPOSITION__ELEMENT = 0;
+  int DOCUMENTED_REQUIREMENT_DECOMPOSITION__ELEMENT = 0;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' reference.
@@ -961,7 +970,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DECOMPOSITION__LEFT = 1;
+  int DOCUMENTED_REQUIREMENT_DECOMPOSITION__LEFT = 1;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -970,7 +979,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DECOMPOSITION__TYPE = 2;
+  int DOCUMENTED_REQUIREMENT_DECOMPOSITION__TYPE = 2;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -979,16 +988,16 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DECOMPOSITION__RIGHT = 3;
+  int DOCUMENTED_REQUIREMENT_DECOMPOSITION__RIGHT = 3;
 
   /**
-   * The number of structural features of the '<em>Requirement Decomposition</em>' class.
+   * The number of structural features of the '<em>Documented Requirement Decomposition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DECOMPOSITION_FEATURE_COUNT = 4;
+  int DOCUMENTED_REQUIREMENT_DECOMPOSITION_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationDecompositionImpl <em>Verification Decomposition</em>}' class.
@@ -1628,6 +1637,17 @@ public interface AlisaPackage extends EPackage
   EReference getGoal_StakeholderReference();
 
   /**
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Goal#getStakeholderRequirementReference <em>Stakeholder Requirement Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Stakeholder Requirement Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Goal#getStakeholderRequirementReference()
+   * @see #getGoal()
+   * @generated
+   */
+  EReference getGoal_StakeholderRequirementReference();
+
+  /**
    * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Goal#getDocReferences <em>Doc References</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2093,156 +2113,156 @@ public interface AlisaPackage extends EPackage
   EAttribute getStakeholder_Role();
 
   /**
-   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.Requirement <em>Requirement</em>}'.
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirement <em>Documented Requirement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Requirement</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement
+   * @return the meta object for class '<em>Documented Requirement</em>'.
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirement
    * @generated
    */
-  EClass getRequirement();
+  EClass getDocumentedRequirement();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirement#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getName()
-   * @see #getRequirement()
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirement#getName()
+   * @see #getDocumentedRequirement()
    * @generated
    */
-  EAttribute getRequirement_Name();
+  EAttribute getDocumentedRequirement_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getTitle <em>Title</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirement#getTitle <em>Title</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Title</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getTitle()
-   * @see #getRequirement()
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirement#getTitle()
+   * @see #getDocumentedRequirement()
    * @generated
    */
-  EAttribute getRequirement_Title();
+  EAttribute getDocumentedRequirement_Title();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirement#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getDescription()
-   * @see #getRequirement()
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirement#getDescription()
+   * @see #getDocumentedRequirement()
    * @generated
    */
-  EAttribute getRequirement_Description();
+  EAttribute getDocumentedRequirement_Description();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getComment <em>Comment</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirement#getComment <em>Comment</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Comment</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getComment()
-   * @see #getRequirement()
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirement#getComment()
+   * @see #getDocumentedRequirement()
    * @generated
    */
-  EAttribute getRequirement_Comment();
+  EAttribute getDocumentedRequirement_Comment();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getAssignedTo <em>Assigned To</em>}'.
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirement#getAssignedTo <em>Assigned To</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Assigned To</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getAssignedTo()
-   * @see #getRequirement()
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirement#getAssignedTo()
+   * @see #getDocumentedRequirement()
    * @generated
    */
-  EReference getRequirement_AssignedTo();
+  EReference getDocumentedRequirement_AssignedTo();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getReferencedBy <em>Referenced By</em>}'.
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirement#getReferencedBy <em>Referenced By</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Referenced By</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getReferencedBy()
-   * @see #getRequirement()
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirement#getReferencedBy()
+   * @see #getDocumentedRequirement()
    * @generated
    */
-  EReference getRequirement_ReferencedBy();
+  EReference getDocumentedRequirement_ReferencedBy();
 
   /**
-   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getVerifiedBy <em>Verified By</em>}'.
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirement#getVerifiedBy <em>Verified By</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Verified By</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getVerifiedBy()
-   * @see #getRequirement()
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirement#getVerifiedBy()
+   * @see #getDocumentedRequirement()
    * @generated
    */
-  EReference getRequirement_VerifiedBy();
+  EReference getDocumentedRequirement_VerifiedBy();
 
   /**
-   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getDecomposedBy <em>Decomposed By</em>}'.
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirement#getDecomposedBy <em>Decomposed By</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Decomposed By</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getDecomposedBy()
-   * @see #getRequirement()
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirement#getDecomposedBy()
+   * @see #getDocumentedRequirement()
    * @generated
    */
-  EReference getRequirement_DecomposedBy();
+  EReference getDocumentedRequirement_DecomposedBy();
 
   /**
-   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.RequirementDecomposition <em>Requirement Decomposition</em>}'.
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition <em>Documented Requirement Decomposition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Requirement Decomposition</em>'.
-   * @see edu.cmu.sei.alisa.alisa.RequirementDecomposition
+   * @return the meta object for class '<em>Documented Requirement Decomposition</em>'.
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition
    * @generated
    */
-  EClass getRequirementDecomposition();
+  EClass getDocumentedRequirementDecomposition();
 
   /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.RequirementDecomposition#getElement <em>Element</em>}'.
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition#getElement <em>Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Element</em>'.
-   * @see edu.cmu.sei.alisa.alisa.RequirementDecomposition#getElement()
-   * @see #getRequirementDecomposition()
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition#getElement()
+   * @see #getDocumentedRequirementDecomposition()
    * @generated
    */
-  EReference getRequirementDecomposition_Element();
+  EReference getDocumentedRequirementDecomposition_Element();
 
   /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.RequirementDecomposition#getLeft <em>Left</em>}'.
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition#getLeft <em>Left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Left</em>'.
-   * @see edu.cmu.sei.alisa.alisa.RequirementDecomposition#getLeft()
-   * @see #getRequirementDecomposition()
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition#getLeft()
+   * @see #getDocumentedRequirementDecomposition()
    * @generated
    */
-  EReference getRequirementDecomposition_Left();
+  EReference getDocumentedRequirementDecomposition_Left();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.RequirementDecomposition#getType <em>Type</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Type</em>'.
-   * @see edu.cmu.sei.alisa.alisa.RequirementDecomposition#getType()
-   * @see #getRequirementDecomposition()
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition#getType()
+   * @see #getDocumentedRequirementDecomposition()
    * @generated
    */
-  EAttribute getRequirementDecomposition_Type();
+  EAttribute getDocumentedRequirementDecomposition_Type();
 
   /**
-   * Returns the meta object for the containment reference '{@link edu.cmu.sei.alisa.alisa.RequirementDecomposition#getRight <em>Right</em>}'.
+   * Returns the meta object for the containment reference '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition#getRight <em>Right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see edu.cmu.sei.alisa.alisa.RequirementDecomposition#getRight()
-   * @see #getRequirementDecomposition()
+   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition#getRight()
+   * @see #getDocumentedRequirementDecomposition()
    * @generated
    */
-  EReference getRequirementDecomposition_Right();
+  EReference getDocumentedRequirementDecomposition_Right();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition <em>Verification Decomposition</em>}'.
@@ -2857,6 +2877,14 @@ public interface AlisaPackage extends EPackage
     EReference GOAL__STAKEHOLDER_REFERENCE = eINSTANCE.getGoal_StakeholderReference();
 
     /**
+     * The meta object literal for the '<em><b>Stakeholder Requirement Reference</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE = eINSTANCE.getGoal_StakeholderRequirementReference();
+
+    /**
      * The meta object literal for the '<em><b>Doc References</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3217,14 +3245,14 @@ public interface AlisaPackage extends EPackage
     EAttribute STAKEHOLDER__ROLE = eINSTANCE.getStakeholder_Role();
 
     /**
-     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl <em>Requirement</em>}' class.
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.DocumentedRequirementImpl <em>Documented Requirement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see edu.cmu.sei.alisa.alisa.impl.RequirementImpl
-     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRequirement()
+     * @see edu.cmu.sei.alisa.alisa.impl.DocumentedRequirementImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getDocumentedRequirement()
      * @generated
      */
-    EClass REQUIREMENT = eINSTANCE.getRequirement();
+    EClass DOCUMENTED_REQUIREMENT = eINSTANCE.getDocumentedRequirement();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3232,7 +3260,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQUIREMENT__NAME = eINSTANCE.getRequirement_Name();
+    EAttribute DOCUMENTED_REQUIREMENT__NAME = eINSTANCE.getDocumentedRequirement_Name();
 
     /**
      * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
@@ -3240,7 +3268,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQUIREMENT__TITLE = eINSTANCE.getRequirement_Title();
+    EAttribute DOCUMENTED_REQUIREMENT__TITLE = eINSTANCE.getDocumentedRequirement_Title();
 
     /**
      * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -3248,7 +3276,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQUIREMENT__DESCRIPTION = eINSTANCE.getRequirement_Description();
+    EAttribute DOCUMENTED_REQUIREMENT__DESCRIPTION = eINSTANCE.getDocumentedRequirement_Description();
 
     /**
      * The meta object literal for the '<em><b>Comment</b></em>' attribute feature.
@@ -3256,7 +3284,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQUIREMENT__COMMENT = eINSTANCE.getRequirement_Comment();
+    EAttribute DOCUMENTED_REQUIREMENT__COMMENT = eINSTANCE.getDocumentedRequirement_Comment();
 
     /**
      * The meta object literal for the '<em><b>Assigned To</b></em>' reference list feature.
@@ -3264,7 +3292,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQUIREMENT__ASSIGNED_TO = eINSTANCE.getRequirement_AssignedTo();
+    EReference DOCUMENTED_REQUIREMENT__ASSIGNED_TO = eINSTANCE.getDocumentedRequirement_AssignedTo();
 
     /**
      * The meta object literal for the '<em><b>Referenced By</b></em>' reference list feature.
@@ -3272,7 +3300,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQUIREMENT__REFERENCED_BY = eINSTANCE.getRequirement_ReferencedBy();
+    EReference DOCUMENTED_REQUIREMENT__REFERENCED_BY = eINSTANCE.getDocumentedRequirement_ReferencedBy();
 
     /**
      * The meta object literal for the '<em><b>Verified By</b></em>' containment reference list feature.
@@ -3280,7 +3308,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQUIREMENT__VERIFIED_BY = eINSTANCE.getRequirement_VerifiedBy();
+    EReference DOCUMENTED_REQUIREMENT__VERIFIED_BY = eINSTANCE.getDocumentedRequirement_VerifiedBy();
 
     /**
      * The meta object literal for the '<em><b>Decomposed By</b></em>' containment reference list feature.
@@ -3288,17 +3316,17 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQUIREMENT__DECOMPOSED_BY = eINSTANCE.getRequirement_DecomposedBy();
+    EReference DOCUMENTED_REQUIREMENT__DECOMPOSED_BY = eINSTANCE.getDocumentedRequirement_DecomposedBy();
 
     /**
-     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.RequirementDecompositionImpl <em>Requirement Decomposition</em>}' class.
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.DocumentedRequirementDecompositionImpl <em>Documented Requirement Decomposition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see edu.cmu.sei.alisa.alisa.impl.RequirementDecompositionImpl
-     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRequirementDecomposition()
+     * @see edu.cmu.sei.alisa.alisa.impl.DocumentedRequirementDecompositionImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getDocumentedRequirementDecomposition()
      * @generated
      */
-    EClass REQUIREMENT_DECOMPOSITION = eINSTANCE.getRequirementDecomposition();
+    EClass DOCUMENTED_REQUIREMENT_DECOMPOSITION = eINSTANCE.getDocumentedRequirementDecomposition();
 
     /**
      * The meta object literal for the '<em><b>Element</b></em>' reference feature.
@@ -3306,7 +3334,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQUIREMENT_DECOMPOSITION__ELEMENT = eINSTANCE.getRequirementDecomposition_Element();
+    EReference DOCUMENTED_REQUIREMENT_DECOMPOSITION__ELEMENT = eINSTANCE.getDocumentedRequirementDecomposition_Element();
 
     /**
      * The meta object literal for the '<em><b>Left</b></em>' reference feature.
@@ -3314,7 +3342,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQUIREMENT_DECOMPOSITION__LEFT = eINSTANCE.getRequirementDecomposition_Left();
+    EReference DOCUMENTED_REQUIREMENT_DECOMPOSITION__LEFT = eINSTANCE.getDocumentedRequirementDecomposition_Left();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -3322,7 +3350,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQUIREMENT_DECOMPOSITION__TYPE = eINSTANCE.getRequirementDecomposition_Type();
+    EAttribute DOCUMENTED_REQUIREMENT_DECOMPOSITION__TYPE = eINSTANCE.getDocumentedRequirementDecomposition_Type();
 
     /**
      * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
@@ -3330,7 +3358,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQUIREMENT_DECOMPOSITION__RIGHT = eINSTANCE.getRequirementDecomposition_Right();
+    EReference DOCUMENTED_REQUIREMENT_DECOMPOSITION__RIGHT = eINSTANCE.getDocumentedRequirementDecomposition_Right();
 
     /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationDecompositionImpl <em>Verification Decomposition</em>}' class.

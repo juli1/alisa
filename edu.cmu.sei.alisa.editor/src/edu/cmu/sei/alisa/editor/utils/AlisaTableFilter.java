@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 
-import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 
@@ -39,8 +39,8 @@ public class AlisaTableFilter extends ViewerFilter {
 			return true;
 		}
 
-		if (element instanceof Requirement) {
-			Requirement requirement = (Requirement) element;
+		if (element instanceof DocumentedRequirement) {
+			DocumentedRequirement requirement = (DocumentedRequirement) element;
 
 			m = searchPattern.matcher(requirement.getName());
 			if (m.matches()) {

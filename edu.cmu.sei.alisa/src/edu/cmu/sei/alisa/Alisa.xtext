@@ -26,7 +26,7 @@ Document:
 
 RequirementDocument:
 	'requirement' 'document' name=ID
-	content += (Requirement | Stakeholder | ElementType | ElementReference)* 
+	content += (DocumentedRequirement | Stakeholder | ElementType | ElementReference)* 
 	'end' 'requirement' 'document'
 	';';
 
@@ -57,7 +57,8 @@ Goal:
 	('decomposes' ':' decomposesReference+=[Goal|REQREF](',' decomposesReference+=[Goal|REQREF])*';')? 
 	('evolves' ':' evolvesReference+=[Goal|REQREF](',' evolvesReference+=[Goal|REQREF])*';')? 
 	('conflicts' ':' evolvesReference+=[Goal|REQREF](',' evolvesReference+=[Goal|REQREF])*';')? 
-	('see' 'stakeholder' 'req' ':' stakeholderReference+=[Requirement|REQREF] (',' stakeholderReference+=[Requirement|REQREF])*';')?
+	('stakeholder' ':' stakeholderReference+=[Stakeholder|RELREF] (',' stakeholderReference+=[Stakeholder|RELREF])*';')?
+	('see' 'stakeholder' 'req' ':' stakeholderRequirementReference+=[DocumentedRequirement|REQREF] (',' stakeholderRequirementReference+=[DocumentedRequirement|REQREF])*';')?
 	('see' 'document' ':' docReferences+=[ExternalDocument|RELREF] (',' docReferences+=[ExternalDocument|RELREF])*';')? 
 	 'end''goal'';';
 
@@ -84,8 +85,8 @@ ReqSpec:
 	('decomposes' ':' decomposesReference+=[ReqSpec|REQREF](',' decomposesReference+=[ReqSpec|REQREF])*';')? 
 	('evolves' ':' evolvesReference+=[ReqSpec|REQREF](',' evolvesReference+=[ReqSpec|REQREF])*';')? 
 	('verified' 'by' ':' verifiedBy+=(VerificationDecomposition)*)?
-	('see' 'stakeholder' 'req' ':' stakeholderreqReference+=[Requirement|REQREF] (',' stakeholderreqReference+=[Requirement|REQREF])*';')?
-	('see' 'system' 'req' ':' systemreqReference+=[Requirement|REQREF] (',' systemreqReference+=[Requirement|REQREF])*';')?
+	('see' 'stakeholder' 'req' ':' stakeholderreqReference+=[DocumentedRequirement|REQREF] (',' stakeholderreqReference+=[DocumentedRequirement|REQREF])*';')?
+	('see' 'system' 'req' ':' systemreqReference+=[DocumentedRequirement|REQREF] (',' systemreqReference+=[DocumentedRequirement|REQREF])*';')?
 	('see' 'document' ':' docReferences+=[ExternalDocument|RELREF] (',' docReferences+=[ExternalDocument|RELREF])*';')? 
 	'end''req'';';
 
@@ -144,9 +145,9 @@ ValueString :
  */
 Stakeholder:
 	'stakeholder' name=ID
-	('title' ':' title=ValueString)?
-	('description' ':' description=ValueString)?
-	('role' ':' role=ValueString)?
+	('title' ':' title=ValueString ';')?
+	('description' ':' description=ValueString ';')?
+	('role' ':' role=ValueString ';')?
 	'end' 'stakeholder' ';'
 ;
 
@@ -155,21 +156,21 @@ Stakeholder:
 /*
  * Requirement
  */
-Requirement:
+DocumentedRequirement:
 	'requirement' name=ID
-	('title' ':' title=ValueString)?
-	('description' ':' description=ValueString)?
-	('comment' ':' comment=ValueString)?
-	('assigned' 'to' ':' assignedTo+=([Stakeholder|RELREF])*)?
-	('referenced' 'by' ':' referencedBy+=([ElementType|RELREF])*)?
-	('verified' 'by' ':' verifiedBy+=(VerificationDecomposition)*)?
-	('decomposed' 'by' ':' decomposedBy+=(RequirementDecomposition)*)?
+	('title' ':' title=ValueString ';')?
+	('description' ':' description=ValueString ';')?
+	('comment' ':' comment=ValueString ';')?
+	('assigned' 'to' ':' assignedTo+=([Stakeholder|RELREF])*';')?
+	('referenced' 'by' ':' referencedBy+=([ElementType|RELREF])*';')?
+	('verified' 'by' ':' verifiedBy+=(VerificationDecomposition)*';')?
+	('decomposed' 'by' ':' decomposedBy+=(DocumentedRequirementDecomposition)*';')?
 	'end' 'requirement' ';'
 ;
 
-RequirementDecomposition:
-	element=([Requirement|RELREF])|
-	left=([Requirement|RELREF]) type=('and'|'or') right=(RequirementDecomposition)
+DocumentedRequirementDecomposition:
+	element=([DocumentedRequirement|RELREF])|
+	left=([DocumentedRequirement|RELREF]) type=('and'|'or') right=(DocumentedRequirementDecomposition)
 ;
 
 VerificationDecomposition:
@@ -212,12 +213,12 @@ ElementReference:
 
 VerificationActivity:
 	'verification' 'activity' name=ID
-	('title' ':' title=ValueString)?
-	('description' ':' description=ValueString)?
-	('method' ':' method=VerificationMethod)?
+	('title' ':' title=ValueString';')?
+	('description' ':' description=ValueString';')?
+	('method' ':' method=VerificationMethod';')?
 //	('parameters' ':' verificationParameters+=([ElementReference])*)?
-	('decomposed' 'to' ':' decomposedTo+=(VerificationDecomposition)*)?
-	('assigned' 'to' ':' assignedTo+=([Stakeholder|RELREF])*)?
+	('decomposed' 'to' ':' decomposedTo+=(VerificationDecomposition)*';')?
+	('assigned' 'to' ':' assignedTo+=([Stakeholder|RELREF])*';')?
 	'end' 'verification' 'activity' ';'
 ;
  
@@ -233,11 +234,11 @@ VerificationMethod:
 
 VerificationResult:
 	'verification' 'result' name=ID 'of' referencedVerificationMethod+=([VerificationActivity])*
-	('output' ':' title=ValueString)?
-	('logfile' ':' description=ValueString)?
-	('date' ':' method=ValueString)?
-	('state' ':' state=VerificationResultState)?
-	('status' ':' status=VerificationResultStatus)?
+	('output' ':' title=ValueString';')?
+	('logfile' ':' description=ValueString';')?
+	('date' ':' method=ValueString';')?
+	('state' ':' state=VerificationResultState';')?
+	('status' ':' status=VerificationResultStatus';')?
 	'end' 'verification' 'result' ';'
 ;
 

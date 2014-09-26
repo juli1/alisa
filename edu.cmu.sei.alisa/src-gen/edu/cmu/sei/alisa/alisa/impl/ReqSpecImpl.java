@@ -3,10 +3,10 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
+import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.ReqSpec;
-import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
 
 import java.util.Collection;
@@ -287,7 +287,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * @generated
    * @ordered
    */
-  protected EList<Requirement> stakeholderreqReference;
+  protected EList<DocumentedRequirement> stakeholderreqReference;
 
   /**
    * The cached value of the '{@link #getSystemreqReference() <em>Systemreq Reference</em>}' reference list.
@@ -297,7 +297,7 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * @generated
    * @ordered
    */
-  protected EList<Requirement> systemreqReference;
+  protected EList<DocumentedRequirement> systemreqReference;
 
   /**
    * The cached value of the '{@link #getDocReferences() <em>Doc References</em>}' reference list.
@@ -608,11 +608,11 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Requirement> getStakeholderreqReference()
+  public EList<DocumentedRequirement> getStakeholderreqReference()
   {
     if (stakeholderreqReference == null)
     {
-      stakeholderreqReference = new EObjectResolvingEList<Requirement>(Requirement.class, this, AlisaPackage.REQ_SPEC__STAKEHOLDERREQ_REFERENCE);
+      stakeholderreqReference = new EObjectResolvingEList<DocumentedRequirement>(DocumentedRequirement.class, this, AlisaPackage.REQ_SPEC__STAKEHOLDERREQ_REFERENCE);
     }
     return stakeholderreqReference;
   }
@@ -622,11 +622,11 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Requirement> getSystemreqReference()
+  public EList<DocumentedRequirement> getSystemreqReference()
   {
     if (systemreqReference == null)
     {
-      systemreqReference = new EObjectResolvingEList<Requirement>(Requirement.class, this, AlisaPackage.REQ_SPEC__SYSTEMREQ_REFERENCE);
+      systemreqReference = new EObjectResolvingEList<DocumentedRequirement>(DocumentedRequirement.class, this, AlisaPackage.REQ_SPEC__SYSTEMREQ_REFERENCE);
     }
     return systemreqReference;
   }
@@ -777,11 +777,11 @@ public class ReqSpecImpl extends MinimalEObjectImpl.Container implements ReqSpec
         return;
       case AlisaPackage.REQ_SPEC__STAKEHOLDERREQ_REFERENCE:
         getStakeholderreqReference().clear();
-        getStakeholderreqReference().addAll((Collection<? extends Requirement>)newValue);
+        getStakeholderreqReference().addAll((Collection<? extends DocumentedRequirement>)newValue);
         return;
       case AlisaPackage.REQ_SPEC__SYSTEMREQ_REFERENCE:
         getSystemreqReference().clear();
-        getSystemreqReference().addAll((Collection<? extends Requirement>)newValue);
+        getSystemreqReference().addAll((Collection<? extends DocumentedRequirement>)newValue);
         return;
       case AlisaPackage.REQ_SPEC__DOC_REFERENCES:
         getDocReferences().clear();

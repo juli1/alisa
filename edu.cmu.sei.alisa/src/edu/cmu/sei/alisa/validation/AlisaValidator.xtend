@@ -3,7 +3,7 @@
  */
 package edu.cmu.sei.alisa.validation
 
-import edu.cmu.sei.alisa.alisa.Requirement
+import edu.cmu.sei.alisa.alisa.DocumentedRequirement
 import edu.cmu.sei.alisa.alisa.AlisaPackage
 import org.eclipse.xtext.validation.Check
 import edu.cmu.sei.alisa.alisa.AlisaModel
@@ -86,24 +86,24 @@ class AlisaValidator extends AbstractAlisaValidator
 	}
 
 	@Check
-	def checkRequirement(Requirement requirement) {
+	def checkRequirement(DocumentedRequirement requirement) {
 		checkRequirementName (requirement)
 	}
 	
-	def checkRequirementName(Requirement requirement)
+	def checkRequirementName(DocumentedRequirement requirement)
 	{
 		var model = (requirement.eContainer() as RequirementDocument);
 		if (model != null) {
 			for (other : model.content)
 			{
-				if (other instanceof Requirement)
+				if (other instanceof DocumentedRequirement)
 				{
-					var otherReq = other as Requirement;
+					var otherReq = other as DocumentedRequirement;
 					if (otherReq != null)
 					{
 						if ((otherReq != requirement) && (otherReq.name.equalsIgnoreCase(requirement.name)))
 						{
-							error("Requirements names have to be unique", AlisaPackage$Literals::REQUIREMENT__NAME);
+							error("Requirements names have to be unique", AlisaPackage$Literals::DOCUMENTED_REQUIREMENT__NAME);
 							return;
 						}
 					}

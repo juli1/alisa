@@ -3,9 +3,10 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
+import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
-import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.Stakeholder;
 
 import java.util.Collection;
 
@@ -40,6 +41,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getDecomposesReference <em>Decomposes Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getEvolvesReference <em>Evolves Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getStakeholderReference <em>Stakeholder Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getStakeholderRequirementReference <em>Stakeholder Requirement Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getDocReferences <em>Doc References</em>}</li>
  * </ul>
  * </p>
@@ -226,7 +228,17 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
    * @generated
    * @ordered
    */
-  protected EList<Requirement> stakeholderReference;
+  protected EList<Stakeholder> stakeholderReference;
+
+  /**
+   * The cached value of the '{@link #getStakeholderRequirementReference() <em>Stakeholder Requirement Reference</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStakeholderRequirementReference()
+   * @generated
+   * @ordered
+   */
+  protected EList<DocumentedRequirement> stakeholderRequirementReference;
 
   /**
    * The cached value of the '{@link #getDocReferences() <em>Doc References</em>}' reference list.
@@ -472,13 +484,27 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Requirement> getStakeholderReference()
+  public EList<Stakeholder> getStakeholderReference()
   {
     if (stakeholderReference == null)
     {
-      stakeholderReference = new EObjectResolvingEList<Requirement>(Requirement.class, this, AlisaPackage.GOAL__STAKEHOLDER_REFERENCE);
+      stakeholderReference = new EObjectResolvingEList<Stakeholder>(Stakeholder.class, this, AlisaPackage.GOAL__STAKEHOLDER_REFERENCE);
     }
     return stakeholderReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<DocumentedRequirement> getStakeholderRequirementReference()
+  {
+    if (stakeholderRequirementReference == null)
+    {
+      stakeholderRequirementReference = new EObjectResolvingEList<DocumentedRequirement>(DocumentedRequirement.class, this, AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE);
+    }
+    return stakeholderRequirementReference;
   }
 
   /**
@@ -529,6 +555,8 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
         return getEvolvesReference();
       case AlisaPackage.GOAL__STAKEHOLDER_REFERENCE:
         return getStakeholderReference();
+      case AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE:
+        return getStakeholderRequirementReference();
       case AlisaPackage.GOAL__DOC_REFERENCES:
         return getDocReferences();
     }
@@ -586,7 +614,11 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
         return;
       case AlisaPackage.GOAL__STAKEHOLDER_REFERENCE:
         getStakeholderReference().clear();
-        getStakeholderReference().addAll((Collection<? extends Requirement>)newValue);
+        getStakeholderReference().addAll((Collection<? extends Stakeholder>)newValue);
+        return;
+      case AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE:
+        getStakeholderRequirementReference().clear();
+        getStakeholderRequirementReference().addAll((Collection<? extends DocumentedRequirement>)newValue);
         return;
       case AlisaPackage.GOAL__DOC_REFERENCES:
         getDocReferences().clear();
@@ -642,6 +674,9 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
       case AlisaPackage.GOAL__STAKEHOLDER_REFERENCE:
         getStakeholderReference().clear();
         return;
+      case AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE:
+        getStakeholderRequirementReference().clear();
+        return;
       case AlisaPackage.GOAL__DOC_REFERENCES:
         getDocReferences().clear();
         return;
@@ -683,6 +718,8 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
         return evolvesReference != null && !evolvesReference.isEmpty();
       case AlisaPackage.GOAL__STAKEHOLDER_REFERENCE:
         return stakeholderReference != null && !stakeholderReference.isEmpty();
+      case AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE:
+        return stakeholderRequirementReference != null && !stakeholderRequirementReference.isEmpty();
       case AlisaPackage.GOAL__DOC_REFERENCES:
         return docReferences != null && !docReferences.isEmpty();
     }

@@ -45,7 +45,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="evolvesReference" unique="false"
         upperBound="-1" eType="#//Goal"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stakeholderReference" unique="false"
-        upperBound="-1" eType="#//Requirement"/>
+        upperBound="-1" eType="#//Stakeholder"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stakeholderRequirementReference"
+        unique="false" upperBound="-1" eType="#//DocumentedRequirement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="docReferences" unique="false"
         upperBound="-1" eType="#//ExternalDocument"/>
   </eClassifiers>
@@ -80,9 +82,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="verifiedBy" upperBound="-1"
         eType="#//VerificationDecomposition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stakeholderreqReference"
-        unique="false" upperBound="-1" eType="#//Requirement"/>
+        unique="false" upperBound="-1" eType="#//DocumentedRequirement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="systemreqReference" unique="false"
-        upperBound="-1" eType="#//Requirement"/>
+        upperBound="-1" eType="#//DocumentedRequirement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="docReferences" unique="false"
         upperBound="-1" eType="#//ExternalDocument"/>
   </eClassifiers>
@@ -115,7 +117,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Requirement">
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentedRequirement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
@@ -127,13 +129,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="verifiedBy" upperBound="-1"
         eType="#//VerificationDecomposition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="decomposedBy" upperBound="-1"
-        eType="#//RequirementDecomposition" containment="true"/>
+        eType="#//DocumentedRequirementDecomposition" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RequirementDecomposition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//Requirement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Requirement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentedRequirementDecomposition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//DocumentedRequirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//DocumentedRequirement"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//RequirementDecomposition"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//DocumentedRequirementDecomposition"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VerificationDecomposition">

@@ -5,7 +5,7 @@ package edu.cmu.sei.alisa.validation;
 
 import com.google.common.base.Objects;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
@@ -100,19 +100,19 @@ public class AlisaValidator extends AbstractAlisaValidator {
   }
   
   @Check
-  public void checkRequirement(final Requirement requirement) {
+  public void checkRequirement(final DocumentedRequirement requirement) {
     this.checkRequirementName(requirement);
   }
   
-  public void checkRequirementName(final Requirement requirement) {
+  public void checkRequirementName(final DocumentedRequirement requirement) {
     EObject _eContainer = requirement.eContainer();
     RequirementDocument model = ((RequirementDocument) _eContainer);
     boolean _notEquals = (!Objects.equal(model, null));
     if (_notEquals) {
       EList<EObject> _content = model.getContent();
       for (final EObject other : _content) {
-        if ((other instanceof Requirement)) {
-          Requirement otherReq = ((Requirement) other);
+        if ((other instanceof DocumentedRequirement)) {
+          DocumentedRequirement otherReq = ((DocumentedRequirement) other);
           boolean _notEquals_1 = (!Objects.equal(otherReq, null));
           if (_notEquals_1) {
             boolean _and = false;
@@ -126,7 +126,7 @@ public class AlisaValidator extends AbstractAlisaValidator {
               _and = _equalsIgnoreCase;
             }
             if (_and) {
-              this.error("Requirements names have to be unique", AlisaPackage.Literals.REQUIREMENT__NAME);
+              this.error("Requirements names have to be unique", AlisaPackage.Literals.DOCUMENTED_REQUIREMENT__NAME);
               return;
             }
           }

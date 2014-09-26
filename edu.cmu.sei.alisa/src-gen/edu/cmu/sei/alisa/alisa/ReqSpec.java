@@ -353,7 +353,7 @@ public interface ReqSpec extends EObject
 
   /**
    * Returns the value of the '<em><b>Stakeholderreq Reference</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Requirement}.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.DocumentedRequirement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Stakeholderreq Reference</em>' reference list isn't clear,
@@ -365,11 +365,11 @@ public interface ReqSpec extends EObject
    * @model
    * @generated
    */
-  EList<Requirement> getStakeholderreqReference();
+  EList<DocumentedRequirement> getStakeholderreqReference();
 
   /**
    * Returns the value of the '<em><b>Systemreq Reference</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Requirement}.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.DocumentedRequirement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Systemreq Reference</em>' reference list isn't clear,
@@ -381,7 +381,7 @@ public interface ReqSpec extends EObject
    * @model
    * @generated
    */
-  EList<Requirement> getSystemreqReference();
+  EList<DocumentedRequirement> getSystemreqReference();
 
   /**
    * Returns the value of the '<em><b>Doc References</b></em>' reference list.

@@ -8,6 +8,8 @@ import edu.cmu.sei.alisa.alisa.AlisaFactory;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.Document;
+import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
+import edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition;
 import edu.cmu.sei.alisa.alisa.ElementReference;
 import edu.cmu.sei.alisa.alisa.ElementType;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
@@ -17,8 +19,6 @@ import edu.cmu.sei.alisa.alisa.Goals;
 import edu.cmu.sei.alisa.alisa.Notes;
 import edu.cmu.sei.alisa.alisa.ReqSpec;
 import edu.cmu.sei.alisa.alisa.ReqSpecifications;
-import edu.cmu.sei.alisa.alisa.Requirement;
-import edu.cmu.sei.alisa.alisa.RequirementDecomposition;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
@@ -147,14 +147,14 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass requirementEClass = null;
+  private EClass documentedRequirementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass requirementDecompositionEClass = null;
+  private EClass documentedRequirementDecompositionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -522,9 +522,19 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGoal_DocReferences()
+  public EReference getGoal_StakeholderRequirementReference()
   {
     return (EReference)goalEClass.getEStructuralFeatures().get(12);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGoal_DocReferences()
+  {
+    return (EReference)goalEClass.getEStructuralFeatures().get(13);
   }
 
   /**
@@ -952,9 +962,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRequirement()
+  public EClass getDocumentedRequirement()
   {
-    return requirementEClass;
+    return documentedRequirementEClass;
   }
 
   /**
@@ -962,9 +972,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRequirement_Name()
+  public EAttribute getDocumentedRequirement_Name()
   {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)documentedRequirementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -972,9 +982,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRequirement_Title()
+  public EAttribute getDocumentedRequirement_Title()
   {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)documentedRequirementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -982,9 +992,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRequirement_Description()
+  public EAttribute getDocumentedRequirement_Description()
   {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)documentedRequirementEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -992,9 +1002,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRequirement_Comment()
+  public EAttribute getDocumentedRequirement_Comment()
   {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)documentedRequirementEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1002,9 +1012,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRequirement_AssignedTo()
+  public EReference getDocumentedRequirement_AssignedTo()
   {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(4);
+    return (EReference)documentedRequirementEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1012,9 +1022,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRequirement_ReferencedBy()
+  public EReference getDocumentedRequirement_ReferencedBy()
   {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(5);
+    return (EReference)documentedRequirementEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1022,9 +1032,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRequirement_VerifiedBy()
+  public EReference getDocumentedRequirement_VerifiedBy()
   {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(6);
+    return (EReference)documentedRequirementEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1032,9 +1042,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRequirement_DecomposedBy()
+  public EReference getDocumentedRequirement_DecomposedBy()
   {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(7);
+    return (EReference)documentedRequirementEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -1042,9 +1052,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRequirementDecomposition()
+  public EClass getDocumentedRequirementDecomposition()
   {
-    return requirementDecompositionEClass;
+    return documentedRequirementDecompositionEClass;
   }
 
   /**
@@ -1052,9 +1062,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRequirementDecomposition_Element()
+  public EReference getDocumentedRequirementDecomposition_Element()
   {
-    return (EReference)requirementDecompositionEClass.getEStructuralFeatures().get(0);
+    return (EReference)documentedRequirementDecompositionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1062,9 +1072,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRequirementDecomposition_Left()
+  public EReference getDocumentedRequirementDecomposition_Left()
   {
-    return (EReference)requirementDecompositionEClass.getEStructuralFeatures().get(1);
+    return (EReference)documentedRequirementDecompositionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1072,9 +1082,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRequirementDecomposition_Type()
+  public EAttribute getDocumentedRequirementDecomposition_Type()
   {
-    return (EAttribute)requirementDecompositionEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)documentedRequirementDecompositionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1082,9 +1092,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRequirementDecomposition_Right()
+  public EReference getDocumentedRequirementDecomposition_Right()
   {
-    return (EReference)requirementDecompositionEClass.getEStructuralFeatures().get(3);
+    return (EReference)documentedRequirementDecompositionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1488,6 +1498,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEReference(goalEClass, GOAL__DECOMPOSES_REFERENCE);
     createEReference(goalEClass, GOAL__EVOLVES_REFERENCE);
     createEReference(goalEClass, GOAL__STAKEHOLDER_REFERENCE);
+    createEReference(goalEClass, GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE);
     createEReference(goalEClass, GOAL__DOC_REFERENCES);
 
     reqSpecificationsEClass = createEClass(REQ_SPECIFICATIONS);
@@ -1540,21 +1551,21 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEAttribute(stakeholderEClass, STAKEHOLDER__DESCRIPTION);
     createEAttribute(stakeholderEClass, STAKEHOLDER__ROLE);
 
-    requirementEClass = createEClass(REQUIREMENT);
-    createEAttribute(requirementEClass, REQUIREMENT__NAME);
-    createEAttribute(requirementEClass, REQUIREMENT__TITLE);
-    createEAttribute(requirementEClass, REQUIREMENT__DESCRIPTION);
-    createEAttribute(requirementEClass, REQUIREMENT__COMMENT);
-    createEReference(requirementEClass, REQUIREMENT__ASSIGNED_TO);
-    createEReference(requirementEClass, REQUIREMENT__REFERENCED_BY);
-    createEReference(requirementEClass, REQUIREMENT__VERIFIED_BY);
-    createEReference(requirementEClass, REQUIREMENT__DECOMPOSED_BY);
+    documentedRequirementEClass = createEClass(DOCUMENTED_REQUIREMENT);
+    createEAttribute(documentedRequirementEClass, DOCUMENTED_REQUIREMENT__NAME);
+    createEAttribute(documentedRequirementEClass, DOCUMENTED_REQUIREMENT__TITLE);
+    createEAttribute(documentedRequirementEClass, DOCUMENTED_REQUIREMENT__DESCRIPTION);
+    createEAttribute(documentedRequirementEClass, DOCUMENTED_REQUIREMENT__COMMENT);
+    createEReference(documentedRequirementEClass, DOCUMENTED_REQUIREMENT__ASSIGNED_TO);
+    createEReference(documentedRequirementEClass, DOCUMENTED_REQUIREMENT__REFERENCED_BY);
+    createEReference(documentedRequirementEClass, DOCUMENTED_REQUIREMENT__VERIFIED_BY);
+    createEReference(documentedRequirementEClass, DOCUMENTED_REQUIREMENT__DECOMPOSED_BY);
 
-    requirementDecompositionEClass = createEClass(REQUIREMENT_DECOMPOSITION);
-    createEReference(requirementDecompositionEClass, REQUIREMENT_DECOMPOSITION__ELEMENT);
-    createEReference(requirementDecompositionEClass, REQUIREMENT_DECOMPOSITION__LEFT);
-    createEAttribute(requirementDecompositionEClass, REQUIREMENT_DECOMPOSITION__TYPE);
-    createEReference(requirementDecompositionEClass, REQUIREMENT_DECOMPOSITION__RIGHT);
+    documentedRequirementDecompositionEClass = createEClass(DOCUMENTED_REQUIREMENT_DECOMPOSITION);
+    createEReference(documentedRequirementDecompositionEClass, DOCUMENTED_REQUIREMENT_DECOMPOSITION__ELEMENT);
+    createEReference(documentedRequirementDecompositionEClass, DOCUMENTED_REQUIREMENT_DECOMPOSITION__LEFT);
+    createEAttribute(documentedRequirementDecompositionEClass, DOCUMENTED_REQUIREMENT_DECOMPOSITION__TYPE);
+    createEReference(documentedRequirementDecompositionEClass, DOCUMENTED_REQUIREMENT_DECOMPOSITION__RIGHT);
 
     verificationDecompositionEClass = createEClass(VERIFICATION_DECOMPOSITION);
     createEReference(verificationDecompositionEClass, VERIFICATION_DECOMPOSITION__ELEMENT);
@@ -1664,7 +1675,8 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEReference(getGoal_RefinesReference(), this.getGoal(), null, "refinesReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGoal_DecomposesReference(), this.getGoal(), null, "decomposesReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGoal_EvolvesReference(), this.getGoal(), null, "evolvesReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoal_StakeholderReference(), this.getRequirement(), null, "stakeholderReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGoal_StakeholderReference(), this.getStakeholder(), null, "stakeholderReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGoal_StakeholderRequirementReference(), this.getDocumentedRequirement(), null, "stakeholderRequirementReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGoal_DocReferences(), this.getExternalDocument(), null, "docReferences", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(reqSpecificationsEClass, ReqSpecifications.class, "ReqSpecifications", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1688,8 +1700,8 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEReference(getReqSpec_DecomposesReference(), this.getReqSpec(), null, "decomposesReference", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getReqSpec_EvolvesReference(), this.getReqSpec(), null, "evolvesReference", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getReqSpec_VerifiedBy(), this.getVerificationDecomposition(), null, "verifiedBy", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReqSpec_StakeholderreqReference(), this.getRequirement(), null, "stakeholderreqReference", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReqSpec_SystemreqReference(), this.getRequirement(), null, "systemreqReference", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReqSpec_StakeholderreqReference(), this.getDocumentedRequirement(), null, "stakeholderreqReference", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReqSpec_SystemreqReference(), this.getDocumentedRequirement(), null, "systemreqReference", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getReqSpec_DocReferences(), this.getExternalDocument(), null, "docReferences", null, 0, -1, ReqSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(externalDocumentsEClass, ExternalDocuments.class, "ExternalDocuments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1717,21 +1729,21 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEAttribute(getStakeholder_Description(), theEcorePackage.getEString(), "description", null, 0, 1, Stakeholder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStakeholder_Role(), theEcorePackage.getEString(), "role", null, 0, 1, Stakeholder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(requirementEClass, Requirement.class, "Requirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRequirement_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRequirement_Title(), theEcorePackage.getEString(), "title", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRequirement_Description(), theEcorePackage.getEString(), "description", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRequirement_Comment(), theEcorePackage.getEString(), "comment", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirement_AssignedTo(), this.getStakeholder(), null, "assignedTo", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirement_ReferencedBy(), this.getElementType(), null, "referencedBy", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirement_VerifiedBy(), this.getVerificationDecomposition(), null, "verifiedBy", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirement_DecomposedBy(), this.getRequirementDecomposition(), null, "decomposedBy", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(documentedRequirementEClass, DocumentedRequirement.class, "DocumentedRequirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDocumentedRequirement_Name(), theEcorePackage.getEString(), "name", null, 0, 1, DocumentedRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDocumentedRequirement_Title(), theEcorePackage.getEString(), "title", null, 0, 1, DocumentedRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDocumentedRequirement_Description(), theEcorePackage.getEString(), "description", null, 0, 1, DocumentedRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDocumentedRequirement_Comment(), theEcorePackage.getEString(), "comment", null, 0, 1, DocumentedRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDocumentedRequirement_AssignedTo(), this.getStakeholder(), null, "assignedTo", null, 0, -1, DocumentedRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDocumentedRequirement_ReferencedBy(), this.getElementType(), null, "referencedBy", null, 0, -1, DocumentedRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDocumentedRequirement_VerifiedBy(), this.getVerificationDecomposition(), null, "verifiedBy", null, 0, -1, DocumentedRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDocumentedRequirement_DecomposedBy(), this.getDocumentedRequirementDecomposition(), null, "decomposedBy", null, 0, -1, DocumentedRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(requirementDecompositionEClass, RequirementDecomposition.class, "RequirementDecomposition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRequirementDecomposition_Element(), this.getRequirement(), null, "element", null, 0, 1, RequirementDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirementDecomposition_Left(), this.getRequirement(), null, "left", null, 0, 1, RequirementDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRequirementDecomposition_Type(), theEcorePackage.getEString(), "type", null, 0, 1, RequirementDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirementDecomposition_Right(), this.getRequirementDecomposition(), null, "right", null, 0, 1, RequirementDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(documentedRequirementDecompositionEClass, DocumentedRequirementDecomposition.class, "DocumentedRequirementDecomposition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDocumentedRequirementDecomposition_Element(), this.getDocumentedRequirement(), null, "element", null, 0, 1, DocumentedRequirementDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDocumentedRequirementDecomposition_Left(), this.getDocumentedRequirement(), null, "left", null, 0, 1, DocumentedRequirementDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDocumentedRequirementDecomposition_Type(), theEcorePackage.getEString(), "type", null, 0, 1, DocumentedRequirementDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDocumentedRequirementDecomposition_Right(), this.getDocumentedRequirementDecomposition(), null, "right", null, 0, 1, DocumentedRequirementDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verificationDecompositionEClass, VerificationDecomposition.class, "VerificationDecomposition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVerificationDecomposition_Element(), this.getVerificationActivity(), null, "element", null, 0, 1, VerificationDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

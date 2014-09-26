@@ -14,21 +14,18 @@
  */
 package edu.cmu.sei.alisa.editor.utils;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.StyledCellLabelProvider;
 import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.StyleRange;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
 import edu.cmu.alisa.sei.utils.Utils;
-import edu.cmu.sei.alisa.alisa.Requirement;
-import edu.cmu.sei.alisa.alisa.RequirementDecomposition;
+import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
+import edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition;
+import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 
@@ -39,160 +36,171 @@ import edu.cmu.sei.alisa.alisa.VerificationActivity;
  *
  */
 public class AlisaLabelProvider extends StyledCellLabelProvider {
- 
-    private String searchText;
-    private Color searchColor;
 
-    /**
-     *
-     */
-    public AlisaLabelProvider () {
-        searchColor = Display.getCurrent().getSystemColor(SWT.COLOR_YELLOW);
-    }
+	private String searchText;
+	private Color searchColor;
 
-    /**
-     * @param element
-     * @param columnIndex
-     * @return
-     */
-    public Image getColumnImage(Object element, int columnIndex) {
-        return null;
-    }
+	/**
+	 *
+	 */
+	public AlisaLabelProvider() {
+		searchColor = Display.getCurrent().getSystemColor(SWT.COLOR_YELLOW);
+	}
 
-    /**
-     * @param element
-     * @param columnIndex
-     * @return
-     */
-    public String getColumnText(Object element, int columnIndex) {
-        return "bla";
-    }
+	/**
+	 * @param element
+	 * @param columnIndex
+	 * @return
+	 */
+	public Image getColumnImage(Object element, int columnIndex) {
+		return null;
+	}
 
-    /**
-     * @see org.eclipse.jface.viewers.BaseLabelProvider#addListener(org.eclipse.jface.viewers.ILabelProviderListener)
-     */
-    public void addListener(ILabelProviderListener listener) {
-    }
+	/**
+	 * @param element
+	 * @param columnIndex
+	 * @return
+	 */
+	public String getColumnText(Object element, int columnIndex) {
+		return "bla";
+	}
 
-    /**
-     * @see org.eclipse.jface.viewers.BaseLabelProvider#isLabelProperty(java.lang.Object, java.lang.String)
-     */
-    public boolean isLabelProperty(Object element, String property) {
-        return true;
-    }
+	/**
+	 * @see org.eclipse.jface.viewers.BaseLabelProvider#addListener(org.eclipse.jface.viewers.ILabelProviderListener)
+	 */
+	public void addListener(ILabelProviderListener listener) {
+	}
 
-    /**
-     * @see org.eclipse.jface.viewers.BaseLabelProvider#removeListener(org.eclipse.jface.viewers.ILabelProviderListener)
-     */
-    public void removeListener(ILabelProviderListener listener) {
-    }
+	/**
+	 * @see org.eclipse.jface.viewers.BaseLabelProvider#isLabelProperty(java.lang.Object, java.lang.String)
+	 */
+	public boolean isLabelProperty(Object element, String property) {
+		return true;
+	}
 
-    /**
-     * @param searchText
-     */
-    public void setSearchText(String searchText) {
-        this.searchText = searchText;
-    }
+	/**
+	 * @see org.eclipse.jface.viewers.BaseLabelProvider#removeListener(org.eclipse.jface.viewers.ILabelProviderListener)
+	 */
+	public void removeListener(ILabelProviderListener listener) {
+	}
 
-    /**
-     * @see org.eclipse.jface.viewers.StyledCellLabelProvider#dispose()
-     */
-    public void dispose() {
-    }
+	/**
+	 * @param searchText
+	 */
+	public void setSearchText(String searchText) {
+		this.searchText = searchText;
+	}
 
-    /**
-     * @see org.eclipse.jface.viewers.StyledCellLabelProvider#update(org.eclipse.jface.viewers.ViewerCell)
-     */
-    @Override
-    public void update(ViewerCell cell) 
-    {
-    	int index = cell.getColumnIndex();
-    	String text = "N/A";
+	/**
+	 * @see org.eclipse.jface.viewers.StyledCellLabelProvider#dispose()
+	 */
+	public void dispose() {
+	}
+
+	/**
+	 * @see org.eclipse.jface.viewers.StyledCellLabelProvider#update(org.eclipse.jface.viewers.ViewerCell)
+	 */
+	@Override
+	public void update(ViewerCell cell) {
+		int index = cell.getColumnIndex();
+		String text = "N/A";
 //    	AlisaDebug.debug("[AlisaLabelProvider] update, element=" + cell.getElement());
 //    	AlisaDebug.debug("[AlisaLabelProvider] index=" + index);
-    	
-    	if (cell.getElement() instanceof Requirement)
-    	{
-    		Requirement requirement = (Requirement) cell.getElement();
-    		switch (index)
-    		{
-				case 0:
-					text = requirement.getName();
-					break;
-    			case 1:
-    				text = requirement.getTitle();
-    				break;
-    			case 2:
-    				text = requirement.getDescription();
-    				break;
-    			case 3:
-    				text = requirement.getComment();
-    				break;
-	    		case 4:
-	    		{
-	    			text = Utils.getStakeholderListAsString (requirement.getAssignedTo());
-	    			break;
-	    		}
-	    		
-	    		case 5:
-	    		{
-	    			String strVal = "";
-	    			boolean firstPassed = false;
-	    			for (RequirementDecomposition rtmp : requirement.getDecomposedBy())
-	    			{
-	    				strVal += Utils.getDecompositionString (rtmp);
-	    				
-	    			}
-	    			text = strVal;
-	    			break;
-	    		}
-    		}
-    	}
-    	
-    	if (cell.getElement() instanceof Stakeholder)
-    	{
-    		Stakeholder stakeholder = (Stakeholder) cell.getElement();
-    		switch (index)
-    		{
-				case 0:
-					text = stakeholder.getName();
-					break;
-    			case 1:
-    				text = stakeholder.getTitle();
-    				break;
-    			case 2:
-    				text = stakeholder.getDescription();
-    				break;
-    			case 3:
-    				text = stakeholder.getRole();
-    				break;
-    		}
-    	}
-    	
-    	if (cell.getElement() instanceof VerificationActivity)
-    	{
-    		VerificationActivity va = (VerificationActivity) cell.getElement();
-    		switch (index)
-    		{
-				case 0:
-					text = va.getName();
-					break;
-    			case 1:
-    				text = va.getTitle();
-    				break;
-    			case 2:
-    				text = va.getDescription();
-    				break;
-    			case 3:
-    				text = va.getMethod();
-    				break;
-    			case 4:
-    				text = Utils.getStakeholderListAsString (va.getAssignedTo());
-    				break;
-    		}
-    	}
-    	
-       cell.setText(text);
-       super.update(cell);
-    }
+
+		if (cell.getElement() instanceof DocumentedRequirement) {
+			DocumentedRequirement requirement = (DocumentedRequirement) cell.getElement();
+			switch (index) {
+			case 0:
+				text = requirement.getName();
+				break;
+			case 1:
+				text = requirement.getTitle();
+				break;
+			case 2:
+				text = requirement.getDescription();
+				break;
+			case 3:
+				text = requirement.getComment();
+				break;
+			case 4: {
+				text = Utils.getStakeholderListAsString(requirement.getAssignedTo());
+				break;
+			}
+
+			case 5: {
+				String strVal = "";
+				boolean firstPassed = false;
+				for (DocumentedRequirementDecomposition rtmp : requirement.getDecomposedBy()) {
+					strVal += Utils.getDecompositionString(rtmp);
+
+				}
+				text = strVal;
+				break;
+			}
+			}
+		}
+
+		if (cell.getElement() instanceof Stakeholder) {
+			Stakeholder stakeholder = (Stakeholder) cell.getElement();
+			switch (index) {
+			case 0:
+				text = stakeholder.getName();
+				break;
+			case 1:
+				text = stakeholder.getTitle();
+				break;
+			case 2:
+				text = stakeholder.getDescription();
+				break;
+			case 3:
+				text = stakeholder.getRole();
+				break;
+			}
+		}
+
+		if (cell.getElement() instanceof VerificationActivity) {
+			VerificationActivity va = (VerificationActivity) cell.getElement();
+			switch (index) {
+			case 0:
+				text = va.getName();
+				break;
+			case 1:
+				text = va.getTitle();
+				break;
+			case 2:
+				text = va.getDescription();
+				break;
+			case 3:
+				text = va.getMethod();
+				break;
+			case 4:
+				text = Utils.getStakeholderListAsString(va.getAssignedTo());
+				break;
+			}
+		}
+
+		if (cell.getElement() instanceof Goal) {
+			Goal goal = (Goal) cell.getElement();
+			switch (index) {
+			case 0:
+				text = goal.getName();
+				break;
+			case 1:
+				text = goal.getTitle();
+				break;
+			case 2:
+				text = goal.getDescription();
+				break;
+			case 3:
+				text = goal.getRationale();
+				break;
+			case 4:
+				text = Utils.getStakeholderListAsString(goal.getStakeholderReference());
+				break;
+			}
+		}
+
+		cell.setText(text);
+		super.update(cell);
+	}
 }
