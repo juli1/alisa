@@ -60,7 +60,10 @@ import edu.cmu.sei.alisa.alisa.Stakeholders;
 import edu.cmu.sei.alisa.alisa.VerificationLibrary;
 import edu.cmu.sei.alisa.editor.utils.AlisaDocumentedRequirementsContentProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaEditorCellModifier;
+import edu.cmu.sei.alisa.editor.utils.AlisaExternalDocumentsContentProvider;
+import edu.cmu.sei.alisa.editor.utils.AlisaGoalsContentProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaLabelProvider;
+import edu.cmu.sei.alisa.editor.utils.AlisaRequirementsContentProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaStakeholdersContentProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaTableFilter;
 import edu.cmu.sei.alisa.editor.utils.AlisaTextEditor;
@@ -327,8 +330,8 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 
 	private void populateTablePage(final int index) throws Exception {
 		switch (index) {
-		case INDEX_TABLE_REQUIREMENTS: {
-			AlisaDebug.debug("[AlisaEditor] set content provider for requirements");
+		case INDEX_TABLE_DOCUMENTED_REQUIREMENTS: {
+			AlisaDebug.debug("[AlisaEditor] set content provider for documented requirements");
 			tableViewers[index].setContentProvider(new AlisaDocumentedRequirementsContentProvider());
 			break;
 		}
@@ -342,6 +345,24 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 		case INDEX_TABLE_VERIFICATION_ACTIVITIES: {
 			AlisaDebug.debug("[AlisaEditor] set content provider for verification activities");
 			tableViewers[index].setContentProvider(new AlisaVerificationActivitiesContentProvider());
+			break;
+		}
+
+		case INDEX_TABLE_REQUIREMENTS: {
+			AlisaDebug.debug("[AlisaEditor] set content provider for requirements");
+			tableViewers[index].setContentProvider(new AlisaRequirementsContentProvider());
+			break;
+		}
+
+		case INDEX_TABLE_GOALS: {
+			AlisaDebug.debug("[AlisaEditor] set content provider for goals");
+			tableViewers[index].setContentProvider(new AlisaGoalsContentProvider());
+			break;
+		}
+
+		case INDEX_TABLE_EXTERNAL_DOCUMENTS: {
+			AlisaDebug.debug("[AlisaEditor] set content provider for external documents");
+			tableViewers[index].setContentProvider(new AlisaExternalDocumentsContentProvider());
 			break;
 		}
 
