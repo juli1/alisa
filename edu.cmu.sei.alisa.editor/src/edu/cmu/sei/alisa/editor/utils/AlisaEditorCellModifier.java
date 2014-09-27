@@ -20,6 +20,9 @@ import org.eclipse.swt.widgets.TableItem;
 import edu.cmu.alisa.sei.utils.AlisaDebug;
 import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
+import edu.cmu.sei.alisa.alisa.ExternalDocument;
+import edu.cmu.sei.alisa.alisa.Goal;
+import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.editor.editors.AlisaEditor;
@@ -57,7 +60,6 @@ public class AlisaEditorCellModifier implements ICellModifier {
 
 		elementIndex = Integer.parseInt(property);
 		returnValue = "";
-
 		if (element instanceof DocumentedRequirement) {
 			DocumentedRequirement requirement = (DocumentedRequirement) element;
 			switch (elementIndex) {
@@ -92,9 +94,114 @@ public class AlisaEditorCellModifier implements ICellModifier {
 
 		}
 
+		if (element instanceof Requirement) {
+			Requirement requirement = (Requirement) element;
+			switch (elementIndex) {
+			case 0: {
+				returnValue = Utils.fixString(requirement.getReqkind());
+				break;
+			}
+			case 1: {
+				returnValue = Utils.fixString(requirement.getName());
+				break;
+			}
+			case 3: {
+				returnValue = Utils.fixString(requirement.getTitle());
+				break;
+			}
+			case 4: {
+				returnValue = Utils.fixString(requirement.getDescription());
+				break;
+			}
+			case 6: {
+				returnValue = Utils.fixString(requirement.getRationale());
+				break;
+			}
+			case 5: {
+				returnValue = Utils.fixString(requirement.getAssert());
+				break;
+			}
+			case 7: {
+				String strVal = "";
+				boolean firstPassed = false;
+				for (String s : requirement.getIssue()) {
+					if (firstPassed == true) {
+						strVal += ",";
+
+					}
+
+					strVal += s;
+					firstPassed = true;
+				}
+				returnValue = strVal;
+				break;
+			}
+			}
+		}
+
+		if (element instanceof Goal) {
+			Goal goal = (Goal) element;
+			switch (elementIndex) {
+			case 0: {
+				returnValue = Utils.fixString(goal.getName());
+				break;
+			}
+			case 2: {
+				returnValue = Utils.fixString(goal.getTitle());
+				break;
+			}
+			case 3: {
+				returnValue = Utils.fixString(goal.getDescription());
+				break;
+			}
+			case 5: {
+				returnValue = Utils.fixString(goal.getRationale());
+				break;
+			}
+			case 4: {
+				returnValue = Utils.fixString(goal.getAssert());
+				break;
+			}
+			case 6: {
+				String strVal = "";
+				boolean firstPassed = false;
+				for (String s : goal.getIssue()) {
+					if (firstPassed == true) {
+						strVal += ",";
+
+					}
+
+					strVal += s;
+					firstPassed = true;
+				}
+				returnValue = strVal;
+				break;
+			}
+			case 7: {
+				String strVal = "";
+				boolean firstPassed = false;
+				for (Stakeholder s : goal.getStakeholderReference()) {
+					if (firstPassed == true) {
+						strVal += ",";
+
+					}
+
+					strVal += s.getName();
+					firstPassed = true;
+				}
+				returnValue = strVal;
+				break;
+			}
+			}
+
+		}
+
 		if (element instanceof Stakeholder) {
 			Stakeholder stakeholder = (Stakeholder) element;
 			switch (elementIndex) {
+			case 0: {
+				returnValue = Utils.fixString(stakeholder.getName());
+			}
 			case 1: {
 				returnValue = Utils.fixString(stakeholder.getTitle());
 				break;
@@ -131,6 +238,21 @@ public class AlisaEditorCellModifier implements ICellModifier {
 				break;
 			}
 		}
+
+		if (element instanceof ExternalDocument) {
+			ExternalDocument xdoc = (ExternalDocument) element;
+			switch (elementIndex) {
+			case 0: {
+				returnValue = Utils.fixString(xdoc.getName());
+				break;
+			}
+			case 1: {
+				returnValue = Utils.fixString(xdoc.getXternalReference());
+				break;
+			}
+			}
+		}
+
 		return returnValue;
 	}
 
@@ -145,7 +267,8 @@ public class AlisaEditorCellModifier implements ICellModifier {
 		Object elementData;
 		int elementIndex;
 		int editorIdentifier;
-		String strVal;
+		String strVal = Utils.wrapValue(value);
+		;
 
 		editorIdentifier = -1;
 		elementData = ((TableItem) element).getData();
@@ -153,33 +276,24 @@ public class AlisaEditorCellModifier implements ICellModifier {
 		AlisaDebug.debug("[AlisaEditorCellModifier] modify element=" + element + ";property=" + property + ";value="
 				+ value);
 		AlisaDebug.debug("[AlisaEditorCellModifier] modify element data=" + ((TableItem) element).getData());
-
 		if (elementData instanceof DocumentedRequirement) {
 			DocumentedRequirement requirement = (DocumentedRequirement) elementData;
-			editorIdentifier = AlisaEditor.INDEX_TABLE_REQUIREMENTS;
+			editorIdentifier = AlisaEditor.INDEX_TABLE_DOCUMENTED_REQUIREMENTS;
 			switch (elementIndex) {
 			case 1: {
-				AlisaDebug.debug("[AlisaEditorCellModifier] update requirement title");
-				strVal = "\"" + (String) value + "\"";
 				requirement.setTitle(strVal);
 				break;
 			}
 			case 2: {
-				AlisaDebug.debug("[AlisaEditorCellModifier] update requirement desc");
-				strVal = "\"" + (String) value + "\"";
 				requirement.setDescription(strVal);
 				break;
 			}
 			case 3: {
-				AlisaDebug.debug("[AlisaEditorCellModifier] update requirement comment");
-				strVal = "\"" + (String) value + "\"";
 				requirement.setComment(strVal);
 				break;
 			}
 			case 4: {
 				for (Stakeholder s : Utils.getStakeholdersFromString(alisaEditor.getRootObject(), (String) value)) {
-					AlisaDebug.debug("[AlisaEditorCell] add stakeholder" + s.getName());
-
 					requirement.getAssignedTo().add(s);
 				}
 				break;
@@ -189,29 +303,119 @@ public class AlisaEditorCellModifier implements ICellModifier {
 
 		}
 
+		if (elementData instanceof Requirement) {
+			Requirement requirement = (Requirement) elementData;
+			editorIdentifier = AlisaEditor.INDEX_TABLE_REQUIREMENTS;
+			switch (elementIndex) {
+			case 0: {
+				requirement.setReqkind(strVal);
+				break;
+			}
+			case 1: {
+				requirement.setName((String) value);
+				break;
+			}
+			case 3: {
+				requirement.setTitle(strVal);
+				break;
+			}
+			case 4: {
+				requirement.setDescription(strVal);
+				break;
+			}
+			case 6: {
+				requirement.setRationale(strVal);
+				break;
+			}
+			case 5: {
+				requirement.setAssert(strVal);
+				break;
+			}
+			case 7: {
+				requirement.getIssue().clear();
+				for (String issue : ((String) value).split(",")) {
+					requirement.getIssue().add(issue);
+				}
+				break;
+			}
+			}
+		}
+
+		if (elementData instanceof Goal) {
+			Goal goal = (Goal) elementData;
+			editorIdentifier = AlisaEditor.INDEX_TABLE_GOALS;
+			switch (elementIndex) {
+			case 0: {
+				goal.setName((String) value);
+				break;
+			}
+			case 2: {
+				goal.setTitle(strVal);
+				break;
+			}
+			case 3: {
+				goal.setDescription(strVal);
+				break;
+			}
+			case 5: {
+				goal.setRationale(strVal);
+				break;
+			}
+			case 4: {
+				goal.setAssert(strVal);
+				break;
+			}
+			case 6: {
+				goal.getIssue().clear();
+				for (String issue : ((String) value).split(",")) {
+					goal.getIssue().add(issue);
+				}
+				break;
+			}
+			case 7: {
+				for (Stakeholder s : Utils.getStakeholdersFromString(alisaEditor.getRootObject(), (String) value)) {
+					goal.getStakeholderReference().add(s);
+				}
+				break;
+			}
+			}
+
+		}
+
 		if (elementData instanceof Stakeholder) {
 			Stakeholder stakeholder = (Stakeholder) elementData;
 			editorIdentifier = AlisaEditor.INDEX_TABLE_STAKEHOLDERS;
 			switch (elementIndex) {
+			case 0: {
+				stakeholder.setName((String) value);
+				break;
+			}
 			case 1: {
-				AlisaDebug.debug("[AlisaEditorCellModifier] update stakeholder title");
-				strVal = Utils.wrapValue(value);
 				stakeholder.setTitle(strVal);
 				break;
 			}
 			case 2: {
-				AlisaDebug.debug("[AlisaEditorCellModifier] update stakeholder desc");
-				strVal = Utils.wrapValue(value);
 				stakeholder.setDescription(strVal);
 				break;
 			}
 			case 3: {
-//	    			AlisaDebug.debug ("[AlisaEditorCellModifier] update stakeholder role");
-//	    			AlisaDebug.debug ("[AlisaEditorCellModifier] before role=" + stakeholder.getRole());
-				strVal = Utils.wrapValue(value);
 				stakeholder.setRole(strVal);
-//	    			AlisaDebug.debug ("[AlisaEditorCellModifier] after role=" + stakeholder.getRole());
 
+				break;
+			}
+			}
+		}
+
+		if (elementData instanceof ExternalDocument) {
+			ExternalDocument xdoc = (ExternalDocument) elementData;
+			editorIdentifier = AlisaEditor.INDEX_TABLE_EXTERNAL_DOCUMENTS;
+			switch (elementIndex) {
+			case 0: {
+				xdoc.setName((String) value);
+				break;
+			}
+			case 1: {
+				xdoc.setXternalReference(strVal);
 				break;
 			}
 			}

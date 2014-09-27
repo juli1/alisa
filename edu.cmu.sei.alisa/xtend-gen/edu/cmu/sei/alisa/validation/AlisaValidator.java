@@ -8,6 +8,7 @@ import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
+import edu.cmu.sei.alisa.alisa.Stakeholders;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.VerificationLibrary;
 import edu.cmu.sei.alisa.validation.AbstractAlisaValidator;
@@ -31,11 +32,11 @@ public class AlisaValidator extends AbstractAlisaValidator {
   
   public void checkStakeholderName(final Stakeholder stakeholder) {
     EObject _eContainer = stakeholder.eContainer();
-    RequirementDocument model = ((RequirementDocument) _eContainer);
-    boolean _notEquals = (!Objects.equal(model, null));
+    Stakeholders org = ((Stakeholders) _eContainer);
+    boolean _notEquals = (!Objects.equal(org, null));
     if (_notEquals) {
-      EList<EObject> _content = model.getContent();
-      for (final EObject other : _content) {
+      EList<Stakeholder> _stakeholder = org.getStakeholder();
+      for (final Stakeholder other : _stakeholder) {
         if ((other instanceof Stakeholder)) {
           Stakeholder otherStak = ((Stakeholder) other);
           boolean _notEquals_1 = (!Objects.equal(otherStak, null));

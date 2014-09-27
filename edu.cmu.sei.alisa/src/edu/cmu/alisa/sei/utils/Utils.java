@@ -138,6 +138,9 @@ public class Utils {
 	}
 
 	public static String wrapValue(Object o) {
+		String s = o.toString();
+		if (s.startsWith("\"") && s.endsWith("\""))
+			return s;
 		return "\"" + o.toString() + "\"";
 	}
 

@@ -21,6 +21,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
+import org.osate.aadl2.NamedElement;
 
 import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
@@ -28,6 +29,7 @@ import edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.Requirements;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 
@@ -211,23 +213,32 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
 
 		if (cell.getElement() instanceof Requirement) {
 			Requirement req = (Requirement) cell.getElement();
+			Requirements reqs = (Requirements) req.eContainer();
 			switch (index) {
 			case 0:
-				text = req.getName();
+				text = req.getReqkind();
 				break;
 			case 1:
-				text = req.getTitle();
+				text = reqs.getName() + "." + req.getName();
 				break;
 			case 2:
-				text = req.getDescription();
+				NamedElement cl = reqs.getReqTarget();
+				String target = req.getTarget();
+				text = cl.getName() + (target != null && !target.isEmpty() ? "." + target : "");
 				break;
 			case 3:
-				text = req.getAssert();
+				text = req.getTitle();
 				break;
 			case 4:
-				text = req.getRationale();
+				text = req.getDescription();
 				break;
 			case 5:
+				text = req.getAssert();
+				break;
+			case 6:
+				text = req.getRationale();
+				break;
+			case 7:
 				text = Utils.getStringListAsString(req.getIssue());
 				break;
 			}

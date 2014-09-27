@@ -88,10 +88,10 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 	public static final int INDEX_SOURCE = 6;
 
 	String[] columnsNamesStakeholders = { "Name", "Title", "Description", "Role" };
-	String[] columnsNamesGoals = { "ID", "Title", "Description", "Assertion", "Rationale", "Issues", "Assigned To",
-			"Decomposes" };
-	String[] columnsNamesRequirements = { "ID", "Title", "Description", "Assertion", "Rationale", "Issues",
-			"Decomposes" };
+	String[] columnsNamesGoals = { "ID", "For", "Title", "Description", "Assertion", "Rationale", "Issues",
+			"Assigned To", "Decomposes" };
+	String[] columnsNamesRequirements = { "Kind", "ID", "For", "Title", "Description", "Assertion", "Rationale",
+			"Issues", "Decomposes" };
 	String[] columnsNamesDocumentedRequirements = { "ID", "Title", "Description", "Comment", "Assigned To",
 			"Decomposed by" };
 	String[] columnsNamesExternalDocuments = { "Name", "External Reference" };
@@ -518,6 +518,18 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 			return columnsNamesVerificationActivities.length;
 		}
 
+		case INDEX_TABLE_DOCUMENTED_REQUIREMENTS: {
+			return columnsNamesDocumentedRequirements.length;
+		}
+
+		case INDEX_TABLE_GOALS: {
+			return columnsNamesGoals.length;
+		}
+
+		case INDEX_TABLE_EXTERNAL_DOCUMENTS: {
+			return columnsNamesExternalDocuments.length;
+		}
+
 		default: {
 			return 0;
 		}
@@ -658,7 +670,10 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 
 			editor.doSave(monitor);
 			getRootObject(true);
+			updateTableFromTextEditor(INDEX_TABLE_DOCUMENTED_REQUIREMENTS);
 			updateTableFromTextEditor(INDEX_TABLE_REQUIREMENTS);
+			updateTableFromTextEditor(INDEX_TABLE_GOALS);
+			updateTableFromTextEditor(INDEX_TABLE_EXTERNAL_DOCUMENTS);
 			updateTableFromTextEditor(INDEX_TABLE_STAKEHOLDERS);
 			updateTableFromTextEditor(INDEX_TABLE_VERIFICATION_ACTIVITIES);
 		} else {
@@ -684,6 +699,13 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 			}
 
 		}
+		// TODO flush commandstack
+//		this.getEdomain.getCommandStack().flush();			
+//		if (this.dirty != dirty) {
+//			this.dirty = dirty;
+//			editorDirtyStateChanged();
+//		}
+
 	}
 
 	/**

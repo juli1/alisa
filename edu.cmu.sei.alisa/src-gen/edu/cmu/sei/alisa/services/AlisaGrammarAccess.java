@@ -2128,9 +2128,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////
 		////NamedElement returns aadl2::NamedElement:
-		////ReqSpec| Goal//| RequirementDocument
+		////Requirement| Goal|DocumentedRequirement|Stakeholder
 		////|VerificationActivity|VerificationResult;
-		////
 		////Element returns aadl2::Element:
 		////	Goals | ReqSpecifications 
 		////;
@@ -3889,9 +3888,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 
 	////
 	////NamedElement returns aadl2::NamedElement:
-	////ReqSpec| Goal//| RequirementDocument
+	////Requirement| Goal|DocumentedRequirement|Stakeholder
 	////|VerificationActivity|VerificationResult;
-	////
 	////Element returns aadl2::Element:
 	////	Goals | ReqSpecifications 
 	////;

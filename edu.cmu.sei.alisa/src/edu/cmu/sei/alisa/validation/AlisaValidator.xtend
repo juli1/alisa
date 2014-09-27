@@ -11,6 +11,7 @@ import edu.cmu.sei.alisa.alisa.Stakeholder
 import edu.cmu.sei.alisa.alisa.VerificationActivity
 import edu.cmu.sei.alisa.alisa.VerificationLibrary
 import edu.cmu.sei.alisa.alisa.RequirementDocument
+import edu.cmu.sei.alisa.alisa.Stakeholders
 
 //import org.eclipse.xtext.validation.Check
 
@@ -31,9 +32,9 @@ class AlisaValidator extends AbstractAlisaValidator
 	
 	def checkStakeholderName(Stakeholder stakeholder)
 	{ 
-		var model = (stakeholder.eContainer() as RequirementDocument);
-		if (model != null) {
-			for (other : model.content)
+		var org = (stakeholder.eContainer() as Stakeholders);
+		if (org != null) {
+			for (other : org.stakeholder)
 			{
 				if (other instanceof Stakeholder)
 				{
