@@ -20,6 +20,7 @@ import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
+import edu.cmu.sei.alisa.alisa.Stakeholders;
 import edu.cmu.sei.alisa.analysis.preferences.PreferencesValues;
 
 public class WordImport {
@@ -120,7 +121,8 @@ public class WordImport {
 			/**
 			 * Instantiate a generic stakeholder
 			 */
-			genericStakeholder = Utils.addNewStakeholder(returnedModel);
+			Stakeholders org = Utils.createStakeholders(returnedModel);
+			genericStakeholder = Utils.addNewStakeholder(org);
 			genericStakeholder.setTitle("\"System designer\"");
 
 			/**

@@ -9,10 +9,17 @@ import edu.cmu.sei.alisa.alisa.AlisaFactory;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition;
+import edu.cmu.sei.alisa.alisa.ExternalDocument;
+import edu.cmu.sei.alisa.alisa.ExternalDocuments;
+import edu.cmu.sei.alisa.alisa.Goal;
+import edu.cmu.sei.alisa.alisa.Goals;
+import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
+import edu.cmu.sei.alisa.alisa.Requirements;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.Stakeholders;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
+import edu.cmu.sei.alisa.alisa.VerificationLibrary;
 import edu.cmu.sei.alisa.alisa.impl.AlisaFactoryImpl;
 
 public class Utils {
@@ -151,13 +158,13 @@ public class Utils {
 	 * @param model - the alisa model that will contain the
 	 *                new DocumentedRequirement.
 	 */
-	private static int NEW_REQ_ID = 1;
+	private static int NEW_DOCREQ_ID = 1;
 
 	public static DocumentedRequirement addNewDocumentedRequirement(RequirementDocument reqdoc) {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		DocumentedRequirement req = factory.createDocumentedRequirement();
 		req.setTitle("\"Title\"");
-		req.setName("newreq" + NEW_REQ_ID++);
+		req.setName("newreq" + NEW_DOCREQ_ID++);
 		req.setComment("\"Comment\"");
 		req.setDescription("\"Desc\"");
 		reqdoc.getContent().add(req);
@@ -172,14 +179,62 @@ public class Utils {
 	 */
 	private static int NEW_VA_ID = 1;
 
-	public static void addNewVerificationActivity(AlisaModel model) {
+	public static void addNewVerificationActivity(VerificationLibrary lib) {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		VerificationActivity va = factory.createVerificationActivity();
 		va.setTitle("\"Title\"");
 		va.setName("new_verification_activity" + NEW_VA_ID++);
 		va.setMethod("manual");
 		va.setDescription("\"Desc\"");
-		model.getContent().add(va);
+		lib.getContent().add(va);
+	}
+
+	/**
+	 * Add a new external document to the model
+	 * @param external docs - the ExternalDOcuments set that will contain the
+	 *                new external doc.
+	 */
+	private static int NEW_XDOC_ID = 1;
+
+	public static void addNewExternalDocument(ExternalDocuments lib) {
+		AlisaFactory factory = AlisaFactoryImpl.init();
+		ExternalDocument xdoc = factory.createExternalDocument();
+		xdoc.setName("new_external_doc" + NEW_XDOC_ID++);
+		xdoc.setXternalReference("\"XRef to doc\"");
+		lib.getDocs().add(xdoc);
+	}
+
+	/**
+	 * Add a new goal to the model
+	 * @param goals - the goals that will contain the
+	 *                new goal.
+	 */
+	private static int NEW_GOAL_ID = 1;
+
+	public static void addNewGoal(Goals lib) {
+		AlisaFactory factory = AlisaFactoryImpl.init();
+		Goal va = factory.createGoal();
+		va.setTitle("\"Title\"");
+		va.setName("new_goal" + NEW_GOAL_ID++);
+		va.setDescription("\"Desc\"");
+		lib.getGoals().add(va);
+	}
+
+	/**
+	 * Add a new goal to the model
+	 * @param goals - the goals that will contain the
+	 *                new goal.
+	 */
+	private static int NEW_REQ_ID = 1;
+
+	public static void addNewRequirement(Requirements lib) {
+		AlisaFactory factory = AlisaFactoryImpl.init();
+		Requirement va = factory.createRequirement();
+		va.setTitle("\"Title\"");
+		va.setName("new_requirement" + NEW_REQ_ID++);
+		va.setDescription("\"Desc\"");
+		va.setReqkind("requirement");
+		lib.getReqs().add(va);
 	}
 
 	/**
@@ -189,14 +244,14 @@ public class Utils {
 	 */
 	private static int NEW_SH_ID = 1;
 
-	public static Stakeholder addNewStakeholder(AlisaModel model) {
+	public static Stakeholder addNewStakeholder(Stakeholders org) {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		Stakeholder sh = factory.createStakeholder();
 		sh.setTitle("\"Title\"");
 		sh.setName("newstakeholder" + NEW_SH_ID++);
 		sh.setRole("\"Role\"");
 		sh.setDescription("\"Desc\"");
-		model.getContent().add(sh);
+		org.getStakeholder().add(sh);
 		return sh;
 	}
 
@@ -213,6 +268,34 @@ public class Utils {
 	public static RequirementDocument createReqDoc(AlisaModel model) {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		RequirementDocument reqdoc = factory.createRequirementDocument();
+		model.getContent().add(reqdoc);
+		return reqdoc;
+	}
+
+	public static Requirements createRequirements(AlisaModel model) {
+		AlisaFactory factory = AlisaFactoryImpl.init();
+		Requirements reqdoc = factory.createRequirements();
+		model.getContent().add(reqdoc);
+		return reqdoc;
+	}
+
+	public static Goals createGoals(AlisaModel model) {
+		AlisaFactory factory = AlisaFactoryImpl.init();
+		Goals goals = factory.createGoals();
+		model.getContent().add(goals);
+		return goals;
+	}
+
+	public static VerificationLibrary createVerificationLibrary(AlisaModel model) {
+		AlisaFactory factory = AlisaFactoryImpl.init();
+		VerificationLibrary vl = factory.createVerificationLibrary();
+		model.getContent().add(vl);
+		return vl;
+	}
+
+	public static ExternalDocuments createExternalDocuments(AlisaModel model) {
+		AlisaFactory factory = AlisaFactoryImpl.init();
+		ExternalDocuments reqdoc = factory.createExternalDocuments();
 		model.getContent().add(reqdoc);
 		return reqdoc;
 	}

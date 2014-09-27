@@ -52,8 +52,12 @@ import edu.cmu.alisa.sei.utils.AlisaDebug;
 import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.AlisaStandaloneSetup;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
+import edu.cmu.sei.alisa.alisa.ExternalDocuments;
+import edu.cmu.sei.alisa.alisa.Goals;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
+import edu.cmu.sei.alisa.alisa.Requirements;
 import edu.cmu.sei.alisa.alisa.Stakeholders;
+import edu.cmu.sei.alisa.alisa.VerificationLibrary;
 import edu.cmu.sei.alisa.editor.utils.AlisaDocumentedRequirementsContentProvider;
 import edu.cmu.sei.alisa.editor.utils.AlisaEditorCellModifier;
 import edu.cmu.sei.alisa.editor.utils.AlisaLabelProvider;
@@ -124,7 +128,10 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 	protected void createPages() {
 		try {
 			createStakeholderPage();
+			createGoalsPage();
 			createRequirementsPage();
+			createRequirementDocumentPage();
+			createExternalDocumentsPage();
 			createVerificationActivitiesPage();
 			createSourcePage();
 			updateTitle();
@@ -191,17 +198,32 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 				 * add the appropriate object into the Alisa Model.
 				 */
 				switch (getActivePage()) {
+				case INDEX_TABLE_GOALS: {
+
+					Utils.addNewGoal(getGoals());
+					break;
+				}
 				case INDEX_TABLE_REQUIREMENTS: {
+
+					Utils.addNewRequirement(getRequirements());
+					break;
+				}
+				case INDEX_TABLE_DOCUMENTED_REQUIREMENTS: {
 
 					Utils.addNewDocumentedRequirement(getReqDoc());
 					break;
 				}
+				case INDEX_TABLE_EXTERNAL_DOCUMENTS: {
+
+					Utils.addNewExternalDocument(getExternalDocuments());
+					break;
+				}
 				case INDEX_TABLE_STAKEHOLDERS: {
-					Utils.addNewStakeholder(getRootObject());
+					Utils.addNewStakeholder(getStakeholders());
 					break;
 				}
 				case INDEX_TABLE_VERIFICATION_ACTIVITIES: {
-					Utils.addNewVerificationActivity(getRootObject());
+					Utils.addNewVerificationActivity(getVerificationLibrary());
 					break;
 				}
 				}
@@ -268,8 +290,20 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 		createTablePage(INDEX_TABLE_STAKEHOLDERS);
 	}
 
+	private void createRequirementDocumentPage() {
+		createTablePage(INDEX_TABLE_DOCUMENTED_REQUIREMENTS);
+	}
+
 	private void createRequirementsPage() {
 		createTablePage(INDEX_TABLE_REQUIREMENTS);
+	}
+
+	private void createGoalsPage() {
+		createTablePage(INDEX_TABLE_GOALS);
+	}
+
+	private void createExternalDocumentsPage() {
+		createTablePage(INDEX_TABLE_EXTERNAL_DOCUMENTS);
 	}
 
 	private void createVerificationActivitiesPage() {
@@ -336,6 +370,51 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 		return reqdoc;
 	}
 
+	public Goals getGoals() {
+		AlisaModel model = getRootObject(false);
+		EList<EObject> content = model.getContent();
+		for (EObject res : content) {
+			if (res instanceof Goals) {
+				return (Goals) res;
+			}
+		}
+		Goals goals = Utils.createGoals(model);
+		goals.setName("new goals");
+		return goals;
+	}
+
+	private static int NEW_REQS_ID = 1;
+
+	public Requirements getRequirements() {
+		AlisaModel model = getRootObject(false);
+		EList<EObject> content = model.getContent();
+		for (EObject res : content) {
+			if (res instanceof Requirements) {
+				return (Requirements) res;
+			}
+		}
+		Requirements reqs = Utils.createRequirements(model);
+		reqs.setName("new_requirements" + NEW_REQS_ID++);
+		return reqs;
+	}
+
+	private static int NEW_XDOCS_ID = 1;
+
+	public ExternalDocuments getExternalDocuments() {
+		AlisaModel model = getRootObject(false);
+		EList<EObject> content = model.getContent();
+		for (EObject res : content) {
+			if (res instanceof ExternalDocuments) {
+				return (ExternalDocuments) res;
+			}
+		}
+		ExternalDocuments xdocs = Utils.createExternalDocuments(model);
+		xdocs.setName("new_external_documents" + NEW_XDOCS_ID++);
+		return xdocs;
+	}
+
+	private static int NEW_ORG_ID = 1;
+
 	public Stakeholders getStakeholders() {
 		AlisaModel model = getRootObject(false);
 		EList<EObject> content = model.getContent();
@@ -345,7 +424,22 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 			}
 		}
 		Stakeholders sh = Utils.createStakeholders(model);
-		sh.setName("new org");
+		sh.setName("new_organization" + NEW_ORG_ID++);
+		return sh;
+	}
+
+	private static int NEW_VL_ID = 1;
+
+	public VerificationLibrary getVerificationLibrary() {
+		AlisaModel model = getRootObject(false);
+		EList<EObject> content = model.getContent();
+		for (EObject res : content) {
+			if (res instanceof Stakeholders) {
+				return (VerificationLibrary) res;
+			}
+		}
+		VerificationLibrary sh = Utils.createVerificationLibrary(model);
+		sh.setName("new_verification_library" + NEW_VL_ID++);
 		return sh;
 	}
 
@@ -423,6 +517,18 @@ public class AlisaEditor extends MultiPageEditorPart implements IResourceChangeL
 
 		case INDEX_TABLE_VERIFICATION_ACTIVITIES: {
 			return columnsNamesVerificationActivities;
+		}
+
+		case INDEX_TABLE_DOCUMENTED_REQUIREMENTS: {
+			return columnsNamesDocumentedRequirements;
+		}
+
+		case INDEX_TABLE_GOALS: {
+			return columnsNamesGoals;
+		}
+
+		case INDEX_TABLE_EXTERNAL_DOCUMENTS: {
+			return columnsNamesExternalDocuments;
 		}
 
 		default: {
