@@ -165,13 +165,13 @@ Stakeholders:
  */
 DocumentedRequirement:
 	'requirement' name=ID
-	('title' ':' title=ValueString ';')?
-	('description' ':' description=ValueString ';')?
-	('comment' ':' comment=ValueString ';')?
-	('assigned' 'to' ':' assignedTo+=([Stakeholder|RELREF])*';')?
-	('referenced' 'by' ':' referencedBy+=([ElementType|RELREF])*';')?
-	('verified' 'by' ':' verifiedBy+=(VerificationDecomposition)*';')?
-	('decomposed' 'by' ':' decomposedBy+=(DocumentedRequirementDecomposition)*';')?
+	('title' ':' title=ValueString )?
+	('description' ':' description=ValueString )?
+	('comment' ':' comment=ValueString )?
+	('assigned' 'to' ':' assignedTo+=([Stakeholder|RELREF])*)?
+	('referenced' 'by' ':' referencedBy+=([ElementType|RELREF])*)?
+	('verified' 'by' ':' verifiedBy+=(VerificationDecomposition)*)?
+	('decomposed' 'by' ':' decomposedBy+=(DocumentedRequirementDecomposition)*)?
 	'end' 'requirement' ';'
 ;
 
