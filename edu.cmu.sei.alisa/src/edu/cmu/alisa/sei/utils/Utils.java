@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.osate.xtext.aadl2.properties.util.EMFIndexRetrieval;
 
 import edu.cmu.sei.alisa.alisa.AlisaFactory;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
+import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
@@ -43,15 +45,8 @@ public class Utils {
 	}
 
 	public static Stakeholder findStakeHolder(AlisaModel alisaModel, String name) {
-		for (EObject eo : alisaModel.getContent()) {
-			if (eo instanceof Stakeholder) {
-				Stakeholder s = (Stakeholder) eo;
-				if (s.getName().equalsIgnoreCase(name)) {
-					return s;
-				}
-			}
-		}
-		return null;
+		EObject obj = EMFIndexRetrieval.getDottedEObjectOfType(AlisaPackage.eINSTANCE.getStakeholder(), name);
+		return (Stakeholder) obj;
 	}
 
 	public static String getDecompositionString(DocumentedRequirementDecomposition decomposition) {

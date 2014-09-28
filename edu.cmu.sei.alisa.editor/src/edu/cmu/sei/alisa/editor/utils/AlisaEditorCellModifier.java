@@ -105,6 +105,10 @@ public class AlisaEditorCellModifier implements ICellModifier {
 				returnValue = Utils.fixString(requirement.getName());
 				break;
 			}
+			case 2: {
+				returnValue = Utils.fixString(requirement.getTarget());
+				break;
+			}
 			case 3: {
 				returnValue = Utils.fixString(requirement.getTitle());
 				break;
@@ -315,6 +319,10 @@ public class AlisaEditorCellModifier implements ICellModifier {
 				requirement.setName((String) value);
 				break;
 			}
+			case 2: {
+				requirement.setTarget((String) value);
+				break;
+			}
 			case 3: {
 				requirement.setTitle(strVal);
 				break;
@@ -373,6 +381,7 @@ public class AlisaEditorCellModifier implements ICellModifier {
 				break;
 			}
 			case 7: {
+				goal.getStakeholderReference().clear();
 				for (Stakeholder s : Utils.getStakeholdersFromString(alisaEditor.getRootObject(), (String) value)) {
 					goal.getStakeholderReference().add(s);
 				}

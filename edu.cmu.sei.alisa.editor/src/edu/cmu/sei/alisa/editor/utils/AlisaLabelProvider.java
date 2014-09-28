@@ -133,7 +133,6 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
 
 			case 5: {
 				String strVal = "";
-				boolean firstPassed = false;
 				for (DocumentedRequirementDecomposition rtmp : requirement.getDecomposedBy()) {
 					strVal += Utils.getDecompositionString(rtmp);
 
@@ -189,22 +188,22 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
 			case 0:
 				text = goal.getName();
 				break;
-			case 1:
+			case 2:
 				text = goal.getTitle();
 				break;
-			case 2:
+			case 3:
 				text = goal.getDescription();
 				break;
-			case 3:
+			case 4:
 				text = goal.getAssert();
 				break;
-			case 4:
+			case 5:
 				text = goal.getRationale();
 				break;
-			case 5:
+			case 6:
 				text = Utils.getStringListAsString(goal.getIssue());
 				break;
-			case 6:
+			case 7:
 				text = Utils.getStakeholderListAsString(goal.getStakeholderReference());
 				break;
 			}
