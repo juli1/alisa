@@ -80,6 +80,16 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
         return createAlisaModelAdapter();
       }
       @Override
+      public Adapter caseAlisaElement(AlisaElement object)
+      {
+        return createAlisaElementAdapter();
+      }
+      @Override
+      public Adapter caseAlisaNameSpace(AlisaNameSpace object)
+      {
+        return createAlisaNameSpaceAdapter();
+      }
+      @Override
       public Adapter caseDocument(Document object)
       {
         return createDocumentAdapter();
@@ -217,6 +227,36 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAlisaModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.AlisaElement <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.AlisaElement
+   * @generated
+   */
+  public Adapter createAlisaElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.AlisaNameSpace <em>Name Space</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.AlisaNameSpace
+   * @generated
+   */
+  public Adapter createAlisaNameSpaceAdapter()
   {
     return null;
   }

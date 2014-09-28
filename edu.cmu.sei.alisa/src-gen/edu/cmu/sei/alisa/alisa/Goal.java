@@ -4,8 +4,6 @@ package edu.cmu.sei.alisa.alisa;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Goal</b></em>'.
@@ -35,7 +33,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Goal extends EObject
+public interface Goal extends AlisaElement
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

@@ -4,8 +4,6 @@ package edu.cmu.sei.alisa.alisa;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Requirement</b></em>'.
@@ -39,7 +37,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Requirement extends EObject
+public interface Requirement extends AlisaElement
 {
   /**
    * Returns the value of the '<em><b>Reqkind</b></em>' attribute.

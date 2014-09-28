@@ -21,6 +21,12 @@ public class AlisaQualifiedNameProvider extends DefaultDeclarativeQualifiedNameP
 		return super.getFullyQualifiedName(obj);
 	}
 
+//
+//	public QualifiedName qualifiedName(final AlisaElement obj) {
+//		// return null;
+//		return getConverter().toQualifiedName(obj.getQualifiedName());
+//	}
+
 	public QualifiedName qualifiedName(final Element obj) {
 		return null;// getConverter().toQualifiedName(obj.getQualifiedName());
 	}

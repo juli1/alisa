@@ -2,8 +2,8 @@
  */
 package edu.cmu.sei.alisa.alisa.impl;
 
+import edu.cmu.sei.alisa.alisa.AlisaElement;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.Document;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -11,21 +11,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Document</b></em>'.
+ * An implementation of the model object '<em><b>Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class DocumentImpl extends MinimalEObjectImpl.Container implements Document
+public class AlisaElementImpl extends MinimalEObjectImpl.Container implements AlisaElement
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected DocumentImpl()
+  protected AlisaElementImpl()
   {
     super();
   }
@@ -38,7 +38,7 @@ public class DocumentImpl extends MinimalEObjectImpl.Container implements Docume
   @Override
   protected EClass eStaticClass()
   {
-    return AlisaPackage.Literals.DOCUMENT;
+    return AlisaPackage.Literals.ALISA_ELEMENT;
   }
 
-} //DocumentImpl
+} //AlisaElementImpl

@@ -7,6 +7,7 @@ import edu.cmu.sei.alisa.alisa.RequirementDocument;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,6 +15,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -25,14 +28,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementDocumentImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementDocumentImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RequirementDocumentImpl extends DocumentImpl implements RequirementDocument
+public class RequirementDocumentImpl extends AlisaElementImpl implements RequirementDocument
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -62,6 +86,29 @@ public class RequirementDocumentImpl extends DocumentImpl implements Requirement
   protected EClass eStaticClass()
   {
     return AlisaPackage.Literals.REQUIREMENT_DOCUMENT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT_DOCUMENT__NAME, oldName, name));
   }
 
   /**
@@ -104,6 +151,8 @@ public class RequirementDocumentImpl extends DocumentImpl implements Requirement
   {
     switch (featureID)
     {
+      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+        return getName();
       case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
         return getContent();
     }
@@ -121,6 +170,9 @@ public class RequirementDocumentImpl extends DocumentImpl implements Requirement
   {
     switch (featureID)
     {
+      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+        setName((String)newValue);
+        return;
       case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
         getContent().clear();
         getContent().addAll((Collection<? extends EObject>)newValue);
@@ -139,6 +191,9 @@ public class RequirementDocumentImpl extends DocumentImpl implements Requirement
   {
     switch (featureID)
     {
+      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
         getContent().clear();
         return;
@@ -156,10 +211,29 @@ public class RequirementDocumentImpl extends DocumentImpl implements Requirement
   {
     switch (featureID)
     {
+      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
         return content != null && !content.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //RequirementDocumentImpl

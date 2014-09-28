@@ -65,6 +65,8 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
     switch (eClass.getClassifierID())
     {
       case AlisaPackage.ALISA_MODEL: return createAlisaModel();
+      case AlisaPackage.ALISA_ELEMENT: return createAlisaElement();
+      case AlisaPackage.ALISA_NAME_SPACE: return createAlisaNameSpace();
       case AlisaPackage.DOCUMENT: return createDocument();
       case AlisaPackage.REQUIREMENT_DOCUMENT: return createRequirementDocument();
       case AlisaPackage.VERIFICATION_LIBRARY: return createVerificationLibrary();
@@ -100,6 +102,28 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
   {
     AlisaModelImpl alisaModel = new AlisaModelImpl();
     return alisaModel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlisaElement createAlisaElement()
+  {
+    AlisaElementImpl alisaElement = new AlisaElementImpl();
+    return alisaElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlisaNameSpace createAlisaNameSpace()
+  {
+    AlisaNameSpaceImpl alisaNameSpace = new AlisaNameSpaceImpl();
+    return alisaNameSpace;
   }
 
   /**

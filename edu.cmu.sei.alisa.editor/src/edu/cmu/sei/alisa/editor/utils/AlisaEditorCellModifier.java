@@ -14,7 +14,6 @@
  */
 package edu.cmu.sei.alisa.editor.utils;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.swt.widgets.TableItem;
 
@@ -294,7 +293,7 @@ public class AlisaEditorCellModifier implements ICellModifier {
 				break;
 			}
 			case 4: {
-				for (Stakeholder s : Utils.getStakeholdersFromString((EObject) elementData, (String) value)) {
+				for (Stakeholder s : Utils.getStakeholdersFromString(alisaEditor.getRootObject(), (String) value)) {
 					requirement.getAssignedTo().add(s);
 				}
 				break;
@@ -374,7 +373,7 @@ public class AlisaEditorCellModifier implements ICellModifier {
 				break;
 			}
 			case 7: {
-				for (Stakeholder s : Utils.getStakeholdersFromString((EObject) elementData, (String) value)) {
+				for (Stakeholder s : Utils.getStakeholdersFromString(alisaEditor.getRootObject(), (String) value)) {
 					goal.getStakeholderReference().add(s);
 				}
 				break;

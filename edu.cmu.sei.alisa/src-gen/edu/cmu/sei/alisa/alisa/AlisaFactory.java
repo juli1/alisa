@@ -32,6 +32,24 @@ public interface AlisaFactory extends EFactory
   AlisaModel createAlisaModel();
 
   /**
+   * Returns a new object of class '<em>Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element</em>'.
+   * @generated
+   */
+  AlisaElement createAlisaElement();
+
+  /**
+   * Returns a new object of class '<em>Name Space</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Name Space</em>'.
+   * @generated
+   */
+  AlisaNameSpace createAlisaNameSpace();
+
+  /**
    * Returns a new object of class '<em>Document</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

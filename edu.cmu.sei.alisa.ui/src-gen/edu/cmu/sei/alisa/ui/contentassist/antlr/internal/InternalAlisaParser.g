@@ -172,6 +172,10 @@ finally {
 
 
 
+
+
+
+
 // Entry rule entryRuleRequirementDocument
 entryRuleRequirementDocument 
 :
@@ -1126,6 +1130,8 @@ rule__AlisaModel__ContentAlternatives_2_0
 finally {
 	restoreStackSize(stackSize);
 }
+
+
 
 
 rule__RequirementDocument__ContentAlternatives_3_0
@@ -18849,12 +18855,12 @@ rule__AlisaModel__ImportedNamespaceAssignment_0_1
     }
 :
 (
-{ before(grammarAccess.getAlisaModelAccess().getImportedNamespaceDocumentCrossReference_0_1_0()); }
+{ before(grammarAccess.getAlisaModelAccess().getImportedNamespaceAlisaNameSpaceCrossReference_0_1_0()); }
 (
-{ before(grammarAccess.getAlisaModelAccess().getImportedNamespaceDocumentIDTerminalRuleCall_0_1_0_1()); }
-	RULE_ID{ after(grammarAccess.getAlisaModelAccess().getImportedNamespaceDocumentIDTerminalRuleCall_0_1_0_1()); }
+{ before(grammarAccess.getAlisaModelAccess().getImportedNamespaceAlisaNameSpaceIDTerminalRuleCall_0_1_0_1()); }
+	RULE_ID{ after(grammarAccess.getAlisaModelAccess().getImportedNamespaceAlisaNameSpaceIDTerminalRuleCall_0_1_0_1()); }
 )
-{ after(grammarAccess.getAlisaModelAccess().getImportedNamespaceDocumentCrossReference_0_1_0()); }
+{ after(grammarAccess.getAlisaModelAccess().getImportedNamespaceAlisaNameSpaceCrossReference_0_1_0()); }
 )
 
 ;
@@ -18868,12 +18874,12 @@ rule__AlisaModel__ImportedNamespaceAssignment_0_2_1
     }
 :
 (
-{ before(grammarAccess.getAlisaModelAccess().getImportedNamespaceDocumentCrossReference_0_2_1_0()); }
+{ before(grammarAccess.getAlisaModelAccess().getImportedNamespaceAlisaNameSpaceCrossReference_0_2_1_0()); }
 (
-{ before(grammarAccess.getAlisaModelAccess().getImportedNamespaceDocumentIDTerminalRuleCall_0_2_1_0_1()); }
-	RULE_ID{ after(grammarAccess.getAlisaModelAccess().getImportedNamespaceDocumentIDTerminalRuleCall_0_2_1_0_1()); }
+{ before(grammarAccess.getAlisaModelAccess().getImportedNamespaceAlisaNameSpaceIDTerminalRuleCall_0_2_1_0_1()); }
+	RULE_ID{ after(grammarAccess.getAlisaModelAccess().getImportedNamespaceAlisaNameSpaceIDTerminalRuleCall_0_2_1_0_1()); }
 )
-{ after(grammarAccess.getAlisaModelAccess().getImportedNamespaceDocumentCrossReference_0_2_1_0()); }
+{ after(grammarAccess.getAlisaModelAccess().getImportedNamespaceAlisaNameSpaceCrossReference_0_2_1_0()); }
 )
 
 ;

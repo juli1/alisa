@@ -64,7 +64,8 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case AlisaPackage.DOCUMENTED_REQUIREMENT:
-				if(context == grammarAccess.getDocumentedRequirementRule()) {
+				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getDocumentedRequirementRule()) {
 					sequence_DocumentedRequirement(context, (DocumentedRequirement) semanticObject); 
 					return; 
 				}
@@ -94,20 +95,25 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case AlisaPackage.EXTERNAL_DOCUMENTS:
-				if(context == grammarAccess.getDocumentRule() ||
+				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getAlisaNameSpaceRule() ||
+				   context == grammarAccess.getDocumentRule() ||
 				   context == grammarAccess.getExternalDocumentsRule()) {
 					sequence_ExternalDocuments(context, (ExternalDocuments) semanticObject); 
 					return; 
 				}
 				else break;
 			case AlisaPackage.GOAL:
-				if(context == grammarAccess.getGoalRule()) {
+				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getGoalRule()) {
 					sequence_Goal(context, (Goal) semanticObject); 
 					return; 
 				}
 				else break;
 			case AlisaPackage.GOALS:
-				if(context == grammarAccess.getGoalsRule()) {
+				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getAlisaNameSpaceRule() ||
+				   context == grammarAccess.getGoalsRule()) {
 					sequence_Goals(context, (Goals) semanticObject); 
 					return; 
 				}
@@ -119,38 +125,47 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case AlisaPackage.REQUIREMENT:
-				if(context == grammarAccess.getRequirementRule()) {
+				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getRequirementRule()) {
 					sequence_Requirement(context, (Requirement) semanticObject); 
 					return; 
 				}
 				else break;
 			case AlisaPackage.REQUIREMENT_DOCUMENT:
-				if(context == grammarAccess.getDocumentRule() ||
+				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getAlisaNameSpaceRule() ||
+				   context == grammarAccess.getDocumentRule() ||
 				   context == grammarAccess.getRequirementDocumentRule()) {
 					sequence_RequirementDocument(context, (RequirementDocument) semanticObject); 
 					return; 
 				}
 				else break;
 			case AlisaPackage.REQUIREMENTS:
-				if(context == grammarAccess.getRequirementsRule()) {
+				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getAlisaNameSpaceRule() ||
+				   context == grammarAccess.getRequirementsRule()) {
 					sequence_Requirements(context, (Requirements) semanticObject); 
 					return; 
 				}
 				else break;
 			case AlisaPackage.STAKEHOLDER:
-				if(context == grammarAccess.getStakeholderRule()) {
+				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getStakeholderRule()) {
 					sequence_Stakeholder(context, (Stakeholder) semanticObject); 
 					return; 
 				}
 				else break;
 			case AlisaPackage.STAKEHOLDERS:
-				if(context == grammarAccess.getStakeholdersRule()) {
+				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getAlisaNameSpaceRule() ||
+				   context == grammarAccess.getStakeholdersRule()) {
 					sequence_Stakeholders(context, (Stakeholders) semanticObject); 
 					return; 
 				}
 				else break;
 			case AlisaPackage.VERIFICATION_ACTIVITY:
-				if(context == grammarAccess.getVerificationActivityRule()) {
+				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getVerificationActivityRule()) {
 					sequence_VerificationActivity(context, (VerificationActivity) semanticObject); 
 					return; 
 				}
@@ -162,14 +177,17 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case AlisaPackage.VERIFICATION_LIBRARY:
-				if(context == grammarAccess.getDocumentRule() ||
+				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getAlisaNameSpaceRule() ||
+				   context == grammarAccess.getDocumentRule() ||
 				   context == grammarAccess.getVerificationLibraryRule()) {
 					sequence_VerificationLibrary(context, (VerificationLibrary) semanticObject); 
 					return; 
 				}
 				else break;
 			case AlisaPackage.VERIFICATION_RESULT:
-				if(context == grammarAccess.getVerificationResultRule()) {
+				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getVerificationResultRule()) {
 					sequence_VerificationResult(context, (VerificationResult) semanticObject); 
 					return; 
 				}
@@ -199,7 +217,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (
-	 *         (importedNamespace+=[Document|ID] importedNamespace+=[Document|ID]*)? 
+	 *         (importedNamespace+=[AlisaNameSpace|ID] importedNamespace+=[AlisaNameSpace|ID]*)? 
 	 *         (importedNamespace+=[AadlPackage|QPREF] importedNamespace+=[AadlPackage|QPREF]*)? 
 	 *         (
 	 *             content+=Goals | 

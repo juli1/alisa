@@ -4,8 +4,6 @@ package edu.cmu.sei.alisa.alisa;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Verification Result</b></em>'.
@@ -28,7 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface VerificationResult extends EObject
+public interface VerificationResult extends AlisaElement
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

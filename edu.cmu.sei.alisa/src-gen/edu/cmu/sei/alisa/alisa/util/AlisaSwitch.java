@@ -79,6 +79,20 @@ public class AlisaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AlisaPackage.ALISA_ELEMENT:
+      {
+        AlisaElement alisaElement = (AlisaElement)theEObject;
+        T result = caseAlisaElement(alisaElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.ALISA_NAME_SPACE:
+      {
+        AlisaNameSpace alisaNameSpace = (AlisaNameSpace)theEObject;
+        T result = caseAlisaNameSpace(alisaNameSpace);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AlisaPackage.DOCUMENT:
       {
         Document document = (Document)theEObject;
@@ -90,6 +104,8 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         RequirementDocument requirementDocument = (RequirementDocument)theEObject;
         T result = caseRequirementDocument(requirementDocument);
+        if (result == null) result = caseAlisaElement(requirementDocument);
+        if (result == null) result = caseAlisaNameSpace(requirementDocument);
         if (result == null) result = caseDocument(requirementDocument);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -98,6 +114,8 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         VerificationLibrary verificationLibrary = (VerificationLibrary)theEObject;
         T result = caseVerificationLibrary(verificationLibrary);
+        if (result == null) result = caseAlisaElement(verificationLibrary);
+        if (result == null) result = caseAlisaNameSpace(verificationLibrary);
         if (result == null) result = caseDocument(verificationLibrary);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -106,6 +124,8 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         Goals goals = (Goals)theEObject;
         T result = caseGoals(goals);
+        if (result == null) result = caseAlisaElement(goals);
+        if (result == null) result = caseAlisaNameSpace(goals);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -113,6 +133,7 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         Goal goal = (Goal)theEObject;
         T result = caseGoal(goal);
+        if (result == null) result = caseAlisaElement(goal);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -120,6 +141,8 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         Requirements requirements = (Requirements)theEObject;
         T result = caseRequirements(requirements);
+        if (result == null) result = caseAlisaElement(requirements);
+        if (result == null) result = caseAlisaNameSpace(requirements);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -127,6 +150,7 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         Requirement requirement = (Requirement)theEObject;
         T result = caseRequirement(requirement);
+        if (result == null) result = caseAlisaElement(requirement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -134,6 +158,8 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         ExternalDocuments externalDocuments = (ExternalDocuments)theEObject;
         T result = caseExternalDocuments(externalDocuments);
+        if (result == null) result = caseAlisaElement(externalDocuments);
+        if (result == null) result = caseAlisaNameSpace(externalDocuments);
         if (result == null) result = caseDocument(externalDocuments);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -170,6 +196,7 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         Stakeholder stakeholder = (Stakeholder)theEObject;
         T result = caseStakeholder(stakeholder);
+        if (result == null) result = caseAlisaElement(stakeholder);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -177,6 +204,8 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         Stakeholders stakeholders = (Stakeholders)theEObject;
         T result = caseStakeholders(stakeholders);
+        if (result == null) result = caseAlisaElement(stakeholders);
+        if (result == null) result = caseAlisaNameSpace(stakeholders);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -184,6 +213,7 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         DocumentedRequirement documentedRequirement = (DocumentedRequirement)theEObject;
         T result = caseDocumentedRequirement(documentedRequirement);
+        if (result == null) result = caseAlisaElement(documentedRequirement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -219,6 +249,7 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         VerificationActivity verificationActivity = (VerificationActivity)theEObject;
         T result = caseVerificationActivity(verificationActivity);
+        if (result == null) result = caseAlisaElement(verificationActivity);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -226,6 +257,7 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         VerificationResult verificationResult = (VerificationResult)theEObject;
         T result = caseVerificationResult(verificationResult);
+        if (result == null) result = caseAlisaElement(verificationResult);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -245,6 +277,38 @@ public class AlisaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAlisaModel(AlisaModel object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlisaElement(AlisaElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Name Space</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Name Space</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlisaNameSpace(AlisaNameSpace object)
   {
     return null;
   }

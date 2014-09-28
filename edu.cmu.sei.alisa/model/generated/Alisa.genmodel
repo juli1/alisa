@@ -11,13 +11,15 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//AlisaModel/importedNamespace"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//AlisaModel/content"/>
     </genClasses>
-    <genClasses ecoreClass="Alisa.ecore#//Document">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Document/name"/>
-    </genClasses>
+    <genClasses ecoreClass="Alisa.ecore#//AlisaElement"/>
+    <genClasses ecoreClass="Alisa.ecore#//AlisaNameSpace"/>
+    <genClasses ecoreClass="Alisa.ecore#//Document"/>
     <genClasses ecoreClass="Alisa.ecore#//RequirementDocument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//RequirementDocument/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//RequirementDocument/content"/>
     </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//VerificationLibrary">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//VerificationLibrary/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//VerificationLibrary/content"/>
     </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//Goals">
@@ -67,6 +69,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Requirement/docReferences"/>
     </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//ExternalDocuments">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ExternalDocuments/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//ExternalDocuments/docs"/>
     </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//ExternalDocument">

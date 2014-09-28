@@ -38,6 +38,8 @@ public class AlisaParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getAlisaModelAccess().getContentAlternatives_2_0(), "rule__AlisaModel__ContentAlternatives_2_0");
+					put(grammarAccess.getAlisaElementAccess().getAlternatives(), "rule__AlisaElement__Alternatives");
+					put(grammarAccess.getAlisaNameSpaceAccess().getAlternatives(), "rule__AlisaNameSpace__Alternatives");
 					put(grammarAccess.getDocumentAccess().getAlternatives(), "rule__Document__Alternatives");
 					put(grammarAccess.getRequirementDocumentAccess().getContentAlternatives_3_0(), "rule__RequirementDocument__ContentAlternatives_3_0");
 					put(grammarAccess.getVerificationLibraryAccess().getContentAlternatives_3_0(), "rule__VerificationLibrary__ContentAlternatives_3_0");

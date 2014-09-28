@@ -2,7 +2,6 @@
  */
 package edu.cmu.sei.alisa.alisa;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Stakeholder extends EObject
+public interface Stakeholder extends AlisaElement
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

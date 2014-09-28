@@ -4,8 +4,10 @@ package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.Alias;
 import edu.cmu.sei.alisa.alisa.Aliases;
+import edu.cmu.sei.alisa.alisa.AlisaElement;
 import edu.cmu.sei.alisa.alisa.AlisaFactory;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
+import edu.cmu.sei.alisa.alisa.AlisaNameSpace;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.Document;
 import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
@@ -51,6 +53,20 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * @generated
    */
   private EClass alisaModelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alisaElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alisaNameSpaceEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -300,9 +316,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDocument()
+  public EClass getAlisaElement()
   {
-    return documentEClass;
+    return alisaElementEClass;
   }
 
   /**
@@ -310,9 +326,19 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDocument_Name()
+  public EClass getAlisaNameSpace()
   {
-    return (EAttribute)documentEClass.getEStructuralFeatures().get(0);
+    return alisaNameSpaceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDocument()
+  {
+    return documentEClass;
   }
 
   /**
@@ -330,9 +356,19 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getRequirementDocument_Name()
+  {
+    return (EAttribute)requirementDocumentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getRequirementDocument_Content()
   {
-    return (EReference)requirementDocumentEClass.getEStructuralFeatures().get(0);
+    return (EReference)requirementDocumentEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -350,9 +386,19 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getVerificationLibrary_Name()
+  {
+    return (EAttribute)verificationLibraryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getVerificationLibrary_Content()
   {
-    return (EReference)verificationLibraryEClass.getEStructuralFeatures().get(0);
+    return (EReference)verificationLibraryEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -790,9 +836,19 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getExternalDocuments_Name()
+  {
+    return (EAttribute)externalDocumentsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getExternalDocuments_Docs()
   {
-    return (EReference)externalDocumentsEClass.getEStructuralFeatures().get(0);
+    return (EReference)externalDocumentsEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1509,13 +1565,18 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEReference(alisaModelEClass, ALISA_MODEL__IMPORTED_NAMESPACE);
     createEReference(alisaModelEClass, ALISA_MODEL__CONTENT);
 
+    alisaElementEClass = createEClass(ALISA_ELEMENT);
+
+    alisaNameSpaceEClass = createEClass(ALISA_NAME_SPACE);
+
     documentEClass = createEClass(DOCUMENT);
-    createEAttribute(documentEClass, DOCUMENT__NAME);
 
     requirementDocumentEClass = createEClass(REQUIREMENT_DOCUMENT);
+    createEAttribute(requirementDocumentEClass, REQUIREMENT_DOCUMENT__NAME);
     createEReference(requirementDocumentEClass, REQUIREMENT_DOCUMENT__CONTENT);
 
     verificationLibraryEClass = createEClass(VERIFICATION_LIBRARY);
+    createEAttribute(verificationLibraryEClass, VERIFICATION_LIBRARY__NAME);
     createEReference(verificationLibraryEClass, VERIFICATION_LIBRARY__CONTENT);
 
     goalsEClass = createEClass(GOALS);
@@ -1565,6 +1626,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEReference(requirementEClass, REQUIREMENT__DOC_REFERENCES);
 
     externalDocumentsEClass = createEClass(EXTERNAL_DOCUMENTS);
+    createEAttribute(externalDocumentsEClass, EXTERNAL_DOCUMENTS__NAME);
     createEReference(externalDocumentsEClass, EXTERNAL_DOCUMENTS__DOCS);
 
     externalDocumentEClass = createEClass(EXTERNAL_DOCUMENT);
@@ -1682,22 +1744,45 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    requirementDocumentEClass.getESuperTypes().add(this.getAlisaElement());
+    requirementDocumentEClass.getESuperTypes().add(this.getAlisaNameSpace());
     requirementDocumentEClass.getESuperTypes().add(this.getDocument());
+    verificationLibraryEClass.getESuperTypes().add(this.getAlisaElement());
+    verificationLibraryEClass.getESuperTypes().add(this.getAlisaNameSpace());
     verificationLibraryEClass.getESuperTypes().add(this.getDocument());
+    goalsEClass.getESuperTypes().add(this.getAlisaElement());
+    goalsEClass.getESuperTypes().add(this.getAlisaNameSpace());
+    goalEClass.getESuperTypes().add(this.getAlisaElement());
+    requirementsEClass.getESuperTypes().add(this.getAlisaElement());
+    requirementsEClass.getESuperTypes().add(this.getAlisaNameSpace());
+    requirementEClass.getESuperTypes().add(this.getAlisaElement());
+    externalDocumentsEClass.getESuperTypes().add(this.getAlisaElement());
+    externalDocumentsEClass.getESuperTypes().add(this.getAlisaNameSpace());
     externalDocumentsEClass.getESuperTypes().add(this.getDocument());
+    stakeholderEClass.getESuperTypes().add(this.getAlisaElement());
+    stakeholdersEClass.getESuperTypes().add(this.getAlisaElement());
+    stakeholdersEClass.getESuperTypes().add(this.getAlisaNameSpace());
+    documentedRequirementEClass.getESuperTypes().add(this.getAlisaElement());
+    verificationActivityEClass.getESuperTypes().add(this.getAlisaElement());
+    verificationResultEClass.getESuperTypes().add(this.getAlisaElement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(alisaModelEClass, AlisaModel.class, "AlisaModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAlisaModel_ImportedNamespace(), theEcorePackage.getEObject(), null, "importedNamespace", null, 0, -1, AlisaModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAlisaModel_Content(), theEcorePackage.getEObject(), null, "content", null, 0, -1, AlisaModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(alisaElementEClass, AlisaElement.class, "AlisaElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(alisaNameSpaceEClass, AlisaNameSpace.class, "AlisaNameSpace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(documentEClass, Document.class, "Document", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDocument_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(requirementDocumentEClass, RequirementDocument.class, "RequirementDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRequirementDocument_Name(), theEcorePackage.getEString(), "name", null, 0, 1, RequirementDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRequirementDocument_Content(), theEcorePackage.getEObject(), null, "content", null, 0, -1, RequirementDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verificationLibraryEClass, VerificationLibrary.class, "VerificationLibrary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVerificationLibrary_Name(), theEcorePackage.getEString(), "name", null, 0, 1, VerificationLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVerificationLibrary_Content(), theEcorePackage.getEObject(), null, "content", null, 0, -1, VerificationLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(goalsEClass, Goals.class, "Goals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1747,6 +1832,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEReference(getRequirement_DocReferences(), this.getExternalDocument(), null, "docReferences", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(externalDocumentsEClass, ExternalDocuments.class, "ExternalDocuments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getExternalDocuments_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ExternalDocuments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExternalDocuments_Docs(), this.getExternalDocument(), null, "docs", null, 0, -1, ExternalDocuments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(externalDocumentEClass, ExternalDocument.class, "ExternalDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

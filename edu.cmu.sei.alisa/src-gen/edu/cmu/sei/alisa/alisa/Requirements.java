@@ -4,8 +4,6 @@ package edu.cmu.sei.alisa.alisa;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 import org.osate.aadl2.NamedElement;
 
 /**
@@ -26,7 +24,7 @@ import org.osate.aadl2.NamedElement;
  * @model
  * @generated
  */
-public interface Requirements extends EObject
+public interface Requirements extends AlisaElement, AlisaNameSpace
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

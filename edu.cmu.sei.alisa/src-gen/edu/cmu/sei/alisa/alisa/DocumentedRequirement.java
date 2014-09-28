@@ -4,8 +4,6 @@ package edu.cmu.sei.alisa.alisa;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Documented Requirement</b></em>'.
@@ -29,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface DocumentedRequirement extends EObject
+public interface DocumentedRequirement extends AlisaElement
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

@@ -9,17 +9,25 @@ import "platform:/resource/org.osate.aadl2/model/aadl2.ecore" as aadl2
 
 
 AlisaModel:
-	('imports' importedNamespace+=[Document](',' importedNamespace+=[Document])*';')?
+//	'unit' name = ID
+	('imports' importedNamespace+=[AlisaNameSpace](',' importedNamespace+=[AlisaNameSpace])*';')?
 	('with' importedNamespace+=[aadl2::AadlPackage|QPREF](',' importedNamespace+=[aadl2::AadlPackage|QPREF])*';')?
 	content+=(Goals | Requirements | VerificationLibrary | RequirementDocument  
 		| Stakeholders |ExternalDocuments 
 		|Aliases | Notes
 	)*;
 
+AlisaElement :
+Requirement| Goal|DocumentedRequirement|Stakeholder
+| Stakeholders | Goals | Requirements
+|RequirementDocument | ExternalDocuments | VerificationLibrary
+|VerificationActivity|VerificationResult;
 
-//AlisaModel:
-//	content+=(Stakeholder|Requirement|VerificationActivity|VerificationResult|ElementType)*;
-//	
+
+AlisaNameSpace: 
+	RequirementDocument | ExternalDocuments | VerificationLibrary
+	| Goals | Requirements | Stakeholders
+;
 
 Document: 
 	RequirementDocument | ExternalDocuments | VerificationLibrary
@@ -124,15 +132,6 @@ Notes:
 	notes+=ValueString ( notes+=ValueString)*
 	'end' 'notes'';'
 ;
-
-//
-//NamedElement returns aadl2::NamedElement:
-//Requirement| Goal|DocumentedRequirement|Stakeholder
-//|VerificationActivity|VerificationResult;
-
-//Element returns aadl2::Element:
-//	Goals | ReqSpecifications 
-//;
 
 
 
