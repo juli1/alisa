@@ -4,6 +4,7 @@ package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.Category;
+import edu.cmu.sei.alisa.alisa.ContractualElement;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
@@ -286,7 +287,7 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * @generated
    * @ordered
    */
-  protected EList<Requirement> systemRequirementReference;
+  protected EList<ContractualElement> systemRequirementReference;
 
   /**
    * The cached value of the '{@link #getDocReference() <em>Doc Reference</em>}' containment reference list.
@@ -602,11 +603,11 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Requirement> getSystemRequirementReference()
+  public EList<ContractualElement> getSystemRequirementReference()
   {
     if (systemRequirementReference == null)
     {
-      systemRequirementReference = new EObjectResolvingEList<Requirement>(Requirement.class, this, AlisaPackage.REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE);
+      systemRequirementReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE);
     }
     return systemRequirementReference;
   }
@@ -764,7 +765,7 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
         return;
       case AlisaPackage.REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE:
         getSystemRequirementReference().clear();
-        getSystemRequirementReference().addAll((Collection<? extends Requirement>)newValue);
+        getSystemRequirementReference().addAll((Collection<? extends ContractualElement>)newValue);
         return;
       case AlisaPackage.REQUIREMENT__DOC_REFERENCE:
         getDocReference().clear();

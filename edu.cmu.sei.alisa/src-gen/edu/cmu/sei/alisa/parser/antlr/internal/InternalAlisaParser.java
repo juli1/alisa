@@ -3550,7 +3550,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
             	    	        }
             	            
             	     
-            	    	        newCompositeNode(grammarAccess.getGoalAccess().getSystemRequirementReferenceRequirementCrossReference_2_14_4_0()); 
+            	    	        newCompositeNode(grammarAccess.getGoalAccess().getSystemRequirementReferenceContractualElementCrossReference_2_14_4_0()); 
             	    	    
             	    pushFollow(FOLLOW_ruleREQREF_in_ruleGoal3533);
             	    ruleREQREF();
@@ -3597,7 +3597,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
             	    	    	        }
             	    	            
             	    	     
-            	    	    	        newCompositeNode(grammarAccess.getGoalAccess().getSystemRequirementReferenceRequirementCrossReference_2_14_5_1_0()); 
+            	    	    	        newCompositeNode(grammarAccess.getGoalAccess().getSystemRequirementReferenceContractualElementCrossReference_2_14_5_1_0()); 
             	    	    	    
             	    	    pushFollow(FOLLOW_ruleREQREF_in_ruleGoal3569);
             	    	    ruleREQREF();
@@ -6156,7 +6156,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
             	    	        }
             	            
             	     
-            	    	        newCompositeNode(grammarAccess.getRequirementAccess().getSystemRequirementReferenceRequirementCrossReference_2_15_4_0()); 
+            	    	        newCompositeNode(grammarAccess.getRequirementAccess().getSystemRequirementReferenceContractualElementCrossReference_2_15_4_0()); 
             	    	    
             	    pushFollow(FOLLOW_ruleREQREF_in_ruleRequirement6352);
             	    ruleREQREF();
@@ -6203,7 +6203,7 @@ public class InternalAlisaParser extends AbstractInternalAntlrParser {
             	    	    	        }
             	    	            
             	    	     
-            	    	    	        newCompositeNode(grammarAccess.getRequirementAccess().getSystemRequirementReferenceRequirementCrossReference_2_15_5_1_0()); 
+            	    	    	        newCompositeNode(grammarAccess.getRequirementAccess().getSystemRequirementReferenceContractualElementCrossReference_2_15_5_1_0()); 
             	    	    	    
             	    	    pushFollow(FOLLOW_ruleREQREF_in_ruleRequirement6388);
             	    	    ruleREQREF();

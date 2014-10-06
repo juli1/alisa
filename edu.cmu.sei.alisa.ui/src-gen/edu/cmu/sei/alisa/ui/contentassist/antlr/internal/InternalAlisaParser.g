@@ -18019,12 +18019,12 @@ rule__Goal__SystemRequirementReferenceAssignment_2_14_4
     }
 :
 (
-{ before(grammarAccess.getGoalAccess().getSystemRequirementReferenceRequirementCrossReference_2_14_4_0()); }
+{ before(grammarAccess.getGoalAccess().getSystemRequirementReferenceContractualElementCrossReference_2_14_4_0()); }
 (
-{ before(grammarAccess.getGoalAccess().getSystemRequirementReferenceRequirementREQREFParserRuleCall_2_14_4_0_1()); }
-	ruleREQREF{ after(grammarAccess.getGoalAccess().getSystemRequirementReferenceRequirementREQREFParserRuleCall_2_14_4_0_1()); }
+{ before(grammarAccess.getGoalAccess().getSystemRequirementReferenceContractualElementREQREFParserRuleCall_2_14_4_0_1()); }
+	ruleREQREF{ after(grammarAccess.getGoalAccess().getSystemRequirementReferenceContractualElementREQREFParserRuleCall_2_14_4_0_1()); }
 )
-{ after(grammarAccess.getGoalAccess().getSystemRequirementReferenceRequirementCrossReference_2_14_4_0()); }
+{ after(grammarAccess.getGoalAccess().getSystemRequirementReferenceContractualElementCrossReference_2_14_4_0()); }
 )
 
 ;
@@ -18038,12 +18038,12 @@ rule__Goal__SystemRequirementReferenceAssignment_2_14_5_1
     }
 :
 (
-{ before(grammarAccess.getGoalAccess().getSystemRequirementReferenceRequirementCrossReference_2_14_5_1_0()); }
+{ before(grammarAccess.getGoalAccess().getSystemRequirementReferenceContractualElementCrossReference_2_14_5_1_0()); }
 (
-{ before(grammarAccess.getGoalAccess().getSystemRequirementReferenceRequirementREQREFParserRuleCall_2_14_5_1_0_1()); }
-	ruleREQREF{ after(grammarAccess.getGoalAccess().getSystemRequirementReferenceRequirementREQREFParserRuleCall_2_14_5_1_0_1()); }
+{ before(grammarAccess.getGoalAccess().getSystemRequirementReferenceContractualElementREQREFParserRuleCall_2_14_5_1_0_1()); }
+	ruleREQREF{ after(grammarAccess.getGoalAccess().getSystemRequirementReferenceContractualElementREQREFParserRuleCall_2_14_5_1_0_1()); }
 )
-{ after(grammarAccess.getGoalAccess().getSystemRequirementReferenceRequirementCrossReference_2_14_5_1_0()); }
+{ after(grammarAccess.getGoalAccess().getSystemRequirementReferenceContractualElementCrossReference_2_14_5_1_0()); }
 )
 
 ;
@@ -18578,12 +18578,12 @@ rule__Requirement__SystemRequirementReferenceAssignment_2_15_4
     }
 :
 (
-{ before(grammarAccess.getRequirementAccess().getSystemRequirementReferenceRequirementCrossReference_2_15_4_0()); }
+{ before(grammarAccess.getRequirementAccess().getSystemRequirementReferenceContractualElementCrossReference_2_15_4_0()); }
 (
-{ before(grammarAccess.getRequirementAccess().getSystemRequirementReferenceRequirementREQREFParserRuleCall_2_15_4_0_1()); }
-	ruleREQREF{ after(grammarAccess.getRequirementAccess().getSystemRequirementReferenceRequirementREQREFParserRuleCall_2_15_4_0_1()); }
+{ before(grammarAccess.getRequirementAccess().getSystemRequirementReferenceContractualElementREQREFParserRuleCall_2_15_4_0_1()); }
+	ruleREQREF{ after(grammarAccess.getRequirementAccess().getSystemRequirementReferenceContractualElementREQREFParserRuleCall_2_15_4_0_1()); }
 )
-{ after(grammarAccess.getRequirementAccess().getSystemRequirementReferenceRequirementCrossReference_2_15_4_0()); }
+{ after(grammarAccess.getRequirementAccess().getSystemRequirementReferenceContractualElementCrossReference_2_15_4_0()); }
 )
 
 ;
@@ -18597,12 +18597,12 @@ rule__Requirement__SystemRequirementReferenceAssignment_2_15_5_1
     }
 :
 (
-{ before(grammarAccess.getRequirementAccess().getSystemRequirementReferenceRequirementCrossReference_2_15_5_1_0()); }
+{ before(grammarAccess.getRequirementAccess().getSystemRequirementReferenceContractualElementCrossReference_2_15_5_1_0()); }
 (
-{ before(grammarAccess.getRequirementAccess().getSystemRequirementReferenceRequirementREQREFParserRuleCall_2_15_5_1_0_1()); }
-	ruleREQREF{ after(grammarAccess.getRequirementAccess().getSystemRequirementReferenceRequirementREQREFParserRuleCall_2_15_5_1_0_1()); }
+{ before(grammarAccess.getRequirementAccess().getSystemRequirementReferenceContractualElementREQREFParserRuleCall_2_15_5_1_0_1()); }
+	ruleREQREF{ after(grammarAccess.getRequirementAccess().getSystemRequirementReferenceContractualElementREQREFParserRuleCall_2_15_5_1_0_1()); }
 )
-{ after(grammarAccess.getRequirementAccess().getSystemRequirementReferenceRequirementCrossReference_2_15_5_1_0()); }
+{ after(grammarAccess.getRequirementAccess().getSystemRequirementReferenceContractualElementCrossReference_2_15_5_1_0()); }
 )
 
 ;

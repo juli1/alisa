@@ -340,7 +340,7 @@ public interface Goal extends ContractualElement, AlisaElement
 
   /**
    * Returns the value of the '<em><b>System Requirement Reference</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Requirement}.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.ContractualElement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>System Requirement Reference</em>' reference list isn't clear,
@@ -352,7 +352,7 @@ public interface Goal extends ContractualElement, AlisaElement
    * @model
    * @generated
    */
-  EList<Requirement> getSystemRequirementReference();
+  EList<ContractualElement> getSystemRequirementReference();
 
   /**
    * Returns the value of the '<em><b>Doc Reference</b></em>' reference list.

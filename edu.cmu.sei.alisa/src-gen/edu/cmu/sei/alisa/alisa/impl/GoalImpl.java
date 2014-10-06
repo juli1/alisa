@@ -4,9 +4,9 @@ package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.Category;
+import edu.cmu.sei.alisa.alisa.ContractualElement;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
-import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 
 import java.util.Collection;
@@ -271,7 +271,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * @generated
    * @ordered
    */
-  protected EList<Requirement> systemRequirementReference;
+  protected EList<ContractualElement> systemRequirementReference;
 
   /**
    * The cached value of the '{@link #getDocReference() <em>Doc Reference</em>}' reference list.
@@ -573,11 +573,11 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Requirement> getSystemRequirementReference()
+  public EList<ContractualElement> getSystemRequirementReference()
   {
     if (systemRequirementReference == null)
     {
-      systemRequirementReference = new EObjectResolvingEList<Requirement>(Requirement.class, this, AlisaPackage.GOAL__SYSTEM_REQUIREMENT_REFERENCE);
+      systemRequirementReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.GOAL__SYSTEM_REQUIREMENT_REFERENCE);
     }
     return systemRequirementReference;
   }
@@ -711,7 +711,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
         return;
       case AlisaPackage.GOAL__SYSTEM_REQUIREMENT_REFERENCE:
         getSystemRequirementReference().clear();
-        getSystemRequirementReference().addAll((Collection<? extends Requirement>)newValue);
+        getSystemRequirementReference().addAll((Collection<? extends ContractualElement>)newValue);
         return;
       case AlisaPackage.GOAL__DOC_REFERENCE:
         getDocReference().clear();

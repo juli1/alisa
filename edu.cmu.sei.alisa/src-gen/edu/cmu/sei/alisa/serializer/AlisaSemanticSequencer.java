@@ -243,7 +243,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (conflictsReference+=[Goal|REQREF] conflictsReference+=[Goal|REQREF]*)? 
 	 *         (stakeholderReference+=[Stakeholder|RELREF] stakeholderReference+=[Stakeholder|RELREF]*)? 
 	 *         (stakeholderRequirementReference+=[Goal|REQREF] stakeholderRequirementReference+=[Goal|REQREF]*)? 
-	 *         (systemRequirementReference+=[Requirement|REQREF] systemRequirementReference+=[Requirement|REQREF]*)? 
+	 *         (systemRequirementReference+=[ContractualElement|REQREF] systemRequirementReference+=[ContractualElement|REQREF]*)? 
 	 *         (docReference+=[ExternalDocument|RELREF] docReference+=[ExternalDocument|RELREF]*)?
 	 *     )
 	 */
@@ -312,7 +312,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (evolvesReference+=[Requirement|REQREF] evolvesReference+=[Requirement|REQREF]*)? 
 	 *         verifiedBy+=VerificationDecomposition* 
 	 *         (stakeholderRequirementReference+=[Goal|REQREF] stakeholderRequirementReference+=[Goal|REQREF]*)? 
-	 *         (systemRequirementReference+=[Requirement|REQREF] systemRequirementReference+=[Requirement|REQREF]*)? 
+	 *         (systemRequirementReference+=[ContractualElement|REQREF] systemRequirementReference+=[ContractualElement|REQREF]*)? 
 	 *         (docReference+=XDocUri docReference+=XDocUri*)?
 	 *     )
 	 */

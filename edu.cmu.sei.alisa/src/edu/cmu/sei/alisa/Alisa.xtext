@@ -80,7 +80,7 @@ Goal:
 	& ('conflicts' ':' conflictsReference+=[Goal|REQREF](',' conflictsReference+=[Goal|REQREF])*';')? 
 	& ('stakeholder' ':' stakeholderReference+=[Stakeholder|RELREF] (',' stakeholderReference+=[Stakeholder|RELREF])*';')?
 	& ('see' 'stakeholder' 'req' ':' stakeholderRequirementReference+=[Goal|REQREF] (',' stakeholderRequirementReference+=[Goal|REQREF])*';')?
-	&('see' 'system' 'req' ':' systemRequirementReference+=[Requirement|REQREF] (',' systemRequirementReference+=[Requirement|REQREF])*';')?
+	&('see' 'system' 'req' ':' systemRequirementReference+=[ContractualElement|REQREF] (',' systemRequirementReference+=[ContractualElement|REQREF])*';')?
 	& ('see' 'document' ':' docReference+=[ExternalDocument|RELREF] (',' docReference+=[ExternalDocument|RELREF])*';')? 
 	)
 	 'end''goal'';';
@@ -111,7 +111,7 @@ Requirement:
 	&('evolves' ':' evolvesReference+=[Requirement|REQREF](',' evolvesReference+=[Requirement|REQREF])*';')? 
 	&('verified' 'by' ':' verifiedBy+=(VerificationDecomposition)*)?
 	&('see' 'stakeholder' 'req' ':' stakeholderRequirementReference+=[Goal|REQREF] (',' stakeholderRequirementReference+=[Goal|REQREF])*';')?
-	&('see' 'system' 'req' ':' systemRequirementReference+=[Requirement|REQREF] (',' systemRequirementReference+=[Requirement|REQREF])*';')?
+	&('see' 'system' 'req' ':' systemRequirementReference+=[ContractualElement|REQREF] (',' systemRequirementReference+=[ContractualElement|REQREF])*';')?
 	&('see' 'document' ':' docReference+=XDocUri (',' docReference+=XDocUri)*';')? 
 	)
 	'end''requirement'';';
