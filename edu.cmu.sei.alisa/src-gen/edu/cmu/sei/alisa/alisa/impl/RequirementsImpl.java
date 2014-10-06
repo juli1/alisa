@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -34,6 +35,7 @@ import org.osate.aadl2.NamedElement;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementsImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementsImpl#getReqTarget <em>Req Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementsImpl#getReqs <em>Reqs</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementsImpl#getIssue <em>Issue</em>}</li>
  * </ul>
  * </p>
  *
@@ -80,6 +82,16 @@ public class RequirementsImpl extends AlisaElementImpl implements Requirements
    * @ordered
    */
   protected EList<Requirement> reqs;
+
+  /**
+   * The cached value of the '{@link #getIssue() <em>Issue</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIssue()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> issue;
 
   /**
    * <!-- begin-user-doc -->
@@ -187,6 +199,20 @@ public class RequirementsImpl extends AlisaElementImpl implements Requirements
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<String> getIssue()
+  {
+    if (issue == null)
+    {
+      issue = new EDataTypeEList<String>(String.class, this, AlisaPackage.REQUIREMENTS__ISSUE);
+    }
+    return issue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -215,6 +241,8 @@ public class RequirementsImpl extends AlisaElementImpl implements Requirements
         return basicGetReqTarget();
       case AlisaPackage.REQUIREMENTS__REQS:
         return getReqs();
+      case AlisaPackage.REQUIREMENTS__ISSUE:
+        return getIssue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -240,6 +268,10 @@ public class RequirementsImpl extends AlisaElementImpl implements Requirements
         getReqs().clear();
         getReqs().addAll((Collection<? extends Requirement>)newValue);
         return;
+      case AlisaPackage.REQUIREMENTS__ISSUE:
+        getIssue().clear();
+        getIssue().addAll((Collection<? extends String>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -263,6 +295,9 @@ public class RequirementsImpl extends AlisaElementImpl implements Requirements
       case AlisaPackage.REQUIREMENTS__REQS:
         getReqs().clear();
         return;
+      case AlisaPackage.REQUIREMENTS__ISSUE:
+        getIssue().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -283,6 +318,8 @@ public class RequirementsImpl extends AlisaElementImpl implements Requirements
         return reqTarget != null;
       case AlisaPackage.REQUIREMENTS__REQS:
         return reqs != null && !reqs.isEmpty();
+      case AlisaPackage.REQUIREMENTS__ISSUE:
+        return issue != null && !issue.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -300,6 +337,8 @@ public class RequirementsImpl extends AlisaElementImpl implements Requirements
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", issue: ");
+    result.append(issue);
     result.append(')');
     return result.toString();
   }

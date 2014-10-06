@@ -190,20 +190,10 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID extends=[Category|CATREF])
+	 *     (name=ID extends=[Category|CATREF]?)
 	 */
 	protected void sequence_Category(EObject context, Category semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AlisaPackage.Literals.CATEGORY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AlisaPackage.Literals.CATEGORY__NAME));
-			if(transientValues.isValueTransient(semanticObject, AlisaPackage.Literals.CATEGORY__EXTENDS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AlisaPackage.Literals.CATEGORY__EXTENDS));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getCategoryAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getCategoryAccess().getExtendsCategoryCATREFParserRuleCall_2_0_1(), semanticObject.getExtends());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -264,7 +254,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID goalTarget=[NamedElement|QCLREF] goals+=Goal*)
+	 *     (name=ID goalTarget=[NamedElement|QCLREF] goals+=Goal* (issue+=ValueString issue+=ValueString*)?)
 	 */
 	protected void sequence_Goals(EObject context, Goals semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -333,7 +323,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID reqTarget=[NamedElement|QCLREF] reqs+=Requirement*)
+	 *     (name=ID reqTarget=[NamedElement|QCLREF] reqs+=Requirement* (issue+=ValueString issue+=ValueString*)?)
 	 */
 	protected void sequence_Requirements(EObject context, Requirements semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

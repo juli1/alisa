@@ -545,6 +545,11 @@ ruleRDAPackage returns [EObject current=null]
     {
     	newLeafNode(otherlv_14, grammarAccess.getRDAPackageAccess().getPackageKeyword_6());
     }
+
+	otherlv_15=Semicolon
+    {
+    	newLeafNode(otherlv_15, grammarAccess.getRDAPackageAccess().getSemicolonKeyword_7());
+    }
 )
 ;
 
@@ -627,20 +632,76 @@ ruleGoals returns [EObject current=null]
 	    }
 
 )
-)*
-	otherlv_5=End
+)*(
+	otherlv_5=Issues
     {
-    	newLeafNode(otherlv_5, grammarAccess.getGoalsAccess().getEndKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getGoalsAccess().getIssuesKeyword_5_0());
     }
 
-	otherlv_6=Goals
+	otherlv_6=Colon
     {
-    	newLeafNode(otherlv_6, grammarAccess.getGoalsAccess().getGoalsKeyword_6());
+    	newLeafNode(otherlv_6, grammarAccess.getGoalsAccess().getColonKeyword_5_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getGoalsAccess().getIssueValueStringParserRuleCall_5_2_0()); 
+	    }
+		lv_issue_7_0=ruleValueString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getGoalsRule());
+	        }
+       		add(
+       			$current, 
+       			"issue",
+        		lv_issue_7_0, 
+        		"ValueString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+	otherlv_8=Comma
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getGoalsAccess().getCommaKeyword_5_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getGoalsAccess().getIssueValueStringParserRuleCall_5_3_1_0()); 
+	    }
+		lv_issue_9_0=ruleValueString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getGoalsRule());
+	        }
+       		add(
+       			$current, 
+       			"issue",
+        		lv_issue_9_0, 
+        		"ValueString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*
+	otherlv_10=Semicolon
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getGoalsAccess().getSemicolonKeyword_5_4());
+    }
+)?
+	otherlv_11=End
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getGoalsAccess().getEndKeyword_6());
     }
 
-	otherlv_7=Semicolon
+	otherlv_12=Goals
     {
-    	newLeafNode(otherlv_7, grammarAccess.getGoalsAccess().getSemicolonKeyword_7());
+    	newLeafNode(otherlv_12, grammarAccess.getGoalsAccess().getGoalsKeyword_7());
+    }
+
+	otherlv_13=Semicolon
+    {
+    	newLeafNode(otherlv_13, grammarAccess.getGoalsAccess().getSemicolonKeyword_8());
     }
 )
 ;
@@ -1708,20 +1769,76 @@ ruleRequirements returns [EObject current=null]
 	    }
 
 )
-)*
-	otherlv_5=End
+)*(
+	otherlv_5=Issues
     {
-    	newLeafNode(otherlv_5, grammarAccess.getRequirementsAccess().getEndKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getRequirementsAccess().getIssuesKeyword_5_0());
     }
 
-	otherlv_6=Requirements
+	otherlv_6=Colon
     {
-    	newLeafNode(otherlv_6, grammarAccess.getRequirementsAccess().getRequirementsKeyword_6());
+    	newLeafNode(otherlv_6, grammarAccess.getRequirementsAccess().getColonKeyword_5_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRequirementsAccess().getIssueValueStringParserRuleCall_5_2_0()); 
+	    }
+		lv_issue_7_0=ruleValueString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRequirementsRule());
+	        }
+       		add(
+       			$current, 
+       			"issue",
+        		lv_issue_7_0, 
+        		"ValueString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+	otherlv_8=Comma
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getRequirementsAccess().getCommaKeyword_5_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRequirementsAccess().getIssueValueStringParserRuleCall_5_3_1_0()); 
+	    }
+		lv_issue_9_0=ruleValueString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRequirementsRule());
+	        }
+       		add(
+       			$current, 
+       			"issue",
+        		lv_issue_9_0, 
+        		"ValueString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*
+	otherlv_10=Semicolon
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getRequirementsAccess().getSemicolonKeyword_5_4());
+    }
+)?
+	otherlv_11=End
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getRequirementsAccess().getEndKeyword_6());
     }
 
-	otherlv_7=Semicolon
+	otherlv_12=Requirements
     {
-    	newLeafNode(otherlv_7, grammarAccess.getRequirementsAccess().getSemicolonKeyword_7());
+    	newLeafNode(otherlv_12, grammarAccess.getRequirementsAccess().getRequirementsKeyword_7());
+    }
+
+	otherlv_13=Semicolon
+    {
+    	newLeafNode(otherlv_13, grammarAccess.getRequirementsAccess().getSemicolonKeyword_8());
     }
 )
 ;
@@ -3104,11 +3221,16 @@ ruleCategory returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
 (
-		lv_name_0_0=RULE_ID
+	otherlv_0=Category
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getCategoryAccess().getCategoryKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getCategoryAccess().getNameIDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getCategoryAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -3117,15 +3239,15 @@ ruleCategory returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_0_0, 
+        		lv_name_1_0, 
         		"ID");
 	    }
 
 )
-)
-	otherlv_1=Extends
+)(
+	otherlv_2=Extends
     {
-    	newLeafNode(otherlv_1, grammarAccess.getCategoryAccess().getExtendsKeyword_1());
+    	newLeafNode(otherlv_2, grammarAccess.getCategoryAccess().getExtendsKeyword_2_0());
     }
 (
 (
@@ -3135,14 +3257,19 @@ ruleCategory returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getCategoryAccess().getExtendsCategoryCrossReference_2_0()); 
+	        newCompositeNode(grammarAccess.getCategoryAccess().getExtendsCategoryCrossReference_2_1_0()); 
 	    }
 		ruleCATREF		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))
+))?
+	otherlv_4=Semicolon
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getCategoryAccess().getSemicolonKeyword_3());
+    }
+)
 ;
 
 

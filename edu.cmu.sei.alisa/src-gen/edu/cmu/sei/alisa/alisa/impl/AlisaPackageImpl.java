@@ -477,6 +477,16 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getGoals_Issue()
+  {
+    return (EAttribute)goalsEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getGoal()
   {
     return goalEClass;
@@ -690,6 +700,16 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
   public EReference getRequirements_Reqs()
   {
     return (EReference)requirementsEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRequirements_Issue()
+  {
+    return (EAttribute)requirementsEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1409,6 +1429,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEAttribute(goalsEClass, GOALS__NAME);
     createEReference(goalsEClass, GOALS__GOAL_TARGET);
     createEReference(goalsEClass, GOALS__GOALS);
+    createEAttribute(goalsEClass, GOALS__ISSUE);
 
     goalEClass = createEClass(GOAL);
     createEAttribute(goalEClass, GOAL__NAME);
@@ -1433,6 +1454,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEAttribute(requirementsEClass, REQUIREMENTS__NAME);
     createEReference(requirementsEClass, REQUIREMENTS__REQ_TARGET);
     createEReference(requirementsEClass, REQUIREMENTS__REQS);
+    createEAttribute(requirementsEClass, REQUIREMENTS__ISSUE);
 
     requirementEClass = createEClass(REQUIREMENT);
     createEAttribute(requirementEClass, REQUIREMENT__NAME);
@@ -1608,6 +1630,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEAttribute(getGoals_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Goals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGoals_GoalTarget(), theAadl2Package.getNamedElement(), null, "goalTarget", null, 0, 1, Goals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGoals_Goals(), this.getGoal(), null, "goals", null, 0, -1, Goals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGoals_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, Goals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGoal_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1632,6 +1655,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEAttribute(getRequirements_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRequirements_ReqTarget(), theAadl2Package.getNamedElement(), null, "reqTarget", null, 0, 1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRequirements_Reqs(), this.getRequirement(), null, "reqs", null, 0, -1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRequirements_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(requirementEClass, Requirement.class, "Requirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRequirement_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

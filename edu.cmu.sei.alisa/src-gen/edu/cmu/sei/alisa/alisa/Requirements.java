@@ -17,6 +17,7 @@ import org.osate.aadl2.NamedElement;
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirements#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirements#getReqTarget <em>Req Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirements#getReqs <em>Reqs</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirements#getIssue <em>Issue</em>}</li>
  * </ul>
  * </p>
  *
@@ -93,5 +94,21 @@ public interface Requirements extends AlisaElement, AlisaNameSpace
    * @generated
    */
   EList<Requirement> getReqs();
+
+  /**
+   * Returns the value of the '<em><b>Issue</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Issue</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Issue</em>' attribute list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirements_Issue()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getIssue();
 
 } // Requirements

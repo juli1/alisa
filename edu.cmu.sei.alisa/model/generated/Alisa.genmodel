@@ -39,6 +39,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Goals/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Goals/goalTarget"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//Goals/goals"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Goals/issue"/>
     </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//Goal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Goal/name"/>
@@ -63,6 +64,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Requirements/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Requirements/reqTarget"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//Requirements/reqs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Requirements/issue"/>
     </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//Requirement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Requirement/name"/>

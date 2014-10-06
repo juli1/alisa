@@ -13,8 +13,8 @@ import edu.cmu.sei.alisa.alisa.Requirement
 import edu.cmu.sei.alisa.alisa.Goal
 import edu.cmu.sei.alisa.alisa.Goals
 import edu.cmu.sei.alisa.alisa.Requirements
+import edu.cmu.sei.alisa.alisa.RequirementDocument
 
-//import org.eclipse.xtext.validation.Check
 
 /**
  * Custom validation rules. 
@@ -121,6 +121,7 @@ class AlisaValidator extends AbstractAlisaValidator
 	
 	def checkGoalName(Goal requirement)
 	{
+		if (requirement.eContainer() instanceof Goals){
 		var model = (requirement.eContainer() as Goals);
 		if (model != null) {
 			for (other : model.goals)
@@ -139,5 +140,25 @@ class AlisaValidator extends AbstractAlisaValidator
 				}
 			}
 		}
+		} else 	if (requirement.eContainer() instanceof RequirementDocument){
+		var model = (requirement.eContainer() as RequirementDocument);
+		if (model != null) {
+			for (other : model.content)
+			{
+				if (other instanceof Goal)
+				{
+					var otherReq = other as Goal;
+					if (otherReq != null)
+					{
+						if ((otherReq != requirement) && (otherReq.name.equalsIgnoreCase(requirement.name)))
+						{
+							error("Requirements names have to be unique", AlisaPackage$Literals::REQUIREMENT__NAME);
+							return;
+						}
+					}
+				}
+			}
+		}
+		}			
 	}
 }

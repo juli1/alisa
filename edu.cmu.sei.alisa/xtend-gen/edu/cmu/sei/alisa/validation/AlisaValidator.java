@@ -6,10 +6,12 @@ package edu.cmu.sei.alisa.validation;
 import com.google.common.base.Objects;
 import edu.cmu.sei.alisa.alisa.AlisaElement;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
+import edu.cmu.sei.alisa.alisa.ContractualElement;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Goals;
 import edu.cmu.sei.alisa.alisa.Organization;
 import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Requirements;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
@@ -146,28 +148,63 @@ public class AlisaValidator extends AbstractAlisaValidator {
   
   public void checkGoalName(final Goal requirement) {
     EObject _eContainer = requirement.eContainer();
-    Goals model = ((Goals) _eContainer);
-    boolean _notEquals = (!Objects.equal(model, null));
-    if (_notEquals) {
-      EList<Goal> _goals = model.getGoals();
-      for (final Goal other : _goals) {
-        if ((other instanceof Goal)) {
-          Goal otherReq = ((Goal) other);
-          boolean _notEquals_1 = (!Objects.equal(otherReq, null));
-          if (_notEquals_1) {
-            boolean _and = false;
-            boolean _notEquals_2 = (!Objects.equal(otherReq, requirement));
-            if (!_notEquals_2) {
-              _and = false;
-            } else {
-              String _name = otherReq.getName();
-              String _name_1 = requirement.getName();
-              boolean _equalsIgnoreCase = _name.equalsIgnoreCase(_name_1);
-              _and = _equalsIgnoreCase;
+    if ((_eContainer instanceof Goals)) {
+      EObject _eContainer_1 = requirement.eContainer();
+      Goals model = ((Goals) _eContainer_1);
+      boolean _notEquals = (!Objects.equal(model, null));
+      if (_notEquals) {
+        EList<Goal> _goals = model.getGoals();
+        for (final Goal other : _goals) {
+          if ((other instanceof Goal)) {
+            Goal otherReq = ((Goal) other);
+            boolean _notEquals_1 = (!Objects.equal(otherReq, null));
+            if (_notEquals_1) {
+              boolean _and = false;
+              boolean _notEquals_2 = (!Objects.equal(otherReq, requirement));
+              if (!_notEquals_2) {
+                _and = false;
+              } else {
+                String _name = otherReq.getName();
+                String _name_1 = requirement.getName();
+                boolean _equalsIgnoreCase = _name.equalsIgnoreCase(_name_1);
+                _and = _equalsIgnoreCase;
+              }
+              if (_and) {
+                this.error("Requirements names have to be unique", AlisaPackage.Literals.REQUIREMENT__NAME);
+                return;
+              }
             }
-            if (_and) {
-              this.error("Requirements names have to be unique", AlisaPackage.Literals.REQUIREMENT__NAME);
-              return;
+          }
+        }
+      }
+    } else {
+      EObject _eContainer_2 = requirement.eContainer();
+      if ((_eContainer_2 instanceof RequirementDocument)) {
+        EObject _eContainer_3 = requirement.eContainer();
+        RequirementDocument model_1 = ((RequirementDocument) _eContainer_3);
+        boolean _notEquals_3 = (!Objects.equal(model_1, null));
+        if (_notEquals_3) {
+          EList<ContractualElement> _content = model_1.getContent();
+          for (final ContractualElement other_1 : _content) {
+            if ((other_1 instanceof Goal)) {
+              Goal otherReq_1 = ((Goal) other_1);
+              boolean _notEquals_4 = (!Objects.equal(otherReq_1, null));
+              if (_notEquals_4) {
+                boolean _and_1 = false;
+                boolean _notEquals_5 = (!Objects.equal(otherReq_1, requirement));
+                if (!_notEquals_5) {
+                  _and_1 = false;
+                } else {
+                  String _name_2 = otherReq_1.getName();
+                  String _name_3 = requirement.getName();
+                  boolean _equalsIgnoreCase_1 = _name_2.equalsIgnoreCase(_name_3);
+                  _and_1 = _equalsIgnoreCase_1;
+                }
+                if (_and_1) {
+                  this.error("Requirements names have to be unique", AlisaPackage.Literals.REQUIREMENT__NAME);
+                  return;
+                }
+              }
             }
           }
         }

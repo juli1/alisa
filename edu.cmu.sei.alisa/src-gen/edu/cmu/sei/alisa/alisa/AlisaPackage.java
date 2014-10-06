@@ -310,13 +310,22 @@ public interface AlisaPackage extends EPackage
   int GOALS__GOALS = ALISA_ELEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Issue</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOALS__ISSUE = ALISA_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Goals</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOALS_FEATURE_COUNT = ALISA_ELEMENT_FEATURE_COUNT + 3;
+  int GOALS_FEATURE_COUNT = ALISA_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl <em>Goal</em>}' class.
@@ -528,13 +537,22 @@ public interface AlisaPackage extends EPackage
   int REQUIREMENTS__REQS = ALISA_ELEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Issue</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQUIREMENTS__ISSUE = ALISA_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Requirements</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQUIREMENTS_FEATURE_COUNT = ALISA_ELEMENT_FEATURE_COUNT + 3;
+  int REQUIREMENTS_FEATURE_COUNT = ALISA_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl <em>Requirement</em>}' class.
@@ -1444,6 +1462,17 @@ public interface AlisaPackage extends EPackage
   EReference getGoals_Goals();
 
   /**
+   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.Goals#getIssue <em>Issue</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Issue</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Goals#getIssue()
+   * @see #getGoals()
+   * @generated
+   */
+  EAttribute getGoals_Issue();
+
+  /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.Goal <em>Goal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1682,6 +1711,17 @@ public interface AlisaPackage extends EPackage
    * @generated
    */
   EReference getRequirements_Reqs();
+
+  /**
+   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.Requirements#getIssue <em>Issue</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Issue</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Requirements#getIssue()
+   * @see #getRequirements()
+   * @generated
+   */
+  EAttribute getRequirements_Issue();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.Requirement <em>Requirement</em>}'.
@@ -2590,6 +2630,14 @@ public interface AlisaPackage extends EPackage
     EReference GOALS__GOALS = eINSTANCE.getGoals_Goals();
 
     /**
+     * The meta object literal for the '<em><b>Issue</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOALS__ISSUE = eINSTANCE.getGoals_Issue();
+
+    /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl <em>Goal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2768,6 +2816,14 @@ public interface AlisaPackage extends EPackage
      * @generated
      */
     EReference REQUIREMENTS__REQS = eINSTANCE.getRequirements_Reqs();
+
+    /**
+     * The meta object literal for the '<em><b>Issue</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REQUIREMENTS__ISSUE = eINSTANCE.getRequirements_Issue();
 
     /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl <em>Requirement</em>}' class.

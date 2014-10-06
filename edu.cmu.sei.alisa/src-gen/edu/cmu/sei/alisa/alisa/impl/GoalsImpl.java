@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -34,6 +35,7 @@ import org.osate.aadl2.NamedElement;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getGoalTarget <em>Goal Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getGoals <em>Goals</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getIssue <em>Issue</em>}</li>
  * </ul>
  * </p>
  *
@@ -80,6 +82,16 @@ public class GoalsImpl extends AlisaElementImpl implements Goals
    * @ordered
    */
   protected EList<Goal> goals;
+
+  /**
+   * The cached value of the '{@link #getIssue() <em>Issue</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIssue()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> issue;
 
   /**
    * <!-- begin-user-doc -->
@@ -187,6 +199,20 @@ public class GoalsImpl extends AlisaElementImpl implements Goals
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<String> getIssue()
+  {
+    if (issue == null)
+    {
+      issue = new EDataTypeEList<String>(String.class, this, AlisaPackage.GOALS__ISSUE);
+    }
+    return issue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -215,6 +241,8 @@ public class GoalsImpl extends AlisaElementImpl implements Goals
         return basicGetGoalTarget();
       case AlisaPackage.GOALS__GOALS:
         return getGoals();
+      case AlisaPackage.GOALS__ISSUE:
+        return getIssue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -240,6 +268,10 @@ public class GoalsImpl extends AlisaElementImpl implements Goals
         getGoals().clear();
         getGoals().addAll((Collection<? extends Goal>)newValue);
         return;
+      case AlisaPackage.GOALS__ISSUE:
+        getIssue().clear();
+        getIssue().addAll((Collection<? extends String>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -263,6 +295,9 @@ public class GoalsImpl extends AlisaElementImpl implements Goals
       case AlisaPackage.GOALS__GOALS:
         getGoals().clear();
         return;
+      case AlisaPackage.GOALS__ISSUE:
+        getIssue().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -283,6 +318,8 @@ public class GoalsImpl extends AlisaElementImpl implements Goals
         return goalTarget != null;
       case AlisaPackage.GOALS__GOALS:
         return goals != null && !goals.isEmpty();
+      case AlisaPackage.GOALS__ISSUE:
+        return issue != null && !issue.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -300,6 +337,8 @@ public class GoalsImpl extends AlisaElementImpl implements Goals
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", issue: ");
+    result.append(issue);
     result.append(')');
     return result.toString();
   }
