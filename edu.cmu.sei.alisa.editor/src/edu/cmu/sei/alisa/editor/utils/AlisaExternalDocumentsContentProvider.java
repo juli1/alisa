@@ -6,8 +6,6 @@ import java.util.List;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
-import edu.cmu.alisa.sei.utils.AlisaDebug;
-import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.ExternalDocuments;
 
@@ -20,16 +18,9 @@ public class AlisaExternalDocumentsContentProvider implements IStructuredContent
 	 */
 	public Object[] getElements(Object element) {
 		List<ExternalDocument> requirements = new ArrayList<ExternalDocument>();
-		AlisaDebug.debug("[AlisaRequirementsContentProvider] element=" + element);
-
-		if (element instanceof AlisaModel) {
-			AlisaModel am = (AlisaModel) element;
-			for (Object o : am.getContent()) {
-				if (o instanceof ExternalDocuments) {
-					for (ExternalDocument oo : ((ExternalDocuments) o).getDocs()) {
-						requirements.add(oo);
-					}
-				}
+		if (element instanceof ExternalDocuments) {
+			for (ExternalDocument oo : ((ExternalDocuments) element).getDocs()) {
+				requirements.add(oo);
 			}
 		}
 		return requirements.toArray();

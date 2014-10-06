@@ -5,6 +5,8 @@ package edu.cmu.sei.alisa.alisa.impl;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.VerificationResult;
+import edu.cmu.sei.alisa.alisa.VerificationResultState;
+import edu.cmu.sei.alisa.alisa.VerificationResultStatus;
 
 import java.util.Collection;
 
@@ -137,7 +139,7 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
    * @generated
    * @ordered
    */
-  protected static final String STATE_EDEFAULT = null;
+  protected static final VerificationResultState STATE_EDEFAULT = VerificationResultState.SCHEDULED;
 
   /**
    * The cached value of the '{@link #getState() <em>State</em>}' attribute.
@@ -147,7 +149,7 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
    * @generated
    * @ordered
    */
-  protected String state = STATE_EDEFAULT;
+  protected VerificationResultState state = STATE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
@@ -157,7 +159,7 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
    * @generated
    * @ordered
    */
-  protected static final String STATUS_EDEFAULT = null;
+  protected static final VerificationResultStatus STATUS_EDEFAULT = VerificationResultStatus.PASS;
 
   /**
    * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
@@ -167,7 +169,7 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
    * @generated
    * @ordered
    */
-  protected String status = STATUS_EDEFAULT;
+  protected VerificationResultStatus status = STATUS_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -301,7 +303,7 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getState()
+  public VerificationResultState getState()
   {
     return state;
   }
@@ -311,10 +313,10 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setState(String newState)
+  public void setState(VerificationResultState newState)
   {
-    String oldState = state;
-    state = newState;
+    VerificationResultState oldState = state;
+    state = newState == null ? STATE_EDEFAULT : newState;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.VERIFICATION_RESULT__STATE, oldState, state));
   }
@@ -324,7 +326,7 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getStatus()
+  public VerificationResultStatus getStatus()
   {
     return status;
   }
@@ -334,10 +336,10 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setStatus(String newStatus)
+  public void setStatus(VerificationResultStatus newStatus)
   {
-    String oldStatus = status;
-    status = newStatus;
+    VerificationResultStatus oldStatus = status;
+    status = newStatus == null ? STATUS_EDEFAULT : newStatus;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.VERIFICATION_RESULT__STATUS, oldStatus, status));
   }
@@ -398,10 +400,10 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
         setMethod((String)newValue);
         return;
       case AlisaPackage.VERIFICATION_RESULT__STATE:
-        setState((String)newValue);
+        setState((VerificationResultState)newValue);
         return;
       case AlisaPackage.VERIFICATION_RESULT__STATUS:
-        setStatus((String)newValue);
+        setStatus((VerificationResultStatus)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -463,9 +465,9 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
       case AlisaPackage.VERIFICATION_RESULT__METHOD:
         return METHOD_EDEFAULT == null ? method != null : !METHOD_EDEFAULT.equals(method);
       case AlisaPackage.VERIFICATION_RESULT__STATE:
-        return STATE_EDEFAULT == null ? state != null : !STATE_EDEFAULT.equals(state);
+        return state != STATE_EDEFAULT;
       case AlisaPackage.VERIFICATION_RESULT__STATUS:
-        return STATUS_EDEFAULT == null ? status != null : !STATUS_EDEFAULT.equals(status);
+        return status != STATUS_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

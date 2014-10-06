@@ -6,22 +6,22 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Verification Library</b></em>'.
+ * A representation of the model object '<em><b>Organization</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationLibrary#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationLibrary#getContent <em>Content</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Organization#getName <em>Name</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Organization#getStakeholder <em>Stakeholder</em>}</li>
  * </ul>
  * </p>
  *
- * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationLibrary()
+ * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getOrganization()
  * @model
  * @generated
  */
-public interface VerificationLibrary extends AlisaModel, AlisaElement, AlisaNameSpace
+public interface Organization extends AlisaModel, AlisaElement, AlisaNameSpace
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -33,14 +33,14 @@ public interface VerificationLibrary extends AlisaModel, AlisaElement, AlisaName
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationLibrary_Name()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getOrganization_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.VerificationLibrary#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Organization#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -50,19 +50,19 @@ public interface VerificationLibrary extends AlisaModel, AlisaElement, AlisaName
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Content</b></em>' containment reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.AlisaElement}.
+   * Returns the value of the '<em><b>Stakeholder</b></em>' containment reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Stakeholder}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Content</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Stakeholder</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Content</em>' containment reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationLibrary_Content()
+   * @return the value of the '<em>Stakeholder</em>' containment reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getOrganization_Stakeholder()
    * @model containment="true"
    * @generated
    */
-  EList<AlisaElement> getContent();
+  EList<Stakeholder> getStakeholder();
 
-} // VerificationLibrary
+} // Organization

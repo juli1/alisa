@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentImpl#getXternalReference <em>Xternal Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentImpl#getExternalReference <em>External Reference</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,24 +49,24 @@ public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implement
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getXternalReference() <em>Xternal Reference</em>}' attribute.
+   * The default value of the '{@link #getExternalReference() <em>External Reference</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getXternalReference()
+   * @see #getExternalReference()
    * @generated
    * @ordered
    */
-  protected static final String XTERNAL_REFERENCE_EDEFAULT = null;
+  protected static final String EXTERNAL_REFERENCE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getXternalReference() <em>Xternal Reference</em>}' attribute.
+   * The cached value of the '{@link #getExternalReference() <em>External Reference</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getXternalReference()
+   * @see #getExternalReference()
    * @generated
    * @ordered
    */
-  protected String xternalReference = XTERNAL_REFERENCE_EDEFAULT;
+  protected String externalReference = EXTERNAL_REFERENCE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,9 +117,9 @@ public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getXternalReference()
+  public String getExternalReference()
   {
-    return xternalReference;
+    return externalReference;
   }
 
   /**
@@ -127,12 +127,12 @@ public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setXternalReference(String newXternalReference)
+  public void setExternalReference(String newExternalReference)
   {
-    String oldXternalReference = xternalReference;
-    xternalReference = newXternalReference;
+    String oldExternalReference = externalReference;
+    externalReference = newExternalReference;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.EXTERNAL_DOCUMENT__XTERNAL_REFERENCE, oldXternalReference, xternalReference));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.EXTERNAL_DOCUMENT__EXTERNAL_REFERENCE, oldExternalReference, externalReference));
   }
 
   /**
@@ -147,8 +147,8 @@ public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implement
     {
       case AlisaPackage.EXTERNAL_DOCUMENT__NAME:
         return getName();
-      case AlisaPackage.EXTERNAL_DOCUMENT__XTERNAL_REFERENCE:
-        return getXternalReference();
+      case AlisaPackage.EXTERNAL_DOCUMENT__EXTERNAL_REFERENCE:
+        return getExternalReference();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -166,8 +166,8 @@ public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implement
       case AlisaPackage.EXTERNAL_DOCUMENT__NAME:
         setName((String)newValue);
         return;
-      case AlisaPackage.EXTERNAL_DOCUMENT__XTERNAL_REFERENCE:
-        setXternalReference((String)newValue);
+      case AlisaPackage.EXTERNAL_DOCUMENT__EXTERNAL_REFERENCE:
+        setExternalReference((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -186,8 +186,8 @@ public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implement
       case AlisaPackage.EXTERNAL_DOCUMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AlisaPackage.EXTERNAL_DOCUMENT__XTERNAL_REFERENCE:
-        setXternalReference(XTERNAL_REFERENCE_EDEFAULT);
+      case AlisaPackage.EXTERNAL_DOCUMENT__EXTERNAL_REFERENCE:
+        setExternalReference(EXTERNAL_REFERENCE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -205,8 +205,8 @@ public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implement
     {
       case AlisaPackage.EXTERNAL_DOCUMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AlisaPackage.EXTERNAL_DOCUMENT__XTERNAL_REFERENCE:
-        return XTERNAL_REFERENCE_EDEFAULT == null ? xternalReference != null : !XTERNAL_REFERENCE_EDEFAULT.equals(xternalReference);
+      case AlisaPackage.EXTERNAL_DOCUMENT__EXTERNAL_REFERENCE:
+        return EXTERNAL_REFERENCE_EDEFAULT == null ? externalReference != null : !EXTERNAL_REFERENCE_EDEFAULT.equals(externalReference);
     }
     return super.eIsSet(featureID);
   }
@@ -224,8 +224,8 @@ public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implement
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", xternalReference: ");
-    result.append(xternalReference);
+    result.append(", externalReference: ");
+    result.append(externalReference);
     result.append(')');
     return result.toString();
   }

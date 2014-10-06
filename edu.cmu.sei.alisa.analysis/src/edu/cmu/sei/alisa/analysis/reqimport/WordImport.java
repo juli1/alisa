@@ -14,13 +14,10 @@ import org.apache.poi.hwpf.usermodel.Table;
 import org.apache.poi.hwpf.usermodel.TableRow;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 
-import edu.cmu.alisa.sei.utils.AlisaDebug;
 import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
-import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
+import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
-import edu.cmu.sei.alisa.alisa.Stakeholder;
-import edu.cmu.sei.alisa.alisa.Stakeholders;
 import edu.cmu.sei.alisa.analysis.preferences.PreferencesValues;
 
 public class WordImport {
@@ -43,7 +40,6 @@ public class WordImport {
 	public static int getDepth(Paragraph par) {
 		for (int tmp = 0; tmp < depthToStyleIdentifier.length; tmp++) {
 			if (depthToStyleIdentifier[tmp] == par.getStyleIndex()) {
-				AlisaDebug.debug("WordImport", "style index number " + par.getStyleIndex() + " is level " + (tmp + 1));
 				return tmp;
 			}
 		}
@@ -71,14 +67,11 @@ public class WordImport {
 							tables.add(table);
 						}
 					} catch (ArrayIndexOutOfBoundsException e) {
-						AlisaDebug.debug("WordImport", "array index out of bounds2");
 					} catch (IllegalArgumentException e) {
-						AlisaDebug.debug("WordImport", "illegalargument");
 					}
 				}
 
 			} catch (ArrayIndexOutOfBoundsException e) {
-				AlisaDebug.debug("WordImport", "array index out of bounds");
 				e.printStackTrace();
 			}
 		}
@@ -86,7 +79,6 @@ public class WordImport {
 	}
 
 	public static AlisaModel importFile(String fileName, ImportType importType) {
-		AlisaModel returnedModel;
 		RequirementDocument reqdoc;
 		HWPFDocument doc;
 		POIFSFileSystem fs;
@@ -94,20 +86,19 @@ public class WordImport {
 //        Bookmarks bookmarks;
 		Range range;
 		StyleSheet styleSheet;
-		DocumentedRequirement[] currentRequirements;
-		DocumentedRequirement currentRequirement;
+		Goal[] currentRequirements;
+		Goal currentRequirement;
 		List<Table> tables;
 		int reqLevel;
 		String reqTitle;
 		String reqIdentifier;
-		DocumentedRequirement req;
+		Goal req;
 
 		currentRequirement = null;
-		currentRequirements = new DocumentedRequirement[MAX_DEPTH];
+		currentRequirements = new Goal[MAX_DEPTH];
 		fs = null;
 
-		returnedModel = Utils.createModel();
-		reqdoc = Utils.createReqDoc(returnedModel);
+		reqdoc = Utils.createRequirementDocument();
 
 		try {
 			fs = new POIFSFileSystem(new FileInputStream(fileName));
@@ -116,14 +107,14 @@ public class WordImport {
 //            bookmarks = doc.getBookmarks();
 			range = doc.getRange();
 			styleSheet = doc.getStyleSheet();
-			Stakeholder genericStakeholder;
+//			Stakeholder genericStakeholder;
 
-			/**
-			 * Instantiate a generic stakeholder
-			 */
-			Stakeholders org = Utils.createStakeholders(returnedModel);
-			genericStakeholder = Utils.addNewStakeholder(org);
-			genericStakeholder.setTitle("\"System designer\"");
+//			/**
+//			 * Instantiate a generic stakeholder
+//			 */
+//			Organization org = Utils.createOrganization();
+//			genericStakeholder = Utils.addNewStakeholder(org);
+//			genericStakeholder.setTitle("\"System designer\"");
 
 			/**
 			 * Initialize the styles table
@@ -186,16 +177,14 @@ public class WordImport {
 
 					if ((reqTitle.length() > 0) && (reqIdentifier.length() > 0)) {
 
-						AlisaDebug.debug("WordImport", "rowId  = " + rowId + " new requirement title = " + reqTitle
-								+ " identifier " + reqIdentifier);
-						req = Utils.addNewDocumentedRequirement(reqdoc);
+						req = Utils.addNewGoal(reqdoc);
 						req.setTitle("\"" + reqTitle + "\"\n");
 						req.setDescription("\"\"");
 						req.setName(reqIdentifier);
-						/**
-						 * Assign the requirement to a generic Stakeholder.
-						 */
-						req.getAssignedTo().add(genericStakeholder);
+//						/**
+//						 * Assign the requirement to a generic Stakeholder.
+//						 */
+//						req.getStakeholderReference().add(genericStakeholder);
 					}
 
 				}
@@ -214,7 +203,6 @@ public class WordImport {
 					try {
 						par = section.getParagraph(pid);
 					} catch (ArrayIndexOutOfBoundsException e) {
-						AlisaDebug.debug("WordImport", "array index out of bounds2 when getting par");
 					}
 
 					if (par == null) {
@@ -260,24 +248,24 @@ public class WordImport {
 						reqTitle = par.text();
 						reqTitle = reqTitle.substring(0, reqTitle.length() - 1);
 
-						req = Utils.addNewDocumentedRequirement(reqdoc);
+						req = Utils.addNewGoal(reqdoc);
 						req.setTitle("\"" + par.text() + "\"\n");
 						req.setDescription("\"\"");
 
-						/**
-						 * Assign the requirement to a generic Stakeholder.
-						 */
-						req.getAssignedTo().add(genericStakeholder);
-
-						/**
-						 * If the requirement level is more than 0, then, this
-						 * requirement depends on another requirements. We then
-						 * add a dependency between the new requirement and
-						 * the requirement at level - 1
-						 */
-						if ((reqLevel > 0) && (currentRequirements[reqLevel - 1] != null)) {
-							Utils.addDependency(currentRequirements[reqLevel - 1], req);
-						}
+//						/**
+//						 * Assign the requirement to a generic Stakeholder.
+//						 */
+//						req.getStakeholderReference().add(genericStakeholder);
+//
+//						/**
+//						 * If the requirement level is more than 0, then, this
+//						 * requirement depends on another requirements. We then
+//						 * add a dependency between the new requirement and
+//						 * the requirement at level - 1
+//						 */
+//						if ((reqLevel > 0) && (currentRequirements[reqLevel - 1] != null)) {
+//	XXX TODO						Utils.addDependency(currentRequirements[reqLevel - 1], req);
+//						}
 
 						currentRequirements[reqLevel] = req;
 
@@ -318,6 +306,6 @@ public class WordImport {
 			e.printStackTrace();
 		}
 
-		return returnedModel;
+		return reqdoc;
 	}
 }

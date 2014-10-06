@@ -2,8 +2,8 @@
  */
 package edu.cmu.sei.alisa.alisa.impl;
 
-import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
+import edu.cmu.sei.alisa.alisa.ContractualElement;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -11,21 +11,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Model</b></em>'.
+ * An implementation of the model object '<em><b>Contractual Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class AlisaModelImpl extends MinimalEObjectImpl.Container implements AlisaModel
+public class ContractualElementImpl extends MinimalEObjectImpl.Container implements ContractualElement
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AlisaModelImpl()
+  protected ContractualElementImpl()
   {
     super();
   }
@@ -38,7 +38,7 @@ public class AlisaModelImpl extends MinimalEObjectImpl.Container implements Alis
   @Override
   protected EClass eStaticClass()
   {
-    return AlisaPackage.Literals.ALISA_MODEL;
+    return AlisaPackage.Literals.CONTRACTUAL_ELEMENT;
   }
 
-} //AlisaModelImpl
+} //ContractualElementImpl

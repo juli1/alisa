@@ -80,6 +80,16 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
         return createAlisaModelAdapter();
       }
       @Override
+      public Adapter caseContractualElement(ContractualElement object)
+      {
+        return createContractualElementAdapter();
+      }
+      @Override
+      public Adapter caseAlisaDocument(AlisaDocument object)
+      {
+        return createAlisaDocumentAdapter();
+      }
+      @Override
       public Adapter caseAlisaElement(AlisaElement object)
       {
         return createAlisaElementAdapter();
@@ -90,11 +100,6 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
         return createAlisaNameSpaceAdapter();
       }
       @Override
-      public Adapter caseDocument(Document object)
-      {
-        return createDocumentAdapter();
-      }
-      @Override
       public Adapter caseRequirementDocument(RequirementDocument object)
       {
         return createRequirementDocumentAdapter();
@@ -103,6 +108,11 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
       public Adapter caseVerificationLibrary(VerificationLibrary object)
       {
         return createVerificationLibraryAdapter();
+      }
+      @Override
+      public Adapter caseRDAPackage(RDAPackage object)
+      {
+        return createRDAPackageAdapter();
       }
       @Override
       public Adapter caseGoals(Goals object)
@@ -135,19 +145,19 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
         return createExternalDocumentAdapter();
       }
       @Override
-      public Adapter caseAliases(Aliases object)
+      public Adapter caseXDocUri(XDocUri object)
       {
-        return createAliasesAdapter();
+        return createXDocUriAdapter();
       }
       @Override
-      public Adapter caseAlias(Alias object)
+      public Adapter caseAlisaConfiguration(AlisaConfiguration object)
       {
-        return createAliasAdapter();
+        return createAlisaConfigurationAdapter();
       }
       @Override
-      public Adapter caseNotes(Notes object)
+      public Adapter caseCategory(Category object)
       {
-        return createNotesAdapter();
+        return createCategoryAdapter();
       }
       @Override
       public Adapter caseStakeholder(Stakeholder object)
@@ -155,34 +165,14 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
         return createStakeholderAdapter();
       }
       @Override
-      public Adapter caseStakeholders(Stakeholders object)
+      public Adapter caseOrganization(Organization object)
       {
-        return createStakeholdersAdapter();
-      }
-      @Override
-      public Adapter caseDocumentedRequirement(DocumentedRequirement object)
-      {
-        return createDocumentedRequirementAdapter();
-      }
-      @Override
-      public Adapter caseDocumentedRequirementDecomposition(DocumentedRequirementDecomposition object)
-      {
-        return createDocumentedRequirementDecompositionAdapter();
+        return createOrganizationAdapter();
       }
       @Override
       public Adapter caseVerificationDecomposition(VerificationDecomposition object)
       {
         return createVerificationDecompositionAdapter();
-      }
-      @Override
-      public Adapter caseElementType(ElementType object)
-      {
-        return createElementTypeAdapter();
-      }
-      @Override
-      public Adapter caseElementReference(ElementReference object)
-      {
-        return createElementReferenceAdapter();
       }
       @Override
       public Adapter caseVerificationActivity(VerificationActivity object)
@@ -232,6 +222,36 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.ContractualElement <em>Contractual Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement
+   * @generated
+   */
+  public Adapter createContractualElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.AlisaDocument <em>Document</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.AlisaDocument
+   * @generated
+   */
+  public Adapter createAlisaDocumentAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.AlisaElement <em>Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -262,21 +282,6 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Document <em>Document</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.Document
-   * @generated
-   */
-  public Adapter createDocumentAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.RequirementDocument <em>Requirement Document</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -302,6 +307,21 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVerificationLibraryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.RDAPackage <em>RDA Package</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.RDAPackage
+   * @generated
+   */
+  public Adapter createRDAPackageAdapter()
   {
     return null;
   }
@@ -397,46 +417,46 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Aliases <em>Aliases</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.XDocUri <em>XDoc Uri</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.Aliases
+   * @see edu.cmu.sei.alisa.alisa.XDocUri
    * @generated
    */
-  public Adapter createAliasesAdapter()
+  public Adapter createXDocUriAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Alias <em>Alias</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.AlisaConfiguration <em>Configuration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.Alias
+   * @see edu.cmu.sei.alisa.alisa.AlisaConfiguration
    * @generated
    */
-  public Adapter createAliasAdapter()
+  public Adapter createAlisaConfigurationAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Notes <em>Notes</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Category <em>Category</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.Notes
+   * @see edu.cmu.sei.alisa.alisa.Category
    * @generated
    */
-  public Adapter createNotesAdapter()
+  public Adapter createCategoryAdapter()
   {
     return null;
   }
@@ -457,46 +477,16 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Stakeholders <em>Stakeholders</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Organization <em>Organization</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.Stakeholders
+   * @see edu.cmu.sei.alisa.alisa.Organization
    * @generated
    */
-  public Adapter createStakeholdersAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirement <em>Documented Requirement</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirement
-   * @generated
-   */
-  public Adapter createDocumentedRequirementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition <em>Documented Requirement Decomposition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition
-   * @generated
-   */
-  public Adapter createDocumentedRequirementDecompositionAdapter()
+  public Adapter createOrganizationAdapter()
   {
     return null;
   }
@@ -512,36 +502,6 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVerificationDecompositionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.ElementType <em>Element Type</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.ElementType
-   * @generated
-   */
-  public Adapter createElementTypeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.ElementReference <em>Element Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.ElementReference
-   * @generated
-   */
-  public Adapter createElementReferenceAdapter()
   {
     return null;
   }

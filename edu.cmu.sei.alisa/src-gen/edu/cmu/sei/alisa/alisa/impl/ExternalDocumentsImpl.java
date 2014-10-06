@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ExternalDocumentsImpl extends AlisaElementImpl implements ExternalDocuments
+public class ExternalDocumentsImpl extends AlisaModelImpl implements ExternalDocuments
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.

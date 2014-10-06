@@ -3,11 +3,11 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
-import edu.cmu.sei.alisa.alisa.ExternalDocument;
+import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
+import edu.cmu.sei.alisa.alisa.XDocUri;
 
 import java.util.Collection;
 
@@ -33,9 +33,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getReqkind <em>Reqkind</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getCategory <em>Category</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getAssert <em>Assert</em>}</li>
@@ -48,36 +48,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getDecomposesReference <em>Decomposes Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getEvolvesReference <em>Evolves Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getVerifiedBy <em>Verified By</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getStakeholderreqReference <em>Stakeholderreq Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getSystemreqReference <em>Systemreq Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getDocReferences <em>Doc References</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getStakeholderRequirementReference <em>Stakeholder Requirement Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getSystemRequirementReference <em>System Requirement Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getDocReference <em>Doc Reference</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RequirementImpl extends AlisaElementImpl implements Requirement
+public class RequirementImpl extends ContractualElementImpl implements Requirement
 {
-  /**
-   * The default value of the '{@link #getReqkind() <em>Reqkind</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getReqkind()
-   * @generated
-   * @ordered
-   */
-  protected static final String REQKIND_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getReqkind() <em>Reqkind</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getReqkind()
-   * @generated
-   * @ordered
-   */
-  protected String reqkind = REQKIND_EDEFAULT;
-
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -117,6 +97,16 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
    * @ordered
    */
   protected String target = TARGET_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getCategory() <em>Category</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCategory()
+   * @generated
+   * @ordered
+   */
+  protected EList<Category> category;
 
   /**
    * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -279,34 +269,34 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
   protected EList<VerificationDecomposition> verifiedBy;
 
   /**
-   * The cached value of the '{@link #getStakeholderreqReference() <em>Stakeholderreq Reference</em>}' reference list.
+   * The cached value of the '{@link #getStakeholderRequirementReference() <em>Stakeholder Requirement Reference</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStakeholderreqReference()
+   * @see #getStakeholderRequirementReference()
    * @generated
    * @ordered
    */
-  protected EList<DocumentedRequirement> stakeholderreqReference;
+  protected EList<Goal> stakeholderRequirementReference;
 
   /**
-   * The cached value of the '{@link #getSystemreqReference() <em>Systemreq Reference</em>}' reference list.
+   * The cached value of the '{@link #getSystemRequirementReference() <em>System Requirement Reference</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSystemreqReference()
+   * @see #getSystemRequirementReference()
    * @generated
    * @ordered
    */
-  protected EList<DocumentedRequirement> systemreqReference;
+  protected EList<Requirement> systemRequirementReference;
 
   /**
-   * The cached value of the '{@link #getDocReferences() <em>Doc References</em>}' reference list.
+   * The cached value of the '{@link #getDocReference() <em>Doc Reference</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDocReferences()
+   * @see #getDocReference()
    * @generated
    * @ordered
    */
-  protected EList<ExternalDocument> docReferences;
+  protected EList<XDocUri> docReference;
 
   /**
    * <!-- begin-user-doc -->
@@ -327,29 +317,6 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
   protected EClass eStaticClass()
   {
     return AlisaPackage.Literals.REQUIREMENT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getReqkind()
-  {
-    return reqkind;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setReqkind(String newReqkind)
-  {
-    String oldReqkind = reqkind;
-    reqkind = newReqkind;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT__REQKIND, oldReqkind, reqkind));
   }
 
   /**
@@ -396,6 +363,20 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
     target = newTarget;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT__TARGET, oldTarget, target));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Category> getCategory()
+  {
+    if (category == null)
+    {
+      category = new EObjectResolvingEList<Category>(Category.class, this, AlisaPackage.REQUIREMENT__CATEGORY);
+    }
+    return category;
   }
 
   /**
@@ -607,13 +588,13 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<DocumentedRequirement> getStakeholderreqReference()
+  public EList<Goal> getStakeholderRequirementReference()
   {
-    if (stakeholderreqReference == null)
+    if (stakeholderRequirementReference == null)
     {
-      stakeholderreqReference = new EObjectResolvingEList<DocumentedRequirement>(DocumentedRequirement.class, this, AlisaPackage.REQUIREMENT__STAKEHOLDERREQ_REFERENCE);
+      stakeholderRequirementReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE);
     }
-    return stakeholderreqReference;
+    return stakeholderRequirementReference;
   }
 
   /**
@@ -621,13 +602,13 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<DocumentedRequirement> getSystemreqReference()
+  public EList<Requirement> getSystemRequirementReference()
   {
-    if (systemreqReference == null)
+    if (systemRequirementReference == null)
     {
-      systemreqReference = new EObjectResolvingEList<DocumentedRequirement>(DocumentedRequirement.class, this, AlisaPackage.REQUIREMENT__SYSTEMREQ_REFERENCE);
+      systemRequirementReference = new EObjectResolvingEList<Requirement>(Requirement.class, this, AlisaPackage.REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE);
     }
-    return systemreqReference;
+    return systemRequirementReference;
   }
 
   /**
@@ -635,13 +616,13 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ExternalDocument> getDocReferences()
+  public EList<XDocUri> getDocReference()
   {
-    if (docReferences == null)
+    if (docReference == null)
     {
-      docReferences = new EObjectResolvingEList<ExternalDocument>(ExternalDocument.class, this, AlisaPackage.REQUIREMENT__DOC_REFERENCES);
+      docReference = new EObjectContainmentEList<XDocUri>(XDocUri.class, this, AlisaPackage.REQUIREMENT__DOC_REFERENCE);
     }
-    return docReferences;
+    return docReference;
   }
 
   /**
@@ -656,6 +637,8 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
     {
       case AlisaPackage.REQUIREMENT__VERIFIED_BY:
         return ((InternalEList<?>)getVerifiedBy()).basicRemove(otherEnd, msgs);
+      case AlisaPackage.REQUIREMENT__DOC_REFERENCE:
+        return ((InternalEList<?>)getDocReference()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -670,12 +653,12 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT__REQKIND:
-        return getReqkind();
       case AlisaPackage.REQUIREMENT__NAME:
         return getName();
       case AlisaPackage.REQUIREMENT__TARGET:
         return getTarget();
+      case AlisaPackage.REQUIREMENT__CATEGORY:
+        return getCategory();
       case AlisaPackage.REQUIREMENT__TITLE:
         return getTitle();
       case AlisaPackage.REQUIREMENT__DESCRIPTION:
@@ -700,12 +683,12 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
         return getEvolvesReference();
       case AlisaPackage.REQUIREMENT__VERIFIED_BY:
         return getVerifiedBy();
-      case AlisaPackage.REQUIREMENT__STAKEHOLDERREQ_REFERENCE:
-        return getStakeholderreqReference();
-      case AlisaPackage.REQUIREMENT__SYSTEMREQ_REFERENCE:
-        return getSystemreqReference();
-      case AlisaPackage.REQUIREMENT__DOC_REFERENCES:
-        return getDocReferences();
+      case AlisaPackage.REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE:
+        return getStakeholderRequirementReference();
+      case AlisaPackage.REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE:
+        return getSystemRequirementReference();
+      case AlisaPackage.REQUIREMENT__DOC_REFERENCE:
+        return getDocReference();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -721,14 +704,15 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT__REQKIND:
-        setReqkind((String)newValue);
-        return;
       case AlisaPackage.REQUIREMENT__NAME:
         setName((String)newValue);
         return;
       case AlisaPackage.REQUIREMENT__TARGET:
         setTarget((String)newValue);
+        return;
+      case AlisaPackage.REQUIREMENT__CATEGORY:
+        getCategory().clear();
+        getCategory().addAll((Collection<? extends Category>)newValue);
         return;
       case AlisaPackage.REQUIREMENT__TITLE:
         setTitle((String)newValue);
@@ -774,17 +758,17 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
         getVerifiedBy().clear();
         getVerifiedBy().addAll((Collection<? extends VerificationDecomposition>)newValue);
         return;
-      case AlisaPackage.REQUIREMENT__STAKEHOLDERREQ_REFERENCE:
-        getStakeholderreqReference().clear();
-        getStakeholderreqReference().addAll((Collection<? extends DocumentedRequirement>)newValue);
+      case AlisaPackage.REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE:
+        getStakeholderRequirementReference().clear();
+        getStakeholderRequirementReference().addAll((Collection<? extends Goal>)newValue);
         return;
-      case AlisaPackage.REQUIREMENT__SYSTEMREQ_REFERENCE:
-        getSystemreqReference().clear();
-        getSystemreqReference().addAll((Collection<? extends DocumentedRequirement>)newValue);
+      case AlisaPackage.REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE:
+        getSystemRequirementReference().clear();
+        getSystemRequirementReference().addAll((Collection<? extends Requirement>)newValue);
         return;
-      case AlisaPackage.REQUIREMENT__DOC_REFERENCES:
-        getDocReferences().clear();
-        getDocReferences().addAll((Collection<? extends ExternalDocument>)newValue);
+      case AlisaPackage.REQUIREMENT__DOC_REFERENCE:
+        getDocReference().clear();
+        getDocReference().addAll((Collection<? extends XDocUri>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -800,14 +784,14 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT__REQKIND:
-        setReqkind(REQKIND_EDEFAULT);
-        return;
       case AlisaPackage.REQUIREMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
       case AlisaPackage.REQUIREMENT__TARGET:
         setTarget(TARGET_EDEFAULT);
+        return;
+      case AlisaPackage.REQUIREMENT__CATEGORY:
+        getCategory().clear();
         return;
       case AlisaPackage.REQUIREMENT__TITLE:
         setTitle(TITLE_EDEFAULT);
@@ -845,14 +829,14 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
       case AlisaPackage.REQUIREMENT__VERIFIED_BY:
         getVerifiedBy().clear();
         return;
-      case AlisaPackage.REQUIREMENT__STAKEHOLDERREQ_REFERENCE:
-        getStakeholderreqReference().clear();
+      case AlisaPackage.REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE:
+        getStakeholderRequirementReference().clear();
         return;
-      case AlisaPackage.REQUIREMENT__SYSTEMREQ_REFERENCE:
-        getSystemreqReference().clear();
+      case AlisaPackage.REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE:
+        getSystemRequirementReference().clear();
         return;
-      case AlisaPackage.REQUIREMENT__DOC_REFERENCES:
-        getDocReferences().clear();
+      case AlisaPackage.REQUIREMENT__DOC_REFERENCE:
+        getDocReference().clear();
         return;
     }
     super.eUnset(featureID);
@@ -868,12 +852,12 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT__REQKIND:
-        return REQKIND_EDEFAULT == null ? reqkind != null : !REQKIND_EDEFAULT.equals(reqkind);
       case AlisaPackage.REQUIREMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.REQUIREMENT__TARGET:
         return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
+      case AlisaPackage.REQUIREMENT__CATEGORY:
+        return category != null && !category.isEmpty();
       case AlisaPackage.REQUIREMENT__TITLE:
         return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
       case AlisaPackage.REQUIREMENT__DESCRIPTION:
@@ -898,12 +882,12 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
         return evolvesReference != null && !evolvesReference.isEmpty();
       case AlisaPackage.REQUIREMENT__VERIFIED_BY:
         return verifiedBy != null && !verifiedBy.isEmpty();
-      case AlisaPackage.REQUIREMENT__STAKEHOLDERREQ_REFERENCE:
-        return stakeholderreqReference != null && !stakeholderreqReference.isEmpty();
-      case AlisaPackage.REQUIREMENT__SYSTEMREQ_REFERENCE:
-        return systemreqReference != null && !systemreqReference.isEmpty();
-      case AlisaPackage.REQUIREMENT__DOC_REFERENCES:
-        return docReferences != null && !docReferences.isEmpty();
+      case AlisaPackage.REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE:
+        return stakeholderRequirementReference != null && !stakeholderRequirementReference.isEmpty();
+      case AlisaPackage.REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE:
+        return systemRequirementReference != null && !systemRequirementReference.isEmpty();
+      case AlisaPackage.REQUIREMENT__DOC_REFERENCE:
+        return docReference != null && !docReference.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -919,9 +903,7 @@ public class RequirementImpl extends AlisaElementImpl implements Requirement
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (reqkind: ");
-    result.append(reqkind);
-    result.append(", name: ");
+    result.append(" (name: ");
     result.append(name);
     result.append(", target: ");
     result.append(target);

@@ -4,11 +4,14 @@
 package edu.cmu.sei.alisa.validation;
 
 import com.google.common.base.Objects;
+import edu.cmu.sei.alisa.alisa.AlisaElement;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
-import edu.cmu.sei.alisa.alisa.RequirementDocument;
+import edu.cmu.sei.alisa.alisa.Goal;
+import edu.cmu.sei.alisa.alisa.Goals;
+import edu.cmu.sei.alisa.alisa.Organization;
+import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.Requirements;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
-import edu.cmu.sei.alisa.alisa.Stakeholders;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.VerificationLibrary;
 import edu.cmu.sei.alisa.validation.AbstractAlisaValidator;
@@ -32,7 +35,7 @@ public class AlisaValidator extends AbstractAlisaValidator {
   
   public void checkStakeholderName(final Stakeholder stakeholder) {
     EObject _eContainer = stakeholder.eContainer();
-    Stakeholders org = ((Stakeholders) _eContainer);
+    Organization org = ((Organization) _eContainer);
     boolean _notEquals = (!Objects.equal(org, null));
     if (_notEquals) {
       EList<Stakeholder> _stakeholder = org.getStakeholder();
@@ -73,8 +76,8 @@ public class AlisaValidator extends AbstractAlisaValidator {
       VerificationLibrary model = ((VerificationLibrary) _eContainer_1);
       boolean _notEquals = (!Objects.equal(model, null));
       if (_notEquals) {
-        EList<EObject> _content = model.getContent();
-        for (final EObject other : _content) {
+        EList<AlisaElement> _content = model.getContent();
+        for (final AlisaElement other : _content) {
           if ((other instanceof VerificationActivity)) {
             VerificationActivity otherVA = ((VerificationActivity) other);
             boolean _notEquals_1 = (!Objects.equal(otherVA, null));
@@ -101,19 +104,19 @@ public class AlisaValidator extends AbstractAlisaValidator {
   }
   
   @Check
-  public void checkRequirement(final DocumentedRequirement requirement) {
+  public void checkRequirement(final Requirement requirement) {
     this.checkRequirementName(requirement);
   }
   
-  public void checkRequirementName(final DocumentedRequirement requirement) {
+  public void checkRequirementName(final Requirement requirement) {
     EObject _eContainer = requirement.eContainer();
-    RequirementDocument model = ((RequirementDocument) _eContainer);
+    Requirements model = ((Requirements) _eContainer);
     boolean _notEquals = (!Objects.equal(model, null));
     if (_notEquals) {
-      EList<EObject> _content = model.getContent();
-      for (final EObject other : _content) {
-        if ((other instanceof DocumentedRequirement)) {
-          DocumentedRequirement otherReq = ((DocumentedRequirement) other);
+      EList<Requirement> _reqs = model.getReqs();
+      for (final Requirement other : _reqs) {
+        if ((other instanceof Requirement)) {
+          Requirement otherReq = ((Requirement) other);
           boolean _notEquals_1 = (!Objects.equal(otherReq, null));
           if (_notEquals_1) {
             boolean _and = false;
@@ -127,7 +130,43 @@ public class AlisaValidator extends AbstractAlisaValidator {
               _and = _equalsIgnoreCase;
             }
             if (_and) {
-              this.error("Requirements names have to be unique", AlisaPackage.Literals.DOCUMENTED_REQUIREMENT__NAME);
+              this.error("Requirements names have to be unique", AlisaPackage.Literals.REQUIREMENT__NAME);
+              return;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @Check
+  public void checkGoal(final Goal requirement) {
+    this.checkGoalName(requirement);
+  }
+  
+  public void checkGoalName(final Goal requirement) {
+    EObject _eContainer = requirement.eContainer();
+    Goals model = ((Goals) _eContainer);
+    boolean _notEquals = (!Objects.equal(model, null));
+    if (_notEquals) {
+      EList<Goal> _goals = model.getGoals();
+      for (final Goal other : _goals) {
+        if ((other instanceof Goal)) {
+          Goal otherReq = ((Goal) other);
+          boolean _notEquals_1 = (!Objects.equal(otherReq, null));
+          if (_notEquals_1) {
+            boolean _and = false;
+            boolean _notEquals_2 = (!Objects.equal(otherReq, requirement));
+            if (!_notEquals_2) {
+              _and = false;
+            } else {
+              String _name = otherReq.getName();
+              String _name_1 = requirement.getName();
+              boolean _equalsIgnoreCase = _name.equalsIgnoreCase(_name_1);
+              _and = _equalsIgnoreCase;
+            }
+            if (_and) {
+              this.error("Requirements names have to be unique", AlisaPackage.Literals.REQUIREMENT__NAME);
               return;
             }
           }

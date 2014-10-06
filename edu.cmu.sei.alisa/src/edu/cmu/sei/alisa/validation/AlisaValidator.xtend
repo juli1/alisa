@@ -3,15 +3,16 @@
  */
 package edu.cmu.sei.alisa.validation
 
-import edu.cmu.sei.alisa.alisa.DocumentedRequirement
 import edu.cmu.sei.alisa.alisa.AlisaPackage
 import org.eclipse.xtext.validation.Check
-import edu.cmu.sei.alisa.alisa.AlisaModel
 import edu.cmu.sei.alisa.alisa.Stakeholder
 import edu.cmu.sei.alisa.alisa.VerificationActivity
 import edu.cmu.sei.alisa.alisa.VerificationLibrary
-import edu.cmu.sei.alisa.alisa.RequirementDocument
-import edu.cmu.sei.alisa.alisa.Stakeholders
+import edu.cmu.sei.alisa.alisa.Organization
+import edu.cmu.sei.alisa.alisa.Requirement
+import edu.cmu.sei.alisa.alisa.Goal
+import edu.cmu.sei.alisa.alisa.Goals
+import edu.cmu.sei.alisa.alisa.Requirements
 
 //import org.eclipse.xtext.validation.Check
 
@@ -32,7 +33,7 @@ class AlisaValidator extends AbstractAlisaValidator
 	
 	def checkStakeholderName(Stakeholder stakeholder)
 	{ 
-		var org = (stakeholder.eContainer() as Stakeholders);
+		var org = (stakeholder.eContainer() as Organization);
 		if (org != null) {
 			for (other : org.stakeholder)
 			{
@@ -87,24 +88,51 @@ class AlisaValidator extends AbstractAlisaValidator
 	}
 
 	@Check
-	def checkRequirement(DocumentedRequirement requirement) {
+	def checkRequirement(Requirement requirement) {
 		checkRequirementName (requirement)
 	}
 	
-	def checkRequirementName(DocumentedRequirement requirement)
+	def checkRequirementName(Requirement requirement)
 	{
-		var model = (requirement.eContainer() as RequirementDocument);
+		var model = (requirement.eContainer() as Requirements);
 		if (model != null) {
-			for (other : model.content)
+			for (other : model.reqs)
 			{
-				if (other instanceof DocumentedRequirement)
+				if (other instanceof Requirement)
 				{
-					var otherReq = other as DocumentedRequirement;
+					var otherReq = other as Requirement;
 					if (otherReq != null)
 					{
 						if ((otherReq != requirement) && (otherReq.name.equalsIgnoreCase(requirement.name)))
 						{
-							error("Requirements names have to be unique", AlisaPackage$Literals::DOCUMENTED_REQUIREMENT__NAME);
+							error("Requirements names have to be unique", AlisaPackage$Literals::REQUIREMENT__NAME);
+							return;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@Check
+	def checkGoal(Goal requirement) {
+		checkGoalName (requirement)
+	}
+	
+	def checkGoalName(Goal requirement)
+	{
+		var model = (requirement.eContainer() as Goals);
+		if (model != null) {
+			for (other : model.goals)
+			{
+				if (other instanceof Goal)
+				{
+					var otherReq = other as Goal;
+					if (otherReq != null)
+					{
+						if ((otherReq != requirement) && (otherReq.name.equalsIgnoreCase(requirement.name)))
+						{
+							error("Requirements names have to be unique", AlisaPackage$Literals::REQUIREMENT__NAME);
 							return;
 						}
 					}

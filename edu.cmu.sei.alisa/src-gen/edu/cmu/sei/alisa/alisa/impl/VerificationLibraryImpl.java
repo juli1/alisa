@@ -2,6 +2,7 @@
  */
 package edu.cmu.sei.alisa.alisa.impl;
 
+import edu.cmu.sei.alisa.alisa.AlisaElement;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.VerificationLibrary;
 
@@ -13,7 +14,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class VerificationLibraryImpl extends AlisaElementImpl implements VerificationLibrary
+public class VerificationLibraryImpl extends AlisaModelImpl implements VerificationLibrary
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -65,7 +65,7 @@ public class VerificationLibraryImpl extends AlisaElementImpl implements Verific
    * @generated
    * @ordered
    */
-  protected EList<EObject> content;
+  protected EList<AlisaElement> content;
 
   /**
    * <!-- begin-user-doc -->
@@ -116,11 +116,11 @@ public class VerificationLibraryImpl extends AlisaElementImpl implements Verific
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EObject> getContent()
+  public EList<AlisaElement> getContent()
   {
     if (content == null)
     {
-      content = new EObjectContainmentEList<EObject>(EObject.class, this, AlisaPackage.VERIFICATION_LIBRARY__CONTENT);
+      content = new EObjectContainmentEList<AlisaElement>(AlisaElement.class, this, AlisaPackage.VERIFICATION_LIBRARY__CONTENT);
     }
     return content;
   }
@@ -175,7 +175,7 @@ public class VerificationLibraryImpl extends AlisaElementImpl implements Verific
         return;
       case AlisaPackage.VERIFICATION_LIBRARY__CONTENT:
         getContent().clear();
-        getContent().addAll((Collection<? extends EObject>)newValue);
+        getContent().addAll((Collection<? extends AlisaElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

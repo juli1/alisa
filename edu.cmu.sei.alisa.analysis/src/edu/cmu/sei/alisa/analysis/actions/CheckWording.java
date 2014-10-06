@@ -17,10 +17,10 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.eclipse.ui.part.FileEditorInput;
 
-import edu.cmu.alisa.sei.utils.AlisaDebug;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
-import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
-import edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition;
+import edu.cmu.sei.alisa.alisa.Goal;
+import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.analysis.utils.DialogUtils;
 import edu.cmu.sei.alisa.analysis.wording.ErrorReport;
 import edu.cmu.sei.alisa.editor.editors.AlisaEditor;
@@ -43,7 +43,8 @@ public class CheckWording implements IWorkbenchWindowActionDelegate {
 	 */
 	public void run(IAction action) {
 		AlisaEditor editor;
-		DocumentedRequirement requirement;
+		Requirement requirement;
+		Goal goal;
 		IEditorInput editorInput;
 		IEditorPart editorPart;
 		AlisaModel model;
@@ -59,17 +60,14 @@ public class CheckWording implements IWorkbenchWindowActionDelegate {
 
 		editor = (AlisaEditor) editorPart;
 		model = editor.getRootObject();
-
-		for (EObject obj : model.getContent()) {
-			if (obj instanceof DocumentedRequirement) {
-				checkDocumentedRequirement((DocumentedRequirement) obj);
+		if (model instanceof RequirementDocument)
+			for (EObject obj : ((RequirementDocument) model).getContent()) {
+				checkDocumentedRequirement(obj);
 			}
-		}
 
 		if (reportedErrors.size() > 0) {
 			boolean writeError = false;
 			editorInput = editor.getEditorInput();
-			AlisaDebug.debug("[CheckWording] editor input=" + editorInput);
 			StringBuffer toWrite = new StringBuffer();
 
 			for (ErrorReport er : reportedErrors) {
@@ -79,8 +77,6 @@ public class CheckWording implements IWorkbenchWindowActionDelegate {
 			if (editorInput instanceof FileEditorInput) {
 				FileEditorInput fei = (FileEditorInput) editorInput;
 				IProject project = fei.getFile().getProject();
-				AlisaDebug.debug("[CheckWording] project=" + project);
-
 				IFile reportFile = project.getFile("wording-report.csv");
 
 				try {
@@ -89,7 +85,6 @@ public class CheckWording implements IWorkbenchWindowActionDelegate {
 					DialogUtils.showBasicDialog("Check Wording Error",
 							"Error when creating the file, check the file does not already exist", window.getShell());
 
-					AlisaDebug.debug("[CheckWording] error when trying to write the report file: " + e.getMessage());
 				}
 			}
 		} else {
@@ -97,33 +92,37 @@ public class CheckWording implements IWorkbenchWindowActionDelegate {
 		}
 	}
 
-	public static void checkDocumentedRequirement(DocumentedRequirement req) {
+	public static void checkDocumentedRequirement(EObject eo) {
 		final String[] toAvoid = { "may", "added" };
+		Requirement req;
+		if (eo instanceof Requirement) {
+			req = (Requirement) eo;
+			for (int i = 0; i < toAvoid.length; i++) {
+				if (req.getDescription() == null) {
+					continue;
+				}
 
-		for (int i = 0; i < toAvoid.length; i++) {
-			if (req.getDescription() == null) {
-				continue;
-			}
-
-			if (req.getDescription().toLowerCase().contains(toAvoid[i])) {
-				ErrorReport report = new ErrorReport();
-				report.setRequirementName(req.getName());
-				report.setReport("cannot contain the word " + toAvoid[i]);
-				reportedErrors.add(report);
+				if (req.getDescription().toLowerCase().contains(toAvoid[i])) {
+					ErrorReport report = new ErrorReport();
+					report.setRequirementName(req.getName());
+					report.setReport("cannot contain the word " + toAvoid[i]);
+					reportedErrors.add(report);
+				}
 			}
 		}
-	}
+		if (eo instanceof Goal) {
+			Goal goal = (Goal) eo;
+			for (int i = 0; i < toAvoid.length; i++) {
+				if (goal.getDescription() == null) {
+					continue;
+				}
 
-	public static void checkRequirementDecomposition(DocumentedRequirementDecomposition dec) {
-		if (dec.getElement() != null) {
-			checkDocumentedRequirement(dec.getElement());
-		} else {
-			if (dec.getLeft() != null) {
-				checkDocumentedRequirement(dec.getLeft());
-			}
-
-			if (dec.getRight() != null) {
-				checkRequirementDecomposition(dec.getRight());
+				if (goal.getDescription().toLowerCase().contains(toAvoid[i])) {
+					ErrorReport report = new ErrorReport();
+					report.setRequirementName(goal.getName());
+					report.setReport("cannot contain the word " + toAvoid[i]);
+					reportedErrors.add(report);
+				}
 			}
 		}
 	}

@@ -54,7 +54,6 @@ import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.ResourceUtil;
 
-import edu.cmu.alisa.sei.utils.AlisaDebug;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 //import edu.cmu.sei.alisa.analysis.reqimport.WordImport;
 import edu.cmu.sei.alisa.analysis.utils.Utils;
@@ -110,8 +109,6 @@ public final class ImportWordRequirements implements IWorkbenchWindowActionDeleg
 			protected IStatus run(IProgressMonitor monitor) {
 				monitor.beginTask("Importing the Word Requirement", 100);
 
-				AlisaDebug.debug("ImportWord", "import file " + inputFile);
-
 				/**
 				 * Import the Word file into a Alisa Model
 				 */
@@ -126,12 +123,10 @@ public final class ImportWordRequirements implements IWorkbenchWindowActionDeleg
 				for (int i = 0; i < resource.getContents().size(); i++) {
 					resource.getContents().remove(i);
 				}
-				AlisaDebug.debug("[AlisaEditor] trying to save");
 				resource.getContents().add(producedModel);
 				try {
 					resource.save(null);
 				} catch (IOException e) {
-					AlisaDebug.debug("[AlisaEditor] exception when trying to save");
 //					e.printStackTrace();
 				}
 

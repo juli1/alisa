@@ -15,6 +15,8 @@ package edu.cmu.sei.alisa.alisa;
  *   <li>{@link edu.cmu.sei.alisa.alisa.Stakeholder#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Stakeholder#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Stakeholder#getRole <em>Role</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Stakeholder#getEmail <em>Email</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Stakeholder#getPhone <em>Phone</em>}</li>
  * </ul>
  * </p>
  *
@@ -127,5 +129,57 @@ public interface Stakeholder extends AlisaElement
    * @generated
    */
   void setRole(String value);
+
+  /**
+   * Returns the value of the '<em><b>Email</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Email</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Email</em>' attribute.
+   * @see #setEmail(String)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getStakeholder_Email()
+   * @model
+   * @generated
+   */
+  String getEmail();
+
+  /**
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Stakeholder#getEmail <em>Email</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Email</em>' attribute.
+   * @see #getEmail()
+   * @generated
+   */
+  void setEmail(String value);
+
+  /**
+   * Returns the value of the '<em><b>Phone</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Phone</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Phone</em>' attribute.
+   * @see #setPhone(String)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getStakeholder_Phone()
+   * @model
+   * @generated
+   */
+  String getPhone();
+
+  /**
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Stakeholder#getPhone <em>Phone</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Phone</em>' attribute.
+   * @see #getPhone()
+   * @generated
+   */
+  void setPhone(String value);
 
 } // Stakeholder

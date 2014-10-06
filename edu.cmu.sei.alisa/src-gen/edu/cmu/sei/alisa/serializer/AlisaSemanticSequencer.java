@@ -2,28 +2,24 @@ package edu.cmu.sei.alisa.serializer;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-import edu.cmu.sei.alisa.alisa.Alias;
-import edu.cmu.sei.alisa.alisa.Aliases;
-import edu.cmu.sei.alisa.alisa.AlisaModel;
+import edu.cmu.sei.alisa.alisa.AlisaConfiguration;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
-import edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition;
-import edu.cmu.sei.alisa.alisa.ElementReference;
-import edu.cmu.sei.alisa.alisa.ElementType;
+import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.ExternalDocuments;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Goals;
-import edu.cmu.sei.alisa.alisa.Notes;
+import edu.cmu.sei.alisa.alisa.Organization;
+import edu.cmu.sei.alisa.alisa.RDAPackage;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Requirements;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
-import edu.cmu.sei.alisa.alisa.Stakeholders;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
 import edu.cmu.sei.alisa.alisa.VerificationLibrary;
 import edu.cmu.sei.alisa.alisa.VerificationResult;
+import edu.cmu.sei.alisa.alisa.XDocUri;
 import edu.cmu.sei.alisa.services.AlisaGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
@@ -45,46 +41,19 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == AlisaPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case AlisaPackage.ALIAS:
-				if(context == grammarAccess.getAliasRule()) {
-					sequence_Alias(context, (Alias) semanticObject); 
+			case AlisaPackage.ALISA_CONFIGURATION:
+				if(context == grammarAccess.getAlisaConfigurationRule() ||
+				   context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getAlisaModelRule() ||
+				   context == grammarAccess.getAlisaNameSpaceRule()) {
+					sequence_AlisaConfiguration(context, (AlisaConfiguration) semanticObject); 
 					return; 
 				}
 				else break;
-			case AlisaPackage.ALIASES:
-				if(context == grammarAccess.getAliasesRule()) {
-					sequence_Aliases(context, (Aliases) semanticObject); 
-					return; 
-				}
-				else break;
-			case AlisaPackage.ALISA_MODEL:
-				if(context == grammarAccess.getAlisaModelRule()) {
-					sequence_AlisaModel(context, (AlisaModel) semanticObject); 
-					return; 
-				}
-				else break;
-			case AlisaPackage.DOCUMENTED_REQUIREMENT:
+			case AlisaPackage.CATEGORY:
 				if(context == grammarAccess.getAlisaElementRule() ||
-				   context == grammarAccess.getDocumentedRequirementRule()) {
-					sequence_DocumentedRequirement(context, (DocumentedRequirement) semanticObject); 
-					return; 
-				}
-				else break;
-			case AlisaPackage.DOCUMENTED_REQUIREMENT_DECOMPOSITION:
-				if(context == grammarAccess.getDocumentedRequirementDecompositionRule()) {
-					sequence_DocumentedRequirementDecomposition(context, (DocumentedRequirementDecomposition) semanticObject); 
-					return; 
-				}
-				else break;
-			case AlisaPackage.ELEMENT_REFERENCE:
-				if(context == grammarAccess.getElementReferenceRule()) {
-					sequence_ElementReference(context, (ElementReference) semanticObject); 
-					return; 
-				}
-				else break;
-			case AlisaPackage.ELEMENT_TYPE:
-				if(context == grammarAccess.getElementTypeRule()) {
-					sequence_ElementType(context, (ElementType) semanticObject); 
+				   context == grammarAccess.getCategoryRule()) {
+					sequence_Category(context, (Category) semanticObject); 
 					return; 
 				}
 				else break;
@@ -96,8 +65,8 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case AlisaPackage.EXTERNAL_DOCUMENTS:
 				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getAlisaModelRule() ||
 				   context == grammarAccess.getAlisaNameSpaceRule() ||
-				   context == grammarAccess.getDocumentRule() ||
 				   context == grammarAccess.getExternalDocumentsRule()) {
 					sequence_ExternalDocuments(context, (ExternalDocuments) semanticObject); 
 					return; 
@@ -105,6 +74,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case AlisaPackage.GOAL:
 				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getContractualElementRule() ||
 				   context == grammarAccess.getGoalRule()) {
 					sequence_Goal(context, (Goal) semanticObject); 
 					return; 
@@ -118,23 +88,38 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
-			case AlisaPackage.NOTES:
-				if(context == grammarAccess.getNotesRule()) {
-					sequence_Notes(context, (Notes) semanticObject); 
+			case AlisaPackage.ORGANIZATION:
+				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getAlisaModelRule() ||
+				   context == grammarAccess.getAlisaNameSpaceRule() ||
+				   context == grammarAccess.getOrganizationRule()) {
+					sequence_Organization(context, (Organization) semanticObject); 
+					return; 
+				}
+				else break;
+			case AlisaPackage.RDA_PACKAGE:
+				if(context == grammarAccess.getAlisaDocumentRule() ||
+				   context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getAlisaModelRule() ||
+				   context == grammarAccess.getAlisaNameSpaceRule() ||
+				   context == grammarAccess.getRDAPackageRule()) {
+					sequence_RDAPackage(context, (RDAPackage) semanticObject); 
 					return; 
 				}
 				else break;
 			case AlisaPackage.REQUIREMENT:
 				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getContractualElementRule() ||
 				   context == grammarAccess.getRequirementRule()) {
 					sequence_Requirement(context, (Requirement) semanticObject); 
 					return; 
 				}
 				else break;
 			case AlisaPackage.REQUIREMENT_DOCUMENT:
-				if(context == grammarAccess.getAlisaElementRule() ||
+				if(context == grammarAccess.getAlisaDocumentRule() ||
+				   context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getAlisaModelRule() ||
 				   context == grammarAccess.getAlisaNameSpaceRule() ||
-				   context == grammarAccess.getDocumentRule() ||
 				   context == grammarAccess.getRequirementDocumentRule()) {
 					sequence_RequirementDocument(context, (RequirementDocument) semanticObject); 
 					return; 
@@ -155,14 +140,6 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
-			case AlisaPackage.STAKEHOLDERS:
-				if(context == grammarAccess.getAlisaElementRule() ||
-				   context == grammarAccess.getAlisaNameSpaceRule() ||
-				   context == grammarAccess.getStakeholdersRule()) {
-					sequence_Stakeholders(context, (Stakeholders) semanticObject); 
-					return; 
-				}
-				else break;
 			case AlisaPackage.VERIFICATION_ACTIVITY:
 				if(context == grammarAccess.getAlisaElementRule() ||
 				   context == grammarAccess.getVerificationActivityRule()) {
@@ -178,8 +155,8 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case AlisaPackage.VERIFICATION_LIBRARY:
 				if(context == grammarAccess.getAlisaElementRule() ||
+				   context == grammarAccess.getAlisaModelRule() ||
 				   context == grammarAccess.getAlisaNameSpaceRule() ||
-				   context == grammarAccess.getDocumentRule() ||
 				   context == grammarAccess.getVerificationLibraryRule()) {
 					sequence_VerificationLibrary(context, (VerificationLibrary) semanticObject); 
 					return; 
@@ -192,127 +169,59 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case AlisaPackage.XDOC_URI:
+				if(context == grammarAccess.getXDocUriRule()) {
+					sequence_XDocUri(context, (XDocUri) semanticObject); 
+					return; 
+				}
+				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
 	
 	/**
 	 * Constraint:
-	 *     (alias=ValueString docRef+=[Document|ID] docRef+=[Document|ID]*)
+	 *     (name=ID category+=Category*)
 	 */
-	protected void sequence_Alias(EObject context, Alias semanticObject) {
+	protected void sequence_AlisaConfiguration(EObject context, AlisaConfiguration semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (aliasesTarget=[NamedElement|QCLREF] aliases+=Alias aliases+=Alias*)
+	 *     (name=ID extends=[Category|CATREF])
 	 */
-	protected void sequence_Aliases(EObject context, Aliases semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_Category(EObject context, Category semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AlisaPackage.Literals.CATEGORY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AlisaPackage.Literals.CATEGORY__NAME));
+			if(transientValues.isValueTransient(semanticObject, AlisaPackage.Literals.CATEGORY__EXTENDS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AlisaPackage.Literals.CATEGORY__EXTENDS));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getCategoryAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getCategoryAccess().getExtendsCategoryCATREFParserRuleCall_2_0_1(), semanticObject.getExtends());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         (importedNamespace+=[AlisaNameSpace|ID] importedNamespace+=[AlisaNameSpace|ID]*)? 
-	 *         (importedNamespace+=[AadlPackage|QPREF] importedNamespace+=[AadlPackage|QPREF]*)? 
-	 *         (
-	 *             content+=Goals | 
-	 *             content+=Requirements | 
-	 *             content+=VerificationLibrary | 
-	 *             content+=RequirementDocument | 
-	 *             content+=Stakeholders | 
-	 *             content+=ExternalDocuments | 
-	 *             content+=Aliases | 
-	 *             content+=Notes
-	 *         )*
-	 *     )
-	 */
-	protected void sequence_AlisaModel(EObject context, AlisaModel semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         element=[DocumentedRequirement|RELREF] | 
-	 *         (left=[DocumentedRequirement|RELREF] (type='and' | type='or') right=DocumentedRequirementDecomposition)
-	 *     )
-	 */
-	protected void sequence_DocumentedRequirementDecomposition(EObject context, DocumentedRequirementDecomposition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         title=ValueString? 
-	 *         description=ValueString? 
-	 *         comment=ValueString? 
-	 *         assignedTo+=[Stakeholder|RELREF]* 
-	 *         referencedBy+=[ElementType|RELREF]* 
-	 *         verifiedBy+=VerificationDecomposition* 
-	 *         decomposedBy+=DocumentedRequirementDecomposition*
-	 *     )
-	 */
-	protected void sequence_DocumentedRequirement(EObject context, DocumentedRequirement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         url=ValueString? 
-	 *         modelReference+=[NamedElement|RELREF]? 
-	 *         referenceType=ValueString? 
-	 *         details=ValueString? 
-	 *         version+=ValueString*
-	 *     )
-	 */
-	protected void sequence_ElementReference(EObject context, ElementReference semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         reference=ValueString? 
-	 *         elementType=ValueString? 
-	 *         modelType=ValueString? 
-	 *         details=ValueString? 
-	 *         version+=ValueString*
-	 *     )
-	 */
-	protected void sequence_ElementType(EObject context, ElementType semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID xternalReference=STRING)
+	 *     (name=ID externalReference=DOCPATH)
 	 */
 	protected void sequence_ExternalDocument(EObject context, ExternalDocument semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, AlisaPackage.Literals.EXTERNAL_DOCUMENT__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AlisaPackage.Literals.EXTERNAL_DOCUMENT__NAME));
-			if(transientValues.isValueTransient(semanticObject, AlisaPackage.Literals.EXTERNAL_DOCUMENT__XTERNAL_REFERENCE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AlisaPackage.Literals.EXTERNAL_DOCUMENT__XTERNAL_REFERENCE));
+			if(transientValues.isValueTransient(semanticObject, AlisaPackage.Literals.EXTERNAL_DOCUMENT__EXTERNAL_REFERENCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AlisaPackage.Literals.EXTERNAL_DOCUMENT__EXTERNAL_REFERENCE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getExternalDocumentAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getExternalDocumentAccess().getXternalReferenceSTRINGTerminalRuleCall_4_0(), semanticObject.getXternalReference());
+		feeder.accept(grammarAccess.getExternalDocumentAccess().getExternalReferenceDOCPATHParserRuleCall_4_0(), semanticObject.getExternalReference());
 		feeder.finish();
 	}
 	
@@ -330,7 +239,8 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         element=RELREF? 
+	 *         target=RELREF? 
+	 *         category+=[Category|CATREF]* 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
 	 *         assert=ValueString? 
@@ -340,10 +250,11 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (refinesReference+=[Goal|REQREF] refinesReference+=[Goal|REQREF]*)? 
 	 *         (decomposesReference+=[Goal|REQREF] decomposesReference+=[Goal|REQREF]*)? 
 	 *         (evolvesReference+=[Goal|REQREF] evolvesReference+=[Goal|REQREF]*)? 
-	 *         (evolvesReference+=[Goal|REQREF] evolvesReference+=[Goal|REQREF]*)? 
+	 *         (conflictsReference+=[Goal|REQREF] conflictsReference+=[Goal|REQREF]*)? 
 	 *         (stakeholderReference+=[Stakeholder|RELREF] stakeholderReference+=[Stakeholder|RELREF]*)? 
-	 *         (stakeholderRequirementReference+=[DocumentedRequirement|REQREF] stakeholderRequirementReference+=[DocumentedRequirement|REQREF]*)? 
-	 *         (docReferences+=[ExternalDocument|RELREF] docReferences+=[ExternalDocument|RELREF]*)?
+	 *         (stakeholderRequirementReference+=[Goal|REQREF] stakeholderRequirementReference+=[Goal|REQREF]*)? 
+	 *         (systemRequirementReference+=[Requirement|REQREF] systemRequirementReference+=[Requirement|REQREF]*)? 
+	 *         (docReference+=[ExternalDocument|RELREF] docReference+=[ExternalDocument|RELREF]*)?
 	 *     )
 	 */
 	protected void sequence_Goal(EObject context, Goal semanticObject) {
@@ -362,16 +273,30 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (notesTarget=[NamedElement|QCLREF] notes+=ValueString notes+=ValueString*)
+	 *     (name=ID stakeholder+=Stakeholder*)
 	 */
-	protected void sequence_Notes(EObject context, Notes semanticObject) {
+	protected void sequence_Organization(EObject context, Organization semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (content+=DocumentedRequirement | content+=ElementType | content+=ElementReference)*)
+	 *     (
+	 *         name=ID 
+	 *         (importedNamespace+=[AlisaNameSpace|ID] importedNamespace+=[AlisaNameSpace|ID]*)? 
+	 *         (importedNamespace+=[AadlPackage|QPREF] importedNamespace+=[AadlPackage|QPREF]*)? 
+	 *         (content+=Goals | content+=Requirements)*
+	 *     )
+	 */
+	protected void sequence_RDAPackage(EObject context, RDAPackage semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID content+=ContractualElement*)
 	 */
 	protected void sequence_RequirementDocument(EObject context, RequirementDocument semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -381,9 +306,9 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (
-	 *         reqkind=ReqKind 
 	 *         name=ID 
 	 *         target=RELREF? 
+	 *         category+=[Category|CATREF]* 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
 	 *         assert=ValueString? 
@@ -396,9 +321,9 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (decomposesReference+=[Requirement|REQREF] decomposesReference+=[Requirement|REQREF]*)? 
 	 *         (evolvesReference+=[Requirement|REQREF] evolvesReference+=[Requirement|REQREF]*)? 
 	 *         verifiedBy+=VerificationDecomposition* 
-	 *         (stakeholderreqReference+=[DocumentedRequirement|REQREF] stakeholderreqReference+=[DocumentedRequirement|REQREF]*)? 
-	 *         (systemreqReference+=[DocumentedRequirement|REQREF] systemreqReference+=[DocumentedRequirement|REQREF]*)? 
-	 *         (docReferences+=[ExternalDocument|RELREF] docReferences+=[ExternalDocument|RELREF]*)?
+	 *         (stakeholderRequirementReference+=[Goal|REQREF] stakeholderRequirementReference+=[Goal|REQREF]*)? 
+	 *         (systemRequirementReference+=[Requirement|REQREF] systemRequirementReference+=[Requirement|REQREF]*)? 
+	 *         (docReference+=XDocUri docReference+=XDocUri*)?
 	 *     )
 	 */
 	protected void sequence_Requirement(EObject context, Requirement semanticObject) {
@@ -417,18 +342,16 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID title=ValueString? description=ValueString? role=ValueString?)
+	 *     (
+	 *         name=ID 
+	 *         title=ValueString? 
+	 *         description=ValueString? 
+	 *         role=ValueString? 
+	 *         email=ValueString? 
+	 *         phone=ValueString?
+	 *     )
 	 */
 	protected void sequence_Stakeholder(EObject context, Stakeholder semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID stakeholder+=Stakeholder*)
-	 */
-	protected void sequence_Stakeholders(EObject context, Stakeholders semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -460,7 +383,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (content+=VerificationActivity | content+=VerificationResult | content+=ElementType | content+=ElementReference)*)
+	 *     (name=ID (content+=VerificationActivity | content+=VerificationResult)*)
 	 */
 	protected void sequence_VerificationLibrary(EObject context, VerificationLibrary semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -480,6 +403,15 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     )
 	 */
 	protected void sequence_VerificationResult(EObject context, VerificationResult semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (docPath=[ExternalDocument|RELREF] docFragment=DOCFRAGMENT?)
+	 */
+	protected void sequence_XDocUri(EObject context, XDocUri semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

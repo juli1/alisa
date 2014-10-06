@@ -17,9 +17,8 @@ package edu.cmu.sei.alisa.editor.utils;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.swt.widgets.TableItem;
 
-import edu.cmu.alisa.sei.utils.AlisaDebug;
 import edu.cmu.alisa.sei.utils.Utils;
-import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
+import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Requirement;
@@ -56,29 +55,16 @@ public class AlisaEditorCellModifier implements ICellModifier {
 		Object elementData;
 		Object returnValue;
 
-		AlisaDebug.debug("[AlisaEditorCellModifier] getValue element=" + element + ";property=" + property);
-
 		elementIndex = Integer.parseInt(property);
 		returnValue = "";
-		if (element instanceof DocumentedRequirement) {
-			DocumentedRequirement requirement = (DocumentedRequirement) element;
+
+		if (element instanceof Requirement) {
+			Requirement requirement = (Requirement) element;
 			switch (elementIndex) {
-			case 1: {
-				returnValue = Utils.fixString(requirement.getTitle());
-				break;
-			}
-			case 2: {
-				returnValue = Utils.fixString(requirement.getDescription());
-				break;
-			}
-			case 3: {
-				returnValue = Utils.fixString(requirement.getComment());
-				break;
-			}
-			case 4: {
+			case 0: {
 				String strVal = "";
 				boolean firstPassed = false;
-				for (Stakeholder s : requirement.getAssignedTo()) {
+				for (Category s : requirement.getCategory()) {
 					if (firstPassed == true) {
 						strVal += ",";
 
@@ -88,17 +74,6 @@ public class AlisaEditorCellModifier implements ICellModifier {
 					firstPassed = true;
 				}
 				returnValue = strVal;
-				break;
-			}
-			}
-
-		}
-
-		if (element instanceof Requirement) {
-			Requirement requirement = (Requirement) element;
-			switch (elementIndex) {
-			case 0: {
-				returnValue = Utils.fixString(requirement.getReqkind());
 				break;
 			}
 			case 1: {
@@ -251,7 +226,7 @@ public class AlisaEditorCellModifier implements ICellModifier {
 				break;
 			}
 			case 1: {
-				returnValue = Utils.fixString(xdoc.getXternalReference());
+				returnValue = Utils.fixString(xdoc.getExternalReference());
 				break;
 			}
 			}
@@ -277,42 +252,16 @@ public class AlisaEditorCellModifier implements ICellModifier {
 		editorIdentifier = -1;
 		elementData = ((TableItem) element).getData();
 		elementIndex = Integer.parseInt(property);
-		AlisaDebug.debug("[AlisaEditorCellModifier] modify element=" + element + ";property=" + property + ";value="
-				+ value);
-		AlisaDebug.debug("[AlisaEditorCellModifier] modify element data=" + ((TableItem) element).getData());
-		if (elementData instanceof DocumentedRequirement) {
-			DocumentedRequirement requirement = (DocumentedRequirement) elementData;
-			editorIdentifier = AlisaEditor.INDEX_TABLE_DOCUMENTED_REQUIREMENTS;
-			switch (elementIndex) {
-			case 1: {
-				requirement.setTitle(strVal);
-				break;
-			}
-			case 2: {
-				requirement.setDescription(strVal);
-				break;
-			}
-			case 3: {
-				requirement.setComment(strVal);
-				break;
-			}
-			case 4: {
-				for (Stakeholder s : Utils.getStakeholdersFromString(alisaEditor.getRootObject(), (String) value)) {
-					requirement.getAssignedTo().add(s);
-				}
-				break;
-			}
-
-			}
-
-		}
 
 		if (elementData instanceof Requirement) {
 			Requirement requirement = (Requirement) elementData;
 			editorIdentifier = AlisaEditor.INDEX_TABLE_REQUIREMENTS;
 			switch (elementIndex) {
 			case 0: {
-				requirement.setReqkind(strVal);
+				requirement.getCategory().clear();
+				for (String catname : ((String) value).split(",")) {
+					requirement.getCategory().add(Utils.findCategory(requirement, catname));
+				}
 				break;
 			}
 			case 1: {
@@ -424,7 +373,7 @@ public class AlisaEditorCellModifier implements ICellModifier {
 				break;
 			}
 			case 1: {
-				xdoc.setXternalReference(strVal);
+				xdoc.setExternalReference(strVal);
 				break;
 			}
 			}
@@ -451,7 +400,6 @@ public class AlisaEditorCellModifier implements ICellModifier {
 				break;
 			case 4:
 				for (Stakeholder s : Utils.getStakeholdersFromString(alisaEditor.getRootObject(), (String) value)) {
-					AlisaDebug.debug("[AlisaEditorCell] add stakeholder" + s.getName());
 
 					va.getAssignedTo().add(s);
 				}

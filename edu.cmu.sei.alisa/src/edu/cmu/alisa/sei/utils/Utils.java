@@ -9,17 +9,17 @@ import org.osate.xtext.aadl2.properties.util.EMFIndexRetrieval;
 import edu.cmu.sei.alisa.alisa.AlisaFactory;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
-import edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition;
+import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.ExternalDocuments;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Goals;
+import edu.cmu.sei.alisa.alisa.Organization;
+import edu.cmu.sei.alisa.alisa.RDAPackage;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Requirements;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
-import edu.cmu.sei.alisa.alisa.Stakeholders;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.VerificationLibrary;
 import edu.cmu.sei.alisa.alisa.impl.AlisaFactoryImpl;
@@ -44,32 +44,14 @@ public class Utils {
 		return s.replaceAll("[^a-zA-Z0-9_. ]", "");
 	}
 
-	public static Stakeholder findStakeHolder(AlisaModel alisaModel, String name) {
+	public static Stakeholder findStakeHolder(String name) {
 		EObject obj = EMFIndexRetrieval.getDottedEObjectOfType(AlisaPackage.eINSTANCE.getStakeholder(), name);
 		return (Stakeholder) obj;
 	}
 
-	public static String getDecompositionString(DocumentedRequirementDecomposition decomposition) {
-		String result = "";
-
-		if (decomposition.getElement() != null) {
-			result += decomposition.getElement().getName();
-		} else {
-
-			if (decomposition.getLeft() != null) {
-				result += decomposition.getLeft().getName();
-
-			}
-
-			if (decomposition.getType() != null) {
-				result += " " + decomposition.getType() + " ";
-			}
-
-			if (decomposition.getRight() != null) {
-				result += getDecompositionString(decomposition.getRight());
-			}
-		}
-		return result;
+	public static Category findCategory(EObject context, String name) {
+		EObject obj = EMFIndexRetrieval.getDottedEObjectOfType(AlisaPackage.eINSTANCE.getCategory(), name);
+		return (Category) obj;
 	}
 
 	/**
@@ -97,6 +79,26 @@ public class Utils {
 	 * @param stakeholders
 	 * @return
 	 */
+	public static String getCategoryListAsString(List<Category> cat) {
+		String strVal = "";
+		boolean firstPassed = false;
+		for (Category s : cat) {
+			if (firstPassed == true) {
+				strVal += ",";
+
+			}
+
+			strVal += s.getName();
+			firstPassed = true;
+		}
+		return strVal;
+	}
+
+	/**
+	 * Convert a list of stakeholders into a readable string
+	 * @param stakeholders
+	 * @return
+	 */
 	public static String getStakeholderListAsString(List<Stakeholder> stakeholders) {
 		String strVal = "";
 		boolean firstPassed = false;
@@ -113,14 +115,14 @@ public class Utils {
 	}
 
 	/**
-	 * Convert a list of stakeholders into a readable string
+	 * Convert a list of requirements into a readable string
 	 * @param req
 	 * @return
 	 */
-	public static String getDocumentedRequirementAsString(List<DocumentedRequirement> req) {
+	public static String getContractualElementListAsString(List<Requirement> req) {
 		String strVal = "";
 		boolean firstPassed = false;
-		for (DocumentedRequirement s : req) {
+		for (Requirement s : req) {
 			if (firstPassed == true) {
 				strVal += ",";
 
@@ -139,12 +141,11 @@ public class Utils {
 		return "\"" + o.toString() + "\"";
 	}
 
-	public static List<Stakeholder> getStakeholdersFromString(AlisaModel model, String str) {
+	public static List<Stakeholder> getStakeholdersFromString(EObject context, String str) {
 		List<Stakeholder> stakeholders = new ArrayList<Stakeholder>();
 		for (String stakeholderName : str.split(",")) {
-			Stakeholder s = Utils.findStakeHolder(model, stakeholderName);
+			Stakeholder s = Utils.findStakeHolder(stakeholderName);
 			if (s != null) {
-				AlisaDebug.debug("[AlisaEditorCell] found stakeholder");
 				stakeholders.add(s);
 			}
 		}
@@ -158,12 +159,22 @@ public class Utils {
 	 */
 	private static int NEW_DOCREQ_ID = 1;
 
-	public static DocumentedRequirement addNewDocumentedRequirement(RequirementDocument reqdoc) {
+	public static Requirement addNewRequirement(RequirementDocument reqdoc) {
 		AlisaFactory factory = AlisaFactoryImpl.init();
-		DocumentedRequirement req = factory.createDocumentedRequirement();
+		Requirement req = factory.createRequirement();
 		req.setTitle("\"Title\"");
 		req.setName("newreq" + NEW_DOCREQ_ID++);
-		req.setComment("\"Comment\"");
+		req.setDescription("\"Desc\"");
+		reqdoc.getContent().add(req);
+
+		return req;
+	}
+
+	public static Goal addNewGoal(RequirementDocument reqdoc) {
+		AlisaFactory factory = AlisaFactoryImpl.init();
+		Goal req = factory.createGoal();
+		req.setTitle("\"Title\"");
+		req.setName("newreq" + NEW_DOCREQ_ID++);
 		req.setDescription("\"Desc\"");
 		reqdoc.getContent().add(req);
 
@@ -198,7 +209,7 @@ public class Utils {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		ExternalDocument xdoc = factory.createExternalDocument();
 		xdoc.setName("new_external_doc" + NEW_XDOC_ID++);
-		xdoc.setXternalReference("\"XRef to doc\"");
+		xdoc.setExternalReference("\"XRef to doc\"");
 		lib.getDocs().add(xdoc);
 	}
 
@@ -231,7 +242,6 @@ public class Utils {
 		va.setTitle("\"Title\"");
 		va.setName("new_requirement" + NEW_REQ_ID++);
 		va.setDescription("\"Desc\"");
-		va.setReqkind("requirement");
 		lib.getReqs().add(va);
 	}
 
@@ -242,7 +252,7 @@ public class Utils {
 	 */
 	private static int NEW_SH_ID = 1;
 
-	public static Stakeholder addNewStakeholder(Stakeholders org) {
+	public static Stakeholder addNewStakeholder(Organization org) {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		Stakeholder sh = factory.createStakeholder();
 		sh.setTitle("\"Title\"");
@@ -256,52 +266,42 @@ public class Utils {
 	/**
 	 * Create a new Model
 	 */
-	private static int NEW_MODEL_ID = 1;
 
-	public static AlisaModel createModel() {
-		AlisaFactory factory = AlisaFactoryImpl.init();
-		return factory.createAlisaModel();
-	}
-
-	public static RequirementDocument createReqDoc(AlisaModel model) {
+	public static RequirementDocument createRequirementDocument() {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		RequirementDocument reqdoc = factory.createRequirementDocument();
-		model.getContent().add(reqdoc);
 		return reqdoc;
 	}
 
-	public static Requirements createRequirements(AlisaModel model) {
+	public static Requirements createRequirements(RDAPackage model) {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		Requirements reqdoc = factory.createRequirements();
 		model.getContent().add(reqdoc);
 		return reqdoc;
 	}
 
-	public static Goals createGoals(AlisaModel model) {
+	public static Goals createGoals(RDAPackage model) {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		Goals goals = factory.createGoals();
 		model.getContent().add(goals);
 		return goals;
 	}
 
-	public static VerificationLibrary createVerificationLibrary(AlisaModel model) {
+	public static VerificationLibrary createVerificationLibrary() {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		VerificationLibrary vl = factory.createVerificationLibrary();
-		model.getContent().add(vl);
 		return vl;
 	}
 
-	public static ExternalDocuments createExternalDocuments(AlisaModel model) {
+	public static ExternalDocuments createExternalDocuments() {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		ExternalDocuments reqdoc = factory.createExternalDocuments();
-		model.getContent().add(reqdoc);
 		return reqdoc;
 	}
 
-	public static Stakeholders createStakeholders(AlisaModel model) {
+	public static Organization createOrganization() {
 		AlisaFactory factory = AlisaFactoryImpl.init();
-		Stakeholders reqdoc = factory.createStakeholders();
-		model.getContent().add(reqdoc);
+		Organization reqdoc = factory.createOrganization();
 		return reqdoc;
 	}
 
@@ -312,46 +312,10 @@ public class Utils {
 	 * @param o     - the object to be removed
 	 */
 	public static void deleteObjectFromModel(EObject o) {
-		if (o instanceof DocumentedRequirement) {
-			RequirementDocument reqdoc = (RequirementDocument) o.eContainer();
-			reqdoc.getContent().remove(o);
-		}
-		if (o instanceof Stakeholder) {
-			Stakeholders container = (Stakeholders) o.eContainer();
-			container.getStakeholder().remove(o);
-		}
-		if (o instanceof Stakeholders) {
-			AlisaModel container = (AlisaModel) o.eContainer();
-			container.getContent().remove(o);
+		if (!(o instanceof AlisaModel)) {
+			EObject reqdoc = o.eContainer();
+			reqdoc.eContents().remove(o);
 		}
 	}
 
-	public static void addDependency(DocumentedRequirement parent, DocumentedRequirement subDocumentedRequirement) {
-		DocumentedRequirementDecomposition actualDecomposition;
-		DocumentedRequirementDecomposition newDecomposition;
-		AlisaFactory factory;
-
-		factory = AlisaFactoryImpl.init();
-
-		newDecomposition = factory.createDocumentedRequirementDecomposition();
-
-		if (parent.getDecomposedBy().size() > 0) {
-			actualDecomposition = parent.getDecomposedBy().get(0);
-		} else {
-			actualDecomposition = null;
-		}
-
-		if (actualDecomposition == null) {
-			newDecomposition.setElement(subDocumentedRequirement);
-
-			parent.getDecomposedBy().add(newDecomposition);
-		} else {
-			newDecomposition.setLeft(subDocumentedRequirement);
-			newDecomposition.setRight(actualDecomposition);
-			newDecomposition.setType("and");
-			parent.getDecomposedBy().add(newDecomposition);
-
-		}
-
-	}
 }

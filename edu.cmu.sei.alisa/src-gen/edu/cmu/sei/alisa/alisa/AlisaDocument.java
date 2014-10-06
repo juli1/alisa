@@ -10,10 +10,10 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  *
- * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getDocument()
+ * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getAlisaDocument()
  * @model
  * @generated
  */
-public interface Document extends EObject
+public interface AlisaDocument extends EObject
 {
-} // Document
+} // AlisaDocument

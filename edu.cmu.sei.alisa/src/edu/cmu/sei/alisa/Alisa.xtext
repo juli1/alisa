@@ -9,42 +9,52 @@ import "platform:/resource/org.osate.aadl2/model/aadl2.ecore" as aadl2
 
 
 AlisaModel:
-//	'unit' name = ID
-	('imports' importedNamespace+=[AlisaNameSpace](',' importedNamespace+=[AlisaNameSpace])*';')?
-	('with' importedNamespace+=[aadl2::AadlPackage|QPREF](',' importedNamespace+=[aadl2::AadlPackage|QPREF])*';')?
-	content+=(Goals | Requirements | VerificationLibrary | RequirementDocument  
-		| Stakeholders |ExternalDocuments 
-		|Aliases | Notes
-	)*;
+	RDAPackage | VerificationLibrary | RequirementDocument  
+		| Organization |ExternalDocuments | AlisaConfiguration
+	;
+
+ContractualElement returns ContractualElement: Goal | Requirement ;
+
+AlisaDocument: RequirementDocument | RDAPackage;
 
 AlisaElement :
-Requirement| Goal|DocumentedRequirement|Stakeholder
-| Stakeholders | Goals | Requirements
+Requirement| Goal  |RDAPackage | AlisaConfiguration | Category
+|Stakeholder
+| Organization | Goals | Requirements
 |RequirementDocument | ExternalDocuments | VerificationLibrary
 |VerificationActivity|VerificationResult;
 
-
 AlisaNameSpace: 
 	RequirementDocument | ExternalDocuments | VerificationLibrary
-	| Goals | Requirements | Stakeholders
-;
-
-Document: 
-	RequirementDocument | ExternalDocuments | VerificationLibrary
+	|RDAPackage | Goals | Requirements | Organization | AlisaConfiguration
 ;
 
 RequirementDocument:
 	'requirement' 'document' name=ID
-	content += (DocumentedRequirement  | ElementType | ElementReference)* 
+	(content += ContractualElement)* 
 	'end' 'requirement' 'document'
 	';';
 
+
 VerificationLibrary:
 	'verification' 'library' name=ID
-	content += (VerificationActivity | VerificationResult | ElementType | ElementReference)* 
+	content += (VerificationActivity | VerificationResult)*  
 	'end' 'verification' 'library'
 	';';
+//
+//ConstraintLibrary:
+//	'constraint' 'library' name=ID
+//	content += (Requirements)*  
+//	'end' 'constraint' 'library'
+//	';';
 
+RDAPackage:
+	'package' name = ID
+	('imports' importedNamespace+=[AlisaNameSpace](',' importedNamespace+=[AlisaNameSpace])*';')?
+	('with' importedNamespace+=[aadl2::AadlPackage|QPREF](',' importedNamespace+=[aadl2::AadlPackage|QPREF])*';')?
+	content+=(Goals | Requirements  
+	)*
+	'end' 'package';
 
 Goals:
 	'goals' name=ID 'for' goalTarget=[aadl2::NamedElement|QCLREF]
@@ -55,20 +65,23 @@ Goals:
 
 Goal:
 	'goal' name=ID 
-	( 'for' element=RELREF)? //goalTarget=[aadl2::NamedElement|RELREF])?
-	('title' ':' title=ValueString ';')? 
-	('description' ':' description=ValueString';')? 
-	('assertion' ':' 	assert=ValueString ';')? 
-	('rationale' ':' rationale=ValueString';')? 
-	('issues' ':' issue+=ValueString (','issue+=ValueString)* ';')? 
-	('see' ':' modelReference+=QCRELREF (',' modelReference+=QCRELREF)*';')? 
-	('refines' ':' refinesReference+=[Goal|REQREF](',' refinesReference+=[Goal|REQREF])*';')? 
-	('decomposes' ':' decomposesReference+=[Goal|REQREF](',' decomposesReference+=[Goal|REQREF])*';')? 
-	('evolves' ':' evolvesReference+=[Goal|REQREF](',' evolvesReference+=[Goal|REQREF])*';')? 
-	('conflicts' ':' evolvesReference+=[Goal|REQREF](',' evolvesReference+=[Goal|REQREF])*';')? 
-	('stakeholder' ':' stakeholderReference+=[Stakeholder|RELREF] (',' stakeholderReference+=[Stakeholder|RELREF])*';')?
-	('see' 'stakeholder' 'req' ':' stakeholderRequirementReference+=[DocumentedRequirement|REQREF] (',' stakeholderRequirementReference+=[DocumentedRequirement|REQREF])*';')?
-	('see' 'document' ':' docReferences+=[ExternalDocument|RELREF] (',' docReferences+=[ExternalDocument|RELREF])*';')? 
+	(( 'for' target=RELREF)? //goalTarget=[aadl2::NamedElement|RELREF])?
+	& ('category' ':' (category+=[Category|CATREF])*)?
+	& ('title' ':' title=ValueString ';')? 
+	& ('description' ':' description=ValueString';')? 
+	& ('assertion' ':' 	assert=ValueString ';')? 
+	& ('rationale' ':' rationale=ValueString';')? 
+	& ('issues' ':' issue+=ValueString (','issue+=ValueString)* ';')? 
+	& ('see' ':' modelReference+=QCRELREF (',' modelReference+=QCRELREF)*';')? 
+	& ('refines' ':' refinesReference+=[Goal|REQREF](',' refinesReference+=[Goal|REQREF])*';')? 
+	& ('decomposes' ':' decomposesReference+=[Goal|REQREF](',' decomposesReference+=[Goal|REQREF])*';')? 
+	& ('evolves' ':' evolvesReference+=[Goal|REQREF](',' evolvesReference+=[Goal|REQREF])*';')? 
+	& ('conflicts' ':' conflictsReference+=[Goal|REQREF](',' conflictsReference+=[Goal|REQREF])*';')? 
+	& ('stakeholder' ':' stakeholderReference+=[Stakeholder|RELREF] (',' stakeholderReference+=[Stakeholder|RELREF])*';')?
+	& ('see' 'stakeholder' 'req' ':' stakeholderRequirementReference+=[Goal|REQREF] (',' stakeholderRequirementReference+=[Goal|REQREF])*';')?
+	&('see' 'system' 'req' ':' systemRequirementReference+=[Requirement|REQREF] (',' systemRequirementReference+=[Requirement|REQREF])*';')?
+	& ('see' 'document' ':' docReference+=[ExternalDocument|RELREF] (',' docReference+=[ExternalDocument|RELREF])*';')? 
+	)
 	 'end''goal'';';
 
 Requirements:
@@ -76,28 +89,30 @@ Requirements:
 	(reqs+=Requirement)*
 	'end' 'requirements' ';';
 
-ReqKind : 'requirement'|'assumption'|'input''assumption'|'guarantee'|'output''guarantee'|'invariant'|'constraint'|'design''constraint'|'development' 'requirement'|'system' 'requirement';
+//ContractCategory : 'requirement'|'assumption'|'input''assumption'|'guarantee'|'output''guarantee'|'invariant'|'constraint'|'design''constraint'|'development' 'requirement'|'system' 'requirement';
 	
 Requirement:
-	reqkind=ReqKind name=ID   
+	'requirement'  name=ID   
 	
-	( 'for' target=RELREF)? //reqTarget=[aadl2::NamedElement|RELREF])?
-	('title' ':' title=ValueString';')? 
-	('description' ':' description=ValueString';')? 
-	('assertion' ':' assert=ValueString';')? 
-	('rationale' ':' rationale=ValueString';')? 
-	('issues' ':' issue+=ValueString (','issue+=ValueString)* ';')? 
-	('see' ':' modelReference+=QCRELREF (',' modelReference+=QCRELREF)*';')? 
-	('see' 'goal' ':' goalReference+=[Goal] (',' goalReference+=[Goal])*';')?
-	('see' 'hazard' ':' hazardReference+=QNEREF (',' hazardReference+=QNEREF)*';')? // hazardReference+=[aadl2::NamedElement|QNEREF]
-	('refines' ':' refinesReference+=[Requirement|REQREF](',' refinesReference+=[Requirement|REQREF])*';')? 
-	('decomposes' ':' decomposesReference+=[Requirement|REQREF](',' decomposesReference+=[Requirement|REQREF])*';')? 
-	('evolves' ':' evolvesReference+=[Requirement|REQREF](',' evolvesReference+=[Requirement|REQREF])*';')? 
-	('verified' 'by' ':' verifiedBy+=(VerificationDecomposition)*)?
-	('see' 'stakeholder' 'req' ':' stakeholderreqReference+=[DocumentedRequirement|REQREF] (',' stakeholderreqReference+=[DocumentedRequirement|REQREF])*';')?
-	('see' 'system' 'req' ':' systemreqReference+=[DocumentedRequirement|REQREF] (',' systemreqReference+=[DocumentedRequirement|REQREF])*';')?
-	('see' 'document' ':' docReferences+=[ExternalDocument|RELREF] (',' docReferences+=[ExternalDocument|RELREF])*';')? 
-	'end''req'';';
+	(( 'for' target=RELREF)? //reqTarget=[aadl2::NamedElement|RELREF])?
+ 	&('category' ':' (category+=[Category|CATREF])*)?
+	&('title' ':' title=ValueString';')? 
+	&('description' ':' description=ValueString';')? 
+	&('assertion' ':' assert=ValueString';')? 
+	&('rationale' ':' rationale=ValueString';')? 
+	&('issues' ':' issue+=ValueString (','issue+=ValueString)* ';')? 
+	&('see' ':' modelReference+=QCRELREF (',' modelReference+=QCRELREF)*';')? 
+	&('see' 'goal' ':' goalReference+=[Goal] (',' goalReference+=[Goal])*';')?
+	&('see' 'hazard' ':' hazardReference+=QNEREF (',' hazardReference+=QNEREF)*';')? // hazardReference+=[aadl2::NamedElement|QNEREF]
+	&('refines' ':' refinesReference+=[Requirement|REQREF](',' refinesReference+=[Requirement|REQREF])*';')? 
+	&('decomposes' ':' decomposesReference+=[Requirement|REQREF](',' decomposesReference+=[Requirement|REQREF])*';')? 
+	&('evolves' ':' evolvesReference+=[Requirement|REQREF](',' evolvesReference+=[Requirement|REQREF])*';')? 
+	&('verified' 'by' ':' verifiedBy+=(VerificationDecomposition)*)?
+	&('see' 'stakeholder' 'req' ':' stakeholderRequirementReference+=[Goal|REQREF] (',' stakeholderRequirementReference+=[Goal|REQREF])*';')?
+	&('see' 'system' 'req' ':' systemRequirementReference+=[Requirement|REQREF] (',' systemRequirementReference+=[Requirement|REQREF])*';')?
+	&('see' 'document' ':' docReference+=XDocUri (',' docReference+=XDocUri)*';')? 
+	)
+	'end''requirement'';';
 
 
 ExternalDocuments:
@@ -111,28 +126,25 @@ ExternalDocuments:
 
 ExternalDocument:
 	'document'
-	name=ID 'see' ':' xternalReference=STRING ';'
+	name=ID 'see' ':' externalReference=DOCPATH ';'
 	
 ;
 
-Aliases:
-	'aliases''for' aliasesTarget=[aadl2::NamedElement|QCLREF] ':'
-	aliases+=Alias ( aliases+=Alias)*
-	'end' 'aliases'';'
+
+XDocUri : 
+	docPath=[ExternalDocument|RELREF] ( '#' docFragment=DOCFRAGMENT)?
 ;
 
-Alias:
-	alias=ValueString 'found' 'in' docRef+=[Document] (',' docRef+=[Document])* ';'
+AlisaConfiguration:
+	'configuration' name = ID
+	'categories'
+	(category+= Category)*
+	'end' 'categories' ';'
 ;
 
-
-
-Notes:
-	'notes''for' notesTarget=[aadl2::NamedElement|QCLREF]//(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) ':'
-	notes+=ValueString ( notes+=ValueString)*
-	'end' 'notes'';'
+Category :
+	name = ID 'extends' extends=[Category|CATREF]
 ;
-
 
 
 ValueString :
@@ -145,39 +157,22 @@ ValueString :
  */
 Stakeholder:
 	'stakeholder' name=ID
-	('title' ':' title=ValueString ';')?
-	('description' ':' description=ValueString ';')?
-	('role' ':' role=ValueString ';')?
+	(('title' ':' title=ValueString ';')?
+	&('description' ':' description=ValueString ';')?
+	&('role' ':' role=ValueString ';')?
+	&('email' ':' email=ValueString';')?
+	&('phone' ':' phone=ValueString';')?)
 	'end' 'stakeholder' ';'
 ;
 
 
-Stakeholders:
+Organization:
 	'organization' name=ID 
 	(stakeholder += Stakeholder)*
 	'end' 'organization'';'
 	;
 
 
-/*
- * Requirement
- */
-DocumentedRequirement:
-	'requirement' name=ID
-	('title' ':' title=ValueString )?
-	('description' ':' description=ValueString )?
-	('comment' ':' comment=ValueString )?
-	('assigned' 'to' ':' assignedTo+=([Stakeholder|RELREF])*)?
-	('referenced' 'by' ':' referencedBy+=([ElementType|RELREF])*)?
-	('verified' 'by' ':' verifiedBy+=(VerificationDecomposition)*)?
-	('decomposed' 'by' ':' decomposedBy+=(DocumentedRequirementDecomposition)*)?
-	'end' 'requirement' ';'
-;
-
-DocumentedRequirementDecomposition:
-	element=([DocumentedRequirement|RELREF])|
-	left=([DocumentedRequirement|RELREF]) type=('and'|'or') right=(DocumentedRequirementDecomposition)
-;
 
 VerificationDecomposition:
 	element=([VerificationActivity|RELREF])|
@@ -185,33 +180,6 @@ VerificationDecomposition:
 ;
 
 
-
-/*
- * System Element
- */
-ElementType:
-	'system' 'element' name=ID
-	('reference' ':' reference=ValueString)?
-	('element-type' ':' elementType=ValueString)?
-	('model-type' ':' modelType=ValueString)?
-	('documentDetails' ':' details=ValueString)?
-	('version' ':' version+=(ValueString)*)?
-	'end' 'system' 'element' ';'
-;
-
-
-/*
- * Element Reference
- */
-ElementReference:
-'element' 'reference' name=ID
-('url' ':' url=ValueString)?
-('model' 'reference' ':' modelReference+=[aadl2::NamedElement|RELREF])?
-('reference-type' ':' referenceType=ValueString)?
-('documentDetails' ':' details=ValueString)?
-('version' ':' version+=(ValueString)*)?
-'end' 'element' 'reference' ';'
-;
 
 /*
  * Verification Activity
@@ -248,12 +216,12 @@ VerificationResult:
 	'end' 'verification' 'result' ';'
 ;
 
-VerificationResultState:
-	'scheduled' | 'completed' | 'inprogress'
+enum  VerificationResultState:
+	SCHEDULED='scheduled' | COMPLETED='completed' | INPROGRESS='inprogress'
 ;
 
-VerificationResultStatus:
-	'pass' | 'fail' | 'unknown'
+enum VerificationResultStatus:
+	PASS='pass' | FAIL='fail' | UNKNOWN='unknown'
 ;
 
 	// classifier reference
@@ -277,11 +245,19 @@ QCRELREF:
 RELREF:
 	ID ('.' ID)* ;	
 
+// dotted path as relative reference
+CATREF:
+	ID '.' ID ;	
+
 // reference to property (association)	
 PAREF: '#' ID ('::' ID)?;
 
 // requirement or goal reference (just dotted)
 REQREF: (ID '.')* ID ;
+
+DOCPATH: ( ID '/')* ID '.' ID;
+
+DOCFRAGMENT: ID ('.' ID)*;
 
 terminal STRING:
 	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | '"'))* '"' |

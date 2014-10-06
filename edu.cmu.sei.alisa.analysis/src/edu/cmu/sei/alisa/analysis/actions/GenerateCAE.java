@@ -9,7 +9,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 
-import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
+import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.editor.editors.AlisaEditor;
 
 public class GenerateCAE implements IWorkbenchWindowActionDelegate {
@@ -29,7 +29,7 @@ public class GenerateCAE implements IWorkbenchWindowActionDelegate {
 	 */
 	public void run(IAction action) {
 		AlisaEditor editor;
-		DocumentedRequirement requirement;
+		Requirement requirement;
 
 		requirement = null;
 		editor = null;
@@ -42,8 +42,8 @@ public class GenerateCAE implements IWorkbenchWindowActionDelegate {
 		if (editor != null) {
 			Object o = ((IStructuredSelection) (editor.getTableViewer(AlisaEditor.INDEX_TABLE_REQUIREMENTS)
 					.getSelection())).getFirstElement();
-			if (o instanceof DocumentedRequirement) {
-				requirement = (DocumentedRequirement) o;
+			if (o instanceof Requirement) {
+				requirement = (Requirement) o;
 			}
 		}
 

@@ -6,7 +6,7 @@ import java.util.List;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
-import edu.cmu.sei.alisa.alisa.AlisaModel;
+import edu.cmu.sei.alisa.alisa.RDAPackage;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Requirements;
 
@@ -20,8 +20,8 @@ public class AlisaRequirementsContentProvider implements IStructuredContentProvi
 	public Object[] getElements(Object element) {
 		List<Requirement> reqs = new ArrayList<Requirement>();
 
-		if (element instanceof AlisaModel) {
-			AlisaModel am = (AlisaModel) element;
+		if (element instanceof RDAPackage) {
+			RDAPackage am = (RDAPackage) element;
 			for (Object o : am.getContent()) {
 				if (o instanceof Requirements) {
 					for (Requirement g : ((Requirements) o).getReqs()) {

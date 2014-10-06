@@ -3,39 +3,30 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.ContractualElement;
-import edu.cmu.sei.alisa.alisa.RequirementDocument;
-
-import java.util.Collection;
+import edu.cmu.sei.alisa.alisa.Category;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Requirement Document</b></em>'.
+ * An implementation of the model object '<em><b>Category</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementDocumentImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementDocumentImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.CategoryImpl#getName <em>Name</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.CategoryImpl#getExtends <em>Extends</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RequirementDocumentImpl extends AlisaModelImpl implements RequirementDocument
+public class CategoryImpl extends AlisaElementImpl implements Category
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -58,21 +49,21 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
+   * The cached value of the '{@link #getExtends() <em>Extends</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContent()
+   * @see #getExtends()
    * @generated
    * @ordered
    */
-  protected EList<ContractualElement> content;
+  protected Category extends_;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected RequirementDocumentImpl()
+  protected CategoryImpl()
   {
     super();
   }
@@ -85,7 +76,7 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   @Override
   protected EClass eStaticClass()
   {
-    return AlisaPackage.Literals.REQUIREMENT_DOCUMENT;
+    return AlisaPackage.Literals.CATEGORY;
   }
 
   /**
@@ -108,7 +99,7 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT_DOCUMENT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.CATEGORY__NAME, oldName, name));
   }
 
   /**
@@ -116,13 +107,19 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ContractualElement> getContent()
+  public Category getExtends()
   {
-    if (content == null)
+    if (extends_ != null && extends_.eIsProxy())
     {
-      content = new EObjectContainmentEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT);
+      InternalEObject oldExtends = (InternalEObject)extends_;
+      extends_ = (Category)eResolveProxy(oldExtends);
+      if (extends_ != oldExtends)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.CATEGORY__EXTENDS, oldExtends, extends_));
+      }
     }
-    return content;
+    return extends_;
   }
 
   /**
@@ -130,15 +127,22 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public Category basicGetExtends()
   {
-    switch (featureID)
-    {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
-        return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return extends_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExtends(Category newExtends)
+  {
+    Category oldExtends = extends_;
+    extends_ = newExtends;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.CATEGORY__EXTENDS, oldExtends, extends_));
   }
 
   /**
@@ -151,10 +155,11 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+      case AlisaPackage.CATEGORY__NAME:
         return getName();
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
-        return getContent();
+      case AlisaPackage.CATEGORY__EXTENDS:
+        if (resolve) return getExtends();
+        return basicGetExtends();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -164,18 +169,16 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+      case AlisaPackage.CATEGORY__NAME:
         setName((String)newValue);
         return;
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
-        getContent().clear();
-        getContent().addAll((Collection<? extends ContractualElement>)newValue);
+      case AlisaPackage.CATEGORY__EXTENDS:
+        setExtends((Category)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -191,11 +194,11 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+      case AlisaPackage.CATEGORY__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
-        getContent().clear();
+      case AlisaPackage.CATEGORY__EXTENDS:
+        setExtends((Category)null);
         return;
     }
     super.eUnset(featureID);
@@ -211,10 +214,10 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+      case AlisaPackage.CATEGORY__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
-        return content != null && !content.isEmpty();
+      case AlisaPackage.CATEGORY__EXTENDS:
+        return extends_ != null;
     }
     return super.eIsSet(featureID);
   }
@@ -236,4 +239,4 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
     return result.toString();
   }
 
-} //RequirementDocumentImpl
+} //CategoryImpl

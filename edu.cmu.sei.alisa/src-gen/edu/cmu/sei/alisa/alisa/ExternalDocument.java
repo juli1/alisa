@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ExternalDocument#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ExternalDocument#getXternalReference <em>Xternal Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.ExternalDocument#getExternalReference <em>External Reference</em>}</li>
  * </ul>
  * </p>
  *
@@ -50,29 +50,29 @@ public interface ExternalDocument extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Xternal Reference</b></em>' attribute.
+   * Returns the value of the '<em><b>External Reference</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Xternal Reference</em>' attribute isn't clear,
+   * If the meaning of the '<em>External Reference</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Xternal Reference</em>' attribute.
-   * @see #setXternalReference(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getExternalDocument_XternalReference()
+   * @return the value of the '<em>External Reference</em>' attribute.
+   * @see #setExternalReference(String)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getExternalDocument_ExternalReference()
    * @model
    * @generated
    */
-  String getXternalReference();
+  String getExternalReference();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ExternalDocument#getXternalReference <em>Xternal Reference</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ExternalDocument#getExternalReference <em>External Reference</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Xternal Reference</em>' attribute.
-   * @see #getXternalReference()
+   * @param value the new value of the '<em>External Reference</em>' attribute.
+   * @see #getExternalReference()
    * @generated
    */
-  void setXternalReference(String value);
+  void setExternalReference(String value);
 
 } // ExternalDocument

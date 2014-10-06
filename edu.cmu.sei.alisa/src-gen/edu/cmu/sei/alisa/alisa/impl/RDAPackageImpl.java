@@ -3,8 +3,7 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.Stakeholder;
-import edu.cmu.sei.alisa.alisa.Stakeholders;
+import edu.cmu.sei.alisa.alisa.RDAPackage;
 
 import java.util.Collection;
 
@@ -14,28 +13,31 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Stakeholders</b></em>'.
+ * An implementation of the model object '<em><b>RDA Package</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.StakeholdersImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.StakeholdersImpl#getStakeholder <em>Stakeholder</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RDAPackageImpl#getName <em>Name</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RDAPackageImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RDAPackageImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class StakeholdersImpl extends AlisaElementImpl implements Stakeholders
+public class RDAPackageImpl extends AlisaModelImpl implements RDAPackage
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -58,21 +60,31 @@ public class StakeholdersImpl extends AlisaElementImpl implements Stakeholders
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getStakeholder() <em>Stakeholder</em>}' containment reference list.
+   * The cached value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStakeholder()
+   * @see #getImportedNamespace()
    * @generated
    * @ordered
    */
-  protected EList<Stakeholder> stakeholder;
+  protected EList<EObject> importedNamespace;
+
+  /**
+   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getContent()
+   * @generated
+   * @ordered
+   */
+  protected EList<EObject> content;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected StakeholdersImpl()
+  protected RDAPackageImpl()
   {
     super();
   }
@@ -85,7 +97,7 @@ public class StakeholdersImpl extends AlisaElementImpl implements Stakeholders
   @Override
   protected EClass eStaticClass()
   {
-    return AlisaPackage.Literals.STAKEHOLDERS;
+    return AlisaPackage.Literals.RDA_PACKAGE;
   }
 
   /**
@@ -108,7 +120,7 @@ public class StakeholdersImpl extends AlisaElementImpl implements Stakeholders
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.STAKEHOLDERS__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.RDA_PACKAGE__NAME, oldName, name));
   }
 
   /**
@@ -116,13 +128,27 @@ public class StakeholdersImpl extends AlisaElementImpl implements Stakeholders
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Stakeholder> getStakeholder()
+  public EList<EObject> getImportedNamespace()
   {
-    if (stakeholder == null)
+    if (importedNamespace == null)
     {
-      stakeholder = new EObjectContainmentEList<Stakeholder>(Stakeholder.class, this, AlisaPackage.STAKEHOLDERS__STAKEHOLDER);
+      importedNamespace = new EObjectResolvingEList<EObject>(EObject.class, this, AlisaPackage.RDA_PACKAGE__IMPORTED_NAMESPACE);
     }
-    return stakeholder;
+    return importedNamespace;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<EObject> getContent()
+  {
+    if (content == null)
+    {
+      content = new EObjectContainmentEList<EObject>(EObject.class, this, AlisaPackage.RDA_PACKAGE__CONTENT);
+    }
+    return content;
   }
 
   /**
@@ -135,8 +161,8 @@ public class StakeholdersImpl extends AlisaElementImpl implements Stakeholders
   {
     switch (featureID)
     {
-      case AlisaPackage.STAKEHOLDERS__STAKEHOLDER:
-        return ((InternalEList<?>)getStakeholder()).basicRemove(otherEnd, msgs);
+      case AlisaPackage.RDA_PACKAGE__CONTENT:
+        return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -151,10 +177,12 @@ public class StakeholdersImpl extends AlisaElementImpl implements Stakeholders
   {
     switch (featureID)
     {
-      case AlisaPackage.STAKEHOLDERS__NAME:
+      case AlisaPackage.RDA_PACKAGE__NAME:
         return getName();
-      case AlisaPackage.STAKEHOLDERS__STAKEHOLDER:
-        return getStakeholder();
+      case AlisaPackage.RDA_PACKAGE__IMPORTED_NAMESPACE:
+        return getImportedNamespace();
+      case AlisaPackage.RDA_PACKAGE__CONTENT:
+        return getContent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -170,12 +198,16 @@ public class StakeholdersImpl extends AlisaElementImpl implements Stakeholders
   {
     switch (featureID)
     {
-      case AlisaPackage.STAKEHOLDERS__NAME:
+      case AlisaPackage.RDA_PACKAGE__NAME:
         setName((String)newValue);
         return;
-      case AlisaPackage.STAKEHOLDERS__STAKEHOLDER:
-        getStakeholder().clear();
-        getStakeholder().addAll((Collection<? extends Stakeholder>)newValue);
+      case AlisaPackage.RDA_PACKAGE__IMPORTED_NAMESPACE:
+        getImportedNamespace().clear();
+        getImportedNamespace().addAll((Collection<? extends EObject>)newValue);
+        return;
+      case AlisaPackage.RDA_PACKAGE__CONTENT:
+        getContent().clear();
+        getContent().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -191,11 +223,14 @@ public class StakeholdersImpl extends AlisaElementImpl implements Stakeholders
   {
     switch (featureID)
     {
-      case AlisaPackage.STAKEHOLDERS__NAME:
+      case AlisaPackage.RDA_PACKAGE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AlisaPackage.STAKEHOLDERS__STAKEHOLDER:
-        getStakeholder().clear();
+      case AlisaPackage.RDA_PACKAGE__IMPORTED_NAMESPACE:
+        getImportedNamespace().clear();
+        return;
+      case AlisaPackage.RDA_PACKAGE__CONTENT:
+        getContent().clear();
         return;
     }
     super.eUnset(featureID);
@@ -211,10 +246,12 @@ public class StakeholdersImpl extends AlisaElementImpl implements Stakeholders
   {
     switch (featureID)
     {
-      case AlisaPackage.STAKEHOLDERS__NAME:
+      case AlisaPackage.RDA_PACKAGE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AlisaPackage.STAKEHOLDERS__STAKEHOLDER:
-        return stakeholder != null && !stakeholder.isEmpty();
+      case AlisaPackage.RDA_PACKAGE__IMPORTED_NAMESPACE:
+        return importedNamespace != null && !importedNamespace.isEmpty();
+      case AlisaPackage.RDA_PACKAGE__CONTENT:
+        return content != null && !content.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -236,4 +273,4 @@ public class StakeholdersImpl extends AlisaElementImpl implements Stakeholders
     return result.toString();
   }
 
-} //StakeholdersImpl
+} //RDAPackageImpl

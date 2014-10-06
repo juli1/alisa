@@ -13,10 +13,8 @@ import org.osate.aadl2.Classifier;
 import org.osate.aadl2.NamedElement;
 import org.osate.xtext.aadl2.properties.linking.PropertiesLinkingService;
 
-import edu.cmu.sei.alisa.alisa.Aliases;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Goals;
-import edu.cmu.sei.alisa.alisa.Notes;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Requirements;
 
@@ -34,8 +32,7 @@ public class AlisaLinkingService extends PropertiesLinkingService {
 		final String name = getCrossRefNodeAsString(node);
 		if (requiredType == ne) {
 			NamedElement e = null;
-			if (context instanceof Goals || context instanceof Requirements || context instanceof Aliases
-					|| context instanceof Notes) {
+			if (context instanceof Goals || context instanceof Requirements) {
 				String dotname = name.replaceAll("::", ".");
 				EObject res = findClassifier(context, reference, name);
 				return Collections.singletonList(res);

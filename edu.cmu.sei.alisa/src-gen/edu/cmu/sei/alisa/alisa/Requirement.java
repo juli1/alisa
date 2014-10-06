@@ -12,9 +12,9 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getReqkind <em>Reqkind</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getTarget <em>Target</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getCategory <em>Category</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getAssert <em>Assert</em>}</li>
@@ -27,9 +27,9 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getDecomposesReference <em>Decomposes Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getEvolvesReference <em>Evolves Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getVerifiedBy <em>Verified By</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getStakeholderreqReference <em>Stakeholderreq Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getSystemreqReference <em>Systemreq Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getDocReferences <em>Doc References</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getStakeholderRequirementReference <em>Stakeholder Requirement Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getSystemRequirementReference <em>System Requirement Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getDocReference <em>Doc Reference</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,34 +37,8 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Requirement extends AlisaElement
+public interface Requirement extends ContractualElement, AlisaElement
 {
-  /**
-   * Returns the value of the '<em><b>Reqkind</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Reqkind</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Reqkind</em>' attribute.
-   * @see #setReqkind(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_Reqkind()
-   * @model
-   * @generated
-   */
-  String getReqkind();
-
-  /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Requirement#getReqkind <em>Reqkind</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Reqkind</em>' attribute.
-   * @see #getReqkind()
-   * @generated
-   */
-  void setReqkind(String value);
-
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -116,6 +90,22 @@ public interface Requirement extends AlisaElement
    * @generated
    */
   void setTarget(String value);
+
+  /**
+   * Returns the value of the '<em><b>Category</b></em>' reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Category}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Category</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Category</em>' reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_Category()
+   * @model
+   * @generated
+   */
+  EList<Category> getCategory();
 
   /**
    * Returns the value of the '<em><b>Title</b></em>' attribute.
@@ -350,51 +340,51 @@ public interface Requirement extends AlisaElement
   EList<VerificationDecomposition> getVerifiedBy();
 
   /**
-   * Returns the value of the '<em><b>Stakeholderreq Reference</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.DocumentedRequirement}.
+   * Returns the value of the '<em><b>Stakeholder Requirement Reference</b></em>' reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Goal}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Stakeholderreq Reference</em>' reference list isn't clear,
+   * If the meaning of the '<em>Stakeholder Requirement Reference</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Stakeholderreq Reference</em>' reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_StakeholderreqReference()
+   * @return the value of the '<em>Stakeholder Requirement Reference</em>' reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_StakeholderRequirementReference()
    * @model
    * @generated
    */
-  EList<DocumentedRequirement> getStakeholderreqReference();
+  EList<Goal> getStakeholderRequirementReference();
 
   /**
-   * Returns the value of the '<em><b>Systemreq Reference</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.DocumentedRequirement}.
+   * Returns the value of the '<em><b>System Requirement Reference</b></em>' reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Requirement}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Systemreq Reference</em>' reference list isn't clear,
+   * If the meaning of the '<em>System Requirement Reference</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Systemreq Reference</em>' reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_SystemreqReference()
+   * @return the value of the '<em>System Requirement Reference</em>' reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_SystemRequirementReference()
    * @model
    * @generated
    */
-  EList<DocumentedRequirement> getSystemreqReference();
+  EList<Requirement> getSystemRequirementReference();
 
   /**
-   * Returns the value of the '<em><b>Doc References</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.ExternalDocument}.
+   * Returns the value of the '<em><b>Doc Reference</b></em>' containment reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.XDocUri}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Doc References</em>' reference list isn't clear,
+   * If the meaning of the '<em>Doc Reference</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Doc References</em>' reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_DocReferences()
-   * @model
+   * @return the value of the '<em>Doc Reference</em>' containment reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_DocReference()
+   * @model containment="true"
    * @generated
    */
-  EList<ExternalDocument> getDocReferences();
+  EList<XDocUri> getDocReference();
 
 } // Requirement

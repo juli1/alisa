@@ -4,8 +4,6 @@ package edu.cmu.sei.alisa.alisa;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Requirement Document</b></em>'.
@@ -23,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface RequirementDocument extends AlisaElement, AlisaNameSpace, Document
+public interface RequirementDocument extends AlisaModel, AlisaDocument, AlisaElement, AlisaNameSpace
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -53,7 +51,7 @@ public interface RequirementDocument extends AlisaElement, AlisaNameSpace, Docum
 
   /**
    * Returns the value of the '<em><b>Content</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.ContractualElement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Content</em>' containment reference list isn't clear,
@@ -65,6 +63,6 @@ public interface RequirementDocument extends AlisaElement, AlisaNameSpace, Docum
    * @model containment="true"
    * @generated
    */
-  EList<EObject> getContent();
+  EList<ContractualElement> getContent();
 
 } // RequirementDocument

@@ -24,8 +24,6 @@ import org.eclipse.swt.widgets.Display;
 import org.osate.aadl2.NamedElement;
 
 import edu.cmu.alisa.sei.utils.Utils;
-import edu.cmu.sei.alisa.alisa.DocumentedRequirement;
-import edu.cmu.sei.alisa.alisa.DocumentedRequirementDecomposition;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Requirement;
@@ -108,40 +106,6 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
 	public void update(ViewerCell cell) {
 		int index = cell.getColumnIndex();
 		String text = "N/A";
-//    	AlisaDebug.debug("[AlisaLabelProvider] update, element=" + cell.getElement());
-//    	AlisaDebug.debug("[AlisaLabelProvider] index=" + index);
-
-		if (cell.getElement() instanceof DocumentedRequirement) {
-			DocumentedRequirement requirement = (DocumentedRequirement) cell.getElement();
-			switch (index) {
-			case 0:
-				text = requirement.getName();
-				break;
-			case 1:
-				text = requirement.getTitle();
-				break;
-			case 2:
-				text = requirement.getDescription();
-				break;
-			case 3:
-				text = requirement.getComment();
-				break;
-			case 4: {
-				text = Utils.getStakeholderListAsString(requirement.getAssignedTo());
-				break;
-			}
-
-			case 5: {
-				String strVal = "";
-				for (DocumentedRequirementDecomposition rtmp : requirement.getDecomposedBy()) {
-					strVal += Utils.getDecompositionString(rtmp);
-
-				}
-				text = strVal;
-				break;
-			}
-			}
-		}
 
 		if (cell.getElement() instanceof Stakeholder) {
 			Stakeholder stakeholder = (Stakeholder) cell.getElement();
@@ -215,7 +179,7 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
 			Requirements reqs = (Requirements) req.eContainer();
 			switch (index) {
 			case 0:
-				text = req.getReqkind();
+				text = Utils.getCategoryListAsString(req.getCategory());
 				break;
 			case 1:
 				text = reqs.getName() + "." + req.getName();
@@ -250,7 +214,7 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
 				text = extdoc.getName();
 				break;
 			case 1:
-				text = extdoc.getXternalReference();
+				text = extdoc.getExternalReference();
 				break;
 			}
 		}

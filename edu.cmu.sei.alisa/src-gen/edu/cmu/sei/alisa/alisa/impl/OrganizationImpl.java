@@ -3,8 +3,8 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.ContractualElement;
-import edu.cmu.sei.alisa.alisa.RequirementDocument;
+import edu.cmu.sei.alisa.alisa.Organization;
+import edu.cmu.sei.alisa.alisa.Stakeholder;
 
 import java.util.Collection;
 
@@ -23,19 +23,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Requirement Document</b></em>'.
+ * An implementation of the model object '<em><b>Organization</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementDocumentImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementDocumentImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.OrganizationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.OrganizationImpl#getStakeholder <em>Stakeholder</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RequirementDocumentImpl extends AlisaModelImpl implements RequirementDocument
+public class OrganizationImpl extends AlisaModelImpl implements Organization
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -58,21 +58,21 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
+   * The cached value of the '{@link #getStakeholder() <em>Stakeholder</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContent()
+   * @see #getStakeholder()
    * @generated
    * @ordered
    */
-  protected EList<ContractualElement> content;
+  protected EList<Stakeholder> stakeholder;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected RequirementDocumentImpl()
+  protected OrganizationImpl()
   {
     super();
   }
@@ -85,7 +85,7 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   @Override
   protected EClass eStaticClass()
   {
-    return AlisaPackage.Literals.REQUIREMENT_DOCUMENT;
+    return AlisaPackage.Literals.ORGANIZATION;
   }
 
   /**
@@ -108,7 +108,7 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT_DOCUMENT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.ORGANIZATION__NAME, oldName, name));
   }
 
   /**
@@ -116,13 +116,13 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ContractualElement> getContent()
+  public EList<Stakeholder> getStakeholder()
   {
-    if (content == null)
+    if (stakeholder == null)
     {
-      content = new EObjectContainmentEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT);
+      stakeholder = new EObjectContainmentEList<Stakeholder>(Stakeholder.class, this, AlisaPackage.ORGANIZATION__STAKEHOLDER);
     }
-    return content;
+    return stakeholder;
   }
 
   /**
@@ -135,8 +135,8 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
-        return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
+      case AlisaPackage.ORGANIZATION__STAKEHOLDER:
+        return ((InternalEList<?>)getStakeholder()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -151,10 +151,10 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+      case AlisaPackage.ORGANIZATION__NAME:
         return getName();
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
-        return getContent();
+      case AlisaPackage.ORGANIZATION__STAKEHOLDER:
+        return getStakeholder();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -170,12 +170,12 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+      case AlisaPackage.ORGANIZATION__NAME:
         setName((String)newValue);
         return;
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
-        getContent().clear();
-        getContent().addAll((Collection<? extends ContractualElement>)newValue);
+      case AlisaPackage.ORGANIZATION__STAKEHOLDER:
+        getStakeholder().clear();
+        getStakeholder().addAll((Collection<? extends Stakeholder>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -191,11 +191,11 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+      case AlisaPackage.ORGANIZATION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
-        getContent().clear();
+      case AlisaPackage.ORGANIZATION__STAKEHOLDER:
+        getStakeholder().clear();
         return;
     }
     super.eUnset(featureID);
@@ -211,10 +211,10 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+      case AlisaPackage.ORGANIZATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
-        return content != null && !content.isEmpty();
+      case AlisaPackage.ORGANIZATION__STAKEHOLDER:
+        return stakeholder != null && !stakeholder.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -236,4 +236,4 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
     return result.toString();
   }
 
-} //RequirementDocumentImpl
+} //OrganizationImpl

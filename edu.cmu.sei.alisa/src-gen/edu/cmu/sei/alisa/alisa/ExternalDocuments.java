@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ExternalDocuments extends AlisaElement, AlisaNameSpace, Document
+public interface ExternalDocuments extends AlisaModel, AlisaElement, AlisaNameSpace
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

@@ -6,11 +6,10 @@ import java.util.List;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
-import edu.cmu.sei.alisa.alisa.Goal;
-import edu.cmu.sei.alisa.alisa.Goals;
-import edu.cmu.sei.alisa.alisa.RDAPackage;
+import edu.cmu.sei.alisa.alisa.ContractualElement;
+import edu.cmu.sei.alisa.alisa.RequirementDocument;
 
-public class AlisaGoalsContentProvider implements IStructuredContentProvider {
+public class AlisaRequirementsDocumentContentProvider implements IStructuredContentProvider {
 
 	/**
 	 * Returns the elements to display in the table viewer
@@ -18,24 +17,15 @@ public class AlisaGoalsContentProvider implements IStructuredContentProvider {
 	 * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
 	 */
 	public Object[] getElements(Object element) {
-		List<Goal> goals = new ArrayList<Goal>();
-
-		if (element instanceof RDAPackage) {
-			RDAPackage am = (RDAPackage) element;
-			for (Object o : am.getContent()) {
-				if (o instanceof Goals) {
-					for (Goal g : ((Goals) o).getGoals()) {
-						goals.add(g);
-					}
+		List<ContractualElement> requirements = new ArrayList<ContractualElement>();
+		if (element instanceof RequirementDocument) {
+			for (Object oo : ((RequirementDocument) element).getContent()) {
+				if (oo instanceof ContractualElement) {
+					requirements.add((ContractualElement) oo);
 				}
 			}
 		}
-		if (element instanceof Goals) {
-			for (Goal g : ((Goals) element).getGoals()) {
-				goals.add(g);
-			}
-		}
-		return goals.toArray();
+		return requirements.toArray();
 	}
 
 	/**

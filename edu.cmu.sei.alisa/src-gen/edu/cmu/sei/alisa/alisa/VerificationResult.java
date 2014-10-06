@@ -150,6 +150,7 @@ public interface VerificationResult extends AlisaElement
 
   /**
    * Returns the value of the '<em><b>State</b></em>' attribute.
+   * The literals are from the enumeration {@link edu.cmu.sei.alisa.alisa.VerificationResultState}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>State</em>' attribute isn't clear,
@@ -157,25 +158,28 @@ public interface VerificationResult extends AlisaElement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>State</em>' attribute.
-   * @see #setState(String)
+   * @see edu.cmu.sei.alisa.alisa.VerificationResultState
+   * @see #setState(VerificationResultState)
    * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationResult_State()
    * @model
    * @generated
    */
-  String getState();
+  VerificationResultState getState();
 
   /**
    * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.VerificationResult#getState <em>State</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>State</em>' attribute.
+   * @see edu.cmu.sei.alisa.alisa.VerificationResultState
    * @see #getState()
    * @generated
    */
-  void setState(String value);
+  void setState(VerificationResultState value);
 
   /**
    * Returns the value of the '<em><b>Status</b></em>' attribute.
+   * The literals are from the enumeration {@link edu.cmu.sei.alisa.alisa.VerificationResultStatus}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Status</em>' attribute isn't clear,
@@ -183,21 +187,23 @@ public interface VerificationResult extends AlisaElement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Status</em>' attribute.
-   * @see #setStatus(String)
+   * @see edu.cmu.sei.alisa.alisa.VerificationResultStatus
+   * @see #setStatus(VerificationResultStatus)
    * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationResult_Status()
    * @model
    * @generated
    */
-  String getStatus();
+  VerificationResultStatus getStatus();
 
   /**
    * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.VerificationResult#getStatus <em>Status</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Status</em>' attribute.
+   * @see edu.cmu.sei.alisa.alisa.VerificationResultStatus
    * @see #getStatus()
    * @generated
    */
-  void setStatus(String value);
+  void setStatus(VerificationResultStatus value);
 
 } // VerificationResult

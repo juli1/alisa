@@ -13,7 +13,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getElement <em>Element</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getTarget <em>Target</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getCategory <em>Category</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getAssert <em>Assert</em>}</li>
@@ -23,9 +24,11 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getRefinesReference <em>Refines Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getDecomposesReference <em>Decomposes Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getEvolvesReference <em>Evolves Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getConflictsReference <em>Conflicts Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getStakeholderReference <em>Stakeholder Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getStakeholderRequirementReference <em>Stakeholder Requirement Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getDocReferences <em>Doc References</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getSystemRequirementReference <em>System Requirement Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getDocReference <em>Doc Reference</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,7 +36,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Goal extends AlisaElement
+public interface Goal extends ContractualElement, AlisaElement
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -62,30 +65,46 @@ public interface Goal extends AlisaElement
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Element</b></em>' attribute.
+   * Returns the value of the '<em><b>Target</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Element</em>' attribute isn't clear,
+   * If the meaning of the '<em>Target</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Element</em>' attribute.
-   * @see #setElement(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getGoal_Element()
+   * @return the value of the '<em>Target</em>' attribute.
+   * @see #setTarget(String)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getGoal_Target()
    * @model
    * @generated
    */
-  String getElement();
+  String getTarget();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Goal#getElement <em>Element</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Goal#getTarget <em>Target</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Element</em>' attribute.
-   * @see #getElement()
+   * @param value the new value of the '<em>Target</em>' attribute.
+   * @see #getTarget()
    * @generated
    */
-  void setElement(String value);
+  void setTarget(String value);
+
+  /**
+   * Returns the value of the '<em><b>Category</b></em>' reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Category}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Category</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Category</em>' reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getGoal_Category()
+   * @model
+   * @generated
+   */
+  EList<Category> getCategory();
 
   /**
    * Returns the value of the '<em><b>Title</b></em>' attribute.
@@ -272,6 +291,22 @@ public interface Goal extends AlisaElement
   EList<Goal> getEvolvesReference();
 
   /**
+   * Returns the value of the '<em><b>Conflicts Reference</b></em>' reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Goal}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Conflicts Reference</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Conflicts Reference</em>' reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getGoal_ConflictsReference()
+   * @model
+   * @generated
+   */
+  EList<Goal> getConflictsReference();
+
+  /**
    * Returns the value of the '<em><b>Stakeholder Reference</b></em>' reference list.
    * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Stakeholder}.
    * <!-- begin-user-doc -->
@@ -289,7 +324,7 @@ public interface Goal extends AlisaElement
 
   /**
    * Returns the value of the '<em><b>Stakeholder Requirement Reference</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.DocumentedRequirement}.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Goal}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Stakeholder Requirement Reference</em>' reference list isn't clear,
@@ -301,22 +336,38 @@ public interface Goal extends AlisaElement
    * @model
    * @generated
    */
-  EList<DocumentedRequirement> getStakeholderRequirementReference();
+  EList<Goal> getStakeholderRequirementReference();
 
   /**
-   * Returns the value of the '<em><b>Doc References</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.ExternalDocument}.
+   * Returns the value of the '<em><b>System Requirement Reference</b></em>' reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Requirement}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Doc References</em>' reference list isn't clear,
+   * If the meaning of the '<em>System Requirement Reference</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Doc References</em>' reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getGoal_DocReferences()
+   * @return the value of the '<em>System Requirement Reference</em>' reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getGoal_SystemRequirementReference()
    * @model
    * @generated
    */
-  EList<ExternalDocument> getDocReferences();
+  EList<Requirement> getSystemRequirementReference();
+
+  /**
+   * Returns the value of the '<em><b>Doc Reference</b></em>' reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.ExternalDocument}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Doc Reference</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Doc Reference</em>' reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getGoal_DocReference()
+   * @model
+   * @generated
+   */
+  EList<ExternalDocument> getDocReference();
 
 } // Goal

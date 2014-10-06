@@ -22,6 +22,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.StakeholderImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.StakeholderImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.StakeholderImpl#getRole <em>Role</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.StakeholderImpl#getEmail <em>Email</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.StakeholderImpl#getPhone <em>Phone</em>}</li>
  * </ul>
  * </p>
  *
@@ -108,6 +110,46 @@ public class StakeholderImpl extends AlisaElementImpl implements Stakeholder
    * @ordered
    */
   protected String role = ROLE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getEmail() <em>Email</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEmail()
+   * @generated
+   * @ordered
+   */
+  protected static final String EMAIL_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getEmail() <em>Email</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEmail()
+   * @generated
+   * @ordered
+   */
+  protected String email = EMAIL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getPhone() <em>Phone</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPhone()
+   * @generated
+   * @ordered
+   */
+  protected static final String PHONE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPhone() <em>Phone</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPhone()
+   * @generated
+   * @ordered
+   */
+  protected String phone = PHONE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -227,6 +269,52 @@ public class StakeholderImpl extends AlisaElementImpl implements Stakeholder
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getEmail()
+  {
+    return email;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEmail(String newEmail)
+  {
+    String oldEmail = email;
+    email = newEmail;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.STAKEHOLDER__EMAIL, oldEmail, email));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getPhone()
+  {
+    return phone;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPhone(String newPhone)
+  {
+    String oldPhone = phone;
+    phone = newPhone;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.STAKEHOLDER__PHONE, oldPhone, phone));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -240,6 +328,10 @@ public class StakeholderImpl extends AlisaElementImpl implements Stakeholder
         return getDescription();
       case AlisaPackage.STAKEHOLDER__ROLE:
         return getRole();
+      case AlisaPackage.STAKEHOLDER__EMAIL:
+        return getEmail();
+      case AlisaPackage.STAKEHOLDER__PHONE:
+        return getPhone();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -265,6 +357,12 @@ public class StakeholderImpl extends AlisaElementImpl implements Stakeholder
         return;
       case AlisaPackage.STAKEHOLDER__ROLE:
         setRole((String)newValue);
+        return;
+      case AlisaPackage.STAKEHOLDER__EMAIL:
+        setEmail((String)newValue);
+        return;
+      case AlisaPackage.STAKEHOLDER__PHONE:
+        setPhone((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -292,6 +390,12 @@ public class StakeholderImpl extends AlisaElementImpl implements Stakeholder
       case AlisaPackage.STAKEHOLDER__ROLE:
         setRole(ROLE_EDEFAULT);
         return;
+      case AlisaPackage.STAKEHOLDER__EMAIL:
+        setEmail(EMAIL_EDEFAULT);
+        return;
+      case AlisaPackage.STAKEHOLDER__PHONE:
+        setPhone(PHONE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -314,6 +418,10 @@ public class StakeholderImpl extends AlisaElementImpl implements Stakeholder
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case AlisaPackage.STAKEHOLDER__ROLE:
         return ROLE_EDEFAULT == null ? role != null : !ROLE_EDEFAULT.equals(role);
+      case AlisaPackage.STAKEHOLDER__EMAIL:
+        return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
+      case AlisaPackage.STAKEHOLDER__PHONE:
+        return PHONE_EDEFAULT == null ? phone != null : !PHONE_EDEFAULT.equals(phone);
     }
     return super.eIsSet(featureID);
   }
@@ -337,6 +445,10 @@ public class StakeholderImpl extends AlisaElementImpl implements Stakeholder
     result.append(description);
     result.append(", role: ");
     result.append(role);
+    result.append(", email: ");
+    result.append(email);
+    result.append(", phone: ");
+    result.append(phone);
     result.append(')');
     return result.toString();
   }

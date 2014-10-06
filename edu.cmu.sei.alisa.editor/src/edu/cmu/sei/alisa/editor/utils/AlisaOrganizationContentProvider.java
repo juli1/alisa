@@ -6,12 +6,10 @@ import java.util.List;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
-import edu.cmu.alisa.sei.utils.AlisaDebug;
-import edu.cmu.sei.alisa.alisa.AlisaModel;
+import edu.cmu.sei.alisa.alisa.Organization;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
-import edu.cmu.sei.alisa.alisa.Stakeholders;
 
-public class AlisaStakeholdersContentProvider implements IStructuredContentProvider {
+public class AlisaOrganizationContentProvider implements IStructuredContentProvider {
 
 	/**
 	 * Returns the elements to display in the table viewer
@@ -20,17 +18,12 @@ public class AlisaStakeholdersContentProvider implements IStructuredContentProvi
 	 */
 	public Object[] getElements(Object element) {
 		List<Stakeholder> stakeholders = new ArrayList<Stakeholder>();
-		AlisaDebug.debug("[AlisaStakeholdersContentProvider] element=" + element);
 
-		if (element instanceof AlisaModel) {
-			AlisaModel am = (AlisaModel) element;
-			for (Object o : am.getContent()) {
-				if (o instanceof Stakeholders) {
-					for (Object oo : ((Stakeholders) o).getStakeholder()) {
-						if (oo instanceof Stakeholder) {
-							stakeholders.add((Stakeholder) oo);
-						}
-					}
+		if (element instanceof Organization) {
+			Organization am = (Organization) element;
+			for (Object oo : am.getStakeholder()) {
+				if (oo instanceof Stakeholder) {
+					stakeholders.add((Stakeholder) oo);
 				}
 			}
 		}

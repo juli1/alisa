@@ -6,12 +6,10 @@ import java.util.List;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
-import edu.cmu.alisa.sei.utils.AlisaDebug;
-import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.VerificationLibrary;
 
-public class AlisaVerificationActivitiesContentProvider implements IStructuredContentProvider {
+public class AlisaVerificationLibraryContentProvider implements IStructuredContentProvider {
 
 	/**
 	 * Returns the elements to display in the table viewer
@@ -20,18 +18,12 @@ public class AlisaVerificationActivitiesContentProvider implements IStructuredCo
 	 */
 	public Object[] getElements(Object element) {
 		List<VerificationActivity> vas = new ArrayList<VerificationActivity>();
-		AlisaDebug.debug("[AlisaVerificationActivityContentProvider] element=" + element);
 
-		if (element instanceof AlisaModel) {
-			AlisaModel am = (AlisaModel) element;
-			for (Object obj : am.getContent()) {
-				if (obj instanceof VerificationLibrary) {
-					VerificationLibrary lib = (VerificationLibrary) obj;
-					for (Object o : lib.getContent()) {
-						if (o instanceof VerificationActivity) {
-							vas.add((VerificationActivity) o);
-						}
-					}
+		if (element instanceof VerificationLibrary) {
+			VerificationLibrary lib = (VerificationLibrary) element;
+			for (Object o : lib.getContent()) {
+				if (o instanceof VerificationActivity) {
+					vas.add((VerificationActivity) o);
 				}
 			}
 		}
