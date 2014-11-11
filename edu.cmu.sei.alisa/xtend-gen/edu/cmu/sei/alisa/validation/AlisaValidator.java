@@ -6,10 +6,10 @@ package edu.cmu.sei.alisa.validation;
 import com.google.common.base.Objects;
 import edu.cmu.sei.alisa.alisa.AlisaElement;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.ContractualElement;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Goals;
 import edu.cmu.sei.alisa.alisa.Organization;
+import edu.cmu.sei.alisa.alisa.ReqDocContent;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.RequirementDocument;
 import edu.cmu.sei.alisa.alisa.Requirements;
@@ -184,8 +184,8 @@ public class AlisaValidator extends AbstractAlisaValidator {
         RequirementDocument model_1 = ((RequirementDocument) _eContainer_3);
         boolean _notEquals_3 = (!Objects.equal(model_1, null));
         if (_notEquals_3) {
-          EList<ContractualElement> _content = model_1.getContent();
-          for (final ContractualElement other_1 : _content) {
+          EList<ReqDocContent> _content = model_1.getContent();
+          for (final ReqDocContent other_1 : _content) {
             if ((other_1 instanceof Goal)) {
               Goal otherReq_1 = ((Goal) other_1);
               boolean _notEquals_4 = (!Objects.equal(otherReq_1, null));

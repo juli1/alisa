@@ -77,6 +77,25 @@ public interface AlisaPackage extends EPackage
   int ALISA_MODEL_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ReqDocContentImpl <em>Req Doc Content</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.ReqDocContentImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getReqDocContent()
+   * @generated
+   */
+  int REQ_DOC_CONTENT = 2;
+
+  /**
+   * The number of structural features of the '<em>Req Doc Content</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQ_DOC_CONTENT_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl <em>Contractual Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -93,7 +112,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTRACTUAL_ELEMENT_FEATURE_COUNT = 0;
+  int CONTRACTUAL_ELEMENT_FEATURE_COUNT = REQ_DOC_CONTENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.AlisaDocumentImpl <em>Document</em>}' class.
@@ -103,7 +122,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getAlisaDocument()
    * @generated
    */
-  int ALISA_DOCUMENT = 2;
+  int ALISA_DOCUMENT = 3;
 
   /**
    * The number of structural features of the '<em>Document</em>' class.
@@ -122,7 +141,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getAlisaElement()
    * @generated
    */
-  int ALISA_ELEMENT = 3;
+  int ALISA_ELEMENT = 4;
 
   /**
    * The number of structural features of the '<em>Element</em>' class.
@@ -141,7 +160,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getAlisaNameSpace()
    * @generated
    */
-  int ALISA_NAME_SPACE = 4;
+  int ALISA_NAME_SPACE = 5;
 
   /**
    * The number of structural features of the '<em>Name Space</em>' class.
@@ -160,7 +179,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRequirementDocument()
    * @generated
    */
-  int REQUIREMENT_DOCUMENT = 5;
+  int REQUIREMENT_DOCUMENT = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -190,6 +209,43 @@ public interface AlisaPackage extends EPackage
   int REQUIREMENT_DOCUMENT_FEATURE_COUNT = ALISA_MODEL_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.DocumentSectionImpl <em>Document Section</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.DocumentSectionImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getDocumentSection()
+   * @generated
+   */
+  int DOCUMENT_SECTION = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOCUMENT_SECTION__NAME = REQ_DOC_CONTENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Content</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOCUMENT_SECTION__CONTENT = REQ_DOC_CONTENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Document Section</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOCUMENT_SECTION_FEATURE_COUNT = REQ_DOC_CONTENT_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationLibraryImpl <em>Verification Library</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -197,7 +253,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationLibrary()
    * @generated
    */
-  int VERIFICATION_LIBRARY = 6;
+  int VERIFICATION_LIBRARY = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -234,7 +290,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRDAPackage()
    * @generated
    */
-  int RDA_PACKAGE = 7;
+  int RDA_PACKAGE = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -280,7 +336,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getGoals()
    * @generated
    */
-  int GOALS = 8;
+  int GOALS = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -335,7 +391,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getGoal()
    * @generated
    */
-  int GOAL = 9;
+  int GOAL = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -507,7 +563,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRequirements()
    * @generated
    */
-  int REQUIREMENTS = 10;
+  int REQUIREMENTS = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -562,7 +618,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRequirement()
    * @generated
    */
-  int REQUIREMENT = 11;
+  int REQUIREMENT = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -743,7 +799,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getExternalDocuments()
    * @generated
    */
-  int EXTERNAL_DOCUMENTS = 12;
+  int EXTERNAL_DOCUMENTS = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -780,7 +836,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getExternalDocument()
    * @generated
    */
-  int EXTERNAL_DOCUMENT = 13;
+  int EXTERNAL_DOCUMENT = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -817,7 +873,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getXDocUri()
    * @generated
    */
-  int XDOC_URI = 14;
+  int XDOC_URI = 16;
 
   /**
    * The feature id for the '<em><b>Doc Path</b></em>' reference.
@@ -854,7 +910,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getAlisaConfiguration()
    * @generated
    */
-  int ALISA_CONFIGURATION = 15;
+  int ALISA_CONFIGURATION = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -891,7 +947,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getCategory()
    * @generated
    */
-  int CATEGORY = 16;
+  int CATEGORY = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -928,7 +984,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getStakeholder()
    * @generated
    */
-  int STAKEHOLDER = 17;
+  int STAKEHOLDER = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1001,7 +1057,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getOrganization()
    * @generated
    */
-  int ORGANIZATION = 18;
+  int ORGANIZATION = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1038,7 +1094,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationDecomposition()
    * @generated
    */
-  int VERIFICATION_DECOMPOSITION = 19;
+  int VERIFICATION_DECOMPOSITION = 21;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -1093,7 +1149,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationActivity()
    * @generated
    */
-  int VERIFICATION_ACTIVITY = 20;
+  int VERIFICATION_ACTIVITY = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1166,7 +1222,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationResult()
    * @generated
    */
-  int VERIFICATION_RESULT = 21;
+  int VERIFICATION_RESULT = 23;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1248,7 +1304,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationResultState()
    * @generated
    */
-  int VERIFICATION_RESULT_STATE = 22;
+  int VERIFICATION_RESULT_STATE = 24;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.VerificationResultStatus <em>Verification Result Status</em>}' enum.
@@ -1258,7 +1314,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationResultStatus()
    * @generated
    */
-  int VERIFICATION_RESULT_STATUS = 23;
+  int VERIFICATION_RESULT_STATUS = 25;
 
 
   /**
@@ -1280,6 +1336,16 @@ public interface AlisaPackage extends EPackage
    * @generated
    */
   EClass getContractualElement();
+
+  /**
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.ReqDocContent <em>Req Doc Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Req Doc Content</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ReqDocContent
+   * @generated
+   */
+  EClass getReqDocContent();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.AlisaDocument <em>Document</em>}'.
@@ -1342,6 +1408,38 @@ public interface AlisaPackage extends EPackage
    * @generated
    */
   EReference getRequirementDocument_Content();
+
+  /**
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.DocumentSection <em>Document Section</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Document Section</em>'.
+   * @see edu.cmu.sei.alisa.alisa.DocumentSection
+   * @generated
+   */
+  EClass getDocumentSection();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.DocumentSection#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see edu.cmu.sei.alisa.alisa.DocumentSection#getName()
+   * @see #getDocumentSection()
+   * @generated
+   */
+  EAttribute getDocumentSection_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.DocumentSection#getContent <em>Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Content</em>'.
+   * @see edu.cmu.sei.alisa.alisa.DocumentSection#getContent()
+   * @see #getDocumentSection()
+   * @generated
+   */
+  EReference getDocumentSection_Content();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.VerificationLibrary <em>Verification Library</em>}'.
@@ -2480,6 +2578,16 @@ public interface AlisaPackage extends EPackage
     EClass CONTRACTUAL_ELEMENT = eINSTANCE.getContractualElement();
 
     /**
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ReqDocContentImpl <em>Req Doc Content</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.ReqDocContentImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getReqDocContent()
+     * @generated
+     */
+    EClass REQ_DOC_CONTENT = eINSTANCE.getReqDocContent();
+
+    /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.AlisaDocumentImpl <em>Document</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2534,6 +2642,32 @@ public interface AlisaPackage extends EPackage
      * @generated
      */
     EReference REQUIREMENT_DOCUMENT__CONTENT = eINSTANCE.getRequirementDocument_Content();
+
+    /**
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.DocumentSectionImpl <em>Document Section</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.DocumentSectionImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getDocumentSection()
+     * @generated
+     */
+    EClass DOCUMENT_SECTION = eINSTANCE.getDocumentSection();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DOCUMENT_SECTION__NAME = eINSTANCE.getDocumentSection_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DOCUMENT_SECTION__CONTENT = eINSTANCE.getDocumentSection_Content();
 
     /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationLibraryImpl <em>Verification Library</em>}' class.

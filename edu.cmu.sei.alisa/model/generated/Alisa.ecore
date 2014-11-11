@@ -2,14 +2,20 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="alisa" nsURI="http://www.cmu.edu/sei/alisa/Alisa" nsPrefix="alisa">
   <eClassifiers xsi:type="ecore:EClass" name="AlisaModel"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ContractualElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ContractualElement" eSuperTypes="#//ReqDocContent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReqDocContent"/>
   <eClassifiers xsi:type="ecore:EClass" name="AlisaDocument"/>
   <eClassifiers xsi:type="ecore:EClass" name="AlisaElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="AlisaNameSpace"/>
   <eClassifiers xsi:type="ecore:EClass" name="RequirementDocument" eSuperTypes="#//AlisaModel #//AlisaDocument #//AlisaElement #//AlisaNameSpace">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
-        eType="#//ContractualElement" containment="true"/>
+        eType="#//ReqDocContent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentSection" eSuperTypes="#//ReqDocContent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
+        eType="#//ReqDocContent" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VerificationLibrary" eSuperTypes="#//AlisaModel #//AlisaElement #//AlisaNameSpace">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>

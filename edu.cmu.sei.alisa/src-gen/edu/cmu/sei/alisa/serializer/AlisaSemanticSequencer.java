@@ -5,6 +5,7 @@ import com.google.inject.Provider;
 import edu.cmu.sei.alisa.alisa.AlisaConfiguration;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.Category;
+import edu.cmu.sei.alisa.alisa.DocumentSection;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.ExternalDocuments;
 import edu.cmu.sei.alisa.alisa.Goal;
@@ -57,6 +58,13 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case AlisaPackage.DOCUMENT_SECTION:
+				if(context == grammarAccess.getDocumentSectionRule() ||
+				   context == grammarAccess.getReqDocContentRule()) {
+					sequence_DocumentSection(context, (DocumentSection) semanticObject); 
+					return; 
+				}
+				else break;
 			case AlisaPackage.EXTERNAL_DOCUMENT:
 				if(context == grammarAccess.getExternalDocumentRule()) {
 					sequence_ExternalDocument(context, (ExternalDocument) semanticObject); 
@@ -75,7 +83,8 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case AlisaPackage.GOAL:
 				if(context == grammarAccess.getAlisaElementRule() ||
 				   context == grammarAccess.getContractualElementRule() ||
-				   context == grammarAccess.getGoalRule()) {
+				   context == grammarAccess.getGoalRule() ||
+				   context == grammarAccess.getReqDocContentRule()) {
 					sequence_Goal(context, (Goal) semanticObject); 
 					return; 
 				}
@@ -110,6 +119,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case AlisaPackage.REQUIREMENT:
 				if(context == grammarAccess.getAlisaElementRule() ||
 				   context == grammarAccess.getContractualElementRule() ||
+				   context == grammarAccess.getReqDocContentRule() ||
 				   context == grammarAccess.getRequirementRule()) {
 					sequence_Requirement(context, (Requirement) semanticObject); 
 					return; 
@@ -199,6 +209,15 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     (name=ID content+=ReqDocContent*)
+	 */
+	protected void sequence_DocumentSection(EObject context, DocumentSection semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=ID externalReference=DOCPATH)
 	 */
 	protected void sequence_ExternalDocument(EObject context, ExternalDocument semanticObject) {
@@ -230,7 +249,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (
 	 *         name=ID 
 	 *         target=RELREF? 
-	 *         category+=[Category|CATREF]* 
+	 *         (category+=[Category|CATREF] category+=[Category|CATREF]*)? 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
 	 *         assert=ValueString? 
@@ -286,7 +305,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID content+=ContractualElement*)
+	 *     (name=ID content+=ReqDocContent*)
 	 */
 	protected void sequence_RequirementDocument(EObject context, RequirementDocument semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -298,7 +317,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (
 	 *         name=ID 
 	 *         target=RELREF? 
-	 *         category+=[Category|CATREF]* 
+	 *         (category+=[Category|CATREF] category+=[Category|CATREF]*)? 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
 	 *         assert=ValueString? 

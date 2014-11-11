@@ -83,6 +83,14 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         ContractualElement contractualElement = (ContractualElement)theEObject;
         T result = caseContractualElement(contractualElement);
+        if (result == null) result = caseReqDocContent(contractualElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.REQ_DOC_CONTENT:
+      {
+        ReqDocContent reqDocContent = (ReqDocContent)theEObject;
+        T result = caseReqDocContent(reqDocContent);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -115,6 +123,14 @@ public class AlisaSwitch<T> extends Switch<T>
         if (result == null) result = caseAlisaDocument(requirementDocument);
         if (result == null) result = caseAlisaElement(requirementDocument);
         if (result == null) result = caseAlisaNameSpace(requirementDocument);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.DOCUMENT_SECTION:
+      {
+        DocumentSection documentSection = (DocumentSection)theEObject;
+        T result = caseDocumentSection(documentSection);
+        if (result == null) result = caseReqDocContent(documentSection);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -154,6 +170,7 @@ public class AlisaSwitch<T> extends Switch<T>
         T result = caseGoal(goal);
         if (result == null) result = caseContractualElement(goal);
         if (result == null) result = caseAlisaElement(goal);
+        if (result == null) result = caseReqDocContent(goal);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -172,6 +189,7 @@ public class AlisaSwitch<T> extends Switch<T>
         T result = caseRequirement(requirement);
         if (result == null) result = caseContractualElement(requirement);
         if (result == null) result = caseAlisaElement(requirement);
+        if (result == null) result = caseReqDocContent(requirement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -295,6 +313,22 @@ public class AlisaSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Req Doc Content</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Req Doc Content</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReqDocContent(ReqDocContent object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Document</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -354,6 +388,22 @@ public class AlisaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRequirementDocument(RequirementDocument object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Document Section</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Document Section</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDocumentSection(DocumentSection object)
   {
     return null;
   }

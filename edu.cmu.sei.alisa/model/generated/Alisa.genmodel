@@ -19,12 +19,17 @@
     </genEnums>
     <genClasses ecoreClass="Alisa.ecore#//AlisaModel"/>
     <genClasses ecoreClass="Alisa.ecore#//ContractualElement"/>
+    <genClasses ecoreClass="Alisa.ecore#//ReqDocContent"/>
     <genClasses ecoreClass="Alisa.ecore#//AlisaDocument"/>
     <genClasses ecoreClass="Alisa.ecore#//AlisaElement"/>
     <genClasses ecoreClass="Alisa.ecore#//AlisaNameSpace"/>
     <genClasses ecoreClass="Alisa.ecore#//RequirementDocument">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//RequirementDocument/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//RequirementDocument/content"/>
+    </genClasses>
+    <genClasses ecoreClass="Alisa.ecore#//DocumentSection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//DocumentSection/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//DocumentSection/content"/>
     </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//VerificationLibrary">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//VerificationLibrary/name"/>

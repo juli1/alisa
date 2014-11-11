@@ -2,7 +2,6 @@
  */
 package edu.cmu.sei.alisa.alisa;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ContractualElement extends EObject
+public interface ContractualElement extends ReqDocContent
 {
 } // ContractualElement

@@ -85,6 +85,11 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
         return createContractualElementAdapter();
       }
       @Override
+      public Adapter caseReqDocContent(ReqDocContent object)
+      {
+        return createReqDocContentAdapter();
+      }
+      @Override
       public Adapter caseAlisaDocument(AlisaDocument object)
       {
         return createAlisaDocumentAdapter();
@@ -103,6 +108,11 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
       public Adapter caseRequirementDocument(RequirementDocument object)
       {
         return createRequirementDocumentAdapter();
+      }
+      @Override
+      public Adapter caseDocumentSection(DocumentSection object)
+      {
+        return createDocumentSectionAdapter();
       }
       @Override
       public Adapter caseVerificationLibrary(VerificationLibrary object)
@@ -237,6 +247,21 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.ReqDocContent <em>Req Doc Content</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.ReqDocContent
+   * @generated
+   */
+  public Adapter createReqDocContentAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.AlisaDocument <em>Document</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -292,6 +317,21 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRequirementDocumentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.DocumentSection <em>Document Section</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.DocumentSection
+   * @generated
+   */
+  public Adapter createDocumentSectionAdapter()
   {
     return null;
   }

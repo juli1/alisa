@@ -41,6 +41,15 @@ public interface AlisaFactory extends EFactory
   ContractualElement createContractualElement();
 
   /**
+   * Returns a new object of class '<em>Req Doc Content</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Req Doc Content</em>'.
+   * @generated
+   */
+  ReqDocContent createReqDocContent();
+
+  /**
    * Returns a new object of class '<em>Document</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -75,6 +84,15 @@ public interface AlisaFactory extends EFactory
    * @generated
    */
   RequirementDocument createRequirementDocument();
+
+  /**
+   * Returns a new object of class '<em>Document Section</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Document Section</em>'.
+   * @generated
+   */
+  DocumentSection createDocumentSection();
 
   /**
    * Returns a new object of class '<em>Verification Library</em>'.

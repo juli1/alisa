@@ -3,8 +3,8 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
+import edu.cmu.sei.alisa.alisa.DocumentSection;
 import edu.cmu.sei.alisa.alisa.ReqDocContent;
-import edu.cmu.sei.alisa.alisa.RequirementDocument;
 
 import java.util.Collection;
 
@@ -23,19 +23,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Requirement Document</b></em>'.
+ * An implementation of the model object '<em><b>Document Section</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementDocumentImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementDocumentImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.DocumentSectionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.DocumentSectionImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RequirementDocumentImpl extends AlisaModelImpl implements RequirementDocument
+public class DocumentSectionImpl extends ReqDocContentImpl implements DocumentSection
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -72,7 +72,7 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  protected RequirementDocumentImpl()
+  protected DocumentSectionImpl()
   {
     super();
   }
@@ -85,7 +85,7 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   @Override
   protected EClass eStaticClass()
   {
-    return AlisaPackage.Literals.REQUIREMENT_DOCUMENT;
+    return AlisaPackage.Literals.DOCUMENT_SECTION;
   }
 
   /**
@@ -108,7 +108,7 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT_DOCUMENT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.DOCUMENT_SECTION__NAME, oldName, name));
   }
 
   /**
@@ -120,7 +120,7 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     if (content == null)
     {
-      content = new EObjectContainmentEList<ReqDocContent>(ReqDocContent.class, this, AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT);
+      content = new EObjectContainmentEList<ReqDocContent>(ReqDocContent.class, this, AlisaPackage.DOCUMENT_SECTION__CONTENT);
     }
     return content;
   }
@@ -135,7 +135,7 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
+      case AlisaPackage.DOCUMENT_SECTION__CONTENT:
         return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -151,9 +151,9 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+      case AlisaPackage.DOCUMENT_SECTION__NAME:
         return getName();
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
+      case AlisaPackage.DOCUMENT_SECTION__CONTENT:
         return getContent();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -170,10 +170,10 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+      case AlisaPackage.DOCUMENT_SECTION__NAME:
         setName((String)newValue);
         return;
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
+      case AlisaPackage.DOCUMENT_SECTION__CONTENT:
         getContent().clear();
         getContent().addAll((Collection<? extends ReqDocContent>)newValue);
         return;
@@ -191,10 +191,10 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+      case AlisaPackage.DOCUMENT_SECTION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
+      case AlisaPackage.DOCUMENT_SECTION__CONTENT:
         getContent().clear();
         return;
     }
@@ -211,9 +211,9 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
+      case AlisaPackage.DOCUMENT_SECTION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
+      case AlisaPackage.DOCUMENT_SECTION__CONTENT:
         return content != null && !content.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -236,4 +236,4 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
     return result.toString();
   }
 
-} //RequirementDocumentImpl
+} //DocumentSectionImpl

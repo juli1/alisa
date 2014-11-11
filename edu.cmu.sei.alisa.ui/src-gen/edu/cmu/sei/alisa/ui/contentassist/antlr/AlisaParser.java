@@ -39,6 +39,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getAlisaModelAccess().getAlternatives(), "rule__AlisaModel__Alternatives");
 					put(grammarAccess.getContractualElementAccess().getAlternatives(), "rule__ContractualElement__Alternatives");
+					put(grammarAccess.getReqDocContentAccess().getAlternatives(), "rule__ReqDocContent__Alternatives");
 					put(grammarAccess.getAlisaDocumentAccess().getAlternatives(), "rule__AlisaDocument__Alternatives");
 					put(grammarAccess.getAlisaElementAccess().getAlternatives(), "rule__AlisaElement__Alternatives");
 					put(grammarAccess.getAlisaNameSpaceAccess().getAlternatives(), "rule__AlisaNameSpace__Alternatives");
@@ -51,6 +52,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVerificationResultStateAccess().getAlternatives(), "rule__VerificationResultState__Alternatives");
 					put(grammarAccess.getVerificationResultStatusAccess().getAlternatives(), "rule__VerificationResultStatus__Alternatives");
 					put(grammarAccess.getRequirementDocumentAccess().getGroup(), "rule__RequirementDocument__Group__0");
+					put(grammarAccess.getDocumentSectionAccess().getGroup(), "rule__DocumentSection__Group__0");
 					put(grammarAccess.getVerificationLibraryAccess().getGroup(), "rule__VerificationLibrary__Group__0");
 					put(grammarAccess.getRDAPackageAccess().getGroup(), "rule__RDAPackage__Group__0");
 					put(grammarAccess.getRDAPackageAccess().getGroup_2(), "rule__RDAPackage__Group_2__0");
@@ -63,6 +65,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGoalAccess().getGroup(), "rule__Goal__Group__0");
 					put(grammarAccess.getGoalAccess().getGroup_2_0(), "rule__Goal__Group_2_0__0");
 					put(grammarAccess.getGoalAccess().getGroup_2_1(), "rule__Goal__Group_2_1__0");
+					put(grammarAccess.getGoalAccess().getGroup_2_1_3(), "rule__Goal__Group_2_1_3__0");
 					put(grammarAccess.getGoalAccess().getGroup_2_2(), "rule__Goal__Group_2_2__0");
 					put(grammarAccess.getGoalAccess().getGroup_2_3(), "rule__Goal__Group_2_3__0");
 					put(grammarAccess.getGoalAccess().getGroup_2_4(), "rule__Goal__Group_2_4__0");
@@ -93,6 +96,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRequirementAccess().getGroup(), "rule__Requirement__Group__0");
 					put(grammarAccess.getRequirementAccess().getGroup_2_0(), "rule__Requirement__Group_2_0__0");
 					put(grammarAccess.getRequirementAccess().getGroup_2_1(), "rule__Requirement__Group_2_1__0");
+					put(grammarAccess.getRequirementAccess().getGroup_2_1_3(), "rule__Requirement__Group_2_1_3__0");
 					put(grammarAccess.getRequirementAccess().getGroup_2_2(), "rule__Requirement__Group_2_2__0");
 					put(grammarAccess.getRequirementAccess().getGroup_2_3(), "rule__Requirement__Group_2_3__0");
 					put(grammarAccess.getRequirementAccess().getGroup_2_4(), "rule__Requirement__Group_2_4__0");
@@ -167,6 +171,8 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDOCFRAGMENTAccess().getGroup_1(), "rule__DOCFRAGMENT__Group_1__0");
 					put(grammarAccess.getRequirementDocumentAccess().getNameAssignment_2(), "rule__RequirementDocument__NameAssignment_2");
 					put(grammarAccess.getRequirementDocumentAccess().getContentAssignment_3(), "rule__RequirementDocument__ContentAssignment_3");
+					put(grammarAccess.getDocumentSectionAccess().getNameAssignment_1(), "rule__DocumentSection__NameAssignment_1");
+					put(grammarAccess.getDocumentSectionAccess().getContentAssignment_2(), "rule__DocumentSection__ContentAssignment_2");
 					put(grammarAccess.getVerificationLibraryAccess().getNameAssignment_2(), "rule__VerificationLibrary__NameAssignment_2");
 					put(grammarAccess.getVerificationLibraryAccess().getContentAssignment_3(), "rule__VerificationLibrary__ContentAssignment_3");
 					put(grammarAccess.getRDAPackageAccess().getNameAssignment_1(), "rule__RDAPackage__NameAssignment_1");
@@ -183,6 +189,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGoalAccess().getNameAssignment_1(), "rule__Goal__NameAssignment_1");
 					put(grammarAccess.getGoalAccess().getTargetAssignment_2_0_1(), "rule__Goal__TargetAssignment_2_0_1");
 					put(grammarAccess.getGoalAccess().getCategoryAssignment_2_1_2(), "rule__Goal__CategoryAssignment_2_1_2");
+					put(grammarAccess.getGoalAccess().getCategoryAssignment_2_1_3_1(), "rule__Goal__CategoryAssignment_2_1_3_1");
 					put(grammarAccess.getGoalAccess().getTitleAssignment_2_2_2(), "rule__Goal__TitleAssignment_2_2_2");
 					put(grammarAccess.getGoalAccess().getDescriptionAssignment_2_3_2(), "rule__Goal__DescriptionAssignment_2_3_2");
 					put(grammarAccess.getGoalAccess().getAssertAssignment_2_4_2(), "rule__Goal__AssertAssignment_2_4_2");
@@ -215,6 +222,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRequirementAccess().getNameAssignment_1(), "rule__Requirement__NameAssignment_1");
 					put(grammarAccess.getRequirementAccess().getTargetAssignment_2_0_1(), "rule__Requirement__TargetAssignment_2_0_1");
 					put(grammarAccess.getRequirementAccess().getCategoryAssignment_2_1_2(), "rule__Requirement__CategoryAssignment_2_1_2");
+					put(grammarAccess.getRequirementAccess().getCategoryAssignment_2_1_3_1(), "rule__Requirement__CategoryAssignment_2_1_3_1");
 					put(grammarAccess.getRequirementAccess().getTitleAssignment_2_2_2(), "rule__Requirement__TitleAssignment_2_2_2");
 					put(grammarAccess.getRequirementAccess().getDescriptionAssignment_2_3_2(), "rule__Requirement__DescriptionAssignment_2_3_2");
 					put(grammarAccess.getRequirementAccess().getAssertAssignment_2_4_2(), "rule__Requirement__AssertAssignment_2_4_2");

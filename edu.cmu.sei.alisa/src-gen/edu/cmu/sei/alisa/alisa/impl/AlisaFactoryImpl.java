@@ -67,10 +67,12 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
     {
       case AlisaPackage.ALISA_MODEL: return createAlisaModel();
       case AlisaPackage.CONTRACTUAL_ELEMENT: return createContractualElement();
+      case AlisaPackage.REQ_DOC_CONTENT: return createReqDocContent();
       case AlisaPackage.ALISA_DOCUMENT: return createAlisaDocument();
       case AlisaPackage.ALISA_ELEMENT: return createAlisaElement();
       case AlisaPackage.ALISA_NAME_SPACE: return createAlisaNameSpace();
       case AlisaPackage.REQUIREMENT_DOCUMENT: return createRequirementDocument();
+      case AlisaPackage.DOCUMENT_SECTION: return createDocumentSection();
       case AlisaPackage.VERIFICATION_LIBRARY: return createVerificationLibrary();
       case AlisaPackage.RDA_PACKAGE: return createRDAPackage();
       case AlisaPackage.GOALS: return createGoals();
@@ -157,6 +159,17 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ReqDocContent createReqDocContent()
+  {
+    ReqDocContentImpl reqDocContent = new ReqDocContentImpl();
+    return reqDocContent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AlisaDocument createAlisaDocument()
   {
     AlisaDocumentImpl alisaDocument = new AlisaDocumentImpl();
@@ -194,6 +207,17 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
   {
     RequirementDocumentImpl requirementDocument = new RequirementDocumentImpl();
     return requirementDocument;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DocumentSection createDocumentSection()
+  {
+    DocumentSectionImpl documentSection = new DocumentSectionImpl();
+    return documentSection;
   }
 
   /**

@@ -6,22 +6,22 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Requirement Document</b></em>'.
+ * A representation of the model object '<em><b>Document Section</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.RequirementDocument#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.RequirementDocument#getContent <em>Content</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.DocumentSection#getName <em>Name</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.DocumentSection#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
- * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirementDocument()
+ * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getDocumentSection()
  * @model
  * @generated
  */
-public interface RequirementDocument extends AlisaModel, AlisaDocument, AlisaElement, AlisaNameSpace
+public interface DocumentSection extends ReqDocContent
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -33,14 +33,14 @@ public interface RequirementDocument extends AlisaModel, AlisaDocument, AlisaEle
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirementDocument_Name()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getDocumentSection_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.RequirementDocument#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.DocumentSection#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -59,10 +59,10 @@ public interface RequirementDocument extends AlisaModel, AlisaDocument, AlisaEle
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Content</em>' containment reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirementDocument_Content()
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getDocumentSection_Content()
    * @model containment="true"
    * @generated
    */
   EList<ReqDocContent> getContent();
 
-} // RequirementDocument
+} // DocumentSection
