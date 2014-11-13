@@ -114,7 +114,7 @@ Rationale returns Rationale:
 ContactInformation returns ContactInformation:
 	{ContactInformation}
 	'ContactInformation'
-	id=EString
+//	id=EString
 	'{'
 		('name' name=EString)?
 		('description' description=EString)?
@@ -133,10 +133,10 @@ EBoolean returns ecore::EBoolean:
 
 Uncertainty returns Uncertainty:
 	'Uncertainty'
-	id=EString
+//	id=EString
 	'{'
-		('name' name=EString)?
-		('description' description=EString)?
+		('name' name=EString)
+		&('description' description=EString)?
 		'volatility' volatility=NormalizedRatio
 		'costsImpact' costsImpact=PositiveFactor
 		'scheduleImpact' scheduleImpact=PositiveFactor
@@ -621,14 +621,14 @@ RequirementsPackage returns RequirementsPackage:
 
 GoalsPackage returns GoalsPackage:
 	'GoalsPackage'
-	id=EString
+//	id=EString
+		 name=EString
 	'{'
-		('name' name=EString)?
 		('description' description=EString)?
 		('satisfactionLevel' satisfactionLevel=NormalizedRatio)?
 		('subPackages' '(' subPackages+=[RdalOrgPackage|EString] ( "," subPackages+=[RdalOrgPackage|EString])* ')' )?
 		('parent' parent=[RdalOrgPackage|EString])?
-		('ownedUserProperties' '{' ownedUserProperties+=UserProperty ( "," ownedUserProperties+=UserProperty)* '}' )?
+//		('ownedUserProperties' '{' ownedUserProperties+=UserProperty ( "," ownedUserProperties+=UserProperty)* '}' )?
 		'ownedContractualElements' '{' ownedContractualElements+=TextualContractualElement ( "," ownedContractualElements+=TextualContractualElement)* '}' 
 	'}';
 
