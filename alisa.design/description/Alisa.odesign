@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="Alisa" version="8.1.0">
+  <ownedViewpoints name="requirements" modelFileExtension="alisa">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Requirements diagram" domainClass="alisa.RDAPackage">
+      <defaultLayer name="Default">
+        <containerMappings name="RequirementsContainer" semanticCandidatesExpression="feature:content" domainClass="alisa.Requirements">
+          <subNodeMappings name="RequirementNode" domainClass="alisa.Requirement">
+            <style xsi:type="style:NoteDescription" labelExpression="feature:title" tooltipExpression="feature:title" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:ShapeContainerStyleDescription" labelExpression="[reqTarget.name/]">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </containerMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>
