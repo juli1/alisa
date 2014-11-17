@@ -19,17 +19,18 @@ public class AlisaQualifiedNameConverter extends IQualifiedNameConverter.Default
 		if (Strings.isEmpty(getDelimiter())) {
 			return QualifiedName.create(qualifiedNameAsString);
 		}
-		if (qualifiedNameAsString.contains(getDelimiter())) {
-			List<String> segs = Strings.split(qualifiedNameAsString, getDelimiter());
+		if (qualifiedNameAsString.contains("::")) {
+			List<String> segs = Strings.split(qualifiedNameAsString, "::");
 			return QualifiedName.create(segs);
 		}
 		List<String> segs = Strings.split(qualifiedNameAsString, super.getDelimiter());
 		return QualifiedName.create(segs);
 	}
 
-	@Override
-	public String getDelimiter() {
-		return "::";
-	}
+// TODO: see if this was inserting the ::
+//	@Override
+//	public String getDelimiter() {
+//		return "::";
+//	}
 
 }

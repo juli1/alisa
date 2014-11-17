@@ -33,8 +33,9 @@ public class AlisaLinkingService extends PropertiesLinkingService {
 		if (requiredType == ne) {
 			NamedElement e = null;
 			if (context instanceof Goals || context instanceof Requirements) {
+				// TODO: we do not use dot name
 				String dotname = name.replaceAll("::", ".");
-				EObject res = findClassifier(context, reference, name);
+				EObject res = findClassifier(context, reference, dotname);
 				return Collections.singletonList(res);
 			}
 			if (context instanceof Goal) {
