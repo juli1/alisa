@@ -6,6 +6,9 @@ Bundle-Version: 1.0.0
 Bundle-Activator: alisa.design.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
+ org.eclipse.pde;bundle-version="3.8.200",
+ org.eclipse.pde.core;bundle-version="3.10.1",
+ org.eclipse.pde.runtime;bundle-version="3.4.400",
  org.eclipse.sirius,
  org.eclipse.sirius.common.acceleo.mtl
 Bundle-ActivationPolicy: lazy

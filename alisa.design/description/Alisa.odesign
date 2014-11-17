@@ -5,7 +5,7 @@
       <defaultLayer name="Default">
         <containerMappings name="RequirementsContainer" semanticCandidatesExpression="feature:content" domainClass="alisa.Requirements">
           <subNodeMappings name="RequirementNode" domainClass="alisa.Requirement">
-            <style xsi:type="style:NoteDescription" labelExpression="feature:title" tooltipExpression="feature:title" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:NoteDescription" labelExpression="[self.name+': '+self.title/]" tooltipExpression="feature:description" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
