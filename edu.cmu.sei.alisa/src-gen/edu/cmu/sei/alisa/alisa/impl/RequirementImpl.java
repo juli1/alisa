@@ -18,6 +18,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -27,6 +28,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.osate.aadl2.NamedElement;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Requirement</b></em>'.
@@ -34,7 +37,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getCategory <em>Category</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getTitle <em>Title</em>}</li>
@@ -60,44 +62,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class RequirementImpl extends ContractualElementImpl implements Requirement
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getTarget() <em>Target</em>}' attribute.
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTarget()
    * @generated
    * @ordered
    */
-  protected static final String TARGET_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTarget() <em>Target</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTarget()
-   * @generated
-   * @ordered
-   */
-  protected String target = TARGET_EDEFAULT;
+  protected NamedElement target;
 
   /**
    * The cached value of the '{@link #getCategory() <em>Category</em>}' reference list.
@@ -325,9 +297,19 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public NamedElement getTarget()
   {
-    return name;
+    if (target != null && ((EObject)target).eIsProxy())
+    {
+      InternalEObject oldTarget = (InternalEObject)target;
+      target = (NamedElement)eResolveProxy(oldTarget);
+      if (target != oldTarget)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.REQUIREMENT__TARGET, oldTarget, target));
+      }
+    }
+    return target;
   }
 
   /**
@@ -335,20 +317,7 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getTarget()
+  public NamedElement basicGetTarget()
   {
     return target;
   }
@@ -358,9 +327,9 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTarget(String newTarget)
+  public void setTarget(NamedElement newTarget)
   {
-    String oldTarget = target;
+    NamedElement oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT__TARGET, oldTarget, target));
@@ -654,10 +623,9 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT__NAME:
-        return getName();
       case AlisaPackage.REQUIREMENT__TARGET:
-        return getTarget();
+        if (resolve) return getTarget();
+        return basicGetTarget();
       case AlisaPackage.REQUIREMENT__CATEGORY:
         return getCategory();
       case AlisaPackage.REQUIREMENT__TITLE:
@@ -705,11 +673,8 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT__NAME:
-        setName((String)newValue);
-        return;
       case AlisaPackage.REQUIREMENT__TARGET:
-        setTarget((String)newValue);
+        setTarget((NamedElement)newValue);
         return;
       case AlisaPackage.REQUIREMENT__CATEGORY:
         getCategory().clear();
@@ -785,11 +750,8 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case AlisaPackage.REQUIREMENT__TARGET:
-        setTarget(TARGET_EDEFAULT);
+        setTarget((NamedElement)null);
         return;
       case AlisaPackage.REQUIREMENT__CATEGORY:
         getCategory().clear();
@@ -853,10 +815,8 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.REQUIREMENT__TARGET:
-        return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
+        return target != null;
       case AlisaPackage.REQUIREMENT__CATEGORY:
         return category != null && !category.isEmpty();
       case AlisaPackage.REQUIREMENT__TITLE:
@@ -904,11 +864,7 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", target: ");
-    result.append(target);
-    result.append(", title: ");
+    result.append(" (title: ");
     result.append(title);
     result.append(", description: ");
     result.append(description);

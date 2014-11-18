@@ -23,13 +23,13 @@ public interface AlisaFactory extends EFactory
   AlisaFactory eINSTANCE = edu.cmu.sei.alisa.alisa.impl.AlisaFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
+   * Returns a new object of class '<em>RSAL Package</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
+   * @return a new object of class '<em>RSAL Package</em>'.
    * @generated
    */
-  AlisaModel createAlisaModel();
+  RSALPackage createRSALPackage();
 
   /**
    * Returns a new object of class '<em>Contractual Element</em>'.
@@ -41,85 +41,22 @@ public interface AlisaFactory extends EFactory
   ContractualElement createContractualElement();
 
   /**
-   * Returns a new object of class '<em>Req Doc Content</em>'.
+   * Returns a new object of class '<em>RSAL Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Req Doc Content</em>'.
+   * @return a new object of class '<em>RSAL Element</em>'.
    * @generated
    */
-  ReqDocContent createReqDocContent();
+  RSALElement createRSALElement();
 
   /**
-   * Returns a new object of class '<em>Document</em>'.
+   * Returns a new object of class '<em>RSAL Section</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Document</em>'.
+   * @return a new object of class '<em>RSAL Section</em>'.
    * @generated
    */
-  AlisaDocument createAlisaDocument();
-
-  /**
-   * Returns a new object of class '<em>Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Element</em>'.
-   * @generated
-   */
-  AlisaElement createAlisaElement();
-
-  /**
-   * Returns a new object of class '<em>Name Space</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Name Space</em>'.
-   * @generated
-   */
-  AlisaNameSpace createAlisaNameSpace();
-
-  /**
-   * Returns a new object of class '<em>Requirement Document</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Requirement Document</em>'.
-   * @generated
-   */
-  RequirementDocument createRequirementDocument();
-
-  /**
-   * Returns a new object of class '<em>Document Section</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Document Section</em>'.
-   * @generated
-   */
-  DocumentSection createDocumentSection();
-
-  /**
-   * Returns a new object of class '<em>Verification Library</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Verification Library</em>'.
-   * @generated
-   */
-  VerificationLibrary createVerificationLibrary();
-
-  /**
-   * Returns a new object of class '<em>RDA Package</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>RDA Package</em>'.
-   * @generated
-   */
-  RDAPackage createRDAPackage();
-
-  /**
-   * Returns a new object of class '<em>Goals</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Goals</em>'.
-   * @generated
-   */
-  Goals createGoals();
+  RSALSection createRSALSection();
 
   /**
    * Returns a new object of class '<em>Goal</em>'.
@@ -131,15 +68,6 @@ public interface AlisaFactory extends EFactory
   Goal createGoal();
 
   /**
-   * Returns a new object of class '<em>Requirements</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Requirements</em>'.
-   * @generated
-   */
-  Requirements createRequirements();
-
-  /**
    * Returns a new object of class '<em>Requirement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -147,15 +75,6 @@ public interface AlisaFactory extends EFactory
    * @generated
    */
   Requirement createRequirement();
-
-  /**
-   * Returns a new object of class '<em>External Documents</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>External Documents</em>'.
-   * @generated
-   */
-  ExternalDocuments createExternalDocuments();
 
   /**
    * Returns a new object of class '<em>External Document</em>'.
@@ -176,15 +95,6 @@ public interface AlisaFactory extends EFactory
   XDocUri createXDocUri();
 
   /**
-   * Returns a new object of class '<em>Configuration</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Configuration</em>'.
-   * @generated
-   */
-  AlisaConfiguration createAlisaConfiguration();
-
-  /**
    * Returns a new object of class '<em>Category</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -201,15 +111,6 @@ public interface AlisaFactory extends EFactory
    * @generated
    */
   Stakeholder createStakeholder();
-
-  /**
-   * Returns a new object of class '<em>Organization</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Organization</em>'.
-   * @generated
-   */
-  Organization createOrganization();
 
   /**
    * Returns a new object of class '<em>Verification Decomposition</em>'.

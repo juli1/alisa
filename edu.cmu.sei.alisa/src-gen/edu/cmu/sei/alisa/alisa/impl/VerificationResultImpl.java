@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import org.osate.aadl2.impl.NamedElementImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Verification Result</b></em>'.
@@ -27,7 +29,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl#getReferencedVerificationMethod <em>Referenced Verification Method</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl#getDescription <em>Description</em>}</li>
@@ -39,28 +40,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class VerificationResultImpl extends AlisaElementImpl implements VerificationResult
+public class VerificationResultImpl extends NamedElementImpl implements VerificationResult
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getReferencedVerificationMethod() <em>Referenced Verification Method</em>}' reference list.
    * <!-- begin-user-doc -->
@@ -190,29 +171,6 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
   protected EClass eStaticClass()
   {
     return AlisaPackage.Literals.VERIFICATION_RESULT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.VERIFICATION_RESULT__NAME, oldName, name));
   }
 
   /**
@@ -354,8 +312,6 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_RESULT__NAME:
-        return getName();
       case AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD:
         return getReferencedVerificationMethod();
       case AlisaPackage.VERIFICATION_RESULT__TITLE:
@@ -383,9 +339,6 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_RESULT__NAME:
-        setName((String)newValue);
-        return;
       case AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD:
         getReferencedVerificationMethod().clear();
         getReferencedVerificationMethod().addAll((Collection<? extends VerificationActivity>)newValue);
@@ -419,9 +372,6 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_RESULT__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD:
         getReferencedVerificationMethod().clear();
         return;
@@ -454,8 +404,6 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_RESULT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD:
         return referencedVerificationMethod != null && !referencedVerificationMethod.isEmpty();
       case AlisaPackage.VERIFICATION_RESULT__TITLE:
@@ -483,9 +431,7 @@ public class VerificationResultImpl extends AlisaElementImpl implements Verifica
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", title: ");
+    result.append(" (title: ");
     result.append(title);
     result.append(", description: ");
     result.append(description);

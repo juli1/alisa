@@ -2,6 +2,7 @@
  */
 package edu.cmu.sei.alisa.alisa;
 
+import org.osate.aadl2.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,7 +12,6 @@ package edu.cmu.sei.alisa.alisa;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.Category#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Category#getExtends <em>Extends</em>}</li>
  * </ul>
  * </p>
@@ -20,34 +20,8 @@ package edu.cmu.sei.alisa.alisa;
  * @model
  * @generated
  */
-public interface Category extends AlisaElement
+public interface Category extends NamedElement, RSALElement
 {
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getCategory_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Category#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
   /**
    * Returns the value of the '<em><b>Extends</b></em>' reference.
    * <!-- begin-user-doc -->

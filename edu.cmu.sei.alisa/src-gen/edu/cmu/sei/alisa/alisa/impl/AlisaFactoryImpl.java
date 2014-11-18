@@ -65,27 +65,16 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
   {
     switch (eClass.getClassifierID())
     {
-      case AlisaPackage.ALISA_MODEL: return createAlisaModel();
+      case AlisaPackage.RSAL_PACKAGE: return createRSALPackage();
       case AlisaPackage.CONTRACTUAL_ELEMENT: return createContractualElement();
-      case AlisaPackage.REQ_DOC_CONTENT: return createReqDocContent();
-      case AlisaPackage.ALISA_DOCUMENT: return createAlisaDocument();
-      case AlisaPackage.ALISA_ELEMENT: return createAlisaElement();
-      case AlisaPackage.ALISA_NAME_SPACE: return createAlisaNameSpace();
-      case AlisaPackage.REQUIREMENT_DOCUMENT: return createRequirementDocument();
-      case AlisaPackage.DOCUMENT_SECTION: return createDocumentSection();
-      case AlisaPackage.VERIFICATION_LIBRARY: return createVerificationLibrary();
-      case AlisaPackage.RDA_PACKAGE: return createRDAPackage();
-      case AlisaPackage.GOALS: return createGoals();
+      case AlisaPackage.RSAL_ELEMENT: return createRSALElement();
+      case AlisaPackage.RSAL_SECTION: return createRSALSection();
       case AlisaPackage.GOAL: return createGoal();
-      case AlisaPackage.REQUIREMENTS: return createRequirements();
       case AlisaPackage.REQUIREMENT: return createRequirement();
-      case AlisaPackage.EXTERNAL_DOCUMENTS: return createExternalDocuments();
       case AlisaPackage.EXTERNAL_DOCUMENT: return createExternalDocument();
       case AlisaPackage.XDOC_URI: return createXDocUri();
-      case AlisaPackage.ALISA_CONFIGURATION: return createAlisaConfiguration();
       case AlisaPackage.CATEGORY: return createCategory();
       case AlisaPackage.STAKEHOLDER: return createStakeholder();
-      case AlisaPackage.ORGANIZATION: return createOrganization();
       case AlisaPackage.VERIFICATION_DECOMPOSITION: return createVerificationDecomposition();
       case AlisaPackage.VERIFICATION_ACTIVITY: return createVerificationActivity();
       case AlisaPackage.VERIFICATION_RESULT: return createVerificationResult();
@@ -137,10 +126,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public AlisaModel createAlisaModel()
+  public RSALPackage createRSALPackage()
   {
-    AlisaModelImpl alisaModel = new AlisaModelImpl();
-    return alisaModel;
+    RSALPackageImpl rsalPackage = new RSALPackageImpl();
+    return rsalPackage;
   }
 
   /**
@@ -159,10 +148,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReqDocContent createReqDocContent()
+  public RSALElement createRSALElement()
   {
-    ReqDocContentImpl reqDocContent = new ReqDocContentImpl();
-    return reqDocContent;
+    RSALElementImpl rsalElement = new RSALElementImpl();
+    return rsalElement;
   }
 
   /**
@@ -170,87 +159,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public AlisaDocument createAlisaDocument()
+  public RSALSection createRSALSection()
   {
-    AlisaDocumentImpl alisaDocument = new AlisaDocumentImpl();
-    return alisaDocument;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AlisaElement createAlisaElement()
-  {
-    AlisaElementImpl alisaElement = new AlisaElementImpl();
-    return alisaElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AlisaNameSpace createAlisaNameSpace()
-  {
-    AlisaNameSpaceImpl alisaNameSpace = new AlisaNameSpaceImpl();
-    return alisaNameSpace;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public RequirementDocument createRequirementDocument()
-  {
-    RequirementDocumentImpl requirementDocument = new RequirementDocumentImpl();
-    return requirementDocument;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public DocumentSection createDocumentSection()
-  {
-    DocumentSectionImpl documentSection = new DocumentSectionImpl();
-    return documentSection;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VerificationLibrary createVerificationLibrary()
-  {
-    VerificationLibraryImpl verificationLibrary = new VerificationLibraryImpl();
-    return verificationLibrary;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public RDAPackage createRDAPackage()
-  {
-    RDAPackageImpl rdaPackage = new RDAPackageImpl();
-    return rdaPackage;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Goals createGoals()
-  {
-    GoalsImpl goals = new GoalsImpl();
-    return goals;
+    RSALSectionImpl rsalSection = new RSALSectionImpl();
+    return rsalSection;
   }
 
   /**
@@ -269,32 +181,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Requirements createRequirements()
-  {
-    RequirementsImpl requirements = new RequirementsImpl();
-    return requirements;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Requirement createRequirement()
   {
     RequirementImpl requirement = new RequirementImpl();
     return requirement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ExternalDocuments createExternalDocuments()
-  {
-    ExternalDocumentsImpl externalDocuments = new ExternalDocumentsImpl();
-    return externalDocuments;
   }
 
   /**
@@ -324,17 +214,6 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public AlisaConfiguration createAlisaConfiguration()
-  {
-    AlisaConfigurationImpl alisaConfiguration = new AlisaConfigurationImpl();
-    return alisaConfiguration;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Category createCategory()
   {
     CategoryImpl category = new CategoryImpl();
@@ -350,17 +229,6 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
   {
     StakeholderImpl stakeholder = new StakeholderImpl();
     return stakeholder;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Organization createOrganization()
-  {
-    OrganizationImpl organization = new OrganizationImpl();
-    return organization;
   }
 
   /**

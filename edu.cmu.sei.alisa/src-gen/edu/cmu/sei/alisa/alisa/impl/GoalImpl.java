@@ -16,11 +16,15 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import org.osate.aadl2.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +33,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getCategory <em>Category</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getTitle <em>Title</em>}</li>
@@ -54,44 +57,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 public class GoalImpl extends ContractualElementImpl implements Goal
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getTarget() <em>Target</em>}' attribute.
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTarget()
    * @generated
    * @ordered
    */
-  protected static final String TARGET_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTarget() <em>Target</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTarget()
-   * @generated
-   * @ordered
-   */
-  protected String target = TARGET_EDEFAULT;
+  protected NamedElement target;
 
   /**
    * The cached value of the '{@link #getCategory() <em>Category</em>}' reference list.
@@ -309,9 +282,19 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public NamedElement getTarget()
   {
-    return name;
+    if (target != null && ((EObject)target).eIsProxy())
+    {
+      InternalEObject oldTarget = (InternalEObject)target;
+      target = (NamedElement)eResolveProxy(oldTarget);
+      if (target != oldTarget)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.GOAL__TARGET, oldTarget, target));
+      }
+    }
+    return target;
   }
 
   /**
@@ -319,20 +302,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOAL__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getTarget()
+  public NamedElement basicGetTarget()
   {
     return target;
   }
@@ -342,9 +312,9 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTarget(String newTarget)
+  public void setTarget(NamedElement newTarget)
   {
-    String oldTarget = target;
+    NamedElement oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOAL__TARGET, oldTarget, target));
@@ -606,10 +576,9 @@ public class GoalImpl extends ContractualElementImpl implements Goal
   {
     switch (featureID)
     {
-      case AlisaPackage.GOAL__NAME:
-        return getName();
       case AlisaPackage.GOAL__TARGET:
-        return getTarget();
+        if (resolve) return getTarget();
+        return basicGetTarget();
       case AlisaPackage.GOAL__CATEGORY:
         return getCategory();
       case AlisaPackage.GOAL__TITLE:
@@ -655,11 +624,8 @@ public class GoalImpl extends ContractualElementImpl implements Goal
   {
     switch (featureID)
     {
-      case AlisaPackage.GOAL__NAME:
-        setName((String)newValue);
-        return;
       case AlisaPackage.GOAL__TARGET:
-        setTarget((String)newValue);
+        setTarget((NamedElement)newValue);
         return;
       case AlisaPackage.GOAL__CATEGORY:
         getCategory().clear();
@@ -731,11 +697,8 @@ public class GoalImpl extends ContractualElementImpl implements Goal
   {
     switch (featureID)
     {
-      case AlisaPackage.GOAL__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case AlisaPackage.GOAL__TARGET:
-        setTarget(TARGET_EDEFAULT);
+        setTarget((NamedElement)null);
         return;
       case AlisaPackage.GOAL__CATEGORY:
         getCategory().clear();
@@ -796,10 +759,8 @@ public class GoalImpl extends ContractualElementImpl implements Goal
   {
     switch (featureID)
     {
-      case AlisaPackage.GOAL__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.GOAL__TARGET:
-        return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
+        return target != null;
       case AlisaPackage.GOAL__CATEGORY:
         return category != null && !category.isEmpty();
       case AlisaPackage.GOAL__TITLE:
@@ -845,11 +806,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", target: ");
-    result.append(target);
-    result.append(", title: ");
+    result.append(" (title: ");
     result.append(title);
     result.append(", description: ");
     result.append(description);

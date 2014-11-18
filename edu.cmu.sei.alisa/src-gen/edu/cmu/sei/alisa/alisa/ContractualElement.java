@@ -2,6 +2,9 @@
  */
 package edu.cmu.sei.alisa.alisa;
 
+import org.eclipse.emf.ecore.EObject;
+
+import org.osate.aadl2.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +16,6 @@ package edu.cmu.sei.alisa.alisa;
  * @model
  * @generated
  */
-public interface ContractualElement extends ReqDocContent
+public interface ContractualElement extends EObject, NamedElement
 {
 } // ContractualElement

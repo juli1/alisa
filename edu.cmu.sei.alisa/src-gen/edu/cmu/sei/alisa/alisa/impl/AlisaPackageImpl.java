@@ -2,30 +2,19 @@
  */
 package edu.cmu.sei.alisa.alisa.impl;
 
-import edu.cmu.sei.alisa.alisa.AlisaConfiguration;
-import edu.cmu.sei.alisa.alisa.AlisaDocument;
-import edu.cmu.sei.alisa.alisa.AlisaElement;
 import edu.cmu.sei.alisa.alisa.AlisaFactory;
-import edu.cmu.sei.alisa.alisa.AlisaModel;
-import edu.cmu.sei.alisa.alisa.AlisaNameSpace;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.ContractualElement;
-import edu.cmu.sei.alisa.alisa.DocumentSection;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
-import edu.cmu.sei.alisa.alisa.ExternalDocuments;
 import edu.cmu.sei.alisa.alisa.Goal;
-import edu.cmu.sei.alisa.alisa.Goals;
-import edu.cmu.sei.alisa.alisa.Organization;
-import edu.cmu.sei.alisa.alisa.RDAPackage;
-import edu.cmu.sei.alisa.alisa.ReqDocContent;
+import edu.cmu.sei.alisa.alisa.RSALElement;
+import edu.cmu.sei.alisa.alisa.RSALPackage;
+import edu.cmu.sei.alisa.alisa.RSALSection;
 import edu.cmu.sei.alisa.alisa.Requirement;
-import edu.cmu.sei.alisa.alisa.RequirementDocument;
-import edu.cmu.sei.alisa.alisa.Requirements;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
-import edu.cmu.sei.alisa.alisa.VerificationLibrary;
 import edu.cmu.sei.alisa.alisa.VerificationResult;
 import edu.cmu.sei.alisa.alisa.VerificationResultState;
 import edu.cmu.sei.alisa.alisa.VerificationResultStatus;
@@ -55,7 +44,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass alisaModelEClass = null;
+  private EClass rsalPackageEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,63 +58,14 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass reqDocContentEClass = null;
+  private EClass rsalElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass alisaDocumentEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass alisaElementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass alisaNameSpaceEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass requirementDocumentEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass documentSectionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass verificationLibraryEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass rdaPackageEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass goalsEClass = null;
+  private EClass rsalSectionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -139,21 +79,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass requirementsEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass requirementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass externalDocumentsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -174,13 +100,6 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass alisaConfigurationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass categoryEClass = null;
 
   /**
@@ -189,13 +108,6 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * @generated
    */
   private EClass stakeholderEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass organizationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -303,9 +215,39 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAlisaModel()
+  public EClass getRSALPackage()
   {
-    return alisaModelEClass;
+    return rsalPackageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRSALPackage_ImportedNamespace()
+  {
+    return (EReference)rsalPackageEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRSALPackage_Content()
+  {
+    return (EReference)rsalPackageEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRSALPackage_Issue()
+  {
+    return (EAttribute)rsalPackageEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -323,9 +265,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getReqDocContent()
+  public EClass getRSALElement()
   {
-    return reqDocContentEClass;
+    return rsalElementEClass;
   }
 
   /**
@@ -333,9 +275,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAlisaDocument()
+  public EClass getRSALSection()
   {
-    return alisaDocumentEClass;
+    return rsalSectionEClass;
   }
 
   /**
@@ -343,9 +285,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAlisaElement()
+  public EReference getRSALSection_Content()
   {
-    return alisaElementEClass;
+    return (EReference)rsalSectionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -353,189 +295,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAlisaNameSpace()
+  public EAttribute getRSALSection_Issue()
   {
-    return alisaNameSpaceEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getRequirementDocument()
-  {
-    return requirementDocumentEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getRequirementDocument_Name()
-  {
-    return (EAttribute)requirementDocumentEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRequirementDocument_Content()
-  {
-    return (EReference)requirementDocumentEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getDocumentSection()
-  {
-    return documentSectionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getDocumentSection_Name()
-  {
-    return (EAttribute)documentSectionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDocumentSection_Content()
-  {
-    return (EReference)documentSectionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getVerificationLibrary()
-  {
-    return verificationLibraryEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getVerificationLibrary_Name()
-  {
-    return (EAttribute)verificationLibraryEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getVerificationLibrary_Content()
-  {
-    return (EReference)verificationLibraryEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getRDAPackage()
-  {
-    return rdaPackageEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getRDAPackage_Name()
-  {
-    return (EAttribute)rdaPackageEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRDAPackage_ImportedNamespace()
-  {
-    return (EReference)rdaPackageEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRDAPackage_Content()
-  {
-    return (EReference)rdaPackageEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getGoals()
-  {
-    return goalsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGoals_Name()
-  {
-    return (EAttribute)goalsEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGoals_GoalTarget()
-  {
-    return (EReference)goalsEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGoals_Goals()
-  {
-    return (EReference)goalsEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGoals_Issue()
-  {
-    return (EAttribute)goalsEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)rsalSectionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -553,19 +315,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGoal_Name()
+  public EReference getGoal_Target()
   {
-    return (EAttribute)goalEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGoal_Target()
-  {
-    return (EAttribute)goalEClass.getEStructuralFeatures().get(1);
+    return (EReference)goalEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -575,7 +327,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getGoal_Category()
   {
-    return (EReference)goalEClass.getEStructuralFeatures().get(2);
+    return (EReference)goalEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -585,7 +337,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getGoal_Title()
   {
-    return (EAttribute)goalEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)goalEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -595,7 +347,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getGoal_Description()
   {
-    return (EAttribute)goalEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)goalEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -605,7 +357,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getGoal_Assert()
   {
-    return (EAttribute)goalEClass.getEStructuralFeatures().get(5);
+    return (EAttribute)goalEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -615,7 +367,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getGoal_Rationale()
   {
-    return (EAttribute)goalEClass.getEStructuralFeatures().get(6);
+    return (EAttribute)goalEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -625,7 +377,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getGoal_Issue()
   {
-    return (EAttribute)goalEClass.getEStructuralFeatures().get(7);
+    return (EAttribute)goalEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -635,7 +387,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getGoal_ModelReference()
   {
-    return (EAttribute)goalEClass.getEStructuralFeatures().get(8);
+    return (EAttribute)goalEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -645,7 +397,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getGoal_RefinesReference()
   {
-    return (EReference)goalEClass.getEStructuralFeatures().get(9);
+    return (EReference)goalEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -655,7 +407,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getGoal_DecomposesReference()
   {
-    return (EReference)goalEClass.getEStructuralFeatures().get(10);
+    return (EReference)goalEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -665,7 +417,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getGoal_EvolvesReference()
   {
-    return (EReference)goalEClass.getEStructuralFeatures().get(11);
+    return (EReference)goalEClass.getEStructuralFeatures().get(10);
   }
 
   /**
@@ -675,7 +427,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getGoal_ConflictsReference()
   {
-    return (EReference)goalEClass.getEStructuralFeatures().get(12);
+    return (EReference)goalEClass.getEStructuralFeatures().get(11);
   }
 
   /**
@@ -685,7 +437,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getGoal_StakeholderReference()
   {
-    return (EReference)goalEClass.getEStructuralFeatures().get(13);
+    return (EReference)goalEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -695,7 +447,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getGoal_StakeholderRequirementReference()
   {
-    return (EReference)goalEClass.getEStructuralFeatures().get(14);
+    return (EReference)goalEClass.getEStructuralFeatures().get(13);
   }
 
   /**
@@ -705,7 +457,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getGoal_SystemRequirementReference()
   {
-    return (EReference)goalEClass.getEStructuralFeatures().get(15);
+    return (EReference)goalEClass.getEStructuralFeatures().get(14);
   }
 
   /**
@@ -715,57 +467,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getGoal_DocReference()
   {
-    return (EReference)goalEClass.getEStructuralFeatures().get(16);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getRequirements()
-  {
-    return requirementsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getRequirements_Name()
-  {
-    return (EAttribute)requirementsEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRequirements_ReqTarget()
-  {
-    return (EReference)requirementsEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRequirements_Reqs()
-  {
-    return (EReference)requirementsEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getRequirements_Issue()
-  {
-    return (EAttribute)requirementsEClass.getEStructuralFeatures().get(3);
+    return (EReference)goalEClass.getEStructuralFeatures().get(15);
   }
 
   /**
@@ -783,19 +485,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRequirement_Name()
+  public EReference getRequirement_Target()
   {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getRequirement_Target()
-  {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(1);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -805,7 +497,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getRequirement_Category()
   {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(2);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -815,7 +507,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getRequirement_Title()
   {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -825,7 +517,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getRequirement_Description()
   {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -835,7 +527,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getRequirement_Assert()
   {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(5);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -845,7 +537,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getRequirement_Rationale()
   {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(6);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -855,7 +547,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getRequirement_Issue()
   {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(7);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -865,7 +557,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getRequirement_ModelReference()
   {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(8);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -875,7 +567,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getRequirement_GoalReference()
   {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(9);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -885,7 +577,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getRequirement_HazardReference()
   {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(10);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -895,7 +587,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getRequirement_RefinesReference()
   {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(11);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(10);
   }
 
   /**
@@ -905,7 +597,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getRequirement_DecomposesReference()
   {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(12);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(11);
   }
 
   /**
@@ -915,7 +607,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getRequirement_EvolvesReference()
   {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(13);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -925,7 +617,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getRequirement_VerifiedBy()
   {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(14);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(13);
   }
 
   /**
@@ -935,7 +627,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getRequirement_StakeholderRequirementReference()
   {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(15);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(14);
   }
 
   /**
@@ -945,7 +637,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getRequirement_SystemRequirementReference()
   {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(16);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(15);
   }
 
   /**
@@ -955,37 +647,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getRequirement_DocReference()
   {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(17);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getExternalDocuments()
-  {
-    return externalDocumentsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getExternalDocuments_Name()
-  {
-    return (EAttribute)externalDocumentsEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExternalDocuments_Docs()
-  {
-    return (EReference)externalDocumentsEClass.getEStructuralFeatures().get(1);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(16);
   }
 
   /**
@@ -1003,19 +665,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExternalDocument_Name()
-  {
-    return (EAttribute)externalDocumentEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getExternalDocument_ExternalReference()
   {
-    return (EAttribute)externalDocumentEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)externalDocumentEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1053,36 +705,6 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAlisaConfiguration()
-  {
-    return alisaConfigurationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getAlisaConfiguration_Name()
-  {
-    return (EAttribute)alisaConfigurationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAlisaConfiguration_Category()
-  {
-    return (EReference)alisaConfigurationEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getCategory()
   {
     return categoryEClass;
@@ -1093,19 +715,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCategory_Name()
-  {
-    return (EAttribute)categoryEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getCategory_Extends()
   {
-    return (EReference)categoryEClass.getEStructuralFeatures().get(1);
+    return (EReference)categoryEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1123,7 +735,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStakeholder_Name()
+  public EAttribute getStakeholder_Title()
   {
     return (EAttribute)stakeholderEClass.getEStructuralFeatures().get(0);
   }
@@ -1133,7 +745,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStakeholder_Title()
+  public EAttribute getStakeholder_Description()
   {
     return (EAttribute)stakeholderEClass.getEStructuralFeatures().get(1);
   }
@@ -1143,7 +755,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStakeholder_Description()
+  public EAttribute getStakeholder_Role()
   {
     return (EAttribute)stakeholderEClass.getEStructuralFeatures().get(2);
   }
@@ -1153,7 +765,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStakeholder_Role()
+  public EAttribute getStakeholder_Organziation()
   {
     return (EAttribute)stakeholderEClass.getEStructuralFeatures().get(3);
   }
@@ -1176,36 +788,6 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
   public EAttribute getStakeholder_Phone()
   {
     return (EAttribute)stakeholderEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getOrganization()
-  {
-    return organizationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getOrganization_Name()
-  {
-    return (EAttribute)organizationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getOrganization_Stakeholder()
-  {
-    return (EReference)organizationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1273,7 +855,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVerificationActivity_Name()
+  public EAttribute getVerificationActivity_Title()
   {
     return (EAttribute)verificationActivityEClass.getEStructuralFeatures().get(0);
   }
@@ -1283,7 +865,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVerificationActivity_Title()
+  public EAttribute getVerificationActivity_Description()
   {
     return (EAttribute)verificationActivityEClass.getEStructuralFeatures().get(1);
   }
@@ -1293,7 +875,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVerificationActivity_Description()
+  public EAttribute getVerificationActivity_Method()
   {
     return (EAttribute)verificationActivityEClass.getEStructuralFeatures().get(2);
   }
@@ -1303,19 +885,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVerificationActivity_Method()
-  {
-    return (EAttribute)verificationActivityEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getVerificationActivity_DecomposedTo()
   {
-    return (EReference)verificationActivityEClass.getEStructuralFeatures().get(4);
+    return (EReference)verificationActivityEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1325,7 +897,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getVerificationActivity_AssignedTo()
   {
-    return (EReference)verificationActivityEClass.getEStructuralFeatures().get(5);
+    return (EReference)verificationActivityEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1343,19 +915,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVerificationResult_Name()
-  {
-    return (EAttribute)verificationResultEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getVerificationResult_ReferencedVerificationMethod()
   {
-    return (EReference)verificationResultEClass.getEStructuralFeatures().get(1);
+    return (EReference)verificationResultEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1365,7 +927,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getVerificationResult_Title()
   {
-    return (EAttribute)verificationResultEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)verificationResultEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1375,7 +937,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getVerificationResult_Description()
   {
-    return (EAttribute)verificationResultEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)verificationResultEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1385,7 +947,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getVerificationResult_Method()
   {
-    return (EAttribute)verificationResultEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)verificationResultEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1395,7 +957,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getVerificationResult_State()
   {
-    return (EAttribute)verificationResultEClass.getEStructuralFeatures().get(5);
+    return (EAttribute)verificationResultEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1405,7 +967,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EAttribute getVerificationResult_Status()
   {
-    return (EAttribute)verificationResultEClass.getEStructuralFeatures().get(6);
+    return (EAttribute)verificationResultEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1458,44 +1020,21 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     isCreated = true;
 
     // Create classes and their features
-    alisaModelEClass = createEClass(ALISA_MODEL);
+    rsalPackageEClass = createEClass(RSAL_PACKAGE);
+    createEReference(rsalPackageEClass, RSAL_PACKAGE__IMPORTED_NAMESPACE);
+    createEReference(rsalPackageEClass, RSAL_PACKAGE__CONTENT);
+    createEAttribute(rsalPackageEClass, RSAL_PACKAGE__ISSUE);
 
     contractualElementEClass = createEClass(CONTRACTUAL_ELEMENT);
 
-    reqDocContentEClass = createEClass(REQ_DOC_CONTENT);
+    rsalElementEClass = createEClass(RSAL_ELEMENT);
 
-    alisaDocumentEClass = createEClass(ALISA_DOCUMENT);
-
-    alisaElementEClass = createEClass(ALISA_ELEMENT);
-
-    alisaNameSpaceEClass = createEClass(ALISA_NAME_SPACE);
-
-    requirementDocumentEClass = createEClass(REQUIREMENT_DOCUMENT);
-    createEAttribute(requirementDocumentEClass, REQUIREMENT_DOCUMENT__NAME);
-    createEReference(requirementDocumentEClass, REQUIREMENT_DOCUMENT__CONTENT);
-
-    documentSectionEClass = createEClass(DOCUMENT_SECTION);
-    createEAttribute(documentSectionEClass, DOCUMENT_SECTION__NAME);
-    createEReference(documentSectionEClass, DOCUMENT_SECTION__CONTENT);
-
-    verificationLibraryEClass = createEClass(VERIFICATION_LIBRARY);
-    createEAttribute(verificationLibraryEClass, VERIFICATION_LIBRARY__NAME);
-    createEReference(verificationLibraryEClass, VERIFICATION_LIBRARY__CONTENT);
-
-    rdaPackageEClass = createEClass(RDA_PACKAGE);
-    createEAttribute(rdaPackageEClass, RDA_PACKAGE__NAME);
-    createEReference(rdaPackageEClass, RDA_PACKAGE__IMPORTED_NAMESPACE);
-    createEReference(rdaPackageEClass, RDA_PACKAGE__CONTENT);
-
-    goalsEClass = createEClass(GOALS);
-    createEAttribute(goalsEClass, GOALS__NAME);
-    createEReference(goalsEClass, GOALS__GOAL_TARGET);
-    createEReference(goalsEClass, GOALS__GOALS);
-    createEAttribute(goalsEClass, GOALS__ISSUE);
+    rsalSectionEClass = createEClass(RSAL_SECTION);
+    createEReference(rsalSectionEClass, RSAL_SECTION__CONTENT);
+    createEAttribute(rsalSectionEClass, RSAL_SECTION__ISSUE);
 
     goalEClass = createEClass(GOAL);
-    createEAttribute(goalEClass, GOAL__NAME);
-    createEAttribute(goalEClass, GOAL__TARGET);
+    createEReference(goalEClass, GOAL__TARGET);
     createEReference(goalEClass, GOAL__CATEGORY);
     createEAttribute(goalEClass, GOAL__TITLE);
     createEAttribute(goalEClass, GOAL__DESCRIPTION);
@@ -1512,15 +1051,8 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEReference(goalEClass, GOAL__SYSTEM_REQUIREMENT_REFERENCE);
     createEReference(goalEClass, GOAL__DOC_REFERENCE);
 
-    requirementsEClass = createEClass(REQUIREMENTS);
-    createEAttribute(requirementsEClass, REQUIREMENTS__NAME);
-    createEReference(requirementsEClass, REQUIREMENTS__REQ_TARGET);
-    createEReference(requirementsEClass, REQUIREMENTS__REQS);
-    createEAttribute(requirementsEClass, REQUIREMENTS__ISSUE);
-
     requirementEClass = createEClass(REQUIREMENT);
-    createEAttribute(requirementEClass, REQUIREMENT__NAME);
-    createEAttribute(requirementEClass, REQUIREMENT__TARGET);
+    createEReference(requirementEClass, REQUIREMENT__TARGET);
     createEReference(requirementEClass, REQUIREMENT__CATEGORY);
     createEAttribute(requirementEClass, REQUIREMENT__TITLE);
     createEAttribute(requirementEClass, REQUIREMENT__DESCRIPTION);
@@ -1538,37 +1070,23 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEReference(requirementEClass, REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE);
     createEReference(requirementEClass, REQUIREMENT__DOC_REFERENCE);
 
-    externalDocumentsEClass = createEClass(EXTERNAL_DOCUMENTS);
-    createEAttribute(externalDocumentsEClass, EXTERNAL_DOCUMENTS__NAME);
-    createEReference(externalDocumentsEClass, EXTERNAL_DOCUMENTS__DOCS);
-
     externalDocumentEClass = createEClass(EXTERNAL_DOCUMENT);
-    createEAttribute(externalDocumentEClass, EXTERNAL_DOCUMENT__NAME);
     createEAttribute(externalDocumentEClass, EXTERNAL_DOCUMENT__EXTERNAL_REFERENCE);
 
     xDocUriEClass = createEClass(XDOC_URI);
     createEReference(xDocUriEClass, XDOC_URI__DOC_PATH);
     createEAttribute(xDocUriEClass, XDOC_URI__DOC_FRAGMENT);
 
-    alisaConfigurationEClass = createEClass(ALISA_CONFIGURATION);
-    createEAttribute(alisaConfigurationEClass, ALISA_CONFIGURATION__NAME);
-    createEReference(alisaConfigurationEClass, ALISA_CONFIGURATION__CATEGORY);
-
     categoryEClass = createEClass(CATEGORY);
-    createEAttribute(categoryEClass, CATEGORY__NAME);
     createEReference(categoryEClass, CATEGORY__EXTENDS);
 
     stakeholderEClass = createEClass(STAKEHOLDER);
-    createEAttribute(stakeholderEClass, STAKEHOLDER__NAME);
     createEAttribute(stakeholderEClass, STAKEHOLDER__TITLE);
     createEAttribute(stakeholderEClass, STAKEHOLDER__DESCRIPTION);
     createEAttribute(stakeholderEClass, STAKEHOLDER__ROLE);
+    createEAttribute(stakeholderEClass, STAKEHOLDER__ORGANZIATION);
     createEAttribute(stakeholderEClass, STAKEHOLDER__EMAIL);
     createEAttribute(stakeholderEClass, STAKEHOLDER__PHONE);
-
-    organizationEClass = createEClass(ORGANIZATION);
-    createEAttribute(organizationEClass, ORGANIZATION__NAME);
-    createEReference(organizationEClass, ORGANIZATION__STAKEHOLDER);
 
     verificationDecompositionEClass = createEClass(VERIFICATION_DECOMPOSITION);
     createEReference(verificationDecompositionEClass, VERIFICATION_DECOMPOSITION__ELEMENT);
@@ -1577,7 +1095,6 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEReference(verificationDecompositionEClass, VERIFICATION_DECOMPOSITION__RIGHT);
 
     verificationActivityEClass = createEClass(VERIFICATION_ACTIVITY);
-    createEAttribute(verificationActivityEClass, VERIFICATION_ACTIVITY__NAME);
     createEAttribute(verificationActivityEClass, VERIFICATION_ACTIVITY__TITLE);
     createEAttribute(verificationActivityEClass, VERIFICATION_ACTIVITY__DESCRIPTION);
     createEAttribute(verificationActivityEClass, VERIFICATION_ACTIVITY__METHOD);
@@ -1585,7 +1102,6 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEReference(verificationActivityEClass, VERIFICATION_ACTIVITY__ASSIGNED_TO);
 
     verificationResultEClass = createEClass(VERIFICATION_RESULT);
-    createEAttribute(verificationResultEClass, VERIFICATION_RESULT__NAME);
     createEReference(verificationResultEClass, VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD);
     createEAttribute(verificationResultEClass, VERIFICATION_RESULT__TITLE);
     createEAttribute(verificationResultEClass, VERIFICATION_RESULT__DESCRIPTION);
@@ -1623,88 +1139,48 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
-    EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
     Aadl2Package theAadl2Package = (Aadl2Package)EPackage.Registry.INSTANCE.getEPackage(Aadl2Package.eNS_URI);
+    EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
     // Create type parameters
 
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    contractualElementEClass.getESuperTypes().add(this.getReqDocContent());
-    requirementDocumentEClass.getESuperTypes().add(this.getAlisaModel());
-    requirementDocumentEClass.getESuperTypes().add(this.getAlisaDocument());
-    requirementDocumentEClass.getESuperTypes().add(this.getAlisaElement());
-    requirementDocumentEClass.getESuperTypes().add(this.getAlisaNameSpace());
-    documentSectionEClass.getESuperTypes().add(this.getReqDocContent());
-    verificationLibraryEClass.getESuperTypes().add(this.getAlisaModel());
-    verificationLibraryEClass.getESuperTypes().add(this.getAlisaElement());
-    verificationLibraryEClass.getESuperTypes().add(this.getAlisaNameSpace());
-    rdaPackageEClass.getESuperTypes().add(this.getAlisaModel());
-    rdaPackageEClass.getESuperTypes().add(this.getAlisaDocument());
-    rdaPackageEClass.getESuperTypes().add(this.getAlisaElement());
-    rdaPackageEClass.getESuperTypes().add(this.getAlisaNameSpace());
-    goalsEClass.getESuperTypes().add(this.getAlisaElement());
-    goalsEClass.getESuperTypes().add(this.getAlisaNameSpace());
+    rsalPackageEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
+    contractualElementEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
+    rsalSectionEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
+    rsalSectionEClass.getESuperTypes().add(this.getRSALElement());
     goalEClass.getESuperTypes().add(this.getContractualElement());
-    goalEClass.getESuperTypes().add(this.getAlisaElement());
-    requirementsEClass.getESuperTypes().add(this.getAlisaElement());
-    requirementsEClass.getESuperTypes().add(this.getAlisaNameSpace());
+    goalEClass.getESuperTypes().add(this.getRSALElement());
     requirementEClass.getESuperTypes().add(this.getContractualElement());
-    requirementEClass.getESuperTypes().add(this.getAlisaElement());
-    externalDocumentsEClass.getESuperTypes().add(this.getAlisaModel());
-    externalDocumentsEClass.getESuperTypes().add(this.getAlisaElement());
-    externalDocumentsEClass.getESuperTypes().add(this.getAlisaNameSpace());
-    alisaConfigurationEClass.getESuperTypes().add(this.getAlisaModel());
-    alisaConfigurationEClass.getESuperTypes().add(this.getAlisaElement());
-    alisaConfigurationEClass.getESuperTypes().add(this.getAlisaNameSpace());
-    categoryEClass.getESuperTypes().add(this.getAlisaElement());
-    stakeholderEClass.getESuperTypes().add(this.getAlisaElement());
-    organizationEClass.getESuperTypes().add(this.getAlisaModel());
-    organizationEClass.getESuperTypes().add(this.getAlisaElement());
-    organizationEClass.getESuperTypes().add(this.getAlisaNameSpace());
-    verificationActivityEClass.getESuperTypes().add(this.getAlisaElement());
-    verificationResultEClass.getESuperTypes().add(this.getAlisaElement());
+    requirementEClass.getESuperTypes().add(this.getRSALElement());
+    externalDocumentEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
+    externalDocumentEClass.getESuperTypes().add(this.getRSALElement());
+    categoryEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
+    categoryEClass.getESuperTypes().add(this.getRSALElement());
+    stakeholderEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
+    stakeholderEClass.getESuperTypes().add(this.getRSALElement());
+    verificationActivityEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
+    verificationActivityEClass.getESuperTypes().add(this.getRSALElement());
+    verificationResultEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(alisaModelEClass, AlisaModel.class, "AlisaModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(rsalPackageEClass, RSALPackage.class, "RSALPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRSALPackage_ImportedNamespace(), theAadl2Package.getNamedElement(), null, "importedNamespace", null, 0, -1, RSALPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRSALPackage_Content(), this.getRSALElement(), null, "content", null, 0, -1, RSALPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRSALPackage_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, RSALPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(contractualElementEClass, ContractualElement.class, "ContractualElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(reqDocContentEClass, ReqDocContent.class, "ReqDocContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(rsalElementEClass, RSALElement.class, "RSALElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(alisaDocumentEClass, AlisaDocument.class, "AlisaDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(alisaElementEClass, AlisaElement.class, "AlisaElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(alisaNameSpaceEClass, AlisaNameSpace.class, "AlisaNameSpace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(requirementDocumentEClass, RequirementDocument.class, "RequirementDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRequirementDocument_Name(), theEcorePackage.getEString(), "name", null, 0, 1, RequirementDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirementDocument_Content(), this.getReqDocContent(), null, "content", null, 0, -1, RequirementDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(documentSectionEClass, DocumentSection.class, "DocumentSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDocumentSection_Name(), theEcorePackage.getEString(), "name", null, 0, 1, DocumentSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDocumentSection_Content(), this.getReqDocContent(), null, "content", null, 0, -1, DocumentSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(verificationLibraryEClass, VerificationLibrary.class, "VerificationLibrary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVerificationLibrary_Name(), theEcorePackage.getEString(), "name", null, 0, 1, VerificationLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVerificationLibrary_Content(), this.getAlisaElement(), null, "content", null, 0, -1, VerificationLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(rdaPackageEClass, RDAPackage.class, "RDAPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRDAPackage_Name(), theEcorePackage.getEString(), "name", null, 0, 1, RDAPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRDAPackage_ImportedNamespace(), theEcorePackage.getEObject(), null, "importedNamespace", null, 0, -1, RDAPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRDAPackage_Content(), theEcorePackage.getEObject(), null, "content", null, 0, -1, RDAPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(goalsEClass, Goals.class, "Goals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGoals_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Goals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoals_GoalTarget(), theAadl2Package.getNamedElement(), null, "goalTarget", null, 0, 1, Goals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoals_Goals(), this.getGoal(), null, "goals", null, 0, -1, Goals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGoals_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, Goals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(rsalSectionEClass, RSALSection.class, "RSALSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRSALSection_Content(), this.getRSALElement(), null, "content", null, 0, -1, RSALSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRSALSection_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, RSALSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGoal_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGoal_Target(), theEcorePackage.getEString(), "target", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGoal_Target(), theAadl2Package.getNamedElement(), null, "target", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGoal_Category(), this.getCategory(), null, "category", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGoal_Title(), theEcorePackage.getEString(), "title", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGoal_Description(), theEcorePackage.getEString(), "description", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1721,15 +1197,8 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEReference(getGoal_SystemRequirementReference(), this.getContractualElement(), null, "systemRequirementReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGoal_DocReference(), this.getExternalDocument(), null, "docReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(requirementsEClass, Requirements.class, "Requirements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRequirements_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirements_ReqTarget(), theAadl2Package.getNamedElement(), null, "reqTarget", null, 0, 1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirements_Reqs(), this.getRequirement(), null, "reqs", null, 0, -1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRequirements_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, Requirements.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(requirementEClass, Requirement.class, "Requirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRequirement_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRequirement_Target(), theEcorePackage.getEString(), "target", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRequirement_Target(), theAadl2Package.getNamedElement(), null, "target", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRequirement_Category(), this.getCategory(), null, "category", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRequirement_Title(), theEcorePackage.getEString(), "title", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRequirement_Description(), theEcorePackage.getEString(), "description", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1747,37 +1216,23 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEReference(getRequirement_SystemRequirementReference(), this.getContractualElement(), null, "systemRequirementReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRequirement_DocReference(), this.getXDocUri(), null, "docReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(externalDocumentsEClass, ExternalDocuments.class, "ExternalDocuments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExternalDocuments_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ExternalDocuments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExternalDocuments_Docs(), this.getExternalDocument(), null, "docs", null, 0, -1, ExternalDocuments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(externalDocumentEClass, ExternalDocument.class, "ExternalDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExternalDocument_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ExternalDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getExternalDocument_ExternalReference(), theEcorePackage.getEString(), "externalReference", null, 0, 1, ExternalDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xDocUriEClass, XDocUri.class, "XDocUri", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXDocUri_DocPath(), this.getExternalDocument(), null, "docPath", null, 0, 1, XDocUri.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getXDocUri_DocFragment(), theEcorePackage.getEString(), "docFragment", null, 0, 1, XDocUri.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(alisaConfigurationEClass, AlisaConfiguration.class, "AlisaConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAlisaConfiguration_Name(), theEcorePackage.getEString(), "name", null, 0, 1, AlisaConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAlisaConfiguration_Category(), this.getCategory(), null, "category", null, 0, -1, AlisaConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(categoryEClass, Category.class, "Category", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCategory_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCategory_Extends(), this.getCategory(), null, "extends", null, 0, 1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stakeholderEClass, Stakeholder.class, "Stakeholder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStakeholder_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Stakeholder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStakeholder_Title(), theEcorePackage.getEString(), "title", null, 0, 1, Stakeholder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStakeholder_Description(), theEcorePackage.getEString(), "description", null, 0, 1, Stakeholder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStakeholder_Role(), theEcorePackage.getEString(), "role", null, 0, 1, Stakeholder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStakeholder_Organziation(), theEcorePackage.getEString(), "organziation", null, 0, 1, Stakeholder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStakeholder_Email(), theEcorePackage.getEString(), "email", null, 0, 1, Stakeholder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStakeholder_Phone(), theEcorePackage.getEString(), "phone", null, 0, 1, Stakeholder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(organizationEClass, Organization.class, "Organization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOrganization_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOrganization_Stakeholder(), this.getStakeholder(), null, "stakeholder", null, 0, -1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verificationDecompositionEClass, VerificationDecomposition.class, "VerificationDecomposition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVerificationDecomposition_Element(), this.getVerificationActivity(), null, "element", null, 0, 1, VerificationDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1786,7 +1241,6 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEReference(getVerificationDecomposition_Right(), this.getVerificationDecomposition(), null, "right", null, 0, 1, VerificationDecomposition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verificationActivityEClass, VerificationActivity.class, "VerificationActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVerificationActivity_Name(), theEcorePackage.getEString(), "name", null, 0, 1, VerificationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVerificationActivity_Title(), theEcorePackage.getEString(), "title", null, 0, 1, VerificationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVerificationActivity_Description(), theEcorePackage.getEString(), "description", null, 0, 1, VerificationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVerificationActivity_Method(), theEcorePackage.getEString(), "method", null, 0, 1, VerificationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1794,7 +1248,6 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEReference(getVerificationActivity_AssignedTo(), this.getStakeholder(), null, "assignedTo", null, 0, -1, VerificationActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verificationResultEClass, VerificationResult.class, "VerificationResult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVerificationResult_Name(), theEcorePackage.getEString(), "name", null, 0, 1, VerificationResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVerificationResult_ReferencedVerificationMethod(), this.getVerificationActivity(), null, "referencedVerificationMethod", null, 0, -1, VerificationResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVerificationResult_Title(), theEcorePackage.getEString(), "title", null, 0, 1, VerificationResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVerificationResult_Description(), theEcorePackage.getEString(), "description", null, 0, 1, VerificationResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

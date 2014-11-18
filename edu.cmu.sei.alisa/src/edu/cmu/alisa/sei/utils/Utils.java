@@ -7,21 +7,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.osate.xtext.aadl2.properties.util.EMFIndexRetrieval;
 
 import edu.cmu.sei.alisa.alisa.AlisaFactory;
-import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
-import edu.cmu.sei.alisa.alisa.ExternalDocuments;
 import edu.cmu.sei.alisa.alisa.Goal;
-import edu.cmu.sei.alisa.alisa.Goals;
-import edu.cmu.sei.alisa.alisa.Organization;
-import edu.cmu.sei.alisa.alisa.RDAPackage;
 import edu.cmu.sei.alisa.alisa.Requirement;
-import edu.cmu.sei.alisa.alisa.RequirementDocument;
-import edu.cmu.sei.alisa.alisa.Requirements;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
-import edu.cmu.sei.alisa.alisa.VerificationLibrary;
 import edu.cmu.sei.alisa.alisa.impl.AlisaFactoryImpl;
 
 public class Utils {
@@ -312,7 +304,7 @@ public class Utils {
 	 * @param o     - the object to be removed
 	 */
 	public static void deleteObjectFromModel(EObject o) {
-		if (!(o instanceof AlisaModel)) {
+		if (!(o instanceof RSALModel)) {
 			EObject reqdoc = o.eContainer();
 			reqdoc.eContents().remove(o);
 		}

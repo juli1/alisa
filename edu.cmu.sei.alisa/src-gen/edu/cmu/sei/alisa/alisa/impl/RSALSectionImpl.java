@@ -3,12 +3,11 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.ReqDocContent;
-import edu.cmu.sei.alisa.alisa.RequirementDocument;
+import edu.cmu.sei.alisa.alisa.RSALElement;
+import edu.cmu.sei.alisa.alisa.RSALSection;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,47 +15,28 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.osate.aadl2.impl.NamedElementImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Requirement Document</b></em>'.
+ * An implementation of the model object '<em><b>RSAL Section</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementDocumentImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementDocumentImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALSectionImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALSectionImpl#getIssue <em>Issue</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RequirementDocumentImpl extends AlisaModelImpl implements RequirementDocument
+public class RSALSectionImpl extends NamedElementImpl implements RSALSection
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -65,14 +45,24 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
    * @generated
    * @ordered
    */
-  protected EList<ReqDocContent> content;
+  protected EList<RSALElement> content;
+
+  /**
+   * The cached value of the '{@link #getIssue() <em>Issue</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIssue()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> issue;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected RequirementDocumentImpl()
+  protected RSALSectionImpl()
   {
     super();
   }
@@ -85,7 +75,7 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   @Override
   protected EClass eStaticClass()
   {
-    return AlisaPackage.Literals.REQUIREMENT_DOCUMENT;
+    return AlisaPackage.Literals.RSAL_SECTION;
   }
 
   /**
@@ -93,36 +83,27 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT_DOCUMENT__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<ReqDocContent> getContent()
+  public EList<RSALElement> getContent()
   {
     if (content == null)
     {
-      content = new EObjectContainmentEList<ReqDocContent>(ReqDocContent.class, this, AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT);
+      content = new EObjectContainmentEList<RSALElement>(RSALElement.class, this, AlisaPackage.RSAL_SECTION__CONTENT);
     }
     return content;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getIssue()
+  {
+    if (issue == null)
+    {
+      issue = new EDataTypeEList<String>(String.class, this, AlisaPackage.RSAL_SECTION__ISSUE);
+    }
+    return issue;
   }
 
   /**
@@ -135,7 +116,7 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
+      case AlisaPackage.RSAL_SECTION__CONTENT:
         return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -151,10 +132,10 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
-        return getName();
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
+      case AlisaPackage.RSAL_SECTION__CONTENT:
         return getContent();
+      case AlisaPackage.RSAL_SECTION__ISSUE:
+        return getIssue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -170,12 +151,13 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
-        setName((String)newValue);
-        return;
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
+      case AlisaPackage.RSAL_SECTION__CONTENT:
         getContent().clear();
-        getContent().addAll((Collection<? extends ReqDocContent>)newValue);
+        getContent().addAll((Collection<? extends RSALElement>)newValue);
+        return;
+      case AlisaPackage.RSAL_SECTION__ISSUE:
+        getIssue().clear();
+        getIssue().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -191,11 +173,11 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
+      case AlisaPackage.RSAL_SECTION__CONTENT:
         getContent().clear();
+        return;
+      case AlisaPackage.RSAL_SECTION__ISSUE:
+        getIssue().clear();
         return;
     }
     super.eUnset(featureID);
@@ -211,10 +193,10 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT_DOCUMENT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AlisaPackage.REQUIREMENT_DOCUMENT__CONTENT:
+      case AlisaPackage.RSAL_SECTION__CONTENT:
         return content != null && !content.isEmpty();
+      case AlisaPackage.RSAL_SECTION__ISSUE:
+        return issue != null && !issue.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -230,10 +212,10 @@ public class RequirementDocumentImpl extends AlisaModelImpl implements Requireme
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (issue: ");
+    result.append(issue);
     result.append(')');
     return result.toString();
   }
 
-} //RequirementDocumentImpl
+} //RSALSectionImpl

@@ -4,6 +4,8 @@ package edu.cmu.sei.alisa.alisa;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.osate.aadl2.NamedElement;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Goal</b></em>'.
@@ -12,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getTarget <em>Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getCategory <em>Category</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getTitle <em>Title</em>}</li>
@@ -36,59 +37,33 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Goal extends ContractualElement, AlisaElement
+public interface Goal extends ContractualElement, RSALElement
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Target</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getGoal_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Goal#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Target</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Target</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Target</em>' attribute.
-   * @see #setTarget(String)
+   * @return the value of the '<em>Target</em>' reference.
+   * @see #setTarget(NamedElement)
    * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getGoal_Target()
    * @model
    * @generated
    */
-  String getTarget();
+  NamedElement getTarget();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Goal#getTarget <em>Target</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Goal#getTarget <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Target</em>' attribute.
+   * @param value the new value of the '<em>Target</em>' reference.
    * @see #getTarget()
    * @generated
    */
-  void setTarget(String value);
+  void setTarget(NamedElement value);
 
   /**
    * Returns the value of the '<em><b>Category</b></em>' reference list.

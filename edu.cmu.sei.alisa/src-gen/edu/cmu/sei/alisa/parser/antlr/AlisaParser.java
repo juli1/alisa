@@ -25,7 +25,7 @@ public class AlisaParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrPar
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "AlisaModel";
+		return "RSALPackage";
 	}
 	
 	public AlisaGrammarAccess getGrammarAccess() {

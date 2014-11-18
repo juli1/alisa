@@ -7,6 +7,8 @@ import edu.cmu.sei.alisa.alisa.ContractualElement;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.osate.aadl2.impl.NamedElementImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Contractual Element</b></em>'.
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ContractualElementImpl extends ReqDocContentImpl implements ContractualElement
+public class ContractualElementImpl extends NamedElementImpl implements ContractualElement
 {
   /**
    * <!-- begin-user-doc -->

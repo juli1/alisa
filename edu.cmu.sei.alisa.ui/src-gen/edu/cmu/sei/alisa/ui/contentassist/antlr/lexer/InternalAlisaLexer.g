@@ -16,21 +16,15 @@ import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer;
 
 
 
-Configuration : ('C'|'c')('O'|'o')('N'|'n')('F'|'f')('I'|'i')('G'|'g')('U'|'u')('R'|'r')('A'|'a')('T'|'t')('I'|'i')('O'|'o')('N'|'n');
-
-Organization : ('O'|'o')('R'|'r')('G'|'g')('A'|'a')('N'|'n')('I'|'i')('Z'|'z')('A'|'a')('T'|'t')('I'|'i')('O'|'o')('N'|'n');
-
-Requirements : ('R'|'r')('E'|'e')('Q'|'q')('U'|'u')('I'|'i')('R'|'r')('E'|'e')('M'|'m')('E'|'e')('N'|'n')('T'|'t')('S'|'s');
-
 Verification : ('V'|'v')('E'|'e')('R'|'r')('I'|'i')('F'|'f')('I'|'i')('C'|'c')('A'|'a')('T'|'t')('I'|'i')('O'|'o')('N'|'n');
 
 Description : ('D'|'d')('E'|'e')('S'|'s')('C'|'c')('R'|'r')('I'|'i')('P'|'p')('T'|'t')('I'|'i')('O'|'o')('N'|'n');
 
+Oranization : ('O'|'o')('R'|'r')('A'|'a')('N'|'n')('I'|'i')('Z'|'z')('A'|'a')('T'|'t')('I'|'i')('O'|'o')('N'|'n');
+
 Requirement : ('R'|'r')('E'|'e')('Q'|'q')('U'|'u')('I'|'i')('R'|'r')('E'|'e')('M'|'m')('E'|'e')('N'|'n')('T'|'t');
 
 Stakeholder : ('S'|'s')('T'|'t')('A'|'a')('K'|'k')('E'|'e')('H'|'h')('O'|'o')('L'|'l')('D'|'d')('E'|'e')('R'|'r');
-
-Categories : ('C'|'c')('A'|'a')('T'|'t')('E'|'e')('G'|'g')('O'|'o')('R'|'r')('I'|'i')('E'|'e')('S'|'s');
 
 Decomposed : ('D'|'d')('E'|'e')('C'|'c')('O'|'o')('M'|'m')('P'|'p')('O'|'o')('S'|'s')('E'|'e')('D'|'d');
 
@@ -45,8 +39,6 @@ Automatic : ('A'|'a')('U'|'u')('T'|'t')('O'|'o')('M'|'m')('A'|'a')('T'|'t')('I'|
 Completed : ('C'|'c')('O'|'o')('M'|'m')('P'|'p')('L'|'l')('E'|'e')('T'|'t')('E'|'e')('D'|'d');
 
 Conflicts : ('C'|'c')('O'|'o')('N'|'n')('F'|'f')('L'|'l')('I'|'i')('C'|'c')('T'|'t')('S'|'s');
-
-Documents : ('D'|'d')('O'|'o')('C'|'c')('U'|'u')('M'|'m')('E'|'e')('N'|'n')('T'|'t')('S'|'s');
 
 Rationale : ('R'|'r')('A'|'a')('T'|'t')('I'|'i')('O'|'o')('N'|'n')('A'|'a')('L'|'l')('E'|'e');
 
@@ -69,8 +61,6 @@ Evolves : ('E'|'e')('V'|'v')('O'|'o')('L'|'l')('V'|'v')('E'|'e')('S'|'s');
 Extends : ('E'|'e')('X'|'x')('T'|'t')('E'|'e')('N'|'n')('D'|'d')('S'|'s');
 
 Imports : ('I'|'i')('M'|'m')('P'|'p')('O'|'o')('R'|'r')('T'|'t')('S'|'s');
-
-Library : ('L'|'l')('I'|'i')('B'|'b')('R'|'r')('A'|'a')('R'|'r')('Y'|'y');
 
 Logfile : ('L'|'l')('O'|'o')('G'|'g')('F'|'f')('I'|'i')('L'|'l')('E'|'e');
 
@@ -103,8 +93,6 @@ Status : ('S'|'s')('T'|'t')('A'|'a')('T'|'t')('U'|'u')('S'|'s');
 System : ('S'|'s')('Y'|'y')('S'|'s')('T'|'t')('E'|'e')('M'|'m');
 
 Email : ('E'|'e')('M'|'m')('A'|'a')('I'|'i')('L'|'l');
-
-Goals : ('G'|'g')('O'|'o')('A'|'a')('L'|'l')('S'|'s');
 
 Phone : ('P'|'p')('H'|'h')('O'|'o')('N'|'n')('E'|'e');
 
@@ -151,10 +139,6 @@ Comma : ',';
 FullStop : '.';
 
 Solidus : '/';
-
-Colon : ':';
-
-Semicolon : ';';
 
 
 

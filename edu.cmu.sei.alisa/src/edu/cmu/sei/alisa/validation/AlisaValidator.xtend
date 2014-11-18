@@ -14,7 +14,7 @@ import edu.cmu.sei.alisa.alisa.Goal
 import edu.cmu.sei.alisa.alisa.Goals
 import edu.cmu.sei.alisa.alisa.Requirements
 import edu.cmu.sei.alisa.alisa.RequirementDocument
-
+import org.osate.aadl2.Aadl2Package
 
 /**
  * Custom validation rules. 
@@ -44,7 +44,7 @@ class AlisaValidator extends AbstractAlisaValidator
 					{
 						if ((otherStak != stakeholder) && (otherStak.name.equalsIgnoreCase(stakeholder.name)))
 						{
-							error("Stakeholders names have to be unique", AlisaPackage$Literals::STAKEHOLDER__NAME);
+							error("Stakeholders names have to be unique", Aadl2Package.eINSTANCE.namedElement_Name);
 							return;
 						}
 					}
@@ -76,7 +76,7 @@ class AlisaValidator extends AbstractAlisaValidator
 						{
 							if ((otherVA != verificationActivity) && (otherVA.name.equalsIgnoreCase(verificationActivity.name)))
 							{
-								error("Verification Activities names have to be unique", AlisaPackage$Literals::VERIFICATION_ACTIVITY__NAME);
+								error("Verification Activities names have to be unique", Aadl2Package.eINSTANCE.namedElement_Name);
 								return;
 							}
 						}
@@ -105,7 +105,7 @@ class AlisaValidator extends AbstractAlisaValidator
 					{
 						if ((otherReq != requirement) && (otherReq.name.equalsIgnoreCase(requirement.name)))
 						{
-							error("Requirements names have to be unique", AlisaPackage$Literals::REQUIREMENT__NAME);
+							error("Requirements names have to be unique", Aadl2Package.eINSTANCE.namedElement_Name);
 							return;
 						}
 					}
@@ -133,7 +133,7 @@ class AlisaValidator extends AbstractAlisaValidator
 					{
 						if ((otherReq != requirement) && (otherReq.name.equalsIgnoreCase(requirement.name)))
 						{
-							error("Requirements names have to be unique", AlisaPackage$Literals::REQUIREMENT__NAME);
+							error("Requirements names have to be unique", Aadl2Package.eINSTANCE.namedElement_Name);
 							return;
 						}
 					}
@@ -152,7 +152,7 @@ class AlisaValidator extends AbstractAlisaValidator
 					{
 						if ((otherReq != requirement) && (otherReq.name.equalsIgnoreCase(requirement.name)))
 						{
-							error("Requirements names have to be unique", AlisaPackage$Literals::REQUIREMENT__NAME);
+							error("Requirements names have to be unique", Aadl2Package.eINSTANCE.namedElement_Name);
 							return;
 						}
 					}
