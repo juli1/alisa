@@ -37,6 +37,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getToplevelAccess().getAlternatives(), "rule__Toplevel__Alternatives");
 					put(grammarAccess.getNamedElementAccess().getAlternatives(), "rule__NamedElement__Alternatives");
 					put(grammarAccess.getContractualElementAccess().getAlternatives(), "rule__ContractualElement__Alternatives");
 					put(grammarAccess.getRSALElementAccess().getAlternatives(), "rule__RSALElement__Alternatives");
@@ -56,6 +57,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRSALSectionAccess().getGroup(), "rule__RSALSection__Group__0");
 					put(grammarAccess.getRSALSectionAccess().getGroup_3(), "rule__RSALSection__Group_3__0");
 					put(grammarAccess.getRSALSectionAccess().getGroup_3_2(), "rule__RSALSection__Group_3_2__0");
+					put(grammarAccess.getOrganizationAccess().getGroup(), "rule__Organization__Group__0");
 					put(grammarAccess.getGoalAccess().getGroup(), "rule__Goal__Group__0");
 					put(grammarAccess.getGoalAccess().getGroup_2_0(), "rule__Goal__Group_2_0__0");
 					put(grammarAccess.getGoalAccess().getGroup_2_1(), "rule__Goal__Group_2_1__0");
@@ -170,6 +172,8 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRSALSectionAccess().getContentAssignment_2(), "rule__RSALSection__ContentAssignment_2");
 					put(grammarAccess.getRSALSectionAccess().getIssueAssignment_3_1(), "rule__RSALSection__IssueAssignment_3_1");
 					put(grammarAccess.getRSALSectionAccess().getIssueAssignment_3_2_1(), "rule__RSALSection__IssueAssignment_3_2_1");
+					put(grammarAccess.getOrganizationAccess().getNameAssignment_1(), "rule__Organization__NameAssignment_1");
+					put(grammarAccess.getOrganizationAccess().getStakeholderAssignment_2(), "rule__Organization__StakeholderAssignment_2");
 					put(grammarAccess.getGoalAccess().getNameAssignment_1(), "rule__Goal__NameAssignment_1");
 					put(grammarAccess.getGoalAccess().getTargetAssignment_2_0_1(), "rule__Goal__TargetAssignment_2_0_1");
 					put(grammarAccess.getGoalAccess().getCategoryAssignment_2_1_1(), "rule__Goal__CategoryAssignment_2_1_1");
@@ -270,7 +274,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
 			edu.cmu.sei.alisa.ui.contentassist.antlr.internal.InternalAlisaParser typedParser = (edu.cmu.sei.alisa.ui.contentassist.antlr.internal.InternalAlisaParser) parser;
-			typedParser.entryRuleRSALPackage();
+			typedParser.entryRuleToplevel();
 			return typedParser.getFollowElements();
 		} catch(RecognitionException ex) {
 			throw new RuntimeException(ex);

@@ -4,8 +4,6 @@ package edu.cmu.sei.alisa.alisa;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 import org.osate.aadl2.NamedElement;
 
 /**
@@ -26,7 +24,7 @@ import org.osate.aadl2.NamedElement;
  * @model
  * @generated
  */
-public interface RSALPackage extends EObject, NamedElement
+public interface RSALPackage extends Toplevel, NamedElement
 {
   /**
    * Returns the value of the '<em><b>Imported Namespace</b></em>' reference list.

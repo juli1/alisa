@@ -39,7 +39,7 @@ import edu.cmu.sei.alisa.services.AlisaGrammarAccess;
 	
 	@Override
 	protected String getFirstRuleName() {
-		return "RSALPackage";	
+		return "Toplevel";	
 	} 
 	   	   	
 	@Override
@@ -54,6 +54,48 @@ import edu.cmu.sei.alisa.services.AlisaGrammarAccess;
 	    appendSkippedTokens();
 	}
 }
+
+
+
+
+// Entry rule entryRuleToplevel
+entryRuleToplevel returns [EObject current=null]
+	:
+	{ newCompositeNode(grammarAccess.getToplevelRule()); }
+	 iv_ruleToplevel=ruleToplevel 
+	 { $current=$iv_ruleToplevel.current; } 
+	 EOF 
+;
+
+// Rule Toplevel
+ruleToplevel returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getToplevelAccess().getRSALPackageParserRuleCall_0()); 
+    }
+    this_RSALPackage_0=ruleRSALPackage
+    {
+        $current = $this_RSALPackage_0.current;
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getToplevelAccess().getOrganizationParserRuleCall_1()); 
+    }
+    this_Organization_1=ruleOrganization
+    {
+        $current = $this_Organization_1.current;
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
 
 
 
@@ -242,8 +284,6 @@ ruleRSALPackage returns [EObject current=null]
     }
 )
 ;
-
-
 
 
 
@@ -484,6 +524,73 @@ ruleRSALSection returns [EObject current=null]
 	otherlv_7=End
     {
     	newLeafNode(otherlv_7, grammarAccess.getRSALSectionAccess().getEndKeyword_4());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleOrganization
+entryRuleOrganization returns [EObject current=null]
+	:
+	{ newCompositeNode(grammarAccess.getOrganizationRule()); }
+	 iv_ruleOrganization=ruleOrganization 
+	 { $current=$iv_ruleOrganization.current; } 
+	 EOF 
+;
+
+// Rule Organization
+ruleOrganization returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	otherlv_0=Organization
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getOrganizationAccess().getOrganizationKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getOrganizationAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getOrganizationRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getOrganizationAccess().getStakeholderStakeholderParserRuleCall_2_0()); 
+	    }
+		lv_stakeholder_2_0=ruleStakeholder		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getOrganizationRule());
+	        }
+       		add(
+       			$current, 
+       			"stakeholder",
+        		lv_stakeholder_2_0, 
+        		"Stakeholder");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)+
+	otherlv_3=End
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getOrganizationAccess().getEndKeyword_3());
     }
 )
 ;

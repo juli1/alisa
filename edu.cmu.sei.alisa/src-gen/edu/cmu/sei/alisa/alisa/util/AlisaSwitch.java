@@ -75,10 +75,18 @@ public class AlisaSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
+      case AlisaPackage.TOPLEVEL:
+      {
+        Toplevel toplevel = (Toplevel)theEObject;
+        T result = caseToplevel(toplevel);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AlisaPackage.RSAL_PACKAGE:
       {
         RSALPackage rsalPackage = (RSALPackage)theEObject;
         T result = caseRSALPackage(rsalPackage);
+        if (result == null) result = caseToplevel(rsalPackage);
         if (result == null) result = caseNamedElement(rsalPackage);
         if (result == null) result = caseElement(rsalPackage);
         if (result == null) result = defaultCase(theEObject);
@@ -107,6 +115,16 @@ public class AlisaSwitch<T> extends Switch<T>
         if (result == null) result = caseNamedElement(rsalSection);
         if (result == null) result = caseRSALElement(rsalSection);
         if (result == null) result = caseElement(rsalSection);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.ORGANIZATION:
+      {
+        Organization organization = (Organization)theEObject;
+        T result = caseOrganization(organization);
+        if (result == null) result = caseToplevel(organization);
+        if (result == null) result = caseNamedElement(organization);
+        if (result == null) result = caseElement(organization);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -200,6 +218,22 @@ public class AlisaSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Toplevel</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Toplevel</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseToplevel(Toplevel object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>RSAL Package</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -259,6 +293,22 @@ public class AlisaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRSALSection(RSALSection object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Organization</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Organization</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOrganization(Organization object)
   {
     return null;
   }

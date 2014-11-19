@@ -3,12 +3,18 @@
  */
 package edu.cmu.sei.alisa.validation;
 
+import com.google.common.base.Objects;
 import edu.cmu.sei.alisa.alisa.Goal;
+import edu.cmu.sei.alisa.alisa.Organization;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.validation.AbstractAlisaValidator;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
+import org.osate.aadl2.Aadl2Package;
 
 /**
  * Custom validation rules.
@@ -25,10 +31,35 @@ public class AlisaValidator extends AbstractAlisaValidator {
   }
   
   public void checkStakeholderName(final Stakeholder stakeholder) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nOrganization cannot be resolved to a type."
-      + "\n!= cannot be resolved"
-      + "\nstakeholder cannot be resolved");
+    EObject _eContainer = stakeholder.eContainer();
+    Organization org = ((Organization) _eContainer);
+    boolean _notEquals = (!Objects.equal(org, null));
+    if (_notEquals) {
+      EList<Stakeholder> _stakeholder = org.getStakeholder();
+      for (final Stakeholder other : _stakeholder) {
+        if ((other instanceof Stakeholder)) {
+          Stakeholder otherStak = ((Stakeholder) other);
+          boolean _notEquals_1 = (!Objects.equal(otherStak, null));
+          if (_notEquals_1) {
+            boolean _and = false;
+            boolean _notEquals_2 = (!Objects.equal(otherStak, stakeholder));
+            if (!_notEquals_2) {
+              _and = false;
+            } else {
+              String _name = otherStak.getName();
+              String _name_1 = stakeholder.getName();
+              boolean _equalsIgnoreCase = _name.equalsIgnoreCase(_name_1);
+              _and = _equalsIgnoreCase;
+            }
+            if (_and) {
+              EAttribute _namedElement_Name = Aadl2Package.eINSTANCE.getNamedElement_Name();
+              this.error("Stakeholders names have to be unique", _namedElement_Name);
+              return;
+            }
+          }
+        }
+      }
+    }
   }
   
   @Check

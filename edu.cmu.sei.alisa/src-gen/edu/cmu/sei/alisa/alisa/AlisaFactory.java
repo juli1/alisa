@@ -23,6 +23,15 @@ public interface AlisaFactory extends EFactory
   AlisaFactory eINSTANCE = edu.cmu.sei.alisa.alisa.impl.AlisaFactoryImpl.init();
 
   /**
+   * Returns a new object of class '<em>Toplevel</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Toplevel</em>'.
+   * @generated
+   */
+  Toplevel createToplevel();
+
+  /**
    * Returns a new object of class '<em>RSAL Package</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -57,6 +66,15 @@ public interface AlisaFactory extends EFactory
    * @generated
    */
   RSALSection createRSALSection();
+
+  /**
+   * Returns a new object of class '<em>Organization</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Organization</em>'.
+   * @generated
+   */
+  Organization createOrganization();
 
   /**
    * Returns a new object of class '<em>Goal</em>'.

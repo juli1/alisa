@@ -18,6 +18,76 @@ import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
+	public class ToplevelElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Toplevel");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cRSALPackageParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cOrganizationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Toplevel:
+		//	RSALPackage | Organization;
+		public ParserRule getRule() { return rule; }
+
+		//RSALPackage | Organization
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//RSALPackage
+		public RuleCall getRSALPackageParserRuleCall_0() { return cRSALPackageParserRuleCall_0; }
+
+		//Organization
+		public RuleCall getOrganizationParserRuleCall_1() { return cOrganizationParserRuleCall_1; }
+	}
+
+	public class NamedElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NamedElement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cContractualElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cCategoryParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cRSALSectionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cRSALPackageParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cStakeholderParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cVerificationActivityParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cVerificationResultParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cExternalDocumentParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cOrganizationParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		
+		//NamedElement returns aadl2::NamedElement:
+		//	ContractualElement | Category | RSALSection | RSALPackage | Stakeholder | VerificationActivity | VerificationResult |
+		//	ExternalDocument | Organization;
+		public ParserRule getRule() { return rule; }
+
+		//ContractualElement | Category | RSALSection | RSALPackage | Stakeholder | VerificationActivity | VerificationResult |
+		//ExternalDocument | Organization
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//ContractualElement
+		public RuleCall getContractualElementParserRuleCall_0() { return cContractualElementParserRuleCall_0; }
+
+		//Category
+		public RuleCall getCategoryParserRuleCall_1() { return cCategoryParserRuleCall_1; }
+
+		//RSALSection
+		public RuleCall getRSALSectionParserRuleCall_2() { return cRSALSectionParserRuleCall_2; }
+
+		//RSALPackage
+		public RuleCall getRSALPackageParserRuleCall_3() { return cRSALPackageParserRuleCall_3; }
+
+		//Stakeholder
+		public RuleCall getStakeholderParserRuleCall_4() { return cStakeholderParserRuleCall_4; }
+
+		//VerificationActivity
+		public RuleCall getVerificationActivityParserRuleCall_5() { return cVerificationActivityParserRuleCall_5; }
+
+		//VerificationResult
+		public RuleCall getVerificationResultParserRuleCall_6() { return cVerificationResultParserRuleCall_6; }
+
+		//ExternalDocument
+		public RuleCall getExternalDocumentParserRuleCall_7() { return cExternalDocumentParserRuleCall_7; }
+
+		//Organization
+		public RuleCall getOrganizationParserRuleCall_8() { return cOrganizationParserRuleCall_8; }
+	}
+
 	public class RSALPackageElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RSALPackage");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -170,52 +240,6 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getEndKeyword_6() { return cEndKeyword_6; }
 	}
 
-	public class NamedElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NamedElement");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cContractualElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cCategoryParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cRSALSectionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cRSALPackageParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cStakeholderParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cVerificationActivityParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cVerificationResultParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cExternalDocumentParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		
-		//NamedElement returns aadl2::NamedElement:
-		//	ContractualElement | Category | RSALSection | RSALPackage | Stakeholder | VerificationActivity | VerificationResult |
-		//	ExternalDocument;
-		public ParserRule getRule() { return rule; }
-
-		//ContractualElement | Category | RSALSection | RSALPackage | Stakeholder | VerificationActivity | VerificationResult |
-		//ExternalDocument
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//ContractualElement
-		public RuleCall getContractualElementParserRuleCall_0() { return cContractualElementParserRuleCall_0; }
-
-		//Category
-		public RuleCall getCategoryParserRuleCall_1() { return cCategoryParserRuleCall_1; }
-
-		//RSALSection
-		public RuleCall getRSALSectionParserRuleCall_2() { return cRSALSectionParserRuleCall_2; }
-
-		//RSALPackage
-		public RuleCall getRSALPackageParserRuleCall_3() { return cRSALPackageParserRuleCall_3; }
-
-		//Stakeholder
-		public RuleCall getStakeholderParserRuleCall_4() { return cStakeholderParserRuleCall_4; }
-
-		//VerificationActivity
-		public RuleCall getVerificationActivityParserRuleCall_5() { return cVerificationActivityParserRuleCall_5; }
-
-		//VerificationResult
-		public RuleCall getVerificationResultParserRuleCall_6() { return cVerificationResultParserRuleCall_6; }
-
-		//ExternalDocument
-		public RuleCall getExternalDocumentParserRuleCall_7() { return cExternalDocumentParserRuleCall_7; }
-	}
-
 	public class ContractualElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ContractualElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -342,6 +366,42 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"end"
 		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
+	}
+
+	public class OrganizationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Organization");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOrganizationKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cStakeholderAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cStakeholderStakeholderParserRuleCall_2_0 = (RuleCall)cStakeholderAssignment_2.eContents().get(0);
+		private final Keyword cEndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//Organization:
+		//	"organization" name=ID stakeholder+=Stakeholder+ "end";
+		public ParserRule getRule() { return rule; }
+
+		//"organization" name=ID stakeholder+=Stakeholder+ "end"
+		public Group getGroup() { return cGroup; }
+
+		//"organization"
+		public Keyword getOrganizationKeyword_0() { return cOrganizationKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//stakeholder+=Stakeholder+
+		public Assignment getStakeholderAssignment_2() { return cStakeholderAssignment_2; }
+
+		//Stakeholder
+		public RuleCall getStakeholderStakeholderParserRuleCall_2_0() { return cStakeholderStakeholderParserRuleCall_2_0; }
+
+		//"end"
+		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
 	}
 
 	public class GoalElements extends AbstractParserRuleElementFinder {
@@ -2608,11 +2668,13 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getUNKNOWNUnknownKeyword_2_0() { return cUNKNOWNUnknownKeyword_2_0; }
 	}
 	
-	private final RSALPackageElements pRSALPackage;
+	private final ToplevelElements pToplevel;
 	private final NamedElementElements pNamedElement;
+	private final RSALPackageElements pRSALPackage;
 	private final ContractualElementElements pContractualElement;
 	private final RSALElementElements pRSALElement;
 	private final RSALSectionElements pRSALSection;
+	private final OrganizationElements pOrganization;
 	private final GoalElements pGoal;
 	private final RequirementElements pRequirement;
 	private final ExternalDocumentElements pExternalDocument;
@@ -2649,11 +2711,13 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
-		this.pRSALPackage = new RSALPackageElements();
+		this.pToplevel = new ToplevelElements();
 		this.pNamedElement = new NamedElementElements();
+		this.pRSALPackage = new RSALPackageElements();
 		this.pContractualElement = new ContractualElementElements();
 		this.pRSALElement = new RSALElementElements();
 		this.pRSALSection = new RSALSectionElements();
+		this.pOrganization = new OrganizationElements();
 		this.pGoal = new GoalElements();
 		this.pRequirement = new RequirementElements();
 		this.pExternalDocument = new ExternalDocumentElements();
@@ -2709,6 +2773,27 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
+	//Toplevel:
+	//	RSALPackage | Organization;
+	public ToplevelElements getToplevelAccess() {
+		return pToplevel;
+	}
+	
+	public ParserRule getToplevelRule() {
+		return getToplevelAccess().getRule();
+	}
+
+	//NamedElement returns aadl2::NamedElement:
+	//	ContractualElement | Category | RSALSection | RSALPackage | Stakeholder | VerificationActivity | VerificationResult |
+	//	ExternalDocument | Organization;
+	public NamedElementElements getNamedElementAccess() {
+		return pNamedElement;
+	}
+	
+	public ParserRule getNamedElementRule() {
+		return getNamedElementAccess().getRule();
+	}
+
 	//RSALPackage:
 	//	"package" name=ID ("imports" importedNamespace+=[RSALPackage] ("," importedNamespace+=[RSALPackage])*)? ("with"
 	//	importedNamespace+=[aadl2::AadlPackage|QPREF] ("," importedNamespace+=[aadl2::AadlPackage|QPREF])*)?
@@ -2719,17 +2804,6 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getRSALPackageRule() {
 		return getRSALPackageAccess().getRule();
-	}
-
-	//NamedElement returns aadl2::NamedElement:
-	//	ContractualElement | Category | RSALSection | RSALPackage | Stakeholder | VerificationActivity | VerificationResult |
-	//	ExternalDocument;
-	public NamedElementElements getNamedElementAccess() {
-		return pNamedElement;
-	}
-	
-	public ParserRule getNamedElementRule() {
-		return getNamedElementAccess().getRule();
 	}
 
 	//ContractualElement:
@@ -2760,6 +2834,16 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getRSALSectionRule() {
 		return getRSALSectionAccess().getRule();
+	}
+
+	//Organization:
+	//	"organization" name=ID stakeholder+=Stakeholder+ "end";
+	public OrganizationElements getOrganizationAccess() {
+		return pOrganization;
+	}
+	
+	public ParserRule getOrganizationRule() {
+		return getOrganizationAccess().getRule();
 	}
 
 	//Goal:

@@ -78,6 +78,11 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
     new AlisaSwitch<Adapter>()
     {
       @Override
+      public Adapter caseToplevel(Toplevel object)
+      {
+        return createToplevelAdapter();
+      }
+      @Override
       public Adapter caseRSALPackage(RSALPackage object)
       {
         return createRSALPackageAdapter();
@@ -96,6 +101,11 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
       public Adapter caseRSALSection(RSALSection object)
       {
         return createRSALSectionAdapter();
+      }
+      @Override
+      public Adapter caseOrganization(Organization object)
+      {
+        return createOrganizationAdapter();
       }
       @Override
       public Adapter caseGoal(Goal object)
@@ -175,6 +185,21 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
 
 
   /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Toplevel <em>Toplevel</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.Toplevel
+   * @generated
+   */
+  public Adapter createToplevelAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.RSALPackage <em>RSAL Package</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -230,6 +255,21 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRSALSectionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Organization <em>Organization</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.Organization
+   * @generated
+   */
+  public Adapter createOrganizationAdapter()
   {
     return null;
   }

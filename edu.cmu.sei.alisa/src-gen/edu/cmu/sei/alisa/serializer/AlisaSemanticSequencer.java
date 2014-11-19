@@ -6,6 +6,7 @@ import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
+import edu.cmu.sei.alisa.alisa.Organization;
 import edu.cmu.sei.alisa.alisa.RSALPackage;
 import edu.cmu.sei.alisa.alisa.RSALSection;
 import edu.cmu.sei.alisa.alisa.Requirement;
@@ -57,9 +58,18 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case AlisaPackage.ORGANIZATION:
+				if(context == grammarAccess.getNamedElementRule() ||
+				   context == grammarAccess.getOrganizationRule() ||
+				   context == grammarAccess.getToplevelRule()) {
+					sequence_Organization(context, (Organization) semanticObject); 
+					return; 
+				}
+				else break;
 			case AlisaPackage.RSAL_PACKAGE:
 				if(context == grammarAccess.getNamedElementRule() ||
-				   context == grammarAccess.getRSALPackageRule()) {
+				   context == grammarAccess.getRSALPackageRule() ||
+				   context == grammarAccess.getToplevelRule()) {
 					sequence_RSALPackage(context, (RSALPackage) semanticObject); 
 					return; 
 				}
@@ -161,6 +171,15 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     )
 	 */
 	protected void sequence_Goal(EObject context, Goal semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID stakeholder+=Stakeholder+)
+	 */
+	protected void sequence_Organization(EObject context, Organization semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -65,10 +65,12 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
   {
     switch (eClass.getClassifierID())
     {
+      case AlisaPackage.TOPLEVEL: return createToplevel();
       case AlisaPackage.RSAL_PACKAGE: return createRSALPackage();
       case AlisaPackage.CONTRACTUAL_ELEMENT: return createContractualElement();
       case AlisaPackage.RSAL_ELEMENT: return createRSALElement();
       case AlisaPackage.RSAL_SECTION: return createRSALSection();
+      case AlisaPackage.ORGANIZATION: return createOrganization();
       case AlisaPackage.GOAL: return createGoal();
       case AlisaPackage.REQUIREMENT: return createRequirement();
       case AlisaPackage.EXTERNAL_DOCUMENT: return createExternalDocument();
@@ -126,6 +128,17 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Toplevel createToplevel()
+  {
+    ToplevelImpl toplevel = new ToplevelImpl();
+    return toplevel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public RSALPackage createRSALPackage()
   {
     RSALPackageImpl rsalPackage = new RSALPackageImpl();
@@ -163,6 +176,17 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
   {
     RSALSectionImpl rsalSection = new RSALSectionImpl();
     return rsalSection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Organization createOrganization()
+  {
+    OrganizationImpl organization = new OrganizationImpl();
+    return organization;
   }
 
   /**

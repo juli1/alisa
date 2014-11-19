@@ -60,6 +60,25 @@ public interface AlisaPackage extends EPackage
   AlisaPackage eINSTANCE = edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl.init();
 
   /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ToplevelImpl <em>Toplevel</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.ToplevelImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getToplevel()
+   * @generated
+   */
+  int TOPLEVEL = 0;
+
+  /**
+   * The number of structural features of the '<em>Toplevel</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TOPLEVEL_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RSALPackageImpl <em>RSAL Package</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -67,7 +86,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRSALPackage()
    * @generated
    */
-  int RSAL_PACKAGE = 0;
+  int RSAL_PACKAGE = 1;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -76,7 +95,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__OWNED_ELEMENT = Aadl2Package.NAMED_ELEMENT__OWNED_ELEMENT;
+  int RSAL_PACKAGE__OWNED_ELEMENT = TOPLEVEL_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -85,7 +104,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__OWNED_COMMENT = Aadl2Package.NAMED_ELEMENT__OWNED_COMMENT;
+  int RSAL_PACKAGE__OWNED_COMMENT = TOPLEVEL_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -94,7 +113,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__NAME = Aadl2Package.NAMED_ELEMENT__NAME;
+  int RSAL_PACKAGE__NAME = TOPLEVEL_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -103,7 +122,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__QUALIFIED_NAME = Aadl2Package.NAMED_ELEMENT__QUALIFIED_NAME;
+  int RSAL_PACKAGE__QUALIFIED_NAME = TOPLEVEL_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Owned Property Association</b></em>' containment reference list.
@@ -112,7 +131,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__OWNED_PROPERTY_ASSOCIATION = Aadl2Package.NAMED_ELEMENT__OWNED_PROPERTY_ASSOCIATION;
+  int RSAL_PACKAGE__OWNED_PROPERTY_ASSOCIATION = TOPLEVEL_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Imported Namespace</b></em>' reference list.
@@ -121,7 +140,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__IMPORTED_NAMESPACE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 0;
+  int RSAL_PACKAGE__IMPORTED_NAMESPACE = TOPLEVEL_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' containment reference list.
@@ -130,7 +149,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__CONTENT = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 1;
+  int RSAL_PACKAGE__CONTENT = TOPLEVEL_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Issue</b></em>' attribute list.
@@ -139,7 +158,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__ISSUE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 2;
+  int RSAL_PACKAGE__ISSUE = TOPLEVEL_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>RSAL Package</em>' class.
@@ -148,7 +167,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE_FEATURE_COUNT = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 3;
+  int RSAL_PACKAGE_FEATURE_COUNT = TOPLEVEL_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl <em>Contractual Element</em>}' class.
@@ -158,7 +177,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getContractualElement()
    * @generated
    */
-  int CONTRACTUAL_ELEMENT = 1;
+  int CONTRACTUAL_ELEMENT = 2;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -222,7 +241,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRSALElement()
    * @generated
    */
-  int RSAL_ELEMENT = 2;
+  int RSAL_ELEMENT = 3;
 
   /**
    * The number of structural features of the '<em>RSAL Element</em>' class.
@@ -241,7 +260,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRSALSection()
    * @generated
    */
-  int RSAL_SECTION = 3;
+  int RSAL_SECTION = 4;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -316,6 +335,79 @@ public interface AlisaPackage extends EPackage
   int RSAL_SECTION_FEATURE_COUNT = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.OrganizationImpl <em>Organization</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.OrganizationImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getOrganization()
+   * @generated
+   */
+  int ORGANIZATION = 5;
+
+  /**
+   * The feature id for the '<em><b>Owned Element</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORGANIZATION__OWNED_ELEMENT = TOPLEVEL_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORGANIZATION__OWNED_COMMENT = TOPLEVEL_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORGANIZATION__NAME = TOPLEVEL_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORGANIZATION__QUALIFIED_NAME = TOPLEVEL_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Owned Property Association</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORGANIZATION__OWNED_PROPERTY_ASSOCIATION = TOPLEVEL_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Stakeholder</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORGANIZATION__STAKEHOLDER = TOPLEVEL_FEATURE_COUNT + 5;
+
+  /**
+   * The number of structural features of the '<em>Organization</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORGANIZATION_FEATURE_COUNT = TOPLEVEL_FEATURE_COUNT + 6;
+
+  /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl <em>Goal</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -323,7 +415,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getGoal()
    * @generated
    */
-  int GOAL = 4;
+  int GOAL = 6;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -531,7 +623,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRequirement()
    * @generated
    */
-  int REQUIREMENT = 5;
+  int REQUIREMENT = 7;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -748,7 +840,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getExternalDocument()
    * @generated
    */
-  int EXTERNAL_DOCUMENT = 6;
+  int EXTERNAL_DOCUMENT = 8;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -821,7 +913,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getXDocUri()
    * @generated
    */
-  int XDOC_URI = 7;
+  int XDOC_URI = 9;
 
   /**
    * The feature id for the '<em><b>Doc Path</b></em>' reference.
@@ -858,7 +950,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getCategory()
    * @generated
    */
-  int CATEGORY = 8;
+  int CATEGORY = 10;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -931,7 +1023,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getStakeholder()
    * @generated
    */
-  int STAKEHOLDER = 9;
+  int STAKEHOLDER = 11;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1049,7 +1141,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationDecomposition()
    * @generated
    */
-  int VERIFICATION_DECOMPOSITION = 10;
+  int VERIFICATION_DECOMPOSITION = 12;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -1104,7 +1196,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationActivity()
    * @generated
    */
-  int VERIFICATION_ACTIVITY = 11;
+  int VERIFICATION_ACTIVITY = 13;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1213,7 +1305,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationResult()
    * @generated
    */
-  int VERIFICATION_RESULT = 12;
+  int VERIFICATION_RESULT = 14;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1331,7 +1423,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationResultState()
    * @generated
    */
-  int VERIFICATION_RESULT_STATE = 13;
+  int VERIFICATION_RESULT_STATE = 15;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.VerificationResultStatus <em>Verification Result Status</em>}' enum.
@@ -1341,8 +1433,18 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationResultStatus()
    * @generated
    */
-  int VERIFICATION_RESULT_STATUS = 14;
+  int VERIFICATION_RESULT_STATUS = 16;
 
+
+  /**
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.Toplevel <em>Toplevel</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Toplevel</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Toplevel
+   * @generated
+   */
+  EClass getToplevel();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.RSALPackage <em>RSAL Package</em>}'.
@@ -1438,6 +1540,27 @@ public interface AlisaPackage extends EPackage
    * @generated
    */
   EAttribute getRSALSection_Issue();
+
+  /**
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.Organization <em>Organization</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Organization</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Organization
+   * @generated
+   */
+  EClass getOrganization();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.Organization#getStakeholder <em>Stakeholder</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Stakeholder</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Organization#getStakeholder()
+   * @see #getOrganization()
+   * @generated
+   */
+  EReference getOrganization_Stakeholder();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.Goal <em>Goal</em>}'.
@@ -2211,6 +2334,16 @@ public interface AlisaPackage extends EPackage
   interface Literals
   {
     /**
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ToplevelImpl <em>Toplevel</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.ToplevelImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getToplevel()
+     * @generated
+     */
+    EClass TOPLEVEL = eINSTANCE.getToplevel();
+
+    /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.RSALPackageImpl <em>RSAL Package</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2289,6 +2422,24 @@ public interface AlisaPackage extends EPackage
      * @generated
      */
     EAttribute RSAL_SECTION__ISSUE = eINSTANCE.getRSALSection_Issue();
+
+    /**
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.OrganizationImpl <em>Organization</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.OrganizationImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getOrganization()
+     * @generated
+     */
+    EClass ORGANIZATION = eINSTANCE.getOrganization();
+
+    /**
+     * The meta object literal for the '<em><b>Stakeholder</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ORGANIZATION__STAKEHOLDER = eINSTANCE.getOrganization_Stakeholder();
 
     /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl <em>Goal</em>}' class.

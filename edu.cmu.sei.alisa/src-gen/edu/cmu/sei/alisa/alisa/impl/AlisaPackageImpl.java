@@ -8,11 +8,13 @@ import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.ContractualElement;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
+import edu.cmu.sei.alisa.alisa.Organization;
 import edu.cmu.sei.alisa.alisa.RSALElement;
 import edu.cmu.sei.alisa.alisa.RSALPackage;
 import edu.cmu.sei.alisa.alisa.RSALSection;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
+import edu.cmu.sei.alisa.alisa.Toplevel;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
 import edu.cmu.sei.alisa.alisa.VerificationResult;
@@ -44,6 +46,13 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass toplevelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass rsalPackageEClass = null;
 
   /**
@@ -66,6 +75,13 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * @generated
    */
   private EClass rsalSectionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass organizationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -215,6 +231,16 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getToplevel()
+  {
+    return toplevelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getRSALPackage()
   {
     return rsalPackageEClass;
@@ -298,6 +324,26 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
   public EAttribute getRSALSection_Issue()
   {
     return (EAttribute)rsalSectionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOrganization()
+  {
+    return organizationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOrganization_Stakeholder()
+  {
+    return (EReference)organizationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1020,6 +1066,8 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     isCreated = true;
 
     // Create classes and their features
+    toplevelEClass = createEClass(TOPLEVEL);
+
     rsalPackageEClass = createEClass(RSAL_PACKAGE);
     createEReference(rsalPackageEClass, RSAL_PACKAGE__IMPORTED_NAMESPACE);
     createEReference(rsalPackageEClass, RSAL_PACKAGE__CONTENT);
@@ -1032,6 +1080,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     rsalSectionEClass = createEClass(RSAL_SECTION);
     createEReference(rsalSectionEClass, RSAL_SECTION__CONTENT);
     createEAttribute(rsalSectionEClass, RSAL_SECTION__ISSUE);
+
+    organizationEClass = createEClass(ORGANIZATION);
+    createEReference(organizationEClass, ORGANIZATION__STAKEHOLDER);
 
     goalEClass = createEClass(GOAL);
     createEReference(goalEClass, GOAL__TARGET);
@@ -1147,10 +1198,13 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    rsalPackageEClass.getESuperTypes().add(this.getToplevel());
     rsalPackageEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
     contractualElementEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
     rsalSectionEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
     rsalSectionEClass.getESuperTypes().add(this.getRSALElement());
+    organizationEClass.getESuperTypes().add(this.getToplevel());
+    organizationEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
     goalEClass.getESuperTypes().add(this.getContractualElement());
     goalEClass.getESuperTypes().add(this.getRSALElement());
     requirementEClass.getESuperTypes().add(this.getContractualElement());
@@ -1166,6 +1220,8 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     verificationResultEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
 
     // Initialize classes and features; add operations and parameters
+    initEClass(toplevelEClass, Toplevel.class, "Toplevel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(rsalPackageEClass, RSALPackage.class, "RSALPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRSALPackage_ImportedNamespace(), theAadl2Package.getNamedElement(), null, "importedNamespace", null, 0, -1, RSALPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRSALPackage_Content(), this.getRSALElement(), null, "content", null, 0, -1, RSALPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1178,6 +1234,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEClass(rsalSectionEClass, RSALSection.class, "RSALSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRSALSection_Content(), this.getRSALElement(), null, "content", null, 0, -1, RSALSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRSALSection_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, RSALSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(organizationEClass, Organization.class, "Organization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOrganization_Stakeholder(), this.getStakeholder(), null, "stakeholder", null, 0, -1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getGoal_Target(), theAadl2Package.getNamedElement(), null, "target", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

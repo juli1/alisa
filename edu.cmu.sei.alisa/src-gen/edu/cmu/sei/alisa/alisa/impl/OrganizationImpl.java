@@ -3,8 +3,8 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.RSALElement;
-import edu.cmu.sei.alisa.alisa.RSALPackage;
+import edu.cmu.sei.alisa.alisa.Organization;
+import edu.cmu.sei.alisa.alisa.Stakeholder;
 
 import java.util.Collection;
 import java.util.Map;
@@ -24,9 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -42,25 +40,23 @@ import org.osate.aadl2.util.Aadl2Validator;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>RSAL Package</b></em>'.
+ * An implementation of the model object '<em><b>Organization</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALPackageImpl#getOwnedElements <em>Owned Element</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALPackageImpl#getOwnedComments <em>Owned Comment</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALPackageImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALPackageImpl#getQualifiedName <em>Qualified Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALPackageImpl#getOwnedPropertyAssociations <em>Owned Property Association</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALPackageImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALPackageImpl#getContent <em>Content</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALPackageImpl#getIssue <em>Issue</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.OrganizationImpl#getOwnedElements <em>Owned Element</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.OrganizationImpl#getOwnedComments <em>Owned Comment</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.OrganizationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.OrganizationImpl#getQualifiedName <em>Qualified Name</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.OrganizationImpl#getOwnedPropertyAssociations <em>Owned Property Association</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.OrganizationImpl#getStakeholder <em>Stakeholder</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
+public class OrganizationImpl extends ToplevelImpl implements Organization
 {
   /**
    * The cached value of the '{@link #getOwnedComments() <em>Owned Comment</em>}' containment reference list.
@@ -113,41 +109,21 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
   protected EList<PropertyAssociation> ownedPropertyAssociations;
 
   /**
-   * The cached value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' reference list.
+   * The cached value of the '{@link #getStakeholder() <em>Stakeholder</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImportedNamespace()
+   * @see #getStakeholder()
    * @generated
    * @ordered
    */
-  protected EList<NamedElement> importedNamespace;
-
-  /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getContent()
-   * @generated
-   * @ordered
-   */
-  protected EList<RSALElement> content;
-
-  /**
-   * The cached value of the '{@link #getIssue() <em>Issue</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIssue()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> issue;
+  protected EList<Stakeholder> stakeholder;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected RSALPackageImpl()
+  protected OrganizationImpl()
   {
     super();
   }
@@ -160,7 +136,7 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
   @Override
   protected EClass eStaticClass()
   {
-    return AlisaPackage.Literals.RSAL_PACKAGE;
+    return AlisaPackage.Literals.ORGANIZATION;
   }
 
   /**
@@ -186,7 +162,7 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
   {
     if (ownedComments == null)
     {
-      ownedComments = new EObjectContainmentEList<Comment>(Comment.class, this, AlisaPackage.RSAL_PACKAGE__OWNED_COMMENT);
+      ownedComments = new EObjectContainmentEList<Comment>(Comment.class, this, AlisaPackage.ORGANIZATION__OWNED_COMMENT);
     }
     return ownedComments;
   }
@@ -211,7 +187,7 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.RSAL_PACKAGE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.ORGANIZATION__NAME, oldName, name));
   }
 
   /**
@@ -235,7 +211,7 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
   {
     if (ownedPropertyAssociations == null)
     {
-      ownedPropertyAssociations = new EObjectContainmentEList<PropertyAssociation>(PropertyAssociation.class, this, AlisaPackage.RSAL_PACKAGE__OWNED_PROPERTY_ASSOCIATION);
+      ownedPropertyAssociations = new EObjectContainmentEList<PropertyAssociation>(PropertyAssociation.class, this, AlisaPackage.ORGANIZATION__OWNED_PROPERTY_ASSOCIATION);
     }
     return ownedPropertyAssociations;
   }
@@ -245,41 +221,13 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<NamedElement> getImportedNamespace()
+  public EList<Stakeholder> getStakeholder()
   {
-    if (importedNamespace == null)
+    if (stakeholder == null)
     {
-      importedNamespace = new EObjectResolvingEList<NamedElement>(NamedElement.class, this, AlisaPackage.RSAL_PACKAGE__IMPORTED_NAMESPACE);
+      stakeholder = new EObjectContainmentEList<Stakeholder>(Stakeholder.class, this, AlisaPackage.ORGANIZATION__STAKEHOLDER);
     }
-    return importedNamespace;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<RSALElement> getContent()
-  {
-    if (content == null)
-    {
-      content = new EObjectContainmentEList<RSALElement>(RSALElement.class, this, AlisaPackage.RSAL_PACKAGE__CONTENT);
-    }
-    return content;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<String> getIssue()
-  {
-    if (issue == null)
-    {
-      issue = new EDataTypeEList<String>(String.class, this, AlisaPackage.RSAL_PACKAGE__ISSUE);
-    }
-    return issue;
+    return stakeholder;
   }
 
   /**
@@ -512,12 +460,12 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
   {
     switch (featureID)
     {
-      case AlisaPackage.RSAL_PACKAGE__OWNED_COMMENT:
+      case AlisaPackage.ORGANIZATION__OWNED_COMMENT:
         return ((InternalEList<?>)getOwnedComments()).basicRemove(otherEnd, msgs);
-      case AlisaPackage.RSAL_PACKAGE__OWNED_PROPERTY_ASSOCIATION:
+      case AlisaPackage.ORGANIZATION__OWNED_PROPERTY_ASSOCIATION:
         return ((InternalEList<?>)getOwnedPropertyAssociations()).basicRemove(otherEnd, msgs);
-      case AlisaPackage.RSAL_PACKAGE__CONTENT:
-        return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
+      case AlisaPackage.ORGANIZATION__STAKEHOLDER:
+        return ((InternalEList<?>)getStakeholder()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -532,22 +480,18 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
   {
     switch (featureID)
     {
-      case AlisaPackage.RSAL_PACKAGE__OWNED_ELEMENT:
+      case AlisaPackage.ORGANIZATION__OWNED_ELEMENT:
         return getOwnedElements();
-      case AlisaPackage.RSAL_PACKAGE__OWNED_COMMENT:
+      case AlisaPackage.ORGANIZATION__OWNED_COMMENT:
         return getOwnedComments();
-      case AlisaPackage.RSAL_PACKAGE__NAME:
+      case AlisaPackage.ORGANIZATION__NAME:
         return getName();
-      case AlisaPackage.RSAL_PACKAGE__QUALIFIED_NAME:
+      case AlisaPackage.ORGANIZATION__QUALIFIED_NAME:
         return getQualifiedName();
-      case AlisaPackage.RSAL_PACKAGE__OWNED_PROPERTY_ASSOCIATION:
+      case AlisaPackage.ORGANIZATION__OWNED_PROPERTY_ASSOCIATION:
         return getOwnedPropertyAssociations();
-      case AlisaPackage.RSAL_PACKAGE__IMPORTED_NAMESPACE:
-        return getImportedNamespace();
-      case AlisaPackage.RSAL_PACKAGE__CONTENT:
-        return getContent();
-      case AlisaPackage.RSAL_PACKAGE__ISSUE:
-        return getIssue();
+      case AlisaPackage.ORGANIZATION__STAKEHOLDER:
+        return getStakeholder();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -563,28 +507,20 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
   {
     switch (featureID)
     {
-      case AlisaPackage.RSAL_PACKAGE__OWNED_COMMENT:
+      case AlisaPackage.ORGANIZATION__OWNED_COMMENT:
         getOwnedComments().clear();
         getOwnedComments().addAll((Collection<? extends Comment>)newValue);
         return;
-      case AlisaPackage.RSAL_PACKAGE__NAME:
+      case AlisaPackage.ORGANIZATION__NAME:
         setName((String)newValue);
         return;
-      case AlisaPackage.RSAL_PACKAGE__OWNED_PROPERTY_ASSOCIATION:
+      case AlisaPackage.ORGANIZATION__OWNED_PROPERTY_ASSOCIATION:
         getOwnedPropertyAssociations().clear();
         getOwnedPropertyAssociations().addAll((Collection<? extends PropertyAssociation>)newValue);
         return;
-      case AlisaPackage.RSAL_PACKAGE__IMPORTED_NAMESPACE:
-        getImportedNamespace().clear();
-        getImportedNamespace().addAll((Collection<? extends NamedElement>)newValue);
-        return;
-      case AlisaPackage.RSAL_PACKAGE__CONTENT:
-        getContent().clear();
-        getContent().addAll((Collection<? extends RSALElement>)newValue);
-        return;
-      case AlisaPackage.RSAL_PACKAGE__ISSUE:
-        getIssue().clear();
-        getIssue().addAll((Collection<? extends String>)newValue);
+      case AlisaPackage.ORGANIZATION__STAKEHOLDER:
+        getStakeholder().clear();
+        getStakeholder().addAll((Collection<? extends Stakeholder>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -600,23 +536,17 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
   {
     switch (featureID)
     {
-      case AlisaPackage.RSAL_PACKAGE__OWNED_COMMENT:
+      case AlisaPackage.ORGANIZATION__OWNED_COMMENT:
         getOwnedComments().clear();
         return;
-      case AlisaPackage.RSAL_PACKAGE__NAME:
+      case AlisaPackage.ORGANIZATION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AlisaPackage.RSAL_PACKAGE__OWNED_PROPERTY_ASSOCIATION:
+      case AlisaPackage.ORGANIZATION__OWNED_PROPERTY_ASSOCIATION:
         getOwnedPropertyAssociations().clear();
         return;
-      case AlisaPackage.RSAL_PACKAGE__IMPORTED_NAMESPACE:
-        getImportedNamespace().clear();
-        return;
-      case AlisaPackage.RSAL_PACKAGE__CONTENT:
-        getContent().clear();
-        return;
-      case AlisaPackage.RSAL_PACKAGE__ISSUE:
-        getIssue().clear();
+      case AlisaPackage.ORGANIZATION__STAKEHOLDER:
+        getStakeholder().clear();
         return;
     }
     super.eUnset(featureID);
@@ -632,22 +562,18 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
   {
     switch (featureID)
     {
-      case AlisaPackage.RSAL_PACKAGE__OWNED_ELEMENT:
+      case AlisaPackage.ORGANIZATION__OWNED_ELEMENT:
         return !getOwnedElements().isEmpty();
-      case AlisaPackage.RSAL_PACKAGE__OWNED_COMMENT:
+      case AlisaPackage.ORGANIZATION__OWNED_COMMENT:
         return ownedComments != null && !ownedComments.isEmpty();
-      case AlisaPackage.RSAL_PACKAGE__NAME:
+      case AlisaPackage.ORGANIZATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AlisaPackage.RSAL_PACKAGE__QUALIFIED_NAME:
+      case AlisaPackage.ORGANIZATION__QUALIFIED_NAME:
         return QUALIFIED_NAME_EDEFAULT == null ? getQualifiedName() != null : !QUALIFIED_NAME_EDEFAULT.equals(getQualifiedName());
-      case AlisaPackage.RSAL_PACKAGE__OWNED_PROPERTY_ASSOCIATION:
+      case AlisaPackage.ORGANIZATION__OWNED_PROPERTY_ASSOCIATION:
         return ownedPropertyAssociations != null && !ownedPropertyAssociations.isEmpty();
-      case AlisaPackage.RSAL_PACKAGE__IMPORTED_NAMESPACE:
-        return importedNamespace != null && !importedNamespace.isEmpty();
-      case AlisaPackage.RSAL_PACKAGE__CONTENT:
-        return content != null && !content.isEmpty();
-      case AlisaPackage.RSAL_PACKAGE__ISSUE:
-        return issue != null && !issue.isEmpty();
+      case AlisaPackage.ORGANIZATION__STAKEHOLDER:
+        return stakeholder != null && !stakeholder.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -664,8 +590,8 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
     {
       switch (derivedFeatureID)
       {
-        case AlisaPackage.RSAL_PACKAGE__OWNED_ELEMENT: return Aadl2Package.ELEMENT__OWNED_ELEMENT;
-        case AlisaPackage.RSAL_PACKAGE__OWNED_COMMENT: return Aadl2Package.ELEMENT__OWNED_COMMENT;
+        case AlisaPackage.ORGANIZATION__OWNED_ELEMENT: return Aadl2Package.ELEMENT__OWNED_ELEMENT;
+        case AlisaPackage.ORGANIZATION__OWNED_COMMENT: return Aadl2Package.ELEMENT__OWNED_COMMENT;
         default: return -1;
       }
     }
@@ -673,9 +599,9 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
     {
       switch (derivedFeatureID)
       {
-        case AlisaPackage.RSAL_PACKAGE__NAME: return Aadl2Package.NAMED_ELEMENT__NAME;
-        case AlisaPackage.RSAL_PACKAGE__QUALIFIED_NAME: return Aadl2Package.NAMED_ELEMENT__QUALIFIED_NAME;
-        case AlisaPackage.RSAL_PACKAGE__OWNED_PROPERTY_ASSOCIATION: return Aadl2Package.NAMED_ELEMENT__OWNED_PROPERTY_ASSOCIATION;
+        case AlisaPackage.ORGANIZATION__NAME: return Aadl2Package.NAMED_ELEMENT__NAME;
+        case AlisaPackage.ORGANIZATION__QUALIFIED_NAME: return Aadl2Package.NAMED_ELEMENT__QUALIFIED_NAME;
+        case AlisaPackage.ORGANIZATION__OWNED_PROPERTY_ASSOCIATION: return Aadl2Package.NAMED_ELEMENT__OWNED_PROPERTY_ASSOCIATION;
         default: return -1;
       }
     }
@@ -694,8 +620,8 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
     {
       switch (baseFeatureID)
       {
-        case Aadl2Package.ELEMENT__OWNED_ELEMENT: return AlisaPackage.RSAL_PACKAGE__OWNED_ELEMENT;
-        case Aadl2Package.ELEMENT__OWNED_COMMENT: return AlisaPackage.RSAL_PACKAGE__OWNED_COMMENT;
+        case Aadl2Package.ELEMENT__OWNED_ELEMENT: return AlisaPackage.ORGANIZATION__OWNED_ELEMENT;
+        case Aadl2Package.ELEMENT__OWNED_COMMENT: return AlisaPackage.ORGANIZATION__OWNED_COMMENT;
         default: return -1;
       }
     }
@@ -703,9 +629,9 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
     {
       switch (baseFeatureID)
       {
-        case Aadl2Package.NAMED_ELEMENT__NAME: return AlisaPackage.RSAL_PACKAGE__NAME;
-        case Aadl2Package.NAMED_ELEMENT__QUALIFIED_NAME: return AlisaPackage.RSAL_PACKAGE__QUALIFIED_NAME;
-        case Aadl2Package.NAMED_ELEMENT__OWNED_PROPERTY_ASSOCIATION: return AlisaPackage.RSAL_PACKAGE__OWNED_PROPERTY_ASSOCIATION;
+        case Aadl2Package.NAMED_ELEMENT__NAME: return AlisaPackage.ORGANIZATION__NAME;
+        case Aadl2Package.NAMED_ELEMENT__QUALIFIED_NAME: return AlisaPackage.ORGANIZATION__QUALIFIED_NAME;
+        case Aadl2Package.NAMED_ELEMENT__OWNED_PROPERTY_ASSOCIATION: return AlisaPackage.ORGANIZATION__OWNED_PROPERTY_ASSOCIATION;
         default: return -1;
       }
     }
@@ -725,10 +651,8 @@ public class RSALPackageImpl extends ToplevelImpl implements RSALPackage
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", issue: ");
-    result.append(issue);
     result.append(')');
     return result.toString();
   }
 
-} //RSALPackageImpl
+} //OrganizationImpl

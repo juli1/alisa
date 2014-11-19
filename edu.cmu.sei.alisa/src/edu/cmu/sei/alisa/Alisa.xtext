@@ -7,6 +7,13 @@ generate alisa "http://www.cmu.edu/sei/alisa/Alisa"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "platform:/resource/org.osate.aadl2/model/aadl2.ecore" as aadl2
 
+Toplevel: RSALPackage | Organization;
+	
+NamedElement returns aadl2::NamedElement :
+	ContractualElement | Category | RSALSection |RSALPackage
+|Stakeholder |VerificationActivity|VerificationResult |ExternalDocument
+| Organization
+;
 
 RSALPackage:
 	"package" name = ID
@@ -16,11 +23,6 @@ RSALPackage:
 	('issues'  issue+=ValueString (',' issue+=ValueString)* )? 
 	'end'
 	;
-	
-NamedElement returns aadl2::NamedElement :
-	ContractualElement | Category | RSALSection |RSALPackage
-|Stakeholder |VerificationActivity|VerificationResult |ExternalDocument
-;
 
 ContractualElement : Goal | Requirement ;
 
@@ -34,7 +36,12 @@ RSALSection:
 	('issues'  issue+=ValueString (','issue+=ValueString)* )? 
 	'end' 
 ;
-	
+
+Organization:
+	'organization' name = ID
+	stakeholder += Stakeholder+
+	'end'
+;	
 
 Goal:
 	'goal' name=ID 
