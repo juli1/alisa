@@ -3,18 +3,17 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaFactory;
+import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.ContractualElement;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Organization;
+import edu.cmu.sei.alisa.alisa.RSALContainer;
 import edu.cmu.sei.alisa.alisa.RSALElement;
-import edu.cmu.sei.alisa.alisa.RSALPackage;
-import edu.cmu.sei.alisa.alisa.RSALSection;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
-import edu.cmu.sei.alisa.alisa.Toplevel;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
 import edu.cmu.sei.alisa.alisa.VerificationResult;
@@ -46,21 +45,14 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass toplevelEClass = null;
+  private EClass alisaModelEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass rsalPackageEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass contractualElementEClass = null;
+  private EClass rsalContainerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,14 +66,14 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass rsalSectionEClass = null;
+  private EClass organizationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass organizationEClass = null;
+  private EClass contractualElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -231,9 +223,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getToplevel()
+  public EClass getAlisaModel()
   {
-    return toplevelEClass;
+    return alisaModelEClass;
   }
 
   /**
@@ -241,9 +233,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getRSALPackage()
+  public EClass getRSALContainer()
   {
-    return rsalPackageEClass;
+    return rsalContainerEClass;
   }
 
   /**
@@ -251,9 +243,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRSALPackage_ImportedNamespace()
+  public EReference getRSALContainer_ImportedNamespace()
   {
-    return (EReference)rsalPackageEClass.getEStructuralFeatures().get(0);
+    return (EReference)rsalContainerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -261,9 +253,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRSALPackage_Content()
+  public EReference getRSALContainer_Content()
   {
-    return (EReference)rsalPackageEClass.getEStructuralFeatures().get(1);
+    return (EReference)rsalContainerEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -271,19 +263,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRSALPackage_Issue()
+  public EAttribute getRSALContainer_Issue()
   {
-    return (EAttribute)rsalPackageEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getContractualElement()
-  {
-    return contractualElementEClass;
+    return (EAttribute)rsalContainerEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -294,36 +276,6 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
   public EClass getRSALElement()
   {
     return rsalElementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getRSALSection()
-  {
-    return rsalSectionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRSALSection_Content()
-  {
-    return (EReference)rsalSectionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getRSALSection_Issue()
-  {
-    return (EAttribute)rsalSectionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -351,169 +303,179 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getContractualElement()
+  {
+    return contractualElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContractualElement_Target()
+  {
+    return (EReference)contractualElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContractualElement_Category()
+  {
+    return (EReference)contractualElementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContractualElement_Title()
+  {
+    return (EAttribute)contractualElementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContractualElement_Description()
+  {
+    return (EAttribute)contractualElementEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContractualElement_Assert()
+  {
+    return (EAttribute)contractualElementEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContractualElement_Rationale()
+  {
+    return (EAttribute)contractualElementEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContractualElement_Issue()
+  {
+    return (EAttribute)contractualElementEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContractualElement_ModelReference()
+  {
+    return (EAttribute)contractualElementEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContractualElement_RefinesReference()
+  {
+    return (EReference)contractualElementEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContractualElement_DecomposesReference()
+  {
+    return (EReference)contractualElementEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContractualElement_EvolvesReference()
+  {
+    return (EReference)contractualElementEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContractualElement_ConflictsReference()
+  {
+    return (EReference)contractualElementEClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContractualElement_StakeholderReference()
+  {
+    return (EReference)contractualElementEClass.getEStructuralFeatures().get(12);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContractualElement_StakeholderRequirementReference()
+  {
+    return (EReference)contractualElementEClass.getEStructuralFeatures().get(13);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContractualElement_SystemRequirementReference()
+  {
+    return (EReference)contractualElementEClass.getEStructuralFeatures().get(14);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContractualElement_DocReference()
+  {
+    return (EReference)contractualElementEClass.getEStructuralFeatures().get(15);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getGoal()
   {
     return goalEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGoal_Target()
-  {
-    return (EReference)goalEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGoal_Category()
-  {
-    return (EReference)goalEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGoal_Title()
-  {
-    return (EAttribute)goalEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGoal_Description()
-  {
-    return (EAttribute)goalEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGoal_Assert()
-  {
-    return (EAttribute)goalEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGoal_Rationale()
-  {
-    return (EAttribute)goalEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGoal_Issue()
-  {
-    return (EAttribute)goalEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGoal_ModelReference()
-  {
-    return (EAttribute)goalEClass.getEStructuralFeatures().get(7);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGoal_RefinesReference()
-  {
-    return (EReference)goalEClass.getEStructuralFeatures().get(8);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGoal_DecomposesReference()
-  {
-    return (EReference)goalEClass.getEStructuralFeatures().get(9);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGoal_EvolvesReference()
-  {
-    return (EReference)goalEClass.getEStructuralFeatures().get(10);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGoal_ConflictsReference()
-  {
-    return (EReference)goalEClass.getEStructuralFeatures().get(11);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGoal_StakeholderReference()
-  {
-    return (EReference)goalEClass.getEStructuralFeatures().get(12);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGoal_StakeholderRequirementReference()
-  {
-    return (EReference)goalEClass.getEStructuralFeatures().get(13);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGoal_SystemRequirementReference()
-  {
-    return (EReference)goalEClass.getEStructuralFeatures().get(14);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGoal_DocReference()
-  {
-    return (EReference)goalEClass.getEStructuralFeatures().get(15);
   }
 
   /**
@@ -531,7 +493,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRequirement_Target()
+  public EReference getRequirement_GoalReference()
   {
     return (EReference)requirementEClass.getEStructuralFeatures().get(0);
   }
@@ -541,119 +503,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRequirement_Category()
-  {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getRequirement_Title()
-  {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getRequirement_Description()
-  {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getRequirement_Assert()
-  {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getRequirement_Rationale()
-  {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getRequirement_Issue()
-  {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getRequirement_ModelReference()
-  {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(7);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRequirement_GoalReference()
-  {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(8);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getRequirement_HazardReference()
   {
-    return (EAttribute)requirementEClass.getEStructuralFeatures().get(9);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRequirement_RefinesReference()
-  {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(10);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRequirement_DecomposesReference()
-  {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(11);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRequirement_EvolvesReference()
-  {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(12);
+    return (EAttribute)requirementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -663,37 +515,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    */
   public EReference getRequirement_VerifiedBy()
   {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(13);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRequirement_StakeholderRequirementReference()
-  {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(14);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRequirement_SystemRequirementReference()
-  {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(15);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRequirement_DocReference()
-  {
-    return (EReference)requirementEClass.getEStructuralFeatures().get(16);
+    return (EReference)requirementEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1066,60 +888,42 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     isCreated = true;
 
     // Create classes and their features
-    toplevelEClass = createEClass(TOPLEVEL);
+    alisaModelEClass = createEClass(ALISA_MODEL);
 
-    rsalPackageEClass = createEClass(RSAL_PACKAGE);
-    createEReference(rsalPackageEClass, RSAL_PACKAGE__IMPORTED_NAMESPACE);
-    createEReference(rsalPackageEClass, RSAL_PACKAGE__CONTENT);
-    createEAttribute(rsalPackageEClass, RSAL_PACKAGE__ISSUE);
-
-    contractualElementEClass = createEClass(CONTRACTUAL_ELEMENT);
+    rsalContainerEClass = createEClass(RSAL_CONTAINER);
+    createEReference(rsalContainerEClass, RSAL_CONTAINER__IMPORTED_NAMESPACE);
+    createEReference(rsalContainerEClass, RSAL_CONTAINER__CONTENT);
+    createEAttribute(rsalContainerEClass, RSAL_CONTAINER__ISSUE);
 
     rsalElementEClass = createEClass(RSAL_ELEMENT);
-
-    rsalSectionEClass = createEClass(RSAL_SECTION);
-    createEReference(rsalSectionEClass, RSAL_SECTION__CONTENT);
-    createEAttribute(rsalSectionEClass, RSAL_SECTION__ISSUE);
 
     organizationEClass = createEClass(ORGANIZATION);
     createEReference(organizationEClass, ORGANIZATION__STAKEHOLDER);
 
+    contractualElementEClass = createEClass(CONTRACTUAL_ELEMENT);
+    createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__TARGET);
+    createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__CATEGORY);
+    createEAttribute(contractualElementEClass, CONTRACTUAL_ELEMENT__TITLE);
+    createEAttribute(contractualElementEClass, CONTRACTUAL_ELEMENT__DESCRIPTION);
+    createEAttribute(contractualElementEClass, CONTRACTUAL_ELEMENT__ASSERT);
+    createEAttribute(contractualElementEClass, CONTRACTUAL_ELEMENT__RATIONALE);
+    createEAttribute(contractualElementEClass, CONTRACTUAL_ELEMENT__ISSUE);
+    createEAttribute(contractualElementEClass, CONTRACTUAL_ELEMENT__MODEL_REFERENCE);
+    createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__REFINES_REFERENCE);
+    createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__DECOMPOSES_REFERENCE);
+    createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__EVOLVES_REFERENCE);
+    createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__CONFLICTS_REFERENCE);
+    createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__STAKEHOLDER_REFERENCE);
+    createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__STAKEHOLDER_REQUIREMENT_REFERENCE);
+    createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__SYSTEM_REQUIREMENT_REFERENCE);
+    createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__DOC_REFERENCE);
+
     goalEClass = createEClass(GOAL);
-    createEReference(goalEClass, GOAL__TARGET);
-    createEReference(goalEClass, GOAL__CATEGORY);
-    createEAttribute(goalEClass, GOAL__TITLE);
-    createEAttribute(goalEClass, GOAL__DESCRIPTION);
-    createEAttribute(goalEClass, GOAL__ASSERT);
-    createEAttribute(goalEClass, GOAL__RATIONALE);
-    createEAttribute(goalEClass, GOAL__ISSUE);
-    createEAttribute(goalEClass, GOAL__MODEL_REFERENCE);
-    createEReference(goalEClass, GOAL__REFINES_REFERENCE);
-    createEReference(goalEClass, GOAL__DECOMPOSES_REFERENCE);
-    createEReference(goalEClass, GOAL__EVOLVES_REFERENCE);
-    createEReference(goalEClass, GOAL__CONFLICTS_REFERENCE);
-    createEReference(goalEClass, GOAL__STAKEHOLDER_REFERENCE);
-    createEReference(goalEClass, GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE);
-    createEReference(goalEClass, GOAL__SYSTEM_REQUIREMENT_REFERENCE);
-    createEReference(goalEClass, GOAL__DOC_REFERENCE);
 
     requirementEClass = createEClass(REQUIREMENT);
-    createEReference(requirementEClass, REQUIREMENT__TARGET);
-    createEReference(requirementEClass, REQUIREMENT__CATEGORY);
-    createEAttribute(requirementEClass, REQUIREMENT__TITLE);
-    createEAttribute(requirementEClass, REQUIREMENT__DESCRIPTION);
-    createEAttribute(requirementEClass, REQUIREMENT__ASSERT);
-    createEAttribute(requirementEClass, REQUIREMENT__RATIONALE);
-    createEAttribute(requirementEClass, REQUIREMENT__ISSUE);
-    createEAttribute(requirementEClass, REQUIREMENT__MODEL_REFERENCE);
     createEReference(requirementEClass, REQUIREMENT__GOAL_REFERENCE);
     createEAttribute(requirementEClass, REQUIREMENT__HAZARD_REFERENCE);
-    createEReference(requirementEClass, REQUIREMENT__REFINES_REFERENCE);
-    createEReference(requirementEClass, REQUIREMENT__DECOMPOSES_REFERENCE);
-    createEReference(requirementEClass, REQUIREMENT__EVOLVES_REFERENCE);
     createEReference(requirementEClass, REQUIREMENT__VERIFIED_BY);
-    createEReference(requirementEClass, REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE);
-    createEReference(requirementEClass, REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE);
-    createEReference(requirementEClass, REQUIREMENT__DOC_REFERENCE);
 
     externalDocumentEClass = createEClass(EXTERNAL_DOCUMENT);
     createEAttribute(externalDocumentEClass, EXTERNAL_DOCUMENT__EXTERNAL_REFERENCE);
@@ -1198,17 +1002,18 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    rsalPackageEClass.getESuperTypes().add(this.getToplevel());
-    rsalPackageEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
-    contractualElementEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
-    rsalSectionEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
-    rsalSectionEClass.getESuperTypes().add(this.getRSALElement());
-    organizationEClass.getESuperTypes().add(this.getToplevel());
+    alisaModelEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
+    rsalContainerEClass.getESuperTypes().add(this.getAlisaModel());
+    rsalContainerEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
+    rsalContainerEClass.getESuperTypes().add(this.getRSALElement());
+    rsalElementEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
+    organizationEClass.getESuperTypes().add(this.getAlisaModel());
     organizationEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
-    goalEClass.getESuperTypes().add(this.getContractualElement());
+    contractualElementEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
     goalEClass.getESuperTypes().add(this.getRSALElement());
-    requirementEClass.getESuperTypes().add(this.getContractualElement());
+    goalEClass.getESuperTypes().add(this.getContractualElement());
     requirementEClass.getESuperTypes().add(this.getRSALElement());
+    requirementEClass.getESuperTypes().add(this.getContractualElement());
     externalDocumentEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
     externalDocumentEClass.getESuperTypes().add(this.getRSALElement());
     categoryEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
@@ -1220,60 +1025,42 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     verificationResultEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(toplevelEClass, Toplevel.class, "Toplevel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(alisaModelEClass, AlisaModel.class, "AlisaModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(rsalPackageEClass, RSALPackage.class, "RSALPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRSALPackage_ImportedNamespace(), theAadl2Package.getNamedElement(), null, "importedNamespace", null, 0, -1, RSALPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRSALPackage_Content(), this.getRSALElement(), null, "content", null, 0, -1, RSALPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRSALPackage_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, RSALPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(contractualElementEClass, ContractualElement.class, "ContractualElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(rsalContainerEClass, RSALContainer.class, "RSALContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRSALContainer_ImportedNamespace(), theAadl2Package.getNamedElement(), null, "importedNamespace", null, 0, -1, RSALContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRSALContainer_Content(), this.getRSALElement(), null, "content", null, 0, -1, RSALContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRSALContainer_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, RSALContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rsalElementEClass, RSALElement.class, "RSALElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(rsalSectionEClass, RSALSection.class, "RSALSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRSALSection_Content(), this.getRSALElement(), null, "content", null, 0, -1, RSALSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRSALSection_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, RSALSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(organizationEClass, Organization.class, "Organization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOrganization_Stakeholder(), this.getStakeholder(), null, "stakeholder", null, 0, -1, Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(contractualElementEClass, ContractualElement.class, "ContractualElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getContractualElement_Target(), theAadl2Package.getNamedElement(), null, "target", null, 0, 1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContractualElement_Category(), this.getCategory(), null, "category", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContractualElement_Title(), theEcorePackage.getEString(), "title", null, 0, 1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContractualElement_Description(), theEcorePackage.getEString(), "description", null, 0, 1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContractualElement_Assert(), theEcorePackage.getEString(), "assert", null, 0, 1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContractualElement_Rationale(), theEcorePackage.getEString(), "rationale", null, 0, 1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContractualElement_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContractualElement_ModelReference(), theEcorePackage.getEString(), "modelReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContractualElement_RefinesReference(), this.getContractualElement(), null, "refinesReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContractualElement_DecomposesReference(), this.getContractualElement(), null, "decomposesReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContractualElement_EvolvesReference(), this.getContractualElement(), null, "evolvesReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContractualElement_ConflictsReference(), this.getContractualElement(), null, "conflictsReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContractualElement_StakeholderReference(), this.getStakeholder(), null, "stakeholderReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContractualElement_StakeholderRequirementReference(), this.getContractualElement(), null, "stakeholderRequirementReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContractualElement_SystemRequirementReference(), this.getContractualElement(), null, "systemRequirementReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContractualElement_DocReference(), this.getXDocUri(), null, "docReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getGoal_Target(), theAadl2Package.getNamedElement(), null, "target", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoal_Category(), this.getCategory(), null, "category", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGoal_Title(), theEcorePackage.getEString(), "title", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGoal_Description(), theEcorePackage.getEString(), "description", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGoal_Assert(), theEcorePackage.getEString(), "assert", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGoal_Rationale(), theEcorePackage.getEString(), "rationale", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGoal_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGoal_ModelReference(), theEcorePackage.getEString(), "modelReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoal_RefinesReference(), this.getGoal(), null, "refinesReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoal_DecomposesReference(), this.getGoal(), null, "decomposesReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoal_EvolvesReference(), this.getGoal(), null, "evolvesReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoal_ConflictsReference(), this.getGoal(), null, "conflictsReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoal_StakeholderReference(), this.getStakeholder(), null, "stakeholderReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoal_StakeholderRequirementReference(), this.getGoal(), null, "stakeholderRequirementReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoal_SystemRequirementReference(), this.getContractualElement(), null, "systemRequirementReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGoal_DocReference(), this.getExternalDocument(), null, "docReference", null, 0, -1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(requirementEClass, Requirement.class, "Requirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRequirement_Target(), theAadl2Package.getNamedElement(), null, "target", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirement_Category(), this.getCategory(), null, "category", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRequirement_Title(), theEcorePackage.getEString(), "title", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRequirement_Description(), theEcorePackage.getEString(), "description", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRequirement_Assert(), theEcorePackage.getEString(), "assert", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRequirement_Rationale(), theEcorePackage.getEString(), "rationale", null, 0, 1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRequirement_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRequirement_ModelReference(), theEcorePackage.getEString(), "modelReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRequirement_GoalReference(), this.getGoal(), null, "goalReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRequirement_HazardReference(), theEcorePackage.getEString(), "hazardReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirement_RefinesReference(), this.getRequirement(), null, "refinesReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirement_DecomposesReference(), this.getRequirement(), null, "decomposesReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirement_EvolvesReference(), this.getRequirement(), null, "evolvesReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRequirement_VerifiedBy(), this.getVerificationDecomposition(), null, "verifiedBy", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirement_StakeholderRequirementReference(), this.getGoal(), null, "stakeholderRequirementReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirement_SystemRequirementReference(), this.getContractualElement(), null, "systemRequirementReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequirement_DocReference(), this.getXDocUri(), null, "docReference", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(externalDocumentEClass, ExternalDocument.class, "ExternalDocument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExternalDocument_ExternalReference(), theEcorePackage.getEString(), "externalReference", null, 0, 1, ExternalDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

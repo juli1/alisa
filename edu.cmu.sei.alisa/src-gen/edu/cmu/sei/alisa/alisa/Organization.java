@@ -22,7 +22,7 @@ import org.osate.aadl2.NamedElement;
  * @model
  * @generated
  */
-public interface Organization extends Toplevel, NamedElement
+public interface Organization extends AlisaModel, NamedElement
 {
   /**
    * Returns the value of the '<em><b>Stakeholder</b></em>' containment reference list.

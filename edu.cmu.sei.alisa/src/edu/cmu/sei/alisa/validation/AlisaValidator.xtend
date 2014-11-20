@@ -7,14 +7,12 @@ import edu.cmu.sei.alisa.alisa.AlisaPackage
 import org.eclipse.xtext.validation.Check
 import edu.cmu.sei.alisa.alisa.Stakeholder
 import edu.cmu.sei.alisa.alisa.VerificationActivity
-import edu.cmu.sei.alisa.alisa.VerificationLibrary
 import edu.cmu.sei.alisa.alisa.Organization
 import edu.cmu.sei.alisa.alisa.Requirement
 import edu.cmu.sei.alisa.alisa.Goal
-import edu.cmu.sei.alisa.alisa.Goals
-import edu.cmu.sei.alisa.alisa.Requirements
-import edu.cmu.sei.alisa.alisa.RequirementDocument
 import org.osate.aadl2.Aadl2Package
+import edu.cmu.sei.alisa.alisa.RSALContainer
+import edu.cmu.sei.alisa.alisa.ContractualElement
 
 /**
  * Custom validation rules. 
@@ -63,9 +61,9 @@ class AlisaValidator extends AbstractAlisaValidator
 	
 	def checkVerificationActivityName (VerificationActivity verificationActivity)
 	{
-		if (verificationActivity.eContainer() instanceof VerificationLibrary)
+		if (verificationActivity.eContainer() instanceof RSALContainer)
 		{
-			var model = (verificationActivity.eContainer() as VerificationLibrary);
+			var model = (verificationActivity.eContainer() as RSALContainer);
 			if (model != null) {
 				for (other : model.content)
 				{
@@ -89,76 +87,34 @@ class AlisaValidator extends AbstractAlisaValidator
 
 	@Check
 	def checkRequirement(Requirement requirement) {
-		checkRequirementName (requirement)
-	}
-	
-	def checkRequirementName(Requirement requirement)
-	{
-		var model = (requirement.eContainer() as Requirements);
-		if (model != null) {
-			for (other : model.reqs)
-			{
-				if (other instanceof Requirement)
-				{
-					var otherReq = other as Requirement;
-					if (otherReq != null)
-					{
-						if ((otherReq != requirement) && (otherReq.name.equalsIgnoreCase(requirement.name)))
-						{
-							error("Requirements names have to be unique", Aadl2Package.eINSTANCE.namedElement_Name);
-							return;
-						}
-					}
-				}
-			}
-		}
+		checkContractualName (requirement)
 	}
 
 	@Check
 	def checkGoal(Goal requirement) {
-		checkGoalName (requirement)
+		checkContractualName (requirement)
 	}
 	
-	def checkGoalName(Goal requirement)
+	def checkContractualName(ContractualElement requirement)
 	{
-		if (requirement.eContainer() instanceof Goals){
-		var model = (requirement.eContainer() as Goals);
-		if (model != null) {
-			for (other : model.goals)
-			{
-				if (other instanceof Goal)
-				{
-					var otherReq = other as Goal;
-					if (otherReq != null)
-					{
-						if ((otherReq != requirement) && (otherReq.name.equalsIgnoreCase(requirement.name)))
-						{
-							error("Requirements names have to be unique", Aadl2Package.eINSTANCE.namedElement_Name);
-							return;
-						}
-					}
-				}
-			}
-		}
-		} else 	if (requirement.eContainer() instanceof RequirementDocument){
-		var model = (requirement.eContainer() as RequirementDocument);
+		var model = (requirement.eContainer() as RSALContainer);
 		if (model != null) {
 			for (other : model.content)
 			{
-				if (other instanceof Goal)
+				if (other instanceof ContractualElement)
 				{
-					var otherReq = other as Goal;
+					var otherReq = other as ContractualElement;
 					if (otherReq != null)
 					{
 						if ((otherReq != requirement) && (otherReq.name.equalsIgnoreCase(requirement.name)))
 						{
-							error("Requirements names have to be unique", Aadl2Package.eINSTANCE.namedElement_Name);
+							error("Requirement and goal names have to be unique within a container", Aadl2Package.eINSTANCE.namedElement_Name);
 							return;
 						}
 					}
 				}
 			}
 		}
-		}			
 	}
+	
 }

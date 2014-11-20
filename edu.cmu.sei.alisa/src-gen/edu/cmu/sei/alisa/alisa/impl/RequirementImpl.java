@@ -7,6 +7,7 @@ import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.ContractualElement;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Requirement;
+import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
 import edu.cmu.sei.alisa.alisa.XDocUri;
 
@@ -45,21 +46,23 @@ import org.osate.aadl2.NamedElement;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getRationale <em>Rationale</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getIssue <em>Issue</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getModelReference <em>Model Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getGoalReference <em>Goal Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getHazardReference <em>Hazard Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getRefinesReference <em>Refines Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getDecomposesReference <em>Decomposes Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getEvolvesReference <em>Evolves Reference</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getVerifiedBy <em>Verified By</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getConflictsReference <em>Conflicts Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getStakeholderReference <em>Stakeholder Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getStakeholderRequirementReference <em>Stakeholder Requirement Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getSystemRequirementReference <em>System Requirement Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getDocReference <em>Doc Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getGoalReference <em>Goal Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getHazardReference <em>Hazard Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getVerifiedBy <em>Verified By</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RequirementImpl extends ContractualElementImpl implements Requirement
+public class RequirementImpl extends RSALElementImpl implements Requirement
 {
   /**
    * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
@@ -182,26 +185,6 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
   protected EList<String> modelReference;
 
   /**
-   * The cached value of the '{@link #getGoalReference() <em>Goal Reference</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getGoalReference()
-   * @generated
-   * @ordered
-   */
-  protected EList<Goal> goalReference;
-
-  /**
-   * The cached value of the '{@link #getHazardReference() <em>Hazard Reference</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getHazardReference()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> hazardReference;
-
-  /**
    * The cached value of the '{@link #getRefinesReference() <em>Refines Reference</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -209,7 +192,7 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * @generated
    * @ordered
    */
-  protected EList<Requirement> refinesReference;
+  protected EList<ContractualElement> refinesReference;
 
   /**
    * The cached value of the '{@link #getDecomposesReference() <em>Decomposes Reference</em>}' reference list.
@@ -219,7 +202,7 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * @generated
    * @ordered
    */
-  protected EList<Requirement> decomposesReference;
+  protected EList<ContractualElement> decomposesReference;
 
   /**
    * The cached value of the '{@link #getEvolvesReference() <em>Evolves Reference</em>}' reference list.
@@ -229,17 +212,27 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * @generated
    * @ordered
    */
-  protected EList<Requirement> evolvesReference;
+  protected EList<ContractualElement> evolvesReference;
 
   /**
-   * The cached value of the '{@link #getVerifiedBy() <em>Verified By</em>}' containment reference list.
+   * The cached value of the '{@link #getConflictsReference() <em>Conflicts Reference</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVerifiedBy()
+   * @see #getConflictsReference()
    * @generated
    * @ordered
    */
-  protected EList<VerificationDecomposition> verifiedBy;
+  protected EList<ContractualElement> conflictsReference;
+
+  /**
+   * The cached value of the '{@link #getStakeholderReference() <em>Stakeholder Reference</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStakeholderReference()
+   * @generated
+   * @ordered
+   */
+  protected EList<Stakeholder> stakeholderReference;
 
   /**
    * The cached value of the '{@link #getStakeholderRequirementReference() <em>Stakeholder Requirement Reference</em>}' reference list.
@@ -249,7 +242,7 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * @generated
    * @ordered
    */
-  protected EList<Goal> stakeholderRequirementReference;
+  protected EList<ContractualElement> stakeholderRequirementReference;
 
   /**
    * The cached value of the '{@link #getSystemRequirementReference() <em>System Requirement Reference</em>}' reference list.
@@ -270,6 +263,36 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * @ordered
    */
   protected EList<XDocUri> docReference;
+
+  /**
+   * The cached value of the '{@link #getGoalReference() <em>Goal Reference</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getGoalReference()
+   * @generated
+   * @ordered
+   */
+  protected EList<Goal> goalReference;
+
+  /**
+   * The cached value of the '{@link #getHazardReference() <em>Hazard Reference</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getHazardReference()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> hazardReference;
+
+  /**
+   * The cached value of the '{@link #getVerifiedBy() <em>Verified By</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVerifiedBy()
+   * @generated
+   * @ordered
+   */
+  protected EList<VerificationDecomposition> verifiedBy;
 
   /**
    * <!-- begin-user-doc -->
@@ -474,39 +497,11 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Goal> getGoalReference()
-  {
-    if (goalReference == null)
-    {
-      goalReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.REQUIREMENT__GOAL_REFERENCE);
-    }
-    return goalReference;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<String> getHazardReference()
-  {
-    if (hazardReference == null)
-    {
-      hazardReference = new EDataTypeEList<String>(String.class, this, AlisaPackage.REQUIREMENT__HAZARD_REFERENCE);
-    }
-    return hazardReference;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Requirement> getRefinesReference()
+  public EList<ContractualElement> getRefinesReference()
   {
     if (refinesReference == null)
     {
-      refinesReference = new EObjectResolvingEList<Requirement>(Requirement.class, this, AlisaPackage.REQUIREMENT__REFINES_REFERENCE);
+      refinesReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.REQUIREMENT__REFINES_REFERENCE);
     }
     return refinesReference;
   }
@@ -516,11 +511,11 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Requirement> getDecomposesReference()
+  public EList<ContractualElement> getDecomposesReference()
   {
     if (decomposesReference == null)
     {
-      decomposesReference = new EObjectResolvingEList<Requirement>(Requirement.class, this, AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE);
+      decomposesReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE);
     }
     return decomposesReference;
   }
@@ -530,11 +525,11 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Requirement> getEvolvesReference()
+  public EList<ContractualElement> getEvolvesReference()
   {
     if (evolvesReference == null)
     {
-      evolvesReference = new EObjectResolvingEList<Requirement>(Requirement.class, this, AlisaPackage.REQUIREMENT__EVOLVES_REFERENCE);
+      evolvesReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.REQUIREMENT__EVOLVES_REFERENCE);
     }
     return evolvesReference;
   }
@@ -544,13 +539,13 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VerificationDecomposition> getVerifiedBy()
+  public EList<ContractualElement> getConflictsReference()
   {
-    if (verifiedBy == null)
+    if (conflictsReference == null)
     {
-      verifiedBy = new EObjectContainmentEList<VerificationDecomposition>(VerificationDecomposition.class, this, AlisaPackage.REQUIREMENT__VERIFIED_BY);
+      conflictsReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.REQUIREMENT__CONFLICTS_REFERENCE);
     }
-    return verifiedBy;
+    return conflictsReference;
   }
 
   /**
@@ -558,11 +553,25 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Goal> getStakeholderRequirementReference()
+  public EList<Stakeholder> getStakeholderReference()
+  {
+    if (stakeholderReference == null)
+    {
+      stakeholderReference = new EObjectResolvingEList<Stakeholder>(Stakeholder.class, this, AlisaPackage.REQUIREMENT__STAKEHOLDER_REFERENCE);
+    }
+    return stakeholderReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ContractualElement> getStakeholderRequirementReference()
   {
     if (stakeholderRequirementReference == null)
     {
-      stakeholderRequirementReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE);
+      stakeholderRequirementReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE);
     }
     return stakeholderRequirementReference;
   }
@@ -600,15 +609,57 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Goal> getGoalReference()
+  {
+    if (goalReference == null)
+    {
+      goalReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.REQUIREMENT__GOAL_REFERENCE);
+    }
+    return goalReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getHazardReference()
+  {
+    if (hazardReference == null)
+    {
+      hazardReference = new EDataTypeEList<String>(String.class, this, AlisaPackage.REQUIREMENT__HAZARD_REFERENCE);
+    }
+    return hazardReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<VerificationDecomposition> getVerifiedBy()
+  {
+    if (verifiedBy == null)
+    {
+      verifiedBy = new EObjectContainmentEList<VerificationDecomposition>(VerificationDecomposition.class, this, AlisaPackage.REQUIREMENT__VERIFIED_BY);
+    }
+    return verifiedBy;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
-        return ((InternalEList<?>)getVerifiedBy()).basicRemove(otherEnd, msgs);
       case AlisaPackage.REQUIREMENT__DOC_REFERENCE:
         return ((InternalEList<?>)getDocReference()).basicRemove(otherEnd, msgs);
+      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
+        return ((InternalEList<?>)getVerifiedBy()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -640,24 +691,28 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
         return getIssue();
       case AlisaPackage.REQUIREMENT__MODEL_REFERENCE:
         return getModelReference();
-      case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
-        return getGoalReference();
-      case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
-        return getHazardReference();
       case AlisaPackage.REQUIREMENT__REFINES_REFERENCE:
         return getRefinesReference();
       case AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE:
         return getDecomposesReference();
       case AlisaPackage.REQUIREMENT__EVOLVES_REFERENCE:
         return getEvolvesReference();
-      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
-        return getVerifiedBy();
+      case AlisaPackage.REQUIREMENT__CONFLICTS_REFERENCE:
+        return getConflictsReference();
+      case AlisaPackage.REQUIREMENT__STAKEHOLDER_REFERENCE:
+        return getStakeholderReference();
       case AlisaPackage.REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE:
         return getStakeholderRequirementReference();
       case AlisaPackage.REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE:
         return getSystemRequirementReference();
       case AlisaPackage.REQUIREMENT__DOC_REFERENCE:
         return getDocReference();
+      case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
+        return getGoalReference();
+      case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
+        return getHazardReference();
+      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
+        return getVerifiedBy();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -700,33 +755,29 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
         getModelReference().clear();
         getModelReference().addAll((Collection<? extends String>)newValue);
         return;
-      case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
-        getGoalReference().clear();
-        getGoalReference().addAll((Collection<? extends Goal>)newValue);
-        return;
-      case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
-        getHazardReference().clear();
-        getHazardReference().addAll((Collection<? extends String>)newValue);
-        return;
       case AlisaPackage.REQUIREMENT__REFINES_REFERENCE:
         getRefinesReference().clear();
-        getRefinesReference().addAll((Collection<? extends Requirement>)newValue);
+        getRefinesReference().addAll((Collection<? extends ContractualElement>)newValue);
         return;
       case AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE:
         getDecomposesReference().clear();
-        getDecomposesReference().addAll((Collection<? extends Requirement>)newValue);
+        getDecomposesReference().addAll((Collection<? extends ContractualElement>)newValue);
         return;
       case AlisaPackage.REQUIREMENT__EVOLVES_REFERENCE:
         getEvolvesReference().clear();
-        getEvolvesReference().addAll((Collection<? extends Requirement>)newValue);
+        getEvolvesReference().addAll((Collection<? extends ContractualElement>)newValue);
         return;
-      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
-        getVerifiedBy().clear();
-        getVerifiedBy().addAll((Collection<? extends VerificationDecomposition>)newValue);
+      case AlisaPackage.REQUIREMENT__CONFLICTS_REFERENCE:
+        getConflictsReference().clear();
+        getConflictsReference().addAll((Collection<? extends ContractualElement>)newValue);
+        return;
+      case AlisaPackage.REQUIREMENT__STAKEHOLDER_REFERENCE:
+        getStakeholderReference().clear();
+        getStakeholderReference().addAll((Collection<? extends Stakeholder>)newValue);
         return;
       case AlisaPackage.REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE:
         getStakeholderRequirementReference().clear();
-        getStakeholderRequirementReference().addAll((Collection<? extends Goal>)newValue);
+        getStakeholderRequirementReference().addAll((Collection<? extends ContractualElement>)newValue);
         return;
       case AlisaPackage.REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE:
         getSystemRequirementReference().clear();
@@ -735,6 +786,18 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
       case AlisaPackage.REQUIREMENT__DOC_REFERENCE:
         getDocReference().clear();
         getDocReference().addAll((Collection<? extends XDocUri>)newValue);
+        return;
+      case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
+        getGoalReference().clear();
+        getGoalReference().addAll((Collection<? extends Goal>)newValue);
+        return;
+      case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
+        getHazardReference().clear();
+        getHazardReference().addAll((Collection<? extends String>)newValue);
+        return;
+      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
+        getVerifiedBy().clear();
+        getVerifiedBy().addAll((Collection<? extends VerificationDecomposition>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -774,12 +837,6 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
       case AlisaPackage.REQUIREMENT__MODEL_REFERENCE:
         getModelReference().clear();
         return;
-      case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
-        getGoalReference().clear();
-        return;
-      case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
-        getHazardReference().clear();
-        return;
       case AlisaPackage.REQUIREMENT__REFINES_REFERENCE:
         getRefinesReference().clear();
         return;
@@ -789,8 +846,11 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
       case AlisaPackage.REQUIREMENT__EVOLVES_REFERENCE:
         getEvolvesReference().clear();
         return;
-      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
-        getVerifiedBy().clear();
+      case AlisaPackage.REQUIREMENT__CONFLICTS_REFERENCE:
+        getConflictsReference().clear();
+        return;
+      case AlisaPackage.REQUIREMENT__STAKEHOLDER_REFERENCE:
+        getStakeholderReference().clear();
         return;
       case AlisaPackage.REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE:
         getStakeholderRequirementReference().clear();
@@ -800,6 +860,15 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
         return;
       case AlisaPackage.REQUIREMENT__DOC_REFERENCE:
         getDocReference().clear();
+        return;
+      case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
+        getGoalReference().clear();
+        return;
+      case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
+        getHazardReference().clear();
+        return;
+      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
+        getVerifiedBy().clear();
         return;
     }
     super.eUnset(featureID);
@@ -831,26 +900,98 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
         return issue != null && !issue.isEmpty();
       case AlisaPackage.REQUIREMENT__MODEL_REFERENCE:
         return modelReference != null && !modelReference.isEmpty();
-      case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
-        return goalReference != null && !goalReference.isEmpty();
-      case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
-        return hazardReference != null && !hazardReference.isEmpty();
       case AlisaPackage.REQUIREMENT__REFINES_REFERENCE:
         return refinesReference != null && !refinesReference.isEmpty();
       case AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE:
         return decomposesReference != null && !decomposesReference.isEmpty();
       case AlisaPackage.REQUIREMENT__EVOLVES_REFERENCE:
         return evolvesReference != null && !evolvesReference.isEmpty();
-      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
-        return verifiedBy != null && !verifiedBy.isEmpty();
+      case AlisaPackage.REQUIREMENT__CONFLICTS_REFERENCE:
+        return conflictsReference != null && !conflictsReference.isEmpty();
+      case AlisaPackage.REQUIREMENT__STAKEHOLDER_REFERENCE:
+        return stakeholderReference != null && !stakeholderReference.isEmpty();
       case AlisaPackage.REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE:
         return stakeholderRequirementReference != null && !stakeholderRequirementReference.isEmpty();
       case AlisaPackage.REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE:
         return systemRequirementReference != null && !systemRequirementReference.isEmpty();
       case AlisaPackage.REQUIREMENT__DOC_REFERENCE:
         return docReference != null && !docReference.isEmpty();
+      case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
+        return goalReference != null && !goalReference.isEmpty();
+      case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
+        return hazardReference != null && !hazardReference.isEmpty();
+      case AlisaPackage.REQUIREMENT__VERIFIED_BY:
+        return verifiedBy != null && !verifiedBy.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == ContractualElement.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case AlisaPackage.REQUIREMENT__TARGET: return AlisaPackage.CONTRACTUAL_ELEMENT__TARGET;
+        case AlisaPackage.REQUIREMENT__CATEGORY: return AlisaPackage.CONTRACTUAL_ELEMENT__CATEGORY;
+        case AlisaPackage.REQUIREMENT__TITLE: return AlisaPackage.CONTRACTUAL_ELEMENT__TITLE;
+        case AlisaPackage.REQUIREMENT__DESCRIPTION: return AlisaPackage.CONTRACTUAL_ELEMENT__DESCRIPTION;
+        case AlisaPackage.REQUIREMENT__ASSERT: return AlisaPackage.CONTRACTUAL_ELEMENT__ASSERT;
+        case AlisaPackage.REQUIREMENT__RATIONALE: return AlisaPackage.CONTRACTUAL_ELEMENT__RATIONALE;
+        case AlisaPackage.REQUIREMENT__ISSUE: return AlisaPackage.CONTRACTUAL_ELEMENT__ISSUE;
+        case AlisaPackage.REQUIREMENT__MODEL_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__MODEL_REFERENCE;
+        case AlisaPackage.REQUIREMENT__REFINES_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__REFINES_REFERENCE;
+        case AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__DECOMPOSES_REFERENCE;
+        case AlisaPackage.REQUIREMENT__EVOLVES_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__EVOLVES_REFERENCE;
+        case AlisaPackage.REQUIREMENT__CONFLICTS_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__CONFLICTS_REFERENCE;
+        case AlisaPackage.REQUIREMENT__STAKEHOLDER_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REFERENCE;
+        case AlisaPackage.REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REQUIREMENT_REFERENCE;
+        case AlisaPackage.REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__SYSTEM_REQUIREMENT_REFERENCE;
+        case AlisaPackage.REQUIREMENT__DOC_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__DOC_REFERENCE;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == ContractualElement.class)
+    {
+      switch (baseFeatureID)
+      {
+        case AlisaPackage.CONTRACTUAL_ELEMENT__TARGET: return AlisaPackage.REQUIREMENT__TARGET;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__CATEGORY: return AlisaPackage.REQUIREMENT__CATEGORY;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__TITLE: return AlisaPackage.REQUIREMENT__TITLE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__DESCRIPTION: return AlisaPackage.REQUIREMENT__DESCRIPTION;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__ASSERT: return AlisaPackage.REQUIREMENT__ASSERT;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__RATIONALE: return AlisaPackage.REQUIREMENT__RATIONALE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__ISSUE: return AlisaPackage.REQUIREMENT__ISSUE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__MODEL_REFERENCE: return AlisaPackage.REQUIREMENT__MODEL_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__REFINES_REFERENCE: return AlisaPackage.REQUIREMENT__REFINES_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__DECOMPOSES_REFERENCE: return AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__EVOLVES_REFERENCE: return AlisaPackage.REQUIREMENT__EVOLVES_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__CONFLICTS_REFERENCE: return AlisaPackage.REQUIREMENT__CONFLICTS_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REFERENCE: return AlisaPackage.REQUIREMENT__STAKEHOLDER_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REQUIREMENT_REFERENCE: return AlisaPackage.REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__SYSTEM_REQUIREMENT_REFERENCE: return AlisaPackage.REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__DOC_REFERENCE: return AlisaPackage.REQUIREMENT__DOC_REFERENCE;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**

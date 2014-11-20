@@ -13,10 +13,7 @@ import org.osate.aadl2.Classifier;
 import org.osate.aadl2.NamedElement;
 import org.osate.xtext.aadl2.properties.linking.PropertiesLinkingService;
 
-import edu.cmu.sei.alisa.alisa.Goal;
-import edu.cmu.sei.alisa.alisa.Goals;
-import edu.cmu.sei.alisa.alisa.Requirement;
-import edu.cmu.sei.alisa.alisa.Requirements;
+import edu.cmu.sei.alisa.alisa.ContractualElement;
 
 public class AlisaLinkingService extends PropertiesLinkingService {
 
@@ -32,17 +29,14 @@ public class AlisaLinkingService extends PropertiesLinkingService {
 		final String name = getCrossRefNodeAsString(node);
 		if (requiredType == ne) {
 			NamedElement e = null;
-			if (context instanceof Goals || context instanceof Requirements) {
-				// TODO: we do not use dot name
+			if (context instanceof ContractualElement) {
+				// TODO: resolve classifier vs. element in classifier
 				String dotname = name.replaceAll("::", ".");
 				EObject res = findClassifier(context, reference, dotname);
+				if (res != null) {
+					return Collections.singletonList(res);
+				}
 				return Collections.singletonList(res);
-			}
-			if (context instanceof Goal) {
-				e = ((Goals) context.eContainer()).getGoalTarget();
-			} else if (context instanceof Requirement) {
-				e = ((Requirements) context.eContainer()).getReqTarget();
-
 			}
 			if (e instanceof Classifier) {
 				EObject res = ((Classifier) e).findNamedElement(name);

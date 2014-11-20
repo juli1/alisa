@@ -7,7 +7,7 @@ import edu.cmu.sei.alisa.alisa.RSALElement;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.osate.aadl2.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class RSALElementImpl extends MinimalEObjectImpl.Container implements RSALElement
+public class RSALElementImpl extends NamedElementImpl implements RSALElement
 {
   /**
    * <!-- begin-user-doc -->

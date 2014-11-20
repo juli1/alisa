@@ -3,8 +3,8 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
+import edu.cmu.sei.alisa.alisa.RSALContainer;
 import edu.cmu.sei.alisa.alisa.RSALElement;
-import edu.cmu.sei.alisa.alisa.RSALSection;
 
 import java.util.Collection;
 
@@ -17,26 +17,38 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.osate.aadl2.impl.NamedElementImpl;
+import org.osate.aadl2.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>RSAL Section</b></em>'.
+ * An implementation of the model object '<em><b>RSAL Container</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALSectionImpl#getContent <em>Content</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALSectionImpl#getIssue <em>Issue</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl#getIssue <em>Issue</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RSALSectionImpl extends NamedElementImpl implements RSALSection
+public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
 {
+  /**
+   * The cached value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImportedNamespace()
+   * @generated
+   * @ordered
+   */
+  protected EList<NamedElement> importedNamespace;
+
   /**
    * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -62,7 +74,7 @@ public class RSALSectionImpl extends NamedElementImpl implements RSALSection
    * <!-- end-user-doc -->
    * @generated
    */
-  protected RSALSectionImpl()
+  protected RSALContainerImpl()
   {
     super();
   }
@@ -75,7 +87,21 @@ public class RSALSectionImpl extends NamedElementImpl implements RSALSection
   @Override
   protected EClass eStaticClass()
   {
-    return AlisaPackage.Literals.RSAL_SECTION;
+    return AlisaPackage.Literals.RSAL_CONTAINER;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<NamedElement> getImportedNamespace()
+  {
+    if (importedNamespace == null)
+    {
+      importedNamespace = new EObjectResolvingEList<NamedElement>(NamedElement.class, this, AlisaPackage.RSAL_CONTAINER__IMPORTED_NAMESPACE);
+    }
+    return importedNamespace;
   }
 
   /**
@@ -87,7 +113,7 @@ public class RSALSectionImpl extends NamedElementImpl implements RSALSection
   {
     if (content == null)
     {
-      content = new EObjectContainmentEList<RSALElement>(RSALElement.class, this, AlisaPackage.RSAL_SECTION__CONTENT);
+      content = new EObjectContainmentEList<RSALElement>(RSALElement.class, this, AlisaPackage.RSAL_CONTAINER__CONTENT);
     }
     return content;
   }
@@ -101,7 +127,7 @@ public class RSALSectionImpl extends NamedElementImpl implements RSALSection
   {
     if (issue == null)
     {
-      issue = new EDataTypeEList<String>(String.class, this, AlisaPackage.RSAL_SECTION__ISSUE);
+      issue = new EDataTypeEList<String>(String.class, this, AlisaPackage.RSAL_CONTAINER__ISSUE);
     }
     return issue;
   }
@@ -116,7 +142,7 @@ public class RSALSectionImpl extends NamedElementImpl implements RSALSection
   {
     switch (featureID)
     {
-      case AlisaPackage.RSAL_SECTION__CONTENT:
+      case AlisaPackage.RSAL_CONTAINER__CONTENT:
         return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -132,9 +158,11 @@ public class RSALSectionImpl extends NamedElementImpl implements RSALSection
   {
     switch (featureID)
     {
-      case AlisaPackage.RSAL_SECTION__CONTENT:
+      case AlisaPackage.RSAL_CONTAINER__IMPORTED_NAMESPACE:
+        return getImportedNamespace();
+      case AlisaPackage.RSAL_CONTAINER__CONTENT:
         return getContent();
-      case AlisaPackage.RSAL_SECTION__ISSUE:
+      case AlisaPackage.RSAL_CONTAINER__ISSUE:
         return getIssue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -151,11 +179,15 @@ public class RSALSectionImpl extends NamedElementImpl implements RSALSection
   {
     switch (featureID)
     {
-      case AlisaPackage.RSAL_SECTION__CONTENT:
+      case AlisaPackage.RSAL_CONTAINER__IMPORTED_NAMESPACE:
+        getImportedNamespace().clear();
+        getImportedNamespace().addAll((Collection<? extends NamedElement>)newValue);
+        return;
+      case AlisaPackage.RSAL_CONTAINER__CONTENT:
         getContent().clear();
         getContent().addAll((Collection<? extends RSALElement>)newValue);
         return;
-      case AlisaPackage.RSAL_SECTION__ISSUE:
+      case AlisaPackage.RSAL_CONTAINER__ISSUE:
         getIssue().clear();
         getIssue().addAll((Collection<? extends String>)newValue);
         return;
@@ -173,10 +205,13 @@ public class RSALSectionImpl extends NamedElementImpl implements RSALSection
   {
     switch (featureID)
     {
-      case AlisaPackage.RSAL_SECTION__CONTENT:
+      case AlisaPackage.RSAL_CONTAINER__IMPORTED_NAMESPACE:
+        getImportedNamespace().clear();
+        return;
+      case AlisaPackage.RSAL_CONTAINER__CONTENT:
         getContent().clear();
         return;
-      case AlisaPackage.RSAL_SECTION__ISSUE:
+      case AlisaPackage.RSAL_CONTAINER__ISSUE:
         getIssue().clear();
         return;
     }
@@ -193,9 +228,11 @@ public class RSALSectionImpl extends NamedElementImpl implements RSALSection
   {
     switch (featureID)
     {
-      case AlisaPackage.RSAL_SECTION__CONTENT:
+      case AlisaPackage.RSAL_CONTAINER__IMPORTED_NAMESPACE:
+        return importedNamespace != null && !importedNamespace.isEmpty();
+      case AlisaPackage.RSAL_CONTAINER__CONTENT:
         return content != null && !content.isEmpty();
-      case AlisaPackage.RSAL_SECTION__ISSUE:
+      case AlisaPackage.RSAL_CONTAINER__ISSUE:
         return issue != null && !issue.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -218,4 +255,4 @@ public class RSALSectionImpl extends NamedElementImpl implements RSALSection
     return result.toString();
   }
 
-} //RSALSectionImpl
+} //RSALContainerImpl

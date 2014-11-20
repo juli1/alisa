@@ -6,7 +6,7 @@
     complianceLevel="5.0" copyrightFields="false" editPluginID="edu.cmu.sei.alisa.edit"
     editorPluginID="edu.cmu.sei.alisa.editor" runtimeVersion="2.10" usedGenPackages="platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/resource/org.osate.aadl2/model/aadl2.genmodel#//aadl2">
   <genPackages prefix="Alisa" basePackage="edu.cmu.sei.alisa" disposableProviderFactory="true"
-      fileExtensions="alisa" ecorePackage="Alisa.ecore#/">
+      fileExtensions="rsal" ecorePackage="Alisa.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Alisa.ecore#//VerificationResultState">
       <genEnumLiterals ecoreEnumLiteral="Alisa.ecore#//VerificationResultState/SCHEDULED"/>
       <genEnumLiterals ecoreEnumLiteral="Alisa.ecore#//VerificationResultState/COMPLETED"/>
@@ -17,57 +17,39 @@
       <genEnumLiterals ecoreEnumLiteral="Alisa.ecore#//VerificationResultStatus/FAIL"/>
       <genEnumLiterals ecoreEnumLiteral="Alisa.ecore#//VerificationResultStatus/UNKNOWN"/>
     </genEnums>
-    <genClasses ecoreClass="Alisa.ecore#//Toplevel"/>
-    <genClasses ecoreClass="Alisa.ecore#//RSALPackage">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//RSALPackage/importedNamespace"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//RSALPackage/content"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//RSALPackage/issue"/>
+    <genClasses ecoreClass="Alisa.ecore#//AlisaModel"/>
+    <genClasses ecoreClass="Alisa.ecore#//RSALContainer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//RSALContainer/importedNamespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//RSALContainer/content"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//RSALContainer/issue"/>
     </genClasses>
-    <genClasses ecoreClass="Alisa.ecore#//ContractualElement"/>
     <genClasses ecoreClass="Alisa.ecore#//RSALElement"/>
-    <genClasses ecoreClass="Alisa.ecore#//RSALSection">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//RSALSection/content"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//RSALSection/issue"/>
-    </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//Organization">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//Organization/stakeholder"/>
     </genClasses>
-    <genClasses ecoreClass="Alisa.ecore#//Goal">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Goal/target"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Goal/category"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Goal/title"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Goal/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Goal/assert"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Goal/rationale"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Goal/issue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Goal/modelReference"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Goal/refinesReference"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Goal/decomposesReference"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Goal/evolvesReference"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Goal/conflictsReference"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Goal/stakeholderReference"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Goal/stakeholderRequirementReference"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Goal/systemRequirementReference"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Goal/docReference"/>
+    <genClasses ecoreClass="Alisa.ecore#//ContractualElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/category"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ContractualElement/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ContractualElement/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ContractualElement/assert"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ContractualElement/rationale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ContractualElement/issue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ContractualElement/modelReference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/refinesReference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/decomposesReference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/evolvesReference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/conflictsReference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/stakeholderReference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/stakeholderRequirementReference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/systemRequirementReference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/docReference"/>
     </genClasses>
+    <genClasses ecoreClass="Alisa.ecore#//Goal"/>
     <genClasses ecoreClass="Alisa.ecore#//Requirement">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Requirement/target"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Requirement/category"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Requirement/title"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Requirement/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Requirement/assert"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Requirement/rationale"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Requirement/issue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Requirement/modelReference"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Requirement/goalReference"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//Requirement/hazardReference"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Requirement/refinesReference"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Requirement/decomposesReference"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Requirement/evolvesReference"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//Requirement/verifiedBy"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Requirement/stakeholderRequirementReference"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//Requirement/systemRequirementReference"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//Requirement/docReference"/>
     </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//ExternalDocument">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ExternalDocument/externalReference"/>

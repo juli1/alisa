@@ -75,20 +75,42 @@ public class AlisaSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case AlisaPackage.TOPLEVEL:
+      case AlisaPackage.ALISA_MODEL:
       {
-        Toplevel toplevel = (Toplevel)theEObject;
-        T result = caseToplevel(toplevel);
+        AlisaModel alisaModel = (AlisaModel)theEObject;
+        T result = caseAlisaModel(alisaModel);
+        if (result == null) result = caseNamedElement(alisaModel);
+        if (result == null) result = caseElement(alisaModel);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AlisaPackage.RSAL_PACKAGE:
+      case AlisaPackage.RSAL_CONTAINER:
       {
-        RSALPackage rsalPackage = (RSALPackage)theEObject;
-        T result = caseRSALPackage(rsalPackage);
-        if (result == null) result = caseToplevel(rsalPackage);
-        if (result == null) result = caseNamedElement(rsalPackage);
-        if (result == null) result = caseElement(rsalPackage);
+        RSALContainer rsalContainer = (RSALContainer)theEObject;
+        T result = caseRSALContainer(rsalContainer);
+        if (result == null) result = caseAlisaModel(rsalContainer);
+        if (result == null) result = caseRSALElement(rsalContainer);
+        if (result == null) result = caseNamedElement(rsalContainer);
+        if (result == null) result = caseElement(rsalContainer);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.RSAL_ELEMENT:
+      {
+        RSALElement rsalElement = (RSALElement)theEObject;
+        T result = caseRSALElement(rsalElement);
+        if (result == null) result = caseNamedElement(rsalElement);
+        if (result == null) result = caseElement(rsalElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.ORGANIZATION:
+      {
+        Organization organization = (Organization)theEObject;
+        T result = caseOrganization(organization);
+        if (result == null) result = caseAlisaModel(organization);
+        if (result == null) result = caseNamedElement(organization);
+        if (result == null) result = caseElement(organization);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -101,39 +123,12 @@ public class AlisaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AlisaPackage.RSAL_ELEMENT:
-      {
-        RSALElement rsalElement = (RSALElement)theEObject;
-        T result = caseRSALElement(rsalElement);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AlisaPackage.RSAL_SECTION:
-      {
-        RSALSection rsalSection = (RSALSection)theEObject;
-        T result = caseRSALSection(rsalSection);
-        if (result == null) result = caseNamedElement(rsalSection);
-        if (result == null) result = caseRSALElement(rsalSection);
-        if (result == null) result = caseElement(rsalSection);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case AlisaPackage.ORGANIZATION:
-      {
-        Organization organization = (Organization)theEObject;
-        T result = caseOrganization(organization);
-        if (result == null) result = caseToplevel(organization);
-        if (result == null) result = caseNamedElement(organization);
-        if (result == null) result = caseElement(organization);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case AlisaPackage.GOAL:
       {
         Goal goal = (Goal)theEObject;
         T result = caseGoal(goal);
-        if (result == null) result = caseContractualElement(goal);
         if (result == null) result = caseRSALElement(goal);
+        if (result == null) result = caseContractualElement(goal);
         if (result == null) result = caseNamedElement(goal);
         if (result == null) result = caseElement(goal);
         if (result == null) result = defaultCase(theEObject);
@@ -143,8 +138,8 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         Requirement requirement = (Requirement)theEObject;
         T result = caseRequirement(requirement);
-        if (result == null) result = caseContractualElement(requirement);
         if (result == null) result = caseRSALElement(requirement);
+        if (result == null) result = caseContractualElement(requirement);
         if (result == null) result = caseNamedElement(requirement);
         if (result == null) result = caseElement(requirement);
         if (result == null) result = defaultCase(theEObject);
@@ -154,8 +149,8 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         ExternalDocument externalDocument = (ExternalDocument)theEObject;
         T result = caseExternalDocument(externalDocument);
-        if (result == null) result = caseNamedElement(externalDocument);
         if (result == null) result = caseRSALElement(externalDocument);
+        if (result == null) result = caseNamedElement(externalDocument);
         if (result == null) result = caseElement(externalDocument);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -171,8 +166,8 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         Category category = (Category)theEObject;
         T result = caseCategory(category);
-        if (result == null) result = caseNamedElement(category);
         if (result == null) result = caseRSALElement(category);
+        if (result == null) result = caseNamedElement(category);
         if (result == null) result = caseElement(category);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -181,8 +176,8 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         Stakeholder stakeholder = (Stakeholder)theEObject;
         T result = caseStakeholder(stakeholder);
-        if (result == null) result = caseNamedElement(stakeholder);
         if (result == null) result = caseRSALElement(stakeholder);
+        if (result == null) result = caseNamedElement(stakeholder);
         if (result == null) result = caseElement(stakeholder);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -198,8 +193,8 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         VerificationActivity verificationActivity = (VerificationActivity)theEObject;
         T result = caseVerificationActivity(verificationActivity);
-        if (result == null) result = caseNamedElement(verificationActivity);
         if (result == null) result = caseRSALElement(verificationActivity);
+        if (result == null) result = caseNamedElement(verificationActivity);
         if (result == null) result = caseElement(verificationActivity);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -218,49 +213,33 @@ public class AlisaSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Toplevel</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Toplevel</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Model</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseToplevel(Toplevel object)
+  public T caseAlisaModel(AlisaModel object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>RSAL Package</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>RSAL Container</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>RSAL Package</em>'.
+   * @return the result of interpreting the object as an instance of '<em>RSAL Container</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseRSALPackage(RSALPackage object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Contractual Element</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Contractual Element</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseContractualElement(ContractualElement object)
+  public T caseRSALContainer(RSALContainer object)
   {
     return null;
   }
@@ -282,22 +261,6 @@ public class AlisaSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>RSAL Section</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>RSAL Section</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseRSALSection(RSALSection object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Organization</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -309,6 +272,22 @@ public class AlisaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseOrganization(Organization object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Contractual Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Contractual Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseContractualElement(ContractualElement object)
   {
     return null;
   }

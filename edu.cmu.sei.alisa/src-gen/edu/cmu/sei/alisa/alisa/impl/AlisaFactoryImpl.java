@@ -65,12 +65,11 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
   {
     switch (eClass.getClassifierID())
     {
-      case AlisaPackage.TOPLEVEL: return createToplevel();
-      case AlisaPackage.RSAL_PACKAGE: return createRSALPackage();
-      case AlisaPackage.CONTRACTUAL_ELEMENT: return createContractualElement();
+      case AlisaPackage.ALISA_MODEL: return createAlisaModel();
+      case AlisaPackage.RSAL_CONTAINER: return createRSALContainer();
       case AlisaPackage.RSAL_ELEMENT: return createRSALElement();
-      case AlisaPackage.RSAL_SECTION: return createRSALSection();
       case AlisaPackage.ORGANIZATION: return createOrganization();
+      case AlisaPackage.CONTRACTUAL_ELEMENT: return createContractualElement();
       case AlisaPackage.GOAL: return createGoal();
       case AlisaPackage.REQUIREMENT: return createRequirement();
       case AlisaPackage.EXTERNAL_DOCUMENT: return createExternalDocument();
@@ -128,10 +127,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Toplevel createToplevel()
+  public AlisaModel createAlisaModel()
   {
-    ToplevelImpl toplevel = new ToplevelImpl();
-    return toplevel;
+    AlisaModelImpl alisaModel = new AlisaModelImpl();
+    return alisaModel;
   }
 
   /**
@@ -139,21 +138,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public RSALPackage createRSALPackage()
+  public RSALContainer createRSALContainer()
   {
-    RSALPackageImpl rsalPackage = new RSALPackageImpl();
-    return rsalPackage;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ContractualElement createContractualElement()
-  {
-    ContractualElementImpl contractualElement = new ContractualElementImpl();
-    return contractualElement;
+    RSALContainerImpl rsalContainer = new RSALContainerImpl();
+    return rsalContainer;
   }
 
   /**
@@ -172,10 +160,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public RSALSection createRSALSection()
+  public Organization createOrganization()
   {
-    RSALSectionImpl rsalSection = new RSALSectionImpl();
-    return rsalSection;
+    OrganizationImpl organization = new OrganizationImpl();
+    return organization;
   }
 
   /**
@@ -183,10 +171,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Organization createOrganization()
+  public ContractualElement createContractualElement()
   {
-    OrganizationImpl organization = new OrganizationImpl();
-    return organization;
+    ContractualElementImpl contractualElement = new ContractualElementImpl();
+    return contractualElement;
   }
 
   /**

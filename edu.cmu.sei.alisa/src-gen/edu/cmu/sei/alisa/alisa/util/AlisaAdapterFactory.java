@@ -78,19 +78,14 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
     new AlisaSwitch<Adapter>()
     {
       @Override
-      public Adapter caseToplevel(Toplevel object)
+      public Adapter caseAlisaModel(AlisaModel object)
       {
-        return createToplevelAdapter();
+        return createAlisaModelAdapter();
       }
       @Override
-      public Adapter caseRSALPackage(RSALPackage object)
+      public Adapter caseRSALContainer(RSALContainer object)
       {
-        return createRSALPackageAdapter();
-      }
-      @Override
-      public Adapter caseContractualElement(ContractualElement object)
-      {
-        return createContractualElementAdapter();
+        return createRSALContainerAdapter();
       }
       @Override
       public Adapter caseRSALElement(RSALElement object)
@@ -98,14 +93,14 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
         return createRSALElementAdapter();
       }
       @Override
-      public Adapter caseRSALSection(RSALSection object)
-      {
-        return createRSALSectionAdapter();
-      }
-      @Override
       public Adapter caseOrganization(Organization object)
       {
         return createOrganizationAdapter();
+      }
+      @Override
+      public Adapter caseContractualElement(ContractualElement object)
+      {
+        return createContractualElementAdapter();
       }
       @Override
       public Adapter caseGoal(Goal object)
@@ -185,46 +180,31 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Toplevel <em>Toplevel</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.AlisaModel <em>Model</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.Toplevel
+   * @see edu.cmu.sei.alisa.alisa.AlisaModel
    * @generated
    */
-  public Adapter createToplevelAdapter()
+  public Adapter createAlisaModelAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.RSALPackage <em>RSAL Package</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.RSALContainer <em>RSAL Container</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.RSALPackage
+   * @see edu.cmu.sei.alisa.alisa.RSALContainer
    * @generated
    */
-  public Adapter createRSALPackageAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.ContractualElement <em>Contractual Element</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.ContractualElement
-   * @generated
-   */
-  public Adapter createContractualElementAdapter()
+  public Adapter createRSALContainerAdapter()
   {
     return null;
   }
@@ -245,21 +225,6 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.RSALSection <em>RSAL Section</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see edu.cmu.sei.alisa.alisa.RSALSection
-   * @generated
-   */
-  public Adapter createRSALSectionAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Organization <em>Organization</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -270,6 +235,21 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOrganizationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.ContractualElement <em>Contractual Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement
+   * @generated
+   */
+  public Adapter createContractualElementAdapter()
   {
     return null;
   }

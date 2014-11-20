@@ -4,8 +4,11 @@
 package edu.cmu.sei.alisa.validation;
 
 import com.google.common.base.Objects;
+import edu.cmu.sei.alisa.alisa.ContractualElement;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Organization;
+import edu.cmu.sei.alisa.alisa.RSALContainer;
+import edu.cmu.sei.alisa.alisa.RSALElement;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
@@ -68,39 +71,79 @@ public class AlisaValidator extends AbstractAlisaValidator {
   }
   
   public void checkVerificationActivityName(final VerificationActivity verificationActivity) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nVerificationLibrary cannot be resolved to a type."
-      + "\nVerificationLibrary cannot be resolved to a type."
-      + "\n!= cannot be resolved"
-      + "\ncontent cannot be resolved");
+    EObject _eContainer = verificationActivity.eContainer();
+    if ((_eContainer instanceof RSALContainer)) {
+      EObject _eContainer_1 = verificationActivity.eContainer();
+      RSALContainer model = ((RSALContainer) _eContainer_1);
+      boolean _notEquals = (!Objects.equal(model, null));
+      if (_notEquals) {
+        EList<RSALElement> _content = model.getContent();
+        for (final RSALElement other : _content) {
+          if ((other instanceof VerificationActivity)) {
+            VerificationActivity otherVA = ((VerificationActivity) other);
+            boolean _notEquals_1 = (!Objects.equal(otherVA, null));
+            if (_notEquals_1) {
+              boolean _and = false;
+              boolean _notEquals_2 = (!Objects.equal(otherVA, verificationActivity));
+              if (!_notEquals_2) {
+                _and = false;
+              } else {
+                String _name = otherVA.getName();
+                String _name_1 = verificationActivity.getName();
+                boolean _equalsIgnoreCase = _name.equalsIgnoreCase(_name_1);
+                _and = _equalsIgnoreCase;
+              }
+              if (_and) {
+                EAttribute _namedElement_Name = Aadl2Package.eINSTANCE.getNamedElement_Name();
+                this.error("Verification Activities names have to be unique", _namedElement_Name);
+                return;
+              }
+            }
+          }
+        }
+      }
+    }
   }
   
   @Check
   public void checkRequirement(final Requirement requirement) {
-    this.checkRequirementName(requirement);
-  }
-  
-  public void checkRequirementName(final Requirement requirement) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nRequirements cannot be resolved to a type."
-      + "\n!= cannot be resolved"
-      + "\nreqs cannot be resolved");
+    this.checkContractualName(requirement);
   }
   
   @Check
   public void checkGoal(final Goal requirement) {
-    this.checkGoalName(requirement);
+    this.checkContractualName(requirement);
   }
   
-  public void checkGoalName(final Goal requirement) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nGoals cannot be resolved to a type."
-      + "\nGoals cannot be resolved to a type."
-      + "\nRequirementDocument cannot be resolved to a type."
-      + "\nRequirementDocument cannot be resolved to a type."
-      + "\n!= cannot be resolved"
-      + "\ngoals cannot be resolved"
-      + "\n!= cannot be resolved"
-      + "\ncontent cannot be resolved");
+  public void checkContractualName(final ContractualElement requirement) {
+    EObject _eContainer = requirement.eContainer();
+    RSALContainer model = ((RSALContainer) _eContainer);
+    boolean _notEquals = (!Objects.equal(model, null));
+    if (_notEquals) {
+      EList<RSALElement> _content = model.getContent();
+      for (final RSALElement other : _content) {
+        if ((other instanceof ContractualElement)) {
+          ContractualElement otherReq = ((ContractualElement) other);
+          boolean _notEquals_1 = (!Objects.equal(otherReq, null));
+          if (_notEquals_1) {
+            boolean _and = false;
+            boolean _notEquals_2 = (!Objects.equal(otherReq, requirement));
+            if (!_notEquals_2) {
+              _and = false;
+            } else {
+              String _name = otherReq.getName();
+              String _name_1 = requirement.getName();
+              boolean _equalsIgnoreCase = _name.equalsIgnoreCase(_name_1);
+              _and = _equalsIgnoreCase;
+            }
+            if (_and) {
+              EAttribute _namedElement_Name = Aadl2Package.eINSTANCE.getNamedElement_Name();
+              this.error("Requirement and goal names have to be unique within a container", _namedElement_Name);
+              return;
+            }
+          }
+        }
+      }
+    }
   }
 }

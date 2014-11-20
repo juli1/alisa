@@ -9,7 +9,7 @@
             class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
-            extensions="alisa"
+            extensions="rsal"
             id="edu.cmu.sei.alisa.Alisa"
             name="Alisa Editor">
         </editor>
@@ -213,13 +213,13 @@
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
 			class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="alisa">
+			type="rsal">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
             class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-            uriExtension="alisa">
+            uriExtension="rsal">
         </resourceServiceProvider>
     </extension>
 
@@ -251,7 +251,7 @@
          point="org.eclipse.xtext.builder.participant">
       <participant
             class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
-            fileExtensions="alisa"
+            fileExtensions="rsal"
             >
       </participant>
    </extension>
@@ -379,19 +379,19 @@
   <extension point="org.eclipse.compare.contentViewers">
     <viewer id="edu.cmu.sei.alisa.Alisa.compare.contentViewers"
             class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="alisa">
+            extensions="rsal">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
     <viewer id="edu.cmu.sei.alisa.Alisa.compare.contentMergeViewers"
             class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="alisa" label="Alisa Compare">
+            extensions="rsal" label="Alisa Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
     <provider id="edu.cmu.sei.alisa.Alisa.editors.documentProviders"
             class="edu.cmu.sei.alisa.ui.AlisaExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-            extensions="alisa">
+            extensions="rsal">
     </provider>
   </extension>
 

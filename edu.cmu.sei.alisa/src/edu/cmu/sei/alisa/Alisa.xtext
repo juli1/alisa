@@ -7,30 +7,29 @@ generate alisa "http://www.cmu.edu/sei/alisa/Alisa"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "platform:/resource/org.osate.aadl2/model/aadl2.ecore" as aadl2
 
-Toplevel: RSALPackage | Organization;
+AlisaModel: RSALPackage | Organization;
 	
 NamedElement returns aadl2::NamedElement :
 	ContractualElement | Category | RSALSection |RSALPackage
 |Stakeholder |VerificationActivity|VerificationResult |ExternalDocument
-| Organization
+| Organization | RSALElement | Organization | AlisaModel
+
 ;
 
-RSALPackage:
+RSALPackage returns RSALContainer:
 	"package" name = ID
-	('imports' importedNamespace+=[RSALPackage](',' importedNamespace+=[RSALPackage])*)?
+	('imports' importedNamespace+=[RSALContainer](',' importedNamespace+=[RSALContainer])*)?
 	('with' importedNamespace+=[aadl2::AadlPackage|QPREF](',' importedNamespace+=[aadl2::AadlPackage|QPREF])*)?
 	content+= RSALElement+  
 	('issues'  issue+=ValueString (',' issue+=ValueString)* )? 
 	'end'
 	;
 
-ContractualElement : Goal | Requirement ;
-
 RSALElement:
 	Goal | Requirement | RSALSection | Stakeholder | VerificationActivity | Category |ExternalDocument
 ;
 	
-RSALSection:
+RSALSection returns RSALContainer:
 	'section' name =ID
 		content += RSALElement+ 
 	('issues'  issue+=ValueString (','issue+=ValueString)* )? 
@@ -43,7 +42,31 @@ Organization:
 	'end'
 ;	
 
-Goal:
+CR returns ContractualElement: Goal | Requirement;
+
+ContractualElement:
+	'cr' name=ID 
+	(( 'for' target=[aadl2::NamedElement|QNEREF])?
+	 &('category'  category+=[Category|CATREF](','category+=[Category|CATREF])*)?
+	 &('title'  title=ValueString )? 
+	 &('description'  description=ValueString)? 
+	 &('assertion'  	assert=ValueString )? 
+	 &('rationale'  rationale=ValueString)? 
+	 &('issues'  issue+=ValueString (','issue+=ValueString)* )? 
+	 &('see'  modelReference+=QCRELREF (',' modelReference+=QCRELREF)*)? 
+	 &('refines'  refinesReference+=[ContractualElement|REQREF](',' refinesReference+=[ContractualElement|REQREF])*)? 
+	 &('decomposes'  decomposesReference+=[ContractualElement|REQREF](',' decomposesReference+=[ContractualElement|REQREF])*)? 
+	 &('evolves'  evolvesReference+=[ContractualElement|REQREF](',' evolvesReference+=[ContractualElement|REQREF])*)? 
+	 &('conflicts'  conflictsReference+=[ContractualElement|REQREF](',' conflictsReference+=[ContractualElement|REQREF])*)? 
+	 &('stakeholder'  stakeholderReference+=[Stakeholder|RELREF] (',' stakeholderReference+=[Stakeholder|RELREF])*)?
+	 &('see' 'stakeholder' 'req'  stakeholderRequirementReference+=[ContractualElement|REQREF] (',' stakeholderRequirementReference+=[ContractualElement|REQREF])*)?
+	 &('see' 'system' 'req'  systemRequirementReference+=[ContractualElement|REQREF] (',' systemRequirementReference+=[ContractualElement|REQREF])*)?
+	&('see' 'document'  docReference+=XDocUri (',' docReference+=XDocUri)*)? 
+	)
+	 'end';
+
+
+Goal returns Goal:
 	'goal' name=ID 
 	(( 'for' target=[aadl2::NamedElement|QNEREF])?
 	 &('category'  category+=[Category|CATREF](','category+=[Category|CATREF])*)?
@@ -60,7 +83,7 @@ Goal:
 	 &('stakeholder'  stakeholderReference+=[Stakeholder|RELREF] (',' stakeholderReference+=[Stakeholder|RELREF])*)?
 	 &('see' 'stakeholder' 'req'  stakeholderRequirementReference+=[Goal|REQREF] (',' stakeholderRequirementReference+=[Goal|REQREF])*)?
 	 &('see' 'system' 'req'  systemRequirementReference+=[ContractualElement|REQREF] (',' systemRequirementReference+=[ContractualElement|REQREF])*)?
-	 &('see' 'document'  docReference+=[ExternalDocument|RELREF] (',' docReference+=[ExternalDocument|RELREF])*)? 
+	 &('see' 'document'  docReference+=XDocUri (',' docReference+=XDocUri)*)? 
 	)
 	 'end';
 	
@@ -79,12 +102,12 @@ Requirement:
 	&('refines'  refinesReference+=[Requirement|REQREF](',' refinesReference+=[Requirement|REQREF])*)? 
 	&('decomposes'  decomposesReference+=[Requirement|REQREF](',' decomposesReference+=[Requirement|REQREF])*)? 
 	&('evolves'  evolvesReference+=[Requirement|REQREF](',' evolvesReference+=[Requirement|REQREF])*)? 
-	&('verified' 'by'  verifiedBy+=(VerificationDecomposition)*)?
 	&('see' 'stakeholder' 'req'  stakeholderRequirementReference+=[Goal|REQREF] (',' stakeholderRequirementReference+=[Goal|REQREF])*)?
 	&('see' 'system' 'req'  systemRequirementReference+=[ContractualElement|REQREF] (',' systemRequirementReference+=[ContractualElement|REQREF])*)?
+	&('verified' 'by'  verifiedBy+=(VerificationDecomposition)*)?
 	&('see' 'document'  docReference+=XDocUri (',' docReference+=XDocUri)*)? 
 	)
-	'end''requirement';
+	'end';
 
 
 
@@ -101,7 +124,7 @@ XDocUri :
 
 
 Category :
-	'category' name = ID ('extends' extends=[Category|CATREF])?
+	'category' name = ID ('extends' extends=[Category|CATREF])? 'end'
 ;
 
 
@@ -146,7 +169,7 @@ VerificationActivity:
 //	('parameters'  verificationParameters+=([ElementReference])*)?
 	('decomposed' 'to'  decomposedTo+=(VerificationDecomposition)*)?
 	('assigned' 'to'  assignedTo+=([Stakeholder|RELREF])*)?
-	'end' 'verification' 'activity' 
+	'end'  
 ;
  
 
@@ -166,7 +189,7 @@ VerificationResult:
 	('date'  method=ValueString)?
 	('state'  state=VerificationResultState)?
 	('status'  status=VerificationResultStatus)?
-	'end' 'verification' 'result' 
+	'end'  
 ;
 
 enum  VerificationResultState:

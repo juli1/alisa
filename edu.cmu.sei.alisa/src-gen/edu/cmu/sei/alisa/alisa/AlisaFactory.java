@@ -23,31 +23,22 @@ public interface AlisaFactory extends EFactory
   AlisaFactory eINSTANCE = edu.cmu.sei.alisa.alisa.impl.AlisaFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Toplevel</em>'.
+   * Returns a new object of class '<em>Model</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Toplevel</em>'.
+   * @return a new object of class '<em>Model</em>'.
    * @generated
    */
-  Toplevel createToplevel();
+  AlisaModel createAlisaModel();
 
   /**
-   * Returns a new object of class '<em>RSAL Package</em>'.
+   * Returns a new object of class '<em>RSAL Container</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>RSAL Package</em>'.
+   * @return a new object of class '<em>RSAL Container</em>'.
    * @generated
    */
-  RSALPackage createRSALPackage();
-
-  /**
-   * Returns a new object of class '<em>Contractual Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Contractual Element</em>'.
-   * @generated
-   */
-  ContractualElement createContractualElement();
+  RSALContainer createRSALContainer();
 
   /**
    * Returns a new object of class '<em>RSAL Element</em>'.
@@ -59,15 +50,6 @@ public interface AlisaFactory extends EFactory
   RSALElement createRSALElement();
 
   /**
-   * Returns a new object of class '<em>RSAL Section</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>RSAL Section</em>'.
-   * @generated
-   */
-  RSALSection createRSALSection();
-
-  /**
    * Returns a new object of class '<em>Organization</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -75,6 +57,15 @@ public interface AlisaFactory extends EFactory
    * @generated
    */
   Organization createOrganization();
+
+  /**
+   * Returns a new object of class '<em>Contractual Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Contractual Element</em>'.
+   * @generated
+   */
+  ContractualElement createContractualElement();
 
   /**
    * Returns a new object of class '<em>Goal</em>'.

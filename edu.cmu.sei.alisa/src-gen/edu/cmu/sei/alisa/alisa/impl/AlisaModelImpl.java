@@ -2,30 +2,30 @@
  */
 package edu.cmu.sei.alisa.alisa.impl;
 
+import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.Toplevel;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.osate.aadl2.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Toplevel</b></em>'.
+ * An implementation of the model object '<em><b>Model</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ToplevelImpl extends MinimalEObjectImpl.Container implements Toplevel
+public class AlisaModelImpl extends NamedElementImpl implements AlisaModel
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ToplevelImpl()
+  protected AlisaModelImpl()
   {
     super();
   }
@@ -38,7 +38,7 @@ public class ToplevelImpl extends MinimalEObjectImpl.Container implements Toplev
   @Override
   protected EClass eStaticClass()
   {
-    return AlisaPackage.Literals.TOPLEVEL;
+    return AlisaPackage.Literals.ALISA_MODEL;
   }
 
-} //ToplevelImpl
+} //AlisaModelImpl

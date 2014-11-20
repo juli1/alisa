@@ -5,13 +5,14 @@ package edu.cmu.sei.alisa.alisa.impl;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.ContractualElement;
-import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
+import edu.cmu.sei.alisa.alisa.XDocUri;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -22,7 +23,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.osate.aadl2.NamedElement;
 
@@ -54,7 +57,7 @@ import org.osate.aadl2.NamedElement;
  *
  * @generated
  */
-public class GoalImpl extends ContractualElementImpl implements Goal
+public class GoalImpl extends RSALElementImpl implements Goal
 {
   /**
    * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
@@ -184,7 +187,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * @generated
    * @ordered
    */
-  protected EList<Goal> refinesReference;
+  protected EList<ContractualElement> refinesReference;
 
   /**
    * The cached value of the '{@link #getDecomposesReference() <em>Decomposes Reference</em>}' reference list.
@@ -194,7 +197,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * @generated
    * @ordered
    */
-  protected EList<Goal> decomposesReference;
+  protected EList<ContractualElement> decomposesReference;
 
   /**
    * The cached value of the '{@link #getEvolvesReference() <em>Evolves Reference</em>}' reference list.
@@ -204,7 +207,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * @generated
    * @ordered
    */
-  protected EList<Goal> evolvesReference;
+  protected EList<ContractualElement> evolvesReference;
 
   /**
    * The cached value of the '{@link #getConflictsReference() <em>Conflicts Reference</em>}' reference list.
@@ -214,7 +217,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * @generated
    * @ordered
    */
-  protected EList<Goal> conflictsReference;
+  protected EList<ContractualElement> conflictsReference;
 
   /**
    * The cached value of the '{@link #getStakeholderReference() <em>Stakeholder Reference</em>}' reference list.
@@ -234,7 +237,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * @generated
    * @ordered
    */
-  protected EList<Goal> stakeholderRequirementReference;
+  protected EList<ContractualElement> stakeholderRequirementReference;
 
   /**
    * The cached value of the '{@link #getSystemRequirementReference() <em>System Requirement Reference</em>}' reference list.
@@ -247,14 +250,14 @@ public class GoalImpl extends ContractualElementImpl implements Goal
   protected EList<ContractualElement> systemRequirementReference;
 
   /**
-   * The cached value of the '{@link #getDocReference() <em>Doc Reference</em>}' reference list.
+   * The cached value of the '{@link #getDocReference() <em>Doc Reference</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDocReference()
    * @generated
    * @ordered
    */
-  protected EList<ExternalDocument> docReference;
+  protected EList<XDocUri> docReference;
 
   /**
    * <!-- begin-user-doc -->
@@ -459,11 +462,11 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Goal> getRefinesReference()
+  public EList<ContractualElement> getRefinesReference()
   {
     if (refinesReference == null)
     {
-      refinesReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.GOAL__REFINES_REFERENCE);
+      refinesReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.GOAL__REFINES_REFERENCE);
     }
     return refinesReference;
   }
@@ -473,11 +476,11 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Goal> getDecomposesReference()
+  public EList<ContractualElement> getDecomposesReference()
   {
     if (decomposesReference == null)
     {
-      decomposesReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.GOAL__DECOMPOSES_REFERENCE);
+      decomposesReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.GOAL__DECOMPOSES_REFERENCE);
     }
     return decomposesReference;
   }
@@ -487,11 +490,11 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Goal> getEvolvesReference()
+  public EList<ContractualElement> getEvolvesReference()
   {
     if (evolvesReference == null)
     {
-      evolvesReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.GOAL__EVOLVES_REFERENCE);
+      evolvesReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.GOAL__EVOLVES_REFERENCE);
     }
     return evolvesReference;
   }
@@ -501,11 +504,11 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Goal> getConflictsReference()
+  public EList<ContractualElement> getConflictsReference()
   {
     if (conflictsReference == null)
     {
-      conflictsReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.GOAL__CONFLICTS_REFERENCE);
+      conflictsReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.GOAL__CONFLICTS_REFERENCE);
     }
     return conflictsReference;
   }
@@ -529,11 +532,11 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Goal> getStakeholderRequirementReference()
+  public EList<ContractualElement> getStakeholderRequirementReference()
   {
     if (stakeholderRequirementReference == null)
     {
-      stakeholderRequirementReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE);
+      stakeholderRequirementReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE);
     }
     return stakeholderRequirementReference;
   }
@@ -557,13 +560,29 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ExternalDocument> getDocReference()
+  public EList<XDocUri> getDocReference()
   {
     if (docReference == null)
     {
-      docReference = new EObjectResolvingEList<ExternalDocument>(ExternalDocument.class, this, AlisaPackage.GOAL__DOC_REFERENCE);
+      docReference = new EObjectContainmentEList<XDocUri>(XDocUri.class, this, AlisaPackage.GOAL__DOC_REFERENCE);
     }
     return docReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AlisaPackage.GOAL__DOC_REFERENCE:
+        return ((InternalEList<?>)getDocReference()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -653,19 +672,19 @@ public class GoalImpl extends ContractualElementImpl implements Goal
         return;
       case AlisaPackage.GOAL__REFINES_REFERENCE:
         getRefinesReference().clear();
-        getRefinesReference().addAll((Collection<? extends Goal>)newValue);
+        getRefinesReference().addAll((Collection<? extends ContractualElement>)newValue);
         return;
       case AlisaPackage.GOAL__DECOMPOSES_REFERENCE:
         getDecomposesReference().clear();
-        getDecomposesReference().addAll((Collection<? extends Goal>)newValue);
+        getDecomposesReference().addAll((Collection<? extends ContractualElement>)newValue);
         return;
       case AlisaPackage.GOAL__EVOLVES_REFERENCE:
         getEvolvesReference().clear();
-        getEvolvesReference().addAll((Collection<? extends Goal>)newValue);
+        getEvolvesReference().addAll((Collection<? extends ContractualElement>)newValue);
         return;
       case AlisaPackage.GOAL__CONFLICTS_REFERENCE:
         getConflictsReference().clear();
-        getConflictsReference().addAll((Collection<? extends Goal>)newValue);
+        getConflictsReference().addAll((Collection<? extends ContractualElement>)newValue);
         return;
       case AlisaPackage.GOAL__STAKEHOLDER_REFERENCE:
         getStakeholderReference().clear();
@@ -673,7 +692,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
         return;
       case AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE:
         getStakeholderRequirementReference().clear();
-        getStakeholderRequirementReference().addAll((Collection<? extends Goal>)newValue);
+        getStakeholderRequirementReference().addAll((Collection<? extends ContractualElement>)newValue);
         return;
       case AlisaPackage.GOAL__SYSTEM_REQUIREMENT_REFERENCE:
         getSystemRequirementReference().clear();
@@ -681,7 +700,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
         return;
       case AlisaPackage.GOAL__DOC_REFERENCE:
         getDocReference().clear();
-        getDocReference().addAll((Collection<? extends ExternalDocument>)newValue);
+        getDocReference().addAll((Collection<? extends XDocUri>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -793,6 +812,74 @@ public class GoalImpl extends ContractualElementImpl implements Goal
         return docReference != null && !docReference.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == ContractualElement.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case AlisaPackage.GOAL__TARGET: return AlisaPackage.CONTRACTUAL_ELEMENT__TARGET;
+        case AlisaPackage.GOAL__CATEGORY: return AlisaPackage.CONTRACTUAL_ELEMENT__CATEGORY;
+        case AlisaPackage.GOAL__TITLE: return AlisaPackage.CONTRACTUAL_ELEMENT__TITLE;
+        case AlisaPackage.GOAL__DESCRIPTION: return AlisaPackage.CONTRACTUAL_ELEMENT__DESCRIPTION;
+        case AlisaPackage.GOAL__ASSERT: return AlisaPackage.CONTRACTUAL_ELEMENT__ASSERT;
+        case AlisaPackage.GOAL__RATIONALE: return AlisaPackage.CONTRACTUAL_ELEMENT__RATIONALE;
+        case AlisaPackage.GOAL__ISSUE: return AlisaPackage.CONTRACTUAL_ELEMENT__ISSUE;
+        case AlisaPackage.GOAL__MODEL_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__MODEL_REFERENCE;
+        case AlisaPackage.GOAL__REFINES_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__REFINES_REFERENCE;
+        case AlisaPackage.GOAL__DECOMPOSES_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__DECOMPOSES_REFERENCE;
+        case AlisaPackage.GOAL__EVOLVES_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__EVOLVES_REFERENCE;
+        case AlisaPackage.GOAL__CONFLICTS_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__CONFLICTS_REFERENCE;
+        case AlisaPackage.GOAL__STAKEHOLDER_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REFERENCE;
+        case AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REQUIREMENT_REFERENCE;
+        case AlisaPackage.GOAL__SYSTEM_REQUIREMENT_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__SYSTEM_REQUIREMENT_REFERENCE;
+        case AlisaPackage.GOAL__DOC_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__DOC_REFERENCE;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == ContractualElement.class)
+    {
+      switch (baseFeatureID)
+      {
+        case AlisaPackage.CONTRACTUAL_ELEMENT__TARGET: return AlisaPackage.GOAL__TARGET;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__CATEGORY: return AlisaPackage.GOAL__CATEGORY;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__TITLE: return AlisaPackage.GOAL__TITLE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__DESCRIPTION: return AlisaPackage.GOAL__DESCRIPTION;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__ASSERT: return AlisaPackage.GOAL__ASSERT;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__RATIONALE: return AlisaPackage.GOAL__RATIONALE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__ISSUE: return AlisaPackage.GOAL__ISSUE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__MODEL_REFERENCE: return AlisaPackage.GOAL__MODEL_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__REFINES_REFERENCE: return AlisaPackage.GOAL__REFINES_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__DECOMPOSES_REFERENCE: return AlisaPackage.GOAL__DECOMPOSES_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__EVOLVES_REFERENCE: return AlisaPackage.GOAL__EVOLVES_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__CONFLICTS_REFERENCE: return AlisaPackage.GOAL__CONFLICTS_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REFERENCE: return AlisaPackage.GOAL__STAKEHOLDER_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REQUIREMENT_REFERENCE: return AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__SYSTEM_REQUIREMENT_REFERENCE: return AlisaPackage.GOAL__SYSTEM_REQUIREMENT_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__DOC_REFERENCE: return AlisaPackage.GOAL__DOC_REFERENCE;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**

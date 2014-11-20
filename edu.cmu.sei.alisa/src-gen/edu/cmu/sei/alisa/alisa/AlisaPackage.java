@@ -60,33 +60,14 @@ public interface AlisaPackage extends EPackage
   AlisaPackage eINSTANCE = edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ToplevelImpl <em>Toplevel</em>}' class.
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.AlisaModelImpl <em>Model</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see edu.cmu.sei.alisa.alisa.impl.ToplevelImpl
-   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getToplevel()
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaModelImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getAlisaModel()
    * @generated
    */
-  int TOPLEVEL = 0;
-
-  /**
-   * The number of structural features of the '<em>Toplevel</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TOPLEVEL_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RSALPackageImpl <em>RSAL Package</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see edu.cmu.sei.alisa.alisa.impl.RSALPackageImpl
-   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRSALPackage()
-   * @generated
-   */
-  int RSAL_PACKAGE = 1;
+  int ALISA_MODEL = 0;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -95,7 +76,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__OWNED_ELEMENT = TOPLEVEL_FEATURE_COUNT + 0;
+  int ALISA_MODEL__OWNED_ELEMENT = Aadl2Package.NAMED_ELEMENT__OWNED_ELEMENT;
 
   /**
    * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -104,7 +85,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__OWNED_COMMENT = TOPLEVEL_FEATURE_COUNT + 1;
+  int ALISA_MODEL__OWNED_COMMENT = Aadl2Package.NAMED_ELEMENT__OWNED_COMMENT;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -113,7 +94,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__NAME = TOPLEVEL_FEATURE_COUNT + 2;
+  int ALISA_MODEL__NAME = Aadl2Package.NAMED_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -122,7 +103,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__QUALIFIED_NAME = TOPLEVEL_FEATURE_COUNT + 3;
+  int ALISA_MODEL__QUALIFIED_NAME = Aadl2Package.NAMED_ELEMENT__QUALIFIED_NAME;
 
   /**
    * The feature id for the '<em><b>Owned Property Association</b></em>' containment reference list.
@@ -131,7 +112,71 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__OWNED_PROPERTY_ASSOCIATION = TOPLEVEL_FEATURE_COUNT + 4;
+  int ALISA_MODEL__OWNED_PROPERTY_ASSOCIATION = Aadl2Package.NAMED_ELEMENT__OWNED_PROPERTY_ASSOCIATION;
+
+  /**
+   * The number of structural features of the '<em>Model</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALISA_MODEL_FEATURE_COUNT = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl <em>RSAL Container</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRSALContainer()
+   * @generated
+   */
+  int RSAL_CONTAINER = 1;
+
+  /**
+   * The feature id for the '<em><b>Owned Element</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RSAL_CONTAINER__OWNED_ELEMENT = ALISA_MODEL__OWNED_ELEMENT;
+
+  /**
+   * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RSAL_CONTAINER__OWNED_COMMENT = ALISA_MODEL__OWNED_COMMENT;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RSAL_CONTAINER__NAME = ALISA_MODEL__NAME;
+
+  /**
+   * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RSAL_CONTAINER__QUALIFIED_NAME = ALISA_MODEL__QUALIFIED_NAME;
+
+  /**
+   * The feature id for the '<em><b>Owned Property Association</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RSAL_CONTAINER__OWNED_PROPERTY_ASSOCIATION = ALISA_MODEL__OWNED_PROPERTY_ASSOCIATION;
 
   /**
    * The feature id for the '<em><b>Imported Namespace</b></em>' reference list.
@@ -140,7 +185,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__IMPORTED_NAMESPACE = TOPLEVEL_FEATURE_COUNT + 5;
+  int RSAL_CONTAINER__IMPORTED_NAMESPACE = ALISA_MODEL_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' containment reference list.
@@ -149,7 +194,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__CONTENT = TOPLEVEL_FEATURE_COUNT + 6;
+  int RSAL_CONTAINER__CONTENT = ALISA_MODEL_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Issue</b></em>' attribute list.
@@ -158,16 +203,153 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE__ISSUE = TOPLEVEL_FEATURE_COUNT + 7;
+  int RSAL_CONTAINER__ISSUE = ALISA_MODEL_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>RSAL Package</em>' class.
+   * The number of structural features of the '<em>RSAL Container</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RSAL_PACKAGE_FEATURE_COUNT = TOPLEVEL_FEATURE_COUNT + 8;
+  int RSAL_CONTAINER_FEATURE_COUNT = ALISA_MODEL_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RSALElementImpl <em>RSAL Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.RSALElementImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRSALElement()
+   * @generated
+   */
+  int RSAL_ELEMENT = 2;
+
+  /**
+   * The feature id for the '<em><b>Owned Element</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RSAL_ELEMENT__OWNED_ELEMENT = Aadl2Package.NAMED_ELEMENT__OWNED_ELEMENT;
+
+  /**
+   * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RSAL_ELEMENT__OWNED_COMMENT = Aadl2Package.NAMED_ELEMENT__OWNED_COMMENT;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RSAL_ELEMENT__NAME = Aadl2Package.NAMED_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RSAL_ELEMENT__QUALIFIED_NAME = Aadl2Package.NAMED_ELEMENT__QUALIFIED_NAME;
+
+  /**
+   * The feature id for the '<em><b>Owned Property Association</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RSAL_ELEMENT__OWNED_PROPERTY_ASSOCIATION = Aadl2Package.NAMED_ELEMENT__OWNED_PROPERTY_ASSOCIATION;
+
+  /**
+   * The number of structural features of the '<em>RSAL Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RSAL_ELEMENT_FEATURE_COUNT = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.OrganizationImpl <em>Organization</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.OrganizationImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getOrganization()
+   * @generated
+   */
+  int ORGANIZATION = 3;
+
+  /**
+   * The feature id for the '<em><b>Owned Element</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORGANIZATION__OWNED_ELEMENT = ALISA_MODEL__OWNED_ELEMENT;
+
+  /**
+   * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORGANIZATION__OWNED_COMMENT = ALISA_MODEL__OWNED_COMMENT;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORGANIZATION__NAME = ALISA_MODEL__NAME;
+
+  /**
+   * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORGANIZATION__QUALIFIED_NAME = ALISA_MODEL__QUALIFIED_NAME;
+
+  /**
+   * The feature id for the '<em><b>Owned Property Association</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORGANIZATION__OWNED_PROPERTY_ASSOCIATION = ALISA_MODEL__OWNED_PROPERTY_ASSOCIATION;
+
+  /**
+   * The feature id for the '<em><b>Stakeholder</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORGANIZATION__STAKEHOLDER = ALISA_MODEL_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Organization</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORGANIZATION_FEATURE_COUNT = ALISA_MODEL_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl <em>Contractual Element</em>}' class.
@@ -177,7 +359,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getContractualElement()
    * @generated
    */
-  int CONTRACTUAL_ELEMENT = 2;
+  int CONTRACTUAL_ELEMENT = 4;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -225,96 +407,58 @@ public interface AlisaPackage extends EPackage
   int CONTRACTUAL_ELEMENT__OWNED_PROPERTY_ASSOCIATION = Aadl2Package.NAMED_ELEMENT__OWNED_PROPERTY_ASSOCIATION;
 
   /**
-   * The number of structural features of the '<em>Contractual Element</em>' class.
+   * The feature id for the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTRACTUAL_ELEMENT_FEATURE_COUNT = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 0;
+  int CONTRACTUAL_ELEMENT__TARGET = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RSALElementImpl <em>RSAL Element</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see edu.cmu.sei.alisa.alisa.impl.RSALElementImpl
-   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRSALElement()
-   * @generated
-   */
-  int RSAL_ELEMENT = 3;
-
-  /**
-   * The number of structural features of the '<em>RSAL Element</em>' class.
+   * The feature id for the '<em><b>Category</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RSAL_ELEMENT_FEATURE_COUNT = 0;
+  int CONTRACTUAL_ELEMENT__CATEGORY = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RSALSectionImpl <em>RSAL Section</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see edu.cmu.sei.alisa.alisa.impl.RSALSectionImpl
-   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRSALSection()
-   * @generated
-   */
-  int RSAL_SECTION = 4;
-
-  /**
-   * The feature id for the '<em><b>Owned Element</b></em>' reference list.
+   * The feature id for the '<em><b>Title</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RSAL_SECTION__OWNED_ELEMENT = Aadl2Package.NAMED_ELEMENT__OWNED_ELEMENT;
+  int CONTRACTUAL_ELEMENT__TITLE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+   * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RSAL_SECTION__OWNED_COMMENT = Aadl2Package.NAMED_ELEMENT__OWNED_COMMENT;
+  int CONTRACTUAL_ELEMENT__DESCRIPTION = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Assert</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RSAL_SECTION__NAME = Aadl2Package.NAMED_ELEMENT__NAME;
+  int CONTRACTUAL_ELEMENT__ASSERT = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
+   * The feature id for the '<em><b>Rationale</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RSAL_SECTION__QUALIFIED_NAME = Aadl2Package.NAMED_ELEMENT__QUALIFIED_NAME;
-
-  /**
-   * The feature id for the '<em><b>Owned Property Association</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RSAL_SECTION__OWNED_PROPERTY_ASSOCIATION = Aadl2Package.NAMED_ELEMENT__OWNED_PROPERTY_ASSOCIATION;
-
-  /**
-   * The feature id for the '<em><b>Content</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RSAL_SECTION__CONTENT = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 0;
+  int CONTRACTUAL_ELEMENT__RATIONALE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Issue</b></em>' attribute list.
@@ -323,89 +467,97 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RSAL_SECTION__ISSUE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 1;
+  int CONTRACTUAL_ELEMENT__ISSUE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
   /**
-   * The number of structural features of the '<em>RSAL Section</em>' class.
+   * The feature id for the '<em><b>Model Reference</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RSAL_SECTION_FEATURE_COUNT = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 2;
+  int CONTRACTUAL_ELEMENT__MODEL_REFERENCE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
   /**
-   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.OrganizationImpl <em>Organization</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see edu.cmu.sei.alisa.alisa.impl.OrganizationImpl
-   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getOrganization()
-   * @generated
-   */
-  int ORGANIZATION = 5;
-
-  /**
-   * The feature id for the '<em><b>Owned Element</b></em>' reference list.
+   * The feature id for the '<em><b>Refines Reference</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ORGANIZATION__OWNED_ELEMENT = TOPLEVEL_FEATURE_COUNT + 0;
+  int CONTRACTUAL_ELEMENT__REFINES_REFERENCE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
   /**
-   * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+   * The feature id for the '<em><b>Decomposes Reference</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ORGANIZATION__OWNED_COMMENT = TOPLEVEL_FEATURE_COUNT + 1;
+  int CONTRACTUAL_ELEMENT__DECOMPOSES_REFERENCE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Evolves Reference</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ORGANIZATION__NAME = TOPLEVEL_FEATURE_COUNT + 2;
+  int CONTRACTUAL_ELEMENT__EVOLVES_REFERENCE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
   /**
-   * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
+   * The feature id for the '<em><b>Conflicts Reference</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ORGANIZATION__QUALIFIED_NAME = TOPLEVEL_FEATURE_COUNT + 3;
+  int CONTRACTUAL_ELEMENT__CONFLICTS_REFERENCE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
   /**
-   * The feature id for the '<em><b>Owned Property Association</b></em>' containment reference list.
+   * The feature id for the '<em><b>Stakeholder Reference</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ORGANIZATION__OWNED_PROPERTY_ASSOCIATION = TOPLEVEL_FEATURE_COUNT + 4;
+  int CONTRACTUAL_ELEMENT__STAKEHOLDER_REFERENCE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 12;
 
   /**
-   * The feature id for the '<em><b>Stakeholder</b></em>' containment reference list.
+   * The feature id for the '<em><b>Stakeholder Requirement Reference</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ORGANIZATION__STAKEHOLDER = TOPLEVEL_FEATURE_COUNT + 5;
+  int CONTRACTUAL_ELEMENT__STAKEHOLDER_REQUIREMENT_REFERENCE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 13;
 
   /**
-   * The number of structural features of the '<em>Organization</em>' class.
+   * The feature id for the '<em><b>System Requirement Reference</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ORGANIZATION_FEATURE_COUNT = TOPLEVEL_FEATURE_COUNT + 6;
+  int CONTRACTUAL_ELEMENT__SYSTEM_REQUIREMENT_REFERENCE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Doc Reference</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTRACTUAL_ELEMENT__DOC_REFERENCE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 15;
+
+  /**
+   * The number of structural features of the '<em>Contractual Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTRACTUAL_ELEMENT_FEATURE_COUNT = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl <em>Goal</em>}' class.
@@ -415,7 +567,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getGoal()
    * @generated
    */
-  int GOAL = 6;
+  int GOAL = 5;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -424,7 +576,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__OWNED_ELEMENT = CONTRACTUAL_ELEMENT__OWNED_ELEMENT;
+  int GOAL__OWNED_ELEMENT = RSAL_ELEMENT__OWNED_ELEMENT;
 
   /**
    * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -433,7 +585,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__OWNED_COMMENT = CONTRACTUAL_ELEMENT__OWNED_COMMENT;
+  int GOAL__OWNED_COMMENT = RSAL_ELEMENT__OWNED_COMMENT;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -442,7 +594,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__NAME = CONTRACTUAL_ELEMENT__NAME;
+  int GOAL__NAME = RSAL_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -451,7 +603,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__QUALIFIED_NAME = CONTRACTUAL_ELEMENT__QUALIFIED_NAME;
+  int GOAL__QUALIFIED_NAME = RSAL_ELEMENT__QUALIFIED_NAME;
 
   /**
    * The feature id for the '<em><b>Owned Property Association</b></em>' containment reference list.
@@ -460,7 +612,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__OWNED_PROPERTY_ASSOCIATION = CONTRACTUAL_ELEMENT__OWNED_PROPERTY_ASSOCIATION;
+  int GOAL__OWNED_PROPERTY_ASSOCIATION = RSAL_ELEMENT__OWNED_PROPERTY_ASSOCIATION;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' reference.
@@ -469,7 +621,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__TARGET = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 0;
+  int GOAL__TARGET = RSAL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Category</b></em>' reference list.
@@ -478,7 +630,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__CATEGORY = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 1;
+  int GOAL__CATEGORY = RSAL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -487,7 +639,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__TITLE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 2;
+  int GOAL__TITLE = RSAL_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -496,7 +648,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__DESCRIPTION = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 3;
+  int GOAL__DESCRIPTION = RSAL_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Assert</b></em>' attribute.
@@ -505,7 +657,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__ASSERT = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 4;
+  int GOAL__ASSERT = RSAL_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Rationale</b></em>' attribute.
@@ -514,7 +666,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__RATIONALE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 5;
+  int GOAL__RATIONALE = RSAL_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Issue</b></em>' attribute list.
@@ -523,7 +675,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__ISSUE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 6;
+  int GOAL__ISSUE = RSAL_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Model Reference</b></em>' attribute list.
@@ -532,7 +684,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__MODEL_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 7;
+  int GOAL__MODEL_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Refines Reference</b></em>' reference list.
@@ -541,7 +693,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__REFINES_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 8;
+  int GOAL__REFINES_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Decomposes Reference</b></em>' reference list.
@@ -550,7 +702,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__DECOMPOSES_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 9;
+  int GOAL__DECOMPOSES_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Evolves Reference</b></em>' reference list.
@@ -559,7 +711,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__EVOLVES_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 10;
+  int GOAL__EVOLVES_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Conflicts Reference</b></em>' reference list.
@@ -568,7 +720,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__CONFLICTS_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 11;
+  int GOAL__CONFLICTS_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Stakeholder Reference</b></em>' reference list.
@@ -577,7 +729,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__STAKEHOLDER_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 12;
+  int GOAL__STAKEHOLDER_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Stakeholder Requirement Reference</b></em>' reference list.
@@ -586,7 +738,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 13;
+  int GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>System Requirement Reference</b></em>' reference list.
@@ -595,16 +747,16 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL__SYSTEM_REQUIREMENT_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 14;
+  int GOAL__SYSTEM_REQUIREMENT_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 14;
 
   /**
-   * The feature id for the '<em><b>Doc Reference</b></em>' reference list.
+   * The feature id for the '<em><b>Doc Reference</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOAL__DOC_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 15;
+  int GOAL__DOC_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The number of structural features of the '<em>Goal</em>' class.
@@ -613,7 +765,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GOAL_FEATURE_COUNT = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 16;
+  int GOAL_FEATURE_COUNT = RSAL_ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl <em>Requirement</em>}' class.
@@ -623,7 +775,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRequirement()
    * @generated
    */
-  int REQUIREMENT = 7;
+  int REQUIREMENT = 6;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -632,7 +784,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__OWNED_ELEMENT = CONTRACTUAL_ELEMENT__OWNED_ELEMENT;
+  int REQUIREMENT__OWNED_ELEMENT = RSAL_ELEMENT__OWNED_ELEMENT;
 
   /**
    * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -641,7 +793,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__OWNED_COMMENT = CONTRACTUAL_ELEMENT__OWNED_COMMENT;
+  int REQUIREMENT__OWNED_COMMENT = RSAL_ELEMENT__OWNED_COMMENT;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -650,7 +802,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__NAME = CONTRACTUAL_ELEMENT__NAME;
+  int REQUIREMENT__NAME = RSAL_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -659,7 +811,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__QUALIFIED_NAME = CONTRACTUAL_ELEMENT__QUALIFIED_NAME;
+  int REQUIREMENT__QUALIFIED_NAME = RSAL_ELEMENT__QUALIFIED_NAME;
 
   /**
    * The feature id for the '<em><b>Owned Property Association</b></em>' containment reference list.
@@ -668,7 +820,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__OWNED_PROPERTY_ASSOCIATION = CONTRACTUAL_ELEMENT__OWNED_PROPERTY_ASSOCIATION;
+  int REQUIREMENT__OWNED_PROPERTY_ASSOCIATION = RSAL_ELEMENT__OWNED_PROPERTY_ASSOCIATION;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' reference.
@@ -677,7 +829,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__TARGET = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 0;
+  int REQUIREMENT__TARGET = RSAL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Category</b></em>' reference list.
@@ -686,7 +838,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__CATEGORY = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 1;
+  int REQUIREMENT__CATEGORY = RSAL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -695,7 +847,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__TITLE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 2;
+  int REQUIREMENT__TITLE = RSAL_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -704,7 +856,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__DESCRIPTION = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 3;
+  int REQUIREMENT__DESCRIPTION = RSAL_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Assert</b></em>' attribute.
@@ -713,7 +865,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__ASSERT = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 4;
+  int REQUIREMENT__ASSERT = RSAL_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Rationale</b></em>' attribute.
@@ -722,7 +874,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__RATIONALE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 5;
+  int REQUIREMENT__RATIONALE = RSAL_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Issue</b></em>' attribute list.
@@ -731,7 +883,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__ISSUE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 6;
+  int REQUIREMENT__ISSUE = RSAL_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Model Reference</b></em>' attribute list.
@@ -740,25 +892,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__MODEL_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 7;
-
-  /**
-   * The feature id for the '<em><b>Goal Reference</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REQUIREMENT__GOAL_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 8;
-
-  /**
-   * The feature id for the '<em><b>Hazard Reference</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REQUIREMENT__HAZARD_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 9;
+  int REQUIREMENT__MODEL_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Refines Reference</b></em>' reference list.
@@ -767,7 +901,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__REFINES_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 10;
+  int REQUIREMENT__REFINES_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Decomposes Reference</b></em>' reference list.
@@ -776,7 +910,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__DECOMPOSES_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 11;
+  int REQUIREMENT__DECOMPOSES_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Evolves Reference</b></em>' reference list.
@@ -785,16 +919,25 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__EVOLVES_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 12;
+  int REQUIREMENT__EVOLVES_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 10;
 
   /**
-   * The feature id for the '<em><b>Verified By</b></em>' containment reference list.
+   * The feature id for the '<em><b>Conflicts Reference</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQUIREMENT__VERIFIED_BY = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 13;
+  int REQUIREMENT__CONFLICTS_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Stakeholder Reference</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQUIREMENT__STAKEHOLDER_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Stakeholder Requirement Reference</b></em>' reference list.
@@ -803,7 +946,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 14;
+  int REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>System Requirement Reference</b></em>' reference list.
@@ -812,7 +955,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 15;
+  int REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Doc Reference</b></em>' containment reference list.
@@ -821,7 +964,34 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT__DOC_REFERENCE = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 16;
+  int REQUIREMENT__DOC_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 15;
+
+  /**
+   * The feature id for the '<em><b>Goal Reference</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQUIREMENT__GOAL_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 16;
+
+  /**
+   * The feature id for the '<em><b>Hazard Reference</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQUIREMENT__HAZARD_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 17;
+
+  /**
+   * The feature id for the '<em><b>Verified By</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQUIREMENT__VERIFIED_BY = RSAL_ELEMENT_FEATURE_COUNT + 18;
 
   /**
    * The number of structural features of the '<em>Requirement</em>' class.
@@ -830,7 +1000,7 @@ public interface AlisaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_FEATURE_COUNT = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 17;
+  int REQUIREMENT_FEATURE_COUNT = RSAL_ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentImpl <em>External Document</em>}' class.
@@ -840,7 +1010,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getExternalDocument()
    * @generated
    */
-  int EXTERNAL_DOCUMENT = 8;
+  int EXTERNAL_DOCUMENT = 7;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -913,7 +1083,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getXDocUri()
    * @generated
    */
-  int XDOC_URI = 9;
+  int XDOC_URI = 8;
 
   /**
    * The feature id for the '<em><b>Doc Path</b></em>' reference.
@@ -950,7 +1120,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getCategory()
    * @generated
    */
-  int CATEGORY = 10;
+  int CATEGORY = 9;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1023,7 +1193,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getStakeholder()
    * @generated
    */
-  int STAKEHOLDER = 11;
+  int STAKEHOLDER = 10;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1141,7 +1311,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationDecomposition()
    * @generated
    */
-  int VERIFICATION_DECOMPOSITION = 12;
+  int VERIFICATION_DECOMPOSITION = 11;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' reference.
@@ -1196,7 +1366,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationActivity()
    * @generated
    */
-  int VERIFICATION_ACTIVITY = 13;
+  int VERIFICATION_ACTIVITY = 12;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1305,7 +1475,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationResult()
    * @generated
    */
-  int VERIFICATION_RESULT = 14;
+  int VERIFICATION_RESULT = 13;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1423,7 +1593,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationResultState()
    * @generated
    */
-  int VERIFICATION_RESULT_STATE = 15;
+  int VERIFICATION_RESULT_STATE = 14;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.VerificationResultStatus <em>Verification Result Status</em>}' enum.
@@ -1433,71 +1603,61 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationResultStatus()
    * @generated
    */
-  int VERIFICATION_RESULT_STATUS = 16;
+  int VERIFICATION_RESULT_STATUS = 15;
 
 
   /**
-   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.Toplevel <em>Toplevel</em>}'.
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.AlisaModel <em>Model</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Toplevel</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Toplevel
+   * @return the meta object for class '<em>Model</em>'.
+   * @see edu.cmu.sei.alisa.alisa.AlisaModel
    * @generated
    */
-  EClass getToplevel();
+  EClass getAlisaModel();
 
   /**
-   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.RSALPackage <em>RSAL Package</em>}'.
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.RSALContainer <em>RSAL Container</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>RSAL Package</em>'.
-   * @see edu.cmu.sei.alisa.alisa.RSALPackage
+   * @return the meta object for class '<em>RSAL Container</em>'.
+   * @see edu.cmu.sei.alisa.alisa.RSALContainer
    * @generated
    */
-  EClass getRSALPackage();
+  EClass getRSALContainer();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.RSALPackage#getImportedNamespace <em>Imported Namespace</em>}'.
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.RSALContainer#getImportedNamespace <em>Imported Namespace</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Imported Namespace</em>'.
-   * @see edu.cmu.sei.alisa.alisa.RSALPackage#getImportedNamespace()
-   * @see #getRSALPackage()
+   * @see edu.cmu.sei.alisa.alisa.RSALContainer#getImportedNamespace()
+   * @see #getRSALContainer()
    * @generated
    */
-  EReference getRSALPackage_ImportedNamespace();
+  EReference getRSALContainer_ImportedNamespace();
 
   /**
-   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.RSALPackage#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.RSALContainer#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Content</em>'.
-   * @see edu.cmu.sei.alisa.alisa.RSALPackage#getContent()
-   * @see #getRSALPackage()
+   * @see edu.cmu.sei.alisa.alisa.RSALContainer#getContent()
+   * @see #getRSALContainer()
    * @generated
    */
-  EReference getRSALPackage_Content();
+  EReference getRSALContainer_Content();
 
   /**
-   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.RSALPackage#getIssue <em>Issue</em>}'.
+   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.RSALContainer#getIssue <em>Issue</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute list '<em>Issue</em>'.
-   * @see edu.cmu.sei.alisa.alisa.RSALPackage#getIssue()
-   * @see #getRSALPackage()
+   * @see edu.cmu.sei.alisa.alisa.RSALContainer#getIssue()
+   * @see #getRSALContainer()
    * @generated
    */
-  EAttribute getRSALPackage_Issue();
-
-  /**
-   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.ContractualElement <em>Contractual Element</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Contractual Element</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ContractualElement
-   * @generated
-   */
-  EClass getContractualElement();
+  EAttribute getRSALContainer_Issue();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.RSALElement <em>RSAL Element</em>}'.
@@ -1508,38 +1668,6 @@ public interface AlisaPackage extends EPackage
    * @generated
    */
   EClass getRSALElement();
-
-  /**
-   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.RSALSection <em>RSAL Section</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>RSAL Section</em>'.
-   * @see edu.cmu.sei.alisa.alisa.RSALSection
-   * @generated
-   */
-  EClass getRSALSection();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.RSALSection#getContent <em>Content</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Content</em>'.
-   * @see edu.cmu.sei.alisa.alisa.RSALSection#getContent()
-   * @see #getRSALSection()
-   * @generated
-   */
-  EReference getRSALSection_Content();
-
-  /**
-   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.RSALSection#getIssue <em>Issue</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Issue</em>'.
-   * @see edu.cmu.sei.alisa.alisa.RSALSection#getIssue()
-   * @see #getRSALSection()
-   * @generated
-   */
-  EAttribute getRSALSection_Issue();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.Organization <em>Organization</em>}'.
@@ -1563,6 +1691,192 @@ public interface AlisaPackage extends EPackage
   EReference getOrganization_Stakeholder();
 
   /**
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.ContractualElement <em>Contractual Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Contractual Element</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement
+   * @generated
+   */
+  EClass getContractualElement();
+
+  /**
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Target</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getTarget()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EReference getContractualElement_Target();
+
+  /**
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getCategory <em>Category</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Category</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getCategory()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EReference getContractualElement_Category();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getTitle <em>Title</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Title</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getTitle()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EAttribute getContractualElement_Title();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getDescription()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EAttribute getContractualElement_Description();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getAssert <em>Assert</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Assert</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getAssert()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EAttribute getContractualElement_Assert();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getRationale <em>Rationale</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Rationale</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getRationale()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EAttribute getContractualElement_Rationale();
+
+  /**
+   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getIssue <em>Issue</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Issue</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getIssue()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EAttribute getContractualElement_Issue();
+
+  /**
+   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getModelReference <em>Model Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Model Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getModelReference()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EAttribute getContractualElement_ModelReference();
+
+  /**
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getRefinesReference <em>Refines Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Refines Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getRefinesReference()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EReference getContractualElement_RefinesReference();
+
+  /**
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getDecomposesReference <em>Decomposes Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Decomposes Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getDecomposesReference()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EReference getContractualElement_DecomposesReference();
+
+  /**
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getEvolvesReference <em>Evolves Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Evolves Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getEvolvesReference()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EReference getContractualElement_EvolvesReference();
+
+  /**
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getConflictsReference <em>Conflicts Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Conflicts Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getConflictsReference()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EReference getContractualElement_ConflictsReference();
+
+  /**
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getStakeholderReference <em>Stakeholder Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Stakeholder Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getStakeholderReference()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EReference getContractualElement_StakeholderReference();
+
+  /**
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getStakeholderRequirementReference <em>Stakeholder Requirement Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Stakeholder Requirement Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getStakeholderRequirementReference()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EReference getContractualElement_StakeholderRequirementReference();
+
+  /**
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getSystemRequirementReference <em>System Requirement Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>System Requirement Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getSystemRequirementReference()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EReference getContractualElement_SystemRequirementReference();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getDocReference <em>Doc Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Doc Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getDocReference()
+   * @see #getContractualElement()
+   * @generated
+   */
+  EReference getContractualElement_DocReference();
+
+  /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.Goal <em>Goal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1573,182 +1887,6 @@ public interface AlisaPackage extends EPackage
   EClass getGoal();
 
   /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.Goal#getTarget <em>Target</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Target</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getTarget()
-   * @see #getGoal()
-   * @generated
-   */
-  EReference getGoal_Target();
-
-  /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Goal#getCategory <em>Category</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Category</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getCategory()
-   * @see #getGoal()
-   * @generated
-   */
-  EReference getGoal_Category();
-
-  /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Goal#getTitle <em>Title</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Title</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getTitle()
-   * @see #getGoal()
-   * @generated
-   */
-  EAttribute getGoal_Title();
-
-  /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Goal#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getDescription()
-   * @see #getGoal()
-   * @generated
-   */
-  EAttribute getGoal_Description();
-
-  /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Goal#getAssert <em>Assert</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Assert</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getAssert()
-   * @see #getGoal()
-   * @generated
-   */
-  EAttribute getGoal_Assert();
-
-  /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Goal#getRationale <em>Rationale</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Rationale</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getRationale()
-   * @see #getGoal()
-   * @generated
-   */
-  EAttribute getGoal_Rationale();
-
-  /**
-   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.Goal#getIssue <em>Issue</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Issue</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getIssue()
-   * @see #getGoal()
-   * @generated
-   */
-  EAttribute getGoal_Issue();
-
-  /**
-   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.Goal#getModelReference <em>Model Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Model Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getModelReference()
-   * @see #getGoal()
-   * @generated
-   */
-  EAttribute getGoal_ModelReference();
-
-  /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Goal#getRefinesReference <em>Refines Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Refines Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getRefinesReference()
-   * @see #getGoal()
-   * @generated
-   */
-  EReference getGoal_RefinesReference();
-
-  /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Goal#getDecomposesReference <em>Decomposes Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Decomposes Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getDecomposesReference()
-   * @see #getGoal()
-   * @generated
-   */
-  EReference getGoal_DecomposesReference();
-
-  /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Goal#getEvolvesReference <em>Evolves Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Evolves Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getEvolvesReference()
-   * @see #getGoal()
-   * @generated
-   */
-  EReference getGoal_EvolvesReference();
-
-  /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Goal#getConflictsReference <em>Conflicts Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Conflicts Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getConflictsReference()
-   * @see #getGoal()
-   * @generated
-   */
-  EReference getGoal_ConflictsReference();
-
-  /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Goal#getStakeholderReference <em>Stakeholder Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Stakeholder Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getStakeholderReference()
-   * @see #getGoal()
-   * @generated
-   */
-  EReference getGoal_StakeholderReference();
-
-  /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Goal#getStakeholderRequirementReference <em>Stakeholder Requirement Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Stakeholder Requirement Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getStakeholderRequirementReference()
-   * @see #getGoal()
-   * @generated
-   */
-  EReference getGoal_StakeholderRequirementReference();
-
-  /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Goal#getSystemRequirementReference <em>System Requirement Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>System Requirement Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getSystemRequirementReference()
-   * @see #getGoal()
-   * @generated
-   */
-  EReference getGoal_SystemRequirementReference();
-
-  /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Goal#getDocReference <em>Doc Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Doc Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goal#getDocReference()
-   * @see #getGoal()
-   * @generated
-   */
-  EReference getGoal_DocReference();
-
-  /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.Requirement <em>Requirement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1757,94 +1895,6 @@ public interface AlisaPackage extends EPackage
    * @generated
    */
   EClass getRequirement();
-
-  /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.Requirement#getTarget <em>Target</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Target</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getTarget()
-   * @see #getRequirement()
-   * @generated
-   */
-  EReference getRequirement_Target();
-
-  /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getCategory <em>Category</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Category</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getCategory()
-   * @see #getRequirement()
-   * @generated
-   */
-  EReference getRequirement_Category();
-
-  /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getTitle <em>Title</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Title</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getTitle()
-   * @see #getRequirement()
-   * @generated
-   */
-  EAttribute getRequirement_Title();
-
-  /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getDescription()
-   * @see #getRequirement()
-   * @generated
-   */
-  EAttribute getRequirement_Description();
-
-  /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getAssert <em>Assert</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Assert</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getAssert()
-   * @see #getRequirement()
-   * @generated
-   */
-  EAttribute getRequirement_Assert();
-
-  /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getRationale <em>Rationale</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Rationale</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getRationale()
-   * @see #getRequirement()
-   * @generated
-   */
-  EAttribute getRequirement_Rationale();
-
-  /**
-   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.Requirement#getIssue <em>Issue</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Issue</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getIssue()
-   * @see #getRequirement()
-   * @generated
-   */
-  EAttribute getRequirement_Issue();
-
-  /**
-   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.Requirement#getModelReference <em>Model Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Model Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getModelReference()
-   * @see #getRequirement()
-   * @generated
-   */
-  EAttribute getRequirement_ModelReference();
 
   /**
    * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getGoalReference <em>Goal Reference</em>}'.
@@ -1869,39 +1919,6 @@ public interface AlisaPackage extends EPackage
   EAttribute getRequirement_HazardReference();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getRefinesReference <em>Refines Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Refines Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getRefinesReference()
-   * @see #getRequirement()
-   * @generated
-   */
-  EReference getRequirement_RefinesReference();
-
-  /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getDecomposesReference <em>Decomposes Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Decomposes Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getDecomposesReference()
-   * @see #getRequirement()
-   * @generated
-   */
-  EReference getRequirement_DecomposesReference();
-
-  /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getEvolvesReference <em>Evolves Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Evolves Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getEvolvesReference()
-   * @see #getRequirement()
-   * @generated
-   */
-  EReference getRequirement_EvolvesReference();
-
-  /**
    * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getVerifiedBy <em>Verified By</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1911,39 +1928,6 @@ public interface AlisaPackage extends EPackage
    * @generated
    */
   EReference getRequirement_VerifiedBy();
-
-  /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getStakeholderRequirementReference <em>Stakeholder Requirement Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Stakeholder Requirement Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getStakeholderRequirementReference()
-   * @see #getRequirement()
-   * @generated
-   */
-  EReference getRequirement_StakeholderRequirementReference();
-
-  /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getSystemRequirementReference <em>System Requirement Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>System Requirement Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getSystemRequirementReference()
-   * @see #getRequirement()
-   * @generated
-   */
-  EReference getRequirement_SystemRequirementReference();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getDocReference <em>Doc Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Doc Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirement#getDocReference()
-   * @see #getRequirement()
-   * @generated
-   */
-  EReference getRequirement_DocReference();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.ExternalDocument <em>External Document</em>}'.
@@ -2334,24 +2318,24 @@ public interface AlisaPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ToplevelImpl <em>Toplevel</em>}' class.
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.AlisaModelImpl <em>Model</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see edu.cmu.sei.alisa.alisa.impl.ToplevelImpl
-     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getToplevel()
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaModelImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getAlisaModel()
      * @generated
      */
-    EClass TOPLEVEL = eINSTANCE.getToplevel();
+    EClass ALISA_MODEL = eINSTANCE.getAlisaModel();
 
     /**
-     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.RSALPackageImpl <em>RSAL Package</em>}' class.
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl <em>RSAL Container</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see edu.cmu.sei.alisa.alisa.impl.RSALPackageImpl
-     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRSALPackage()
+     * @see edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRSALContainer()
      * @generated
      */
-    EClass RSAL_PACKAGE = eINSTANCE.getRSALPackage();
+    EClass RSAL_CONTAINER = eINSTANCE.getRSALContainer();
 
     /**
      * The meta object literal for the '<em><b>Imported Namespace</b></em>' reference list feature.
@@ -2359,7 +2343,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RSAL_PACKAGE__IMPORTED_NAMESPACE = eINSTANCE.getRSALPackage_ImportedNamespace();
+    EReference RSAL_CONTAINER__IMPORTED_NAMESPACE = eINSTANCE.getRSALContainer_ImportedNamespace();
 
     /**
      * The meta object literal for the '<em><b>Content</b></em>' containment reference list feature.
@@ -2367,7 +2351,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RSAL_PACKAGE__CONTENT = eINSTANCE.getRSALPackage_Content();
+    EReference RSAL_CONTAINER__CONTENT = eINSTANCE.getRSALContainer_Content();
 
     /**
      * The meta object literal for the '<em><b>Issue</b></em>' attribute list feature.
@@ -2375,17 +2359,7 @@ public interface AlisaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RSAL_PACKAGE__ISSUE = eINSTANCE.getRSALPackage_Issue();
-
-    /**
-     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl <em>Contractual Element</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl
-     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getContractualElement()
-     * @generated
-     */
-    EClass CONTRACTUAL_ELEMENT = eINSTANCE.getContractualElement();
+    EAttribute RSAL_CONTAINER__ISSUE = eINSTANCE.getRSALContainer_Issue();
 
     /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.RSALElementImpl <em>RSAL Element</em>}' class.
@@ -2396,32 +2370,6 @@ public interface AlisaPackage extends EPackage
      * @generated
      */
     EClass RSAL_ELEMENT = eINSTANCE.getRSALElement();
-
-    /**
-     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.RSALSectionImpl <em>RSAL Section</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see edu.cmu.sei.alisa.alisa.impl.RSALSectionImpl
-     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRSALSection()
-     * @generated
-     */
-    EClass RSAL_SECTION = eINSTANCE.getRSALSection();
-
-    /**
-     * The meta object literal for the '<em><b>Content</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference RSAL_SECTION__CONTENT = eINSTANCE.getRSALSection_Content();
-
-    /**
-     * The meta object literal for the '<em><b>Issue</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute RSAL_SECTION__ISSUE = eINSTANCE.getRSALSection_Issue();
 
     /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.OrganizationImpl <em>Organization</em>}' class.
@@ -2442,6 +2390,144 @@ public interface AlisaPackage extends EPackage
     EReference ORGANIZATION__STAKEHOLDER = eINSTANCE.getOrganization_Stakeholder();
 
     /**
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl <em>Contractual Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getContractualElement()
+     * @generated
+     */
+    EClass CONTRACTUAL_ELEMENT = eINSTANCE.getContractualElement();
+
+    /**
+     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTRACTUAL_ELEMENT__TARGET = eINSTANCE.getContractualElement_Target();
+
+    /**
+     * The meta object literal for the '<em><b>Category</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTRACTUAL_ELEMENT__CATEGORY = eINSTANCE.getContractualElement_Category();
+
+    /**
+     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTRACTUAL_ELEMENT__TITLE = eINSTANCE.getContractualElement_Title();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTRACTUAL_ELEMENT__DESCRIPTION = eINSTANCE.getContractualElement_Description();
+
+    /**
+     * The meta object literal for the '<em><b>Assert</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTRACTUAL_ELEMENT__ASSERT = eINSTANCE.getContractualElement_Assert();
+
+    /**
+     * The meta object literal for the '<em><b>Rationale</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTRACTUAL_ELEMENT__RATIONALE = eINSTANCE.getContractualElement_Rationale();
+
+    /**
+     * The meta object literal for the '<em><b>Issue</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTRACTUAL_ELEMENT__ISSUE = eINSTANCE.getContractualElement_Issue();
+
+    /**
+     * The meta object literal for the '<em><b>Model Reference</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTRACTUAL_ELEMENT__MODEL_REFERENCE = eINSTANCE.getContractualElement_ModelReference();
+
+    /**
+     * The meta object literal for the '<em><b>Refines Reference</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTRACTUAL_ELEMENT__REFINES_REFERENCE = eINSTANCE.getContractualElement_RefinesReference();
+
+    /**
+     * The meta object literal for the '<em><b>Decomposes Reference</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTRACTUAL_ELEMENT__DECOMPOSES_REFERENCE = eINSTANCE.getContractualElement_DecomposesReference();
+
+    /**
+     * The meta object literal for the '<em><b>Evolves Reference</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTRACTUAL_ELEMENT__EVOLVES_REFERENCE = eINSTANCE.getContractualElement_EvolvesReference();
+
+    /**
+     * The meta object literal for the '<em><b>Conflicts Reference</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTRACTUAL_ELEMENT__CONFLICTS_REFERENCE = eINSTANCE.getContractualElement_ConflictsReference();
+
+    /**
+     * The meta object literal for the '<em><b>Stakeholder Reference</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTRACTUAL_ELEMENT__STAKEHOLDER_REFERENCE = eINSTANCE.getContractualElement_StakeholderReference();
+
+    /**
+     * The meta object literal for the '<em><b>Stakeholder Requirement Reference</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTRACTUAL_ELEMENT__STAKEHOLDER_REQUIREMENT_REFERENCE = eINSTANCE.getContractualElement_StakeholderRequirementReference();
+
+    /**
+     * The meta object literal for the '<em><b>System Requirement Reference</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTRACTUAL_ELEMENT__SYSTEM_REQUIREMENT_REFERENCE = eINSTANCE.getContractualElement_SystemRequirementReference();
+
+    /**
+     * The meta object literal for the '<em><b>Doc Reference</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTRACTUAL_ELEMENT__DOC_REFERENCE = eINSTANCE.getContractualElement_DocReference();
+
+    /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl <em>Goal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2452,134 +2538,6 @@ public interface AlisaPackage extends EPackage
     EClass GOAL = eINSTANCE.getGoal();
 
     /**
-     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GOAL__TARGET = eINSTANCE.getGoal_Target();
-
-    /**
-     * The meta object literal for the '<em><b>Category</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GOAL__CATEGORY = eINSTANCE.getGoal_Category();
-
-    /**
-     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOAL__TITLE = eINSTANCE.getGoal_Title();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOAL__DESCRIPTION = eINSTANCE.getGoal_Description();
-
-    /**
-     * The meta object literal for the '<em><b>Assert</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOAL__ASSERT = eINSTANCE.getGoal_Assert();
-
-    /**
-     * The meta object literal for the '<em><b>Rationale</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOAL__RATIONALE = eINSTANCE.getGoal_Rationale();
-
-    /**
-     * The meta object literal for the '<em><b>Issue</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOAL__ISSUE = eINSTANCE.getGoal_Issue();
-
-    /**
-     * The meta object literal for the '<em><b>Model Reference</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GOAL__MODEL_REFERENCE = eINSTANCE.getGoal_ModelReference();
-
-    /**
-     * The meta object literal for the '<em><b>Refines Reference</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GOAL__REFINES_REFERENCE = eINSTANCE.getGoal_RefinesReference();
-
-    /**
-     * The meta object literal for the '<em><b>Decomposes Reference</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GOAL__DECOMPOSES_REFERENCE = eINSTANCE.getGoal_DecomposesReference();
-
-    /**
-     * The meta object literal for the '<em><b>Evolves Reference</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GOAL__EVOLVES_REFERENCE = eINSTANCE.getGoal_EvolvesReference();
-
-    /**
-     * The meta object literal for the '<em><b>Conflicts Reference</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GOAL__CONFLICTS_REFERENCE = eINSTANCE.getGoal_ConflictsReference();
-
-    /**
-     * The meta object literal for the '<em><b>Stakeholder Reference</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GOAL__STAKEHOLDER_REFERENCE = eINSTANCE.getGoal_StakeholderReference();
-
-    /**
-     * The meta object literal for the '<em><b>Stakeholder Requirement Reference</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE = eINSTANCE.getGoal_StakeholderRequirementReference();
-
-    /**
-     * The meta object literal for the '<em><b>System Requirement Reference</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GOAL__SYSTEM_REQUIREMENT_REFERENCE = eINSTANCE.getGoal_SystemRequirementReference();
-
-    /**
-     * The meta object literal for the '<em><b>Doc Reference</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GOAL__DOC_REFERENCE = eINSTANCE.getGoal_DocReference();
-
-    /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl <em>Requirement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2588,70 +2546,6 @@ public interface AlisaPackage extends EPackage
      * @generated
      */
     EClass REQUIREMENT = eINSTANCE.getRequirement();
-
-    /**
-     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQUIREMENT__TARGET = eINSTANCE.getRequirement_Target();
-
-    /**
-     * The meta object literal for the '<em><b>Category</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQUIREMENT__CATEGORY = eINSTANCE.getRequirement_Category();
-
-    /**
-     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute REQUIREMENT__TITLE = eINSTANCE.getRequirement_Title();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute REQUIREMENT__DESCRIPTION = eINSTANCE.getRequirement_Description();
-
-    /**
-     * The meta object literal for the '<em><b>Assert</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute REQUIREMENT__ASSERT = eINSTANCE.getRequirement_Assert();
-
-    /**
-     * The meta object literal for the '<em><b>Rationale</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute REQUIREMENT__RATIONALE = eINSTANCE.getRequirement_Rationale();
-
-    /**
-     * The meta object literal for the '<em><b>Issue</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute REQUIREMENT__ISSUE = eINSTANCE.getRequirement_Issue();
-
-    /**
-     * The meta object literal for the '<em><b>Model Reference</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute REQUIREMENT__MODEL_REFERENCE = eINSTANCE.getRequirement_ModelReference();
 
     /**
      * The meta object literal for the '<em><b>Goal Reference</b></em>' reference list feature.
@@ -2670,60 +2564,12 @@ public interface AlisaPackage extends EPackage
     EAttribute REQUIREMENT__HAZARD_REFERENCE = eINSTANCE.getRequirement_HazardReference();
 
     /**
-     * The meta object literal for the '<em><b>Refines Reference</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQUIREMENT__REFINES_REFERENCE = eINSTANCE.getRequirement_RefinesReference();
-
-    /**
-     * The meta object literal for the '<em><b>Decomposes Reference</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQUIREMENT__DECOMPOSES_REFERENCE = eINSTANCE.getRequirement_DecomposesReference();
-
-    /**
-     * The meta object literal for the '<em><b>Evolves Reference</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQUIREMENT__EVOLVES_REFERENCE = eINSTANCE.getRequirement_EvolvesReference();
-
-    /**
      * The meta object literal for the '<em><b>Verified By</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference REQUIREMENT__VERIFIED_BY = eINSTANCE.getRequirement_VerifiedBy();
-
-    /**
-     * The meta object literal for the '<em><b>Stakeholder Requirement Reference</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE = eINSTANCE.getRequirement_StakeholderRequirementReference();
-
-    /**
-     * The meta object literal for the '<em><b>System Requirement Reference</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE = eINSTANCE.getRequirement_SystemRequirementReference();
-
-    /**
-     * The meta object literal for the '<em><b>Doc Reference</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQUIREMENT__DOC_REFERENCE = eINSTANCE.getRequirement_DocReference();
 
     /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentImpl <em>External Document</em>}' class.

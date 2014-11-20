@@ -8,14 +8,14 @@ import org.osate.aadl2.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>RSAL Element</b></em>'.
+ * A representation of the model object '<em><b>Model</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRSALElement()
+ * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getAlisaModel()
  * @model
  * @generated
  */
-public interface RSALElement extends EObject, NamedElement
+public interface AlisaModel extends EObject, NamedElement
 {
-} // RSALElement
+} // AlisaModel
