@@ -17,7 +17,7 @@ import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.Goal;
-import edu.cmu.sei.alisa.alisa.RequirementDocument;
+import edu.cmu.sei.alisa.alisa.RSALContainer;
 import edu.cmu.sei.alisa.analysis.preferences.PreferencesValues;
 
 public class WordImport {
@@ -79,7 +79,7 @@ public class WordImport {
 	}
 
 	public static AlisaModel importFile(String fileName, ImportType importType) {
-		RequirementDocument reqdoc;
+		RSALContainer reqdoc;
 		HWPFDocument doc;
 		POIFSFileSystem fs;
 //        WordExtractor wordExtractor;
@@ -98,7 +98,7 @@ public class WordImport {
 		currentRequirements = new Goal[MAX_DEPTH];
 		fs = null;
 
-		reqdoc = Utils.createRequirementDocument();
+		reqdoc = Utils.createRSALContainer();
 
 		try {
 			fs = new POIFSFileSystem(new FileInputStream(fileName));

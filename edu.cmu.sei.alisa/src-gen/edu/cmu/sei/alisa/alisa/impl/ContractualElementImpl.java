@@ -5,6 +5,7 @@ package edu.cmu.sei.alisa.alisa.impl;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.ContractualElement;
+import edu.cmu.sei.alisa.alisa.RSALContainer;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.XDocUri;
 
@@ -44,7 +45,7 @@ import org.osate.aadl2.impl.NamedElementImpl;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl#getAssert <em>Assert</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl#getRationale <em>Rationale</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl#getIssue <em>Issue</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl#getModelReference <em>Model Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl#getSectionReference <em>Section Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl#getRefinesReference <em>Refines Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl#getDecomposesReference <em>Decomposes Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl#getEvolvesReference <em>Evolves Reference</em>}</li>
@@ -171,14 +172,14 @@ public class ContractualElementImpl extends NamedElementImpl implements Contract
   protected EList<String> issue;
 
   /**
-   * The cached value of the '{@link #getModelReference() <em>Model Reference</em>}' attribute list.
+   * The cached value of the '{@link #getSectionReference() <em>Section Reference</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getModelReference()
+   * @see #getSectionReference()
    * @generated
    * @ordered
    */
-  protected EList<String> modelReference;
+  protected EList<RSALContainer> sectionReference;
 
   /**
    * The cached value of the '{@link #getRefinesReference() <em>Refines Reference</em>}' reference list.
@@ -449,13 +450,13 @@ public class ContractualElementImpl extends NamedElementImpl implements Contract
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getModelReference()
+  public EList<RSALContainer> getSectionReference()
   {
-    if (modelReference == null)
+    if (sectionReference == null)
     {
-      modelReference = new EDataTypeEList<String>(String.class, this, AlisaPackage.CONTRACTUAL_ELEMENT__MODEL_REFERENCE);
+      sectionReference = new EObjectResolvingEList<RSALContainer>(RSALContainer.class, this, AlisaPackage.CONTRACTUAL_ELEMENT__SECTION_REFERENCE);
     }
-    return modelReference;
+    return sectionReference;
   }
 
   /**
@@ -611,8 +612,8 @@ public class ContractualElementImpl extends NamedElementImpl implements Contract
         return getRationale();
       case AlisaPackage.CONTRACTUAL_ELEMENT__ISSUE:
         return getIssue();
-      case AlisaPackage.CONTRACTUAL_ELEMENT__MODEL_REFERENCE:
-        return getModelReference();
+      case AlisaPackage.CONTRACTUAL_ELEMENT__SECTION_REFERENCE:
+        return getSectionReference();
       case AlisaPackage.CONTRACTUAL_ELEMENT__REFINES_REFERENCE:
         return getRefinesReference();
       case AlisaPackage.CONTRACTUAL_ELEMENT__DECOMPOSES_REFERENCE:
@@ -667,9 +668,9 @@ public class ContractualElementImpl extends NamedElementImpl implements Contract
         getIssue().clear();
         getIssue().addAll((Collection<? extends String>)newValue);
         return;
-      case AlisaPackage.CONTRACTUAL_ELEMENT__MODEL_REFERENCE:
-        getModelReference().clear();
-        getModelReference().addAll((Collection<? extends String>)newValue);
+      case AlisaPackage.CONTRACTUAL_ELEMENT__SECTION_REFERENCE:
+        getSectionReference().clear();
+        getSectionReference().addAll((Collection<? extends RSALContainer>)newValue);
         return;
       case AlisaPackage.CONTRACTUAL_ELEMENT__REFINES_REFERENCE:
         getRefinesReference().clear();
@@ -738,8 +739,8 @@ public class ContractualElementImpl extends NamedElementImpl implements Contract
       case AlisaPackage.CONTRACTUAL_ELEMENT__ISSUE:
         getIssue().clear();
         return;
-      case AlisaPackage.CONTRACTUAL_ELEMENT__MODEL_REFERENCE:
-        getModelReference().clear();
+      case AlisaPackage.CONTRACTUAL_ELEMENT__SECTION_REFERENCE:
+        getSectionReference().clear();
         return;
       case AlisaPackage.CONTRACTUAL_ELEMENT__REFINES_REFERENCE:
         getRefinesReference().clear();
@@ -793,8 +794,8 @@ public class ContractualElementImpl extends NamedElementImpl implements Contract
         return RATIONALE_EDEFAULT == null ? rationale != null : !RATIONALE_EDEFAULT.equals(rationale);
       case AlisaPackage.CONTRACTUAL_ELEMENT__ISSUE:
         return issue != null && !issue.isEmpty();
-      case AlisaPackage.CONTRACTUAL_ELEMENT__MODEL_REFERENCE:
-        return modelReference != null && !modelReference.isEmpty();
+      case AlisaPackage.CONTRACTUAL_ELEMENT__SECTION_REFERENCE:
+        return sectionReference != null && !sectionReference.isEmpty();
       case AlisaPackage.CONTRACTUAL_ELEMENT__REFINES_REFERENCE:
         return refinesReference != null && !refinesReference.isEmpty();
       case AlisaPackage.CONTRACTUAL_ELEMENT__DECOMPOSES_REFERENCE:
@@ -836,8 +837,6 @@ public class ContractualElementImpl extends NamedElementImpl implements Contract
     result.append(rationale);
     result.append(", issue: ");
     result.append(issue);
-    result.append(", modelReference: ");
-    result.append(modelReference);
     result.append(')');
     return result.toString();
   }

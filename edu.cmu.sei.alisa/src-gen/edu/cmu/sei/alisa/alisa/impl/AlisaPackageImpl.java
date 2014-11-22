@@ -383,9 +383,9 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContractualElement_ModelReference()
+  public EReference getContractualElement_SectionReference()
   {
-    return (EAttribute)contractualElementEClass.getEStructuralFeatures().get(7);
+    return (EReference)contractualElementEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -553,7 +553,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getXDocUri_DocPath()
+  public EReference getXDocUri_DocReference()
   {
     return (EReference)xDocUriEClass.getEStructuralFeatures().get(0);
   }
@@ -908,7 +908,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEAttribute(contractualElementEClass, CONTRACTUAL_ELEMENT__ASSERT);
     createEAttribute(contractualElementEClass, CONTRACTUAL_ELEMENT__RATIONALE);
     createEAttribute(contractualElementEClass, CONTRACTUAL_ELEMENT__ISSUE);
-    createEAttribute(contractualElementEClass, CONTRACTUAL_ELEMENT__MODEL_REFERENCE);
+    createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__SECTION_REFERENCE);
     createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__REFINES_REFERENCE);
     createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__DECOMPOSES_REFERENCE);
     createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__EVOLVES_REFERENCE);
@@ -929,7 +929,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEAttribute(externalDocumentEClass, EXTERNAL_DOCUMENT__EXTERNAL_REFERENCE);
 
     xDocUriEClass = createEClass(XDOC_URI);
-    createEReference(xDocUriEClass, XDOC_URI__DOC_PATH);
+    createEReference(xDocUriEClass, XDOC_URI__DOC_REFERENCE);
     createEAttribute(xDocUriEClass, XDOC_URI__DOC_FRAGMENT);
 
     categoryEClass = createEClass(CATEGORY);
@@ -1010,6 +1010,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     organizationEClass.getESuperTypes().add(this.getAlisaModel());
     organizationEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
     contractualElementEClass.getESuperTypes().add(theAadl2Package.getNamedElement());
+    contractualElementEClass.getESuperTypes().add(this.getRSALElement());
     goalEClass.getESuperTypes().add(this.getRSALElement());
     goalEClass.getESuperTypes().add(this.getContractualElement());
     requirementEClass.getESuperTypes().add(this.getRSALElement());
@@ -1045,7 +1046,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEAttribute(getContractualElement_Assert(), theEcorePackage.getEString(), "assert", null, 0, 1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContractualElement_Rationale(), theEcorePackage.getEString(), "rationale", null, 0, 1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContractualElement_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContractualElement_ModelReference(), theEcorePackage.getEString(), "modelReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContractualElement_SectionReference(), this.getRSALContainer(), null, "sectionReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getContractualElement_RefinesReference(), this.getContractualElement(), null, "refinesReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getContractualElement_DecomposesReference(), this.getContractualElement(), null, "decomposesReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getContractualElement_EvolvesReference(), this.getContractualElement(), null, "evolvesReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1066,7 +1067,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEAttribute(getExternalDocument_ExternalReference(), theEcorePackage.getEString(), "externalReference", null, 0, 1, ExternalDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xDocUriEClass, XDocUri.class, "XDocUri", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getXDocUri_DocPath(), this.getExternalDocument(), null, "docPath", null, 0, 1, XDocUri.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getXDocUri_DocReference(), this.getExternalDocument(), null, "docReference", null, 0, 1, XDocUri.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getXDocUri_DocFragment(), theEcorePackage.getEString(), "docFragment", null, 0, 1, XDocUri.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(categoryEClass, Category.class, "Category", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

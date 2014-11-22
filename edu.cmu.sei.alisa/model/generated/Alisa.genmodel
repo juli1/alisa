@@ -35,7 +35,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ContractualElement/assert"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ContractualElement/rationale"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ContractualElement/issue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ContractualElement/modelReference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/sectionReference"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/refinesReference"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/decomposesReference"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/evolvesReference"/>
@@ -55,7 +55,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ExternalDocument/externalReference"/>
     </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//XDocUri">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//XDocUri/docPath"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//XDocUri/docReference"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//XDocUri/docFragment"/>
     </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//Category">

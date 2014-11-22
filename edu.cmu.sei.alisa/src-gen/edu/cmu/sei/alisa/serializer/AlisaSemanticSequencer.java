@@ -43,7 +43,8 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case AlisaPackage.CONTRACTUAL_ELEMENT:
 				if(context == grammarAccess.getContractualElementRule() ||
-				   context == grammarAccess.getNamedElementRule()) {
+				   context == grammarAccess.getNamedElementRule() ||
+				   context == grammarAccess.getRSALElementRule()) {
 					sequence_ContractualElement(context, (ContractualElement) semanticObject); 
 					return; 
 				}
@@ -139,7 +140,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID extends=[Category|CATREF]?)
+	 *     (name=ID extends=[Category|DOTTEDREF]?)
 	 */
 	protected void sequence_Category(EObject context, Category semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -151,20 +152,20 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (
 	 *         name=ID 
 	 *         target=[NamedElement|QNEREF]? 
-	 *         (category+=[Category|CATREF] category+=[Category|CATREF]*)? 
+	 *         (category+=[Category|DOTTEDREF] category+=[Category|DOTTEDREF]*)? 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
 	 *         assert=ValueString? 
 	 *         rationale=ValueString? 
 	 *         (issue+=ValueString issue+=ValueString*)? 
-	 *         (modelReference+=QCRELREF modelReference+=QCRELREF*)? 
-	 *         (refinesReference+=[ContractualElement|REQREF] refinesReference+=[ContractualElement|REQREF]*)? 
-	 *         (decomposesReference+=[ContractualElement|REQREF] decomposesReference+=[ContractualElement|REQREF]*)? 
-	 *         (evolvesReference+=[ContractualElement|REQREF] evolvesReference+=[ContractualElement|REQREF]*)? 
-	 *         (conflictsReference+=[ContractualElement|REQREF] conflictsReference+=[ContractualElement|REQREF]*)? 
-	 *         (stakeholderReference+=[Stakeholder|RELREF] stakeholderReference+=[Stakeholder|RELREF]*)? 
-	 *         (stakeholderRequirementReference+=[ContractualElement|REQREF] stakeholderRequirementReference+=[ContractualElement|REQREF]*)? 
-	 *         (systemRequirementReference+=[ContractualElement|REQREF] systemRequirementReference+=[ContractualElement|REQREF]*)? 
+	 *         (sectionReference+=[RSALContainer|DOTTEDREF] sectionReference+=[RSALContainer|DOTTEDREF]*)? 
+	 *         (refinesReference+=[ContractualElement|DOTTEDREF] refinesReference+=[ContractualElement|DOTTEDREF]*)? 
+	 *         (decomposesReference+=[ContractualElement|DOTTEDREF] decomposesReference+=[ContractualElement|DOTTEDREF]*)? 
+	 *         (evolvesReference+=[ContractualElement|DOTTEDREF] evolvesReference+=[ContractualElement|DOTTEDREF]*)? 
+	 *         (conflictsReference+=[ContractualElement|DOTTEDREF] conflictsReference+=[ContractualElement|DOTTEDREF]*)? 
+	 *         (stakeholderReference+=[Stakeholder|DOTTEDREF] stakeholderReference+=[Stakeholder|DOTTEDREF]*)? 
+	 *         (stakeholderRequirementReference+=[ContractualElement|DOTTEDREF] stakeholderRequirementReference+=[ContractualElement|DOTTEDREF]*)? 
+	 *         (systemRequirementReference+=[ContractualElement|DOTTEDREF] systemRequirementReference+=[ContractualElement|DOTTEDREF]*)? 
 	 *         (docReference+=XDocUri docReference+=XDocUri*)?
 	 *     )
 	 */
@@ -187,20 +188,19 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (
 	 *         name=ID 
 	 *         target=[NamedElement|QNEREF]? 
-	 *         (category+=[Category|CATREF] category+=[Category|CATREF]*)? 
+	 *         (category+=[Category|DOTTEDREF] category+=[Category|DOTTEDREF]*)? 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
 	 *         assert=ValueString? 
 	 *         rationale=ValueString? 
 	 *         (issue+=ValueString issue+=ValueString*)? 
-	 *         (modelReference+=QCRELREF modelReference+=QCRELREF*)? 
-	 *         (refinesReference+=[Goal|REQREF] refinesReference+=[Goal|REQREF]*)? 
-	 *         (decomposesReference+=[Goal|REQREF] decomposesReference+=[Goal|REQREF]*)? 
-	 *         (evolvesReference+=[Goal|REQREF] evolvesReference+=[Goal|REQREF]*)? 
-	 *         (conflictsReference+=[Goal|REQREF] conflictsReference+=[Goal|REQREF]*)? 
-	 *         (stakeholderReference+=[Stakeholder|RELREF] stakeholderReference+=[Stakeholder|RELREF]*)? 
-	 *         (stakeholderRequirementReference+=[Goal|REQREF] stakeholderRequirementReference+=[Goal|REQREF]*)? 
-	 *         (systemRequirementReference+=[ContractualElement|REQREF] systemRequirementReference+=[ContractualElement|REQREF]*)? 
+	 *         (refinesReference+=[Goal|DOTTEDREF] refinesReference+=[Goal|DOTTEDREF]*)? 
+	 *         (decomposesReference+=[Goal|DOTTEDREF] decomposesReference+=[Goal|DOTTEDREF]*)? 
+	 *         (evolvesReference+=[Goal|DOTTEDREF] evolvesReference+=[Goal|DOTTEDREF]*)? 
+	 *         (conflictsReference+=[Goal|DOTTEDREF] conflictsReference+=[Goal|DOTTEDREF]*)? 
+	 *         (stakeholderReference+=[Stakeholder|DOTTEDREF] stakeholderReference+=[Stakeholder|DOTTEDREF]*)? 
+	 *         (stakeholderRequirementReference+=[Goal|DOTTEDREF] stakeholderRequirementReference+=[Goal|DOTTEDREF]*)? 
+	 *         (systemRequirementReference+=[ContractualElement|DOTTEDREF] systemRequirementReference+=[ContractualElement|DOTTEDREF]*)? 
 	 *         (docReference+=XDocUri docReference+=XDocUri*)?
 	 *     )
 	 */
@@ -265,20 +265,19 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (
 	 *         name=ID 
 	 *         target=[NamedElement|QNEREF]? 
-	 *         (category+=[Category|CATREF] category+=[Category|CATREF]*)? 
+	 *         (category+=[Category|DOTTEDREF] category+=[Category|DOTTEDREF]*)? 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
 	 *         assert=ValueString? 
 	 *         rationale=ValueString? 
 	 *         (issue+=ValueString issue+=ValueString*)? 
-	 *         (modelReference+=QCRELREF modelReference+=QCRELREF*)? 
 	 *         (goalReference+=[Goal|ID] goalReference+=[Goal|ID]*)? 
 	 *         (hazardReference+=QNEREF hazardReference+=QNEREF*)? 
-	 *         (refinesReference+=[Requirement|REQREF] refinesReference+=[Requirement|REQREF]*)? 
-	 *         (decomposesReference+=[Requirement|REQREF] decomposesReference+=[Requirement|REQREF]*)? 
-	 *         (evolvesReference+=[Requirement|REQREF] evolvesReference+=[Requirement|REQREF]*)? 
-	 *         (stakeholderRequirementReference+=[Goal|REQREF] stakeholderRequirementReference+=[Goal|REQREF]*)? 
-	 *         (systemRequirementReference+=[ContractualElement|REQREF] systemRequirementReference+=[ContractualElement|REQREF]*)? 
+	 *         (refinesReference+=[Requirement|DOTTEDREF] refinesReference+=[Requirement|DOTTEDREF]*)? 
+	 *         (decomposesReference+=[Requirement|DOTTEDREF] decomposesReference+=[Requirement|DOTTEDREF]*)? 
+	 *         (evolvesReference+=[Requirement|DOTTEDREF] evolvesReference+=[Requirement|DOTTEDREF]*)? 
+	 *         (stakeholderRequirementReference+=[Goal|DOTTEDREF] stakeholderRequirementReference+=[Goal|DOTTEDREF]*)? 
+	 *         (systemRequirementReference+=[ContractualElement|DOTTEDREF] systemRequirementReference+=[ContractualElement|DOTTEDREF]*)? 
 	 *         verifiedBy+=VerificationDecomposition* 
 	 *         (docReference+=XDocUri docReference+=XDocUri*)?
 	 *     )
@@ -313,7 +312,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         description=ValueString? 
 	 *         method=VerificationMethod? 
 	 *         decomposedTo+=VerificationDecomposition* 
-	 *         assignedTo+=[Stakeholder|RELREF]*
+	 *         assignedTo+=[Stakeholder|DOTTEDREF]*
 	 *     )
 	 */
 	protected void sequence_VerificationActivity(EObject context, VerificationActivity semanticObject) {
@@ -323,7 +322,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (element=[VerificationActivity|RELREF] | (left=[VerificationActivity|RELREF] (type='and' | type='or') right=VerificationDecomposition))
+	 *     (element=[VerificationActivity|DOTTEDREF] | (left=[VerificationActivity|DOTTEDREF] (type='and' | type='or') right=VerificationDecomposition))
 	 */
 	protected void sequence_VerificationDecomposition(EObject context, VerificationDecomposition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -349,7 +348,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (docPath=[ExternalDocument|RELREF] docFragment=DOCFRAGMENT?)
+	 *     (docReference=[ExternalDocument|DOTTEDREF] docFragment=DOCFRAGMENT?)
 	 */
 	protected void sequence_XDocUri(EObject context, XDocUri semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

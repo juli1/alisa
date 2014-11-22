@@ -31,15 +31,11 @@
 package edu.cmu.sei.alisa.analysis.actions;
 
 import java.io.File;
-import java.io.IOException;
 
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.jface.action.IAction;
@@ -52,12 +48,10 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.ide.ResourceUtil;
 
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 //import edu.cmu.sei.alisa.analysis.reqimport.WordImport;
 import edu.cmu.sei.alisa.analysis.utils.Utils;
-import edu.cmu.sei.alisa.editor.editors.AlisaEditor;
 
 public final class ImportWordRequirements implements IWorkbenchWindowActionDelegate {
 
@@ -76,16 +70,16 @@ public final class ImportWordRequirements implements IWorkbenchWindowActionDeleg
 
 	public void run(IAction action) {
 		final Display currentDisplay;
-		final AlisaEditor alisaEditor;
+//		final AlisaEditor alisaEditor;
 		IEditorPart editorPart;
 
 		editorPart = window.getActivePage().getActiveEditor();
 
-		if (editorPart instanceof AlisaEditor) {
-			alisaEditor = (AlisaEditor) editorPart;
-		} else {
-			alisaEditor = null;
-		}
+//		if (editorPart instanceof AlisaEditor) {
+//			alisaEditor = (AlisaEditor) editorPart;
+//		} else {
+//			alisaEditor = null;
+//		}
 
 		currentDisplay = PlatformUI.getWorkbench().getDisplay();
 
@@ -118,17 +112,17 @@ public final class ImportWordRequirements implements IWorkbenchWindowActionDeleg
 				 * Save the produced model into the current editor
 				 */
 				ResourceSet rs = new ResourceSetImpl();
-				IResource rsrc = ResourceUtil.getResource(alisaEditor.getEditorInput());
-				Resource resource = rs.getResource(URI.createURI(rsrc.getLocationURI().toString()), true);
-				for (int i = 0; i < resource.getContents().size(); i++) {
-					resource.getContents().remove(i);
-				}
-				resource.getContents().add(producedModel);
-				try {
-					resource.save(null);
-				} catch (IOException e) {
-//					e.printStackTrace();
-				}
+//				IResource rsrc = ResourceUtil.getResource(alisaEditor.getEditorInput());
+//				Resource resource = rs.getResource(URI.createURI(rsrc.getLocationURI().toString()), true);
+//				for (int i = 0; i < resource.getContents().size(); i++) {
+//					resource.getContents().remove(i);
+//				}
+//				resource.getContents().add(producedModel);
+//				try {
+//					resource.save(null);
+//				} catch (IOException e) {
+////					e.printStackTrace();
+//				}
 
 				Utils.refreshWorkspace(monitor);
 				monitor.done();

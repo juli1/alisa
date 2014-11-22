@@ -15,7 +15,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="stakeholder" upperBound="-1"
         eType="#//Stakeholder" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ContractualElement" eSuperTypes="platform:/resource/org.osate.aadl2/model/aadl2.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ContractualElement" eSuperTypes="platform:/resource/org.osate.aadl2/model/aadl2.ecore#//NamedElement #//RSALElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass platform:/resource/org.osate.aadl2/model/aadl2.ecore#//NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="category" unique="false"
         upperBound="-1" eType="#//Category"/>
@@ -25,8 +25,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rationale" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="issue" unique="false" upperBound="-1"
         eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelReference" unique="false"
-        upperBound="-1" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sectionReference" unique="false"
+        upperBound="-1" eType="#//RSALContainer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="refinesReference" unique="false"
         upperBound="-1" eType="#//ContractualElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="decomposesReference" unique="false"
@@ -57,7 +57,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="externalReference" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="XDocUri">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="docPath" eType="#//ExternalDocument"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="docReference" eType="#//ExternalDocument"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="docFragment" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Category" eSuperTypes="platform:/resource/org.osate.aadl2/model/aadl2.ecore#//NamedElement #//RSALElement">

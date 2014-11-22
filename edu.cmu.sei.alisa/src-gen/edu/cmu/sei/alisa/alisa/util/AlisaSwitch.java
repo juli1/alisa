@@ -118,6 +118,7 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         ContractualElement contractualElement = (ContractualElement)theEObject;
         T result = caseContractualElement(contractualElement);
+        if (result == null) result = caseRSALElement(contractualElement);
         if (result == null) result = caseNamedElement(contractualElement);
         if (result == null) result = caseElement(contractualElement);
         if (result == null) result = defaultCase(theEObject);
@@ -127,8 +128,8 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         Goal goal = (Goal)theEObject;
         T result = caseGoal(goal);
-        if (result == null) result = caseRSALElement(goal);
         if (result == null) result = caseContractualElement(goal);
+        if (result == null) result = caseRSALElement(goal);
         if (result == null) result = caseNamedElement(goal);
         if (result == null) result = caseElement(goal);
         if (result == null) result = defaultCase(theEObject);
@@ -138,8 +139,8 @@ public class AlisaSwitch<T> extends Switch<T>
       {
         Requirement requirement = (Requirement)theEObject;
         T result = caseRequirement(requirement);
-        if (result == null) result = caseRSALElement(requirement);
         if (result == null) result = caseContractualElement(requirement);
+        if (result == null) result = caseRSALElement(requirement);
         if (result == null) result = caseNamedElement(requirement);
         if (result == null) result = caseElement(requirement);
         if (result == null) result = defaultCase(theEObject);

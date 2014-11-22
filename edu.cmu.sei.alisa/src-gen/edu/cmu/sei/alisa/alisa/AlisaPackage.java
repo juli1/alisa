@@ -470,13 +470,13 @@ public interface AlisaPackage extends EPackage
   int CONTRACTUAL_ELEMENT__ISSUE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
   /**
-   * The feature id for the '<em><b>Model Reference</b></em>' attribute list.
+   * The feature id for the '<em><b>Section Reference</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTRACTUAL_ELEMENT__MODEL_REFERENCE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 7;
+  int CONTRACTUAL_ELEMENT__SECTION_REFERENCE = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Refines Reference</b></em>' reference list.
@@ -678,13 +678,13 @@ public interface AlisaPackage extends EPackage
   int GOAL__ISSUE = RSAL_ELEMENT_FEATURE_COUNT + 6;
 
   /**
-   * The feature id for the '<em><b>Model Reference</b></em>' attribute list.
+   * The feature id for the '<em><b>Section Reference</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOAL__MODEL_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 7;
+  int GOAL__SECTION_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Refines Reference</b></em>' reference list.
@@ -886,13 +886,13 @@ public interface AlisaPackage extends EPackage
   int REQUIREMENT__ISSUE = RSAL_ELEMENT_FEATURE_COUNT + 6;
 
   /**
-   * The feature id for the '<em><b>Model Reference</b></em>' attribute list.
+   * The feature id for the '<em><b>Section Reference</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQUIREMENT__MODEL_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 7;
+  int REQUIREMENT__SECTION_REFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Refines Reference</b></em>' reference list.
@@ -1086,13 +1086,13 @@ public interface AlisaPackage extends EPackage
   int XDOC_URI = 8;
 
   /**
-   * The feature id for the '<em><b>Doc Path</b></em>' reference.
+   * The feature id for the '<em><b>Doc Reference</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int XDOC_URI__DOC_PATH = 0;
+  int XDOC_URI__DOC_REFERENCE = 0;
 
   /**
    * The feature id for the '<em><b>Doc Fragment</b></em>' attribute.
@@ -1778,15 +1778,15 @@ public interface AlisaPackage extends EPackage
   EAttribute getContractualElement_Issue();
 
   /**
-   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getModelReference <em>Model Reference</em>}'.
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getSectionReference <em>Section Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Model Reference</em>'.
-   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getModelReference()
+   * @return the meta object for the reference list '<em>Section Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElement#getSectionReference()
    * @see #getContractualElement()
    * @generated
    */
-  EAttribute getContractualElement_ModelReference();
+  EReference getContractualElement_SectionReference();
 
   /**
    * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getRefinesReference <em>Refines Reference</em>}'.
@@ -1961,15 +1961,15 @@ public interface AlisaPackage extends EPackage
   EClass getXDocUri();
 
   /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.XDocUri#getDocPath <em>Doc Path</em>}'.
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.XDocUri#getDocReference <em>Doc Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Doc Path</em>'.
-   * @see edu.cmu.sei.alisa.alisa.XDocUri#getDocPath()
+   * @return the meta object for the reference '<em>Doc Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.XDocUri#getDocReference()
    * @see #getXDocUri()
    * @generated
    */
-  EReference getXDocUri_DocPath();
+  EReference getXDocUri_DocReference();
 
   /**
    * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.XDocUri#getDocFragment <em>Doc Fragment</em>}'.
@@ -2456,12 +2456,12 @@ public interface AlisaPackage extends EPackage
     EAttribute CONTRACTUAL_ELEMENT__ISSUE = eINSTANCE.getContractualElement_Issue();
 
     /**
-     * The meta object literal for the '<em><b>Model Reference</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Section Reference</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CONTRACTUAL_ELEMENT__MODEL_REFERENCE = eINSTANCE.getContractualElement_ModelReference();
+    EReference CONTRACTUAL_ELEMENT__SECTION_REFERENCE = eINSTANCE.getContractualElement_SectionReference();
 
     /**
      * The meta object literal for the '<em><b>Refines Reference</b></em>' reference list feature.
@@ -2600,12 +2600,12 @@ public interface AlisaPackage extends EPackage
     EClass XDOC_URI = eINSTANCE.getXDocUri();
 
     /**
-     * The meta object literal for the '<em><b>Doc Path</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Doc Reference</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference XDOC_URI__DOC_PATH = eINSTANCE.getXDocUri_DocPath();
+    EReference XDOC_URI__DOC_REFERENCE = eINSTANCE.getXDocUri_DocReference();
 
     /**
      * The meta object literal for the '<em><b>Doc Fragment</b></em>' attribute feature.

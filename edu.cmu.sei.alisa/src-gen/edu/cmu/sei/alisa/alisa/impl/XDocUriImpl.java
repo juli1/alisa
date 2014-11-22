@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.XDocUriImpl#getDocPath <em>Doc Path</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.XDocUriImpl#getDocReference <em>Doc Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.XDocUriImpl#getDocFragment <em>Doc Fragment</em>}</li>
  * </ul>
  * </p>
@@ -31,14 +31,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class XDocUriImpl extends MinimalEObjectImpl.Container implements XDocUri
 {
   /**
-   * The cached value of the '{@link #getDocPath() <em>Doc Path</em>}' reference.
+   * The cached value of the '{@link #getDocReference() <em>Doc Reference</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDocPath()
+   * @see #getDocReference()
    * @generated
    * @ordered
    */
-  protected ExternalDocument docPath;
+  protected ExternalDocument docReference;
 
   /**
    * The default value of the '{@link #getDocFragment() <em>Doc Fragment</em>}' attribute.
@@ -86,19 +86,19 @@ public class XDocUriImpl extends MinimalEObjectImpl.Container implements XDocUri
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExternalDocument getDocPath()
+  public ExternalDocument getDocReference()
   {
-    if (docPath != null && docPath.eIsProxy())
+    if (docReference != null && docReference.eIsProxy())
     {
-      InternalEObject oldDocPath = (InternalEObject)docPath;
-      docPath = (ExternalDocument)eResolveProxy(oldDocPath);
-      if (docPath != oldDocPath)
+      InternalEObject oldDocReference = (InternalEObject)docReference;
+      docReference = (ExternalDocument)eResolveProxy(oldDocReference);
+      if (docReference != oldDocReference)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.XDOC_URI__DOC_PATH, oldDocPath, docPath));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.XDOC_URI__DOC_REFERENCE, oldDocReference, docReference));
       }
     }
-    return docPath;
+    return docReference;
   }
 
   /**
@@ -106,9 +106,9 @@ public class XDocUriImpl extends MinimalEObjectImpl.Container implements XDocUri
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExternalDocument basicGetDocPath()
+  public ExternalDocument basicGetDocReference()
   {
-    return docPath;
+    return docReference;
   }
 
   /**
@@ -116,12 +116,12 @@ public class XDocUriImpl extends MinimalEObjectImpl.Container implements XDocUri
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDocPath(ExternalDocument newDocPath)
+  public void setDocReference(ExternalDocument newDocReference)
   {
-    ExternalDocument oldDocPath = docPath;
-    docPath = newDocPath;
+    ExternalDocument oldDocReference = docReference;
+    docReference = newDocReference;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.XDOC_URI__DOC_PATH, oldDocPath, docPath));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.XDOC_URI__DOC_REFERENCE, oldDocReference, docReference));
   }
 
   /**
@@ -157,9 +157,9 @@ public class XDocUriImpl extends MinimalEObjectImpl.Container implements XDocUri
   {
     switch (featureID)
     {
-      case AlisaPackage.XDOC_URI__DOC_PATH:
-        if (resolve) return getDocPath();
-        return basicGetDocPath();
+      case AlisaPackage.XDOC_URI__DOC_REFERENCE:
+        if (resolve) return getDocReference();
+        return basicGetDocReference();
       case AlisaPackage.XDOC_URI__DOC_FRAGMENT:
         return getDocFragment();
     }
@@ -176,8 +176,8 @@ public class XDocUriImpl extends MinimalEObjectImpl.Container implements XDocUri
   {
     switch (featureID)
     {
-      case AlisaPackage.XDOC_URI__DOC_PATH:
-        setDocPath((ExternalDocument)newValue);
+      case AlisaPackage.XDOC_URI__DOC_REFERENCE:
+        setDocReference((ExternalDocument)newValue);
         return;
       case AlisaPackage.XDOC_URI__DOC_FRAGMENT:
         setDocFragment((String)newValue);
@@ -196,8 +196,8 @@ public class XDocUriImpl extends MinimalEObjectImpl.Container implements XDocUri
   {
     switch (featureID)
     {
-      case AlisaPackage.XDOC_URI__DOC_PATH:
-        setDocPath((ExternalDocument)null);
+      case AlisaPackage.XDOC_URI__DOC_REFERENCE:
+        setDocReference((ExternalDocument)null);
         return;
       case AlisaPackage.XDOC_URI__DOC_FRAGMENT:
         setDocFragment(DOC_FRAGMENT_EDEFAULT);
@@ -216,8 +216,8 @@ public class XDocUriImpl extends MinimalEObjectImpl.Container implements XDocUri
   {
     switch (featureID)
     {
-      case AlisaPackage.XDOC_URI__DOC_PATH:
-        return docPath != null;
+      case AlisaPackage.XDOC_URI__DOC_REFERENCE:
+        return docReference != null;
       case AlisaPackage.XDOC_URI__DOC_FRAGMENT:
         return DOC_FRAGMENT_EDEFAULT == null ? docFragment != null : !DOC_FRAGMENT_EDEFAULT.equals(docFragment);
     }

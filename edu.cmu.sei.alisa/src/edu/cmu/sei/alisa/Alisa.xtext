@@ -26,7 +26,7 @@ RSALPackage returns RSALContainer:
 	;
 
 RSALElement:
-	Goal | Requirement | RSALSection | Stakeholder | VerificationActivity | Category |ExternalDocument
+	ContractualElement| Goal | Requirement | RSALSection | Stakeholder | VerificationActivity | Category |ExternalDocument
 ;
 	
 RSALSection returns RSALContainer:
@@ -47,20 +47,20 @@ CR returns ContractualElement: Goal | Requirement;
 ContractualElement:
 	'cr' name=ID 
 	(( 'for' target=[aadl2::NamedElement|QNEREF])?
-	 &('category'  category+=[Category|CATREF](','category+=[Category|CATREF])*)?
+	 &('category'  category+=[Category|DOTTEDREF](','category+=[Category|DOTTEDREF])*)?
 	 &('title'  title=ValueString )? 
 	 &('description'  description=ValueString)? 
 	 &('assertion'  	assert=ValueString )? 
 	 &('rationale'  rationale=ValueString)? 
 	 &('issues'  issue+=ValueString (','issue+=ValueString)* )? 
-	 &('see'  modelReference+=QCRELREF (',' modelReference+=QCRELREF)*)? 
-	 &('refines'  refinesReference+=[ContractualElement|REQREF](',' refinesReference+=[ContractualElement|REQREF])*)? 
-	 &('decomposes'  decomposesReference+=[ContractualElement|REQREF](',' decomposesReference+=[ContractualElement|REQREF])*)? 
-	 &('evolves'  evolvesReference+=[ContractualElement|REQREF](',' evolvesReference+=[ContractualElement|REQREF])*)? 
-	 &('conflicts'  conflictsReference+=[ContractualElement|REQREF](',' conflictsReference+=[ContractualElement|REQREF])*)? 
-	 &('stakeholder'  stakeholderReference+=[Stakeholder|RELREF] (',' stakeholderReference+=[Stakeholder|RELREF])*)?
-	 &('see' 'stakeholder' 'req'  stakeholderRequirementReference+=[ContractualElement|REQREF] (',' stakeholderRequirementReference+=[ContractualElement|REQREF])*)?
-	 &('see' 'system' 'req'  systemRequirementReference+=[ContractualElement|REQREF] (',' systemRequirementReference+=[ContractualElement|REQREF])*)?
+	 &('section'  sectionReference+=[RSALContainer|DOTTEDREF] (',' sectionReference+=[RSALContainer|DOTTEDREF])*)? 
+	 &('refines'  refinesReference+=[ContractualElement|DOTTEDREF](',' refinesReference+=[ContractualElement|DOTTEDREF])*)? 
+	 &('decomposes'  decomposesReference+=[ContractualElement|DOTTEDREF](',' decomposesReference+=[ContractualElement|DOTTEDREF])*)? 
+	 &('evolves'  evolvesReference+=[ContractualElement|DOTTEDREF](',' evolvesReference+=[ContractualElement|DOTTEDREF])*)? 
+	 &('conflicts'  conflictsReference+=[ContractualElement|DOTTEDREF](',' conflictsReference+=[ContractualElement|DOTTEDREF])*)? 
+	 &('stakeholder'  stakeholderReference+=[Stakeholder|DOTTEDREF] (',' stakeholderReference+=[Stakeholder|DOTTEDREF])*)?
+	 &('see' 'stakeholder' 'req'  stakeholderRequirementReference+=[ContractualElement|DOTTEDREF] (',' stakeholderRequirementReference+=[ContractualElement|DOTTEDREF])*)?
+	 &('see' 'system' 'req'  systemRequirementReference+=[ContractualElement|DOTTEDREF] (',' systemRequirementReference+=[ContractualElement|DOTTEDREF])*)?
 	&('see' 'document'  docReference+=XDocUri (',' docReference+=XDocUri)*)? 
 	)
 	 'end';
@@ -69,20 +69,19 @@ ContractualElement:
 Goal returns Goal:
 	'goal' name=ID 
 	(( 'for' target=[aadl2::NamedElement|QNEREF])?
-	 &('category'  category+=[Category|CATREF](','category+=[Category|CATREF])*)?
+	 &('category'  category+=[Category|DOTTEDREF](','category+=[Category|DOTTEDREF])*)?
 	 &('title'  title=ValueString )? 
 	 &('description'  description=ValueString)? 
 	 &('assertion'  	assert=ValueString )? 
 	 &('rationale'  rationale=ValueString)? 
 	 &('issues'  issue+=ValueString (','issue+=ValueString)* )? 
-	 &('see'  modelReference+=QCRELREF (',' modelReference+=QCRELREF)*)? 
-	 &('refines'  refinesReference+=[Goal|REQREF](',' refinesReference+=[Goal|REQREF])*)? 
-	 &('decomposes'  decomposesReference+=[Goal|REQREF](',' decomposesReference+=[Goal|REQREF])*)? 
-	 &('evolves'  evolvesReference+=[Goal|REQREF](',' evolvesReference+=[Goal|REQREF])*)? 
-	 &('conflicts'  conflictsReference+=[Goal|REQREF](',' conflictsReference+=[Goal|REQREF])*)? 
-	 &('stakeholder'  stakeholderReference+=[Stakeholder|RELREF] (',' stakeholderReference+=[Stakeholder|RELREF])*)?
-	 &('see' 'stakeholder' 'req'  stakeholderRequirementReference+=[Goal|REQREF] (',' stakeholderRequirementReference+=[Goal|REQREF])*)?
-	 &('see' 'system' 'req'  systemRequirementReference+=[ContractualElement|REQREF] (',' systemRequirementReference+=[ContractualElement|REQREF])*)?
+	 &('refines'  refinesReference+=[Goal|DOTTEDREF](',' refinesReference+=[Goal|DOTTEDREF])*)? 
+	 &('decomposes'  decomposesReference+=[Goal|DOTTEDREF](',' decomposesReference+=[Goal|DOTTEDREF])*)? 
+	 &('evolves'  evolvesReference+=[Goal|DOTTEDREF](',' evolvesReference+=[Goal|DOTTEDREF])*)? 
+	 &('conflicts'  conflictsReference+=[Goal|DOTTEDREF](',' conflictsReference+=[Goal|DOTTEDREF])*)? 
+	 &('stakeholder'  stakeholderReference+=[Stakeholder|DOTTEDREF] (',' stakeholderReference+=[Stakeholder|DOTTEDREF])*)?
+	 &('see' 'stakeholder' 'req'  stakeholderRequirementReference+=[Goal|DOTTEDREF] (',' stakeholderRequirementReference+=[Goal|DOTTEDREF])*)?
+	 &('see' 'system' 'req'  systemRequirementReference+=[ContractualElement|DOTTEDREF] (',' systemRequirementReference+=[ContractualElement|DOTTEDREF])*)?
 	 &('see' 'document'  docReference+=XDocUri (',' docReference+=XDocUri)*)? 
 	)
 	 'end';
@@ -90,20 +89,19 @@ Goal returns Goal:
 Requirement:
 	'requirement'  name=ID   
 	(( 'for' target=[aadl2::NamedElement|QNEREF])?
- 	&('category'  category+=[Category|CATREF](',' category+=[Category|CATREF])*)?
+ 	&('category'  category+=[Category|DOTTEDREF](',' category+=[Category|DOTTEDREF])*)?
 	&('title'  title=ValueString)? 
 	&('description'  description=ValueString)? 
 	&('assertion'  assert=ValueString)? 
 	&('rationale'  rationale=ValueString)? 
 	&('issues'  issue+=ValueString (','issue+=ValueString)* )? 
-	&('see'  modelReference+=QCRELREF (',' modelReference+=QCRELREF)*)? 
 	&('see' 'goal'  goalReference+=[Goal] (',' goalReference+=[Goal])*)?
 	&('see' 'hazard'  hazardReference+=QNEREF (',' hazardReference+=QNEREF)*)? // hazardReference+=[aadl2::NamedElement|QNEREF]
-	&('refines'  refinesReference+=[Requirement|REQREF](',' refinesReference+=[Requirement|REQREF])*)? 
-	&('decomposes'  decomposesReference+=[Requirement|REQREF](',' decomposesReference+=[Requirement|REQREF])*)? 
-	&('evolves'  evolvesReference+=[Requirement|REQREF](',' evolvesReference+=[Requirement|REQREF])*)? 
-	&('see' 'stakeholder' 'req'  stakeholderRequirementReference+=[Goal|REQREF] (',' stakeholderRequirementReference+=[Goal|REQREF])*)?
-	&('see' 'system' 'req'  systemRequirementReference+=[ContractualElement|REQREF] (',' systemRequirementReference+=[ContractualElement|REQREF])*)?
+	&('refines'  refinesReference+=[Requirement|DOTTEDREF](',' refinesReference+=[Requirement|DOTTEDREF])*)? 
+	&('decomposes'  decomposesReference+=[Requirement|DOTTEDREF](',' decomposesReference+=[Requirement|DOTTEDREF])*)? 
+	&('evolves'  evolvesReference+=[Requirement|DOTTEDREF](',' evolvesReference+=[Requirement|DOTTEDREF])*)? 
+	&('see' 'stakeholder' 'req'  stakeholderRequirementReference+=[Goal|DOTTEDREF] (',' stakeholderRequirementReference+=[Goal|DOTTEDREF])*)?
+	&('see' 'system' 'req'  systemRequirementReference+=[ContractualElement|DOTTEDREF] (',' systemRequirementReference+=[ContractualElement|DOTTEDREF])*)?
 	&('verified' 'by'  verifiedBy+=(VerificationDecomposition)*)?
 	&('see' 'document'  docReference+=XDocUri (',' docReference+=XDocUri)*)? 
 	)
@@ -119,12 +117,12 @@ ExternalDocument:
 
 
 XDocUri : 
-	docPath=[ExternalDocument|RELREF] ( '#' docFragment=DOCFRAGMENT)?
+	docReference=[ExternalDocument|DOTTEDREF] ( '#' docFragment=DOCFRAGMENT)?
 ;
 
 
 Category :
-	'category' name = ID ('extends' extends=[Category|CATREF])? 'end'
+	'category' name = ID ('extends' extends=[Category|DOTTEDREF])? 'end'
 ;
 
 
@@ -151,8 +149,8 @@ Stakeholder:
 
 
 VerificationDecomposition:
-	element=([VerificationActivity|RELREF])|
-	left=([VerificationActivity|RELREF]) type=('and'|'or') right=(VerificationDecomposition)
+	element=([VerificationActivity|DOTTEDREF])|
+	left=([VerificationActivity|DOTTEDREF]) type=('and'|'or') right=(VerificationDecomposition)
 ;
 
 
@@ -168,7 +166,7 @@ VerificationActivity:
 	('method'  method=VerificationMethod)?
 //	('parameters'  verificationParameters+=([ElementReference])*)?
 	('decomposed' 'to'  decomposedTo+=(VerificationDecomposition)*)?
-	('assigned' 'to'  assignedTo+=([Stakeholder|RELREF])*)?
+	('assigned' 'to'  assignedTo+=([Stakeholder|DOTTEDREF])*)?
 	'end'  
 ;
  
@@ -200,36 +198,31 @@ enum VerificationResultStatus:
 	PASS='pass' | FAIL='fail' | UNKNOWN='unknown'
 ;
 
-	// classifier reference
-QCLREF:
-	(ID '::')* ID ('.' ID)?;
+//	// classifier reference
+//QCLREF:
+//	(ID '::')* ID ('.' ID)?;
 
 	// package reference
 QPREF:
 	ID ('::' ID)*;
 
-// error model element reference or other multi-dot path with or without qualifier
+// named element reference or other multi-dot path with or without qualifier
 QNEREF:
 	(ID '::')* ID ('.' ID)*;
 
 //  dotted path property ref or property ref
-QCRELREF:
+QDOTTEDPAREF:
 	(QNEREF (PAREF)?)|PAREF
 ;
 
 // dotted path as relative reference
-RELREF:
+DOTTEDREF:
 	ID ('.' ID)* ;	
 
-// dotted path as relative reference
-CATREF:
-	ID '.' ID ;	
 
 // reference to property (association)	
 PAREF: '#' ID ('::' ID)?;
 
-// requirement or goal reference (just dotted)
-REQREF: (ID '.')* ID ;
 
 DOCPATH: ( ID '/')* ID '.' ID;
 

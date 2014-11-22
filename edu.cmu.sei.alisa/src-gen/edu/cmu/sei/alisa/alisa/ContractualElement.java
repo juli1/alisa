@@ -4,8 +4,6 @@ package edu.cmu.sei.alisa.alisa;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 import org.osate.aadl2.NamedElement;
 
 /**
@@ -23,7 +21,7 @@ import org.osate.aadl2.NamedElement;
  *   <li>{@link edu.cmu.sei.alisa.alisa.ContractualElement#getAssert <em>Assert</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ContractualElement#getRationale <em>Rationale</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ContractualElement#getIssue <em>Issue</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.ContractualElement#getModelReference <em>Model Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.ContractualElement#getSectionReference <em>Section Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ContractualElement#getRefinesReference <em>Refines Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ContractualElement#getDecomposesReference <em>Decomposes Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ContractualElement#getEvolvesReference <em>Evolves Reference</em>}</li>
@@ -39,7 +37,7 @@ import org.osate.aadl2.NamedElement;
  * @model
  * @generated
  */
-public interface ContractualElement extends EObject, NamedElement
+public interface ContractualElement extends NamedElement, RSALElement
 {
   /**
    * Returns the value of the '<em><b>Target</b></em>' reference.
@@ -204,20 +202,20 @@ public interface ContractualElement extends EObject, NamedElement
   EList<String> getIssue();
 
   /**
-   * Returns the value of the '<em><b>Model Reference</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Section Reference</b></em>' reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.RSALContainer}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Model Reference</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Section Reference</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Model Reference</em>' attribute list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getContractualElement_ModelReference()
-   * @model unique="false"
+   * @return the value of the '<em>Section Reference</em>' reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getContractualElement_SectionReference()
+   * @model
    * @generated
    */
-  EList<String> getModelReference();
+  EList<RSALContainer> getSectionReference();
 
   /**
    * Returns the value of the '<em><b>Refines Reference</b></em>' reference list.

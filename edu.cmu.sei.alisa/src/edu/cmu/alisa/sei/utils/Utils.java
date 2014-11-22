@@ -11,6 +11,8 @@ import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
+import edu.cmu.sei.alisa.alisa.Organization;
+import edu.cmu.sei.alisa.alisa.RSALContainer;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
@@ -149,24 +151,24 @@ public class Utils {
 	 * @param model - the alisa model that will contain the
 	 *                new DocumentedRequirement.
 	 */
-	private static int NEW_DOCREQ_ID = 1;
+	private static int NEW_REQ_ID = 1;
 
-	public static Requirement addNewRequirement(RequirementDocument reqdoc) {
+	public static Requirement addNewRequirement(RSALContainer reqdoc) {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		Requirement req = factory.createRequirement();
 		req.setTitle("\"Title\"");
-		req.setName("newreq" + NEW_DOCREQ_ID++);
+		req.setName("newreq" + NEW_REQ_ID++);
 		req.setDescription("\"Desc\"");
 		reqdoc.getContent().add(req);
 
 		return req;
 	}
 
-	public static Goal addNewGoal(RequirementDocument reqdoc) {
+	public static Goal addNewGoal(RSALContainer reqdoc) {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		Goal req = factory.createGoal();
 		req.setTitle("\"Title\"");
-		req.setName("newreq" + NEW_DOCREQ_ID++);
+		req.setName("newreq" + NEW_REQ_ID++);
 		req.setDescription("\"Desc\"");
 		reqdoc.getContent().add(req);
 
@@ -180,7 +182,7 @@ public class Utils {
 	 */
 	private static int NEW_VA_ID = 1;
 
-	public static void addNewVerificationActivity(VerificationLibrary lib) {
+	public static void addNewVerificationActivity(RSALContainer lib) {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		VerificationActivity va = factory.createVerificationActivity();
 		va.setTitle("\"Title\"");
@@ -197,12 +199,12 @@ public class Utils {
 	 */
 	private static int NEW_XDOC_ID = 1;
 
-	public static void addNewExternalDocument(ExternalDocuments lib) {
+	public static void addNewExternalDocument(RSALContainer lib) {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		ExternalDocument xdoc = factory.createExternalDocument();
 		xdoc.setName("new_external_doc" + NEW_XDOC_ID++);
 		xdoc.setExternalReference("\"XRef to doc\"");
-		lib.getDocs().add(xdoc);
+		lib.getContent().add(xdoc);
 	}
 
 	/**
@@ -211,31 +213,6 @@ public class Utils {
 	 *                new goal.
 	 */
 	private static int NEW_GOAL_ID = 1;
-
-	public static void addNewGoal(Goals lib) {
-		AlisaFactory factory = AlisaFactoryImpl.init();
-		Goal va = factory.createGoal();
-		va.setTitle("\"Title\"");
-		va.setName("new_goal" + NEW_GOAL_ID++);
-		va.setDescription("\"Desc\"");
-		lib.getGoals().add(va);
-	}
-
-	/**
-	 * Add a new goal to the model
-	 * @param goals - the goals that will contain the
-	 *                new goal.
-	 */
-	private static int NEW_REQ_ID = 1;
-
-	public static void addNewRequirement(Requirements lib) {
-		AlisaFactory factory = AlisaFactoryImpl.init();
-		Requirement va = factory.createRequirement();
-		va.setTitle("\"Title\"");
-		va.setName("new_requirement" + NEW_REQ_ID++);
-		va.setDescription("\"Desc\"");
-		lib.getReqs().add(va);
-	}
 
 	/**
 	 * Add a new stakeholder to the model
@@ -259,35 +236,9 @@ public class Utils {
 	 * Create a new Model
 	 */
 
-	public static RequirementDocument createRequirementDocument() {
+	public static RSALContainer createRSALContainer() {
 		AlisaFactory factory = AlisaFactoryImpl.init();
-		RequirementDocument reqdoc = factory.createRequirementDocument();
-		return reqdoc;
-	}
-
-	public static Requirements createRequirements(RDAPackage model) {
-		AlisaFactory factory = AlisaFactoryImpl.init();
-		Requirements reqdoc = factory.createRequirements();
-		model.getContent().add(reqdoc);
-		return reqdoc;
-	}
-
-	public static Goals createGoals(RDAPackage model) {
-		AlisaFactory factory = AlisaFactoryImpl.init();
-		Goals goals = factory.createGoals();
-		model.getContent().add(goals);
-		return goals;
-	}
-
-	public static VerificationLibrary createVerificationLibrary() {
-		AlisaFactory factory = AlisaFactoryImpl.init();
-		VerificationLibrary vl = factory.createVerificationLibrary();
-		return vl;
-	}
-
-	public static ExternalDocuments createExternalDocuments() {
-		AlisaFactory factory = AlisaFactoryImpl.init();
-		ExternalDocuments reqdoc = factory.createExternalDocuments();
+		RSALContainer reqdoc = factory.createRSALContainer();
 		return reqdoc;
 	}
 
@@ -304,7 +255,7 @@ public class Utils {
 	 * @param o     - the object to be removed
 	 */
 	public static void deleteObjectFromModel(EObject o) {
-		if (!(o instanceof RSALModel)) {
+		if (!(o.eContainer() != null)) {
 			EObject reqdoc = o.eContainer();
 			reqdoc.eContents().remove(o);
 		}
