@@ -273,6 +273,16 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getRSALContainer_Target()
+  {
+    return (EReference)rsalContainerEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getRSALElement()
   {
     return rsalElementEClass;
@@ -466,6 +476,16 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
   public EReference getContractualElement_DocReference()
   {
     return (EReference)contractualElementEClass.getEStructuralFeatures().get(15);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContractualElement_ModelReference()
+  {
+    return (EAttribute)contractualElementEClass.getEStructuralFeatures().get(16);
   }
 
   /**
@@ -894,6 +914,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEReference(rsalContainerEClass, RSAL_CONTAINER__IMPORTED_NAMESPACE);
     createEReference(rsalContainerEClass, RSAL_CONTAINER__CONTENT);
     createEAttribute(rsalContainerEClass, RSAL_CONTAINER__ISSUE);
+    createEReference(rsalContainerEClass, RSAL_CONTAINER__TARGET);
 
     rsalElementEClass = createEClass(RSAL_ELEMENT);
 
@@ -917,6 +938,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__STAKEHOLDER_REQUIREMENT_REFERENCE);
     createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__SYSTEM_REQUIREMENT_REFERENCE);
     createEReference(contractualElementEClass, CONTRACTUAL_ELEMENT__DOC_REFERENCE);
+    createEAttribute(contractualElementEClass, CONTRACTUAL_ELEMENT__MODEL_REFERENCE);
 
     goalEClass = createEClass(GOAL);
 
@@ -1032,6 +1054,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEReference(getRSALContainer_ImportedNamespace(), theAadl2Package.getNamedElement(), null, "importedNamespace", null, 0, -1, RSALContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRSALContainer_Content(), this.getRSALElement(), null, "content", null, 0, -1, RSALContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRSALContainer_Issue(), theEcorePackage.getEString(), "issue", null, 0, -1, RSALContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRSALContainer_Target(), theAadl2Package.getNamedElement(), null, "target", null, 0, 1, RSALContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rsalElementEClass, RSALElement.class, "RSALElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1055,6 +1078,7 @@ public class AlisaPackageImpl extends EPackageImpl implements AlisaPackage
     initEReference(getContractualElement_StakeholderRequirementReference(), this.getContractualElement(), null, "stakeholderRequirementReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getContractualElement_SystemRequirementReference(), this.getContractualElement(), null, "systemRequirementReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getContractualElement_DocReference(), this.getXDocUri(), null, "docReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getContractualElement_ModelReference(), theEcorePackage.getEString(), "modelReference", null, 0, -1, ContractualElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

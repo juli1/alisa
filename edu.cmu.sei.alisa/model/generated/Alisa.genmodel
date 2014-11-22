@@ -22,6 +22,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//RSALContainer/importedNamespace"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//RSALContainer/content"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//RSALContainer/issue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//RSALContainer/target"/>
     </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//RSALElement"/>
     <genClasses ecoreClass="Alisa.ecore#//Organization">
@@ -44,6 +45,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/stakeholderRequirementReference"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/systemRequirementReference"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/docReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//ContractualElement/modelReference"/>
     </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//Goal"/>
     <genClasses ecoreClass="Alisa.ecore#//Requirement">

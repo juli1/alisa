@@ -8,12 +8,16 @@ import edu.cmu.sei.alisa.alisa.RSALElement;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -32,6 +36,7 @@ import org.osate.aadl2.NamedElement;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl#getContent <em>Content</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl#getIssue <em>Issue</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl#getTarget <em>Target</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,6 +73,16 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
    * @ordered
    */
   protected EList<String> issue;
+
+  /**
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTarget()
+   * @generated
+   * @ordered
+   */
+  protected NamedElement target;
 
   /**
    * <!-- begin-user-doc -->
@@ -137,6 +152,49 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
    * <!-- end-user-doc -->
    * @generated
    */
+  public NamedElement getTarget()
+  {
+    if (target != null && ((EObject)target).eIsProxy())
+    {
+      InternalEObject oldTarget = (InternalEObject)target;
+      target = (NamedElement)eResolveProxy(oldTarget);
+      if (target != oldTarget)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.RSAL_CONTAINER__TARGET, oldTarget, target));
+      }
+    }
+    return target;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NamedElement basicGetTarget()
+  {
+    return target;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTarget(NamedElement newTarget)
+  {
+    NamedElement oldTarget = target;
+    target = newTarget;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.RSAL_CONTAINER__TARGET, oldTarget, target));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -164,6 +222,9 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
         return getContent();
       case AlisaPackage.RSAL_CONTAINER__ISSUE:
         return getIssue();
+      case AlisaPackage.RSAL_CONTAINER__TARGET:
+        if (resolve) return getTarget();
+        return basicGetTarget();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -191,6 +252,9 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
         getIssue().clear();
         getIssue().addAll((Collection<? extends String>)newValue);
         return;
+      case AlisaPackage.RSAL_CONTAINER__TARGET:
+        setTarget((NamedElement)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -214,6 +278,9 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
       case AlisaPackage.RSAL_CONTAINER__ISSUE:
         getIssue().clear();
         return;
+      case AlisaPackage.RSAL_CONTAINER__TARGET:
+        setTarget((NamedElement)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -234,6 +301,8 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
         return content != null && !content.isEmpty();
       case AlisaPackage.RSAL_CONTAINER__ISSUE:
         return issue != null && !issue.isEmpty();
+      case AlisaPackage.RSAL_CONTAINER__TARGET:
+        return target != null;
     }
     return super.eIsSet(featureID);
   }

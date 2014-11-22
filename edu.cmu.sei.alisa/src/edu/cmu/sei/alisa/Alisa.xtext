@@ -30,7 +30,7 @@ RSALElement:
 ;
 	
 RSALSection returns RSALContainer:
-	'section' name =ID
+	'section' name =ID ('for' target=[aadl2::NamedElement|QNEREF])?
 		content += RSALElement+ 
 	('issues'  issue+=ValueString (','issue+=ValueString)* )? 
 	'end' 
@@ -62,6 +62,7 @@ ContractualElement:
 	 &('see' 'stakeholder' 'req'  stakeholderRequirementReference+=[ContractualElement|DOTTEDREF] (',' stakeholderRequirementReference+=[ContractualElement|DOTTEDREF])*)?
 	 &('see' 'system' 'req'  systemRequirementReference+=[ContractualElement|DOTTEDREF] (',' systemRequirementReference+=[ContractualElement|DOTTEDREF])*)?
 	&('see' 'document'  docReference+=XDocUri (',' docReference+=XDocUri)*)? 
+	& ('see' ':' modelReference+=QDOTTEDPAREF (',' modelReference+=QDOTTEDPAREF)*)? 
 	)
 	 'end';
 
@@ -83,6 +84,7 @@ Goal returns Goal:
 	 &('see' 'stakeholder' 'req'  stakeholderRequirementReference+=[Goal|DOTTEDREF] (',' stakeholderRequirementReference+=[Goal|DOTTEDREF])*)?
 	 &('see' 'system' 'req'  systemRequirementReference+=[ContractualElement|DOTTEDREF] (',' systemRequirementReference+=[ContractualElement|DOTTEDREF])*)?
 	 &('see' 'document'  docReference+=XDocUri (',' docReference+=XDocUri)*)? 
+	& ('see' ':' modelReference+=QDOTTEDPAREF (',' modelReference+=QDOTTEDPAREF)*)? 
 	)
 	 'end';
 	
@@ -104,6 +106,7 @@ Requirement:
 	&('see' 'system' 'req'  systemRequirementReference+=[ContractualElement|DOTTEDREF] (',' systemRequirementReference+=[ContractualElement|DOTTEDREF])*)?
 	&('verified' 'by'  verifiedBy+=(VerificationDecomposition)*)?
 	&('see' 'document'  docReference+=XDocUri (',' docReference+=XDocUri)*)? 
+	& ('see' ':' modelReference+=QDOTTEDPAREF (',' modelReference+=QDOTTEDPAREF)*)? 
 	)
 	'end';
 

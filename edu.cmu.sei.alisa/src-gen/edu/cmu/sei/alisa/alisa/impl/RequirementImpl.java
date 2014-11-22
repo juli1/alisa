@@ -55,6 +55,7 @@ import org.osate.aadl2.NamedElement;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getStakeholderRequirementReference <em>Stakeholder Requirement Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getSystemRequirementReference <em>System Requirement Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getDocReference <em>Doc Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getModelReference <em>Model Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getGoalReference <em>Goal Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getHazardReference <em>Hazard Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getVerifiedBy <em>Verified By</em>}</li>
@@ -264,6 +265,16 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
    * @ordered
    */
   protected EList<XDocUri> docReference;
+
+  /**
+   * The cached value of the '{@link #getModelReference() <em>Model Reference</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getModelReference()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> modelReference;
 
   /**
    * The cached value of the '{@link #getGoalReference() <em>Goal Reference</em>}' reference list.
@@ -610,6 +621,20 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<String> getModelReference()
+  {
+    if (modelReference == null)
+    {
+      modelReference = new EDataTypeEList<String>(String.class, this, AlisaPackage.REQUIREMENT__MODEL_REFERENCE);
+    }
+    return modelReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Goal> getGoalReference()
   {
     if (goalReference == null)
@@ -708,6 +733,8 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
         return getSystemRequirementReference();
       case AlisaPackage.REQUIREMENT__DOC_REFERENCE:
         return getDocReference();
+      case AlisaPackage.REQUIREMENT__MODEL_REFERENCE:
+        return getModelReference();
       case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
         return getGoalReference();
       case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
@@ -788,6 +815,10 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
         getDocReference().clear();
         getDocReference().addAll((Collection<? extends XDocUri>)newValue);
         return;
+      case AlisaPackage.REQUIREMENT__MODEL_REFERENCE:
+        getModelReference().clear();
+        getModelReference().addAll((Collection<? extends String>)newValue);
+        return;
       case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
         getGoalReference().clear();
         getGoalReference().addAll((Collection<? extends Goal>)newValue);
@@ -862,6 +893,9 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
       case AlisaPackage.REQUIREMENT__DOC_REFERENCE:
         getDocReference().clear();
         return;
+      case AlisaPackage.REQUIREMENT__MODEL_REFERENCE:
+        getModelReference().clear();
+        return;
       case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
         getGoalReference().clear();
         return;
@@ -917,6 +951,8 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
         return systemRequirementReference != null && !systemRequirementReference.isEmpty();
       case AlisaPackage.REQUIREMENT__DOC_REFERENCE:
         return docReference != null && !docReference.isEmpty();
+      case AlisaPackage.REQUIREMENT__MODEL_REFERENCE:
+        return modelReference != null && !modelReference.isEmpty();
       case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
         return goalReference != null && !goalReference.isEmpty();
       case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
@@ -955,6 +991,7 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
         case AlisaPackage.REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REQUIREMENT_REFERENCE;
         case AlisaPackage.REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__SYSTEM_REQUIREMENT_REFERENCE;
         case AlisaPackage.REQUIREMENT__DOC_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__DOC_REFERENCE;
+        case AlisaPackage.REQUIREMENT__MODEL_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__MODEL_REFERENCE;
         default: return -1;
       }
     }
@@ -989,6 +1026,7 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
         case AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REQUIREMENT_REFERENCE: return AlisaPackage.REQUIREMENT__STAKEHOLDER_REQUIREMENT_REFERENCE;
         case AlisaPackage.CONTRACTUAL_ELEMENT__SYSTEM_REQUIREMENT_REFERENCE: return AlisaPackage.REQUIREMENT__SYSTEM_REQUIREMENT_REFERENCE;
         case AlisaPackage.CONTRACTUAL_ELEMENT__DOC_REFERENCE: return AlisaPackage.REQUIREMENT__DOC_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__MODEL_REFERENCE: return AlisaPackage.REQUIREMENT__MODEL_REFERENCE;
         default: return -1;
       }
     }
@@ -1016,6 +1054,8 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
     result.append(rationale);
     result.append(", issue: ");
     result.append(issue);
+    result.append(", modelReference: ");
+    result.append(modelReference);
     result.append(", hazardReference: ");
     result.append(hazardReference);
     result.append(')');

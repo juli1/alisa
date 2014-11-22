@@ -17,6 +17,7 @@ import org.osate.aadl2.NamedElement;
  *   <li>{@link edu.cmu.sei.alisa.alisa.RSALContainer#getImportedNamespace <em>Imported Namespace</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.RSALContainer#getContent <em>Content</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.RSALContainer#getIssue <em>Issue</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.RSALContainer#getTarget <em>Target</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,5 +74,31 @@ public interface RSALContainer extends AlisaModel, NamedElement, RSALElement
    * @generated
    */
   EList<String> getIssue();
+
+  /**
+   * Returns the value of the '<em><b>Target</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Target</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Target</em>' reference.
+   * @see #setTarget(NamedElement)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRSALContainer_Target()
+   * @model
+   * @generated
+   */
+  NamedElement getTarget();
+
+  /**
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.RSALContainer#getTarget <em>Target</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Target</em>' reference.
+   * @see #getTarget()
+   * @generated
+   */
+  void setTarget(NamedElement value);
 
 } // RSALContainer

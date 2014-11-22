@@ -166,7 +166,8 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (stakeholderReference+=[Stakeholder|DOTTEDREF] stakeholderReference+=[Stakeholder|DOTTEDREF]*)? 
 	 *         (stakeholderRequirementReference+=[ContractualElement|DOTTEDREF] stakeholderRequirementReference+=[ContractualElement|DOTTEDREF]*)? 
 	 *         (systemRequirementReference+=[ContractualElement|DOTTEDREF] systemRequirementReference+=[ContractualElement|DOTTEDREF]*)? 
-	 *         (docReference+=XDocUri docReference+=XDocUri*)?
+	 *         (docReference+=XDocUri docReference+=XDocUri*)? 
+	 *         (modelReference+=QDOTTEDPAREF modelReference+=QDOTTEDPAREF*)?
 	 *     )
 	 */
 	protected void sequence_ContractualElement(EObject context, ContractualElement semanticObject) {
@@ -201,7 +202,8 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (stakeholderReference+=[Stakeholder|DOTTEDREF] stakeholderReference+=[Stakeholder|DOTTEDREF]*)? 
 	 *         (stakeholderRequirementReference+=[Goal|DOTTEDREF] stakeholderRequirementReference+=[Goal|DOTTEDREF]*)? 
 	 *         (systemRequirementReference+=[ContractualElement|DOTTEDREF] systemRequirementReference+=[ContractualElement|DOTTEDREF]*)? 
-	 *         (docReference+=XDocUri docReference+=XDocUri*)?
+	 *         (docReference+=XDocUri docReference+=XDocUri*)? 
+	 *         (modelReference+=QDOTTEDPAREF modelReference+=QDOTTEDPAREF*)?
 	 *     )
 	 */
 	protected void sequence_Goal(EObject context, Goal semanticObject) {
@@ -212,7 +214,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (
-	 *         (name=ID content+=RSALElement+ (issue+=ValueString issue+=ValueString*)?) | 
+	 *         (name=ID target=[NamedElement|QNEREF]? content+=RSALElement+ (issue+=ValueString issue+=ValueString*)?) | 
 	 *         (
 	 *             name=ID 
 	 *             (importedNamespace+=[RSALContainer|ID] importedNamespace+=[RSALContainer|ID]*)? 
@@ -253,7 +255,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID content+=RSALElement+ (issue+=ValueString issue+=ValueString*)?)
+	 *     (name=ID target=[NamedElement|QNEREF]? content+=RSALElement+ (issue+=ValueString issue+=ValueString*)?)
 	 */
 	protected void sequence_RSALSection(EObject context, RSALContainer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -279,7 +281,8 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (stakeholderRequirementReference+=[Goal|DOTTEDREF] stakeholderRequirementReference+=[Goal|DOTTEDREF]*)? 
 	 *         (systemRequirementReference+=[ContractualElement|DOTTEDREF] systemRequirementReference+=[ContractualElement|DOTTEDREF]*)? 
 	 *         verifiedBy+=VerificationDecomposition* 
-	 *         (docReference+=XDocUri docReference+=XDocUri*)?
+	 *         (docReference+=XDocUri docReference+=XDocUri*)? 
+	 *         (modelReference+=QDOTTEDPAREF modelReference+=QDOTTEDPAREF*)?
 	 *     )
 	 */
 	protected void sequence_Requirement(EObject context, Requirement semanticObject) {

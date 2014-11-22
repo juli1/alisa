@@ -53,6 +53,7 @@ import org.osate.aadl2.NamedElement;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getStakeholderRequirementReference <em>Stakeholder Requirement Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getSystemRequirementReference <em>System Requirement Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getDocReference <em>Doc Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getModelReference <em>Model Reference</em>}</li>
  * </ul>
  * </p>
  *
@@ -259,6 +260,16 @@ public class GoalImpl extends RSALElementImpl implements Goal
    * @ordered
    */
   protected EList<XDocUri> docReference;
+
+  /**
+   * The cached value of the '{@link #getModelReference() <em>Model Reference</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getModelReference()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> modelReference;
 
   /**
    * <!-- begin-user-doc -->
@@ -575,6 +586,20 @@ public class GoalImpl extends RSALElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<String> getModelReference()
+  {
+    if (modelReference == null)
+    {
+      modelReference = new EDataTypeEList<String>(String.class, this, AlisaPackage.GOAL__MODEL_REFERENCE);
+    }
+    return modelReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -629,6 +654,8 @@ public class GoalImpl extends RSALElementImpl implements Goal
         return getSystemRequirementReference();
       case AlisaPackage.GOAL__DOC_REFERENCE:
         return getDocReference();
+      case AlisaPackage.GOAL__MODEL_REFERENCE:
+        return getModelReference();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -703,6 +730,10 @@ public class GoalImpl extends RSALElementImpl implements Goal
         getDocReference().clear();
         getDocReference().addAll((Collection<? extends XDocUri>)newValue);
         return;
+      case AlisaPackage.GOAL__MODEL_REFERENCE:
+        getModelReference().clear();
+        getModelReference().addAll((Collection<? extends String>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -765,6 +796,9 @@ public class GoalImpl extends RSALElementImpl implements Goal
       case AlisaPackage.GOAL__DOC_REFERENCE:
         getDocReference().clear();
         return;
+      case AlisaPackage.GOAL__MODEL_REFERENCE:
+        getModelReference().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -811,6 +845,8 @@ public class GoalImpl extends RSALElementImpl implements Goal
         return systemRequirementReference != null && !systemRequirementReference.isEmpty();
       case AlisaPackage.GOAL__DOC_REFERENCE:
         return docReference != null && !docReference.isEmpty();
+      case AlisaPackage.GOAL__MODEL_REFERENCE:
+        return modelReference != null && !modelReference.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -843,6 +879,7 @@ public class GoalImpl extends RSALElementImpl implements Goal
         case AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REQUIREMENT_REFERENCE;
         case AlisaPackage.GOAL__SYSTEM_REQUIREMENT_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__SYSTEM_REQUIREMENT_REFERENCE;
         case AlisaPackage.GOAL__DOC_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__DOC_REFERENCE;
+        case AlisaPackage.GOAL__MODEL_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__MODEL_REFERENCE;
         default: return -1;
       }
     }
@@ -877,6 +914,7 @@ public class GoalImpl extends RSALElementImpl implements Goal
         case AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REQUIREMENT_REFERENCE: return AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE;
         case AlisaPackage.CONTRACTUAL_ELEMENT__SYSTEM_REQUIREMENT_REFERENCE: return AlisaPackage.GOAL__SYSTEM_REQUIREMENT_REFERENCE;
         case AlisaPackage.CONTRACTUAL_ELEMENT__DOC_REFERENCE: return AlisaPackage.GOAL__DOC_REFERENCE;
+        case AlisaPackage.CONTRACTUAL_ELEMENT__MODEL_REFERENCE: return AlisaPackage.GOAL__MODEL_REFERENCE;
         default: return -1;
       }
     }
@@ -904,6 +942,8 @@ public class GoalImpl extends RSALElementImpl implements Goal
     result.append(rationale);
     result.append(", issue: ");
     result.append(issue);
+    result.append(", modelReference: ");
+    result.append(modelReference);
     result.append(')');
     return result.toString();
   }

@@ -30,6 +30,7 @@ import org.osate.aadl2.NamedElement;
  *   <li>{@link edu.cmu.sei.alisa.alisa.ContractualElement#getStakeholderRequirementReference <em>Stakeholder Requirement Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ContractualElement#getSystemRequirementReference <em>System Requirement Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.ContractualElement#getDocReference <em>Doc Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.ContractualElement#getModelReference <em>Model Reference</em>}</li>
  * </ul>
  * </p>
  *
@@ -344,5 +345,21 @@ public interface ContractualElement extends NamedElement, RSALElement
    * @generated
    */
   EList<XDocUri> getDocReference();
+
+  /**
+   * Returns the value of the '<em><b>Model Reference</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Model Reference</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Model Reference</em>' attribute list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getContractualElement_ModelReference()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getModelReference();
 
 } // ContractualElement
