@@ -1,0 +1,275 @@
+grammar edu.cmu.sei.alisa.Alisa with org.eclipse.xtext.common.Terminals
+
+//generate alisa "http://www.cmu.edu/sei/alisa/Alisa"
+import "platform:/resource/edu.cmu.sei.alisa/model/generated/Alisa.ecore" as alisa
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "platform:/resource/org.osate.aadl2/model/aadl2.ecore" as aadl2
+
+
+AlisaModel returns alisa::RSALContainer:
+	RDAPackage | VerificationLibrary | RequirementDocument  
+		| Organization |ExternalDocuments | AlisaConfiguration
+	;
+
+ContractualElement returns alisa::ContractualElement: Goal | Requirement ;
+
+ReqDocContent returns alisa::RSALElement: ContractualElement | DocumentSection;
+
+
+RequirementDocument returns alisa::RSALContainer:
+	'requirement' 'document' name=ID
+	(content += ReqDocContent)* 
+	'end' 'requirement' 'document'
+	';';
+	
+DocumentSection returns alisa::RSALContainer:
+	'section' name =ID
+		(content += ReqDocContent)* 
+	'end' 'section' ';'
+;
+
+
+VerificationLibrary  returns alisa::RSALContainer:
+	'verification' 'library' name=ID
+	content += (VerificationActivity )*//| VerificationResult)*  
+	'end' 'verification' 'library'
+	';';
+//
+//ConstraintLibrary:
+//	'constraint' 'library' name=ID
+//	content += (Requirements)*  
+//	'end' 'constraint' 'library'
+//	';';
+
+RDAPackage  returns alisa::RSALContainer:
+	'package' name = ID
+	('imports' importedNamespace+=[alisa::RSALContainer](',' importedNamespace+=[alisa::RSALContainer])*';')?
+	('with' importedNamespace+=[aadl2::AadlPackage|QPREF](',' importedNamespace+=[aadl2::AadlPackage|QPREF])*';')?
+	content+=(Goals | Requirements  
+	)*
+	'end' 'package' ';';
+
+Goals  returns alisa::RSALContainer:
+	'goals' name=ID 'for' target=[aadl2::NamedElement|QCLREF]
+	(content+=  Goal)*
+	('issues' ':' issue+=ValueString (','issue+=ValueString)* ';')? 
+	'end' 'goals'';'
+	;
+
+
+Goal returns alisa::Goal:
+	'goal' name=ID 
+	(( 'for' target=[aadl2::NamedElement|RELREF])? //goalTarget=[aadl2::NamedElement|RELREF])?
+	& ('category' ':' category+=[alisa::Category|CATREF](','category+=[alisa::Category|CATREF])*';')?
+	& ('title' ':' title=ValueString ';')? 
+	& ('description' ':' description=ValueString';')? 
+	& ('assertion' ':' 	assert=ValueString ';')? 
+	& ('rationale' ':' rationale=ValueString';')? 
+	& ('issues' ':' issue+=ValueString (','issue+=ValueString)* ';')? 
+	& ('see' ':' modelReference+=QCRELREF (',' modelReference+=QCRELREF)*';')? 
+	& ('refines' ':' refinesReference+=[alisa::Goal|REQREF](',' refinesReference+=[alisa::Goal|REQREF])*';')? 
+	& ('decomposes' ':' decomposesReference+=[alisa::Goal|REQREF](',' decomposesReference+=[alisa::Goal|REQREF])*';')? 
+	& ('evolves' ':' evolvesReference+=[alisa::Goal|REQREF](',' evolvesReference+=[alisa::Goal|REQREF])*';')? 
+	& ('conflicts' ':' conflictsReference+=[alisa::Goal|REQREF](',' conflictsReference+=[alisa::Goal|REQREF])*';')? 
+	& ('stakeholder' ':' stakeholderReference+=[alisa::Stakeholder|RELREF] (',' stakeholderReference+=[alisa::Stakeholder|RELREF])*';')?
+	& ('see' 'stakeholder' 'req' ':' stakeholderRequirementReference+=[alisa::Goal|REQREF] (',' stakeholderRequirementReference+=[alisa::Goal|REQREF])*';')?
+	&('see' 'system' 'req' ':' systemRequirementReference+=[alisa::ContractualElement|REQREF] (',' systemRequirementReference+=[alisa::ContractualElement|REQREF])*';')?
+	& ('see' 'document' ':' docReference+=XDocUri (',' docReference+=XDocUri)*';')? 
+	)
+	 'end''goal'';';
+
+Requirements  returns alisa::RSALContainer:
+	'requirements' name=ID 'for' target=[aadl2::NamedElement|QCLREF]//(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
+	(content+=Requirement)*
+	('issues' ':' issue+=ValueString (','issue+=ValueString)* ';')? 
+	'end' 'requirements' ';';
+
+//ContractCategory : 'requirement'|'assumption'|'input''assumption'|'guarantee'|'output''guarantee'|'invariant'|'constraint'|'design''constraint'|'development' 'requirement'|'system' 'requirement';
+	
+Requirement returns alisa::Requirement:
+	'requirement'  name=ID   
+	
+	(( 'for' target=[aadl2::NamedElement|RELREF])? //target=[aadl2::NamedElement|RELREF])?
+ 	&('category' ':' category+=[alisa::Category|CATREF](',' category+=[alisa::Category|CATREF])*';')?
+	&('title' ':' title=ValueString';')? 
+	&('description' ':' description=ValueString';')? 
+	&('assertion' ':' assert=ValueString';')? 
+	&('rationale' ':' rationale=ValueString';')? 
+	&('issues' ':' issue+=ValueString (','issue+=ValueString)* ';')? 
+	&('see' ':' modelReference+=QCRELREF (',' modelReference+=QCRELREF)*';')? 
+	&('see' 'goal' ':' goalReference+=[alisa::Goal] (',' goalReference+=[alisa::Goal])*';')?
+	&('see' 'hazard' ':' hazardReference+=QNEREF (',' hazardReference+=QNEREF)*';')? // hazardReference+=[aadl2::NamedElement|QNEREF]
+	&('refines' ':' refinesReference+=[alisa::Requirement|REQREF](',' refinesReference+=[alisa::Requirement|REQREF])*';')? 
+	&('decomposes' ':' decomposesReference+=[alisa::Requirement|REQREF](',' decomposesReference+=[alisa::Requirement|REQREF])*';')? 
+	&('evolves' ':' evolvesReference+=[alisa::Requirement|REQREF](',' evolvesReference+=[alisa::Requirement|REQREF])*';')? 
+	&('verified' 'by' ':' verifiedBy+=(VerificationDecomposition)*)?
+	&('see' 'stakeholder' 'req' ':' stakeholderRequirementReference+=[alisa::Goal|REQREF] (',' stakeholderRequirementReference+=[alisa::Goal|REQREF])*';')?
+	&('see' 'system' 'req' ':' systemRequirementReference+=[alisa::ContractualElement|REQREF] (',' systemRequirementReference+=[alisa::ContractualElement|REQREF])*';')?
+	&('see' 'document' ':' docReference+=XDocUri (',' docReference+=XDocUri)*';')? 
+	)
+	'end''requirement'';';
+
+
+ExternalDocuments  returns alisa::RSALContainer:
+	'documents'
+	name=ID 
+	content+=ExternalDocument ( content+=ExternalDocument)*
+	'end''documents' ';'
+	
+;
+
+
+ExternalDocument returns alisa::ExternalDocument:
+	'document'
+	name=ID 'see' ':' externalReference=DOCPATH ';'
+	
+;
+
+
+XDocUri returns alisa::XDocUri: 
+	docReference=[alisa::ExternalDocument|RELREF] ( '#' docFragment=DOCFRAGMENT)?
+;
+
+AlisaConfiguration returns alisa::RSALContainer:
+	'configuration' name = ID
+	'categories'
+	(content+= Category)*
+	'end' 'categories' ';'
+	'end' 'configuration'';'
+;
+
+Category returns alisa::Category:
+	'category' name = ID ('extends' extends=[alisa::Category|CATREF])?';'
+;
+
+
+ValueString :
+	// remove quotes from string in ValueConverter 
+	STRING
+;
+
+/*
+ * Stakeholder
+ */
+Stakeholder returns alisa::Stakeholder:
+	'stakeholder' name=ID
+	(('title' ':' title=ValueString ';')?
+	&('description' ':' description=ValueString ';')?
+	&('role' ':' role=ValueString ';')?
+	&('email' ':' email=ValueString';')?
+	&('phone' ':' phone=ValueString';')?)
+	'end' 'stakeholder' ';'
+;
+
+
+Organization returns alisa::RSALContainer:
+	'organization' name=ID 
+	(content += Stakeholder)*
+	'end' 'organization'';'
+	;
+
+
+
+VerificationDecomposition returns alisa::VerificationDecomposition:
+	element=([alisa::VerificationActivity|RELREF])|
+	left=([alisa::VerificationActivity|RELREF]) type=('and'|'or') right=(VerificationDecomposition)
+;
+
+
+
+/*
+ * Verification Activity
+ */
+
+VerificationActivity returns alisa::VerificationActivity:
+	'verification' 'activity' name=ID
+	('title' ':' title=ValueString';')?
+	('description' ':' description=ValueString';')?
+	('method' ':' method=VerificationMethod';')?
+//	('parameters' ':' verificationParameters+=([ElementReference])*)?
+	('decomposed' 'to' ':' decomposedTo+=(VerificationDecomposition)*';')?
+	('assigned' 'to' ':' assignedTo+=([alisa::Stakeholder|RELREF])*';')?
+	'end' 'verification' 'activity' ';'
+;
+ 
+
+VerificationMethod:
+	'manual' | 'automatic' | 'review' | 'testing' | 'analysis' | 'verification'
+;
+
+
+/*
+ * Verification Result
+ */
+
+VerificationResult returns alisa::VerificationResult:
+	'verification' 'result' name=ID 'of' referencedVerificationMethod+=([alisa::VerificationActivity])*
+	('output' ':' title=ValueString';')?
+	('logfile' ':' description=ValueString';')?
+	('date' ':' method=ValueString';')?
+	('state' ':' state=VerificationResultState';')?
+	('status' ':' status=VerificationResultStatus';')?
+	'end' 'verification' 'result' ';'
+;
+
+enum  VerificationResultState returns alisa::VerificationResultState:
+	SCHEDULED='scheduled' | COMPLETED='completed' | INPROGRESS='inprogress'
+;
+
+enum VerificationResultStatus returns alisa::VerificationResultStatus:
+	PASS='pass' | FAIL='fail' | UNKNOWN='unknown'
+;
+
+	// classifier reference
+QCLREF:
+	(ID '::')* ID ('.' ID)?;
+
+	// package reference
+QPREF:
+	ID ('::' ID)*;
+
+// error model element reference or other multi-dot path with or without qualifier
+QNEREF:
+	(ID '::')* ID ('.' ID)*;
+
+//  dotted path property ref or property ref
+QCRELREF:
+	(QNEREF (PAREF)?)|PAREF
+;
+
+// dotted path as relative reference
+RELREF:
+	ID ('.' ID)* ;	
+
+// dotted path as relative reference
+CATREF:
+	ID '.' ID ;	
+
+// reference to property (association)	
+PAREF: '#' ID ('::' ID)?;
+
+// requirement or goal reference (just dotted)
+REQREF: (ID '.')* ID ;
+
+DOCPATH: ( ID '/')* ID '.' ID;
+
+DOCFRAGMENT: ID ('.' ID)*;
+
+terminal STRING:
+	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | '"'))* '"' |
+	"'" ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | "'"))* "'";
+
+	//terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+
+terminal ID:
+	('a'..'z'
+	| 'A'..'Z') (('_')? ('a'..'z'
+	| 'A'..'Z'
+	| '0'..'9'))*;
+
+terminal WS:
+	(' ' | '\t' | '\r' | '\n')+;
+
+
+
