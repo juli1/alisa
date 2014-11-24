@@ -1,23 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="Alisa" version="8.1.0">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:description_3="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="Alisa" version="8.1.0">
   <ownedViewpoints name="requirements" modelFileExtension="alisa">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Requirements diagram" domainClass="alisa.RDAPackage">
       <defaultLayer name="Default">
+        <edgeMappings name="SubRequirement" sourceMapping="//@ownedViewpoints[name='requirements']/@ownedRepresentations[name='Requirements%20diagram']/@defaultLayer/@containerMappings[name='RequirementsContainer']/@subNodeMappings[name='RequirementNode']" targetMapping="//@ownedViewpoints[name='requirements']/@ownedRepresentations[name='Requirements%20diagram']/@defaultLayer/@containerMappings[name='RequirementsContainer']/@subNodeMappings[name='RequirementNode']" targetFinderExpression="feature:refinesReference">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
         <containerMappings name="RequirementsContainer" semanticCandidatesExpression="feature:content" domainClass="alisa.Requirements">
           <subNodeMappings name="RequirementNode" domainClass="alisa.Requirement">
+            <borderedNodeMappings name="RequirementNode" domainClass="alisa.Requirement">
+              <style xsi:type="style:NoteDescription" labelExpression="[self.name+': '+self.title/]" tooltipExpression="feature:description" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+              </style>
+            </borderedNodeMappings>
             <style xsi:type="style:NoteDescription" labelExpression="[self.name+': '+self.title/]" tooltipExpression="feature:description" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:ShapeContainerStyleDescription" labelExpression="[reqTarget.name/]">
+          <style xsi:type="style:ShapeContainerStyleDescription" labelExpression="[self.reqTarget.name/]">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
           </style>
         </containerMappings>
       </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Requirements Table" domainClass="aadl2.Classifier">
+      <metamodel href="../../org.osate.aadl2/model/aadl2.ecore#/"/>
+      <ownedLineMappings name="My Reqs" semanticElements="[self.eInverse()/]" domainClass="alisa.Requirement"/>
+      <ownedColumnMappings name="MyName" featureName="feature:name"/>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_3:TreeDescription" name="Req Tree" domainClass="aadl2.Classifier">
+      <subItemMappings name="root" domainClass="aadl2.Classifier">
+        <defaultStyle>
+          <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+        </defaultStyle>
+        <subItemMappings name="MyRequirement" domainClass="alisa.Requirement" semanticCandidatesExpression="[self.eInverse()/]">
+          <defaultStyle>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </defaultStyle>
+        </subItemMappings>
+      </subItemMappings>
     </ownedRepresentations>
   </ownedViewpoints>
 </description:Group>
