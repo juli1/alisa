@@ -177,6 +177,7 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
 		if (cell.getElement() instanceof Requirement) {
 			Requirement req = (Requirement) cell.getElement();
 			Requirements reqs = (Requirements) req.eContainer();
+			NamedElement target;
 			switch (index) {
 			case 0:
 				text = Utils.getCategoryListAsString(req.getCategory());
@@ -185,9 +186,9 @@ public class AlisaLabelProvider extends StyledCellLabelProvider {
 				text = reqs.getName() + "." + req.getName();
 				break;
 			case 2:
-				NamedElement cl = reqs.getReqTarget();
-				String target = req.getTarget();
-				text = cl.getName() + (target != null && !target.isEmpty() ? "." + target : "");
+				NamedElement cl = reqs.getTarget();
+				target = req.getTarget();
+				text = cl.getName() + (target != null ? "." + target.getName() : "");
 				break;
 			case 3:
 				text = req.getTitle();

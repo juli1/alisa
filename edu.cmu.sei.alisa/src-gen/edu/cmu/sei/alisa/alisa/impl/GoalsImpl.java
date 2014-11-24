@@ -33,7 +33,7 @@ import org.osate.aadl2.NamedElement;
  * The following features are implemented:
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getGoalTarget <em>Goal Target</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getGoals <em>Goals</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalsImpl#getIssue <em>Issue</em>}</li>
  * </ul>
@@ -64,14 +64,14 @@ public class GoalsImpl extends AlisaElementImpl implements Goals
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getGoalTarget() <em>Goal Target</em>}' reference.
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGoalTarget()
+   * @see #getTarget()
    * @generated
    * @ordered
    */
-  protected NamedElement goalTarget;
+  protected NamedElement target;
 
   /**
    * The cached value of the '{@link #getGoals() <em>Goals</em>}' containment reference list.
@@ -142,19 +142,19 @@ public class GoalsImpl extends AlisaElementImpl implements Goals
    * <!-- end-user-doc -->
    * @generated
    */
-  public NamedElement getGoalTarget()
+  public NamedElement getTarget()
   {
-    if (goalTarget != null && ((EObject)goalTarget).eIsProxy())
+    if (target != null && ((EObject)target).eIsProxy())
     {
-      InternalEObject oldGoalTarget = (InternalEObject)goalTarget;
-      goalTarget = (NamedElement)eResolveProxy(oldGoalTarget);
-      if (goalTarget != oldGoalTarget)
+      InternalEObject oldTarget = (InternalEObject)target;
+      target = (NamedElement)eResolveProxy(oldTarget);
+      if (target != oldTarget)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.GOALS__GOAL_TARGET, oldGoalTarget, goalTarget));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.GOALS__TARGET, oldTarget, target));
       }
     }
-    return goalTarget;
+    return target;
   }
 
   /**
@@ -162,9 +162,9 @@ public class GoalsImpl extends AlisaElementImpl implements Goals
    * <!-- end-user-doc -->
    * @generated
    */
-  public NamedElement basicGetGoalTarget()
+  public NamedElement basicGetTarget()
   {
-    return goalTarget;
+    return target;
   }
 
   /**
@@ -172,12 +172,12 @@ public class GoalsImpl extends AlisaElementImpl implements Goals
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setGoalTarget(NamedElement newGoalTarget)
+  public void setTarget(NamedElement newTarget)
   {
-    NamedElement oldGoalTarget = goalTarget;
-    goalTarget = newGoalTarget;
+    NamedElement oldTarget = target;
+    target = newTarget;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOALS__GOAL_TARGET, oldGoalTarget, goalTarget));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOALS__TARGET, oldTarget, target));
   }
 
   /**
@@ -236,9 +236,9 @@ public class GoalsImpl extends AlisaElementImpl implements Goals
     {
       case AlisaPackage.GOALS__NAME:
         return getName();
-      case AlisaPackage.GOALS__GOAL_TARGET:
-        if (resolve) return getGoalTarget();
-        return basicGetGoalTarget();
+      case AlisaPackage.GOALS__TARGET:
+        if (resolve) return getTarget();
+        return basicGetTarget();
       case AlisaPackage.GOALS__GOALS:
         return getGoals();
       case AlisaPackage.GOALS__ISSUE:
@@ -261,8 +261,8 @@ public class GoalsImpl extends AlisaElementImpl implements Goals
       case AlisaPackage.GOALS__NAME:
         setName((String)newValue);
         return;
-      case AlisaPackage.GOALS__GOAL_TARGET:
-        setGoalTarget((NamedElement)newValue);
+      case AlisaPackage.GOALS__TARGET:
+        setTarget((NamedElement)newValue);
         return;
       case AlisaPackage.GOALS__GOALS:
         getGoals().clear();
@@ -289,8 +289,8 @@ public class GoalsImpl extends AlisaElementImpl implements Goals
       case AlisaPackage.GOALS__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AlisaPackage.GOALS__GOAL_TARGET:
-        setGoalTarget((NamedElement)null);
+      case AlisaPackage.GOALS__TARGET:
+        setTarget((NamedElement)null);
         return;
       case AlisaPackage.GOALS__GOALS:
         getGoals().clear();
@@ -314,8 +314,8 @@ public class GoalsImpl extends AlisaElementImpl implements Goals
     {
       case AlisaPackage.GOALS__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AlisaPackage.GOALS__GOAL_TARGET:
-        return goalTarget != null;
+      case AlisaPackage.GOALS__TARGET:
+        return target != null;
       case AlisaPackage.GOALS__GOALS:
         return goals != null && !goals.isEmpty();
       case AlisaPackage.GOALS__ISSUE:

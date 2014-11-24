@@ -16,6 +16,7 @@ package edu.cmu.sei.alisa.editor.utils;
 
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.swt.widgets.TableItem;
+import org.osate.aadl2.NamedElement;
 
 import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.alisa.Category;
@@ -81,7 +82,7 @@ public class AlisaEditorCellModifier implements ICellModifier {
 				break;
 			}
 			case 2: {
-				returnValue = Utils.fixString(requirement.getTarget());
+				returnValue = requirement.getTarget();
 				break;
 			}
 			case 3: {
@@ -269,7 +270,7 @@ public class AlisaEditorCellModifier implements ICellModifier {
 				break;
 			}
 			case 2: {
-				requirement.setTarget((String) value);
+				requirement.setTarget((NamedElement) value);
 				break;
 			}
 			case 3: {

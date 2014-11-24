@@ -248,7 +248,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         target=RELREF? 
+	 *         target=[NamedElement|RELREF]? 
 	 *         (category+=[Category|CATREF] category+=[Category|CATREF]*)? 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
@@ -273,7 +273,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID goalTarget=[NamedElement|QCLREF] goals+=Goal* (issue+=ValueString issue+=ValueString*)?)
+	 *     (name=ID target=[NamedElement|QCLREF] goals+=Goal* (issue+=ValueString issue+=ValueString*)?)
 	 */
 	protected void sequence_Goals(EObject context, Goals semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -316,7 +316,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         target=RELREF? 
+	 *         target=[NamedElement|RELREF]? 
 	 *         (category+=[Category|CATREF] category+=[Category|CATREF]*)? 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
@@ -342,7 +342,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=ID reqTarget=[NamedElement|QCLREF] reqs+=Requirement* (issue+=ValueString issue+=ValueString*)?)
+	 *     (name=ID target=[NamedElement|QCLREF] reqs+=Requirement* (issue+=ValueString issue+=ValueString*)?)
 	 */
 	protected void sequence_Requirements(EObject context, Requirements semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

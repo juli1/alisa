@@ -724,7 +724,7 @@ ruleGoals returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getGoalsAccess().getGoalTargetNamedElementCrossReference_3_0()); 
+	        newCompositeNode(grammarAccess.getGoalsAccess().getTargetNamedElementCrossReference_3_0()); 
 	    }
 		ruleQCLREF		{ 
 	        afterParserOrEnumRuleCall();
@@ -885,18 +885,15 @@ ruleGoal returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getGoalAccess().getTargetRELREFParserRuleCall_2_0_1_0()); 
-	    }
-		lv_target_4_0=ruleRELREF		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getGoalRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGoalRule());
 	        }
-       		set(
-       			$current, 
-       			"target",
-        		lv_target_4_0, 
-        		"RELREF");
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getGoalAccess().getTargetNamedElementCrossReference_2_0_1_0()); 
+	    }
+		ruleRELREF		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1886,7 +1883,7 @@ ruleRequirements returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getRequirementsAccess().getReqTargetNamedElementCrossReference_3_0()); 
+	        newCompositeNode(grammarAccess.getRequirementsAccess().getTargetNamedElementCrossReference_3_0()); 
 	    }
 		ruleQCLREF		{ 
 	        afterParserOrEnumRuleCall();
@@ -2047,18 +2044,15 @@ ruleRequirement returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getRequirementAccess().getTargetRELREFParserRuleCall_2_0_1_0()); 
-	    }
-		lv_target_4_0=ruleRELREF		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getRequirementRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRequirementRule());
 	        }
-       		set(
-       			$current, 
-       			"target",
-        		lv_target_4_0, 
-        		"RELREF");
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getRequirementAccess().getTargetNamedElementCrossReference_2_0_1_0()); 
+	    }
+		ruleRELREF		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 

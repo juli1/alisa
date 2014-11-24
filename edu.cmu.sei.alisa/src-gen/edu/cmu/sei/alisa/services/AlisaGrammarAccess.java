@@ -548,9 +548,9 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cForKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cGoalTargetAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cGoalTargetNamedElementCrossReference_3_0 = (CrossReference)cGoalTargetAssignment_3.eContents().get(0);
-		private final RuleCall cGoalTargetNamedElementQCLREFParserRuleCall_3_0_1 = (RuleCall)cGoalTargetNamedElementCrossReference_3_0.eContents().get(1);
+		private final Assignment cTargetAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cTargetNamedElementCrossReference_3_0 = (CrossReference)cTargetAssignment_3.eContents().get(0);
+		private final RuleCall cTargetNamedElementQCLREFParserRuleCall_3_0_1 = (RuleCall)cTargetNamedElementCrossReference_3_0.eContents().get(1);
 		private final Assignment cGoalsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cGoalsGoalParserRuleCall_4_0 = (RuleCall)cGoalsAssignment_4.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
@@ -568,11 +568,11 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Goals:
-		//	"goals" name=ID "for" goalTarget=[aadl2::NamedElement|QCLREF] goals+=Goal* ("issues" ":" issue+=ValueString (","
+		//	"goals" name=ID "for" target=[aadl2::NamedElement|QCLREF] goals+=Goal* ("issues" ":" issue+=ValueString (","
 		//	issue+=ValueString)* ";")? "end" "goals" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"goals" name=ID "for" goalTarget=[aadl2::NamedElement|QCLREF] goals+=Goal* ("issues" ":" issue+=ValueString (","
+		//"goals" name=ID "for" target=[aadl2::NamedElement|QCLREF] goals+=Goal* ("issues" ":" issue+=ValueString (","
 		//issue+=ValueString)* ";")? "end" "goals" ";"
 		public Group getGroup() { return cGroup; }
 
@@ -588,14 +588,14 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//"for"
 		public Keyword getForKeyword_2() { return cForKeyword_2; }
 
-		//goalTarget=[aadl2::NamedElement|QCLREF]
-		public Assignment getGoalTargetAssignment_3() { return cGoalTargetAssignment_3; }
+		//target=[aadl2::NamedElement|QCLREF]
+		public Assignment getTargetAssignment_3() { return cTargetAssignment_3; }
 
 		//[aadl2::NamedElement|QCLREF]
-		public CrossReference getGoalTargetNamedElementCrossReference_3_0() { return cGoalTargetNamedElementCrossReference_3_0; }
+		public CrossReference getTargetNamedElementCrossReference_3_0() { return cTargetNamedElementCrossReference_3_0; }
 
 		//QCLREF
-		public RuleCall getGoalTargetNamedElementQCLREFParserRuleCall_3_0_1() { return cGoalTargetNamedElementQCLREFParserRuleCall_3_0_1; }
+		public RuleCall getTargetNamedElementQCLREFParserRuleCall_3_0_1() { return cTargetNamedElementQCLREFParserRuleCall_3_0_1; }
 
 		//goals+=Goal*
 		public Assignment getGoalsAssignment_4() { return cGoalsAssignment_4; }
@@ -653,7 +653,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_2_0 = (Group)cUnorderedGroup_2.eContents().get(0);
 		private final Keyword cForKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
 		private final Assignment cTargetAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
-		private final RuleCall cTargetRELREFParserRuleCall_2_0_1_0 = (RuleCall)cTargetAssignment_2_0_1.eContents().get(0);
+		private final CrossReference cTargetNamedElementCrossReference_2_0_1_0 = (CrossReference)cTargetAssignment_2_0_1.eContents().get(0);
+		private final RuleCall cTargetNamedElementRELREFParserRuleCall_2_0_1_0_1 = (RuleCall)cTargetNamedElementCrossReference_2_0_1_0.eContents().get(1);
 		private final Group cGroup_2_1 = (Group)cUnorderedGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Keyword cColonKeyword_2_1_1 = (Keyword)cGroup_2_1.eContents().get(1);
@@ -816,7 +817,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Goal:
-		//	"goal" name=ID (("for" target=RELREF)? //goalTarget=[aadl2::NamedElement|RELREF])?
+		//	"goal" name=ID (("for" target=[aadl2::NamedElement|RELREF])? //target=RELREF)? //
 		//	& ("category" ":" category+=[Category|CATREF] ("," category+=[Category|CATREF])* ";")? & ("title" ":" title=ValueString
 		//	";")? & ("description" ":" description=ValueString ";")? & ("assertion" ":" assert=ValueString ";")? & ("rationale"
 		//	":" rationale=ValueString ";")? & ("issues" ":" issue+=ValueString ("," issue+=ValueString)* ";")? & ("see" ":"
@@ -832,7 +833,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//	docReference+=[ExternalDocument|RELREF] ("," docReference+=[ExternalDocument|RELREF])* ";")?) "end" "goal" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"goal" name=ID (("for" target=RELREF)? //goalTarget=[aadl2::NamedElement|RELREF])?
+		//"goal" name=ID (("for" target=[aadl2::NamedElement|RELREF])? //target=RELREF)? //
 		//& ("category" ":" category+=[Category|CATREF] ("," category+=[Category|CATREF])* ";")? & ("title" ":" title=ValueString
 		//";")? & ("description" ":" description=ValueString ";")? & ("assertion" ":" assert=ValueString ";")? & ("rationale"
 		//":" rationale=ValueString ";")? & ("issues" ":" issue+=ValueString ("," issue+=ValueString)* ";")? & ("see" ":"
@@ -857,7 +858,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//("for" target=RELREF)? //goalTarget=[aadl2::NamedElement|RELREF])?
+		//("for" target=[aadl2::NamedElement|RELREF])? //target=RELREF)? //
 		//& ("category" ":" category+=[Category|CATREF] ("," category+=[Category|CATREF])* ";")? & ("title" ":" title=ValueString
 		//";")? & ("description" ":" description=ValueString ";")? & ("assertion" ":" assert=ValueString ";")? & ("rationale"
 		//":" rationale=ValueString ";")? & ("issues" ":" issue+=ValueString ("," issue+=ValueString)* ";")? & ("see" ":"
@@ -873,17 +874,20 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//docReference+=[ExternalDocument|RELREF] ("," docReference+=[ExternalDocument|RELREF])* ";")?
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
 
-		//("for" target=RELREF)?
+		//("for" target=[aadl2::NamedElement|RELREF])?
 		public Group getGroup_2_0() { return cGroup_2_0; }
 
 		//"for"
 		public Keyword getForKeyword_2_0_0() { return cForKeyword_2_0_0; }
 
-		//target=RELREF
+		//target=[aadl2::NamedElement|RELREF]
 		public Assignment getTargetAssignment_2_0_1() { return cTargetAssignment_2_0_1; }
 
+		//[aadl2::NamedElement|RELREF]
+		public CrossReference getTargetNamedElementCrossReference_2_0_1_0() { return cTargetNamedElementCrossReference_2_0_1_0; }
+
 		//RELREF
-		public RuleCall getTargetRELREFParserRuleCall_2_0_1_0() { return cTargetRELREFParserRuleCall_2_0_1_0; }
+		public RuleCall getTargetNamedElementRELREFParserRuleCall_2_0_1_0_1() { return cTargetNamedElementRELREFParserRuleCall_2_0_1_0_1; }
 
 		//("category" ":" category+=[Category|CATREF] ("," category+=[Category|CATREF])* ";")?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -1375,9 +1379,9 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cForKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cReqTargetAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cReqTargetNamedElementCrossReference_3_0 = (CrossReference)cReqTargetAssignment_3.eContents().get(0);
-		private final RuleCall cReqTargetNamedElementQCLREFParserRuleCall_3_0_1 = (RuleCall)cReqTargetNamedElementCrossReference_3_0.eContents().get(1);
+		private final Assignment cTargetAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cTargetNamedElementCrossReference_3_0 = (CrossReference)cTargetAssignment_3.eContents().get(0);
+		private final RuleCall cTargetNamedElementQCLREFParserRuleCall_3_0_1 = (RuleCall)cTargetNamedElementCrossReference_3_0.eContents().get(1);
 		private final Assignment cReqsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cReqsRequirementParserRuleCall_4_0 = (RuleCall)cReqsAssignment_4.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
@@ -1395,12 +1399,12 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Requirements:
-		//	"requirements" name=ID "for" reqTarget= //(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
+		//	"requirements" name=ID "for" target= //(target=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
 		//	[aadl2::NamedElement|QCLREF] reqs+=Requirement* ("issues" ":" issue+=ValueString ("," issue+=ValueString)* ";")? "end"
 		//	"requirements" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"requirements" name=ID "for" reqTarget= //(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
+		//"requirements" name=ID "for" target= //(target=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
 		//[aadl2::NamedElement|QCLREF] reqs+=Requirement* ("issues" ":" issue+=ValueString ("," issue+=ValueString)* ";")? "end"
 		//"requirements" ";"
 		public Group getGroup() { return cGroup; }
@@ -1417,16 +1421,16 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//"for"
 		public Keyword getForKeyword_2() { return cForKeyword_2; }
 
-		//reqTarget= //(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
+		//target= //(target=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
 		//[aadl2::NamedElement|QCLREF]
-		public Assignment getReqTargetAssignment_3() { return cReqTargetAssignment_3; }
+		public Assignment getTargetAssignment_3() { return cTargetAssignment_3; }
 
-		////(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
+		////(target=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
 		//[aadl2::NamedElement|QCLREF]
-		public CrossReference getReqTargetNamedElementCrossReference_3_0() { return cReqTargetNamedElementCrossReference_3_0; }
+		public CrossReference getTargetNamedElementCrossReference_3_0() { return cTargetNamedElementCrossReference_3_0; }
 
 		//QCLREF
-		public RuleCall getReqTargetNamedElementQCLREFParserRuleCall_3_0_1() { return cReqTargetNamedElementQCLREFParserRuleCall_3_0_1; }
+		public RuleCall getTargetNamedElementQCLREFParserRuleCall_3_0_1() { return cTargetNamedElementQCLREFParserRuleCall_3_0_1; }
 
 		//reqs+=Requirement*
 		public Assignment getReqsAssignment_4() { return cReqsAssignment_4; }
@@ -1484,7 +1488,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_2_0 = (Group)cUnorderedGroup_2.eContents().get(0);
 		private final Keyword cForKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
 		private final Assignment cTargetAssignment_2_0_1 = (Assignment)cGroup_2_0.eContents().get(1);
-		private final RuleCall cTargetRELREFParserRuleCall_2_0_1_0 = (RuleCall)cTargetAssignment_2_0_1.eContents().get(0);
+		private final CrossReference cTargetNamedElementCrossReference_2_0_1_0 = (CrossReference)cTargetAssignment_2_0_1.eContents().get(0);
+		private final RuleCall cTargetNamedElementRELREFParserRuleCall_2_0_1_0_1 = (RuleCall)cTargetNamedElementCrossReference_2_0_1_0.eContents().get(1);
 		private final Group cGroup_2_1 = (Group)cUnorderedGroup_2.eContents().get(1);
 		private final Keyword cCategoryKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Keyword cColonKeyword_2_1_1 = (Keyword)cGroup_2_1.eContents().get(1);
@@ -1652,7 +1657,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////ContractCategory : 'requirement'|'assumption'|'input''assumption'|'guarantee'|'output''guarantee'|'invariant'|'constraint'|'design''constraint'|'development' 'requirement'|'system' 'requirement';
 		//Requirement:
-		//	"requirement" name=ID (("for" target=RELREF)? //target=[aadl2::NamedElement|RELREF])?
+		//	"requirement" name=ID (("for" target=[aadl2::NamedElement|RELREF])? //target=RELREF)? //
 		//	// hazardReference+=[aadl2::NamedElement|QNEREF]
 		//	& ("category" ":" category+=[Category|CATREF] ("," category+=[Category|CATREF])* ";")? & ("title" ":" title=ValueString
 		//	";")? & ("description" ":" description=ValueString ";")? & ("assertion" ":" assert=ValueString ";")? & ("rationale"
@@ -1669,7 +1674,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//	docReference+=XDocUri)* ";")?) "end" "requirement" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"requirement" name=ID (("for" target=RELREF)? //target=[aadl2::NamedElement|RELREF])?
+		//"requirement" name=ID (("for" target=[aadl2::NamedElement|RELREF])? //target=RELREF)? //
 		//// hazardReference+=[aadl2::NamedElement|QNEREF]
 		//& ("category" ":" category+=[Category|CATREF] ("," category+=[Category|CATREF])* ";")? & ("title" ":" title=ValueString
 		//";")? & ("description" ":" description=ValueString ";")? & ("assertion" ":" assert=ValueString ";")? & ("rationale"
@@ -1695,7 +1700,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//("for" target=RELREF)? //target=[aadl2::NamedElement|RELREF])?
+		//("for" target=[aadl2::NamedElement|RELREF])? //target=RELREF)? //
 		//// hazardReference+=[aadl2::NamedElement|QNEREF]
 		//& ("category" ":" category+=[Category|CATREF] ("," category+=[Category|CATREF])* ";")? & ("title" ":" title=ValueString
 		//";")? & ("description" ":" description=ValueString ";")? & ("assertion" ":" assert=ValueString ";")? & ("rationale"
@@ -1712,17 +1717,20 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//docReference+=XDocUri)* ";")?
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
 
-		//("for" target=RELREF)?
+		//("for" target=[aadl2::NamedElement|RELREF])?
 		public Group getGroup_2_0() { return cGroup_2_0; }
 
 		//"for"
 		public Keyword getForKeyword_2_0_0() { return cForKeyword_2_0_0; }
 
-		//target=RELREF
+		//target=[aadl2::NamedElement|RELREF]
 		public Assignment getTargetAssignment_2_0_1() { return cTargetAssignment_2_0_1; }
 
+		//[aadl2::NamedElement|RELREF]
+		public CrossReference getTargetNamedElementCrossReference_2_0_1_0() { return cTargetNamedElementCrossReference_2_0_1_0; }
+
 		//RELREF
-		public RuleCall getTargetRELREFParserRuleCall_2_0_1_0() { return cTargetRELREFParserRuleCall_2_0_1_0; }
+		public RuleCall getTargetNamedElementRELREFParserRuleCall_2_0_1_0_1() { return cTargetNamedElementRELREFParserRuleCall_2_0_1_0_1; }
 
 		//("category" ":" category+=[Category|CATREF] ("," category+=[Category|CATREF])* ";")?
 		public Group getGroup_2_1() { return cGroup_2_1; }
@@ -3790,7 +3798,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Goals:
-	//	"goals" name=ID "for" goalTarget=[aadl2::NamedElement|QCLREF] goals+=Goal* ("issues" ":" issue+=ValueString (","
+	//	"goals" name=ID "for" target=[aadl2::NamedElement|QCLREF] goals+=Goal* ("issues" ":" issue+=ValueString (","
 	//	issue+=ValueString)* ";")? "end" "goals" ";";
 	public GoalsElements getGoalsAccess() {
 		return pGoals;
@@ -3801,7 +3809,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Goal:
-	//	"goal" name=ID (("for" target=RELREF)? //goalTarget=[aadl2::NamedElement|RELREF])?
+	//	"goal" name=ID (("for" target=[aadl2::NamedElement|RELREF])? //target=RELREF)? //
 	//	& ("category" ":" category+=[Category|CATREF] ("," category+=[Category|CATREF])* ";")? & ("title" ":" title=ValueString
 	//	";")? & ("description" ":" description=ValueString ";")? & ("assertion" ":" assert=ValueString ";")? & ("rationale"
 	//	":" rationale=ValueString ";")? & ("issues" ":" issue+=ValueString ("," issue+=ValueString)* ";")? & ("see" ":"
@@ -3824,7 +3832,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Requirements:
-	//	"requirements" name=ID "for" reqTarget= //(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
+	//	"requirements" name=ID "for" target= //(target=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
 	//	[aadl2::NamedElement|QCLREF] reqs+=Requirement* ("issues" ":" issue+=ValueString ("," issue+=ValueString)* ";")? "end"
 	//	"requirements" ";";
 	public RequirementsElements getRequirementsAccess() {
@@ -3837,7 +3845,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 
 	////ContractCategory : 'requirement'|'assumption'|'input''assumption'|'guarantee'|'output''guarantee'|'invariant'|'constraint'|'design''constraint'|'development' 'requirement'|'system' 'requirement';
 	//Requirement:
-	//	"requirement" name=ID (("for" target=RELREF)? //target=[aadl2::NamedElement|RELREF])?
+	//	"requirement" name=ID (("for" target=[aadl2::NamedElement|RELREF])? //target=RELREF)? //
 	//	// hazardReference+=[aadl2::NamedElement|QNEREF]
 	//	& ("category" ":" category+=[Category|CATREF] ("," category+=[Category|CATREF])* ";")? & ("title" ":" title=ValueString
 	//	";")? & ("description" ":" description=ValueString ";")? & ("assertion" ":" assert=ValueString ";")? & ("rationale"

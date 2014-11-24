@@ -4,6 +4,8 @@ package edu.cmu.sei.alisa.alisa;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.osate.aadl2.NamedElement;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Requirement</b></em>'.
@@ -66,30 +68,30 @@ public interface Requirement extends ContractualElement, AlisaElement
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Target</b></em>' attribute.
+   * Returns the value of the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Target</em>' attribute isn't clear,
+   * If the meaning of the '<em>Target</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Target</em>' attribute.
-   * @see #setTarget(String)
+   * @return the value of the '<em>Target</em>' reference.
+   * @see #setTarget(NamedElement)
    * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_Target()
    * @model
    * @generated
    */
-  String getTarget();
+  NamedElement getTarget();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Requirement#getTarget <em>Target</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Requirement#getTarget <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Target</em>' attribute.
+   * @param value the new value of the '<em>Target</em>' reference.
    * @see #getTarget()
    * @generated
    */
-  void setTarget(String value);
+  void setTarget(NamedElement value);
 
   /**
    * Returns the value of the '<em><b>Category</b></em>' reference list.

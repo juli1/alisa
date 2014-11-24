@@ -33,7 +33,7 @@ import org.osate.aadl2.NamedElement;
  * The following features are implemented:
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementsImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementsImpl#getReqTarget <em>Req Target</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementsImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementsImpl#getReqs <em>Reqs</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementsImpl#getIssue <em>Issue</em>}</li>
  * </ul>
@@ -64,14 +64,14 @@ public class RequirementsImpl extends AlisaElementImpl implements Requirements
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getReqTarget() <em>Req Target</em>}' reference.
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getReqTarget()
+   * @see #getTarget()
    * @generated
    * @ordered
    */
-  protected NamedElement reqTarget;
+  protected NamedElement target;
 
   /**
    * The cached value of the '{@link #getReqs() <em>Reqs</em>}' containment reference list.
@@ -142,19 +142,19 @@ public class RequirementsImpl extends AlisaElementImpl implements Requirements
    * <!-- end-user-doc -->
    * @generated
    */
-  public NamedElement getReqTarget()
+  public NamedElement getTarget()
   {
-    if (reqTarget != null && ((EObject)reqTarget).eIsProxy())
+    if (target != null && ((EObject)target).eIsProxy())
     {
-      InternalEObject oldReqTarget = (InternalEObject)reqTarget;
-      reqTarget = (NamedElement)eResolveProxy(oldReqTarget);
-      if (reqTarget != oldReqTarget)
+      InternalEObject oldTarget = (InternalEObject)target;
+      target = (NamedElement)eResolveProxy(oldTarget);
+      if (target != oldTarget)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.REQUIREMENTS__REQ_TARGET, oldReqTarget, reqTarget));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.REQUIREMENTS__TARGET, oldTarget, target));
       }
     }
-    return reqTarget;
+    return target;
   }
 
   /**
@@ -162,9 +162,9 @@ public class RequirementsImpl extends AlisaElementImpl implements Requirements
    * <!-- end-user-doc -->
    * @generated
    */
-  public NamedElement basicGetReqTarget()
+  public NamedElement basicGetTarget()
   {
-    return reqTarget;
+    return target;
   }
 
   /**
@@ -172,12 +172,12 @@ public class RequirementsImpl extends AlisaElementImpl implements Requirements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setReqTarget(NamedElement newReqTarget)
+  public void setTarget(NamedElement newTarget)
   {
-    NamedElement oldReqTarget = reqTarget;
-    reqTarget = newReqTarget;
+    NamedElement oldTarget = target;
+    target = newTarget;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENTS__REQ_TARGET, oldReqTarget, reqTarget));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENTS__TARGET, oldTarget, target));
   }
 
   /**
@@ -236,9 +236,9 @@ public class RequirementsImpl extends AlisaElementImpl implements Requirements
     {
       case AlisaPackage.REQUIREMENTS__NAME:
         return getName();
-      case AlisaPackage.REQUIREMENTS__REQ_TARGET:
-        if (resolve) return getReqTarget();
-        return basicGetReqTarget();
+      case AlisaPackage.REQUIREMENTS__TARGET:
+        if (resolve) return getTarget();
+        return basicGetTarget();
       case AlisaPackage.REQUIREMENTS__REQS:
         return getReqs();
       case AlisaPackage.REQUIREMENTS__ISSUE:
@@ -261,8 +261,8 @@ public class RequirementsImpl extends AlisaElementImpl implements Requirements
       case AlisaPackage.REQUIREMENTS__NAME:
         setName((String)newValue);
         return;
-      case AlisaPackage.REQUIREMENTS__REQ_TARGET:
-        setReqTarget((NamedElement)newValue);
+      case AlisaPackage.REQUIREMENTS__TARGET:
+        setTarget((NamedElement)newValue);
         return;
       case AlisaPackage.REQUIREMENTS__REQS:
         getReqs().clear();
@@ -289,8 +289,8 @@ public class RequirementsImpl extends AlisaElementImpl implements Requirements
       case AlisaPackage.REQUIREMENTS__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AlisaPackage.REQUIREMENTS__REQ_TARGET:
-        setReqTarget((NamedElement)null);
+      case AlisaPackage.REQUIREMENTS__TARGET:
+        setTarget((NamedElement)null);
         return;
       case AlisaPackage.REQUIREMENTS__REQS:
         getReqs().clear();
@@ -314,8 +314,8 @@ public class RequirementsImpl extends AlisaElementImpl implements Requirements
     {
       case AlisaPackage.REQUIREMENTS__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AlisaPackage.REQUIREMENTS__REQ_TARGET:
-        return reqTarget != null;
+      case AlisaPackage.REQUIREMENTS__TARGET:
+        return target != null;
       case AlisaPackage.REQUIREMENTS__REQS:
         return reqs != null && !reqs.isEmpty();
       case AlisaPackage.REQUIREMENTS__ISSUE:

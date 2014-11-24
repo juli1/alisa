@@ -348,13 +348,13 @@ public interface AlisaPackage extends EPackage
   int GOALS__NAME = ALISA_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Goal Target</b></em>' reference.
+   * The feature id for the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOALS__GOAL_TARGET = ALISA_ELEMENT_FEATURE_COUNT + 1;
+  int GOALS__TARGET = ALISA_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Goals</b></em>' containment reference list.
@@ -403,7 +403,7 @@ public interface AlisaPackage extends EPackage
   int GOAL__NAME = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Target</b></em>' attribute.
+   * The feature id for the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -575,13 +575,13 @@ public interface AlisaPackage extends EPackage
   int REQUIREMENTS__NAME = ALISA_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Req Target</b></em>' reference.
+   * The feature id for the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQUIREMENTS__REQ_TARGET = ALISA_ELEMENT_FEATURE_COUNT + 1;
+  int REQUIREMENTS__TARGET = ALISA_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Reqs</b></em>' containment reference list.
@@ -630,7 +630,7 @@ public interface AlisaPackage extends EPackage
   int REQUIREMENT__NAME = CONTRACTUAL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Target</b></em>' attribute.
+   * The feature id for the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1538,15 +1538,15 @@ public interface AlisaPackage extends EPackage
   EAttribute getGoals_Name();
 
   /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.Goals#getGoalTarget <em>Goal Target</em>}'.
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.Goals#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Goal Target</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Goals#getGoalTarget()
+   * @return the meta object for the reference '<em>Target</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Goals#getTarget()
    * @see #getGoals()
    * @generated
    */
-  EReference getGoals_GoalTarget();
+  EReference getGoals_Target();
 
   /**
    * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.Goals#getGoals <em>Goals</em>}'.
@@ -1592,15 +1592,15 @@ public interface AlisaPackage extends EPackage
   EAttribute getGoal_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Goal#getTarget <em>Target</em>}'.
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.Goal#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Target</em>'.
+   * @return the meta object for the reference '<em>Target</em>'.
    * @see edu.cmu.sei.alisa.alisa.Goal#getTarget()
    * @see #getGoal()
    * @generated
    */
-  EAttribute getGoal_Target();
+  EReference getGoal_Target();
 
   /**
    * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Goal#getCategory <em>Category</em>}'.
@@ -1789,15 +1789,15 @@ public interface AlisaPackage extends EPackage
   EAttribute getRequirements_Name();
 
   /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.Requirements#getReqTarget <em>Req Target</em>}'.
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.Requirements#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Req Target</em>'.
-   * @see edu.cmu.sei.alisa.alisa.Requirements#getReqTarget()
+   * @return the meta object for the reference '<em>Target</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Requirements#getTarget()
    * @see #getRequirements()
    * @generated
    */
-  EReference getRequirements_ReqTarget();
+  EReference getRequirements_Target();
 
   /**
    * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.Requirements#getReqs <em>Reqs</em>}'.
@@ -1843,15 +1843,15 @@ public interface AlisaPackage extends EPackage
   EAttribute getRequirement_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Requirement#getTarget <em>Target</em>}'.
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.Requirement#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Target</em>'.
+   * @return the meta object for the reference '<em>Target</em>'.
    * @see edu.cmu.sei.alisa.alisa.Requirement#getTarget()
    * @see #getRequirement()
    * @generated
    */
-  EAttribute getRequirement_Target();
+  EReference getRequirement_Target();
 
   /**
    * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Requirement#getCategory <em>Category</em>}'.
@@ -2748,12 +2748,12 @@ public interface AlisaPackage extends EPackage
     EAttribute GOALS__NAME = eINSTANCE.getGoals_Name();
 
     /**
-     * The meta object literal for the '<em><b>Goal Target</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GOALS__GOAL_TARGET = eINSTANCE.getGoals_GoalTarget();
+    EReference GOALS__TARGET = eINSTANCE.getGoals_Target();
 
     /**
      * The meta object literal for the '<em><b>Goals</b></em>' containment reference list feature.
@@ -2790,12 +2790,12 @@ public interface AlisaPackage extends EPackage
     EAttribute GOAL__NAME = eINSTANCE.getGoal_Name();
 
     /**
-     * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GOAL__TARGET = eINSTANCE.getGoal_Target();
+    EReference GOAL__TARGET = eINSTANCE.getGoal_Target();
 
     /**
      * The meta object literal for the '<em><b>Category</b></em>' reference list feature.
@@ -2936,12 +2936,12 @@ public interface AlisaPackage extends EPackage
     EAttribute REQUIREMENTS__NAME = eINSTANCE.getRequirements_Name();
 
     /**
-     * The meta object literal for the '<em><b>Req Target</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REQUIREMENTS__REQ_TARGET = eINSTANCE.getRequirements_ReqTarget();
+    EReference REQUIREMENTS__TARGET = eINSTANCE.getRequirements_Target();
 
     /**
      * The meta object literal for the '<em><b>Reqs</b></em>' containment reference list feature.
@@ -2978,12 +2978,12 @@ public interface AlisaPackage extends EPackage
     EAttribute REQUIREMENT__NAME = eINSTANCE.getRequirement_Name();
 
     /**
-     * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REQUIREMENT__TARGET = eINSTANCE.getRequirement_Target();
+    EReference REQUIREMENT__TARGET = eINSTANCE.getRequirement_Target();
 
     /**
      * The meta object literal for the '<em><b>Category</b></em>' reference list feature.

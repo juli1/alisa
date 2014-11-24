@@ -15,7 +15,7 @@ import org.osate.aadl2.NamedElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirements#getName <em>Name</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.Requirements#getReqTarget <em>Req Target</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirements#getTarget <em>Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirements#getReqs <em>Reqs</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirements#getIssue <em>Issue</em>}</li>
  * </ul>
@@ -54,30 +54,30 @@ public interface Requirements extends AlisaElement, AlisaNameSpace
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Req Target</b></em>' reference.
+   * Returns the value of the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Req Target</em>' reference isn't clear,
+   * If the meaning of the '<em>Target</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Req Target</em>' reference.
-   * @see #setReqTarget(NamedElement)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirements_ReqTarget()
+   * @return the value of the '<em>Target</em>' reference.
+   * @see #setTarget(NamedElement)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirements_Target()
    * @model
    * @generated
    */
-  NamedElement getReqTarget();
+  NamedElement getTarget();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Requirements#getReqTarget <em>Req Target</em>}' reference.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Requirements#getTarget <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Req Target</em>' reference.
-   * @see #getReqTarget()
+   * @param value the new value of the '<em>Target</em>' reference.
+   * @see #getTarget()
    * @generated
    */
-  void setReqTarget(NamedElement value);
+  void setTarget(NamedElement value);
 
   /**
    * Returns the value of the '<em><b>Reqs</b></em>' containment reference list.

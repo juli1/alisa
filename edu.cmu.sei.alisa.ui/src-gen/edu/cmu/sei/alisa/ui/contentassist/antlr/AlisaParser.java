@@ -182,7 +182,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRDAPackageAccess().getImportedNamespaceAssignment_3_2_1(), "rule__RDAPackage__ImportedNamespaceAssignment_3_2_1");
 					put(grammarAccess.getRDAPackageAccess().getContentAssignment_4(), "rule__RDAPackage__ContentAssignment_4");
 					put(grammarAccess.getGoalsAccess().getNameAssignment_1(), "rule__Goals__NameAssignment_1");
-					put(grammarAccess.getGoalsAccess().getGoalTargetAssignment_3(), "rule__Goals__GoalTargetAssignment_3");
+					put(grammarAccess.getGoalsAccess().getTargetAssignment_3(), "rule__Goals__TargetAssignment_3");
 					put(grammarAccess.getGoalsAccess().getGoalsAssignment_4(), "rule__Goals__GoalsAssignment_4");
 					put(grammarAccess.getGoalsAccess().getIssueAssignment_5_2(), "rule__Goals__IssueAssignment_5_2");
 					put(grammarAccess.getGoalsAccess().getIssueAssignment_5_3_1(), "rule__Goals__IssueAssignment_5_3_1");
@@ -215,7 +215,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGoalAccess().getDocReferenceAssignment_2_15_3(), "rule__Goal__DocReferenceAssignment_2_15_3");
 					put(grammarAccess.getGoalAccess().getDocReferenceAssignment_2_15_4_1(), "rule__Goal__DocReferenceAssignment_2_15_4_1");
 					put(grammarAccess.getRequirementsAccess().getNameAssignment_1(), "rule__Requirements__NameAssignment_1");
-					put(grammarAccess.getRequirementsAccess().getReqTargetAssignment_3(), "rule__Requirements__ReqTargetAssignment_3");
+					put(grammarAccess.getRequirementsAccess().getTargetAssignment_3(), "rule__Requirements__TargetAssignment_3");
 					put(grammarAccess.getRequirementsAccess().getReqsAssignment_4(), "rule__Requirements__ReqsAssignment_4");
 					put(grammarAccess.getRequirementsAccess().getIssueAssignment_5_2(), "rule__Requirements__IssueAssignment_5_2");
 					put(grammarAccess.getRequirementsAccess().getIssueAssignment_5_3_1(), "rule__Requirements__IssueAssignment_5_3_1");

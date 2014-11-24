@@ -2882,9 +2882,9 @@ rule__Goals__Group__3__Impl
     }
 :
 (
-{ before(grammarAccess.getGoalsAccess().getGoalTargetAssignment_3()); }
-(rule__Goals__GoalTargetAssignment_3)
-{ after(grammarAccess.getGoalsAccess().getGoalTargetAssignment_3()); }
+{ before(grammarAccess.getGoalsAccess().getTargetAssignment_3()); }
+(rule__Goals__TargetAssignment_3)
+{ after(grammarAccess.getGoalsAccess().getTargetAssignment_3()); }
 )
 
 ;
@@ -6783,9 +6783,9 @@ rule__Requirements__Group__3__Impl
     }
 :
 (
-{ before(grammarAccess.getRequirementsAccess().getReqTargetAssignment_3()); }
-(rule__Requirements__ReqTargetAssignment_3)
-{ after(grammarAccess.getRequirementsAccess().getReqTargetAssignment_3()); }
+{ before(grammarAccess.getRequirementsAccess().getTargetAssignment_3()); }
+(rule__Requirements__TargetAssignment_3)
+{ after(grammarAccess.getRequirementsAccess().getTargetAssignment_3()); }
 )
 
 ;
@@ -18207,18 +18207,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Goals__GoalTargetAssignment_3
+rule__Goals__TargetAssignment_3
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getGoalsAccess().getGoalTargetNamedElementCrossReference_3_0()); }
+{ before(grammarAccess.getGoalsAccess().getTargetNamedElementCrossReference_3_0()); }
 (
-{ before(grammarAccess.getGoalsAccess().getGoalTargetNamedElementQCLREFParserRuleCall_3_0_1()); }
-	ruleQCLREF{ after(grammarAccess.getGoalsAccess().getGoalTargetNamedElementQCLREFParserRuleCall_3_0_1()); }
+{ before(grammarAccess.getGoalsAccess().getTargetNamedElementQCLREFParserRuleCall_3_0_1()); }
+	ruleQCLREF{ after(grammarAccess.getGoalsAccess().getTargetNamedElementQCLREFParserRuleCall_3_0_1()); }
 )
-{ after(grammarAccess.getGoalsAccess().getGoalTargetNamedElementCrossReference_3_0()); }
+{ after(grammarAccess.getGoalsAccess().getTargetNamedElementCrossReference_3_0()); }
 )
 
 ;
@@ -18292,8 +18292,12 @@ rule__Goal__TargetAssignment_2_0_1
     }
 :
 (
-{ before(grammarAccess.getGoalAccess().getTargetRELREFParserRuleCall_2_0_1_0()); }
-	ruleRELREF{ after(grammarAccess.getGoalAccess().getTargetRELREFParserRuleCall_2_0_1_0()); }
+{ before(grammarAccess.getGoalAccess().getTargetNamedElementCrossReference_2_0_1_0()); }
+(
+{ before(grammarAccess.getGoalAccess().getTargetNamedElementRELREFParserRuleCall_2_0_1_0_1()); }
+	ruleRELREF{ after(grammarAccess.getGoalAccess().getTargetNamedElementRELREFParserRuleCall_2_0_1_0_1()); }
+)
+{ after(grammarAccess.getGoalAccess().getTargetNamedElementCrossReference_2_0_1_0()); }
 )
 
 ;
@@ -18778,18 +18782,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Requirements__ReqTargetAssignment_3
+rule__Requirements__TargetAssignment_3
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getRequirementsAccess().getReqTargetNamedElementCrossReference_3_0()); }
+{ before(grammarAccess.getRequirementsAccess().getTargetNamedElementCrossReference_3_0()); }
 (
-{ before(grammarAccess.getRequirementsAccess().getReqTargetNamedElementQCLREFParserRuleCall_3_0_1()); }
-	ruleQCLREF{ after(grammarAccess.getRequirementsAccess().getReqTargetNamedElementQCLREFParserRuleCall_3_0_1()); }
+{ before(grammarAccess.getRequirementsAccess().getTargetNamedElementQCLREFParserRuleCall_3_0_1()); }
+	ruleQCLREF{ after(grammarAccess.getRequirementsAccess().getTargetNamedElementQCLREFParserRuleCall_3_0_1()); }
 )
-{ after(grammarAccess.getRequirementsAccess().getReqTargetNamedElementCrossReference_3_0()); }
+{ after(grammarAccess.getRequirementsAccess().getTargetNamedElementCrossReference_3_0()); }
 )
 
 ;
@@ -18863,8 +18867,12 @@ rule__Requirement__TargetAssignment_2_0_1
     }
 :
 (
-{ before(grammarAccess.getRequirementAccess().getTargetRELREFParserRuleCall_2_0_1_0()); }
-	ruleRELREF{ after(grammarAccess.getRequirementAccess().getTargetRELREFParserRuleCall_2_0_1_0()); }
+{ before(grammarAccess.getRequirementAccess().getTargetNamedElementCrossReference_2_0_1_0()); }
+(
+{ before(grammarAccess.getRequirementAccess().getTargetNamedElementRELREFParserRuleCall_2_0_1_0_1()); }
+	ruleRELREF{ after(grammarAccess.getRequirementAccess().getTargetNamedElementRELREFParserRuleCall_2_0_1_0_1()); }
+)
+{ after(grammarAccess.getRequirementAccess().getTargetNamedElementCrossReference_2_0_1_0()); }
 )
 
 ;

@@ -39,9 +39,9 @@ public class AlisaLinkingService extends PropertiesLinkingService {
 				return Collections.singletonList(res);
 			}
 			if (context instanceof Goal) {
-				e = ((Goals) context.eContainer()).getGoalTarget();
+				e = ((Goals) context.eContainer()).getTarget();
 			} else if (context instanceof Requirement) {
-				e = ((Requirements) context.eContainer()).getReqTarget();
+				e = ((Requirements) context.eContainer()).getTarget();
 
 			}
 			if (e instanceof Classifier) {

@@ -69,7 +69,7 @@ RDAPackage:
 	'end' 'package' ';';
 
 Goals:
-	'goals' name=ID 'for' goalTarget=[aadl2::NamedElement|QCLREF]
+	'goals' name=ID 'for' target=[aadl2::NamedElement|QCLREF]
 	(goals += Goal)*
 	('issues' ':' issue+=ValueString (','issue+=ValueString)* ';')? 
 	'end' 'goals'';'
@@ -78,7 +78,7 @@ Goals:
 
 Goal:
 	'goal' name=ID 
-	(( 'for' target=RELREF)? //goalTarget=[aadl2::NamedElement|RELREF])?
+	(( 'for' target=[aadl2::NamedElement|RELREF])? //target=RELREF)? //
 	& ('category' ':' category+=[Category|CATREF](','category+=[Category|CATREF])*';')?
 	& ('title' ':' title=ValueString ';')? 
 	& ('description' ':' description=ValueString';')? 
@@ -98,7 +98,7 @@ Goal:
 	 'end''goal'';';
 
 Requirements:
-	'requirements' name=ID 'for' reqTarget=[aadl2::NamedElement|QCLREF]//(reqtarget=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
+	'requirements' name=ID 'for' target=[aadl2::NamedElement|QCLREF]//(target=[aadl2::Classifier|QCLREF]|('property'reqtarget=[aadl2::Property|QCLREF ])) 
 	(reqs+=Requirement)*
 	('issues' ':' issue+=ValueString (','issue+=ValueString)* ';')? 
 	'end' 'requirements' ';';
@@ -108,7 +108,7 @@ Requirements:
 Requirement:
 	'requirement'  name=ID   
 	
-	(( 'for' target=RELREF)? //target=[aadl2::NamedElement|RELREF])?
+	(( 'for' target=[aadl2::NamedElement|RELREF])? //target=RELREF)? //
  	&('category' ':' category+=[Category|CATREF](',' category+=[Category|CATREF])*';')?
 	&('title' ':' title=ValueString';')? 
 	&('description' ':' description=ValueString';')? 
