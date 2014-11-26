@@ -885,15 +885,18 @@ ruleGoal returns [EObject current=null]
     }
 (
 (
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getGoalRule());
-	        }
-        }
 		{ 
-	        newCompositeNode(grammarAccess.getGoalAccess().getTargetNamedElementCrossReference_2_0_1_0()); 
+	        newCompositeNode(grammarAccess.getGoalAccess().getTargetRELREFParserRuleCall_2_0_1_0()); 
 	    }
-		ruleRELREF		{ 
+		lv_target_4_0=ruleRELREF		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getGoalRule());
+	        }
+       		set(
+       			$current, 
+       			"target",
+        		lv_target_4_0, 
+        		"RELREF");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2044,15 +2047,18 @@ ruleRequirement returns [EObject current=null]
     }
 (
 (
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getRequirementRule());
-	        }
-        }
 		{ 
-	        newCompositeNode(grammarAccess.getRequirementAccess().getTargetNamedElementCrossReference_2_0_1_0()); 
+	        newCompositeNode(grammarAccess.getRequirementAccess().getTargetRELREFParserRuleCall_2_0_1_0()); 
 	    }
-		ruleRELREF		{ 
+		lv_target_4_0=ruleRELREF		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRequirementRule());
+	        }
+       		set(
+       			$current, 
+       			"target",
+        		lv_target_4_0, 
+        		"RELREF");
 	        afterParserOrEnumRuleCall();
 	    }
 

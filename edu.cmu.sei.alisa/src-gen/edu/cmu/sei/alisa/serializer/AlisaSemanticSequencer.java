@@ -248,7 +248,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         target=[NamedElement|RELREF]? 
+	 *         target=RELREF? 
 	 *         (category+=[Category|CATREF] category+=[Category|CATREF]*)? 
 	 *         title=ValueString? 
 	 *         description=ValueString? 
@@ -316,7 +316,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         target=[NamedElement|RELREF]? 
+	 *         target=RELREF? 
 	 *         (category+=[Category|CATREF] category+=[Category|CATREF]*)? 
 	 *         title=ValueString? 
 	 *         description=ValueString? 

@@ -78,7 +78,7 @@ Goals:
 
 Goal:
 	'goal' name=ID 
-	(( 'for' target=[aadl2::NamedElement|RELREF])? //target=RELREF)? //
+	(( 'for' target=RELREF)? //target=[aadl2::NamedElement|RELREF])? //
 	& ('category' ':' category+=[Category|CATREF](','category+=[Category|CATREF])*';')?
 	& ('title' ':' title=ValueString ';')? 
 	& ('description' ':' description=ValueString';')? 
@@ -108,7 +108,7 @@ Requirements:
 Requirement:
 	'requirement'  name=ID   
 	
-	(( 'for' target=[aadl2::NamedElement|RELREF])? //target=RELREF)? //
+	(( 'for' target=RELREF)? //target=[aadl2::NamedElement|RELREF])? //
  	&('category' ':' category+=[Category|CATREF](',' category+=[Category|CATREF])*';')?
 	&('title' ':' title=ValueString';')? 
 	&('description' ':' description=ValueString';')? 

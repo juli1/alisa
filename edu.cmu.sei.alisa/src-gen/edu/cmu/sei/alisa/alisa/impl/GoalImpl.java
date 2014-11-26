@@ -16,15 +16,11 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
-import org.osate.aadl2.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -78,14 +74,24 @@ public class GoalImpl extends ContractualElementImpl implements Goal
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
+   * The default value of the '{@link #getTarget() <em>Target</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTarget()
    * @generated
    * @ordered
    */
-  protected NamedElement target;
+  protected static final String TARGET_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTarget()
+   * @generated
+   * @ordered
+   */
+  protected String target = TARGET_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getCategory() <em>Category</em>}' reference list.
@@ -326,27 +332,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public NamedElement getTarget()
-  {
-    if (target != null && ((EObject)target).eIsProxy())
-    {
-      InternalEObject oldTarget = (InternalEObject)target;
-      target = (NamedElement)eResolveProxy(oldTarget);
-      if (target != oldTarget)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.GOAL__TARGET, oldTarget, target));
-      }
-    }
-    return target;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NamedElement basicGetTarget()
+  public String getTarget()
   {
     return target;
   }
@@ -356,9 +342,9 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTarget(NamedElement newTarget)
+  public void setTarget(String newTarget)
   {
-    NamedElement oldTarget = target;
+    String oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOAL__TARGET, oldTarget, target));
@@ -623,8 +609,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
       case AlisaPackage.GOAL__NAME:
         return getName();
       case AlisaPackage.GOAL__TARGET:
-        if (resolve) return getTarget();
-        return basicGetTarget();
+        return getTarget();
       case AlisaPackage.GOAL__CATEGORY:
         return getCategory();
       case AlisaPackage.GOAL__TITLE:
@@ -674,7 +659,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
         setName((String)newValue);
         return;
       case AlisaPackage.GOAL__TARGET:
-        setTarget((NamedElement)newValue);
+        setTarget((String)newValue);
         return;
       case AlisaPackage.GOAL__CATEGORY:
         getCategory().clear();
@@ -750,7 +735,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
         setName(NAME_EDEFAULT);
         return;
       case AlisaPackage.GOAL__TARGET:
-        setTarget((NamedElement)null);
+        setTarget(TARGET_EDEFAULT);
         return;
       case AlisaPackage.GOAL__CATEGORY:
         getCategory().clear();
@@ -814,7 +799,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
       case AlisaPackage.GOAL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.GOAL__TARGET:
-        return target != null;
+        return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
       case AlisaPackage.GOAL__CATEGORY:
         return category != null && !category.isEmpty();
       case AlisaPackage.GOAL__TITLE:
@@ -862,6 +847,8 @@ public class GoalImpl extends ContractualElementImpl implements Goal
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", target: ");
+    result.append(target);
     result.append(", title: ");
     result.append(title);
     result.append(", description: ");
