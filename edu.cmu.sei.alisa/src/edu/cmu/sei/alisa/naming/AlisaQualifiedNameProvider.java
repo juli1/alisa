@@ -1,12 +1,12 @@
 package edu.cmu.sei.alisa.naming;
 
-import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.osate.aadl2.Classifier;
 import org.osate.aadl2.Element;
 import org.osate.aadl2.NamedElement;
+import org.osate.xtext.aadl2.naming.Aadl2QualifiedNameProvider;
 
-public class AlisaQualifiedNameProvider extends DefaultDeclarativeQualifiedNameProvider {
+public class AlisaQualifiedNameProvider extends Aadl2QualifiedNameProvider {
 
 	public String getDelimiter() {
 		return "::";
