@@ -1829,6 +1829,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Requirement:
 		//	"requirement" name=ID (("for" target=[aadl2::NamedElement|QNEREF])? // hazardReference+=[aadl2::NamedElement|QNEREF]
+		//
 		//	& ("category" category+=[Category|DOTTEDREF] ("," category+=[Category|DOTTEDREF])*)? & ("title" title=ValueString)? &
 		//	("description" description=ValueString)? & ("assertion" assert=ValueString)? & ("rationale" rationale=ValueString)? &
 		//	("issues" issue+=ValueString ("," issue+=ValueString)*)? & ("see" "goal" goalReference+=[Goal] (","
@@ -1844,7 +1845,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		public ParserRule getRule() { return rule; }
 
 		//"requirement" name=ID (("for" target=[aadl2::NamedElement|QNEREF])? // hazardReference+=[aadl2::NamedElement|QNEREF]
-		//& ("category" category+=[Category|DOTTEDREF] ("," category+=[Category|DOTTEDREF])*)? & ("title" title=ValueString)? &
+		// &
+		//("category" category+=[Category|DOTTEDREF] ("," category+=[Category|DOTTEDREF])*)? & ("title" title=ValueString)? &
 		//("description" description=ValueString)? & ("assertion" assert=ValueString)? & ("rationale" rationale=ValueString)? &
 		//("issues" issue+=ValueString ("," issue+=ValueString)*)? & ("see" "goal" goalReference+=[Goal] (","
 		//goalReference+=[Goal])*)? & ("see" "hazard" hazardReference+=QNEREF ("," hazardReference+=QNEREF)*)? & ("refines"
@@ -1868,10 +1870,11 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//("for" target=[aadl2::NamedElement|QNEREF])? // hazardReference+=[aadl2::NamedElement|QNEREF]
-		//& ("category" category+=[Category|DOTTEDREF] ("," category+=[Category|DOTTEDREF])*)? & ("title" title=ValueString)? &
-		//("description" description=ValueString)? & ("assertion" assert=ValueString)? & ("rationale" rationale=ValueString)? &
-		//("issues" issue+=ValueString ("," issue+=ValueString)*)? & ("see" "goal" goalReference+=[Goal] (","
-		//goalReference+=[Goal])*)? & ("see" "hazard" hazardReference+=QNEREF ("," hazardReference+=QNEREF)*)? & ("refines"
+		// & ("category"
+		//category+=[Category|DOTTEDREF] ("," category+=[Category|DOTTEDREF])*)? & ("title" title=ValueString)? & ("description"
+		//description=ValueString)? & ("assertion" assert=ValueString)? & ("rationale" rationale=ValueString)? & ("issues"
+		//issue+=ValueString ("," issue+=ValueString)*)? & ("see" "goal" goalReference+=[Goal] ("," goalReference+=[Goal])*)? &
+		//("see" "hazard" hazardReference+=QNEREF ("," hazardReference+=QNEREF)*)? & ("refines"
 		//refinesReference+=[Requirement|DOTTEDREF] ("," refinesReference+=[Requirement|DOTTEDREF])*)? & ("decomposes"
 		//decomposesReference+=[Requirement|DOTTEDREF] ("," decomposesReference+=[Requirement|DOTTEDREF])*)? & ("evolves"
 		//evolvesReference+=[Requirement|DOTTEDREF] ("," evolvesReference+=[Requirement|DOTTEDREF])*)? & ("see" "stakeholder"
@@ -2429,11 +2432,11 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//ValueString: // remove quotes from string in ValueConverter 
-		//	STRING;
+		// STRING;
 		public ParserRule getRule() { return rule; }
 
 		//// remove quotes from string in ValueConverter 
-		//STRING
+		// STRING
 		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
 	}
 
@@ -2675,14 +2678,14 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		// * / VerificationActivity:
 		//	"verification" "activity" name=ID ("title" title=ValueString)? ("description" description=ValueString)? ("method"
 		//	method=VerificationMethod)? //	('parameters'  verificationParameters+=([ElementReference])*)?
-		//	("decomposed" "to" decomposedTo+=VerificationDecomposition*)? ("assigned" "to" assignedTo+=[Stakeholder|DOTTEDREF]*)?
-		//	"end";
+		// ("decomposed" "to"
+		//	decomposedTo+=VerificationDecomposition*)? ("assigned" "to" assignedTo+=[Stakeholder|DOTTEDREF]*)? "end";
 		public ParserRule getRule() { return rule; }
 
 		//"verification" "activity" name=ID ("title" title=ValueString)? ("description" description=ValueString)? ("method"
 		//method=VerificationMethod)? //	('parameters'  verificationParameters+=([ElementReference])*)?
-		//("decomposed" "to" decomposedTo+=VerificationDecomposition*)? ("assigned" "to" assignedTo+=[Stakeholder|DOTTEDREF]*)?
-		//"end"
+		// ("decomposed" "to"
+		//decomposedTo+=VerificationDecomposition*)? ("assigned" "to" assignedTo+=[Stakeholder|DOTTEDREF]*)? "end"
 		public Group getGroup() { return cGroup; }
 
 		//"verification"
@@ -2949,10 +2952,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		////	// classifier reference
-		////QCLREF:
-		////	(ID '::')* ID ('.' ID)?;
-		//// package reference
-		//QPREF:
+		// //QCLREF:
+		// //	(ID '::')* ID ('.' ID)?;
+		// // package reference
+		// QPREF:
 		//	ID ("::" ID)*;
 		public ParserRule getRule() { return rule; }
 
@@ -2984,7 +2987,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
 		
 		//// named element reference or other multi-dot path with or without qualifier
-		//QNEREF:
+		// QNEREF:
 		//	(ID "::")* ID ("." ID)*;
 		public ParserRule getRule() { return rule; }
 
@@ -3022,7 +3025,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPAREFParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		////  dotted path property ref or property ref
-		//QDOTTEDPAREF:
+		// QDOTTEDPAREF:
 		//	QNEREF PAREF? | PAREF;
 		public ParserRule getRule() { return rule; }
 
@@ -3051,7 +3054,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//// dotted path as relative reference
-		//DOTTEDREF:
+		// DOTTEDREF:
 		//	ID ("." ID)*;
 		public ParserRule getRule() { return rule; }
 
@@ -3081,7 +3084,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
 		
 		//// reference to property (association)	
-		//PAREF:
+		// PAREF:
 		//	"#" ID ("::" ID)?;
 		public ParserRule getRule() { return rule; }
 
@@ -3466,6 +3469,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Requirement:
 	//	"requirement" name=ID (("for" target=[aadl2::NamedElement|QNEREF])? // hazardReference+=[aadl2::NamedElement|QNEREF]
+	//
 	//	& ("category" category+=[Category|DOTTEDREF] ("," category+=[Category|DOTTEDREF])*)? & ("title" title=ValueString)? &
 	//	("description" description=ValueString)? & ("assertion" assert=ValueString)? & ("rationale" rationale=ValueString)? &
 	//	("issues" issue+=ValueString ("," issue+=ValueString)*)? & ("see" "goal" goalReference+=[Goal] (","
@@ -3517,7 +3521,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ValueString: // remove quotes from string in ValueConverter 
-	//	STRING;
+	// STRING;
 	public ValueStringElements getValueStringAccess() {
 		return pValueString;
 	}
@@ -3556,8 +3560,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	// * / VerificationActivity:
 	//	"verification" "activity" name=ID ("title" title=ValueString)? ("description" description=ValueString)? ("method"
 	//	method=VerificationMethod)? //	('parameters'  verificationParameters+=([ElementReference])*)?
-	//	("decomposed" "to" decomposedTo+=VerificationDecomposition*)? ("assigned" "to" assignedTo+=[Stakeholder|DOTTEDREF]*)?
-	//	"end";
+	// ("decomposed" "to"
+	//	decomposedTo+=VerificationDecomposition*)? ("assigned" "to" assignedTo+=[Stakeholder|DOTTEDREF]*)? "end";
 	public VerificationActivityElements getVerificationActivityAccess() {
 		return pVerificationActivity;
 	}
@@ -3611,10 +3615,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	////	// classifier reference
-	////QCLREF:
-	////	(ID '::')* ID ('.' ID)?;
-	//// package reference
-	//QPREF:
+	// //QCLREF:
+	// //	(ID '::')* ID ('.' ID)?;
+	// // package reference
+	// QPREF:
 	//	ID ("::" ID)*;
 	public QPREFElements getQPREFAccess() {
 		return pQPREF;
@@ -3625,7 +3629,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// named element reference or other multi-dot path with or without qualifier
-	//QNEREF:
+	// QNEREF:
 	//	(ID "::")* ID ("." ID)*;
 	public QNEREFElements getQNEREFAccess() {
 		return pQNEREF;
@@ -3636,7 +3640,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	////  dotted path property ref or property ref
-	//QDOTTEDPAREF:
+	// QDOTTEDPAREF:
 	//	QNEREF PAREF? | PAREF;
 	public QDOTTEDPAREFElements getQDOTTEDPAREFAccess() {
 		return pQDOTTEDPAREF;
@@ -3647,7 +3651,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// dotted path as relative reference
-	//DOTTEDREF:
+	// DOTTEDREF:
 	//	ID ("." ID)*;
 	public DOTTEDREFElements getDOTTEDREFAccess() {
 		return pDOTTEDREF;
@@ -3658,7 +3662,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// reference to property (association)	
-	//PAREF:
+	// PAREF:
 	//	"#" ID ("::" ID)?;
 	public PAREFElements getPAREFAccess() {
 		return pPAREF;
@@ -3696,7 +3700,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	////terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-	//terminal ID:
+	// terminal ID:
 	//	("a".."z" | "A".."Z") ("_"? ("a".."z" | "A".."Z" | "0".."9"))*;
 	public TerminalRule getIDRule() {
 		return tID;
