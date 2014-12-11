@@ -28,6 +28,17 @@
     <genClasses ecoreClass="Alisa.ecore#//Organization">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//Organization/stakeholder"/>
     </genClasses>
+    <genClasses ecoreClass="Alisa.ecore#//Description">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Alisa.ecore#//Description/description"/>
+    </genClasses>
+    <genClasses ecoreClass="Alisa.ecore#//DescriptionElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//DescriptionElement/test"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//DescriptionElement/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="Alisa.ecore#//RSALVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//RSALVariable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Alisa.ecore#//RSALVariable/value"/>
+    </genClasses>
     <genClasses ecoreClass="Alisa.ecore#//ContractualElement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/target"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Alisa.ecore#//ContractualElement/category"/>

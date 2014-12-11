@@ -98,6 +98,21 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
         return createOrganizationAdapter();
       }
       @Override
+      public Adapter caseDescription(Description object)
+      {
+        return createDescriptionAdapter();
+      }
+      @Override
+      public Adapter caseDescriptionElement(DescriptionElement object)
+      {
+        return createDescriptionElementAdapter();
+      }
+      @Override
+      public Adapter caseRSALVariable(RSALVariable object)
+      {
+        return createRSALVariableAdapter();
+      }
+      @Override
       public Adapter caseContractualElement(ContractualElement object)
       {
         return createContractualElementAdapter();
@@ -235,6 +250,51 @@ public class AlisaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOrganizationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.Description <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.Description
+   * @generated
+   */
+  public Adapter createDescriptionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.DescriptionElement <em>Description Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.DescriptionElement
+   * @generated
+   */
+  public Adapter createDescriptionElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.cmu.sei.alisa.alisa.RSALVariable <em>RSAL Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.cmu.sei.alisa.alisa.RSALVariable
+   * @generated
+   */
+  public Adapter createRSALVariableAdapter()
   {
     return null;
   }

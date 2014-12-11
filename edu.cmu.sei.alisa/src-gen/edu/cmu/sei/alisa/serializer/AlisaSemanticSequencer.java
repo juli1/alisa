@@ -5,10 +5,13 @@ import com.google.inject.Provider;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.ContractualElement;
+import edu.cmu.sei.alisa.alisa.Description;
+import edu.cmu.sei.alisa.alisa.DescriptionElement;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Organization;
 import edu.cmu.sei.alisa.alisa.RSALContainer;
+import edu.cmu.sei.alisa.alisa.RSALVariable;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
@@ -18,12 +21,15 @@ import edu.cmu.sei.alisa.alisa.XDocUri;
 import edu.cmu.sei.alisa.services.AlisaGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
 import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
+import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -46,6 +52,18 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				   context == grammarAccess.getNamedElementRule() ||
 				   context == grammarAccess.getRSALElementRule()) {
 					sequence_ContractualElement(context, (ContractualElement) semanticObject); 
+					return; 
+				}
+				else break;
+			case AlisaPackage.DESCRIPTION:
+				if(context == grammarAccess.getDescriptionRule()) {
+					sequence_Description(context, (Description) semanticObject); 
+					return; 
+				}
+				else break;
+			case AlisaPackage.DESCRIPTION_ELEMENT:
+				if(context == grammarAccess.getDescriptionElementRule()) {
+					sequence_DescriptionElement(context, (DescriptionElement) semanticObject); 
 					return; 
 				}
 				else break;
@@ -87,6 +105,12 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else if(context == grammarAccess.getRSALElementRule() ||
 				   context == grammarAccess.getRSALSectionRule()) {
 					sequence_RSALSection(context, (RSALContainer) semanticObject); 
+					return; 
+				}
+				else break;
+			case AlisaPackage.RSAL_VARIABLE:
+				if(context == grammarAccess.getRSALVariableRule()) {
+					sequence_RSALVariable(context, (RSALVariable) semanticObject); 
 					return; 
 				}
 				else break;
@@ -177,6 +201,24 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     (test=STRING | ref=[RSALVariable|ID])
+	 */
+	protected void sequence_DescriptionElement(EObject context, DescriptionElement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     description+=DescriptionElement+
+	 */
+	protected void sequence_Description(EObject context, Description semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=ID externalReference=DOCPATH)
 	 */
 	protected void sequence_ExternalDocument(EObject context, ExternalDocument semanticObject) {
@@ -259,6 +301,25 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_RSALSection(EObject context, RSALContainer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID value=STRING)
+	 */
+	protected void sequence_RSALVariable(EObject context, RSALVariable semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AlisaPackage.Literals.RSAL_VARIABLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AlisaPackage.Literals.RSAL_VARIABLE__NAME));
+			if(transientValues.isValueTransient(semanticObject, AlisaPackage.Literals.RSAL_VARIABLE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AlisaPackage.Literals.RSAL_VARIABLE__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getRSALVariableAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getRSALVariableAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	

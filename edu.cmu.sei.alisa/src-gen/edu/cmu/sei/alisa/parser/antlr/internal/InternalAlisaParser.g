@@ -591,6 +591,63 @@ ruleOrganization returns [EObject current=null]
 
 
 
+// Entry rule entryRuleDescriptionElement
+entryRuleDescriptionElement returns [EObject current=null]
+	:
+	{ newCompositeNode(grammarAccess.getDescriptionElementRule()); }
+	 iv_ruleDescriptionElement=ruleDescriptionElement 
+	 { $current=$iv_ruleDescriptionElement.current; } 
+	 EOF 
+;
+
+// Rule DescriptionElement
+ruleDescriptionElement returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		lv_test_0_0=RULE_STRING
+		{
+			newLeafNode(lv_test_0_0, grammarAccess.getDescriptionElementAccess().getTestSTRINGTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDescriptionElementRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"test",
+        		lv_test_0_0, 
+        		"STRING");
+	    }
+
+)
+)
+    |(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDescriptionElementRule());
+	        }
+        }
+	otherlv_1=RULE_ID
+	{
+		newLeafNode(otherlv_1, grammarAccess.getDescriptionElementAccess().getRefRSALVariableCrossReference_1_0()); 
+	}
+
+)
+))
+;
+
+
+
+
+
+
+
+
+
 // Entry rule entryRuleContractualElement
 entryRuleContractualElement returns [EObject current=null]
 	:

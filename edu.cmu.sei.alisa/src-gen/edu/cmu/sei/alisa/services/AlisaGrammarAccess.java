@@ -423,6 +423,86 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getEndKeyword_3() { return cEndKeyword_3; }
 	}
 
+	public class DescriptionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Description");
+		private final Assignment cDescriptionAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cDescriptionDescriptionElementParserRuleCall_0 = (RuleCall)cDescriptionAssignment.eContents().get(0);
+		
+		//Description:
+		//	description+=DescriptionElement+;
+		public ParserRule getRule() { return rule; }
+
+		//description+=DescriptionElement+
+		public Assignment getDescriptionAssignment() { return cDescriptionAssignment; }
+
+		//DescriptionElement
+		public RuleCall getDescriptionDescriptionElementParserRuleCall_0() { return cDescriptionDescriptionElementParserRuleCall_0; }
+	}
+
+	public class DescriptionElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DescriptionElement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cTestAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cTestSTRINGTerminalRuleCall_0_0 = (RuleCall)cTestAssignment_0.eContents().get(0);
+		private final Assignment cRefAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final CrossReference cRefRSALVariableCrossReference_1_0 = (CrossReference)cRefAssignment_1.eContents().get(0);
+		private final RuleCall cRefRSALVariableIDTerminalRuleCall_1_0_1 = (RuleCall)cRefRSALVariableCrossReference_1_0.eContents().get(1);
+		
+		//DescriptionElement:
+		//	test=STRING | ref=[RSALVariable];
+		public ParserRule getRule() { return rule; }
+
+		//test=STRING | ref=[RSALVariable]
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//test=STRING
+		public Assignment getTestAssignment_0() { return cTestAssignment_0; }
+
+		//STRING
+		public RuleCall getTestSTRINGTerminalRuleCall_0_0() { return cTestSTRINGTerminalRuleCall_0_0; }
+
+		//ref=[RSALVariable]
+		public Assignment getRefAssignment_1() { return cRefAssignment_1; }
+
+		//[RSALVariable]
+		public CrossReference getRefRSALVariableCrossReference_1_0() { return cRefRSALVariableCrossReference_1_0; }
+
+		//ID
+		public RuleCall getRefRSALVariableIDTerminalRuleCall_1_0_1() { return cRefRSALVariableIDTerminalRuleCall_1_0_1; }
+	}
+
+	public class RSALVariableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RSALVariable");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		//RSALVariable:
+		//	name=ID "=" value=STRING;
+		public ParserRule getRule() { return rule; }
+
+		//name=ID "=" value=STRING
+		public Group getGroup() { return cGroup; }
+
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+
+		//value=STRING
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
+	}
+
 	public class CRElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CR");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1829,7 +1909,6 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Requirement:
 		//	"requirement" name=ID (("for" target=[aadl2::NamedElement|QNEREF])? // hazardReference+=[aadl2::NamedElement|QNEREF]
-		//
 		//	& ("category" category+=[Category|DOTTEDREF] ("," category+=[Category|DOTTEDREF])*)? & ("title" title=ValueString)? &
 		//	("description" description=ValueString)? & ("assertion" assert=ValueString)? & ("rationale" rationale=ValueString)? &
 		//	("issues" issue+=ValueString ("," issue+=ValueString)*)? & ("see" "goal" goalReference+=[Goal] (","
@@ -1845,8 +1924,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		public ParserRule getRule() { return rule; }
 
 		//"requirement" name=ID (("for" target=[aadl2::NamedElement|QNEREF])? // hazardReference+=[aadl2::NamedElement|QNEREF]
-		// &
-		//("category" category+=[Category|DOTTEDREF] ("," category+=[Category|DOTTEDREF])*)? & ("title" title=ValueString)? &
+		//& ("category" category+=[Category|DOTTEDREF] ("," category+=[Category|DOTTEDREF])*)? & ("title" title=ValueString)? &
 		//("description" description=ValueString)? & ("assertion" assert=ValueString)? & ("rationale" rationale=ValueString)? &
 		//("issues" issue+=ValueString ("," issue+=ValueString)*)? & ("see" "goal" goalReference+=[Goal] (","
 		//goalReference+=[Goal])*)? & ("see" "hazard" hazardReference+=QNEREF ("," hazardReference+=QNEREF)*)? & ("refines"
@@ -1870,11 +1948,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//("for" target=[aadl2::NamedElement|QNEREF])? // hazardReference+=[aadl2::NamedElement|QNEREF]
-		// & ("category"
-		//category+=[Category|DOTTEDREF] ("," category+=[Category|DOTTEDREF])*)? & ("title" title=ValueString)? & ("description"
-		//description=ValueString)? & ("assertion" assert=ValueString)? & ("rationale" rationale=ValueString)? & ("issues"
-		//issue+=ValueString ("," issue+=ValueString)*)? & ("see" "goal" goalReference+=[Goal] ("," goalReference+=[Goal])*)? &
-		//("see" "hazard" hazardReference+=QNEREF ("," hazardReference+=QNEREF)*)? & ("refines"
+		//& ("category" category+=[Category|DOTTEDREF] ("," category+=[Category|DOTTEDREF])*)? & ("title" title=ValueString)? &
+		//("description" description=ValueString)? & ("assertion" assert=ValueString)? & ("rationale" rationale=ValueString)? &
+		//("issues" issue+=ValueString ("," issue+=ValueString)*)? & ("see" "goal" goalReference+=[Goal] (","
+		//goalReference+=[Goal])*)? & ("see" "hazard" hazardReference+=QNEREF ("," hazardReference+=QNEREF)*)? & ("refines"
 		//refinesReference+=[Requirement|DOTTEDREF] ("," refinesReference+=[Requirement|DOTTEDREF])*)? & ("decomposes"
 		//decomposesReference+=[Requirement|DOTTEDREF] ("," decomposesReference+=[Requirement|DOTTEDREF])*)? & ("evolves"
 		//evolvesReference+=[Requirement|DOTTEDREF] ("," evolvesReference+=[Requirement|DOTTEDREF])*)? & ("see" "stakeholder"
@@ -2432,11 +2509,11 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//ValueString: // remove quotes from string in ValueConverter 
-		// STRING;
+		//	STRING;
 		public ParserRule getRule() { return rule; }
 
 		//// remove quotes from string in ValueConverter 
-		// STRING
+		//STRING
 		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
 	}
 
@@ -2678,14 +2755,14 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		// * / VerificationActivity:
 		//	"verification" "activity" name=ID ("title" title=ValueString)? ("description" description=ValueString)? ("method"
 		//	method=VerificationMethod)? //	('parameters'  verificationParameters+=([ElementReference])*)?
-		// ("decomposed" "to"
-		//	decomposedTo+=VerificationDecomposition*)? ("assigned" "to" assignedTo+=[Stakeholder|DOTTEDREF]*)? "end";
+		//	("decomposed" "to" decomposedTo+=VerificationDecomposition*)? ("assigned" "to" assignedTo+=[Stakeholder|DOTTEDREF]*)?
+		//	"end";
 		public ParserRule getRule() { return rule; }
 
 		//"verification" "activity" name=ID ("title" title=ValueString)? ("description" description=ValueString)? ("method"
 		//method=VerificationMethod)? //	('parameters'  verificationParameters+=([ElementReference])*)?
-		// ("decomposed" "to"
-		//decomposedTo+=VerificationDecomposition*)? ("assigned" "to" assignedTo+=[Stakeholder|DOTTEDREF]*)? "end"
+		//("decomposed" "to" decomposedTo+=VerificationDecomposition*)? ("assigned" "to" assignedTo+=[Stakeholder|DOTTEDREF]*)?
+		//"end"
 		public Group getGroup() { return cGroup; }
 
 		//"verification"
@@ -2952,10 +3029,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		////	// classifier reference
-		// //QCLREF:
-		// //	(ID '::')* ID ('.' ID)?;
-		// // package reference
-		// QPREF:
+		////QCLREF:
+		////	(ID '::')* ID ('.' ID)?;
+		//// package reference
+		//QPREF:
 		//	ID ("::" ID)*;
 		public ParserRule getRule() { return rule; }
 
@@ -2987,7 +3064,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
 		
 		//// named element reference or other multi-dot path with or without qualifier
-		// QNEREF:
+		//QNEREF:
 		//	(ID "::")* ID ("." ID)*;
 		public ParserRule getRule() { return rule; }
 
@@ -3025,7 +3102,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPAREFParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		////  dotted path property ref or property ref
-		// QDOTTEDPAREF:
+		//QDOTTEDPAREF:
 		//	QNEREF PAREF? | PAREF;
 		public ParserRule getRule() { return rule; }
 
@@ -3054,7 +3131,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//// dotted path as relative reference
-		// DOTTEDREF:
+		//DOTTEDREF:
 		//	ID ("." ID)*;
 		public ParserRule getRule() { return rule; }
 
@@ -3084,7 +3161,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
 		
 		//// reference to property (association)	
-		// PAREF:
+		//PAREF:
 		//	"#" ID ("::" ID)?;
 		public ParserRule getRule() { return rule; }
 
@@ -3250,6 +3327,9 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	private final RSALElementElements pRSALElement;
 	private final RSALSectionElements pRSALSection;
 	private final OrganizationElements pOrganization;
+	private final DescriptionElements pDescription;
+	private final DescriptionElementElements pDescriptionElement;
+	private final RSALVariableElements pRSALVariable;
 	private final CRElements pCR;
 	private final ContractualElementElements pContractualElement;
 	private final GoalElements pGoal;
@@ -3291,6 +3371,9 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		this.pRSALElement = new RSALElementElements();
 		this.pRSALSection = new RSALSectionElements();
 		this.pOrganization = new OrganizationElements();
+		this.pDescription = new DescriptionElements();
+		this.pDescriptionElement = new DescriptionElementElements();
+		this.pRSALVariable = new RSALVariableElements();
 		this.pCR = new CRElements();
 		this.pContractualElement = new ContractualElementElements();
 		this.pGoal = new GoalElements();
@@ -3410,6 +3493,36 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		return getOrganizationAccess().getRule();
 	}
 
+	//Description:
+	//	description+=DescriptionElement+;
+	public DescriptionElements getDescriptionAccess() {
+		return pDescription;
+	}
+	
+	public ParserRule getDescriptionRule() {
+		return getDescriptionAccess().getRule();
+	}
+
+	//DescriptionElement:
+	//	test=STRING | ref=[RSALVariable];
+	public DescriptionElementElements getDescriptionElementAccess() {
+		return pDescriptionElement;
+	}
+	
+	public ParserRule getDescriptionElementRule() {
+		return getDescriptionElementAccess().getRule();
+	}
+
+	//RSALVariable:
+	//	name=ID "=" value=STRING;
+	public RSALVariableElements getRSALVariableAccess() {
+		return pRSALVariable;
+	}
+	
+	public ParserRule getRSALVariableRule() {
+		return getRSALVariableAccess().getRule();
+	}
+
 	//CR returns ContractualElement:
 	//	Goal | Requirement;
 	public CRElements getCRAccess() {
@@ -3469,7 +3582,6 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Requirement:
 	//	"requirement" name=ID (("for" target=[aadl2::NamedElement|QNEREF])? // hazardReference+=[aadl2::NamedElement|QNEREF]
-	//
 	//	& ("category" category+=[Category|DOTTEDREF] ("," category+=[Category|DOTTEDREF])*)? & ("title" title=ValueString)? &
 	//	("description" description=ValueString)? & ("assertion" assert=ValueString)? & ("rationale" rationale=ValueString)? &
 	//	("issues" issue+=ValueString ("," issue+=ValueString)*)? & ("see" "goal" goalReference+=[Goal] (","
@@ -3521,7 +3633,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ValueString: // remove quotes from string in ValueConverter 
-	// STRING;
+	//	STRING;
 	public ValueStringElements getValueStringAccess() {
 		return pValueString;
 	}
@@ -3560,8 +3672,8 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	// * / VerificationActivity:
 	//	"verification" "activity" name=ID ("title" title=ValueString)? ("description" description=ValueString)? ("method"
 	//	method=VerificationMethod)? //	('parameters'  verificationParameters+=([ElementReference])*)?
-	// ("decomposed" "to"
-	//	decomposedTo+=VerificationDecomposition*)? ("assigned" "to" assignedTo+=[Stakeholder|DOTTEDREF]*)? "end";
+	//	("decomposed" "to" decomposedTo+=VerificationDecomposition*)? ("assigned" "to" assignedTo+=[Stakeholder|DOTTEDREF]*)?
+	//	"end";
 	public VerificationActivityElements getVerificationActivityAccess() {
 		return pVerificationActivity;
 	}
@@ -3615,10 +3727,10 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	////	// classifier reference
-	// //QCLREF:
-	// //	(ID '::')* ID ('.' ID)?;
-	// // package reference
-	// QPREF:
+	////QCLREF:
+	////	(ID '::')* ID ('.' ID)?;
+	//// package reference
+	//QPREF:
 	//	ID ("::" ID)*;
 	public QPREFElements getQPREFAccess() {
 		return pQPREF;
@@ -3629,7 +3741,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// named element reference or other multi-dot path with or without qualifier
-	// QNEREF:
+	//QNEREF:
 	//	(ID "::")* ID ("." ID)*;
 	public QNEREFElements getQNEREFAccess() {
 		return pQNEREF;
@@ -3640,7 +3752,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	////  dotted path property ref or property ref
-	// QDOTTEDPAREF:
+	//QDOTTEDPAREF:
 	//	QNEREF PAREF? | PAREF;
 	public QDOTTEDPAREFElements getQDOTTEDPAREFAccess() {
 		return pQDOTTEDPAREF;
@@ -3651,7 +3763,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// dotted path as relative reference
-	// DOTTEDREF:
+	//DOTTEDREF:
 	//	ID ("." ID)*;
 	public DOTTEDREFElements getDOTTEDREFAccess() {
 		return pDOTTEDREF;
@@ -3662,7 +3774,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// reference to property (association)	
-	// PAREF:
+	//PAREF:
 	//	"#" ID ("::" ID)?;
 	public PAREFElements getPAREFAccess() {
 		return pPAREF;
@@ -3700,7 +3812,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	////terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-	// terminal ID:
+	//terminal ID:
 	//	("a".."z" | "A".."Z") ("_"? ("a".."z" | "A".."Z" | "0".."9"))*;
 	public TerminalRule getIDRule() {
 		return tID;

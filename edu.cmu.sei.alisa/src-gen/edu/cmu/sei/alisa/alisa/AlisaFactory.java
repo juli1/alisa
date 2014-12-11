@@ -59,6 +59,33 @@ public interface AlisaFactory extends EFactory
   Organization createOrganization();
 
   /**
+   * Returns a new object of class '<em>Description</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Description</em>'.
+   * @generated
+   */
+  Description createDescription();
+
+  /**
+   * Returns a new object of class '<em>Description Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Description Element</em>'.
+   * @generated
+   */
+  DescriptionElement createDescriptionElement();
+
+  /**
+   * Returns a new object of class '<em>RSAL Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>RSAL Variable</em>'.
+   * @generated
+   */
+  RSALVariable createRSALVariable();
+
+  /**
    * Returns a new object of class '<em>Contractual Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

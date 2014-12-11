@@ -40,6 +40,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAlisaModelAccess().getAlternatives(), "rule__AlisaModel__Alternatives");
 					put(grammarAccess.getNamedElementAccess().getAlternatives(), "rule__NamedElement__Alternatives");
 					put(grammarAccess.getRSALElementAccess().getAlternatives(), "rule__RSALElement__Alternatives");
+					put(grammarAccess.getDescriptionElementAccess().getAlternatives(), "rule__DescriptionElement__Alternatives");
 					put(grammarAccess.getCRAccess().getAlternatives(), "rule__CR__Alternatives");
 					put(grammarAccess.getVerificationDecompositionAccess().getAlternatives(), "rule__VerificationDecomposition__Alternatives");
 					put(grammarAccess.getVerificationDecompositionAccess().getTypeAlternatives_1_1_0(), "rule__VerificationDecomposition__TypeAlternatives_1_1_0");
@@ -59,6 +60,7 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRSALSectionAccess().getGroup_4(), "rule__RSALSection__Group_4__0");
 					put(grammarAccess.getRSALSectionAccess().getGroup_4_2(), "rule__RSALSection__Group_4_2__0");
 					put(grammarAccess.getOrganizationAccess().getGroup(), "rule__Organization__Group__0");
+					put(grammarAccess.getRSALVariableAccess().getGroup(), "rule__RSALVariable__Group__0");
 					put(grammarAccess.getContractualElementAccess().getGroup(), "rule__ContractualElement__Group__0");
 					put(grammarAccess.getContractualElementAccess().getGroup_2_0(), "rule__ContractualElement__Group_2_0__0");
 					put(grammarAccess.getContractualElementAccess().getGroup_2_1(), "rule__ContractualElement__Group_2_1__0");
@@ -200,6 +202,11 @@ public class AlisaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRSALSectionAccess().getIssueAssignment_4_2_1(), "rule__RSALSection__IssueAssignment_4_2_1");
 					put(grammarAccess.getOrganizationAccess().getNameAssignment_1(), "rule__Organization__NameAssignment_1");
 					put(grammarAccess.getOrganizationAccess().getStakeholderAssignment_2(), "rule__Organization__StakeholderAssignment_2");
+					put(grammarAccess.getDescriptionAccess().getDescriptionAssignment(), "rule__Description__DescriptionAssignment");
+					put(grammarAccess.getDescriptionElementAccess().getTestAssignment_0(), "rule__DescriptionElement__TestAssignment_0");
+					put(grammarAccess.getDescriptionElementAccess().getRefAssignment_1(), "rule__DescriptionElement__RefAssignment_1");
+					put(grammarAccess.getRSALVariableAccess().getNameAssignment_0(), "rule__RSALVariable__NameAssignment_0");
+					put(grammarAccess.getRSALVariableAccess().getValueAssignment_2(), "rule__RSALVariable__ValueAssignment_2");
 					put(grammarAccess.getContractualElementAccess().getNameAssignment_1(), "rule__ContractualElement__NameAssignment_1");
 					put(grammarAccess.getContractualElementAccess().getTargetAssignment_2_0_1(), "rule__ContractualElement__TargetAssignment_2_0_1");
 					put(grammarAccess.getContractualElementAccess().getCategoryAssignment_2_1_1(), "rule__ContractualElement__CategoryAssignment_2_1_1");

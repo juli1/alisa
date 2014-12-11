@@ -40,7 +40,19 @@ Organization:
 	'organization' name = ID
 	stakeholder += Stakeholder+
 	'end'
-;	
+;
+
+Description : 
+	( description += DescriptionElement  )+
+;
+
+ DescriptionElement :
+ 	test = STRING | ref = [RSALVariable|ID]
+ ;	
+
+RSALVariable :
+	name = ID '=' value = STRING
+;
 
 CR returns ContractualElement: Goal | Requirement;
 

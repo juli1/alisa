@@ -69,6 +69,9 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
       case AlisaPackage.RSAL_CONTAINER: return createRSALContainer();
       case AlisaPackage.RSAL_ELEMENT: return createRSALElement();
       case AlisaPackage.ORGANIZATION: return createOrganization();
+      case AlisaPackage.DESCRIPTION: return createDescription();
+      case AlisaPackage.DESCRIPTION_ELEMENT: return createDescriptionElement();
+      case AlisaPackage.RSAL_VARIABLE: return createRSALVariable();
       case AlisaPackage.CONTRACTUAL_ELEMENT: return createContractualElement();
       case AlisaPackage.GOAL: return createGoal();
       case AlisaPackage.REQUIREMENT: return createRequirement();
@@ -164,6 +167,39 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
   {
     OrganizationImpl organization = new OrganizationImpl();
     return organization;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Description createDescription()
+  {
+    DescriptionImpl description = new DescriptionImpl();
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DescriptionElement createDescriptionElement()
+  {
+    DescriptionElementImpl descriptionElement = new DescriptionElementImpl();
+    return descriptionElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RSALVariable createRSALVariable()
+  {
+    RSALVariableImpl rsalVariable = new RSALVariableImpl();
+    return rsalVariable;
   }
 
   /**
