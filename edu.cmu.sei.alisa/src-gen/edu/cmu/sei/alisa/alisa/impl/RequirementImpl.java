@@ -3,13 +3,14 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
+import edu.cmu.sei.alisa.alisa.AssuranceArgument;
 import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.ContractualElement;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.RSALContainer;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
-import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
+import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.XDocUri;
 
 import java.util.Collection;
@@ -59,6 +60,7 @@ import org.osate.aadl2.NamedElement;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getGoalReference <em>Goal Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getHazardReference <em>Hazard Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getVerifiedBy <em>Verified By</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getArgument <em>Argument</em>}</li>
  * </ul>
  * </p>
  *
@@ -304,7 +306,17 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
    * @generated
    * @ordered
    */
-  protected EList<VerificationDecomposition> verifiedBy;
+  protected EList<VerificationActivity> verifiedBy;
+
+  /**
+   * The cached value of the '{@link #getArgument() <em>Argument</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getArgument()
+   * @generated
+   * @ordered
+   */
+  protected AssuranceArgument argument;
 
   /**
    * <!-- begin-user-doc -->
@@ -663,13 +675,61 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VerificationDecomposition> getVerifiedBy()
+  public EList<VerificationActivity> getVerifiedBy()
   {
     if (verifiedBy == null)
     {
-      verifiedBy = new EObjectContainmentEList<VerificationDecomposition>(VerificationDecomposition.class, this, AlisaPackage.REQUIREMENT__VERIFIED_BY);
+      verifiedBy = new EObjectContainmentEList<VerificationActivity>(VerificationActivity.class, this, AlisaPackage.REQUIREMENT__VERIFIED_BY);
     }
     return verifiedBy;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AssuranceArgument getArgument()
+  {
+    return argument;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetArgument(AssuranceArgument newArgument, NotificationChain msgs)
+  {
+    AssuranceArgument oldArgument = argument;
+    argument = newArgument;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT__ARGUMENT, oldArgument, newArgument);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setArgument(AssuranceArgument newArgument)
+  {
+    if (newArgument != argument)
+    {
+      NotificationChain msgs = null;
+      if (argument != null)
+        msgs = ((InternalEObject)argument).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlisaPackage.REQUIREMENT__ARGUMENT, null, msgs);
+      if (newArgument != null)
+        msgs = ((InternalEObject)newArgument).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlisaPackage.REQUIREMENT__ARGUMENT, null, msgs);
+      msgs = basicSetArgument(newArgument, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.REQUIREMENT__ARGUMENT, newArgument, newArgument));
   }
 
   /**
@@ -686,6 +746,8 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
         return ((InternalEList<?>)getDocReference()).basicRemove(otherEnd, msgs);
       case AlisaPackage.REQUIREMENT__VERIFIED_BY:
         return ((InternalEList<?>)getVerifiedBy()).basicRemove(otherEnd, msgs);
+      case AlisaPackage.REQUIREMENT__ARGUMENT:
+        return basicSetArgument(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -741,6 +803,8 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
         return getHazardReference();
       case AlisaPackage.REQUIREMENT__VERIFIED_BY:
         return getVerifiedBy();
+      case AlisaPackage.REQUIREMENT__ARGUMENT:
+        return getArgument();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -829,7 +893,10 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
         return;
       case AlisaPackage.REQUIREMENT__VERIFIED_BY:
         getVerifiedBy().clear();
-        getVerifiedBy().addAll((Collection<? extends VerificationDecomposition>)newValue);
+        getVerifiedBy().addAll((Collection<? extends VerificationActivity>)newValue);
+        return;
+      case AlisaPackage.REQUIREMENT__ARGUMENT:
+        setArgument((AssuranceArgument)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -905,6 +972,9 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
       case AlisaPackage.REQUIREMENT__VERIFIED_BY:
         getVerifiedBy().clear();
         return;
+      case AlisaPackage.REQUIREMENT__ARGUMENT:
+        setArgument((AssuranceArgument)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -959,6 +1029,8 @@ public class RequirementImpl extends RSALElementImpl implements Requirement
         return hazardReference != null && !hazardReference.isEmpty();
       case AlisaPackage.REQUIREMENT__VERIFIED_BY:
         return verifiedBy != null && !verifiedBy.isEmpty();
+      case AlisaPackage.REQUIREMENT__ARGUMENT:
+        return argument != null;
     }
     return super.eIsSet(featureID);
   }

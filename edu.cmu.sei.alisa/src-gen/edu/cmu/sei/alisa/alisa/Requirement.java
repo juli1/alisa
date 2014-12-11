@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getGoalReference <em>Goal Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getHazardReference <em>Hazard Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getVerifiedBy <em>Verified By</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getArgument <em>Argument</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,7 +59,7 @@ public interface Requirement extends RSALElement, ContractualElement
 
   /**
    * Returns the value of the '<em><b>Verified By</b></em>' containment reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.VerificationDecomposition}.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.VerificationActivity}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Verified By</em>' containment reference list isn't clear,
@@ -70,6 +71,32 @@ public interface Requirement extends RSALElement, ContractualElement
    * @model containment="true"
    * @generated
    */
-  EList<VerificationDecomposition> getVerifiedBy();
+  EList<VerificationActivity> getVerifiedBy();
+
+  /**
+   * Returns the value of the '<em><b>Argument</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Argument</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Argument</em>' containment reference.
+   * @see #setArgument(AssuranceArgument)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_Argument()
+   * @model containment="true"
+   * @generated
+   */
+  AssuranceArgument getArgument();
+
+  /**
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Requirement#getArgument <em>Argument</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Argument</em>' containment reference.
+   * @see #getArgument()
+   * @generated
+   */
+  void setArgument(AssuranceArgument value);
 
 } // Requirement

@@ -3,9 +3,10 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.Stakeholder;
+import edu.cmu.sei.alisa.alisa.Assumption;
+import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
-import edu.cmu.sei.alisa.alisa.VerificationDecomposition;
+import edu.cmu.sei.alisa.alisa.VerificationMethod;
 
 import java.util.Collection;
 
@@ -34,9 +35,9 @@ import org.osate.aadl2.impl.NamedElementImpl;
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getCategory <em>Category</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getMethod <em>Method</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getDecomposedTo <em>Decomposed To</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getAssignedTo <em>Assigned To</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getAssumption <em>Assumption</em>}</li>
  * </ul>
  * </p>
  *
@@ -85,44 +86,34 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getMethod() <em>Method</em>}' attribute.
+   * The cached value of the '{@link #getCategory() <em>Category</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCategory()
+   * @generated
+   * @ordered
+   */
+  protected EList<Category> category;
+
+  /**
+   * The cached value of the '{@link #getMethod() <em>Method</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMethod()
    * @generated
    * @ordered
    */
-  protected static final String METHOD_EDEFAULT = null;
+  protected VerificationMethod method;
 
   /**
-   * The cached value of the '{@link #getMethod() <em>Method</em>}' attribute.
+   * The cached value of the '{@link #getAssumption() <em>Assumption</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMethod()
+   * @see #getAssumption()
    * @generated
    * @ordered
    */
-  protected String method = METHOD_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getDecomposedTo() <em>Decomposed To</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDecomposedTo()
-   * @generated
-   * @ordered
-   */
-  protected EList<VerificationDecomposition> decomposedTo;
-
-  /**
-   * The cached value of the '{@link #getAssignedTo() <em>Assigned To</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAssignedTo()
-   * @generated
-   * @ordered
-   */
-  protected EList<Stakeholder> assignedTo;
+  protected EList<Assumption> assumption;
 
   /**
    * <!-- begin-user-doc -->
@@ -196,7 +187,21 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getMethod()
+  public EList<Category> getCategory()
+  {
+    if (category == null)
+    {
+      category = new EObjectResolvingEList<Category>(Category.class, this, AlisaPackage.VERIFICATION_ACTIVITY__CATEGORY);
+    }
+    return category;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VerificationMethod getMethod()
   {
     return method;
   }
@@ -206,12 +211,16 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMethod(String newMethod)
+  public NotificationChain basicSetMethod(VerificationMethod newMethod, NotificationChain msgs)
   {
-    String oldMethod = method;
+    VerificationMethod oldMethod = method;
     method = newMethod;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.VERIFICATION_ACTIVITY__METHOD, oldMethod, method));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlisaPackage.VERIFICATION_ACTIVITY__METHOD, oldMethod, newMethod);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -219,13 +228,20 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VerificationDecomposition> getDecomposedTo()
+  public void setMethod(VerificationMethod newMethod)
   {
-    if (decomposedTo == null)
+    if (newMethod != method)
     {
-      decomposedTo = new EObjectContainmentEList<VerificationDecomposition>(VerificationDecomposition.class, this, AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO);
+      NotificationChain msgs = null;
+      if (method != null)
+        msgs = ((InternalEObject)method).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlisaPackage.VERIFICATION_ACTIVITY__METHOD, null, msgs);
+      if (newMethod != null)
+        msgs = ((InternalEObject)newMethod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlisaPackage.VERIFICATION_ACTIVITY__METHOD, null, msgs);
+      msgs = basicSetMethod(newMethod, msgs);
+      if (msgs != null) msgs.dispatch();
     }
-    return decomposedTo;
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.VERIFICATION_ACTIVITY__METHOD, newMethod, newMethod));
   }
 
   /**
@@ -233,13 +249,13 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Stakeholder> getAssignedTo()
+  public EList<Assumption> getAssumption()
   {
-    if (assignedTo == null)
+    if (assumption == null)
     {
-      assignedTo = new EObjectResolvingEList<Stakeholder>(Stakeholder.class, this, AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO);
+      assumption = new EObjectContainmentEList<Assumption>(Assumption.class, this, AlisaPackage.VERIFICATION_ACTIVITY__ASSUMPTION);
     }
-    return assignedTo;
+    return assumption;
   }
 
   /**
@@ -252,8 +268,10 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO:
-        return ((InternalEList<?>)getDecomposedTo()).basicRemove(otherEnd, msgs);
+      case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
+        return basicSetMethod(null, msgs);
+      case AlisaPackage.VERIFICATION_ACTIVITY__ASSUMPTION:
+        return ((InternalEList<?>)getAssumption()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -272,12 +290,12 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
         return getTitle();
       case AlisaPackage.VERIFICATION_ACTIVITY__DESCRIPTION:
         return getDescription();
+      case AlisaPackage.VERIFICATION_ACTIVITY__CATEGORY:
+        return getCategory();
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
         return getMethod();
-      case AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO:
-        return getDecomposedTo();
-      case AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO:
-        return getAssignedTo();
+      case AlisaPackage.VERIFICATION_ACTIVITY__ASSUMPTION:
+        return getAssumption();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -299,16 +317,16 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
       case AlisaPackage.VERIFICATION_ACTIVITY__DESCRIPTION:
         setDescription((String)newValue);
         return;
+      case AlisaPackage.VERIFICATION_ACTIVITY__CATEGORY:
+        getCategory().clear();
+        getCategory().addAll((Collection<? extends Category>)newValue);
+        return;
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
-        setMethod((String)newValue);
+        setMethod((VerificationMethod)newValue);
         return;
-      case AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO:
-        getDecomposedTo().clear();
-        getDecomposedTo().addAll((Collection<? extends VerificationDecomposition>)newValue);
-        return;
-      case AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO:
-        getAssignedTo().clear();
-        getAssignedTo().addAll((Collection<? extends Stakeholder>)newValue);
+      case AlisaPackage.VERIFICATION_ACTIVITY__ASSUMPTION:
+        getAssumption().clear();
+        getAssumption().addAll((Collection<? extends Assumption>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -330,14 +348,14 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
       case AlisaPackage.VERIFICATION_ACTIVITY__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
+      case AlisaPackage.VERIFICATION_ACTIVITY__CATEGORY:
+        getCategory().clear();
+        return;
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
-        setMethod(METHOD_EDEFAULT);
+        setMethod((VerificationMethod)null);
         return;
-      case AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO:
-        getDecomposedTo().clear();
-        return;
-      case AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO:
-        getAssignedTo().clear();
+      case AlisaPackage.VERIFICATION_ACTIVITY__ASSUMPTION:
+        getAssumption().clear();
         return;
     }
     super.eUnset(featureID);
@@ -357,12 +375,12 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
         return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
       case AlisaPackage.VERIFICATION_ACTIVITY__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case AlisaPackage.VERIFICATION_ACTIVITY__CATEGORY:
+        return category != null && !category.isEmpty();
       case AlisaPackage.VERIFICATION_ACTIVITY__METHOD:
-        return METHOD_EDEFAULT == null ? method != null : !METHOD_EDEFAULT.equals(method);
-      case AlisaPackage.VERIFICATION_ACTIVITY__DECOMPOSED_TO:
-        return decomposedTo != null && !decomposedTo.isEmpty();
-      case AlisaPackage.VERIFICATION_ACTIVITY__ASSIGNED_TO:
-        return assignedTo != null && !assignedTo.isEmpty();
+        return method != null;
+      case AlisaPackage.VERIFICATION_ACTIVITY__ASSUMPTION:
+        return assumption != null && !assumption.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -382,8 +400,6 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
     result.append(title);
     result.append(", description: ");
     result.append(description);
-    result.append(", method: ");
-    result.append(method);
     result.append(')');
     return result.toString();
   }

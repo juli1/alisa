@@ -463,6 +463,79 @@ public interface AlisaPackage extends EPackage
   int RSAL_VARIABLE_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementProxyImpl <em>Contractual Element Proxy</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.ContractualElementProxyImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getContractualElementProxy()
+   * @generated
+   */
+  int CONTRACTUAL_ELEMENT_PROXY = 7;
+
+  /**
+   * The feature id for the '<em><b>Owned Element</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTRACTUAL_ELEMENT_PROXY__OWNED_ELEMENT = RSAL_ELEMENT__OWNED_ELEMENT;
+
+  /**
+   * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTRACTUAL_ELEMENT_PROXY__OWNED_COMMENT = RSAL_ELEMENT__OWNED_COMMENT;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTRACTUAL_ELEMENT_PROXY__NAME = RSAL_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTRACTUAL_ELEMENT_PROXY__QUALIFIED_NAME = RSAL_ELEMENT__QUALIFIED_NAME;
+
+  /**
+   * The feature id for the '<em><b>Owned Property Association</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTRACTUAL_ELEMENT_PROXY__OWNED_PROPERTY_ASSOCIATION = RSAL_ELEMENT__OWNED_PROPERTY_ASSOCIATION;
+
+  /**
+   * The feature id for the '<em><b>Proxyreference</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTRACTUAL_ELEMENT_PROXY__PROXYREFERENCE = RSAL_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Contractual Element Proxy</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTRACTUAL_ELEMENT_PROXY_FEATURE_COUNT = RSAL_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl <em>Contractual Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -470,7 +543,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getContractualElement()
    * @generated
    */
-  int CONTRACTUAL_ELEMENT = 7;
+  int CONTRACTUAL_ELEMENT = 8;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -687,7 +760,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getGoal()
    * @generated
    */
-  int GOAL = 8;
+  int GOAL = 9;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -904,7 +977,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRequirement()
    * @generated
    */
-  int REQUIREMENT = 9;
+  int REQUIREMENT = 10;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1132,13 +1205,122 @@ public interface AlisaPackage extends EPackage
   int REQUIREMENT__VERIFIED_BY = RSAL_ELEMENT_FEATURE_COUNT + 19;
 
   /**
+   * The feature id for the '<em><b>Argument</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REQUIREMENT__ARGUMENT = RSAL_ELEMENT_FEATURE_COUNT + 20;
+
+  /**
    * The number of structural features of the '<em>Requirement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQUIREMENT_FEATURE_COUNT = RSAL_ELEMENT_FEATURE_COUNT + 20;
+  int REQUIREMENT_FEATURE_COUNT = RSAL_ELEMENT_FEATURE_COUNT + 21;
+
+  /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.AssumptionImpl <em>Assumption</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.AssumptionImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getAssumption()
+   * @generated
+   */
+  int ASSUMPTION = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSUMPTION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSUMPTION__TARGET = 1;
+
+  /**
+   * The feature id for the '<em><b>Category</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSUMPTION__CATEGORY = 2;
+
+  /**
+   * The feature id for the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSUMPTION__TITLE = 3;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSUMPTION__DESCRIPTION = 4;
+
+  /**
+   * The feature id for the '<em><b>Assert</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSUMPTION__ASSERT = 5;
+
+  /**
+   * The feature id for the '<em><b>Rationale</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSUMPTION__RATIONALE = 6;
+
+  /**
+   * The feature id for the '<em><b>Issue</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSUMPTION__ISSUE = 7;
+
+  /**
+   * The feature id for the '<em><b>Verified By</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSUMPTION__VERIFIED_BY = 8;
+
+  /**
+   * The number of structural features of the '<em>Assumption</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSUMPTION_FEATURE_COUNT = 9;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentImpl <em>External Document</em>}' class.
@@ -1148,7 +1330,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getExternalDocument()
    * @generated
    */
-  int EXTERNAL_DOCUMENT = 10;
+  int EXTERNAL_DOCUMENT = 12;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1221,7 +1403,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getXDocUri()
    * @generated
    */
-  int XDOC_URI = 11;
+  int XDOC_URI = 13;
 
   /**
    * The feature id for the '<em><b>Doc Reference</b></em>' reference.
@@ -1258,7 +1440,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getCategory()
    * @generated
    */
-  int CATEGORY = 12;
+  int CATEGORY = 14;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1331,7 +1513,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getStakeholder()
    * @generated
    */
-  int STAKEHOLDER = 13;
+  int STAKEHOLDER = 15;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1442,59 +1624,97 @@ public interface AlisaPackage extends EPackage
   int STAKEHOLDER_FEATURE_COUNT = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
   /**
-   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationDecompositionImpl <em>Verification Decomposition</em>}' class.
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.AssuranceArgumentImpl <em>Assurance Argument</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see edu.cmu.sei.alisa.alisa.impl.VerificationDecompositionImpl
-   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationDecomposition()
+   * @see edu.cmu.sei.alisa.alisa.impl.AssuranceArgumentImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getAssuranceArgument()
    * @generated
    */
-  int VERIFICATION_DECOMPOSITION = 14;
+  int ASSURANCE_ARGUMENT = 16;
 
   /**
-   * The feature id for the '<em><b>Element</b></em>' reference.
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFICATION_DECOMPOSITION__ELEMENT = 0;
+  int ASSURANCE_ARGUMENT__EXPRESSION = 0;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' reference.
+   * The feature id for the '<em><b>Rationale</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFICATION_DECOMPOSITION__LEFT = 1;
+  int ASSURANCE_ARGUMENT__RATIONALE = 1;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The number of structural features of the '<em>Assurance Argument</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFICATION_DECOMPOSITION__TYPE = 2;
+  int ASSURANCE_ARGUMENT_FEATURE_COUNT = 2;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ArgumentExprImpl <em>Argument Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.ArgumentExprImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getArgumentExpr()
+   * @generated
+   */
+  int ARGUMENT_EXPR = 17;
+
+  /**
+   * The number of structural features of the '<em>Argument Expr</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFICATION_DECOMPOSITION__RIGHT = 3;
+  int ARGUMENT_EXPR_FEATURE_COUNT = 0;
 
   /**
-   * The number of structural features of the '<em>Verification Decomposition</em>' class.
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ArgumentReferenceImpl <em>Argument Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.ArgumentReferenceImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getArgumentReference()
+   * @generated
+   */
+  int ARGUMENT_REFERENCE = 18;
+
+  /**
+   * The feature id for the '<em><b>Reference</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFICATION_DECOMPOSITION_FEATURE_COUNT = 4;
+  int ARGUMENT_REFERENCE__REFERENCE = 0;
+
+  /**
+   * The feature id for the '<em><b>Weight</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT_REFERENCE__WEIGHT = 1;
+
+  /**
+   * The number of structural features of the '<em>Argument Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT_REFERENCE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl <em>Verification Activity</em>}' class.
@@ -1504,7 +1724,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationActivity()
    * @generated
    */
-  int VERIFICATION_ACTIVITY = 15;
+  int VERIFICATION_ACTIVITY = 19;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1570,31 +1790,31 @@ public interface AlisaPackage extends EPackage
   int VERIFICATION_ACTIVITY__DESCRIPTION = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Method</b></em>' attribute.
+   * The feature id for the '<em><b>Category</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFICATION_ACTIVITY__METHOD = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 2;
+  int VERIFICATION_ACTIVITY__CATEGORY = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Decomposed To</b></em>' containment reference list.
+   * The feature id for the '<em><b>Method</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFICATION_ACTIVITY__DECOMPOSED_TO = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 3;
+  int VERIFICATION_ACTIVITY__METHOD = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Assigned To</b></em>' reference list.
+   * The feature id for the '<em><b>Assumption</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFICATION_ACTIVITY__ASSIGNED_TO = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 4;
+  int VERIFICATION_ACTIVITY__ASSUMPTION = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Verification Activity</em>' class.
@@ -1606,6 +1826,79 @@ public interface AlisaPackage extends EPackage
   int VERIFICATION_ACTIVITY_FEATURE_COUNT = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
   /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationMethodImpl <em>Verification Method</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.VerificationMethodImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationMethod()
+   * @generated
+   */
+  int VERIFICATION_METHOD = 20;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFICATION_METHOD__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Language</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFICATION_METHOD__LANGUAGE = 1;
+
+  /**
+   * The feature id for the '<em><b>Method</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFICATION_METHOD__METHOD = 2;
+
+  /**
+   * The feature id for the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFICATION_METHOD__TITLE = 3;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFICATION_METHOD__DESCRIPTION = 4;
+
+  /**
+   * The feature id for the '<em><b>Category</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFICATION_METHOD__CATEGORY = 5;
+
+  /**
+   * The number of structural features of the '<em>Verification Method</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFICATION_METHOD_FEATURE_COUNT = 6;
+
+  /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl <em>Verification Result</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1613,7 +1906,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationResult()
    * @generated
    */
-  int VERIFICATION_RESULT = 16;
+  int VERIFICATION_RESULT = 21;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1661,13 +1954,13 @@ public interface AlisaPackage extends EPackage
   int VERIFICATION_RESULT__OWNED_PROPERTY_ASSOCIATION = Aadl2Package.NAMED_ELEMENT__OWNED_PROPERTY_ASSOCIATION;
 
   /**
-   * The feature id for the '<em><b>Referenced Verification Method</b></em>' reference list.
+   * The feature id for the '<em><b>Verification Activity</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 0;
+  int VERIFICATION_RESULT__VERIFICATION_ACTIVITY = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1715,13 +2008,206 @@ public interface AlisaPackage extends EPackage
   int VERIFICATION_RESULT__STATUS = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
   /**
+   * The feature id for the '<em><b>Assumption Verification Result</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFICATION_RESULT__ASSUMPTION_VERIFICATION_RESULT = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
    * The number of structural features of the '<em>Verification Result</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFICATION_RESULT_FEATURE_COUNT = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 6;
+  int VERIFICATION_RESULT_FEATURE_COUNT = Aadl2Package.NAMED_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RSALResultImpl <em>RSAL Result</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.RSALResultImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRSALResult()
+   * @generated
+   */
+  int RSAL_RESULT = 23;
+
+  /**
+   * The number of structural features of the '<em>RSAL Result</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RSAL_RESULT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.ClaimResultImpl <em>Claim Result</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.ClaimResultImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getClaimResult()
+   * @generated
+   */
+  int CLAIM_RESULT = 22;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLAIM_RESULT__NAME = RSAL_RESULT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Requirement</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLAIM_RESULT__REQUIREMENT = RSAL_RESULT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Pass Count</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLAIM_RESULT__PASS_COUNT = RSAL_RESULT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Fail Count</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLAIM_RESULT__FAIL_COUNT = RSAL_RESULT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Neutral Count</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLAIM_RESULT__NEUTRAL_COUNT = RSAL_RESULT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Unknown Count</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLAIM_RESULT__UNKNOWN_COUNT = RSAL_RESULT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Sub Claim Result</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLAIM_RESULT__SUB_CLAIM_RESULT = RSAL_RESULT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Sub VA Result</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLAIM_RESULT__SUB_VA_RESULT = RSAL_RESULT_FEATURE_COUNT + 7;
+
+  /**
+   * The number of structural features of the '<em>Claim Result</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLAIM_RESULT_FEATURE_COUNT = RSAL_RESULT_FEATURE_COUNT + 8;
+
+  /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.BinaryExprImpl <em>Binary Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.BinaryExprImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getBinaryExpr()
+   * @generated
+   */
+  int BINARY_EXPR = 24;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_EXPR__LEFT = ARGUMENT_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_EXPR__OP = ARGUMENT_EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_EXPR__RIGHT = ARGUMENT_EXPR_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Binary Expr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_EXPR_FEATURE_COUNT = ARGUMENT_EXPR_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.impl.RefExprImpl <em>Ref Expr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.cmu.sei.alisa.alisa.impl.RefExprImpl
+   * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRefExpr()
+   * @generated
+   */
+  int REF_EXPR = 25;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REF_EXPR__ID = ARGUMENT_EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Ref Expr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REF_EXPR_FEATURE_COUNT = ARGUMENT_EXPR_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.VerificationResultState <em>Verification Result State</em>}' enum.
@@ -1731,7 +2217,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationResultState()
    * @generated
    */
-  int VERIFICATION_RESULT_STATE = 17;
+  int VERIFICATION_RESULT_STATE = 26;
 
   /**
    * The meta object id for the '{@link edu.cmu.sei.alisa.alisa.VerificationResultStatus <em>Verification Result Status</em>}' enum.
@@ -1741,7 +2227,7 @@ public interface AlisaPackage extends EPackage
    * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationResultStatus()
    * @generated
    */
-  int VERIFICATION_RESULT_STATUS = 18;
+  int VERIFICATION_RESULT_STATUS = 27;
 
 
   /**
@@ -1923,6 +2409,27 @@ public interface AlisaPackage extends EPackage
    * @generated
    */
   EAttribute getRSALVariable_Value();
+
+  /**
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.ContractualElementProxy <em>Contractual Element Proxy</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Contractual Element Proxy</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElementProxy
+   * @generated
+   */
+  EClass getContractualElementProxy();
+
+  /**
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.ContractualElementProxy#getProxyreference <em>Proxyreference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Proxyreference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ContractualElementProxy#getProxyreference()
+   * @see #getContractualElementProxy()
+   * @generated
+   */
+  EReference getContractualElementProxy_Proxyreference();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.ContractualElement <em>Contractual Element</em>}'.
@@ -2175,6 +2682,126 @@ public interface AlisaPackage extends EPackage
   EReference getRequirement_VerifiedBy();
 
   /**
+   * Returns the meta object for the containment reference '{@link edu.cmu.sei.alisa.alisa.Requirement#getArgument <em>Argument</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Argument</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Requirement#getArgument()
+   * @see #getRequirement()
+   * @generated
+   */
+  EReference getRequirement_Argument();
+
+  /**
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.Assumption <em>Assumption</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Assumption</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Assumption
+   * @generated
+   */
+  EClass getAssumption();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Assumption#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Assumption#getName()
+   * @see #getAssumption()
+   * @generated
+   */
+  EAttribute getAssumption_Name();
+
+  /**
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.Assumption#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Target</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Assumption#getTarget()
+   * @see #getAssumption()
+   * @generated
+   */
+  EReference getAssumption_Target();
+
+  /**
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.Assumption#getCategory <em>Category</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Category</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Assumption#getCategory()
+   * @see #getAssumption()
+   * @generated
+   */
+  EReference getAssumption_Category();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Assumption#getTitle <em>Title</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Title</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Assumption#getTitle()
+   * @see #getAssumption()
+   * @generated
+   */
+  EAttribute getAssumption_Title();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Assumption#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Assumption#getDescription()
+   * @see #getAssumption()
+   * @generated
+   */
+  EAttribute getAssumption_Description();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Assumption#getAssert <em>Assert</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Assert</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Assumption#getAssert()
+   * @see #getAssumption()
+   * @generated
+   */
+  EAttribute getAssumption_Assert();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.Assumption#getRationale <em>Rationale</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Rationale</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Assumption#getRationale()
+   * @see #getAssumption()
+   * @generated
+   */
+  EAttribute getAssumption_Rationale();
+
+  /**
+   * Returns the meta object for the attribute list '{@link edu.cmu.sei.alisa.alisa.Assumption#getIssue <em>Issue</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Issue</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Assumption#getIssue()
+   * @see #getAssumption()
+   * @generated
+   */
+  EAttribute getAssumption_Issue();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.Assumption#getVerifiedBy <em>Verified By</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Verified By</em>'.
+   * @see edu.cmu.sei.alisa.alisa.Assumption#getVerifiedBy()
+   * @see #getAssumption()
+   * @generated
+   */
+  EReference getAssumption_VerifiedBy();
+
+  /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.ExternalDocument <em>External Document</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2325,58 +2952,78 @@ public interface AlisaPackage extends EPackage
   EAttribute getStakeholder_Phone();
 
   /**
-   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition <em>Verification Decomposition</em>}'.
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.AssuranceArgument <em>Assurance Argument</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Verification Decomposition</em>'.
-   * @see edu.cmu.sei.alisa.alisa.VerificationDecomposition
+   * @return the meta object for class '<em>Assurance Argument</em>'.
+   * @see edu.cmu.sei.alisa.alisa.AssuranceArgument
    * @generated
    */
-  EClass getVerificationDecomposition();
+  EClass getAssuranceArgument();
 
   /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getElement <em>Element</em>}'.
+   * Returns the meta object for the containment reference '{@link edu.cmu.sei.alisa.alisa.AssuranceArgument#getExpression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Element</em>'.
-   * @see edu.cmu.sei.alisa.alisa.VerificationDecomposition#getElement()
-   * @see #getVerificationDecomposition()
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see edu.cmu.sei.alisa.alisa.AssuranceArgument#getExpression()
+   * @see #getAssuranceArgument()
    * @generated
    */
-  EReference getVerificationDecomposition_Element();
+  EReference getAssuranceArgument_Expression();
 
   /**
-   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getLeft <em>Left</em>}'.
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.AssuranceArgument#getRationale <em>Rationale</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Left</em>'.
-   * @see edu.cmu.sei.alisa.alisa.VerificationDecomposition#getLeft()
-   * @see #getVerificationDecomposition()
+   * @return the meta object for the attribute '<em>Rationale</em>'.
+   * @see edu.cmu.sei.alisa.alisa.AssuranceArgument#getRationale()
+   * @see #getAssuranceArgument()
    * @generated
    */
-  EReference getVerificationDecomposition_Left();
+  EAttribute getAssuranceArgument_Rationale();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getType <em>Type</em>}'.
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.ArgumentExpr <em>Argument Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see edu.cmu.sei.alisa.alisa.VerificationDecomposition#getType()
-   * @see #getVerificationDecomposition()
+   * @return the meta object for class '<em>Argument Expr</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ArgumentExpr
    * @generated
    */
-  EAttribute getVerificationDecomposition_Type();
+  EClass getArgumentExpr();
 
   /**
-   * Returns the meta object for the containment reference '{@link edu.cmu.sei.alisa.alisa.VerificationDecomposition#getRight <em>Right</em>}'.
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.ArgumentReference <em>Argument Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see edu.cmu.sei.alisa.alisa.VerificationDecomposition#getRight()
-   * @see #getVerificationDecomposition()
+   * @return the meta object for class '<em>Argument Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ArgumentReference
    * @generated
    */
-  EReference getVerificationDecomposition_Right();
+  EClass getArgumentReference();
+
+  /**
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.ArgumentReference#getReference <em>Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Reference</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ArgumentReference#getReference()
+   * @see #getArgumentReference()
+   * @generated
+   */
+  EReference getArgumentReference_Reference();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ArgumentReference#getWeight <em>Weight</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Weight</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ArgumentReference#getWeight()
+   * @see #getArgumentReference()
+   * @generated
+   */
+  EAttribute getArgumentReference_Weight();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.VerificationActivity <em>Verification Activity</em>}'.
@@ -2411,37 +3058,113 @@ public interface AlisaPackage extends EPackage
   EAttribute getVerificationActivity_Description();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getMethod <em>Method</em>}'.
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getCategory <em>Category</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Method</em>'.
+   * @return the meta object for the reference list '<em>Category</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationActivity#getCategory()
+   * @see #getVerificationActivity()
+   * @generated
+   */
+  EReference getVerificationActivity_Category();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getMethod <em>Method</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Method</em>'.
    * @see edu.cmu.sei.alisa.alisa.VerificationActivity#getMethod()
    * @see #getVerificationActivity()
    * @generated
    */
-  EAttribute getVerificationActivity_Method();
+  EReference getVerificationActivity_Method();
 
   /**
-   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getDecomposedTo <em>Decomposed To</em>}'.
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getAssumption <em>Assumption</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Decomposed To</em>'.
-   * @see edu.cmu.sei.alisa.alisa.VerificationActivity#getDecomposedTo()
+   * @return the meta object for the containment reference list '<em>Assumption</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationActivity#getAssumption()
    * @see #getVerificationActivity()
    * @generated
    */
-  EReference getVerificationActivity_DecomposedTo();
+  EReference getVerificationActivity_Assumption();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getAssignedTo <em>Assigned To</em>}'.
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.VerificationMethod <em>Verification Method</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Assigned To</em>'.
-   * @see edu.cmu.sei.alisa.alisa.VerificationActivity#getAssignedTo()
-   * @see #getVerificationActivity()
+   * @return the meta object for class '<em>Verification Method</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationMethod
    * @generated
    */
-  EReference getVerificationActivity_AssignedTo();
+  EClass getVerificationMethod();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.VerificationMethod#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationMethod#getName()
+   * @see #getVerificationMethod()
+   * @generated
+   */
+  EAttribute getVerificationMethod_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.VerificationMethod#getLanguage <em>Language</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Language</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationMethod#getLanguage()
+   * @see #getVerificationMethod()
+   * @generated
+   */
+  EAttribute getVerificationMethod_Language();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.VerificationMethod#getMethod <em>Method</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Method</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationMethod#getMethod()
+   * @see #getVerificationMethod()
+   * @generated
+   */
+  EAttribute getVerificationMethod_Method();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.VerificationMethod#getTitle <em>Title</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Title</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationMethod#getTitle()
+   * @see #getVerificationMethod()
+   * @generated
+   */
+  EAttribute getVerificationMethod_Title();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.VerificationMethod#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationMethod#getDescription()
+   * @see #getVerificationMethod()
+   * @generated
+   */
+  EAttribute getVerificationMethod_Description();
+
+  /**
+   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.VerificationMethod#getCategory <em>Category</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Category</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationMethod#getCategory()
+   * @see #getVerificationMethod()
+   * @generated
+   */
+  EReference getVerificationMethod_Category();
 
   /**
    * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.VerificationResult <em>Verification Result</em>}'.
@@ -2454,15 +3177,15 @@ public interface AlisaPackage extends EPackage
   EClass getVerificationResult();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.cmu.sei.alisa.alisa.VerificationResult#getReferencedVerificationMethod <em>Referenced Verification Method</em>}'.
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.VerificationResult#getVerificationActivity <em>Verification Activity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Referenced Verification Method</em>'.
-   * @see edu.cmu.sei.alisa.alisa.VerificationResult#getReferencedVerificationMethod()
+   * @return the meta object for the reference '<em>Verification Activity</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationResult#getVerificationActivity()
    * @see #getVerificationResult()
    * @generated
    */
-  EReference getVerificationResult_ReferencedVerificationMethod();
+  EReference getVerificationResult_VerificationActivity();
 
   /**
    * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.VerificationResult#getTitle <em>Title</em>}'.
@@ -2518,6 +3241,189 @@ public interface AlisaPackage extends EPackage
    * @generated
    */
   EAttribute getVerificationResult_Status();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.VerificationResult#getAssumptionVerificationResult <em>Assumption Verification Result</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Assumption Verification Result</em>'.
+   * @see edu.cmu.sei.alisa.alisa.VerificationResult#getAssumptionVerificationResult()
+   * @see #getVerificationResult()
+   * @generated
+   */
+  EReference getVerificationResult_AssumptionVerificationResult();
+
+  /**
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.ClaimResult <em>Claim Result</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Claim Result</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ClaimResult
+   * @generated
+   */
+  EClass getClaimResult();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ClaimResult#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ClaimResult#getName()
+   * @see #getClaimResult()
+   * @generated
+   */
+  EAttribute getClaimResult_Name();
+
+  /**
+   * Returns the meta object for the reference '{@link edu.cmu.sei.alisa.alisa.ClaimResult#getRequirement <em>Requirement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Requirement</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ClaimResult#getRequirement()
+   * @see #getClaimResult()
+   * @generated
+   */
+  EReference getClaimResult_Requirement();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ClaimResult#getPassCount <em>Pass Count</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Pass Count</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ClaimResult#getPassCount()
+   * @see #getClaimResult()
+   * @generated
+   */
+  EAttribute getClaimResult_PassCount();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ClaimResult#getFailCount <em>Fail Count</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Fail Count</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ClaimResult#getFailCount()
+   * @see #getClaimResult()
+   * @generated
+   */
+  EAttribute getClaimResult_FailCount();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ClaimResult#getNeutralCount <em>Neutral Count</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Neutral Count</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ClaimResult#getNeutralCount()
+   * @see #getClaimResult()
+   * @generated
+   */
+  EAttribute getClaimResult_NeutralCount();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.ClaimResult#getUnknownCount <em>Unknown Count</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Unknown Count</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ClaimResult#getUnknownCount()
+   * @see #getClaimResult()
+   * @generated
+   */
+  EAttribute getClaimResult_UnknownCount();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.ClaimResult#getSubClaimResult <em>Sub Claim Result</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Sub Claim Result</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ClaimResult#getSubClaimResult()
+   * @see #getClaimResult()
+   * @generated
+   */
+  EReference getClaimResult_SubClaimResult();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link edu.cmu.sei.alisa.alisa.ClaimResult#getSubVAResult <em>Sub VA Result</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Sub VA Result</em>'.
+   * @see edu.cmu.sei.alisa.alisa.ClaimResult#getSubVAResult()
+   * @see #getClaimResult()
+   * @generated
+   */
+  EReference getClaimResult_SubVAResult();
+
+  /**
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.RSALResult <em>RSAL Result</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>RSAL Result</em>'.
+   * @see edu.cmu.sei.alisa.alisa.RSALResult
+   * @generated
+   */
+  EClass getRSALResult();
+
+  /**
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.BinaryExpr <em>Binary Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Binary Expr</em>'.
+   * @see edu.cmu.sei.alisa.alisa.BinaryExpr
+   * @generated
+   */
+  EClass getBinaryExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.cmu.sei.alisa.alisa.BinaryExpr#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see edu.cmu.sei.alisa.alisa.BinaryExpr#getLeft()
+   * @see #getBinaryExpr()
+   * @generated
+   */
+  EReference getBinaryExpr_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.cmu.sei.alisa.alisa.BinaryExpr#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see edu.cmu.sei.alisa.alisa.BinaryExpr#getOp()
+   * @see #getBinaryExpr()
+   * @generated
+   */
+  EAttribute getBinaryExpr_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.cmu.sei.alisa.alisa.BinaryExpr#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see edu.cmu.sei.alisa.alisa.BinaryExpr#getRight()
+   * @see #getBinaryExpr()
+   * @generated
+   */
+  EReference getBinaryExpr_Right();
+
+  /**
+   * Returns the meta object for class '{@link edu.cmu.sei.alisa.alisa.RefExpr <em>Ref Expr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ref Expr</em>'.
+   * @see edu.cmu.sei.alisa.alisa.RefExpr
+   * @generated
+   */
+  EClass getRefExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.cmu.sei.alisa.alisa.RefExpr#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Id</em>'.
+   * @see edu.cmu.sei.alisa.alisa.RefExpr#getId()
+   * @see #getRefExpr()
+   * @generated
+   */
+  EReference getRefExpr_Id();
 
   /**
    * Returns the meta object for enum '{@link edu.cmu.sei.alisa.alisa.VerificationResultState <em>Verification Result State</em>}'.
@@ -2713,6 +3619,24 @@ public interface AlisaPackage extends EPackage
     EAttribute RSAL_VARIABLE__VALUE = eINSTANCE.getRSALVariable_Value();
 
     /**
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementProxyImpl <em>Contractual Element Proxy</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.ContractualElementProxyImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getContractualElementProxy()
+     * @generated
+     */
+    EClass CONTRACTUAL_ELEMENT_PROXY = eINSTANCE.getContractualElementProxy();
+
+    /**
+     * The meta object literal for the '<em><b>Proxyreference</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTRACTUAL_ELEMENT_PROXY__PROXYREFERENCE = eINSTANCE.getContractualElementProxy_Proxyreference();
+
+    /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ContractualElementImpl <em>Contractual Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2903,6 +3827,96 @@ public interface AlisaPackage extends EPackage
     EReference REQUIREMENT__VERIFIED_BY = eINSTANCE.getRequirement_VerifiedBy();
 
     /**
+     * The meta object literal for the '<em><b>Argument</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REQUIREMENT__ARGUMENT = eINSTANCE.getRequirement_Argument();
+
+    /**
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.AssumptionImpl <em>Assumption</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.AssumptionImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getAssumption()
+     * @generated
+     */
+    EClass ASSUMPTION = eINSTANCE.getAssumption();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASSUMPTION__NAME = eINSTANCE.getAssumption_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASSUMPTION__TARGET = eINSTANCE.getAssumption_Target();
+
+    /**
+     * The meta object literal for the '<em><b>Category</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASSUMPTION__CATEGORY = eINSTANCE.getAssumption_Category();
+
+    /**
+     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASSUMPTION__TITLE = eINSTANCE.getAssumption_Title();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASSUMPTION__DESCRIPTION = eINSTANCE.getAssumption_Description();
+
+    /**
+     * The meta object literal for the '<em><b>Assert</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASSUMPTION__ASSERT = eINSTANCE.getAssumption_Assert();
+
+    /**
+     * The meta object literal for the '<em><b>Rationale</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASSUMPTION__RATIONALE = eINSTANCE.getAssumption_Rationale();
+
+    /**
+     * The meta object literal for the '<em><b>Issue</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASSUMPTION__ISSUE = eINSTANCE.getAssumption_Issue();
+
+    /**
+     * The meta object literal for the '<em><b>Verified By</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASSUMPTION__VERIFIED_BY = eINSTANCE.getAssumption_VerifiedBy();
+
+    /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentImpl <em>External Document</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3023,46 +4037,66 @@ public interface AlisaPackage extends EPackage
     EAttribute STAKEHOLDER__PHONE = eINSTANCE.getStakeholder_Phone();
 
     /**
-     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationDecompositionImpl <em>Verification Decomposition</em>}' class.
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.AssuranceArgumentImpl <em>Assurance Argument</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see edu.cmu.sei.alisa.alisa.impl.VerificationDecompositionImpl
-     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationDecomposition()
+     * @see edu.cmu.sei.alisa.alisa.impl.AssuranceArgumentImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getAssuranceArgument()
      * @generated
      */
-    EClass VERIFICATION_DECOMPOSITION = eINSTANCE.getVerificationDecomposition();
+    EClass ASSURANCE_ARGUMENT = eINSTANCE.getAssuranceArgument();
 
     /**
-     * The meta object literal for the '<em><b>Element</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VERIFICATION_DECOMPOSITION__ELEMENT = eINSTANCE.getVerificationDecomposition_Element();
+    EReference ASSURANCE_ARGUMENT__EXPRESSION = eINSTANCE.getAssuranceArgument_Expression();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Rationale</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VERIFICATION_DECOMPOSITION__LEFT = eINSTANCE.getVerificationDecomposition_Left();
+    EAttribute ASSURANCE_ARGUMENT__RATIONALE = eINSTANCE.getAssuranceArgument_Rationale();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ArgumentExprImpl <em>Argument Expr</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.ArgumentExprImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getArgumentExpr()
      * @generated
      */
-    EAttribute VERIFICATION_DECOMPOSITION__TYPE = eINSTANCE.getVerificationDecomposition_Type();
+    EClass ARGUMENT_EXPR = eINSTANCE.getArgumentExpr();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ArgumentReferenceImpl <em>Argument Reference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.ArgumentReferenceImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getArgumentReference()
+     * @generated
+     */
+    EClass ARGUMENT_REFERENCE = eINSTANCE.getArgumentReference();
+
+    /**
+     * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VERIFICATION_DECOMPOSITION__RIGHT = eINSTANCE.getVerificationDecomposition_Right();
+    EReference ARGUMENT_REFERENCE__REFERENCE = eINSTANCE.getArgumentReference_Reference();
+
+    /**
+     * The meta object literal for the '<em><b>Weight</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ARGUMENT_REFERENCE__WEIGHT = eINSTANCE.getArgumentReference_Weight();
 
     /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl <em>Verification Activity</em>}' class.
@@ -3091,28 +4125,86 @@ public interface AlisaPackage extends EPackage
     EAttribute VERIFICATION_ACTIVITY__DESCRIPTION = eINSTANCE.getVerificationActivity_Description();
 
     /**
+     * The meta object literal for the '<em><b>Category</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VERIFICATION_ACTIVITY__CATEGORY = eINSTANCE.getVerificationActivity_Category();
+
+    /**
+     * The meta object literal for the '<em><b>Method</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VERIFICATION_ACTIVITY__METHOD = eINSTANCE.getVerificationActivity_Method();
+
+    /**
+     * The meta object literal for the '<em><b>Assumption</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VERIFICATION_ACTIVITY__ASSUMPTION = eINSTANCE.getVerificationActivity_Assumption();
+
+    /**
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationMethodImpl <em>Verification Method</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.VerificationMethodImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getVerificationMethod()
+     * @generated
+     */
+    EClass VERIFICATION_METHOD = eINSTANCE.getVerificationMethod();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VERIFICATION_METHOD__NAME = eINSTANCE.getVerificationMethod_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VERIFICATION_METHOD__LANGUAGE = eINSTANCE.getVerificationMethod_Language();
+
+    /**
      * The meta object literal for the '<em><b>Method</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VERIFICATION_ACTIVITY__METHOD = eINSTANCE.getVerificationActivity_Method();
+    EAttribute VERIFICATION_METHOD__METHOD = eINSTANCE.getVerificationMethod_Method();
 
     /**
-     * The meta object literal for the '<em><b>Decomposed To</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VERIFICATION_ACTIVITY__DECOMPOSED_TO = eINSTANCE.getVerificationActivity_DecomposedTo();
+    EAttribute VERIFICATION_METHOD__TITLE = eINSTANCE.getVerificationMethod_Title();
 
     /**
-     * The meta object literal for the '<em><b>Assigned To</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VERIFICATION_ACTIVITY__ASSIGNED_TO = eINSTANCE.getVerificationActivity_AssignedTo();
+    EAttribute VERIFICATION_METHOD__DESCRIPTION = eINSTANCE.getVerificationMethod_Description();
+
+    /**
+     * The meta object literal for the '<em><b>Category</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VERIFICATION_METHOD__CATEGORY = eINSTANCE.getVerificationMethod_Category();
 
     /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl <em>Verification Result</em>}' class.
@@ -3125,12 +4217,12 @@ public interface AlisaPackage extends EPackage
     EClass VERIFICATION_RESULT = eINSTANCE.getVerificationResult();
 
     /**
-     * The meta object literal for the '<em><b>Referenced Verification Method</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Verification Activity</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD = eINSTANCE.getVerificationResult_ReferencedVerificationMethod();
+    EReference VERIFICATION_RESULT__VERIFICATION_ACTIVITY = eINSTANCE.getVerificationResult_VerificationActivity();
 
     /**
      * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
@@ -3171,6 +4263,150 @@ public interface AlisaPackage extends EPackage
      * @generated
      */
     EAttribute VERIFICATION_RESULT__STATUS = eINSTANCE.getVerificationResult_Status();
+
+    /**
+     * The meta object literal for the '<em><b>Assumption Verification Result</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VERIFICATION_RESULT__ASSUMPTION_VERIFICATION_RESULT = eINSTANCE.getVerificationResult_AssumptionVerificationResult();
+
+    /**
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.ClaimResultImpl <em>Claim Result</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.ClaimResultImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getClaimResult()
+     * @generated
+     */
+    EClass CLAIM_RESULT = eINSTANCE.getClaimResult();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLAIM_RESULT__NAME = eINSTANCE.getClaimResult_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Requirement</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLAIM_RESULT__REQUIREMENT = eINSTANCE.getClaimResult_Requirement();
+
+    /**
+     * The meta object literal for the '<em><b>Pass Count</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLAIM_RESULT__PASS_COUNT = eINSTANCE.getClaimResult_PassCount();
+
+    /**
+     * The meta object literal for the '<em><b>Fail Count</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLAIM_RESULT__FAIL_COUNT = eINSTANCE.getClaimResult_FailCount();
+
+    /**
+     * The meta object literal for the '<em><b>Neutral Count</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLAIM_RESULT__NEUTRAL_COUNT = eINSTANCE.getClaimResult_NeutralCount();
+
+    /**
+     * The meta object literal for the '<em><b>Unknown Count</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLAIM_RESULT__UNKNOWN_COUNT = eINSTANCE.getClaimResult_UnknownCount();
+
+    /**
+     * The meta object literal for the '<em><b>Sub Claim Result</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLAIM_RESULT__SUB_CLAIM_RESULT = eINSTANCE.getClaimResult_SubClaimResult();
+
+    /**
+     * The meta object literal for the '<em><b>Sub VA Result</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLAIM_RESULT__SUB_VA_RESULT = eINSTANCE.getClaimResult_SubVAResult();
+
+    /**
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.RSALResultImpl <em>RSAL Result</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.RSALResultImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRSALResult()
+     * @generated
+     */
+    EClass RSAL_RESULT = eINSTANCE.getRSALResult();
+
+    /**
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.BinaryExprImpl <em>Binary Expr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.BinaryExprImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getBinaryExpr()
+     * @generated
+     */
+    EClass BINARY_EXPR = eINSTANCE.getBinaryExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINARY_EXPR__LEFT = eINSTANCE.getBinaryExpr_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BINARY_EXPR__OP = eINSTANCE.getBinaryExpr_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINARY_EXPR__RIGHT = eINSTANCE.getBinaryExpr_Right();
+
+    /**
+     * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.impl.RefExprImpl <em>Ref Expr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.cmu.sei.alisa.alisa.impl.RefExprImpl
+     * @see edu.cmu.sei.alisa.alisa.impl.AlisaPackageImpl#getRefExpr()
+     * @generated
+     */
+    EClass REF_EXPR = eINSTANCE.getRefExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REF_EXPR__ID = eINSTANCE.getRefExpr_Id();
 
     /**
      * The meta object literal for the '{@link edu.cmu.sei.alisa.alisa.VerificationResultState <em>Verification Result State</em>}' enum.

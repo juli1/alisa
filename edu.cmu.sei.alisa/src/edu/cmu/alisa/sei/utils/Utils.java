@@ -15,7 +15,6 @@ import edu.cmu.sei.alisa.alisa.Organization;
 import edu.cmu.sei.alisa.alisa.RSALContainer;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
-import edu.cmu.sei.alisa.alisa.VerificationActivity;
 import edu.cmu.sei.alisa.alisa.impl.AlisaFactoryImpl;
 
 public class Utils {
@@ -175,22 +174,22 @@ public class Utils {
 		return req;
 	}
 
-	/**
-	 * Add a new verification activity to the model
-	 * @param model - the alisa model that will contain the
-	 *                new verification activity.
-	 */
-	private static int NEW_VA_ID = 1;
-
-	public static void addNewVerificationActivity(RSALContainer lib) {
-		AlisaFactory factory = AlisaFactoryImpl.init();
-		VerificationActivity va = factory.createVerificationActivity();
-		va.setTitle("\"Title\"");
-		va.setName("new_verification_activity" + NEW_VA_ID++);
-		va.setMethod("manual");
-		va.setDescription("\"Desc\"");
-		lib.getContent().add(va);
-	}
+//	/**
+//	 * Add a new verification activity to the model
+//	 * @param model - the alisa model that will contain the
+//	 *                new verification activity.
+//	 */
+//	private static int NEW_VA_ID = 1;
+//
+//	public static void addNewVerificationActivity(RSALContainer lib) {
+//		AlisaFactory factory = AlisaFactoryImpl.init();
+//		VerificationActivity va = factory.createVerificationActivity();
+//		va.setTitle("\"Title\"");
+//		va.setName("new_verification_activity" + NEW_VA_ID++);
+//		va.setMethod("manual");
+//		va.setDescription("\"Desc\"");
+//		lib.getContent().add(va);
+//	}
 
 	/**
 	 * Add a new external document to the model

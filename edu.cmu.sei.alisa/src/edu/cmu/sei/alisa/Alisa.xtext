@@ -26,7 +26,7 @@ RSALPackage returns RSALContainer:
 	;
 
 RSALElement:
-	ContractualElement| Goal | Requirement | RSALSection | Stakeholder | VerificationActivity | Category |ExternalDocument
+	ContractualElement| Goal | Requirement | ContractualElementProxy | RSALSection | Stakeholder | VerificationActivity | Category |ExternalDocument
 ;
 	
 RSALSection returns RSALContainer:
@@ -53,6 +53,10 @@ Description :
 RSALVariable :
 	name = ID '=' value = STRING
 ;
+// to allow mapping of requirements and goals into a section based report structure
+ContractualElementProxy :
+	'@' proxyreference = [ContractualElement|DOTTEDREF]
+;
 
 CR returns ContractualElement: Goal | Requirement;
 
@@ -71,8 +75,8 @@ ContractualElement:
 	 &('evolves'  evolvesReference+=[ContractualElement|DOTTEDREF](',' evolvesReference+=[ContractualElement|DOTTEDREF])*)? 
 	 &('conflicts'  conflictsReference+=[ContractualElement|DOTTEDREF](',' conflictsReference+=[ContractualElement|DOTTEDREF])*)? 
 	 &('stakeholder'  stakeholderReference+=[Stakeholder|DOTTEDREF] (',' stakeholderReference+=[Stakeholder|DOTTEDREF])*)?
-	 &('see' 'stakeholder' 'req'  stakeholderRequirementReference+=[ContractualElement|DOTTEDREF] (',' stakeholderRequirementReference+=[ContractualElement|DOTTEDREF])*)?
-	 &('see' 'system' 'req'  systemRequirementReference+=[ContractualElement|DOTTEDREF] (',' systemRequirementReference+=[ContractualElement|DOTTEDREF])*)?
+	 &('see' 'goal'  stakeholderRequirementReference+=[ContractualElement|DOTTEDREF] (',' stakeholderRequirementReference+=[ContractualElement|DOTTEDREF])*)?
+	 &('see' 'requirement'  systemRequirementReference+=[ContractualElement|DOTTEDREF] (',' systemRequirementReference+=[ContractualElement|DOTTEDREF])*)?
 	&('see' 'document'  docReference+=XDocUri (',' docReference+=XDocUri)*)? 
 	& ('see' ':' modelReference+=QDOTTEDPAREF (',' modelReference+=QDOTTEDPAREF)*)? 
 	)
@@ -93,8 +97,8 @@ Goal returns Goal:
 	 &('evolves'  evolvesReference+=[Goal|DOTTEDREF](',' evolvesReference+=[Goal|DOTTEDREF])*)? 
 	 &('conflicts'  conflictsReference+=[Goal|DOTTEDREF](',' conflictsReference+=[Goal|DOTTEDREF])*)? 
 	 &('stakeholder'  stakeholderReference+=[Stakeholder|DOTTEDREF] (',' stakeholderReference+=[Stakeholder|DOTTEDREF])*)?
-	 &('see' 'stakeholder' 'req'  stakeholderRequirementReference+=[Goal|DOTTEDREF] (',' stakeholderRequirementReference+=[Goal|DOTTEDREF])*)?
-	 &('see' 'system' 'req'  systemRequirementReference+=[ContractualElement|DOTTEDREF] (',' systemRequirementReference+=[ContractualElement|DOTTEDREF])*)?
+	 &('see' 'goal'  stakeholderRequirementReference+=[Goal|DOTTEDREF] (',' stakeholderRequirementReference+=[Goal|DOTTEDREF])*)?
+	 &('see' 'requirement'  systemRequirementReference+=[ContractualElement|DOTTEDREF] (',' systemRequirementReference+=[ContractualElement|DOTTEDREF])*)?
 	 &('see' 'document'  docReference+=XDocUri (',' docReference+=XDocUri)*)? 
 	& ('see' ':' modelReference+=QDOTTEDPAREF (',' modelReference+=QDOTTEDPAREF)*)? 
 	)
@@ -114,14 +118,28 @@ Requirement:
 	&('refines'  refinesReference+=[Requirement|DOTTEDREF](',' refinesReference+=[Requirement|DOTTEDREF])*)? 
 	&('decomposes'  decomposesReference+=[Requirement|DOTTEDREF](',' decomposesReference+=[Requirement|DOTTEDREF])*)? 
 	&('evolves'  evolvesReference+=[Requirement|DOTTEDREF](',' evolvesReference+=[Requirement|DOTTEDREF])*)? 
-	&('see' 'stakeholder' 'req'  stakeholderRequirementReference+=[Goal|DOTTEDREF] (',' stakeholderRequirementReference+=[Goal|DOTTEDREF])*)?
-	&('see' 'system' 'req'  systemRequirementReference+=[ContractualElement|DOTTEDREF] (',' systemRequirementReference+=[ContractualElement|DOTTEDREF])*)?
-	&('verified' 'by'  verifiedBy+=(VerificationDecomposition)*)?
+	&('see' 'goal'  stakeholderRequirementReference+=[Goal|DOTTEDREF] (',' stakeholderRequirementReference+=[Goal|DOTTEDREF])*)?
+	&('see' 'requirement'  systemRequirementReference+=[ContractualElement|DOTTEDREF] (',' systemRequirementReference+=[ContractualElement|DOTTEDREF])*)?
+	&(verifiedBy+=VerificationActivity)*
+	&(argument=AssuranceArgument)?
 	&('see' 'document'  docReference+=XDocUri (',' docReference+=XDocUri)*)? 
 	& ('see' ':' modelReference+=QDOTTEDPAREF (',' modelReference+=QDOTTEDPAREF)*)? 
 	)
 	'end';
 
+	
+Assumption:
+	'assumption'  name=ID   
+	(( 'for' target=[VerificationActivity|DOTTEDREF])?
+ 	&('category'  category+=[Category|DOTTEDREF](',' category+=[Category|DOTTEDREF])*)?
+	&('title'  title=ValueString)? 
+	&('description'  description=ValueString)? 
+	&('assertion'  assert=ValueString)? 
+	&('rationale'  rationale=ValueString)? 
+	&('issues'  issue+=ValueString (','issue+=ValueString)* )? 
+	&(verifiedBy+=VerificationActivity)*
+	)
+	'end';
 
 
 ExternalDocument:
@@ -154,21 +172,43 @@ Stakeholder:
 	(('title'  title=ValueString )?
 	&('description'  description=ValueString )?
 	&('role'  role=ValueString )?
-	&('oranization' organziation = ValueString)
+	&('organization' organziation = ValueString)
 	&('email'  email=ValueString)?
 	&('phone'  phone=ValueString)?)
 	'end' 
 ;
 
-
-
-
-VerificationDecomposition:
-	element=([VerificationActivity|DOTTEDREF])|
-	left=([VerificationActivity|DOTTEDREF]) type=('and'|'or') right=(VerificationDecomposition)
+AssuranceArgument:
+	'argument' expression=ArgumentExpr ';'
+	('rationale'  rationale=ValueString)? 
+	'end'
 ;
 
+ArgumentExpr:
+	ImpliesExpr
+;
 
+ImpliesExpr returns ArgumentExpr:
+	OrExpr (=>({BinaryExpr.left=current} op='=>') right=ImpliesExpr)?
+;
+
+OrExpr returns ArgumentExpr:
+	AndExpr (=>({BinaryExpr.left=current} op='or') right=AndExpr)*
+;
+
+AndExpr returns ArgumentExpr:
+	AtomicExpr (=>({BinaryExpr.left=current} op='and') right=AtomicExpr)*
+;
+
+AtomicExpr returns ArgumentExpr:
+	{RefExpr} id=ArgumentReference
+|	'(' ArgumentExpr ')'
+;
+
+ArgumentReference:
+	reference=[VerificationActivity|DOTTEDREF]
+	('*' weight=INT )?
+;
 
 /*
  * Verification Activity
@@ -176,41 +216,64 @@ VerificationDecomposition:
 
 VerificationActivity:
 	'verification' 'activity' name=ID
-	('title'  title=ValueString)?
-	('description'  description=ValueString)?
-	('method'  method=VerificationMethod)?
+	(('title'  title=ValueString)?
+	&('description'  description=ValueString)?
+ 	&('category'  category+=[Category|DOTTEDREF](',' category+=[Category|DOTTEDREF])*)?
+	&('method'  method=VerificationMethod)?
 //	('parameters'  verificationParameters+=([ElementReference])*)?
-	('decomposed' 'to'  decomposedTo+=(VerificationDecomposition)*)?
-	('assigned' 'to'  assignedTo+=([Stakeholder|DOTTEDREF])*)?
+	&('assumption'  assumption+=Assumption)*
+	)
 	'end'  
 ;
  
 
 VerificationMethod:
-	'manual' | 'automatic' | 'review' | 'testing' | 'analysis' | 'verification'
+	'verification' 'method' name=ID '='
+ 	 language=SupportedLanguage method = ValueString
+	(('title'  title=ValueString)?
+	&('description'  description=ValueString)?
+ 	&('category'  category+=[Category|DOTTEDREF](',' category+=[Category|DOTTEDREF])*)?
+ 	)
 ;
 
+SupportedLanguage:
+	'lute' | 'agree'
+;
 
 /*
  * Verification Result
  */
 
 VerificationResult:
-	'verification' 'result' name=ID 'of' referencedVerificationMethod+=([VerificationActivity])*
-	('output'  title=ValueString)?
-	('logfile'  description=ValueString)?
-	('date'  method=ValueString)?
-	('state'  state=VerificationResultState)?
-	('status'  status=VerificationResultStatus)?
+	'verification' 'result' name=ID 'of' verificationActivity=[VerificationActivity]
+	(('output'  title=ValueString)?
+	&('logfile'  description=ValueString)?
+	&('date'  method=ValueString)?
+	&('state'  state=VerificationResultState)?
+	&('status'  status=VerificationResultStatus)? )
+	(assumptionVerificationResult+= VerificationResult)*
 	'end'  
 ;
+
+ClaimResult:
+	'claim' 'result' name=ID 'of' requirement=[Requirement]
+	('pass'  passCount=INT)
+	('fail'  failCount=INT)
+	('neutral' neutralCount=INT)
+	('unknown' unknownCount=INT) 
+	(subClaimResult += ClaimResult)*
+	(subVAResult+= VerificationResult)*
+	'end'  
+;
+
+RSALResult: VerificationResult | ClaimResult;
 
 enum  VerificationResultState:
 	SCHEDULED='scheduled' | COMPLETED='completed' | INPROGRESS='inprogress'
 ;
 
 enum VerificationResultStatus:
-	PASS='pass' | FAIL='fail' | UNKNOWN='unknown'
+	PASS='pass' | FAIL='fail' | NEUTRAL='neutral' | UNKNOWN='unknown'
 ;
 
 //	// classifier reference

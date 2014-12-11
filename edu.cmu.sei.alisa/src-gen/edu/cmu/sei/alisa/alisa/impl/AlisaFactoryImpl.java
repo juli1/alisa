@@ -72,16 +72,25 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
       case AlisaPackage.DESCRIPTION: return createDescription();
       case AlisaPackage.DESCRIPTION_ELEMENT: return createDescriptionElement();
       case AlisaPackage.RSAL_VARIABLE: return createRSALVariable();
+      case AlisaPackage.CONTRACTUAL_ELEMENT_PROXY: return createContractualElementProxy();
       case AlisaPackage.CONTRACTUAL_ELEMENT: return createContractualElement();
       case AlisaPackage.GOAL: return createGoal();
       case AlisaPackage.REQUIREMENT: return createRequirement();
+      case AlisaPackage.ASSUMPTION: return createAssumption();
       case AlisaPackage.EXTERNAL_DOCUMENT: return createExternalDocument();
       case AlisaPackage.XDOC_URI: return createXDocUri();
       case AlisaPackage.CATEGORY: return createCategory();
       case AlisaPackage.STAKEHOLDER: return createStakeholder();
-      case AlisaPackage.VERIFICATION_DECOMPOSITION: return createVerificationDecomposition();
+      case AlisaPackage.ASSURANCE_ARGUMENT: return createAssuranceArgument();
+      case AlisaPackage.ARGUMENT_EXPR: return createArgumentExpr();
+      case AlisaPackage.ARGUMENT_REFERENCE: return createArgumentReference();
       case AlisaPackage.VERIFICATION_ACTIVITY: return createVerificationActivity();
+      case AlisaPackage.VERIFICATION_METHOD: return createVerificationMethod();
       case AlisaPackage.VERIFICATION_RESULT: return createVerificationResult();
+      case AlisaPackage.CLAIM_RESULT: return createClaimResult();
+      case AlisaPackage.RSAL_RESULT: return createRSALResult();
+      case AlisaPackage.BINARY_EXPR: return createBinaryExpr();
+      case AlisaPackage.REF_EXPR: return createRefExpr();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -207,6 +216,17 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ContractualElementProxy createContractualElementProxy()
+  {
+    ContractualElementProxyImpl contractualElementProxy = new ContractualElementProxyImpl();
+    return contractualElementProxy;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ContractualElement createContractualElement()
   {
     ContractualElementImpl contractualElement = new ContractualElementImpl();
@@ -233,6 +253,17 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
   {
     RequirementImpl requirement = new RequirementImpl();
     return requirement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Assumption createAssumption()
+  {
+    AssumptionImpl assumption = new AssumptionImpl();
+    return assumption;
   }
 
   /**
@@ -284,10 +315,32 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public VerificationDecomposition createVerificationDecomposition()
+  public AssuranceArgument createAssuranceArgument()
   {
-    VerificationDecompositionImpl verificationDecomposition = new VerificationDecompositionImpl();
-    return verificationDecomposition;
+    AssuranceArgumentImpl assuranceArgument = new AssuranceArgumentImpl();
+    return assuranceArgument;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArgumentExpr createArgumentExpr()
+  {
+    ArgumentExprImpl argumentExpr = new ArgumentExprImpl();
+    return argumentExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArgumentReference createArgumentReference()
+  {
+    ArgumentReferenceImpl argumentReference = new ArgumentReferenceImpl();
+    return argumentReference;
   }
 
   /**
@@ -306,10 +359,65 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public VerificationMethod createVerificationMethod()
+  {
+    VerificationMethodImpl verificationMethod = new VerificationMethodImpl();
+    return verificationMethod;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public VerificationResult createVerificationResult()
   {
     VerificationResultImpl verificationResult = new VerificationResultImpl();
     return verificationResult;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ClaimResult createClaimResult()
+  {
+    ClaimResultImpl claimResult = new ClaimResultImpl();
+    return claimResult;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RSALResult createRSALResult()
+  {
+    RSALResultImpl rsalResult = new RSALResultImpl();
+    return rsalResult;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BinaryExpr createBinaryExpr()
+  {
+    BinaryExprImpl binaryExpr = new BinaryExprImpl();
+    return binaryExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RefExpr createRefExpr()
+  {
+    RefExprImpl refExpr = new RefExprImpl();
+    return refExpr;
   }
 
   /**

@@ -4,8 +4,6 @@ package edu.cmu.sei.alisa.alisa;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 import org.osate.aadl2.NamedElement;
 
 /**
@@ -16,12 +14,13 @@ import org.osate.aadl2.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationResult#getReferencedVerificationMethod <em>Referenced Verification Method</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationResult#getVerificationActivity <em>Verification Activity</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationResult#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationResult#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationResult#getMethod <em>Method</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationResult#getState <em>State</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationResult#getStatus <em>Status</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationResult#getAssumptionVerificationResult <em>Assumption Verification Result</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,23 +28,33 @@ import org.osate.aadl2.NamedElement;
  * @model
  * @generated
  */
-public interface VerificationResult extends EObject, NamedElement
+public interface VerificationResult extends NamedElement, RSALResult
 {
   /**
-   * Returns the value of the '<em><b>Referenced Verification Method</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.VerificationActivity}.
+   * Returns the value of the '<em><b>Verification Activity</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Referenced Verification Method</em>' reference list isn't clear,
+   * If the meaning of the '<em>Verification Activity</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Referenced Verification Method</em>' reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationResult_ReferencedVerificationMethod()
+   * @return the value of the '<em>Verification Activity</em>' reference.
+   * @see #setVerificationActivity(VerificationActivity)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationResult_VerificationActivity()
    * @model
    * @generated
    */
-  EList<VerificationActivity> getReferencedVerificationMethod();
+  VerificationActivity getVerificationActivity();
+
+  /**
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.VerificationResult#getVerificationActivity <em>Verification Activity</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Verification Activity</em>' reference.
+   * @see #getVerificationActivity()
+   * @generated
+   */
+  void setVerificationActivity(VerificationActivity value);
 
   /**
    * Returns the value of the '<em><b>Title</b></em>' attribute.
@@ -182,5 +191,21 @@ public interface VerificationResult extends EObject, NamedElement
    * @generated
    */
   void setStatus(VerificationResultStatus value);
+
+  /**
+   * Returns the value of the '<em><b>Assumption Verification Result</b></em>' containment reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.VerificationResult}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Assumption Verification Result</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Assumption Verification Result</em>' containment reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationResult_AssumptionVerificationResult()
+   * @model containment="true"
+   * @generated
+   */
+  EList<VerificationResult> getAssumptionVerificationResult();
 
 } // VerificationResult

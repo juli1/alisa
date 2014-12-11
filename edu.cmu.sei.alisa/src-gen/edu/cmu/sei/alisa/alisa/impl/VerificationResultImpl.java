@@ -11,14 +11,17 @@ import edu.cmu.sei.alisa.alisa.VerificationResultStatus;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.osate.aadl2.impl.NamedElementImpl;
 
@@ -29,12 +32,13 @@ import org.osate.aadl2.impl.NamedElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl#getReferencedVerificationMethod <em>Referenced Verification Method</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl#getVerificationActivity <em>Verification Activity</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl#getMethod <em>Method</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl#getState <em>State</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl#getStatus <em>Status</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationResultImpl#getAssumptionVerificationResult <em>Assumption Verification Result</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,14 +47,14 @@ import org.osate.aadl2.impl.NamedElementImpl;
 public class VerificationResultImpl extends NamedElementImpl implements VerificationResult
 {
   /**
-   * The cached value of the '{@link #getReferencedVerificationMethod() <em>Referenced Verification Method</em>}' reference list.
+   * The cached value of the '{@link #getVerificationActivity() <em>Verification Activity</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getReferencedVerificationMethod()
+   * @see #getVerificationActivity()
    * @generated
    * @ordered
    */
-  protected EList<VerificationActivity> referencedVerificationMethod;
+  protected VerificationActivity verificationActivity;
 
   /**
    * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -153,6 +157,16 @@ public class VerificationResultImpl extends NamedElementImpl implements Verifica
   protected VerificationResultStatus status = STATUS_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getAssumptionVerificationResult() <em>Assumption Verification Result</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAssumptionVerificationResult()
+   * @generated
+   * @ordered
+   */
+  protected EList<VerificationResult> assumptionVerificationResult;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -178,13 +192,42 @@ public class VerificationResultImpl extends NamedElementImpl implements Verifica
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<VerificationActivity> getReferencedVerificationMethod()
+  public VerificationActivity getVerificationActivity()
   {
-    if (referencedVerificationMethod == null)
+    if (verificationActivity != null && verificationActivity.eIsProxy())
     {
-      referencedVerificationMethod = new EObjectResolvingEList<VerificationActivity>(VerificationActivity.class, this, AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD);
+      InternalEObject oldVerificationActivity = (InternalEObject)verificationActivity;
+      verificationActivity = (VerificationActivity)eResolveProxy(oldVerificationActivity);
+      if (verificationActivity != oldVerificationActivity)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.VERIFICATION_RESULT__VERIFICATION_ACTIVITY, oldVerificationActivity, verificationActivity));
+      }
     }
-    return referencedVerificationMethod;
+    return verificationActivity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VerificationActivity basicGetVerificationActivity()
+  {
+    return verificationActivity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVerificationActivity(VerificationActivity newVerificationActivity)
+  {
+    VerificationActivity oldVerificationActivity = verificationActivity;
+    verificationActivity = newVerificationActivity;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.VERIFICATION_RESULT__VERIFICATION_ACTIVITY, oldVerificationActivity, verificationActivity));
   }
 
   /**
@@ -307,13 +350,44 @@ public class VerificationResultImpl extends NamedElementImpl implements Verifica
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<VerificationResult> getAssumptionVerificationResult()
+  {
+    if (assumptionVerificationResult == null)
+    {
+      assumptionVerificationResult = new EObjectContainmentEList<VerificationResult>(VerificationResult.class, this, AlisaPackage.VERIFICATION_RESULT__ASSUMPTION_VERIFICATION_RESULT);
+    }
+    return assumptionVerificationResult;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AlisaPackage.VERIFICATION_RESULT__ASSUMPTION_VERIFICATION_RESULT:
+        return ((InternalEList<?>)getAssumptionVerificationResult()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD:
-        return getReferencedVerificationMethod();
+      case AlisaPackage.VERIFICATION_RESULT__VERIFICATION_ACTIVITY:
+        if (resolve) return getVerificationActivity();
+        return basicGetVerificationActivity();
       case AlisaPackage.VERIFICATION_RESULT__TITLE:
         return getTitle();
       case AlisaPackage.VERIFICATION_RESULT__DESCRIPTION:
@@ -324,6 +398,8 @@ public class VerificationResultImpl extends NamedElementImpl implements Verifica
         return getState();
       case AlisaPackage.VERIFICATION_RESULT__STATUS:
         return getStatus();
+      case AlisaPackage.VERIFICATION_RESULT__ASSUMPTION_VERIFICATION_RESULT:
+        return getAssumptionVerificationResult();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -339,9 +415,8 @@ public class VerificationResultImpl extends NamedElementImpl implements Verifica
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD:
-        getReferencedVerificationMethod().clear();
-        getReferencedVerificationMethod().addAll((Collection<? extends VerificationActivity>)newValue);
+      case AlisaPackage.VERIFICATION_RESULT__VERIFICATION_ACTIVITY:
+        setVerificationActivity((VerificationActivity)newValue);
         return;
       case AlisaPackage.VERIFICATION_RESULT__TITLE:
         setTitle((String)newValue);
@@ -358,6 +433,10 @@ public class VerificationResultImpl extends NamedElementImpl implements Verifica
       case AlisaPackage.VERIFICATION_RESULT__STATUS:
         setStatus((VerificationResultStatus)newValue);
         return;
+      case AlisaPackage.VERIFICATION_RESULT__ASSUMPTION_VERIFICATION_RESULT:
+        getAssumptionVerificationResult().clear();
+        getAssumptionVerificationResult().addAll((Collection<? extends VerificationResult>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -372,8 +451,8 @@ public class VerificationResultImpl extends NamedElementImpl implements Verifica
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD:
-        getReferencedVerificationMethod().clear();
+      case AlisaPackage.VERIFICATION_RESULT__VERIFICATION_ACTIVITY:
+        setVerificationActivity((VerificationActivity)null);
         return;
       case AlisaPackage.VERIFICATION_RESULT__TITLE:
         setTitle(TITLE_EDEFAULT);
@@ -390,6 +469,9 @@ public class VerificationResultImpl extends NamedElementImpl implements Verifica
       case AlisaPackage.VERIFICATION_RESULT__STATUS:
         setStatus(STATUS_EDEFAULT);
         return;
+      case AlisaPackage.VERIFICATION_RESULT__ASSUMPTION_VERIFICATION_RESULT:
+        getAssumptionVerificationResult().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -404,8 +486,8 @@ public class VerificationResultImpl extends NamedElementImpl implements Verifica
   {
     switch (featureID)
     {
-      case AlisaPackage.VERIFICATION_RESULT__REFERENCED_VERIFICATION_METHOD:
-        return referencedVerificationMethod != null && !referencedVerificationMethod.isEmpty();
+      case AlisaPackage.VERIFICATION_RESULT__VERIFICATION_ACTIVITY:
+        return verificationActivity != null;
       case AlisaPackage.VERIFICATION_RESULT__TITLE:
         return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
       case AlisaPackage.VERIFICATION_RESULT__DESCRIPTION:
@@ -416,6 +498,8 @@ public class VerificationResultImpl extends NamedElementImpl implements Verifica
         return state != STATE_EDEFAULT;
       case AlisaPackage.VERIFICATION_RESULT__STATUS:
         return status != STATUS_EDEFAULT;
+      case AlisaPackage.VERIFICATION_RESULT__ASSUMPTION_VERIFICATION_RESULT:
+        return assumptionVerificationResult != null && !assumptionVerificationResult.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -86,6 +86,15 @@ public interface AlisaFactory extends EFactory
   RSALVariable createRSALVariable();
 
   /**
+   * Returns a new object of class '<em>Contractual Element Proxy</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Contractual Element Proxy</em>'.
+   * @generated
+   */
+  ContractualElementProxy createContractualElementProxy();
+
+  /**
    * Returns a new object of class '<em>Contractual Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -111,6 +120,15 @@ public interface AlisaFactory extends EFactory
    * @generated
    */
   Requirement createRequirement();
+
+  /**
+   * Returns a new object of class '<em>Assumption</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Assumption</em>'.
+   * @generated
+   */
+  Assumption createAssumption();
 
   /**
    * Returns a new object of class '<em>External Document</em>'.
@@ -149,13 +167,31 @@ public interface AlisaFactory extends EFactory
   Stakeholder createStakeholder();
 
   /**
-   * Returns a new object of class '<em>Verification Decomposition</em>'.
+   * Returns a new object of class '<em>Assurance Argument</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Verification Decomposition</em>'.
+   * @return a new object of class '<em>Assurance Argument</em>'.
    * @generated
    */
-  VerificationDecomposition createVerificationDecomposition();
+  AssuranceArgument createAssuranceArgument();
+
+  /**
+   * Returns a new object of class '<em>Argument Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Argument Expr</em>'.
+   * @generated
+   */
+  ArgumentExpr createArgumentExpr();
+
+  /**
+   * Returns a new object of class '<em>Argument Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Argument Reference</em>'.
+   * @generated
+   */
+  ArgumentReference createArgumentReference();
 
   /**
    * Returns a new object of class '<em>Verification Activity</em>'.
@@ -167,6 +203,15 @@ public interface AlisaFactory extends EFactory
   VerificationActivity createVerificationActivity();
 
   /**
+   * Returns a new object of class '<em>Verification Method</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Verification Method</em>'.
+   * @generated
+   */
+  VerificationMethod createVerificationMethod();
+
+  /**
    * Returns a new object of class '<em>Verification Result</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -174,6 +219,42 @@ public interface AlisaFactory extends EFactory
    * @generated
    */
   VerificationResult createVerificationResult();
+
+  /**
+   * Returns a new object of class '<em>Claim Result</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Claim Result</em>'.
+   * @generated
+   */
+  ClaimResult createClaimResult();
+
+  /**
+   * Returns a new object of class '<em>RSAL Result</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>RSAL Result</em>'.
+   * @generated
+   */
+  RSALResult createRSALResult();
+
+  /**
+   * Returns a new object of class '<em>Binary Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Binary Expr</em>'.
+   * @generated
+   */
+  BinaryExpr createBinaryExpr();
+
+  /**
+   * Returns a new object of class '<em>Ref Expr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ref Expr</em>'.
+   * @generated
+   */
+  RefExpr createRefExpr();
 
   /**
    * Returns the package supported by this factory.

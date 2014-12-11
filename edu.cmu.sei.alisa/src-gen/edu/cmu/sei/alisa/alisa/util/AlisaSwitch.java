@@ -135,6 +135,16 @@ public class AlisaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AlisaPackage.CONTRACTUAL_ELEMENT_PROXY:
+      {
+        ContractualElementProxy contractualElementProxy = (ContractualElementProxy)theEObject;
+        T result = caseContractualElementProxy(contractualElementProxy);
+        if (result == null) result = caseRSALElement(contractualElementProxy);
+        if (result == null) result = caseNamedElement(contractualElementProxy);
+        if (result == null) result = caseElement(contractualElementProxy);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AlisaPackage.CONTRACTUAL_ELEMENT:
       {
         ContractualElement contractualElement = (ContractualElement)theEObject;
@@ -164,6 +174,13 @@ public class AlisaSwitch<T> extends Switch<T>
         if (result == null) result = caseRSALElement(requirement);
         if (result == null) result = caseNamedElement(requirement);
         if (result == null) result = caseElement(requirement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.ASSUMPTION:
+      {
+        Assumption assumption = (Assumption)theEObject;
+        T result = caseAssumption(assumption);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -204,10 +221,24 @@ public class AlisaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AlisaPackage.VERIFICATION_DECOMPOSITION:
+      case AlisaPackage.ASSURANCE_ARGUMENT:
       {
-        VerificationDecomposition verificationDecomposition = (VerificationDecomposition)theEObject;
-        T result = caseVerificationDecomposition(verificationDecomposition);
+        AssuranceArgument assuranceArgument = (AssuranceArgument)theEObject;
+        T result = caseAssuranceArgument(assuranceArgument);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.ARGUMENT_EXPR:
+      {
+        ArgumentExpr argumentExpr = (ArgumentExpr)theEObject;
+        T result = caseArgumentExpr(argumentExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.ARGUMENT_REFERENCE:
+      {
+        ArgumentReference argumentReference = (ArgumentReference)theEObject;
+        T result = caseArgumentReference(argumentReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -221,12 +252,51 @@ public class AlisaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AlisaPackage.VERIFICATION_METHOD:
+      {
+        VerificationMethod verificationMethod = (VerificationMethod)theEObject;
+        T result = caseVerificationMethod(verificationMethod);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AlisaPackage.VERIFICATION_RESULT:
       {
         VerificationResult verificationResult = (VerificationResult)theEObject;
         T result = caseVerificationResult(verificationResult);
         if (result == null) result = caseNamedElement(verificationResult);
+        if (result == null) result = caseRSALResult(verificationResult);
         if (result == null) result = caseElement(verificationResult);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.CLAIM_RESULT:
+      {
+        ClaimResult claimResult = (ClaimResult)theEObject;
+        T result = caseClaimResult(claimResult);
+        if (result == null) result = caseRSALResult(claimResult);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.RSAL_RESULT:
+      {
+        RSALResult rsalResult = (RSALResult)theEObject;
+        T result = caseRSALResult(rsalResult);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.BINARY_EXPR:
+      {
+        BinaryExpr binaryExpr = (BinaryExpr)theEObject;
+        T result = caseBinaryExpr(binaryExpr);
+        if (result == null) result = caseArgumentExpr(binaryExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.REF_EXPR:
+      {
+        RefExpr refExpr = (RefExpr)theEObject;
+        T result = caseRefExpr(refExpr);
+        if (result == null) result = caseArgumentExpr(refExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -347,6 +417,22 @@ public class AlisaSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Contractual Element Proxy</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Contractual Element Proxy</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseContractualElementProxy(ContractualElementProxy object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Contractual Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -390,6 +476,22 @@ public class AlisaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRequirement(Requirement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Assumption</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Assumption</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAssumption(Assumption object)
   {
     return null;
   }
@@ -459,17 +561,49 @@ public class AlisaSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Verification Decomposition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Assurance Argument</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Verification Decomposition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Assurance Argument</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVerificationDecomposition(VerificationDecomposition object)
+  public T caseAssuranceArgument(AssuranceArgument object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Argument Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Argument Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArgumentExpr(ArgumentExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Argument Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Argument Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArgumentReference(ArgumentReference object)
   {
     return null;
   }
@@ -491,6 +625,22 @@ public class AlisaSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Verification Method</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Verification Method</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVerificationMethod(VerificationMethod object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Verification Result</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -502,6 +652,70 @@ public class AlisaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVerificationResult(VerificationResult object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Claim Result</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Claim Result</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClaimResult(ClaimResult object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>RSAL Result</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>RSAL Result</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRSALResult(RSALResult object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Binary Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Binary Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBinaryExpr(BinaryExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ref Expr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ref Expr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRefExpr(RefExpr object)
   {
     return null;
   }

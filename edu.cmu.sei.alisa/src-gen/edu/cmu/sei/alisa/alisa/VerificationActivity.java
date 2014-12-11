@@ -16,9 +16,9 @@ import org.osate.aadl2.NamedElement;
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getDescription <em>Description</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getCategory <em>Category</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getMethod <em>Method</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getDecomposedTo <em>Decomposed To</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getAssignedTo <em>Assigned To</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getAssumption <em>Assumption</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,61 +81,61 @@ public interface VerificationActivity extends NamedElement, RSALElement
   void setDescription(String value);
 
   /**
-   * Returns the value of the '<em><b>Method</b></em>' attribute.
+   * Returns the value of the '<em><b>Category</b></em>' reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Category}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Method</em>' attribute isn't clear,
+   * If the meaning of the '<em>Category</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Method</em>' attribute.
-   * @see #setMethod(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationActivity_Method()
+   * @return the value of the '<em>Category</em>' reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationActivity_Category()
    * @model
    * @generated
    */
-  String getMethod();
+  EList<Category> getCategory();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getMethod <em>Method</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Method</em>' attribute.
-   * @see #getMethod()
-   * @generated
-   */
-  void setMethod(String value);
-
-  /**
-   * Returns the value of the '<em><b>Decomposed To</b></em>' containment reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.VerificationDecomposition}.
+   * Returns the value of the '<em><b>Method</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Decomposed To</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Method</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Decomposed To</em>' containment reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationActivity_DecomposedTo()
+   * @return the value of the '<em>Method</em>' containment reference.
+   * @see #setMethod(VerificationMethod)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationActivity_Method()
    * @model containment="true"
    * @generated
    */
-  EList<VerificationDecomposition> getDecomposedTo();
+  VerificationMethod getMethod();
 
   /**
-   * Returns the value of the '<em><b>Assigned To</b></em>' reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Stakeholder}.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getMethod <em>Method</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Method</em>' containment reference.
+   * @see #getMethod()
+   * @generated
+   */
+  void setMethod(VerificationMethod value);
+
+  /**
+   * Returns the value of the '<em><b>Assumption</b></em>' containment reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Assumption}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Assigned To</em>' reference list isn't clear,
+   * If the meaning of the '<em>Assumption</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Assigned To</em>' reference list.
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationActivity_AssignedTo()
-   * @model
+   * @return the value of the '<em>Assumption</em>' containment reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationActivity_Assumption()
+   * @model containment="true"
    * @generated
    */
-  EList<Stakeholder> getAssignedTo();
+  EList<Assumption> getAssumption();
 
 } // VerificationActivity
