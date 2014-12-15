@@ -207,13 +207,6 @@ public class Utils {
 	}
 
 	/**
-	 * Add a new goal to the model
-	 * @param goals - the goals that will contain the
-	 *                new goal.
-	 */
-	private static int NEW_GOAL_ID = 1;
-
-	/**
 	 * Add a new stakeholder to the model
 	 * @param model - the alisa model that will contain the
 	 *                new stakeholder.

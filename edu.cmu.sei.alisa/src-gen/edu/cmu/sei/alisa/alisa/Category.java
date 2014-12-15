@@ -2,7 +2,7 @@
  */
 package edu.cmu.sei.alisa.alisa;
 
-import org.osate.aadl2.NamedElement;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,7 +12,7 @@ import org.osate.aadl2.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.Category#getExtends <em>Extends</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Category#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -20,32 +20,32 @@ import org.osate.aadl2.NamedElement;
  * @model
  * @generated
  */
-public interface Category extends NamedElement, RSALElement
+public interface Category extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Extends</b></em>' reference.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Extends</em>' reference isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Extends</em>' reference.
-   * @see #setExtends(Category)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getCategory_Extends()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getCategory_Name()
    * @model
    * @generated
    */
-  Category getExtends();
+  String getName();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Category#getExtends <em>Extends</em>}' reference.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Category#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Extends</em>' reference.
-   * @see #getExtends()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setExtends(Category value);
+  void setName(String value);
 
 } // Category

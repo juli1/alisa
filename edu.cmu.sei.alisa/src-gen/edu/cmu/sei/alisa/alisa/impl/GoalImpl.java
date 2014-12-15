@@ -3,10 +3,8 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.ContractualElement;
 import edu.cmu.sei.alisa.alisa.Goal;
-import edu.cmu.sei.alisa.alisa.RSALContainer;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.XDocUri;
 
@@ -38,13 +36,7 @@ import org.osate.aadl2.NamedElement;
  * The following features are implemented:
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getCategory <em>Category</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getTitle <em>Title</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getAssert <em>Assert</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getRationale <em>Rationale</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getIssue <em>Issue</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getSectionReference <em>Section Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getRefinesReference <em>Refines Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getDecomposesReference <em>Decomposes Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getEvolvesReference <em>Evolves Reference</em>}</li>
@@ -59,7 +51,7 @@ import org.osate.aadl2.NamedElement;
  *
  * @generated
  */
-public class GoalImpl extends RSALElementImpl implements Goal
+public class GoalImpl extends ContractualElementImpl implements Goal
 {
   /**
    * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
@@ -70,56 +62,6 @@ public class GoalImpl extends RSALElementImpl implements Goal
    * @ordered
    */
   protected NamedElement target;
-
-  /**
-   * The cached value of the '{@link #getCategory() <em>Category</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCategory()
-   * @generated
-   * @ordered
-   */
-  protected EList<Category> category;
-
-  /**
-   * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTitle()
-   * @generated
-   * @ordered
-   */
-  protected static final String TITLE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTitle()
-   * @generated
-   * @ordered
-   */
-  protected String title = TITLE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected static final String DESCRIPTION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected String description = DESCRIPTION_EDEFAULT;
 
   /**
    * The default value of the '{@link #getAssert() <em>Assert</em>}' attribute.
@@ -142,46 +84,6 @@ public class GoalImpl extends RSALElementImpl implements Goal
   protected String assert_ = ASSERT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getRationale() <em>Rationale</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRationale()
-   * @generated
-   * @ordered
-   */
-  protected static final String RATIONALE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getRationale() <em>Rationale</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRationale()
-   * @generated
-   * @ordered
-   */
-  protected String rationale = RATIONALE_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getIssue() <em>Issue</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIssue()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> issue;
-
-  /**
-   * The cached value of the '{@link #getSectionReference() <em>Section Reference</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSectionReference()
-   * @generated
-   * @ordered
-   */
-  protected EList<RSALContainer> sectionReference;
-
-  /**
    * The cached value of the '{@link #getRefinesReference() <em>Refines Reference</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -189,7 +91,7 @@ public class GoalImpl extends RSALElementImpl implements Goal
    * @generated
    * @ordered
    */
-  protected EList<ContractualElement> refinesReference;
+  protected EList<Goal> refinesReference;
 
   /**
    * The cached value of the '{@link #getDecomposesReference() <em>Decomposes Reference</em>}' reference list.
@@ -199,7 +101,7 @@ public class GoalImpl extends RSALElementImpl implements Goal
    * @generated
    * @ordered
    */
-  protected EList<ContractualElement> decomposesReference;
+  protected EList<Goal> decomposesReference;
 
   /**
    * The cached value of the '{@link #getEvolvesReference() <em>Evolves Reference</em>}' reference list.
@@ -209,7 +111,7 @@ public class GoalImpl extends RSALElementImpl implements Goal
    * @generated
    * @ordered
    */
-  protected EList<ContractualElement> evolvesReference;
+  protected EList<Goal> evolvesReference;
 
   /**
    * The cached value of the '{@link #getConflictsReference() <em>Conflicts Reference</em>}' reference list.
@@ -219,7 +121,7 @@ public class GoalImpl extends RSALElementImpl implements Goal
    * @generated
    * @ordered
    */
-  protected EList<ContractualElement> conflictsReference;
+  protected EList<Goal> conflictsReference;
 
   /**
    * The cached value of the '{@link #getStakeholderReference() <em>Stakeholder Reference</em>}' reference list.
@@ -239,7 +141,7 @@ public class GoalImpl extends RSALElementImpl implements Goal
    * @generated
    * @ordered
    */
-  protected EList<ContractualElement> stakeholderRequirementReference;
+  protected EList<Goal> stakeholderRequirementReference;
 
   /**
    * The cached value of the '{@link #getSystemRequirementReference() <em>System Requirement Reference</em>}' reference list.
@@ -340,66 +242,6 @@ public class GoalImpl extends RSALElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Category> getCategory()
-  {
-    if (category == null)
-    {
-      category = new EObjectResolvingEList<Category>(Category.class, this, AlisaPackage.GOAL__CATEGORY);
-    }
-    return category;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getTitle()
-  {
-    return title;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTitle(String newTitle)
-  {
-    String oldTitle = title;
-    title = newTitle;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOAL__TITLE, oldTitle, title));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getDescription()
-  {
-    return description;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDescription(String newDescription)
-  {
-    String oldDescription = description;
-    description = newDescription;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOAL__DESCRIPTION, oldDescription, description));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getAssert()
   {
     return assert_;
@@ -423,62 +265,11 @@ public class GoalImpl extends RSALElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getRationale()
-  {
-    return rationale;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRationale(String newRationale)
-  {
-    String oldRationale = rationale;
-    rationale = newRationale;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.GOAL__RATIONALE, oldRationale, rationale));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<String> getIssue()
-  {
-    if (issue == null)
-    {
-      issue = new EDataTypeEList<String>(String.class, this, AlisaPackage.GOAL__ISSUE);
-    }
-    return issue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<RSALContainer> getSectionReference()
-  {
-    if (sectionReference == null)
-    {
-      sectionReference = new EObjectResolvingEList<RSALContainer>(RSALContainer.class, this, AlisaPackage.GOAL__SECTION_REFERENCE);
-    }
-    return sectionReference;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<ContractualElement> getRefinesReference()
+  public EList<Goal> getRefinesReference()
   {
     if (refinesReference == null)
     {
-      refinesReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.GOAL__REFINES_REFERENCE);
+      refinesReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.GOAL__REFINES_REFERENCE);
     }
     return refinesReference;
   }
@@ -488,11 +279,11 @@ public class GoalImpl extends RSALElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ContractualElement> getDecomposesReference()
+  public EList<Goal> getDecomposesReference()
   {
     if (decomposesReference == null)
     {
-      decomposesReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.GOAL__DECOMPOSES_REFERENCE);
+      decomposesReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.GOAL__DECOMPOSES_REFERENCE);
     }
     return decomposesReference;
   }
@@ -502,11 +293,11 @@ public class GoalImpl extends RSALElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ContractualElement> getEvolvesReference()
+  public EList<Goal> getEvolvesReference()
   {
     if (evolvesReference == null)
     {
-      evolvesReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.GOAL__EVOLVES_REFERENCE);
+      evolvesReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.GOAL__EVOLVES_REFERENCE);
     }
     return evolvesReference;
   }
@@ -516,11 +307,11 @@ public class GoalImpl extends RSALElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ContractualElement> getConflictsReference()
+  public EList<Goal> getConflictsReference()
   {
     if (conflictsReference == null)
     {
-      conflictsReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.GOAL__CONFLICTS_REFERENCE);
+      conflictsReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.GOAL__CONFLICTS_REFERENCE);
     }
     return conflictsReference;
   }
@@ -544,11 +335,11 @@ public class GoalImpl extends RSALElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ContractualElement> getStakeholderRequirementReference()
+  public EList<Goal> getStakeholderRequirementReference()
   {
     if (stakeholderRequirementReference == null)
     {
-      stakeholderRequirementReference = new EObjectResolvingEList<ContractualElement>(ContractualElement.class, this, AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE);
+      stakeholderRequirementReference = new EObjectResolvingEList<Goal>(Goal.class, this, AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE);
     }
     return stakeholderRequirementReference;
   }
@@ -624,20 +415,8 @@ public class GoalImpl extends RSALElementImpl implements Goal
       case AlisaPackage.GOAL__TARGET:
         if (resolve) return getTarget();
         return basicGetTarget();
-      case AlisaPackage.GOAL__CATEGORY:
-        return getCategory();
-      case AlisaPackage.GOAL__TITLE:
-        return getTitle();
-      case AlisaPackage.GOAL__DESCRIPTION:
-        return getDescription();
       case AlisaPackage.GOAL__ASSERT:
         return getAssert();
-      case AlisaPackage.GOAL__RATIONALE:
-        return getRationale();
-      case AlisaPackage.GOAL__ISSUE:
-        return getIssue();
-      case AlisaPackage.GOAL__SECTION_REFERENCE:
-        return getSectionReference();
       case AlisaPackage.GOAL__REFINES_REFERENCE:
         return getRefinesReference();
       case AlisaPackage.GOAL__DECOMPOSES_REFERENCE:
@@ -674,45 +453,24 @@ public class GoalImpl extends RSALElementImpl implements Goal
       case AlisaPackage.GOAL__TARGET:
         setTarget((NamedElement)newValue);
         return;
-      case AlisaPackage.GOAL__CATEGORY:
-        getCategory().clear();
-        getCategory().addAll((Collection<? extends Category>)newValue);
-        return;
-      case AlisaPackage.GOAL__TITLE:
-        setTitle((String)newValue);
-        return;
-      case AlisaPackage.GOAL__DESCRIPTION:
-        setDescription((String)newValue);
-        return;
       case AlisaPackage.GOAL__ASSERT:
         setAssert((String)newValue);
         return;
-      case AlisaPackage.GOAL__RATIONALE:
-        setRationale((String)newValue);
-        return;
-      case AlisaPackage.GOAL__ISSUE:
-        getIssue().clear();
-        getIssue().addAll((Collection<? extends String>)newValue);
-        return;
-      case AlisaPackage.GOAL__SECTION_REFERENCE:
-        getSectionReference().clear();
-        getSectionReference().addAll((Collection<? extends RSALContainer>)newValue);
-        return;
       case AlisaPackage.GOAL__REFINES_REFERENCE:
         getRefinesReference().clear();
-        getRefinesReference().addAll((Collection<? extends ContractualElement>)newValue);
+        getRefinesReference().addAll((Collection<? extends Goal>)newValue);
         return;
       case AlisaPackage.GOAL__DECOMPOSES_REFERENCE:
         getDecomposesReference().clear();
-        getDecomposesReference().addAll((Collection<? extends ContractualElement>)newValue);
+        getDecomposesReference().addAll((Collection<? extends Goal>)newValue);
         return;
       case AlisaPackage.GOAL__EVOLVES_REFERENCE:
         getEvolvesReference().clear();
-        getEvolvesReference().addAll((Collection<? extends ContractualElement>)newValue);
+        getEvolvesReference().addAll((Collection<? extends Goal>)newValue);
         return;
       case AlisaPackage.GOAL__CONFLICTS_REFERENCE:
         getConflictsReference().clear();
-        getConflictsReference().addAll((Collection<? extends ContractualElement>)newValue);
+        getConflictsReference().addAll((Collection<? extends Goal>)newValue);
         return;
       case AlisaPackage.GOAL__STAKEHOLDER_REFERENCE:
         getStakeholderReference().clear();
@@ -720,7 +478,7 @@ public class GoalImpl extends RSALElementImpl implements Goal
         return;
       case AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE:
         getStakeholderRequirementReference().clear();
-        getStakeholderRequirementReference().addAll((Collection<? extends ContractualElement>)newValue);
+        getStakeholderRequirementReference().addAll((Collection<? extends Goal>)newValue);
         return;
       case AlisaPackage.GOAL__SYSTEM_REQUIREMENT_REFERENCE:
         getSystemRequirementReference().clear();
@@ -751,26 +509,8 @@ public class GoalImpl extends RSALElementImpl implements Goal
       case AlisaPackage.GOAL__TARGET:
         setTarget((NamedElement)null);
         return;
-      case AlisaPackage.GOAL__CATEGORY:
-        getCategory().clear();
-        return;
-      case AlisaPackage.GOAL__TITLE:
-        setTitle(TITLE_EDEFAULT);
-        return;
-      case AlisaPackage.GOAL__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
-        return;
       case AlisaPackage.GOAL__ASSERT:
         setAssert(ASSERT_EDEFAULT);
-        return;
-      case AlisaPackage.GOAL__RATIONALE:
-        setRationale(RATIONALE_EDEFAULT);
-        return;
-      case AlisaPackage.GOAL__ISSUE:
-        getIssue().clear();
-        return;
-      case AlisaPackage.GOAL__SECTION_REFERENCE:
-        getSectionReference().clear();
         return;
       case AlisaPackage.GOAL__REFINES_REFERENCE:
         getRefinesReference().clear();
@@ -815,20 +555,8 @@ public class GoalImpl extends RSALElementImpl implements Goal
     {
       case AlisaPackage.GOAL__TARGET:
         return target != null;
-      case AlisaPackage.GOAL__CATEGORY:
-        return category != null && !category.isEmpty();
-      case AlisaPackage.GOAL__TITLE:
-        return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-      case AlisaPackage.GOAL__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case AlisaPackage.GOAL__ASSERT:
         return ASSERT_EDEFAULT == null ? assert_ != null : !ASSERT_EDEFAULT.equals(assert_);
-      case AlisaPackage.GOAL__RATIONALE:
-        return RATIONALE_EDEFAULT == null ? rationale != null : !RATIONALE_EDEFAULT.equals(rationale);
-      case AlisaPackage.GOAL__ISSUE:
-        return issue != null && !issue.isEmpty();
-      case AlisaPackage.GOAL__SECTION_REFERENCE:
-        return sectionReference != null && !sectionReference.isEmpty();
       case AlisaPackage.GOAL__REFINES_REFERENCE:
         return refinesReference != null && !refinesReference.isEmpty();
       case AlisaPackage.GOAL__DECOMPOSES_REFERENCE:
@@ -857,91 +585,13 @@ public class GoalImpl extends RSALElementImpl implements Goal
    * @generated
    */
   @Override
-  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == ContractualElement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case AlisaPackage.GOAL__TARGET: return AlisaPackage.CONTRACTUAL_ELEMENT__TARGET;
-        case AlisaPackage.GOAL__CATEGORY: return AlisaPackage.CONTRACTUAL_ELEMENT__CATEGORY;
-        case AlisaPackage.GOAL__TITLE: return AlisaPackage.CONTRACTUAL_ELEMENT__TITLE;
-        case AlisaPackage.GOAL__DESCRIPTION: return AlisaPackage.CONTRACTUAL_ELEMENT__DESCRIPTION;
-        case AlisaPackage.GOAL__ASSERT: return AlisaPackage.CONTRACTUAL_ELEMENT__ASSERT;
-        case AlisaPackage.GOAL__RATIONALE: return AlisaPackage.CONTRACTUAL_ELEMENT__RATIONALE;
-        case AlisaPackage.GOAL__ISSUE: return AlisaPackage.CONTRACTUAL_ELEMENT__ISSUE;
-        case AlisaPackage.GOAL__SECTION_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__SECTION_REFERENCE;
-        case AlisaPackage.GOAL__REFINES_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__REFINES_REFERENCE;
-        case AlisaPackage.GOAL__DECOMPOSES_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__DECOMPOSES_REFERENCE;
-        case AlisaPackage.GOAL__EVOLVES_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__EVOLVES_REFERENCE;
-        case AlisaPackage.GOAL__CONFLICTS_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__CONFLICTS_REFERENCE;
-        case AlisaPackage.GOAL__STAKEHOLDER_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REFERENCE;
-        case AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REQUIREMENT_REFERENCE;
-        case AlisaPackage.GOAL__SYSTEM_REQUIREMENT_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__SYSTEM_REQUIREMENT_REFERENCE;
-        case AlisaPackage.GOAL__DOC_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__DOC_REFERENCE;
-        case AlisaPackage.GOAL__MODEL_REFERENCE: return AlisaPackage.CONTRACTUAL_ELEMENT__MODEL_REFERENCE;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == ContractualElement.class)
-    {
-      switch (baseFeatureID)
-      {
-        case AlisaPackage.CONTRACTUAL_ELEMENT__TARGET: return AlisaPackage.GOAL__TARGET;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__CATEGORY: return AlisaPackage.GOAL__CATEGORY;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__TITLE: return AlisaPackage.GOAL__TITLE;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__DESCRIPTION: return AlisaPackage.GOAL__DESCRIPTION;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__ASSERT: return AlisaPackage.GOAL__ASSERT;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__RATIONALE: return AlisaPackage.GOAL__RATIONALE;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__ISSUE: return AlisaPackage.GOAL__ISSUE;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__SECTION_REFERENCE: return AlisaPackage.GOAL__SECTION_REFERENCE;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__REFINES_REFERENCE: return AlisaPackage.GOAL__REFINES_REFERENCE;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__DECOMPOSES_REFERENCE: return AlisaPackage.GOAL__DECOMPOSES_REFERENCE;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__EVOLVES_REFERENCE: return AlisaPackage.GOAL__EVOLVES_REFERENCE;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__CONFLICTS_REFERENCE: return AlisaPackage.GOAL__CONFLICTS_REFERENCE;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REFERENCE: return AlisaPackage.GOAL__STAKEHOLDER_REFERENCE;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__STAKEHOLDER_REQUIREMENT_REFERENCE: return AlisaPackage.GOAL__STAKEHOLDER_REQUIREMENT_REFERENCE;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__SYSTEM_REQUIREMENT_REFERENCE: return AlisaPackage.GOAL__SYSTEM_REQUIREMENT_REFERENCE;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__DOC_REFERENCE: return AlisaPackage.GOAL__DOC_REFERENCE;
-        case AlisaPackage.CONTRACTUAL_ELEMENT__MODEL_REFERENCE: return AlisaPackage.GOAL__MODEL_REFERENCE;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String toString()
   {
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (title: ");
-    result.append(title);
-    result.append(", description: ");
-    result.append(description);
-    result.append(", assert: ");
+    result.append(" (assert: ");
     result.append(assert_);
-    result.append(", rationale: ");
-    result.append(rationale);
-    result.append(", issue: ");
-    result.append(issue);
     result.append(", modelReference: ");
     result.append(modelReference);
     result.append(')');

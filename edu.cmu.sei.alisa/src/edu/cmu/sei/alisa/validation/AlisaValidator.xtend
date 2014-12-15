@@ -3,16 +3,15 @@
  */
 package edu.cmu.sei.alisa.validation
 
-import edu.cmu.sei.alisa.alisa.AlisaPackage
-import org.eclipse.xtext.validation.Check
+import edu.cmu.sei.alisa.alisa.ContractualElement
+import edu.cmu.sei.alisa.alisa.Goal
+import edu.cmu.sei.alisa.alisa.Organization
+import edu.cmu.sei.alisa.alisa.RSALContainer
+import edu.cmu.sei.alisa.alisa.Requirement
 import edu.cmu.sei.alisa.alisa.Stakeholder
 import edu.cmu.sei.alisa.alisa.VerificationActivity
-import edu.cmu.sei.alisa.alisa.Organization
-import edu.cmu.sei.alisa.alisa.Requirement
-import edu.cmu.sei.alisa.alisa.Goal
+import org.eclipse.xtext.validation.Check
 import org.osate.aadl2.Aadl2Package
-import edu.cmu.sei.alisa.alisa.RSALContainer
-import edu.cmu.sei.alisa.alisa.ContractualElement
 
 /**
  * Custom validation rules. 

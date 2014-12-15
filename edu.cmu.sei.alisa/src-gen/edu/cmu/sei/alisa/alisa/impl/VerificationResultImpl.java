@@ -23,8 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.osate.aadl2.impl.NamedElementImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Verification Result</b></em>'.
@@ -44,7 +42,7 @@ import org.osate.aadl2.impl.NamedElementImpl;
  *
  * @generated
  */
-public class VerificationResultImpl extends NamedElementImpl implements VerificationResult
+public class VerificationResultImpl extends RSALResultImpl implements VerificationResult
 {
   /**
    * The cached value of the '{@link #getVerificationActivity() <em>Verification Activity</em>}' reference.

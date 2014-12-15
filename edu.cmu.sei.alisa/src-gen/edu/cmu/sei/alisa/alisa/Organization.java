@@ -4,8 +4,6 @@ package edu.cmu.sei.alisa.alisa;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.osate.aadl2.NamedElement;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Organization</b></em>'.
@@ -22,7 +20,7 @@ import org.osate.aadl2.NamedElement;
  * @model
  * @generated
  */
-public interface Organization extends AlisaModel, NamedElement
+public interface Organization extends AlisaModel
 {
   /**
    * Returns the value of the '<em><b>Stakeholder</b></em>' containment reference list.

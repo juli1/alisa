@@ -4,7 +4,7 @@ package edu.cmu.sei.alisa.alisa;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.osate.aadl2.NamedElement;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +14,7 @@ import org.osate.aadl2.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getCategory <em>Category</em>}</li>
@@ -26,8 +27,34 @@ import org.osate.aadl2.NamedElement;
  * @model
  * @generated
  */
-public interface VerificationActivity extends NamedElement, RSALElement
+public interface VerificationActivity extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getVerificationActivity_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.VerificationActivity#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
   /**
    * Returns the value of the '<em><b>Title</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -124,7 +151,7 @@ public interface VerificationActivity extends NamedElement, RSALElement
 
   /**
    * Returns the value of the '<em><b>Assumption</b></em>' containment reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Assumption}.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.VerificationAssumption}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Assumption</em>' containment reference list isn't clear,
@@ -136,6 +163,6 @@ public interface VerificationActivity extends NamedElement, RSALElement
    * @model containment="true"
    * @generated
    */
-  EList<Assumption> getAssumption();
+  EList<VerificationAssumption> getAssumption();
 
 } // VerificationActivity

@@ -3,9 +3,9 @@
 package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
-import edu.cmu.sei.alisa.alisa.Assumption;
 import edu.cmu.sei.alisa.alisa.Category;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
+import edu.cmu.sei.alisa.alisa.VerificationAssumption;
 import edu.cmu.sei.alisa.alisa.VerificationMethod;
 
 import java.util.Collection;
@@ -19,12 +19,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.osate.aadl2.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,6 +32,7 @@ import org.osate.aadl2.impl.NamedElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.VerificationActivityImpl#getCategory <em>Category</em>}</li>
@@ -43,8 +43,28 @@ import org.osate.aadl2.impl.NamedElementImpl;
  *
  * @generated
  */
-public class VerificationActivityImpl extends NamedElementImpl implements VerificationActivity
+public class VerificationActivityImpl extends MinimalEObjectImpl.Container implements VerificationActivity
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -113,7 +133,7 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
    * @generated
    * @ordered
    */
-  protected EList<Assumption> assumption;
+  protected EList<VerificationAssumption> assumption;
 
   /**
    * <!-- begin-user-doc -->
@@ -134,6 +154,29 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
   protected EClass eStaticClass()
   {
     return AlisaPackage.Literals.VERIFICATION_ACTIVITY;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.VERIFICATION_ACTIVITY__NAME, oldName, name));
   }
 
   /**
@@ -249,11 +292,11 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Assumption> getAssumption()
+  public EList<VerificationAssumption> getAssumption()
   {
     if (assumption == null)
     {
-      assumption = new EObjectContainmentEList<Assumption>(Assumption.class, this, AlisaPackage.VERIFICATION_ACTIVITY__ASSUMPTION);
+      assumption = new EObjectContainmentEList<VerificationAssumption>(VerificationAssumption.class, this, AlisaPackage.VERIFICATION_ACTIVITY__ASSUMPTION);
     }
     return assumption;
   }
@@ -286,6 +329,8 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
   {
     switch (featureID)
     {
+      case AlisaPackage.VERIFICATION_ACTIVITY__NAME:
+        return getName();
       case AlisaPackage.VERIFICATION_ACTIVITY__TITLE:
         return getTitle();
       case AlisaPackage.VERIFICATION_ACTIVITY__DESCRIPTION:
@@ -311,6 +356,9 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
   {
     switch (featureID)
     {
+      case AlisaPackage.VERIFICATION_ACTIVITY__NAME:
+        setName((String)newValue);
+        return;
       case AlisaPackage.VERIFICATION_ACTIVITY__TITLE:
         setTitle((String)newValue);
         return;
@@ -326,7 +374,7 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
         return;
       case AlisaPackage.VERIFICATION_ACTIVITY__ASSUMPTION:
         getAssumption().clear();
-        getAssumption().addAll((Collection<? extends Assumption>)newValue);
+        getAssumption().addAll((Collection<? extends VerificationAssumption>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -342,6 +390,9 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
   {
     switch (featureID)
     {
+      case AlisaPackage.VERIFICATION_ACTIVITY__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AlisaPackage.VERIFICATION_ACTIVITY__TITLE:
         setTitle(TITLE_EDEFAULT);
         return;
@@ -371,6 +422,8 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
   {
     switch (featureID)
     {
+      case AlisaPackage.VERIFICATION_ACTIVITY__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.VERIFICATION_ACTIVITY__TITLE:
         return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
       case AlisaPackage.VERIFICATION_ACTIVITY__DESCRIPTION:
@@ -396,7 +449,9 @@ public class VerificationActivityImpl extends NamedElementImpl implements Verifi
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (title: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", title: ");
     result.append(title);
     result.append(", description: ");
     result.append(description);

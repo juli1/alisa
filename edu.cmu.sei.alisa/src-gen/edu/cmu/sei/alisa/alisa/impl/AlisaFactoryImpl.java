@@ -66,28 +66,31 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
     switch (eClass.getClassifierID())
     {
       case AlisaPackage.ALISA_MODEL: return createAlisaModel();
+      case AlisaPackage.CONTRACTUAL_ELEMENT: return createContractualElement();
       case AlisaPackage.RSAL_CONTAINER: return createRSALContainer();
-      case AlisaPackage.RSAL_ELEMENT: return createRSALElement();
       case AlisaPackage.ORGANIZATION: return createOrganization();
       case AlisaPackage.DESCRIPTION: return createDescription();
       case AlisaPackage.DESCRIPTION_ELEMENT: return createDescriptionElement();
       case AlisaPackage.RSAL_VARIABLE: return createRSALVariable();
       case AlisaPackage.CONTRACTUAL_ELEMENT_PROXY: return createContractualElementProxy();
-      case AlisaPackage.CONTRACTUAL_ELEMENT: return createContractualElement();
       case AlisaPackage.GOAL: return createGoal();
       case AlisaPackage.REQUIREMENT: return createRequirement();
-      case AlisaPackage.ASSUMPTION: return createAssumption();
+      case AlisaPackage.VERIFICATION_ASSUMPTION: return createVerificationAssumption();
       case AlisaPackage.EXTERNAL_DOCUMENT: return createExternalDocument();
       case AlisaPackage.XDOC_URI: return createXDocUri();
+      case AlisaPackage.CATEGORIES: return createCategories();
       case AlisaPackage.CATEGORY: return createCategory();
+      case AlisaPackage.REQUIREMENT_CATEGORY: return createRequirementCategory();
+      case AlisaPackage.VERIFICATION_CATEGORY: return createVerificationCategory();
       case AlisaPackage.STAKEHOLDER: return createStakeholder();
       case AlisaPackage.ASSURANCE_ARGUMENT: return createAssuranceArgument();
       case AlisaPackage.ARGUMENT_EXPR: return createArgumentExpr();
       case AlisaPackage.ARGUMENT_REFERENCE: return createArgumentReference();
       case AlisaPackage.VERIFICATION_ACTIVITY: return createVerificationActivity();
       case AlisaPackage.VERIFICATION_METHOD: return createVerificationMethod();
+      case AlisaPackage.ASSURANCE_CASE: return createAssuranceCase();
       case AlisaPackage.VERIFICATION_RESULT: return createVerificationResult();
-      case AlisaPackage.CLAIM_RESULT: return createClaimResult();
+      case AlisaPackage.ASSURANCE_RESULT: return createAssuranceResult();
       case AlisaPackage.RSAL_RESULT: return createRSALResult();
       case AlisaPackage.BINARY_EXPR: return createBinaryExpr();
       case AlisaPackage.REF_EXPR: return createRefExpr();
@@ -150,10 +153,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public RSALContainer createRSALContainer()
+  public ContractualElement createContractualElement()
   {
-    RSALContainerImpl rsalContainer = new RSALContainerImpl();
-    return rsalContainer;
+    ContractualElementImpl contractualElement = new ContractualElementImpl();
+    return contractualElement;
   }
 
   /**
@@ -161,10 +164,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public RSALElement createRSALElement()
+  public RSALContainer createRSALContainer()
   {
-    RSALElementImpl rsalElement = new RSALElementImpl();
-    return rsalElement;
+    RSALContainerImpl rsalContainer = new RSALContainerImpl();
+    return rsalContainer;
   }
 
   /**
@@ -227,17 +230,6 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ContractualElement createContractualElement()
-  {
-    ContractualElementImpl contractualElement = new ContractualElementImpl();
-    return contractualElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Goal createGoal()
   {
     GoalImpl goal = new GoalImpl();
@@ -260,10 +252,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Assumption createAssumption()
+  public VerificationAssumption createVerificationAssumption()
   {
-    AssumptionImpl assumption = new AssumptionImpl();
-    return assumption;
+    VerificationAssumptionImpl verificationAssumption = new VerificationAssumptionImpl();
+    return verificationAssumption;
   }
 
   /**
@@ -293,10 +285,43 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Categories createCategories()
+  {
+    CategoriesImpl categories = new CategoriesImpl();
+    return categories;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Category createCategory()
   {
     CategoryImpl category = new CategoryImpl();
     return category;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RequirementCategory createRequirementCategory()
+  {
+    RequirementCategoryImpl requirementCategory = new RequirementCategoryImpl();
+    return requirementCategory;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VerificationCategory createVerificationCategory()
+  {
+    VerificationCategoryImpl verificationCategory = new VerificationCategoryImpl();
+    return verificationCategory;
   }
 
   /**
@@ -370,6 +395,17 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public AssuranceCase createAssuranceCase()
+  {
+    AssuranceCaseImpl assuranceCase = new AssuranceCaseImpl();
+    return assuranceCase;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public VerificationResult createVerificationResult()
   {
     VerificationResultImpl verificationResult = new VerificationResultImpl();
@@ -381,10 +417,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ClaimResult createClaimResult()
+  public AssuranceResult createAssuranceResult()
   {
-    ClaimResultImpl claimResult = new ClaimResultImpl();
-    return claimResult;
+    AssuranceResultImpl assuranceResult = new AssuranceResultImpl();
+    return assuranceResult;
   }
 
   /**

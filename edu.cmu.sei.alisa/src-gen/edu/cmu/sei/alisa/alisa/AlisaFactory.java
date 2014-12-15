@@ -32,6 +32,15 @@ public interface AlisaFactory extends EFactory
   AlisaModel createAlisaModel();
 
   /**
+   * Returns a new object of class '<em>Contractual Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Contractual Element</em>'.
+   * @generated
+   */
+  ContractualElement createContractualElement();
+
+  /**
    * Returns a new object of class '<em>RSAL Container</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -39,15 +48,6 @@ public interface AlisaFactory extends EFactory
    * @generated
    */
   RSALContainer createRSALContainer();
-
-  /**
-   * Returns a new object of class '<em>RSAL Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>RSAL Element</em>'.
-   * @generated
-   */
-  RSALElement createRSALElement();
 
   /**
    * Returns a new object of class '<em>Organization</em>'.
@@ -95,15 +95,6 @@ public interface AlisaFactory extends EFactory
   ContractualElementProxy createContractualElementProxy();
 
   /**
-   * Returns a new object of class '<em>Contractual Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Contractual Element</em>'.
-   * @generated
-   */
-  ContractualElement createContractualElement();
-
-  /**
    * Returns a new object of class '<em>Goal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -122,13 +113,13 @@ public interface AlisaFactory extends EFactory
   Requirement createRequirement();
 
   /**
-   * Returns a new object of class '<em>Assumption</em>'.
+   * Returns a new object of class '<em>Verification Assumption</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Assumption</em>'.
+   * @return a new object of class '<em>Verification Assumption</em>'.
    * @generated
    */
-  Assumption createAssumption();
+  VerificationAssumption createVerificationAssumption();
 
   /**
    * Returns a new object of class '<em>External Document</em>'.
@@ -149,6 +140,15 @@ public interface AlisaFactory extends EFactory
   XDocUri createXDocUri();
 
   /**
+   * Returns a new object of class '<em>Categories</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Categories</em>'.
+   * @generated
+   */
+  Categories createCategories();
+
+  /**
    * Returns a new object of class '<em>Category</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -156,6 +156,24 @@ public interface AlisaFactory extends EFactory
    * @generated
    */
   Category createCategory();
+
+  /**
+   * Returns a new object of class '<em>Requirement Category</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Requirement Category</em>'.
+   * @generated
+   */
+  RequirementCategory createRequirementCategory();
+
+  /**
+   * Returns a new object of class '<em>Verification Category</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Verification Category</em>'.
+   * @generated
+   */
+  VerificationCategory createVerificationCategory();
 
   /**
    * Returns a new object of class '<em>Stakeholder</em>'.
@@ -212,6 +230,15 @@ public interface AlisaFactory extends EFactory
   VerificationMethod createVerificationMethod();
 
   /**
+   * Returns a new object of class '<em>Assurance Case</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Assurance Case</em>'.
+   * @generated
+   */
+  AssuranceCase createAssuranceCase();
+
+  /**
    * Returns a new object of class '<em>Verification Result</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -221,13 +248,13 @@ public interface AlisaFactory extends EFactory
   VerificationResult createVerificationResult();
 
   /**
-   * Returns a new object of class '<em>Claim Result</em>'.
+   * Returns a new object of class '<em>Assurance Result</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Claim Result</em>'.
+   * @return a new object of class '<em>Assurance Result</em>'.
    * @generated
    */
-  ClaimResult createClaimResult();
+  AssuranceResult createAssuranceResult();
 
   /**
    * Returns a new object of class '<em>RSAL Result</em>'.

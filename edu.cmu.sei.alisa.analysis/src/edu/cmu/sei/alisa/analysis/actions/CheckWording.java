@@ -3,13 +3,13 @@ package edu.cmu.sei.alisa.analysis.actions;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.osate.aadl2.NamedElement;
 
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.ContractualElement;
 import edu.cmu.sei.alisa.alisa.RSALContainer;
-import edu.cmu.sei.alisa.alisa.RSALElement;
 import edu.cmu.sei.alisa.analysis.wording.ErrorReport;
 
 public class CheckWording {
@@ -31,7 +31,7 @@ public class CheckWording {
 
 		reportedErrors = new ArrayList<ErrorReport>();
 		if (model instanceof RSALContainer)
-			for (RSALElement obj : ((RSALContainer) model).getContent()) {
+			for (EObject obj : ((RSALContainer) model).getContent()) {
 				if (obj instanceof ContractualElement) {
 					checkDocumentedRequirement((ContractualElement) obj);
 				} else if (obj instanceof RSALContainer) {

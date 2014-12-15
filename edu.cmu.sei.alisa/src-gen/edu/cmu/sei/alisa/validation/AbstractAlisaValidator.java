@@ -15,7 +15,6 @@ public class AbstractAlisaValidator extends org.eclipse.xtext.validation.Abstrac
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
 	    result.add(edu.cmu.sei.alisa.alisa.AlisaPackage.eINSTANCE);
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://aadl.info/AADL/2.0"));
 		return result;
 	}
 }

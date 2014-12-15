@@ -4,6 +4,8 @@ package edu.cmu.sei.alisa.alisa;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 import org.osate.aadl2.NamedElement;
 
 /**
@@ -25,11 +27,11 @@ import org.osate.aadl2.NamedElement;
  * @model
  * @generated
  */
-public interface RSALContainer extends AlisaModel, NamedElement, RSALElement
+public interface RSALContainer extends AlisaModel
 {
   /**
    * Returns the value of the '<em><b>Imported Namespace</b></em>' reference list.
-   * The list contents are of type {@link org.osate.aadl2.NamedElement}.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Imported Namespace</em>' reference list isn't clear,
@@ -41,11 +43,11 @@ public interface RSALContainer extends AlisaModel, NamedElement, RSALElement
    * @model
    * @generated
    */
-  EList<NamedElement> getImportedNamespace();
+  EList<EObject> getImportedNamespace();
 
   /**
    * Returns the value of the '<em><b>Content</b></em>' containment reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.RSALElement}.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Content</em>' containment reference list isn't clear,
@@ -57,7 +59,7 @@ public interface RSALContainer extends AlisaModel, NamedElement, RSALElement
    * @model containment="true"
    * @generated
    */
-  EList<RSALElement> getContent();
+  EList<EObject> getContent();
 
   /**
    * Returns the value of the '<em><b>Issue</b></em>' attribute list.

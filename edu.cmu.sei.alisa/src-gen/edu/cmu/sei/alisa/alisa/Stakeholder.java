@@ -2,7 +2,7 @@
  */
 package edu.cmu.sei.alisa.alisa;
 
-import org.osate.aadl2.NamedElement;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,10 +12,10 @@ import org.osate.aadl2.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Stakeholder#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Stakeholder#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Stakeholder#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Stakeholder#getRole <em>Role</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.Stakeholder#getOrganziation <em>Organziation</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Stakeholder#getEmail <em>Email</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Stakeholder#getPhone <em>Phone</em>}</li>
  * </ul>
@@ -25,8 +25,34 @@ import org.osate.aadl2.NamedElement;
  * @model
  * @generated
  */
-public interface Stakeholder extends NamedElement, RSALElement
+public interface Stakeholder extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getStakeholder_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Stakeholder#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
   /**
    * Returns the value of the '<em><b>Title</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -104,32 +130,6 @@ public interface Stakeholder extends NamedElement, RSALElement
    * @generated
    */
   void setRole(String value);
-
-  /**
-   * Returns the value of the '<em><b>Organziation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Organziation</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Organziation</em>' attribute.
-   * @see #setOrganziation(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getStakeholder_Organziation()
-   * @model
-   * @generated
-   */
-  String getOrganziation();
-
-  /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.Stakeholder#getOrganziation <em>Organziation</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Organziation</em>' attribute.
-   * @see #getOrganziation()
-   * @generated
-   */
-  void setOrganziation(String value);
 
   /**
    * Returns the value of the '<em><b>Email</b></em>' attribute.

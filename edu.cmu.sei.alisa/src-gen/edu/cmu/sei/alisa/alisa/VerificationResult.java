@@ -4,8 +4,6 @@ package edu.cmu.sei.alisa.alisa;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.osate.aadl2.NamedElement;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Verification Result</b></em>'.
@@ -28,7 +26,7 @@ import org.osate.aadl2.NamedElement;
  * @model
  * @generated
  */
-public interface VerificationResult extends NamedElement, RSALResult
+public interface VerificationResult extends RSALResult
 {
   /**
    * Returns the value of the '<em><b>Verification Activity</b></em>' reference.

@@ -4,7 +4,6 @@ package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.RSALContainer;
-import edu.cmu.sei.alisa.alisa.RSALElement;
 
 import java.util.Collection;
 
@@ -52,7 +51,7 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
    * @generated
    * @ordered
    */
-  protected EList<NamedElement> importedNamespace;
+  protected EList<EObject> importedNamespace;
 
   /**
    * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
@@ -62,7 +61,7 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
    * @generated
    * @ordered
    */
-  protected EList<RSALElement> content;
+  protected EList<EObject> content;
 
   /**
    * The cached value of the '{@link #getIssue() <em>Issue</em>}' attribute list.
@@ -110,11 +109,11 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<NamedElement> getImportedNamespace()
+  public EList<EObject> getImportedNamespace()
   {
     if (importedNamespace == null)
     {
-      importedNamespace = new EObjectResolvingEList<NamedElement>(NamedElement.class, this, AlisaPackage.RSAL_CONTAINER__IMPORTED_NAMESPACE);
+      importedNamespace = new EObjectResolvingEList<EObject>(EObject.class, this, AlisaPackage.RSAL_CONTAINER__IMPORTED_NAMESPACE);
     }
     return importedNamespace;
   }
@@ -124,11 +123,11 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<RSALElement> getContent()
+  public EList<EObject> getContent()
   {
     if (content == null)
     {
-      content = new EObjectContainmentEList<RSALElement>(RSALElement.class, this, AlisaPackage.RSAL_CONTAINER__CONTENT);
+      content = new EObjectContainmentEList<EObject>(EObject.class, this, AlisaPackage.RSAL_CONTAINER__CONTENT);
     }
     return content;
   }
@@ -242,11 +241,11 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
     {
       case AlisaPackage.RSAL_CONTAINER__IMPORTED_NAMESPACE:
         getImportedNamespace().clear();
-        getImportedNamespace().addAll((Collection<? extends NamedElement>)newValue);
+        getImportedNamespace().addAll((Collection<? extends EObject>)newValue);
         return;
       case AlisaPackage.RSAL_CONTAINER__CONTENT:
         getContent().clear();
-        getContent().addAll((Collection<? extends RSALElement>)newValue);
+        getContent().addAll((Collection<? extends EObject>)newValue);
         return;
       case AlisaPackage.RSAL_CONTAINER__ISSUE:
         getIssue().clear();

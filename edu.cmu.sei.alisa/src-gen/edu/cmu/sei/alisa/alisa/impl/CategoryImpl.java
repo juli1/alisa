@@ -8,11 +8,9 @@ import edu.cmu.sei.alisa.alisa.Category;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.osate.aadl2.impl.NamedElementImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,23 +19,33 @@ import org.osate.aadl2.impl.NamedElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.CategoryImpl#getExtends <em>Extends</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.CategoryImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CategoryImpl extends NamedElementImpl implements Category
+public class CategoryImpl extends MinimalEObjectImpl.Container implements Category
 {
   /**
-   * The cached value of the '{@link #getExtends() <em>Extends</em>}' reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExtends()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected Category extends_;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,19 +73,9 @@ public class CategoryImpl extends NamedElementImpl implements Category
    * <!-- end-user-doc -->
    * @generated
    */
-  public Category getExtends()
+  public String getName()
   {
-    if (extends_ != null && extends_.eIsProxy())
-    {
-      InternalEObject oldExtends = (InternalEObject)extends_;
-      extends_ = (Category)eResolveProxy(oldExtends);
-      if (extends_ != oldExtends)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlisaPackage.CATEGORY__EXTENDS, oldExtends, extends_));
-      }
-    }
-    return extends_;
+    return name;
   }
 
   /**
@@ -85,22 +83,12 @@ public class CategoryImpl extends NamedElementImpl implements Category
    * <!-- end-user-doc -->
    * @generated
    */
-  public Category basicGetExtends()
+  public void setName(String newName)
   {
-    return extends_;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setExtends(Category newExtends)
-  {
-    Category oldExtends = extends_;
-    extends_ = newExtends;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.CATEGORY__EXTENDS, oldExtends, extends_));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.CATEGORY__NAME, oldName, name));
   }
 
   /**
@@ -113,9 +101,8 @@ public class CategoryImpl extends NamedElementImpl implements Category
   {
     switch (featureID)
     {
-      case AlisaPackage.CATEGORY__EXTENDS:
-        if (resolve) return getExtends();
-        return basicGetExtends();
+      case AlisaPackage.CATEGORY__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -130,8 +117,8 @@ public class CategoryImpl extends NamedElementImpl implements Category
   {
     switch (featureID)
     {
-      case AlisaPackage.CATEGORY__EXTENDS:
-        setExtends((Category)newValue);
+      case AlisaPackage.CATEGORY__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -147,8 +134,8 @@ public class CategoryImpl extends NamedElementImpl implements Category
   {
     switch (featureID)
     {
-      case AlisaPackage.CATEGORY__EXTENDS:
-        setExtends((Category)null);
+      case AlisaPackage.CATEGORY__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -164,10 +151,27 @@ public class CategoryImpl extends NamedElementImpl implements Category
   {
     switch (featureID)
     {
-      case AlisaPackage.CATEGORY__EXTENDS:
-        return extends_ != null;
+      case AlisaPackage.CATEGORY__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //CategoryImpl

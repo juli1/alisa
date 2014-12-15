@@ -8,7 +8,6 @@ import edu.cmu.sei.alisa.alisa.ContractualElement;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Organization;
 import edu.cmu.sei.alisa.alisa.RSALContainer;
-import edu.cmu.sei.alisa.alisa.RSALElement;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
@@ -77,8 +76,8 @@ public class AlisaValidator extends AbstractAlisaValidator {
       RSALContainer model = ((RSALContainer) _eContainer_1);
       boolean _notEquals = (!Objects.equal(model, null));
       if (_notEquals) {
-        EList<RSALElement> _content = model.getContent();
-        for (final RSALElement other : _content) {
+        EList<EObject> _content = model.getContent();
+        for (final EObject other : _content) {
           if ((other instanceof VerificationActivity)) {
             VerificationActivity otherVA = ((VerificationActivity) other);
             boolean _notEquals_1 = (!Objects.equal(otherVA, null));
@@ -120,8 +119,8 @@ public class AlisaValidator extends AbstractAlisaValidator {
     RSALContainer model = ((RSALContainer) _eContainer);
     boolean _notEquals = (!Objects.equal(model, null));
     if (_notEquals) {
-      EList<RSALElement> _content = model.getContent();
-      for (final RSALElement other : _content) {
+      EList<EObject> _content = model.getContent();
+      for (final EObject other : _content) {
         if ((other instanceof ContractualElement)) {
           ContractualElement otherReq = ((ContractualElement) other);
           boolean _notEquals_1 = (!Objects.equal(otherReq, null));

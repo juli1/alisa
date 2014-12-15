@@ -10,8 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.osate.aadl2.impl.NamedElementImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,14 +19,35 @@ import org.osate.aadl2.impl.NamedElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.ExternalDocumentImpl#getExternalReference <em>External Reference</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ExternalDocumentImpl extends NamedElementImpl implements ExternalDocument
+public class ExternalDocumentImpl extends MinimalEObjectImpl.Container implements ExternalDocument
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getExternalReference() <em>External Reference</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -74,6 +94,29 @@ public class ExternalDocumentImpl extends NamedElementImpl implements ExternalDo
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.EXTERNAL_DOCUMENT__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getExternalReference()
   {
     return externalReference;
@@ -102,6 +145,8 @@ public class ExternalDocumentImpl extends NamedElementImpl implements ExternalDo
   {
     switch (featureID)
     {
+      case AlisaPackage.EXTERNAL_DOCUMENT__NAME:
+        return getName();
       case AlisaPackage.EXTERNAL_DOCUMENT__EXTERNAL_REFERENCE:
         return getExternalReference();
     }
@@ -118,6 +163,9 @@ public class ExternalDocumentImpl extends NamedElementImpl implements ExternalDo
   {
     switch (featureID)
     {
+      case AlisaPackage.EXTERNAL_DOCUMENT__NAME:
+        setName((String)newValue);
+        return;
       case AlisaPackage.EXTERNAL_DOCUMENT__EXTERNAL_REFERENCE:
         setExternalReference((String)newValue);
         return;
@@ -135,6 +183,9 @@ public class ExternalDocumentImpl extends NamedElementImpl implements ExternalDo
   {
     switch (featureID)
     {
+      case AlisaPackage.EXTERNAL_DOCUMENT__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AlisaPackage.EXTERNAL_DOCUMENT__EXTERNAL_REFERENCE:
         setExternalReference(EXTERNAL_REFERENCE_EDEFAULT);
         return;
@@ -152,6 +203,8 @@ public class ExternalDocumentImpl extends NamedElementImpl implements ExternalDo
   {
     switch (featureID)
     {
+      case AlisaPackage.EXTERNAL_DOCUMENT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.EXTERNAL_DOCUMENT__EXTERNAL_REFERENCE:
         return EXTERNAL_REFERENCE_EDEFAULT == null ? externalReference != null : !EXTERNAL_REFERENCE_EDEFAULT.equals(externalReference);
     }
@@ -169,7 +222,9 @@ public class ExternalDocumentImpl extends NamedElementImpl implements ExternalDo
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (externalReference: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", externalReference: ");
     result.append(externalReference);
     result.append(')');
     return result.toString();

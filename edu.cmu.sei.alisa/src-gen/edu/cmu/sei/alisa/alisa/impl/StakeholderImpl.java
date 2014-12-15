@@ -10,8 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.osate.aadl2.impl.NamedElementImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,10 +19,10 @@ import org.osate.aadl2.impl.NamedElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.StakeholderImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.StakeholderImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.StakeholderImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.StakeholderImpl#getRole <em>Role</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.StakeholderImpl#getOrganziation <em>Organziation</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.StakeholderImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.StakeholderImpl#getPhone <em>Phone</em>}</li>
  * </ul>
@@ -31,8 +30,28 @@ import org.osate.aadl2.impl.NamedElementImpl;
  *
  * @generated
  */
-public class StakeholderImpl extends NamedElementImpl implements Stakeholder
+public class StakeholderImpl extends MinimalEObjectImpl.Container implements Stakeholder
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -94,26 +113,6 @@ public class StakeholderImpl extends NamedElementImpl implements Stakeholder
   protected String role = ROLE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getOrganziation() <em>Organziation</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOrganziation()
-   * @generated
-   * @ordered
-   */
-  protected static final String ORGANZIATION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getOrganziation() <em>Organziation</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getOrganziation()
-   * @generated
-   * @ordered
-   */
-  protected String organziation = ORGANZIATION_EDEFAULT;
-
-  /**
    * The default value of the '{@link #getEmail() <em>Email</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -172,6 +171,29 @@ public class StakeholderImpl extends NamedElementImpl implements Stakeholder
   protected EClass eStaticClass()
   {
     return AlisaPackage.Literals.STAKEHOLDER;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.STAKEHOLDER__NAME, oldName, name));
   }
 
   /**
@@ -248,29 +270,6 @@ public class StakeholderImpl extends NamedElementImpl implements Stakeholder
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getOrganziation()
-  {
-    return organziation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setOrganziation(String newOrganziation)
-  {
-    String oldOrganziation = organziation;
-    organziation = newOrganziation;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.STAKEHOLDER__ORGANZIATION, oldOrganziation, organziation));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getEmail()
   {
     return email;
@@ -322,14 +321,14 @@ public class StakeholderImpl extends NamedElementImpl implements Stakeholder
   {
     switch (featureID)
     {
+      case AlisaPackage.STAKEHOLDER__NAME:
+        return getName();
       case AlisaPackage.STAKEHOLDER__TITLE:
         return getTitle();
       case AlisaPackage.STAKEHOLDER__DESCRIPTION:
         return getDescription();
       case AlisaPackage.STAKEHOLDER__ROLE:
         return getRole();
-      case AlisaPackage.STAKEHOLDER__ORGANZIATION:
-        return getOrganziation();
       case AlisaPackage.STAKEHOLDER__EMAIL:
         return getEmail();
       case AlisaPackage.STAKEHOLDER__PHONE:
@@ -348,6 +347,9 @@ public class StakeholderImpl extends NamedElementImpl implements Stakeholder
   {
     switch (featureID)
     {
+      case AlisaPackage.STAKEHOLDER__NAME:
+        setName((String)newValue);
+        return;
       case AlisaPackage.STAKEHOLDER__TITLE:
         setTitle((String)newValue);
         return;
@@ -356,9 +358,6 @@ public class StakeholderImpl extends NamedElementImpl implements Stakeholder
         return;
       case AlisaPackage.STAKEHOLDER__ROLE:
         setRole((String)newValue);
-        return;
-      case AlisaPackage.STAKEHOLDER__ORGANZIATION:
-        setOrganziation((String)newValue);
         return;
       case AlisaPackage.STAKEHOLDER__EMAIL:
         setEmail((String)newValue);
@@ -380,6 +379,9 @@ public class StakeholderImpl extends NamedElementImpl implements Stakeholder
   {
     switch (featureID)
     {
+      case AlisaPackage.STAKEHOLDER__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AlisaPackage.STAKEHOLDER__TITLE:
         setTitle(TITLE_EDEFAULT);
         return;
@@ -388,9 +390,6 @@ public class StakeholderImpl extends NamedElementImpl implements Stakeholder
         return;
       case AlisaPackage.STAKEHOLDER__ROLE:
         setRole(ROLE_EDEFAULT);
-        return;
-      case AlisaPackage.STAKEHOLDER__ORGANZIATION:
-        setOrganziation(ORGANZIATION_EDEFAULT);
         return;
       case AlisaPackage.STAKEHOLDER__EMAIL:
         setEmail(EMAIL_EDEFAULT);
@@ -412,14 +411,14 @@ public class StakeholderImpl extends NamedElementImpl implements Stakeholder
   {
     switch (featureID)
     {
+      case AlisaPackage.STAKEHOLDER__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AlisaPackage.STAKEHOLDER__TITLE:
         return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
       case AlisaPackage.STAKEHOLDER__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case AlisaPackage.STAKEHOLDER__ROLE:
         return ROLE_EDEFAULT == null ? role != null : !ROLE_EDEFAULT.equals(role);
-      case AlisaPackage.STAKEHOLDER__ORGANZIATION:
-        return ORGANZIATION_EDEFAULT == null ? organziation != null : !ORGANZIATION_EDEFAULT.equals(organziation);
       case AlisaPackage.STAKEHOLDER__EMAIL:
         return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
       case AlisaPackage.STAKEHOLDER__PHONE:
@@ -439,14 +438,14 @@ public class StakeholderImpl extends NamedElementImpl implements Stakeholder
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (title: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", title: ");
     result.append(title);
     result.append(", description: ");
     result.append(description);
     result.append(", role: ");
     result.append(role);
-    result.append(", organziation: ");
-    result.append(organziation);
     result.append(", email: ");
     result.append(email);
     result.append(", phone: ");

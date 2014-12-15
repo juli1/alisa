@@ -5,7 +5,7 @@ import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/edu/cmu/sei/alisa/Alisa.xtext"
-var fileExtensions = "rsal"
+var fileExtensions = "alisa"
 var projectName = "edu.cmu.sei.alisa"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
@@ -72,6 +72,8 @@ Workflow {
 		registerGenModelFile = "platform:/resource/org.eclipse.uml2.codegen.ecore/model/GenModel.genmodel"
 		registerGeneratedEPackage = "org.osate.aadl2.Aadl2Package"
 		registerGenModelFile = "platform:/resource/org.osate.aadl2/model/aadl2.genmodel"
+		registerGeneratedEPackage = "org.osate.aadl2.instance.InstancePackage"
+		registerGenModelFile = "platform:/resource/org.osate.aadl2/model/instance.genmodel"
     }
     
     component = DirectoryCleaner {
