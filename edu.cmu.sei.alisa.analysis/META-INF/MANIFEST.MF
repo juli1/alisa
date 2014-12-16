@@ -21,7 +21,8 @@ Require-Bundle: org.eclipse.ui,
  net.certware.argument.caz.diagram;bundle-version="1.2.1";resolution:=optional,
  org.eclipse.gmf.runtime.notation;bundle-version="1.5.0";resolution:=optional,
  org.eclipse.ui.workbench,
- org.osate.aadl2;bundle-version="1.0.0"
+ org.osate.aadl2;bundle-version="1.0.0",
+ org.osate.xtext.aadl2.properties;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: org.eclipse.xtext.ui.editor
 Bundle-ActivationPolicy: lazy
@@ -32,3 +33,4 @@ Bundle-ClassPath: libs/poi-3.10-FINAL-20140208.jar,
  libs/poi-ooxml-schemas-3.10-FINAL-20140208.jar,
  libs/poi-scratchpad-3.10-FINAL-20140208.jar,
  .
+Export-Package: edu.cmu.alisa.sei.utils

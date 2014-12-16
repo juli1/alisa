@@ -26,11 +26,4 @@ public class AlisaQualifiedNameConverter extends IQualifiedNameConverter.Default
 		List<String> segs = Strings.split(qualifiedNameAsString, super.getDelimiter());
 		return QualifiedName.create(segs);
 	}
-
-// TODO: see if this was inserting the ::
-//	@Override
-//	public String getDelimiter() {
-//		return "::";
-//	}
-
 }
