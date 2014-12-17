@@ -1598,7 +1598,7 @@ rule__RSALContainer__Group__3__Impl
 :
 (
 { before(grammarAccess.getRSALContainerAccess().getContentAssignment_3()); }
-(rule__RSALContainer__ContentAssignment_3)
+(rule__RSALContainer__ContentAssignment_3)*
 { after(grammarAccess.getRSALContainerAccess().getContentAssignment_3()); }
 )
 

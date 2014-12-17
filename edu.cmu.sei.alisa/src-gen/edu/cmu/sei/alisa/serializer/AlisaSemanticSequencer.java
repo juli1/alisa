@@ -419,7 +419,7 @@ public class AlisaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (
 	 *         name=ID 
 	 *         target=[NamedElement|QNEREF]? 
-	 *         (content+=Goal | content+=Requirement | content+=VerificationActivity | content+=RSALContainer) 
+	 *         (content+=Goal | content+=Requirement | content+=VerificationActivity | content+=RSALContainer)* 
 	 *         (issue+=ValueString issue+=ValueString*)?
 	 *     )
 	 */

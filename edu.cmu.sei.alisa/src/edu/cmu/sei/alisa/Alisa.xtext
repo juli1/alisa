@@ -12,7 +12,7 @@ ContractualElement: Goal | Requirement | VerificationAssumption;
 
 RSALContainer returns RSALContainer:
 	'container' name =ID ('for' target=[aadl2::NamedElement|QNEREF])?
-	content+= (Goal | Requirement | VerificationActivity | RSALContainer)
+	(content+= (Goal | Requirement | VerificationActivity | RSALContainer))*
 	('issues'  issue+=ValueString (',' issue+=ValueString)* )? 
 	'end'
 	;

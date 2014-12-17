@@ -103,11 +103,11 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//RSALContainer:
 		//	"container" name=ID ("for" target=[aadl2::NamedElement|QNEREF])? content+=(Goal | Requirement | VerificationActivity
-		//	| RSALContainer) ("issues" issue+=ValueString ("," issue+=ValueString)*)? "end";
+		//	| RSALContainer)* ("issues" issue+=ValueString ("," issue+=ValueString)*)? "end";
 		public ParserRule getRule() { return rule; }
 
 		//"container" name=ID ("for" target=[aadl2::NamedElement|QNEREF])? content+=(Goal | Requirement | VerificationActivity |
-		//RSALContainer) ("issues" issue+=ValueString ("," issue+=ValueString)*)? "end"
+		//RSALContainer)* ("issues" issue+=ValueString ("," issue+=ValueString)*)? "end"
 		public Group getGroup() { return cGroup; }
 
 		//"container"
@@ -134,7 +134,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 		//QNEREF
 		public RuleCall getTargetNamedElementQNEREFParserRuleCall_2_1_0_1() { return cTargetNamedElementQNEREFParserRuleCall_2_1_0_1; }
 
-		//content+=(Goal | Requirement | VerificationActivity | RSALContainer)
+		//content+=(Goal | Requirement | VerificationActivity | RSALContainer)*
 		public Assignment getContentAssignment_3() { return cContentAssignment_3; }
 
 		//Goal | Requirement | VerificationActivity | RSALContainer
@@ -3844,7 +3844,7 @@ public class AlisaGrammarAccess extends AbstractGrammarElementFinder {
 
 	//RSALContainer:
 	//	"container" name=ID ("for" target=[aadl2::NamedElement|QNEREF])? content+=(Goal | Requirement | VerificationActivity
-	//	| RSALContainer) ("issues" issue+=ValueString ("," issue+=ValueString)*)? "end";
+	//	| RSALContainer)* ("issues" issue+=ValueString ("," issue+=ValueString)*)? "end";
 	public RSALContainerElements getRSALContainerAccess() {
 		return pRSALContainer;
 	}

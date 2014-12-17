@@ -253,7 +253,7 @@ ruleRSALContainer returns [EObject current=null]
 )
 
 )
-)(
+)*(
 	otherlv_5=Issues
     {
     	newLeafNode(otherlv_5, grammarAccess.getRSALContainerAccess().getIssuesKeyword_4_0());
