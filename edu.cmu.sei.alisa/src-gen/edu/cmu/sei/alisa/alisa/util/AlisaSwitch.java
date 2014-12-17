@@ -123,13 +123,6 @@ public class AlisaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AlisaPackage.CONTRACTUAL_ELEMENT_PROXY:
-      {
-        ContractualElementProxy contractualElementProxy = (ContractualElementProxy)theEObject;
-        T result = caseContractualElementProxy(contractualElementProxy);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case AlisaPackage.GOAL:
       {
         Goal goal = (Goal)theEObject;
@@ -154,6 +147,13 @@ public class AlisaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AlisaPackage.HAZARD:
+      {
+        Hazard hazard = (Hazard)theEObject;
+        T result = caseHazard(hazard);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AlisaPackage.EXTERNAL_DOCUMENT:
       {
         ExternalDocument externalDocument = (ExternalDocument)theEObject;
@@ -161,18 +161,36 @@ public class AlisaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AlisaPackage.XDOC_URI:
-      {
-        XDocUri xDocUri = (XDocUri)theEObject;
-        T result = caseXDocUri(xDocUri);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case AlisaPackage.CATEGORIES:
       {
         Categories categories = (Categories)theEObject;
         T result = caseCategories(categories);
-        if (result == null) result = caseAlisaModel(categories);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.REQUIREMENT_CATEGORIES:
+      {
+        RequirementCategories requirementCategories = (RequirementCategories)theEObject;
+        T result = caseRequirementCategories(requirementCategories);
+        if (result == null) result = caseAlisaModel(requirementCategories);
+        if (result == null) result = caseCategories(requirementCategories);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.VERIFICATION_CATEGORIES:
+      {
+        VerificationCategories verificationCategories = (VerificationCategories)theEObject;
+        T result = caseVerificationCategories(verificationCategories);
+        if (result == null) result = caseAlisaModel(verificationCategories);
+        if (result == null) result = caseCategories(verificationCategories);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.HAZARD_CATEGORIES:
+      {
+        HazardCategories hazardCategories = (HazardCategories)theEObject;
+        T result = caseHazardCategories(hazardCategories);
+        if (result == null) result = caseCategories(hazardCategories);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -196,6 +214,14 @@ public class AlisaSwitch<T> extends Switch<T>
         VerificationCategory verificationCategory = (VerificationCategory)theEObject;
         T result = caseVerificationCategory(verificationCategory);
         if (result == null) result = caseCategory(verificationCategory);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AlisaPackage.HAZARD_CATEGORY:
+      {
+        HazardCategory hazardCategory = (HazardCategory)theEObject;
+        T result = caseHazardCategory(hazardCategory);
+        if (result == null) result = caseCategory(hazardCategory);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -405,22 +431,6 @@ public class AlisaSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Contractual Element Proxy</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Contractual Element Proxy</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseContractualElementProxy(ContractualElementProxy object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Goal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -469,6 +479,22 @@ public class AlisaSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Hazard</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Hazard</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHazard(Hazard object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>External Document</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -485,22 +511,6 @@ public class AlisaSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>XDoc Uri</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>XDoc Uri</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseXDocUri(XDocUri object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Categories</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -512,6 +522,54 @@ public class AlisaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCategories(Categories object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Requirement Categories</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Requirement Categories</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRequirementCategories(RequirementCategories object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Verification Categories</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Verification Categories</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVerificationCategories(VerificationCategories object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Hazard Categories</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Hazard Categories</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHazardCategories(HazardCategories object)
   {
     return null;
   }
@@ -560,6 +618,22 @@ public class AlisaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVerificationCategory(VerificationCategory object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Hazard Category</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Hazard Category</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHazardCategory(HazardCategory object)
   {
     return null;
   }

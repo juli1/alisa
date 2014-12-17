@@ -17,6 +17,7 @@ import org.osate.aadl2.NamedElement;
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getTarget <em>Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getAssert <em>Assert</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getRefinesReference <em>Refines Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getSubgoal <em>Subgoal</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getDecomposesReference <em>Decomposes Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getEvolvesReference <em>Evolves Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Goal#getConflictsReference <em>Conflicts Reference</em>}</li>
@@ -101,6 +102,22 @@ public interface Goal extends ContractualElement
    * @generated
    */
   EList<Goal> getRefinesReference();
+
+  /**
+   * Returns the value of the '<em><b>Subgoal</b></em>' containment reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Goal}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Subgoal</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Subgoal</em>' containment reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getGoal_Subgoal()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Goal> getSubgoal();
 
   /**
    * Returns the value of the '<em><b>Decomposes Reference</b></em>' reference list.
@@ -200,7 +217,7 @@ public interface Goal extends ContractualElement
 
   /**
    * Returns the value of the '<em><b>Doc Reference</b></em>' containment reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.XDocUri}.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.ExternalDocument}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Doc Reference</em>' containment reference list isn't clear,
@@ -212,7 +229,7 @@ public interface Goal extends ContractualElement
    * @model containment="true"
    * @generated
    */
-  EList<XDocUri> getDocReference();
+  EList<ExternalDocument> getDocReference();
 
   /**
    * Returns the value of the '<em><b>Model Reference</b></em>' attribute list.

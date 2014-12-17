@@ -98,30 +98,30 @@ public interface ContractualElement extends EObject
   void setTitle(String value);
 
   /**
-   * Returns the value of the '<em><b>Description</b></em>' attribute.
+   * Returns the value of the '<em><b>Description</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Description</em>' attribute isn't clear,
+   * If the meaning of the '<em>Description</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' attribute.
-   * @see #setDescription(String)
+   * @return the value of the '<em>Description</em>' containment reference.
+   * @see #setDescription(Description)
    * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getContractualElement_Description()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getDescription();
+  Description getDescription();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.ContractualElement#getDescription <em>Description</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Description</em>' attribute.
+   * @param value the new value of the '<em>Description</em>' containment reference.
    * @see #getDescription()
    * @generated
    */
-  void setDescription(String value);
+  void setDescription(Description value);
 
   /**
    * Returns the value of the '<em><b>Rationale</b></em>' attribute.

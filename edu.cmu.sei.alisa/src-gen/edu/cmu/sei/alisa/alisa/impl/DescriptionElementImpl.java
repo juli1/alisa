@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.DescriptionElementImpl#getTest <em>Test</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.DescriptionElementImpl#getText <em>Text</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.DescriptionElementImpl#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
@@ -31,24 +31,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class DescriptionElementImpl extends MinimalEObjectImpl.Container implements DescriptionElement
 {
   /**
-   * The default value of the '{@link #getTest() <em>Test</em>}' attribute.
+   * The default value of the '{@link #getText() <em>Text</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTest()
+   * @see #getText()
    * @generated
    * @ordered
    */
-  protected static final String TEST_EDEFAULT = null;
+  protected static final String TEXT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getTest() <em>Test</em>}' attribute.
+   * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTest()
+   * @see #getText()
    * @generated
    * @ordered
    */
-  protected String test = TEST_EDEFAULT;
+  protected String text = TEXT_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getRef() <em>Ref</em>}' reference.
@@ -86,9 +86,9 @@ public class DescriptionElementImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTest()
+  public String getText()
   {
-    return test;
+    return text;
   }
 
   /**
@@ -96,12 +96,12 @@ public class DescriptionElementImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTest(String newTest)
+  public void setText(String newText)
   {
-    String oldTest = test;
-    test = newTest;
+    String oldText = text;
+    text = newText;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.DESCRIPTION_ELEMENT__TEST, oldTest, test));
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.DESCRIPTION_ELEMENT__TEXT, oldText, text));
   }
 
   /**
@@ -157,8 +157,8 @@ public class DescriptionElementImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case AlisaPackage.DESCRIPTION_ELEMENT__TEST:
-        return getTest();
+      case AlisaPackage.DESCRIPTION_ELEMENT__TEXT:
+        return getText();
       case AlisaPackage.DESCRIPTION_ELEMENT__REF:
         if (resolve) return getRef();
         return basicGetRef();
@@ -176,8 +176,8 @@ public class DescriptionElementImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case AlisaPackage.DESCRIPTION_ELEMENT__TEST:
-        setTest((String)newValue);
+      case AlisaPackage.DESCRIPTION_ELEMENT__TEXT:
+        setText((String)newValue);
         return;
       case AlisaPackage.DESCRIPTION_ELEMENT__REF:
         setRef((RSALVariable)newValue);
@@ -196,8 +196,8 @@ public class DescriptionElementImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case AlisaPackage.DESCRIPTION_ELEMENT__TEST:
-        setTest(TEST_EDEFAULT);
+      case AlisaPackage.DESCRIPTION_ELEMENT__TEXT:
+        setText(TEXT_EDEFAULT);
         return;
       case AlisaPackage.DESCRIPTION_ELEMENT__REF:
         setRef((RSALVariable)null);
@@ -216,8 +216,8 @@ public class DescriptionElementImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case AlisaPackage.DESCRIPTION_ELEMENT__TEST:
-        return TEST_EDEFAULT == null ? test != null : !TEST_EDEFAULT.equals(test);
+      case AlisaPackage.DESCRIPTION_ELEMENT__TEXT:
+        return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
       case AlisaPackage.DESCRIPTION_ELEMENT__REF:
         return ref != null;
     }
@@ -235,8 +235,8 @@ public class DescriptionElementImpl extends MinimalEObjectImpl.Container impleme
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (test: ");
-    result.append(test);
+    result.append(" (text: ");
+    result.append(text);
     result.append(')');
     return result.toString();
   }

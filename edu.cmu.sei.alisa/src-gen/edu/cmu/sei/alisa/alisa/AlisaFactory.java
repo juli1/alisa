@@ -86,15 +86,6 @@ public interface AlisaFactory extends EFactory
   RSALVariable createRSALVariable();
 
   /**
-   * Returns a new object of class '<em>Contractual Element Proxy</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Contractual Element Proxy</em>'.
-   * @generated
-   */
-  ContractualElementProxy createContractualElementProxy();
-
-  /**
    * Returns a new object of class '<em>Goal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -122,6 +113,15 @@ public interface AlisaFactory extends EFactory
   VerificationAssumption createVerificationAssumption();
 
   /**
+   * Returns a new object of class '<em>Hazard</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Hazard</em>'.
+   * @generated
+   */
+  Hazard createHazard();
+
+  /**
    * Returns a new object of class '<em>External Document</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -131,15 +131,6 @@ public interface AlisaFactory extends EFactory
   ExternalDocument createExternalDocument();
 
   /**
-   * Returns a new object of class '<em>XDoc Uri</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>XDoc Uri</em>'.
-   * @generated
-   */
-  XDocUri createXDocUri();
-
-  /**
    * Returns a new object of class '<em>Categories</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -147,6 +138,33 @@ public interface AlisaFactory extends EFactory
    * @generated
    */
   Categories createCategories();
+
+  /**
+   * Returns a new object of class '<em>Requirement Categories</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Requirement Categories</em>'.
+   * @generated
+   */
+  RequirementCategories createRequirementCategories();
+
+  /**
+   * Returns a new object of class '<em>Verification Categories</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Verification Categories</em>'.
+   * @generated
+   */
+  VerificationCategories createVerificationCategories();
+
+  /**
+   * Returns a new object of class '<em>Hazard Categories</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Hazard Categories</em>'.
+   * @generated
+   */
+  HazardCategories createHazardCategories();
 
   /**
    * Returns a new object of class '<em>Category</em>'.
@@ -174,6 +192,15 @@ public interface AlisaFactory extends EFactory
    * @generated
    */
   VerificationCategory createVerificationCategory();
+
+  /**
+   * Returns a new object of class '<em>Hazard Category</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Hazard Category</em>'.
+   * @generated
+   */
+  HazardCategory createHazardCategory();
 
   /**
    * Returns a new object of class '<em>Stakeholder</em>'.

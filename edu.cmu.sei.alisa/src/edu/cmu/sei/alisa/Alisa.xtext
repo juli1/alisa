@@ -1,50 +1,22 @@
 grammar edu.cmu.sei.alisa.Alisa with org.eclipse.xtext.common.Terminals
 
 generate alisa "http://www.cmu.edu/sei/alisa/Alisa"
-//import "platform:/resource/org.osate.aadl2/model/aadl2.ecore" as aadl2
-//import "http://aadl.info/AADL/2.0" as aadl2
 
-import "http://www.eclipse.org/emf/2002/Ecore" as ecore
-//import "platform:/resource/org.osate.aadl2/model/aadl2.ecore" as aadl2
 import "http://aadl.info/AADL/2.0" as aadl2
-//import "platform:/resource/org.osate.aadl2/model/instance.ecore" as instance
 import "http://aadl.info/AADL/2.0/instance" as instance
 
-AlisaModel: RSALPackage | Organization | RequirementCategories | VerificationCategories | AssuranceCase;
+AlisaModel: RSALContainer | Organization | RequirementCategories | VerificationCategories | AssuranceCase;
 
 ContractualElement: Goal | Requirement | VerificationAssumption;
 	
-//NamedElement returns aadl2::NamedElement :
-//	Goal | Requirement | Assumption | Category | RSALSection |RSALPackage
-//|Stakeholder |VerificationActivity|VerificationResult |ExternalDocument
-//| Organization | Categories
-//
-//;
 
-RSALPackage returns RSALContainer:
-	"package" name = ID
-	('imports' importedNamespace+=[RSALContainer](',' importedNamespace+=[RSALContainer])*)?
-	('with' importedNamespace+=[aadl2::AadlPackage|QPREF](',' importedNamespace+=[aadl2::AadlPackage|QPREF])*)?
-	content+= //RSALElement 
-	(Goal | Requirement | 
-	ContractualElementProxy | RSALSection | VerificationActivity  |ExternalDocument)+  
+RSALContainer returns RSALContainer:
+	'container' name =ID ('for' target=[aadl2::NamedElement|QNEREF])?
+	content+= (Goal | Requirement | VerificationActivity | RSALContainer)
 	('issues'  issue+=ValueString (',' issue+=ValueString)* )? 
 	'end'
 	;
-
-//RSALElement:
-//	Goal | Requirement | 
-//	ContractualElementProxy | RSALSection | VerificationActivity  |ExternalDocument
-//;
 	
-RSALSection returns RSALContainer:
-	'section' name =ID ('for' target=[aadl2::NamedElement|QNEREF])?
-	content+= //RSALElement 
-	(Goal | Requirement | 
-	ContractualElementProxy | RSALSection  | VerificationActivity  |ExternalDocument)+  
-	('issues'  issue+=ValueString (','issue+=ValueString)* )? 
-	'end' 
-;
 
 Organization:
 	'organization' name = ID
@@ -61,11 +33,7 @@ Description :
  ;	
 
 RSALVariable :
-	name = ID '=' value = STRING
-;
-// to allow mapping of requirements and goals into a section based report structure
-ContractualElementProxy :
-	'@' proxyreference = [ContractualElement|DOTTEDREF]
+	'val' name = ID '=' value = ValueString
 ;
 
 
@@ -75,19 +43,20 @@ Goal returns Goal:
 	(( 'for' target=[aadl2::NamedElement|QNEREF])?
 	 &('category'  category+=[RequirementCategory|CATREF](','category+=[RequirementCategory|CATREF])*)?
 	 &('title'  title=ValueString )? 
-	 &('description'  description=ValueString)? 
+	 &('description'  description=Description)? 
 	 &('assertion'  	assert=ValueString )? 
 	 &('rationale'  rationale=ValueString)? 
 	 &('issues'  issue+=ValueString (','issue+=ValueString)* )? 
-	 &('refines'  refinesReference+=[Goal|DOTTEDREF](',' refinesReference+=[Goal|DOTTEDREF])*)? 
-	 &('decomposes'  decomposesReference+=[Goal|DOTTEDREF](',' decomposesReference+=[Goal|DOTTEDREF])*)? 
+	 &('refined' 'to' refinesReference+=[Goal|DOTTEDREF](',' refinesReference+=[Goal|DOTTEDREF])*)? 
+	 &( subgoal+=Goal*) 
+	 &('decomposed' 'to' decomposesReference+=[Goal|DOTTEDREF](',' decomposesReference+=[Goal|DOTTEDREF])*)? 
 	 &('evolves'  evolvesReference+=[Goal|DOTTEDREF](',' evolvesReference+=[Goal|DOTTEDREF])*)? 
 	 &('conflicts'  conflictsReference+=[Goal|DOTTEDREF](',' conflictsReference+=[Goal|DOTTEDREF])*)? 
 	 &('stakeholder'  stakeholderReference+=[Stakeholder|DOTTEDREF] (',' stakeholderReference+=[Stakeholder|DOTTEDREF])*)?
 	 &('see' 'goal'  stakeholderRequirementReference+=[Goal|DOTTEDREF] (',' stakeholderRequirementReference+=[Goal|DOTTEDREF])*)?
 	 &('see' 'requirement'  systemRequirementReference+=[ContractualElement|DOTTEDREF] (',' systemRequirementReference+=[ContractualElement|DOTTEDREF])*)?
-	 &('see' 'document'  docReference+=XDocUri (',' docReference+=XDocUri)*)? 
-	& ('see' ':' modelReference+=QDOTTEDPAREF (',' modelReference+=QDOTTEDPAREF)*)? 
+	 &('see' 'document'  docReference+=ExternalDocument (',' docReference+=ExternalDocument)*)? 
+	& ('see' modelReference+=QDOTTEDPAREF (',' modelReference+=QDOTTEDPAREF)*)? 
 	)
 	 'end';
 	
@@ -96,21 +65,23 @@ Requirement:
 	(( 'for' target=[aadl2::NamedElement|QNEREF])?
  	&('category'  category+=[RequirementCategory|CATREF](',' category+=[RequirementCategory|CATREF])*)?
 	&('title'  title=ValueString)? 
-	&('description'  description=ValueString)? 
-	&('assertion'  assert=ValueString)? 
+	&('description'  description=Description)? 
+	&('assertion'  assert=ValueString)?  // predicate expression 
 	&('rationale'  rationale=ValueString)? 
+	& (reqValue += RSALVariable)*
 	&('issues'  issue+=ValueString (','issue+=ValueString)* )? 
 	&('see' 'goal'  goalReference+=[Goal] (',' goalReference+=[Goal])*)?
 	&('see' 'hazard'  hazardReference+=QNEREF (',' hazardReference+=QNEREF)*)? // hazardReference+=[aadl2::NamedElement|QNEREF]
 	&('refines'  refinesReference+=[Requirement|DOTTEDREF](',' refinesReference+=[Requirement|DOTTEDREF])*)? 
+	 &( subrequirement+=Requirement*) 
 	&('decomposes'  decomposesReference+=[Requirement|DOTTEDREF](',' decomposesReference+=[Requirement|DOTTEDREF])*)? 
 	&('evolves'  evolvesReference+=[Requirement|DOTTEDREF](',' evolvesReference+=[Requirement|DOTTEDREF])*)? 
 	&('see' 'goal'  stakeholderRequirementReference+=[Goal|DOTTEDREF] (',' stakeholderRequirementReference+=[Goal|DOTTEDREF])*)?
 	&('see' 'requirement'  systemRequirementReference+=[ContractualElement|DOTTEDREF] (',' systemRequirementReference+=[ContractualElement|DOTTEDREF])*)?
-	&(verifiedBy+=VerificationActivity)*
+	&(verifiedBy+=VerificationActivity*)
 	&(argument=AssuranceArgument)?
-	&('see' 'document'  docReference+=XDocUri (',' docReference+=XDocUri)*)? 
-	& ('see' ':' modelReference+=QDOTTEDPAREF (',' modelReference+=QDOTTEDPAREF)*)? 
+	&('see' 'document'  docReference+=ExternalDocument (',' docReference+=ExternalDocument)*)? 
+	& ('see' modelReference+=QDOTTEDPAREF (',' modelReference+=QDOTTEDPAREF)*)? 
 	)
 	'end';
 
@@ -120,7 +91,7 @@ VerificationAssumption:
 	(( 'for' target=[VerificationActivity|DOTTEDREF])?
  	&('category'  category+=[RequirementCategory|CATREF](',' category+=[RequirementCategory|CATREF])*)?
 	&('title'  title=ValueString)? 
-	&('description'  description=ValueString)? 
+	&('description'  description=Description)? 
 	&('asserted' 'by'  assert=[Requirement|DOTTEDREF])? 
 	&(verifiedBy+=VerificationActivity)*
 	&(argument=AssuranceArgument)?
@@ -128,32 +99,45 @@ VerificationAssumption:
 	&('issues'  issue+=ValueString (','issue+=ValueString)* )? 
 	)
 	'end';
+	
+Hazard:
+	'hazard'  name=ID   
+	(( 'for' target=[VerificationActivity|DOTTEDREF])?
+ 	&('category'  category+=[HazardCategory|CATREF](',' category+=[HazardCategory|CATREF])*)?
+	&('title'  title=ValueString)? 
+	&('description'  description=ValueString)? 
+	&('mitigated' 'by'  mitigated=[Requirement|DOTTEDREF])? 
+	&('rationale'  rationale=ValueString)? 
+	&('issues'  issue+=ValueString (','issue+=ValueString)* )? 
+	)
+	'end';
 
-ExternalDocument:
-	'document'
-	name=ID 'see'  externalReference=DOCPATH 
-	'end'	
+
+ExternalDocument : 
+	docReference=DOCPATH ( '#' docFragment=DOCFRAGMENT)?
 ;
 
+Categories: RequirementCategories | VerificationCategories | HazardCategories;
 
-XDocUri : 
-	docReference=[ExternalDocument|DOTTEDREF] ( '#' docFragment=DOCFRAGMENT)?
-;
-
-
-RequirementCategories returns Categories:
+RequirementCategories :
 	'requirement''categories' name = ID
 	category += RequirementCategory+
 	'end'
 ;
 
-VerificationCategories returns Categories:
+VerificationCategories :
 	'verification''categories' name = ID
 	category += VerificationCategory+
 	'end'
 ;
 
-Category : RequirementCategory | VerificationCategory;
+HazardCategories :
+	'hazard' 'categories' name = ID
+	category += HazardCategory+
+	'end'
+;
+
+Category : RequirementCategory | VerificationCategory | HazardCategory;
 
 RequirementCategory :
 	'category' name = ID ('extends' extends=[RequirementCategory|DOTTEDREF])? 
@@ -161,6 +145,10 @@ RequirementCategory :
 
 VerificationCategory :
 	'category' name = ID ('extends' extends=[VerificationCategory|DOTTEDREF])? 
+;
+
+HazardCategory :
+	'category' name = ID ('extends' extends=[HazardCategory|DOTTEDREF])? 
 ;
 
 

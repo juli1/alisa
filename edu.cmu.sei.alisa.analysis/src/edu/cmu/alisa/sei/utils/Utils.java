@@ -9,6 +9,8 @@ import org.osate.xtext.aadl2.properties.util.EMFIndexRetrieval;
 import edu.cmu.sei.alisa.alisa.AlisaFactory;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.Category;
+import edu.cmu.sei.alisa.alisa.Description;
+import edu.cmu.sei.alisa.alisa.DescriptionElement;
 import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Organization;
@@ -157,7 +159,7 @@ public class Utils {
 		Requirement req = factory.createRequirement();
 		req.setTitle("\"Title\"");
 		req.setName("newreq" + NEW_REQ_ID++);
-		req.setDescription("\"Desc\"");
+		req.setDescription(createDescription("\"Desc\""));
 		reqdoc.getContent().add(req);
 
 		return req;
@@ -168,41 +170,56 @@ public class Utils {
 		Goal req = factory.createGoal();
 		req.setTitle("\"Title\"");
 		req.setName("newreq" + NEW_REQ_ID++);
-		req.setDescription("\"Desc\"");
+		req.setDescription(createDescription("\"Desc\""));
 		reqdoc.getContent().add(req);
 
 		return req;
 	}
 
-//	/**
-//	 * Add a new verification activity to the model
-//	 * @param model - the alisa model that will contain the
-//	 *                new verification activity.
-//	 */
-//	private static int NEW_VA_ID = 1;
-//
-//	public static void addNewVerificationActivity(RSALContainer lib) {
-//		AlisaFactory factory = AlisaFactoryImpl.init();
-//		VerificationActivity va = factory.createVerificationActivity();
-//		va.setTitle("\"Title\"");
-//		va.setName("new_verification_activity" + NEW_VA_ID++);
-//		va.setMethod("manual");
-//		va.setDescription("\"Desc\"");
-//		lib.getContent().add(va);
-//	}
+	public static Description createDescription(String msg) {
+		AlisaFactory factory = AlisaFactoryImpl.init();
+		Description desc = factory.createDescription();
+		DescriptionElement de = factory.createDescriptionElement();
+		de.setText(msg);
+		desc.getDescription().add(de);
+		return desc;
+	}
+
+	public static String getDescriptionAsString(Description desc) {
+		String result = "";
+		boolean first = true;
+		for (DescriptionElement de : desc.getDescription()) {
+			if (de.getText() != null) {
+				if (first) {
+					first = false;
+				} else {
+					result = result + " ";
+				}
+				result = result + de.getText();
+			} else if (de.getRef() != null) {
+				if (first) {
+					first = false;
+				} else {
+					result = result + " ";
+				}
+				result = result + de.getRef().getName();
+			}
+		}
+		;
+		return result;
+	}
 
 	/**
 	 * Add a new external document to the model
 	 * @param external docs - the ExternalDOcuments set that will contain the
 	 *                new external doc.
 	 */
-	private static int NEW_XDOC_ID = 1;
 
 	public static void addNewExternalDocument(RSALContainer lib) {
 		AlisaFactory factory = AlisaFactoryImpl.init();
 		ExternalDocument xdoc = factory.createExternalDocument();
-		xdoc.setName("new_external_doc" + NEW_XDOC_ID++);
-		xdoc.setExternalReference("\"XRef to doc\"");
+		xdoc.setDocReference("\"XRef to doc\"");
+		xdoc.setDocFragment("\"fragment in doc\"");
 		lib.getContent().add(xdoc);
 	}
 

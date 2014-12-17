@@ -4,9 +4,9 @@ package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.ContractualElement;
+import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
 import edu.cmu.sei.alisa.alisa.Stakeholder;
-import edu.cmu.sei.alisa.alisa.XDocUri;
 
 import java.util.Collection;
 
@@ -38,6 +38,7 @@ import org.osate.aadl2.NamedElement;
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getAssert <em>Assert</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getRefinesReference <em>Refines Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getSubgoal <em>Subgoal</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getDecomposesReference <em>Decomposes Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getEvolvesReference <em>Evolves Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.GoalImpl#getConflictsReference <em>Conflicts Reference</em>}</li>
@@ -92,6 +93,16 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * @ordered
    */
   protected EList<Goal> refinesReference;
+
+  /**
+   * The cached value of the '{@link #getSubgoal() <em>Subgoal</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubgoal()
+   * @generated
+   * @ordered
+   */
+  protected EList<Goal> subgoal;
 
   /**
    * The cached value of the '{@link #getDecomposesReference() <em>Decomposes Reference</em>}' reference list.
@@ -161,7 +172,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * @generated
    * @ordered
    */
-  protected EList<XDocUri> docReference;
+  protected EList<ExternalDocument> docReference;
 
   /**
    * The cached value of the '{@link #getModelReference() <em>Model Reference</em>}' attribute list.
@@ -279,6 +290,20 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Goal> getSubgoal()
+  {
+    if (subgoal == null)
+    {
+      subgoal = new EObjectContainmentEList<Goal>(Goal.class, this, AlisaPackage.GOAL__SUBGOAL);
+    }
+    return subgoal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Goal> getDecomposesReference()
   {
     if (decomposesReference == null)
@@ -363,11 +388,11 @@ public class GoalImpl extends ContractualElementImpl implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<XDocUri> getDocReference()
+  public EList<ExternalDocument> getDocReference()
   {
     if (docReference == null)
     {
-      docReference = new EObjectContainmentEList<XDocUri>(XDocUri.class, this, AlisaPackage.GOAL__DOC_REFERENCE);
+      docReference = new EObjectContainmentEList<ExternalDocument>(ExternalDocument.class, this, AlisaPackage.GOAL__DOC_REFERENCE);
     }
     return docReference;
   }
@@ -396,6 +421,8 @@ public class GoalImpl extends ContractualElementImpl implements Goal
   {
     switch (featureID)
     {
+      case AlisaPackage.GOAL__SUBGOAL:
+        return ((InternalEList<?>)getSubgoal()).basicRemove(otherEnd, msgs);
       case AlisaPackage.GOAL__DOC_REFERENCE:
         return ((InternalEList<?>)getDocReference()).basicRemove(otherEnd, msgs);
     }
@@ -419,6 +446,8 @@ public class GoalImpl extends ContractualElementImpl implements Goal
         return getAssert();
       case AlisaPackage.GOAL__REFINES_REFERENCE:
         return getRefinesReference();
+      case AlisaPackage.GOAL__SUBGOAL:
+        return getSubgoal();
       case AlisaPackage.GOAL__DECOMPOSES_REFERENCE:
         return getDecomposesReference();
       case AlisaPackage.GOAL__EVOLVES_REFERENCE:
@@ -460,6 +489,10 @@ public class GoalImpl extends ContractualElementImpl implements Goal
         getRefinesReference().clear();
         getRefinesReference().addAll((Collection<? extends Goal>)newValue);
         return;
+      case AlisaPackage.GOAL__SUBGOAL:
+        getSubgoal().clear();
+        getSubgoal().addAll((Collection<? extends Goal>)newValue);
+        return;
       case AlisaPackage.GOAL__DECOMPOSES_REFERENCE:
         getDecomposesReference().clear();
         getDecomposesReference().addAll((Collection<? extends Goal>)newValue);
@@ -486,7 +519,7 @@ public class GoalImpl extends ContractualElementImpl implements Goal
         return;
       case AlisaPackage.GOAL__DOC_REFERENCE:
         getDocReference().clear();
-        getDocReference().addAll((Collection<? extends XDocUri>)newValue);
+        getDocReference().addAll((Collection<? extends ExternalDocument>)newValue);
         return;
       case AlisaPackage.GOAL__MODEL_REFERENCE:
         getModelReference().clear();
@@ -514,6 +547,9 @@ public class GoalImpl extends ContractualElementImpl implements Goal
         return;
       case AlisaPackage.GOAL__REFINES_REFERENCE:
         getRefinesReference().clear();
+        return;
+      case AlisaPackage.GOAL__SUBGOAL:
+        getSubgoal().clear();
         return;
       case AlisaPackage.GOAL__DECOMPOSES_REFERENCE:
         getDecomposesReference().clear();
@@ -559,6 +595,8 @@ public class GoalImpl extends ContractualElementImpl implements Goal
         return ASSERT_EDEFAULT == null ? assert_ != null : !ASSERT_EDEFAULT.equals(assert_);
       case AlisaPackage.GOAL__REFINES_REFERENCE:
         return refinesReference != null && !refinesReference.isEmpty();
+      case AlisaPackage.GOAL__SUBGOAL:
+        return subgoal != null && !subgoal.isEmpty();
       case AlisaPackage.GOAL__DECOMPOSES_REFERENCE:
         return decomposesReference != null && !decomposesReference.isEmpty();
       case AlisaPackage.GOAL__EVOLVES_REFERENCE:

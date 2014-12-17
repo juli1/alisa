@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.DescriptionElement#getTest <em>Test</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.DescriptionElement#getText <em>Text</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.DescriptionElement#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
@@ -24,30 +24,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface DescriptionElement extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Test</b></em>' attribute.
+   * Returns the value of the '<em><b>Text</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Test</em>' attribute isn't clear,
+   * If the meaning of the '<em>Text</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Test</em>' attribute.
-   * @see #setTest(String)
-   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getDescriptionElement_Test()
+   * @return the value of the '<em>Text</em>' attribute.
+   * @see #setText(String)
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getDescriptionElement_Text()
    * @model
    * @generated
    */
-  String getTest();
+  String getText();
 
   /**
-   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.DescriptionElement#getTest <em>Test</em>}' attribute.
+   * Sets the value of the '{@link edu.cmu.sei.alisa.alisa.DescriptionElement#getText <em>Text</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Test</em>' attribute.
-   * @see #getTest()
+   * @param value the new value of the '<em>Text</em>' attribute.
+   * @see #getText()
    * @generated
    */
-  void setTest(String value);
+  void setText(String value);
 
   /**
    * Returns the value of the '<em><b>Ref</b></em>' reference.

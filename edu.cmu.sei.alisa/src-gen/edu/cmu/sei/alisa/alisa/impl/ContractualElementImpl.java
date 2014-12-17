@@ -4,15 +4,18 @@ package edu.cmu.sei.alisa.alisa.impl;
 
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.ContractualElement;
+import edu.cmu.sei.alisa.alisa.Description;
 import edu.cmu.sei.alisa.alisa.RequirementCategory;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -91,24 +94,14 @@ public class ContractualElementImpl extends MinimalEObjectImpl.Container impleme
   protected String title = TITLE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected static final String DESCRIPTION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected String description = DESCRIPTION_EDEFAULT;
+  protected Description description;
 
   /**
    * The default value of the '{@link #getRationale() <em>Rationale</em>}' attribute.
@@ -226,7 +219,7 @@ public class ContractualElementImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getDescription()
+  public Description getDescription()
   {
     return description;
   }
@@ -236,12 +229,37 @@ public class ContractualElementImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDescription(String newDescription)
+  public NotificationChain basicSetDescription(Description newDescription, NotificationChain msgs)
   {
-    String oldDescription = description;
+    Description oldDescription = description;
     description = newDescription;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.CONTRACTUAL_ELEMENT__DESCRIPTION, oldDescription, description));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlisaPackage.CONTRACTUAL_ELEMENT__DESCRIPTION, oldDescription, newDescription);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDescription(Description newDescription)
+  {
+    if (newDescription != description)
+    {
+      NotificationChain msgs = null;
+      if (description != null)
+        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlisaPackage.CONTRACTUAL_ELEMENT__DESCRIPTION, null, msgs);
+      if (newDescription != null)
+        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AlisaPackage.CONTRACTUAL_ELEMENT__DESCRIPTION, null, msgs);
+      msgs = basicSetDescription(newDescription, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AlisaPackage.CONTRACTUAL_ELEMENT__DESCRIPTION, newDescription, newDescription));
   }
 
   /**
@@ -279,6 +297,22 @@ public class ContractualElementImpl extends MinimalEObjectImpl.Container impleme
       issue = new EDataTypeEList<String>(String.class, this, AlisaPackage.CONTRACTUAL_ELEMENT__ISSUE);
     }
     return issue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AlisaPackage.CONTRACTUAL_ELEMENT__DESCRIPTION:
+        return basicSetDescription(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -329,7 +363,7 @@ public class ContractualElementImpl extends MinimalEObjectImpl.Container impleme
         setTitle((String)newValue);
         return;
       case AlisaPackage.CONTRACTUAL_ELEMENT__DESCRIPTION:
-        setDescription((String)newValue);
+        setDescription((Description)newValue);
         return;
       case AlisaPackage.CONTRACTUAL_ELEMENT__RATIONALE:
         setRationale((String)newValue);
@@ -362,7 +396,7 @@ public class ContractualElementImpl extends MinimalEObjectImpl.Container impleme
         setTitle(TITLE_EDEFAULT);
         return;
       case AlisaPackage.CONTRACTUAL_ELEMENT__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
+        setDescription((Description)null);
         return;
       case AlisaPackage.CONTRACTUAL_ELEMENT__RATIONALE:
         setRationale(RATIONALE_EDEFAULT);
@@ -391,7 +425,7 @@ public class ContractualElementImpl extends MinimalEObjectImpl.Container impleme
       case AlisaPackage.CONTRACTUAL_ELEMENT__TITLE:
         return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
       case AlisaPackage.CONTRACTUAL_ELEMENT__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+        return description != null;
       case AlisaPackage.CONTRACTUAL_ELEMENT__RATIONALE:
         return RATIONALE_EDEFAULT == null ? rationale != null : !RATIONALE_EDEFAULT.equals(rationale);
       case AlisaPackage.CONTRACTUAL_ELEMENT__ISSUE:
@@ -415,8 +449,6 @@ public class ContractualElementImpl extends MinimalEObjectImpl.Container impleme
     result.append(name);
     result.append(", title: ");
     result.append(title);
-    result.append(", description: ");
-    result.append(description);
     result.append(", rationale: ");
     result.append(rationale);
     result.append(", issue: ");

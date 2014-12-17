@@ -5,10 +5,11 @@ package edu.cmu.sei.alisa.alisa.impl;
 import edu.cmu.sei.alisa.alisa.AlisaPackage;
 import edu.cmu.sei.alisa.alisa.AssuranceArgument;
 import edu.cmu.sei.alisa.alisa.ContractualElement;
+import edu.cmu.sei.alisa.alisa.ExternalDocument;
 import edu.cmu.sei.alisa.alisa.Goal;
+import edu.cmu.sei.alisa.alisa.RSALVariable;
 import edu.cmu.sei.alisa.alisa.Requirement;
 import edu.cmu.sei.alisa.alisa.VerificationActivity;
-import edu.cmu.sei.alisa.alisa.XDocUri;
 
 import java.util.Collection;
 
@@ -39,9 +40,11 @@ import org.osate.aadl2.NamedElement;
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getAssert <em>Assert</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getReqValue <em>Req Value</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getGoalReference <em>Goal Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getHazardReference <em>Hazard Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getRefinesReference <em>Refines Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getSubrequirement <em>Subrequirement</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getDecomposesReference <em>Decomposes Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getEvolvesReference <em>Evolves Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RequirementImpl#getStakeholderRequirementReference <em>Stakeholder Requirement Reference</em>}</li>
@@ -88,6 +91,16 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
   protected String assert_ = ASSERT_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getReqValue() <em>Req Value</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReqValue()
+   * @generated
+   * @ordered
+   */
+  protected EList<RSALVariable> reqValue;
+
+  /**
    * The cached value of the '{@link #getGoalReference() <em>Goal Reference</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -116,6 +129,16 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * @ordered
    */
   protected EList<Requirement> refinesReference;
+
+  /**
+   * The cached value of the '{@link #getSubrequirement() <em>Subrequirement</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubrequirement()
+   * @generated
+   * @ordered
+   */
+  protected EList<Requirement> subrequirement;
 
   /**
    * The cached value of the '{@link #getDecomposesReference() <em>Decomposes Reference</em>}' reference list.
@@ -185,7 +208,7 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * @generated
    * @ordered
    */
-  protected EList<XDocUri> docReference;
+  protected EList<ExternalDocument> docReference;
 
   /**
    * The cached value of the '{@link #getModelReference() <em>Model Reference</em>}' attribute list.
@@ -289,6 +312,20 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<RSALVariable> getReqValue()
+  {
+    if (reqValue == null)
+    {
+      reqValue = new EObjectContainmentEList<RSALVariable>(RSALVariable.class, this, AlisaPackage.REQUIREMENT__REQ_VALUE);
+    }
+    return reqValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Goal> getGoalReference()
   {
     if (goalReference == null)
@@ -324,6 +361,20 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
       refinesReference = new EObjectResolvingEList<Requirement>(Requirement.class, this, AlisaPackage.REQUIREMENT__REFINES_REFERENCE);
     }
     return refinesReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Requirement> getSubrequirement()
+  {
+    if (subrequirement == null)
+    {
+      subrequirement = new EObjectContainmentEList<Requirement>(Requirement.class, this, AlisaPackage.REQUIREMENT__SUBREQUIREMENT);
+    }
+    return subrequirement;
   }
 
   /**
@@ -449,11 +500,11 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<XDocUri> getDocReference()
+  public EList<ExternalDocument> getDocReference()
   {
     if (docReference == null)
     {
-      docReference = new EObjectContainmentEList<XDocUri>(XDocUri.class, this, AlisaPackage.REQUIREMENT__DOC_REFERENCE);
+      docReference = new EObjectContainmentEList<ExternalDocument>(ExternalDocument.class, this, AlisaPackage.REQUIREMENT__DOC_REFERENCE);
     }
     return docReference;
   }
@@ -482,6 +533,10 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
   {
     switch (featureID)
     {
+      case AlisaPackage.REQUIREMENT__REQ_VALUE:
+        return ((InternalEList<?>)getReqValue()).basicRemove(otherEnd, msgs);
+      case AlisaPackage.REQUIREMENT__SUBREQUIREMENT:
+        return ((InternalEList<?>)getSubrequirement()).basicRemove(otherEnd, msgs);
       case AlisaPackage.REQUIREMENT__VERIFIED_BY:
         return ((InternalEList<?>)getVerifiedBy()).basicRemove(otherEnd, msgs);
       case AlisaPackage.REQUIREMENT__ARGUMENT:
@@ -507,12 +562,16 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
         return basicGetTarget();
       case AlisaPackage.REQUIREMENT__ASSERT:
         return getAssert();
+      case AlisaPackage.REQUIREMENT__REQ_VALUE:
+        return getReqValue();
       case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
         return getGoalReference();
       case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
         return getHazardReference();
       case AlisaPackage.REQUIREMENT__REFINES_REFERENCE:
         return getRefinesReference();
+      case AlisaPackage.REQUIREMENT__SUBREQUIREMENT:
+        return getSubrequirement();
       case AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE:
         return getDecomposesReference();
       case AlisaPackage.REQUIREMENT__EVOLVES_REFERENCE:
@@ -550,6 +609,10 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
       case AlisaPackage.REQUIREMENT__ASSERT:
         setAssert((String)newValue);
         return;
+      case AlisaPackage.REQUIREMENT__REQ_VALUE:
+        getReqValue().clear();
+        getReqValue().addAll((Collection<? extends RSALVariable>)newValue);
+        return;
       case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
         getGoalReference().clear();
         getGoalReference().addAll((Collection<? extends Goal>)newValue);
@@ -561,6 +624,10 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
       case AlisaPackage.REQUIREMENT__REFINES_REFERENCE:
         getRefinesReference().clear();
         getRefinesReference().addAll((Collection<? extends Requirement>)newValue);
+        return;
+      case AlisaPackage.REQUIREMENT__SUBREQUIREMENT:
+        getSubrequirement().clear();
+        getSubrequirement().addAll((Collection<? extends Requirement>)newValue);
         return;
       case AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE:
         getDecomposesReference().clear();
@@ -587,7 +654,7 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
         return;
       case AlisaPackage.REQUIREMENT__DOC_REFERENCE:
         getDocReference().clear();
-        getDocReference().addAll((Collection<? extends XDocUri>)newValue);
+        getDocReference().addAll((Collection<? extends ExternalDocument>)newValue);
         return;
       case AlisaPackage.REQUIREMENT__MODEL_REFERENCE:
         getModelReference().clear();
@@ -613,6 +680,9 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
       case AlisaPackage.REQUIREMENT__ASSERT:
         setAssert(ASSERT_EDEFAULT);
         return;
+      case AlisaPackage.REQUIREMENT__REQ_VALUE:
+        getReqValue().clear();
+        return;
       case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
         getGoalReference().clear();
         return;
@@ -621,6 +691,9 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
         return;
       case AlisaPackage.REQUIREMENT__REFINES_REFERENCE:
         getRefinesReference().clear();
+        return;
+      case AlisaPackage.REQUIREMENT__SUBREQUIREMENT:
+        getSubrequirement().clear();
         return;
       case AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE:
         getDecomposesReference().clear();
@@ -664,12 +737,16 @@ public class RequirementImpl extends ContractualElementImpl implements Requireme
         return target != null;
       case AlisaPackage.REQUIREMENT__ASSERT:
         return ASSERT_EDEFAULT == null ? assert_ != null : !ASSERT_EDEFAULT.equals(assert_);
+      case AlisaPackage.REQUIREMENT__REQ_VALUE:
+        return reqValue != null && !reqValue.isEmpty();
       case AlisaPackage.REQUIREMENT__GOAL_REFERENCE:
         return goalReference != null && !goalReference.isEmpty();
       case AlisaPackage.REQUIREMENT__HAZARD_REFERENCE:
         return hazardReference != null && !hazardReference.isEmpty();
       case AlisaPackage.REQUIREMENT__REFINES_REFERENCE:
         return refinesReference != null && !refinesReference.isEmpty();
+      case AlisaPackage.REQUIREMENT__SUBREQUIREMENT:
+        return subrequirement != null && !subrequirement.isEmpty();
       case AlisaPackage.REQUIREMENT__DECOMPOSES_REFERENCE:
         return decomposesReference != null && !decomposesReference.isEmpty();
       case AlisaPackage.REQUIREMENT__EVOLVES_REFERENCE:

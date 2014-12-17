@@ -179,7 +179,7 @@ public class WordImport {
 
 						req = Utils.addNewGoal(reqdoc);
 						req.setTitle("\"" + reqTitle + "\"\n");
-						req.setDescription("\"\"");
+						req.setDescription(Utils.createDescription("\"\""));
 						req.setName(reqIdentifier);
 //						/**
 //						 * Assign the requirement to a generic Stakeholder.
@@ -220,14 +220,15 @@ public class WordImport {
 							String existingText;
 							String additionalText;
 
-							existingText = currentRequirement.getDescription();
+							existingText = Utils.getDescriptionAsString(currentRequirement.getDescription());
 							existingText = existingText.replace("\"", "");
 							existingText = existingText.replace("\n", "");
 
 							additionalText = par.text();
 							if (additionalText.length() > 1) {
 								additionalText = additionalText.substring(0, additionalText.length() - 1);
-								currentRequirement.setDescription("\"" + existingText + " " + additionalText + "\"\n");
+								currentRequirement.setDescription(Utils.createDescription("\"" + existingText + " "
+										+ additionalText + "\"\n"));
 							}
 						}
 
@@ -250,7 +251,7 @@ public class WordImport {
 
 						req = Utils.addNewGoal(reqdoc);
 						req.setTitle("\"" + par.text() + "\"\n");
-						req.setDescription("\"\"");
+						req.setDescription(Utils.createDescription("\"\""));
 
 //						/**
 //						 * Assign the requirement to a generic Stakeholder.

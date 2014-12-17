@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.osate.aadl2.NamedElement;
 
+import edu.cmu.alisa.sei.utils.Utils;
 import edu.cmu.sei.alisa.alisa.AlisaModel;
 import edu.cmu.sei.alisa.alisa.ContractualElement;
 import edu.cmu.sei.alisa.alisa.RSALContainer;
@@ -50,7 +51,8 @@ public class CheckWording {
 		final String[] toAvoid = { "may", "added" };
 		final String[] mustHave = { "shall" };
 		for (String avoid : toAvoid) {
-			if (eo.getDescription() != null && eo.getDescription().toLowerCase().contains(avoid)) {
+			if (eo.getDescription() != null
+					&& Utils.getDescriptionAsString(eo.getDescription()).toLowerCase().contains(avoid)) {
 				ErrorReport report = new ErrorReport();
 				report.setRequirementName(((NamedElement) eo).getName());
 				report.setReport("cannot contain the word " + avoid);
@@ -58,7 +60,8 @@ public class CheckWording {
 			}
 		}
 		for (String must : mustHave) {
-			if (eo.getDescription() != null && !eo.getDescription().toLowerCase().contains(must)) {
+			if (eo.getDescription() != null
+					&& !Utils.getDescriptionAsString(eo.getDescription()).toLowerCase().contains(must)) {
 				ErrorReport report = new ErrorReport();
 				report.setRequirementName(((NamedElement) eo).getName());
 				report.setReport("must contain the word " + must);

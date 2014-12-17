@@ -16,9 +16,11 @@ import org.osate.aadl2.NamedElement;
  * <ul>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getTarget <em>Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getAssert <em>Assert</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getReqValue <em>Req Value</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getGoalReference <em>Goal Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getHazardReference <em>Hazard Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getRefinesReference <em>Refines Reference</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getSubrequirement <em>Subrequirement</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getDecomposesReference <em>Decomposes Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getEvolvesReference <em>Evolves Reference</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.Requirement#getStakeholderRequirementReference <em>Stakeholder Requirement Reference</em>}</li>
@@ -89,6 +91,22 @@ public interface Requirement extends ContractualElement
   void setAssert(String value);
 
   /**
+   * Returns the value of the '<em><b>Req Value</b></em>' containment reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.RSALVariable}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Req Value</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Req Value</em>' containment reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_ReqValue()
+   * @model containment="true"
+   * @generated
+   */
+  EList<RSALVariable> getReqValue();
+
+  /**
    * Returns the value of the '<em><b>Goal Reference</b></em>' reference list.
    * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Goal}.
    * <!-- begin-user-doc -->
@@ -135,6 +153,22 @@ public interface Requirement extends ContractualElement
    * @generated
    */
   EList<Requirement> getRefinesReference();
+
+  /**
+   * Returns the value of the '<em><b>Subrequirement</b></em>' containment reference list.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.Requirement}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Subrequirement</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Subrequirement</em>' containment reference list.
+   * @see edu.cmu.sei.alisa.alisa.AlisaPackage#getRequirement_Subrequirement()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Requirement> getSubrequirement();
 
   /**
    * Returns the value of the '<em><b>Decomposes Reference</b></em>' reference list.
@@ -244,7 +278,7 @@ public interface Requirement extends ContractualElement
 
   /**
    * Returns the value of the '<em><b>Doc Reference</b></em>' containment reference list.
-   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.XDocUri}.
+   * The list contents are of type {@link edu.cmu.sei.alisa.alisa.ExternalDocument}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Doc Reference</em>' containment reference list isn't clear,
@@ -256,7 +290,7 @@ public interface Requirement extends ContractualElement
    * @model containment="true"
    * @generated
    */
-  EList<XDocUri> getDocReference();
+  EList<ExternalDocument> getDocReference();
 
   /**
    * Returns the value of the '<em><b>Model Reference</b></em>' attribute list.

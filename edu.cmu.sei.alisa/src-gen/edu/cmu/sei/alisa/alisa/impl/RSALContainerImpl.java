@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.osate.aadl2.NamedElement;
@@ -32,10 +31,9 @@ import org.osate.aadl2.NamedElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
+ *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl#getContent <em>Content</em>}</li>
  *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl#getIssue <em>Issue</em>}</li>
- *   <li>{@link edu.cmu.sei.alisa.alisa.impl.RSALContainerImpl#getTarget <em>Target</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,14 +42,14 @@ import org.osate.aadl2.NamedElement;
 public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
 {
   /**
-   * The cached value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' reference list.
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getImportedNamespace()
+   * @see #getTarget()
    * @generated
    * @ordered
    */
-  protected EList<EObject> importedNamespace;
+  protected NamedElement target;
 
   /**
    * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
@@ -74,16 +72,6 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
   protected EList<String> issue;
 
   /**
-   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTarget()
-   * @generated
-   * @ordered
-   */
-  protected NamedElement target;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -102,48 +90,6 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
   protected EClass eStaticClass()
   {
     return AlisaPackage.Literals.RSAL_CONTAINER;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<EObject> getImportedNamespace()
-  {
-    if (importedNamespace == null)
-    {
-      importedNamespace = new EObjectResolvingEList<EObject>(EObject.class, this, AlisaPackage.RSAL_CONTAINER__IMPORTED_NAMESPACE);
-    }
-    return importedNamespace;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<EObject> getContent()
-  {
-    if (content == null)
-    {
-      content = new EObjectContainmentEList<EObject>(EObject.class, this, AlisaPackage.RSAL_CONTAINER__CONTENT);
-    }
-    return content;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<String> getIssue()
-  {
-    if (issue == null)
-    {
-      issue = new EDataTypeEList<String>(String.class, this, AlisaPackage.RSAL_CONTAINER__ISSUE);
-    }
-    return issue;
   }
 
   /**
@@ -194,6 +140,34 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<EObject> getContent()
+  {
+    if (content == null)
+    {
+      content = new EObjectContainmentEList<EObject>(EObject.class, this, AlisaPackage.RSAL_CONTAINER__CONTENT);
+    }
+    return content;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getIssue()
+  {
+    if (issue == null)
+    {
+      issue = new EDataTypeEList<String>(String.class, this, AlisaPackage.RSAL_CONTAINER__ISSUE);
+    }
+    return issue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -215,15 +189,13 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
   {
     switch (featureID)
     {
-      case AlisaPackage.RSAL_CONTAINER__IMPORTED_NAMESPACE:
-        return getImportedNamespace();
+      case AlisaPackage.RSAL_CONTAINER__TARGET:
+        if (resolve) return getTarget();
+        return basicGetTarget();
       case AlisaPackage.RSAL_CONTAINER__CONTENT:
         return getContent();
       case AlisaPackage.RSAL_CONTAINER__ISSUE:
         return getIssue();
-      case AlisaPackage.RSAL_CONTAINER__TARGET:
-        if (resolve) return getTarget();
-        return basicGetTarget();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -239,9 +211,8 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
   {
     switch (featureID)
     {
-      case AlisaPackage.RSAL_CONTAINER__IMPORTED_NAMESPACE:
-        getImportedNamespace().clear();
-        getImportedNamespace().addAll((Collection<? extends EObject>)newValue);
+      case AlisaPackage.RSAL_CONTAINER__TARGET:
+        setTarget((NamedElement)newValue);
         return;
       case AlisaPackage.RSAL_CONTAINER__CONTENT:
         getContent().clear();
@@ -250,9 +221,6 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
       case AlisaPackage.RSAL_CONTAINER__ISSUE:
         getIssue().clear();
         getIssue().addAll((Collection<? extends String>)newValue);
-        return;
-      case AlisaPackage.RSAL_CONTAINER__TARGET:
-        setTarget((NamedElement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -268,17 +236,14 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
   {
     switch (featureID)
     {
-      case AlisaPackage.RSAL_CONTAINER__IMPORTED_NAMESPACE:
-        getImportedNamespace().clear();
+      case AlisaPackage.RSAL_CONTAINER__TARGET:
+        setTarget((NamedElement)null);
         return;
       case AlisaPackage.RSAL_CONTAINER__CONTENT:
         getContent().clear();
         return;
       case AlisaPackage.RSAL_CONTAINER__ISSUE:
         getIssue().clear();
-        return;
-      case AlisaPackage.RSAL_CONTAINER__TARGET:
-        setTarget((NamedElement)null);
         return;
     }
     super.eUnset(featureID);
@@ -294,14 +259,12 @@ public class RSALContainerImpl extends AlisaModelImpl implements RSALContainer
   {
     switch (featureID)
     {
-      case AlisaPackage.RSAL_CONTAINER__IMPORTED_NAMESPACE:
-        return importedNamespace != null && !importedNamespace.isEmpty();
+      case AlisaPackage.RSAL_CONTAINER__TARGET:
+        return target != null;
       case AlisaPackage.RSAL_CONTAINER__CONTENT:
         return content != null && !content.isEmpty();
       case AlisaPackage.RSAL_CONTAINER__ISSUE:
         return issue != null && !issue.isEmpty();
-      case AlisaPackage.RSAL_CONTAINER__TARGET:
-        return target != null;
     }
     return super.eIsSet(featureID);
   }

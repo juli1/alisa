@@ -72,16 +72,19 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
       case AlisaPackage.DESCRIPTION: return createDescription();
       case AlisaPackage.DESCRIPTION_ELEMENT: return createDescriptionElement();
       case AlisaPackage.RSAL_VARIABLE: return createRSALVariable();
-      case AlisaPackage.CONTRACTUAL_ELEMENT_PROXY: return createContractualElementProxy();
       case AlisaPackage.GOAL: return createGoal();
       case AlisaPackage.REQUIREMENT: return createRequirement();
       case AlisaPackage.VERIFICATION_ASSUMPTION: return createVerificationAssumption();
+      case AlisaPackage.HAZARD: return createHazard();
       case AlisaPackage.EXTERNAL_DOCUMENT: return createExternalDocument();
-      case AlisaPackage.XDOC_URI: return createXDocUri();
       case AlisaPackage.CATEGORIES: return createCategories();
+      case AlisaPackage.REQUIREMENT_CATEGORIES: return createRequirementCategories();
+      case AlisaPackage.VERIFICATION_CATEGORIES: return createVerificationCategories();
+      case AlisaPackage.HAZARD_CATEGORIES: return createHazardCategories();
       case AlisaPackage.CATEGORY: return createCategory();
       case AlisaPackage.REQUIREMENT_CATEGORY: return createRequirementCategory();
       case AlisaPackage.VERIFICATION_CATEGORY: return createVerificationCategory();
+      case AlisaPackage.HAZARD_CATEGORY: return createHazardCategory();
       case AlisaPackage.STAKEHOLDER: return createStakeholder();
       case AlisaPackage.ASSURANCE_ARGUMENT: return createAssuranceArgument();
       case AlisaPackage.ARGUMENT_EXPR: return createArgumentExpr();
@@ -219,17 +222,6 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ContractualElementProxy createContractualElementProxy()
-  {
-    ContractualElementProxyImpl contractualElementProxy = new ContractualElementProxyImpl();
-    return contractualElementProxy;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Goal createGoal()
   {
     GoalImpl goal = new GoalImpl();
@@ -263,6 +255,17 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Hazard createHazard()
+  {
+    HazardImpl hazard = new HazardImpl();
+    return hazard;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ExternalDocument createExternalDocument()
   {
     ExternalDocumentImpl externalDocument = new ExternalDocumentImpl();
@@ -274,10 +277,10 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public XDocUri createXDocUri()
+  public Categories createCategories()
   {
-    XDocUriImpl xDocUri = new XDocUriImpl();
-    return xDocUri;
+    CategoriesImpl categories = new CategoriesImpl();
+    return categories;
   }
 
   /**
@@ -285,10 +288,32 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Categories createCategories()
+  public RequirementCategories createRequirementCategories()
   {
-    CategoriesImpl categories = new CategoriesImpl();
-    return categories;
+    RequirementCategoriesImpl requirementCategories = new RequirementCategoriesImpl();
+    return requirementCategories;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VerificationCategories createVerificationCategories()
+  {
+    VerificationCategoriesImpl verificationCategories = new VerificationCategoriesImpl();
+    return verificationCategories;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HazardCategories createHazardCategories()
+  {
+    HazardCategoriesImpl hazardCategories = new HazardCategoriesImpl();
+    return hazardCategories;
   }
 
   /**
@@ -322,6 +347,17 @@ public class AlisaFactoryImpl extends EFactoryImpl implements AlisaFactory
   {
     VerificationCategoryImpl verificationCategory = new VerificationCategoryImpl();
     return verificationCategory;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HazardCategory createHazardCategory()
+  {
+    HazardCategoryImpl hazardCategory = new HazardCategoryImpl();
+    return hazardCategory;
   }
 
   /**
